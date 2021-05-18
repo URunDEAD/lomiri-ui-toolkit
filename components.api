@@ -832,6 +832,7 @@ Lomiri.Components.Operation: Enum
     Canceling
     NoOperation
     Reseting
+    Resetting
     Saving
 Lomiri.Components.OptionSelector 1.0 0.1: Empty
     property bool colourImage

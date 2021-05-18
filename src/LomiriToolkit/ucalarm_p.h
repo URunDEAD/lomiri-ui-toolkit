@@ -55,7 +55,11 @@ public: // enums
         NoOperation,
         Saving,
         Canceling,
-        Reseting
+        Resetting,
+#ifdef LOMIRI_UITK_WANT_UBUNTU_COMPAT
+        // For compatibility with Ubuntu.Components
+        Reseting = Resetting,
+#endif
     };
 
     enum Error {
