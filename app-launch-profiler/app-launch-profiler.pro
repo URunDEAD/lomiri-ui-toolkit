@@ -10,15 +10,13 @@ warnings_are_errors:!contains(QMAKE_CXXFLAGS_WARN_ON, -Werror){
 
 HEADERS += app-launch-tracepoints.h
 SOURCES += app-launch-tracepoints.c
-TARGET = app-launch-tracepoints
+TARGET = lomiri-app-launch-tracepoints
 installPath = $$[QT_INSTALL_PREFIX]/bin/
 app-launch-tracepoints.path = $$installPath
-app-launch-tracepoints.files = app-launch-tracepoints
+app-launch-tracepoints.files = lomiri-app-launch-tracepoints
 app-launch-scripts.path = $$installPath
-app-launch-scripts.files = app-launch-profiler-lttng \
-                           profile_appstart.sh \
-                           appstart_test
+app-launch-scripts.files = lomiri-app-launch-profiler-lttng \
+                           lomiri-appstart-profile \
+                           lomiri-appstart-test
 INSTALLS += app-launch-tracepoints
 INSTALLS += app-launch-scripts
-
-

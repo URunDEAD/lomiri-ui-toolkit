@@ -26,7 +26,7 @@ WITH_CACHE=false
 while getopts ":u:p:a:c:s:qh" opt; do
     case $opt in
         h)
-            echo "Usage: profile_appstart.sh -u [IP address|local if left empty] -p [phabelt password] -c [count] -a [app] -s [sleep timme] -q"
+            echo "Usage: lomiri-appstart-profile -u [IP address|local if left empty] -p [phabelt password] -c [count] -a [app] -s [sleep timme] -q"
             echo -e "\t-u : The IP address of the profiler:. Default: ${URL}"
             echo -e "\t-p : Password of the phablet user. Default: ${PASSWORD}"
             echo -e "\t-a : The name of the application. Default: ${APP_NAME}"
@@ -84,7 +84,7 @@ for x in $(seq 1 ${COUNT}); do
       # Cleaning QML cache  
       rm -rf ~/.cache/QML/Apps/${APP_NAME}
     fi
-    echo ${PASSWORD}|sudo -S /usr/bin/app-launch-tracepoints
+    echo ${PASSWORD}|sudo -S /usr/bin/lomiri-app-launch-tracepoints
     lomiri-app-launch ${APP_NAME}
     sleep ${SLEEP_TIME}
     lomiri-app-stop ${APP_NAME}
