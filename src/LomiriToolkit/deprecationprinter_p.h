@@ -42,6 +42,7 @@ public Q_SLOTS:
 
 private:
     bool m_printed[COUNT] = { false, false, false, false };
+    bool m_globalWarningPrinted = false;
 };
 
 UT_NAMESPACE_END
