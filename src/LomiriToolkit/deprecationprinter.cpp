@@ -20,10 +20,12 @@
 #include <QtCore/QLoggingCategory>
 #include <QtQml/QQmlEngine>
 
+#define CATEGORY_NAME "lomiri.deprecations"
+
 UT_NAMESPACE_BEGIN
 
 namespace {
-    Q_LOGGING_CATEGORY(lcDeprecation, "lomiri.components.deprecation", QtMsgType::QtWarningMsg);
+    Q_LOGGING_CATEGORY(lcDeprecation, CATEGORY_NAME, QtMsgType::QtWarningMsg);
 
     const char * names[] = {
         "Components",
@@ -57,7 +59,15 @@ void DeprecationPrinter::printDeprecation(DeprecationPrinter::Deprecations d)
     if (m_printed[d])
         return;
 
-    qCWarning(lcDeprecation).noquote().nospace()
+    if (!m_globalWarningPrinted) {
+        m_globalWarningPrinted = true;
+        qCWarning(lcDeprecation).noquote().nospace()
+            << "At least 1 Ubuntu.* QML type is in use. Ubuntu.* type is deprecated "
+               "and is provided for compatibility. To print what types are being in use, "
+               "set \"QT_LOGGING_RULES=" CATEGORY_NAME ".debug=true\" environment variable.";
+    }
+
+    qCDebug(lcDeprecation).noquote().nospace()
         << "Ubuntu." << names[d] << " is deprecated and is provided for compatibility. "
            "Please use Lomiri." << names[d] << " when possible.";
 
