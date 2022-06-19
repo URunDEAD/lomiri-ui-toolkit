@@ -1,6 +1,142 @@
+2022-06-19 Marius Gripsgard
+
+        * Release 1.3.4000 (HEAD -> main, tag: 1.3.4000)
+
+2022-06-03 Ratchanan Srirattanamet
+
+        * Merge branch
+          'personal/peat-psuwit/global-warning-logging-cat-change'
+          into 'main' (4f38f3ec7)
+        * deprecationprinter: change category name & add global warning
+          (a17a4bf74)
+
+2021-12-23 Dalton Durst
+
+        * Merge branch 'mr/general-typo-fixes' into 'main' (7a596d161)
+
+2021-12-08 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/compat-qmldir-fixes' into 'main'
+          (0831a0ac9)
+
+2021-12-08 Alfred Neumayer
+
+        * src/imports-compat: Fix UbuntuListView and -NumberAnimation types
+          (7ad00ab12)
+
+2021-12-02 Marius Gripsgard
+
+        * Merge branch 'personal/peat-psuwit/ubuntu-name-compat' into 'main'
+          (075975159)
+
+2021-11-26 Ratchanan Srirattanamet
+
+        * src: add DeprecationPrinter for Ubuntu.* (5c39ac1dd)
+
+2021-10-15 Ratchanan Srirattanamet
+
+        * debian/*: (re-)add Ubuntu UITK compatibility packages (9e6e745d2)
+        * debian/rules: build with Ubuntu UITK compat layer enabled
+          (ad6234d13)
+        * src/LomiriToolkit: provide UbuntuApplication (a07b520bf)
+        * src/imports-compat: add Ubuntu.PerformanceMetrics (8321773e2)
+
+2021-10-14 Ratchanan Srirattanamet
+
+        * src/imports-compat: add Ubuntu.Metrics (1aa27c461)
+        * src/imports-compat: add Ubuntu.Layouts (b59e5719b)
+        * src/imports-compat: add Ubuntu.Components' submodules (a963b13aa)
+
+2021-10-13 Ratchanan Srirattanamet
+
+        * src: add imports-compat, starts with Ubuntu.Components (50b146589)
+        * src: move ucnamespace to the shared part (e93eb2214)
+
+2021-10-15 Ratchanan Srirattanamet
+
+        * LomiriToolkitModule: ensure initializeModule() is idempotent per
+          engine (17adab0cd)
+
+2021-10-12 Ratchanan Srirattanamet
+
+        * LomiriToolkitModule: allow defining module over different URI
+          (fd6d472c3)
+
+2021-11-25 Marius Gripsgard
+
+        * Merge branch 'mr/replace-schema-dependencies' into 'main'
+          (8fe26ed88)
+        * Merge branch 'pr/rename-com-ubuntu-touch-accountsservice-sound'
+          into 'main' (f2b54b3a3)
+
+2021-11-05 Robert Tari
+
+        * debian/control: Replace schema dependencies (0db9e9209)
+
+2021-11-01 Robert Tari
+
+        * Rename com.ubuntu.touch.AccountsService.Sound to
+          com.lomiri.touch.AccountsService.Sound (5d79e4e4d)
+        * Rename com.ubuntu.touch.AccountsService.Sound to
+          com.lomiri.touch.AccountsService.Sound (3adf1845d)
+
+2021-11-24 Marius Gripsgard
+
+        * Merge branch 'pr/x-canonical-to-x-ayatana' into 'main' (03c470a67)
+
+2021-10-25 Robert Tari
+
+        * Renaname x-canonical properties (0b65f9c5a)
+
+2021-08-31 Marius Gripsgard
+
+        * Merge branch 'personal/peat-psuwit/merge-xenial-2021Aug' into
+          'main' (b3a5d49f4)
+
+2021-08-31 Ratchanan Srirattanamet
+
+        * Merge remote-tracking branch 'gitlab_ubports/ubports/xenial' into
+          personal/peat-psuwit/merge-xenial-2021Aug (9b381f953)
+
+2021-07-23 Rodney
+
+        * Merge branch 'xenial_-_fix_datepicker' into 'ubports/xenial'
+          (e91a70304)
+
+2021-07-23 Lionel Duboeuf
+
+        * Fix the DatePicker not starting from the current date or time
+          (26221fa5e)
+
+2021-07-19 Ratchanan Srirattanamet
+
+        * Merge branch 'mr/explicit-license-attribution-of-artwork-files'
+          into 'main' (ee3bf67bd)
+
+2021-05-26 Ratchanan Srirattanamet
+
+        * Merge branch 'mr/fix-company-name' into 'main' (96540b504)
+
+2021-05-26 Mike Gabriel
+
+        * COPYING.CC-BY-SA-3.0: Attribute artwork files with correct license.
+          (Derived from debian/copyright). (b07e4d661)
+
+2021-05-21 Mike Gabriel
+
+        * tests/**: Fix company name (Canonical Ltd., not Canonical).
+          (31974d94e)
+        * src/**: Fix company name of Canonical Ltd. (no comma between
+          Canonical and Ltd.). Helps with copyright auto-generation.
+          (ff365b1dc)
+
+2021-05-18 Mike Gabriel
+
+        * grammar fix: allows to -> allows one to (b4b26da05)
+
 2021-05-17 Mike Gabriel
 
-        * Release 1.3.3000 (HEAD -> main, tag: 1.3.3000)
+        * Release 1.3.3000 (039c68a89) (tag: 1.3.3000)
 
 2021-05-13 Ratchanan Srirattanamet
 
@@ -80,6 +216,8 @@
           (4889b1aa4)
         * Move Jenkinsfile to debian/ per the new guideline (703db3f08)
         * Update Jenkinsfile to use shared library (e0259a528)
+        * Move Jenkinsfile to debian/ per the new guideline (a3402af49)
+        * Update Jenkinsfile to use shared library (090a04af2)
         * Rename newly-added code (2e43c95b9)
         * Merge branch 'ubports/xenial' into
           personal/peat-psuwit/merge-xenial-20210326 (9cb12f2ca)
