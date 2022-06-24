@@ -224,7 +224,7 @@ void UCActionContext::setEffectiveActive(bool active)
     if (!active && (ActionProxy::instance().globalContext == this)) {
         return;
     }
-    CONTEXT_TRACE("EFECTIVE ACTIVATE CONTEXT" << this << active);
+    CONTEXT_TRACE("EFFECTIVE ACTIVATE CONTEXT" << this << active);
 
     m_effectiveActive = active;
     Q_EMIT activeChanged();
