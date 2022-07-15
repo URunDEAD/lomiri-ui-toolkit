@@ -31,6 +31,7 @@ public:
         LAYOUTS,
         METRICS,
         PERFORMANCEMETRICS,
+        TEST,
         COUNT,
     };
     Q_ENUM(Deprecations);
@@ -41,7 +42,7 @@ public Q_SLOTS:
     void printDeprecation(Deprecations d);
 
 private:
-    bool m_printed[COUNT] = { false, false, false, false };
+    bool m_printed[COUNT] = { false, false, false, false, false };
     bool m_globalWarningPrinted = false;
 };
 
