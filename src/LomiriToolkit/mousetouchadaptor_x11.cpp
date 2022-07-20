@@ -73,7 +73,11 @@ Qt::MouseButton translateMouseButton(xcb_button_t detail)
 {
     switch (detail) {
         case 1: return Qt::LeftButton;
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         case 2: return Qt::MidButton;
+#else
+        case 2: return Qt::MiddleButton;
+#endif
         case 3: return Qt::RightButton;
         // Button values 4-7 are Wheel events
         default: return Qt::NoButton;

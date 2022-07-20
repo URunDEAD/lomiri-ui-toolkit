@@ -168,13 +168,21 @@ static inline void updateBinding (const QQmlAbstractBinding *binding)
 QStringList themeSearchPath()
 {
     QString envPath = QLatin1String(getenv("LOMIRI_UI_TOOLKIT_THEMES_PATH"));
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     QStringList pathList = envPath.split(':', QString::SkipEmptyParts);
+#else
+    QStringList pathList = envPath.split(':', Qt::SkipEmptyParts);
+#endif
     if (pathList.isEmpty()) {
         // get the default path list from generic data location, which contains
         // XDG_DATA_DIRS
         QString xdgDirs = QLatin1String(getenv("XDG_DATA_DIRS"));
         if (!xdgDirs.isEmpty()) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
             pathList << xdgDirs.split(':', QString::SkipEmptyParts);
+#else
+            pathList << xdgDirs.split(':', Qt::SkipEmptyParts);
+#endif
         }
         // ~/.local/share
         pathList << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
@@ -183,9 +191,17 @@ QStringList themeSearchPath()
     // append QML import path(s); we must explicitly support env override here
     const QString qml2ImportPath = QString::fromLocal8Bit(getenv("QML2_IMPORT_PATH"));
     if (!qml2ImportPath.isEmpty()) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         pathList << qml2ImportPath.split(':', QString::SkipEmptyParts);
+#else
+        pathList << qml2ImportPath.split(':', Qt::SkipEmptyParts);
+#endif
     }
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     pathList << QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath).split(':', QString::SkipEmptyParts);
+#else
+    pathList << QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath).split(':', Qt::SkipEmptyParts);
+#endif
     // fix folders
     QStringList result;
     Q_FOREACH(const QString &path, pathList) {

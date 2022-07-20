@@ -615,15 +615,27 @@ private Q_SLOTS:
         QTest::qWait(1000);
 
         // make sure we are not killing the parent
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         QVERIFY(testApp.pid() != QCoreApplication::applicationPid());
+#else
+        QVERIFY(testApp.processId() != QCoreApplication::applicationPid());
+#endif
         // skip tests if the application PID is zero => the child app PID seems to be zero as well
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         if (!testApp.pid()) {
+#else
+        if (!testApp.processId()) {
+#endif
             // kill child process
             testApp.close();
             QSKIP("This test requires valid PID");
         }
         // send SIGINT
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         ::kill(testApp.pid(), SIGINT);
+#else
+        ::kill(testApp.processId(), SIGINT);
+#endif
         testApp.waitForFinished();
 
         QString fileName = stateFile("SimpleApp");

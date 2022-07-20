@@ -339,7 +339,11 @@ QSet<Qt::DayOfWeek> AlarmDataAdapter::daysToSet(int days)
 
 UCAlarm::DaysOfWeek AlarmDataAdapter::daysFromSet(const QSet<Qt::DayOfWeek> &set)
 {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     UCAlarm::DaysOfWeek days = 0;
+#else
+    UCAlarm::DaysOfWeek days;
+#endif
     QSetIterator<Qt::DayOfWeek> i(set);
     while (i.hasNext()) {
         int day = static_cast<int>(i.next());

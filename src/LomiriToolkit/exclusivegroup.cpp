@@ -71,7 +71,11 @@ ExclusiveGroup::ExclusiveGroup(QObject *parent)
 
     int index = m_signalMapper->metaObject()->indexOfMethod("map()");
     m_updateCurrentMethod = m_signalMapper->metaObject()->method(index);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_signalMapper, static_cast<void(QSignalMapper::*)(QObject *)>(&QSignalMapper::mapped), this, [this](QObject *object) {
+#else
+    connect(m_signalMapper, static_cast<void(QSignalMapper::*)(QObject *)>(&QSignalMapper::mappedObject), this, [this](QObject *object) {
+#endif
         if (isChecked(object)) {
             setCurrent(object);
         }

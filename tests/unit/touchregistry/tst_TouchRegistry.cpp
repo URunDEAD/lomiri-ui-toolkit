@@ -200,7 +200,11 @@ void tst_TouchRegistry::dispatchesTouchEventsToCandidates()
         QList<QTouchEvent::TouchPoint> touchPoints;
         touchPoints.append(QTouchEvent::TouchPoint(0));
         touchPoints[0].setState(Qt::TouchPointPressed);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[0].setRect(QRect(10, 10, 0, 0));
+#else
+        touchPoints[0].setPos(QPoint(10, 10));
+#endif
         QTouchEvent touchEvent(QEvent::TouchBegin,
                                0 /* device */,
                                Qt::NoModifier,
@@ -215,10 +219,18 @@ void tst_TouchRegistry::dispatchesTouchEventsToCandidates()
         QList<QTouchEvent::TouchPoint> touchPoints;
         touchPoints.append(QTouchEvent::TouchPoint(0));
         touchPoints[0].setState(Qt::TouchPointMoved);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[0].setRect(QRect(11, 11, 0, 0));
+#else
+        touchPoints[0].setPos(QPoint(11, 11));
+#endif
         touchPoints.append(QTouchEvent::TouchPoint(1));
         touchPoints[1].setState(Qt::TouchPointPressed);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[1].setRect(QRect(20, 20, 0, 0));
+#else
+        touchPoints[1].setPos(QPoint(20, 20));
+#endif
         QTouchEvent touchEvent(QEvent::TouchUpdate,
                                0 /* device */,
                                Qt::NoModifier,
@@ -233,8 +245,13 @@ void tst_TouchRegistry::dispatchesTouchEventsToCandidates()
     QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints.count(), 1);
     QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints[0].id(), 0);
     // Check that the points local coordinates have been mapped to candidate0's coordinate system.
-    QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints[0].rect().x(), 11 - candidate0.x());
-    QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints[0].rect().y(), 11 - candidate0.y());
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+    QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints[0].rect().x(), qreal(11) - candidate0.x());
+    QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints[0].rect().y(), qreal(11) - candidate0.y());
+#else
+    QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints[0].pos().x(), qreal(11) - candidate0.x());
+    QCOMPARE(candidate0.unownedTouchEvents[0].touchPoints[0].pos().y(), qreal(11) - candidate0.y());
+#endif
 
     touchRegistry->addCandidateOwnerForTouch(1, &candidate1);
 
@@ -242,10 +259,18 @@ void tst_TouchRegistry::dispatchesTouchEventsToCandidates()
         QList<QTouchEvent::TouchPoint> touchPoints;
         touchPoints.append(QTouchEvent::TouchPoint(0));
         touchPoints[0].setState(Qt::TouchPointMoved);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[0].setRect(QRect(12, 12, 0, 0));
+#else
+        touchPoints[0].setPos(QPoint(12, 12));
+#endif
         touchPoints.append(QTouchEvent::TouchPoint(1));
         touchPoints[1].setState(Qt::TouchPointMoved);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[1].setRect(QRect(21, 21, 0, 0));
+#else
+        touchPoints[1].setPos(QPoint(21, 21));
+#endif
         QTouchEvent touchEvent(QEvent::TouchUpdate,
                                0 /* device */,
                                Qt::NoModifier,
@@ -280,7 +305,11 @@ void tst_TouchRegistry::dispatchesTouchEventsToWatchers()
         QList<QTouchEvent::TouchPoint> touchPoints;
         touchPoints.append(QTouchEvent::TouchPoint(0));
         touchPoints[0].setState(Qt::TouchPointPressed);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[0].setRect(QRect(10, 10, 0, 0));
+#else
+        touchPoints[0].setPos(QPoint(10, 10));
+#endif
         QTouchEvent touchEvent(QEvent::TouchBegin,
                                0 /* device */,
                                Qt::NoModifier,
@@ -295,10 +324,18 @@ void tst_TouchRegistry::dispatchesTouchEventsToWatchers()
         QList<QTouchEvent::TouchPoint> touchPoints;
         touchPoints.append(QTouchEvent::TouchPoint(0));
         touchPoints[0].setState(Qt::TouchPointMoved);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[0].setRect(QRect(11, 11, 0, 0));
+#else
+        touchPoints[0].setPos(QPoint(11, 11));
+#endif
         touchPoints.append(QTouchEvent::TouchPoint(1));
         touchPoints[1].setState(Qt::TouchPointPressed);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[1].setRect(QRect(20, 20, 0, 0));
+#else
+        touchPoints[1].setPos(QPoint(20, 20));
+#endif
         QTouchEvent touchEvent(QEvent::TouchUpdate,
                                0 /* device */,
                                Qt::NoModifier,
@@ -313,17 +350,30 @@ void tst_TouchRegistry::dispatchesTouchEventsToWatchers()
     QCOMPARE(watcher.unownedTouchEvents[0].touchPoints.count(), 1);
     QCOMPARE(watcher.unownedTouchEvents[0].touchPoints[0].id(), 0);
     // Check that the points local coordinates have been mapped to watcher's coordinate system.
-    QCOMPARE(watcher.unownedTouchEvents[0].touchPoints[0].rect().x(), 11 - watcher.x());
-    QCOMPARE(watcher.unownedTouchEvents[0].touchPoints[0].rect().y(), 11 - watcher.y());
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+    QCOMPARE(watcher.unownedTouchEvents[0].touchPoints[0].rect().x(), qreal(11) - watcher.x());
+    QCOMPARE(watcher.unownedTouchEvents[0].touchPoints[0].rect().y(), qreal(11) - watcher.y());
+#else
+    QCOMPARE(watcher.unownedTouchEvents[0].touchPoints[0].pos().x(), qreal(11) - watcher.x());
+    QCOMPARE(watcher.unownedTouchEvents[0].touchPoints[0].pos().y(), qreal(11) - watcher.y());
+#endif
 
     {
         QList<QTouchEvent::TouchPoint> touchPoints;
         touchPoints.append(QTouchEvent::TouchPoint(0));
         touchPoints[0].setState(Qt::TouchPointMoved);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[0].setRect(QRect(12, 12, 0, 0));
+#else
+        touchPoints[0].setPos(QPoint(12, 12));
+#endif
         touchPoints.append(QTouchEvent::TouchPoint(1));
         touchPoints[1].setState(Qt::TouchPointMoved);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         touchPoints[1].setRect(QRect(21, 21, 0, 0));
+#else
+        touchPoints[1].setPos(QPoint(21, 21));
+#endif
         QTouchEvent touchEvent(QEvent::TouchUpdate,
                                0 /* device */,
                                Qt::NoModifier,

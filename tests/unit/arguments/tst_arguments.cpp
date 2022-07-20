@@ -58,7 +58,12 @@ private:
 
     void setCommandLine(QString commandLine) {
         clearCommandLine();
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         QStringList arguments = QString(commandLine).split(' ', QString::SkipEmptyParts);
+#else
+        QStringList arguments = QString(commandLine).split(' ', Qt::SkipEmptyParts);
+#endif
 
         Q_FOREACH (QString argument, arguments) {
             QByteArray text = argument.toLocal8Bit();

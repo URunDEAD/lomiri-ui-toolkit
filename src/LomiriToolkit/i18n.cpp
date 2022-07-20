@@ -359,7 +359,11 @@ QString LomiriI18n::relativeDateTime(const QDateTime& datetime)
                https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2 */
                 : dtr(lomiriUiToolkit, QStringLiteral("ddd d MMM'\u2003'HH:mm")));
     }
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     return datetime.toString(Qt::DefaultLocaleShortDate);
+#else
+    return datetime.toString(QLocale().dateFormat(QLocale::ShortFormat));
+#endif
 }
 
 UT_NAMESPACE_END

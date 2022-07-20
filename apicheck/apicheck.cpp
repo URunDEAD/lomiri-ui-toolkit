@@ -877,7 +877,11 @@ int main(int argc, char *argv[])
         QString pluginImportVersion;
         QStringList pathList((QString(getenv("QML2_IMPORT_PATH"))
                               + ":" + QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath))
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
                              .split(':', QString::SkipEmptyParts));
+#else
+                             .split(':', Qt::SkipEmptyParts));
+#endif
 
         QFile qmlDirFile;
         QString pluginModulePath;
@@ -964,7 +968,7 @@ int main(int argc, char *argv[])
         Q_FOREACH(const QString& version, importVersions) {
             // First letter must be uppercase
             QString pluginAlias(QString("A%1.%2").arg(pluginImportUri).arg(version).replace(".", "_"));
-            code += QString("import %1 %2 as %3\n").arg(pluginImportUri).arg(version).arg(pluginAlias);
+            code += QString("import %1 %2 as %3\n").arg(pluginImportUri).arg(version).arg(pluginAlias).toUtf8();
         }
         code += "QtObject { }\n";
         if (verbose)
@@ -986,7 +990,7 @@ int main(int argc, char *argv[])
                     // First letter must be uppercase
                     QString pluginAlias(QString("A%1.%2").arg(pluginImportUri).replace(".", "_"));
                     // 1.0 should work if 0.1 didn't and qmldir didn't specify
-                    code += QString("import %1 1.0 as %3\n").arg(pluginImportUri).arg(pluginAlias);
+                    code += QString("import %1 1.0 as %3\n").arg(pluginImportUri).arg(pluginAlias).toUtf8();
                     c.setData(code, QUrl::fromLocalFile(qmlDirFile.fileName()));
                     std::cerr << "Re-creating QML component for " << qPrintable(pluginImportUri) << std::endl;
                     c.create();

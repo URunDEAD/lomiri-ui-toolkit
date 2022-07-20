@@ -299,7 +299,11 @@ QImage LomiriThemeIconProvider::requestImage(const QString &id, QSize *size, con
     // The hicolor theme will be searched last as per
     // https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
     QSet<QString> alreadySearchedThemes;
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     const QStringList names = id.split(QLatin1Char(','), QString::SkipEmptyParts);
+#else
+    const QStringList names = id.split(QLatin1Char(','), Qt::SkipEmptyParts);
+#endif
     QImage image = getTheme()->findBestIcon(names, size, requestedSize, &alreadySearchedThemes);
 
     if (image.isNull()) {

@@ -52,7 +52,11 @@ void ExtinctAnimalsPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Extinct.Animals"));
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     qmlRegisterType<EATarpan>();
+#else
+    qmlRegisterAnonymousType<EATarpan>(uri, 1);
+#endif
     qmlRegisterType<EASmilodon>(uri, 1, 0, "Smilodon");
     qmlRegisterType<EASmilodon>(uri, 0, 1, "ScimitarCat");
 

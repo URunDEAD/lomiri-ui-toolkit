@@ -227,11 +227,26 @@ bool UCQQuickImageExtension::rewriteSciFile(const QString &sciFilePath, const QS
         while (!sciStream.atEnd()) {
             QString line = sciStream.readLine();
             if (line.startsWith(QStringLiteral("border"))) {
-                output << scaledBorder(line, scaleFactor) << endl;
+                output << scaledBorder(line, scaleFactor)
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                       << endl;
+#else
+                       << Qt::endl;
+#endif
             } else if (line.startsWith(QStringLiteral("source"))) {
-                output << scaledSource(line, sciFilePath, scaleFactor) << endl;
+                output << scaledSource(line, sciFilePath, scaleFactor)
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                                 << endl;
+#else
+                                 << Qt::endl;
+#endif
             } else {
-                output << line << endl;
+                output << line
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                                 << endl;
+#else
+                                 << Qt::endl;
+#endif
             }
         }
         return true;

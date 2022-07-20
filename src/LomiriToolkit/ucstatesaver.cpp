@@ -325,7 +325,11 @@ QString UCStateSaverAttached::properties() const
 }
 void UCStateSaverAttached::setProperties(const QString &list)
 {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     QStringList propertyList = list.split(',', QString::SkipEmptyParts);
+#else
+    QStringList propertyList = list.split(',', Qt::SkipEmptyParts);
+#endif
     for (int i = 0; i < propertyList.count(); i++) {
         propertyList[i] = propertyList.at(i).trimmed();
     }
