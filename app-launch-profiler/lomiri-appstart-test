@@ -186,13 +186,13 @@ function measure_app_startups {
 					LTTNG_TRACE_FILE=${LINE/Traces will be written in /}
 					LTTNG_TRACE_FILE="${LTTNG_TRACE_FILE/$'\r'/}"
 				fi
-			done < <(adb -s ${SERIALNUMBER} shell "/usr/bin/profile_appstart.sh -a ${APPLICATION} -u ${IP_ADDRESS} -c ${COUNT} -s ${SLEEP_TIME} ${CLEAR_CACHE--q}")
-			[ -z "${LTTNG_SESSION_NAME}" ] && echo "The lttng session is not available" || app-launch-profiler-lttng -i ~/lttng-traces/lomiri-phablet/${LTTNG_SESSION_NAME} ${VERBOSE_PARAMETER--v}
+			done < <(adb -s ${SERIALNUMBER} shell "/usr/bin/lomiri-appstart-profile -a ${APPLICATION} -u ${IP_ADDRESS} -c ${COUNT} -s ${SLEEP_TIME} ${CLEAR_CACHE--q}")
+			[ -z "${LTTNG_SESSION_NAME}" ] && echo "The lttng session is not available" || lomiri-app-launch-profiler-lttng -i ~/lttng-traces/lomiri-phablet/${LTTNG_SESSION_NAME} ${VERBOSE_PARAMETER--v}
 			if [[ $REMOTE_LTTNG_SESSION == false ]]; then
 				LTTNG_TRACE_PATH=${LTTNG_TRACE_FILE/$LTTNG_SESSION_NAME/}
 				adb -s ${SERIALNUMBER} shell "echo ${PASSWORD}|sudo -S chown phablet $LTTNG_TRACE_PATH -R 2>&1|grep -v password > /dev/null"
 				adb -s ${SERIALNUMBER} pull ${LTTNG_TRACE_FILE} ${LTTNG_SESSION_NAME}  > /dev/null 2>&1
-				app-launch-profiler-lttng -i ${LTTNG_SESSION_NAME} ${VERBOSE_PARAMETER--v}
+				lomiri-app-launch-profiler-lttng -i ${LTTNG_SESSION_NAME} ${VERBOSE_PARAMETER--v}
 				if [ -z "${LTTNG_SESSION_NAME}" ];then
 					rm -rf ${LTTNG_SESSION_NAME}
 				fi
@@ -235,14 +235,14 @@ while getopts ":cqhvn:s:w:p:f:a:o:" opt; do
 
 	h)
 		VERBOSE=true
-		echo "Usage: appstart_test -c -p 025 -n 5 -s 10"
+		echo "Usage: lomiri-appstart-test -c -p 025 -n 5 -s 10"
 		echo -e "\t-c : Provision the device from the rc-proposed channel"
 		echo -e "\t-n : Number of times the applications are started during the test. Default $COUNT"
 		echo -e "\t-s : Sleep time between application starts. Default $SLEEP_TIME"
 		echo -e "\t-p : Run tests against a silo Default is ${TEST_SILO} the default silo is: ${SILO}"
 		echo -e "\t-w : Password of the phablet user on the device. Default ${PASSWORD}"
 		echo -e "\t-f : Filter for the test suite. Default $FILTER"
-                echo -e "\t-v : Turn appstart_test to be verbose. Default $VERBOSE"
+                echo -e "\t-v : Turn lomiri-appstart-test to be verbose. Default $VERBOSE"
                 echo -e "\t-q : Test the application startup with QML cache. Default ${CLEAR_CACHE-true} ${CLEAR_CACHE+false}"
 		echo -e "\t-h : Show this help"
 		exit

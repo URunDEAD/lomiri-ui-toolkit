@@ -30,11 +30,11 @@ if __name__ == '__main__':
         opts, args = getopt.getopt(sys.argv[1:], "hi:v", ["help",
                                    "inputdata="])
     except getopt.GetoptError:
-        print("app-launch-profiler-lttng -i <inputdata>")
+        print("lomiri-app-launch-profiler-lttng -i <inputdata>")
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print("app-launch-profiler-lttng -i <inputdata>")
+            print("lomiri-app-launch-profiler-lttng -i <inputdata>")
             sys.exit()
         elif opt in ("-i", "--idata"):
             inputdata = arg
