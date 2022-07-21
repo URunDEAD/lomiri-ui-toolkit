@@ -501,6 +501,21 @@ Description: Qt Components for Lomiri - Ubuntu.Metrics compat layer
  This package contains the Ubuntu Metrics QML plugin, implemented
  as compatibility layers over Lomiri Components.
 
+Package: qml-module-ubuntu-test
+Architecture: any
+Multi-Arch: same
+Pre-Depends: dpkg (>= 1.15.6~),
+             ${misc:Pre-Depends},
+Depends: qml-module-lomiri-test,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt Components for Lomiri - Test QML plugin
+ Qt Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Ubuntu Test QML plugin, implemented
+ as compatibility layers over Lomiri Components.
+
 Package: ubuntu-ui-toolkit-theme
 Architecture: any
 Multi-Arch: foreign

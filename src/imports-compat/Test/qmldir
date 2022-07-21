@@ -1,0 +1,12 @@
+module Ubuntu.Test
+
+LomiriTestCase 0.1 ../../Lomiri/Test/LomiriTestCase.qml
+
+#version 1.0
+LomiriTestCase 1.0 ../../Lomiri/Test/LomiriTestCase.qml
+
+singleton TestExtras 1.0 TestExtras.qml
+singleton MouseTouchAdaptor 1.0 MouseTouchAdaptor.qml
+
+#version 1.3
+LomiriTestCase 1.3 ../../Lomiri/Test/LomiriTestCase13.qml

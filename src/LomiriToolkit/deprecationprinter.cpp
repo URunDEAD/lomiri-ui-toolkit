@@ -32,6 +32,7 @@ namespace {
         "Layouts",
         "Metrics",
         "PerformanceMetrics",
+        "Test",
     };
 };
 

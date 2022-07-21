@@ -70,4 +70,8 @@ ubuntu-uitk-compat {
     src_compat_performance_metrics_module.target = sub-compat-performance-metrics-module
     src_compat_performance_metrics_module.depends = sub-performance-metrics-module
     SUBDIRS += src_compat_performance_metrics_module
+
+    src_compat_test_module.subdir = imports-compat/Test
+    src_compat_test_module.target = src-compat-test-module
+    SUBDIRS += src_compat_test_module
 }
