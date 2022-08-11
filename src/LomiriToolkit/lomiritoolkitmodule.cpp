@@ -240,7 +240,12 @@ void LomiriToolkitModule::registerTypesToVersion(const char *uri, int major, int
     qmlRegisterType<InverseMouseAreaType>(uri, major, minor, "InverseMouseArea");
     qmlRegisterType<QQuickMimeData>(uri, major, minor, "MimeData");
     qmlRegisterSimpleSingletonType<QQuickClipboard>(uri, major, minor, "Clipboard");
-    qmlRegisterSimpleSingletonType<UCLomiriAnimation>(uri, major, minor, "LomiriAnimation");
+    if (uri == QLatin1String("Ubuntu.Components")) {
+        // FIXME/DEPRECATED: Ubuntu.* is exported for backwards compatibility only
+        qmlRegisterSimpleSingletonType<UCLomiriAnimation>(uri, major, minor, "UbuntuAnimation");
+    } else {
+        qmlRegisterSimpleSingletonType<UCLomiriAnimation>(uri, major, minor, "LomiriAnimation");
+    }
     qmlRegisterType<UCArguments>(uri, major, minor, "Arguments");
     qmlRegisterType<UCArgument>(uri, major, minor, "Argument");
     qmlRegisterType<QQmlPropertyMap>();
