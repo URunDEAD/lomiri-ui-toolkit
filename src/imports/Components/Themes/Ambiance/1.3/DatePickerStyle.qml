@@ -24,15 +24,15 @@ Item {
     /*!
       Specifies the background color
       */
-    property color backgroundColor: "#0A000000"
+    property color backgroundColor: theme.palette.normal.base
     /*!
       Background color for highlight.
       */
-    property color highlightBackgroundColor: "#ffffffff"
+    property color highlightBackgroundColor: theme.palette.normal.raised
     /*!
       Highlight color.
       */
-    property color highlightColor: theme.palette.highlighted.baseText
+    property color highlightColor: theme.palette.normal.raisedText
     /*!
       Scale of the highlight item
       */
