@@ -131,6 +131,13 @@ void UCUnits::devicePixelRatioChanged(qreal dpi)
 
 UCUnits *UCUnits::m_units = nullptr;
 
+QScreen* referenceScreen()
+{
+    if (qGuiApp->screens().count() > 1)
+        return qGuiApp->screens().last();
+    return qGuiApp->primaryScreen();
+}
+
 UCUnits::UCUnits(QObject *parent) :
     QObject(parent),
     m_devicePixelRatio(qGuiApp->devicePixelRatio())
@@ -144,6 +151,13 @@ UCUnits::UCUnits(QObject *parent) :
     if (nativeInterface) {
         QObject::connect(nativeInterface, &QPlatformNativeInterface::windowPropertyChanged,
                          this, &UCUnits::windowPropertyChanged);
+        QScreen* screen = referenceScreen();
+        if (screen) {
+            float* scale =
+              reinterpret_cast<float*>(nativeInterface->nativeResourceForScreen("scale", screen));
+            if (scale && *scale > 0.0f)
+                m_gridUnit = DEFAULT_GRID_UNIT_PX * *scale;
+        }
     }
 }
 
@@ -317,7 +331,18 @@ void UCUnits::windowPropertyChanged(QPlatformWindow *window, const QString &prop
     }
 
     auto nativeInterface = qGuiApp->platformNativeInterface();
-    QVariant scaleVal = nativeInterface->windowProperty(window, QStringLiteral("scale"));
+    QVariant scaleVal;
+    QScreen* screen = referenceScreen();
+    if (screen) {
+        float* scale =
+          reinterpret_cast<float*>(nativeInterface->nativeResourceForScreen("scale", screen));
+        if (scale && *scale > 0.0f)
+            scaleVal = QVariant::fromValue(*scale);
+    }
+
+    if (!scaleVal.isValid())
+        scaleVal = nativeInterface->windowProperty(window, QStringLiteral("scale"));
+
     if (!scaleVal.isValid()) {
         return;
     }
