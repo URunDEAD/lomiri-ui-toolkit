@@ -25,16 +25,16 @@ Item {
       Specifies the background color
       */
     property color backgroundColor: styledItem.enabled
-                                        ? theme.palette.normal.foreground
+                                        ? theme.palette.normal.base
                                         : theme.palette.disabled.foreground
     /*!
       Background color for highlight.
       */
-    property color highlightBackgroundColor: "#ffffffff"
+    property color highlightBackgroundColor: theme.palette.normal.raised
     /*!
       Highlight color.
       */
-    property color highlightColor: theme.palette.highlighted.baseText
+    property color highlightColor: theme.palette.normal.raisedText
     /*!
       Scale of the highlight item
       */
