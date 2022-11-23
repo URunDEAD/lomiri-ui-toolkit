@@ -586,7 +586,7 @@ int UCAlarm::error() const
  *      \li Canceling
  *      \li The status reported refers to an operation requested through cancel().
  *  \row
- *      \li Reseting
+ *      \li Resetting
  *      \li The status reported refers to an operation requested through reset().
  * \endtable
  *
@@ -598,7 +598,7 @@ int UCAlarm::error() const
  *     onStatusChanged: {
  *         if (status !== Alarm.Ready)
  *             return;
- *         if ((operation > Alarm.NoOperation) && (operation < Alarm.Reseting)) {
+ *         if ((operation > Alarm.NoOperation) && (operation < Alarm.Resetting)) {
  *             reset();
  *         }
  *     }
@@ -686,12 +686,12 @@ void UCAlarm::cancel()
  */
 void UCAlarm::reset()
 {
-    d_ptr->_q_syncStatus(Reseting, InProgress, NoError);
+    d_ptr->_q_syncStatus(Resetting, InProgress, NoError);
 
     d_ptr->reset();
     d_ptr->setDefaults();
     d_ptr->changes = AlarmManager::AllFields;
-    d_ptr->_q_syncStatus(Reseting, Ready, NoError);
+    d_ptr->_q_syncStatus(Resetting, Ready, NoError);
 }
 
 /*!
