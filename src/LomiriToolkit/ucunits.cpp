@@ -100,14 +100,16 @@ static float getenvFloat(const char* name, float defaultValue)
 
 UCUnits::UCUnits(QWindow *parent) :
     QObject(parent),
-    m_devicePixelRatio(parent->devicePixelRatio())
+    m_devicePixelRatio(parent ? parent->devicePixelRatio() : 1),
+    m_screen(nullptr)
 {
     m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
     QObject::connect(parent, &QWindow::screenChanged,
                      this, &UCUnits::screenChanged);
-    QObject::connect(qGuiApp, &QGuiApplication::screenAdded,
-                     this, &UCUnits::screenChanged);
-    m_screen = parent->screen();
+
+    if (parent)
+        m_screen = parent->screen();
+
     if (m_screen) {
         QObject::connect(m_screen, &QScreen::physicalDotsPerInchChanged,
                          this, &UCUnits::devicePixelRatioChanged);
@@ -121,9 +123,11 @@ void UCUnits::screenChanged(QScreen *screen)
         QObject::disconnect(m_screen, &QScreen::physicalDotsPerInchChanged,
                             this, &UCUnits::devicePixelRatioChanged);
     m_screen = screen;
-    QObject::connect(m_screen, &QScreen::physicalDotsPerInchChanged,
-                     this, &UCUnits::devicePixelRatioChanged);
-    m_devicePixelRatio = screen->devicePixelRatio();
+    if (screen) {
+        QObject::connect(screen, &QScreen::physicalDotsPerInchChanged,
+                            this, &UCUnits::devicePixelRatioChanged);
+        m_devicePixelRatio = screen->devicePixelRatio();
+    }
     setGridUnit(DEFAULT_GRID_UNIT_PX * getScreenScaling(screen));
 }
 
@@ -137,6 +141,18 @@ UCUnits *UCUnits::m_units = nullptr;
 
 QScreen* referenceScreen()
 {
+    // The OSK sits on the internal screen and needs to oblige that one's scaling
+    static const Qt::WindowType InputMethodWindowType = (Qt::WindowType)(0x00000080 | Qt::WindowType::Window);
+    for (QWindow* window : QGuiApplication::allWindows()) {
+        if (window->type() & InputMethodWindowType) {
+            return window->screen();
+        }
+    }
+
+    // For everything else there's only two options:
+    // - Select the primary screen
+    // - Multi-monitor: go by last screen as virtual/external
+    //   monitors spawn after the primary one
     if (qGuiApp->screens().count() > 1)
         return qGuiApp->screens().last();
     return qGuiApp->primaryScreen();
@@ -144,7 +160,8 @@ QScreen* referenceScreen()
 
 UCUnits::UCUnits(QObject *parent) :
     QObject(parent),
-    m_devicePixelRatio(qGuiApp->devicePixelRatio())
+    m_devicePixelRatio(qGuiApp->devicePixelRatio()),
+    m_screen(nullptr)
 {
     if (QHighDpiScaling::isActive())
       m_gridUnit = qCeil(DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
@@ -152,7 +169,10 @@ UCUnits::UCUnits(QObject *parent) :
       m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
 
     QObject::connect(qGuiApp, &QGuiApplication::screenAdded,
-                     this, &UCUnits::screenChanged);
+                     this, [=](QScreen*) {
+        float scale = getScreenScaling(referenceScreen());
+        setGridUnit(DEFAULT_GRID_UNIT_PX * scale);
+    });
     QObject::connect(qGuiApp, &QGuiApplication::screenRemoved,
                      this, [=](QScreen*) {
         float scale = getScreenScaling(referenceScreen());
