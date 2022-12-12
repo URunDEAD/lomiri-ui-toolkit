@@ -74,6 +74,7 @@ private Q_SLOTS:
     void devicePixelRatioChanged(qreal dpi);
 
 private:
+    float getScreenScaling(QScreen* screen);
     static UCUnits *m_units;
     float m_devicePixelRatio;
     QScreen *m_screen;

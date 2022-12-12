@@ -100,15 +100,21 @@ static float getenvFloat(const char* name, float defaultValue)
 
 UCUnits::UCUnits(QWindow *parent) :
     QObject(parent),
-    m_devicePixelRatio(parent->devicePixelRatio())
+    m_devicePixelRatio(parent ? parent->devicePixelRatio() : 1),
+    m_screen(nullptr)
 {
     m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
     QObject::connect(parent, &QWindow::screenChanged,
                      this, &UCUnits::screenChanged);
-    m_screen = parent->screen();
-    if (m_screen)
+
+    if (parent)
+        m_screen = parent->screen();
+
+    if (m_screen) {
         QObject::connect(m_screen, &QScreen::physicalDotsPerInchChanged,
                          this, &UCUnits::devicePixelRatioChanged);
+        m_gridUnit = DEFAULT_GRID_UNIT_PX * getScreenScaling(m_screen);
+    }
 }
 
 void UCUnits::screenChanged(QScreen *screen)
@@ -117,10 +123,12 @@ void UCUnits::screenChanged(QScreen *screen)
         QObject::disconnect(m_screen, &QScreen::physicalDotsPerInchChanged,
                             this, &UCUnits::devicePixelRatioChanged);
     m_screen = screen;
-    QObject::connect(m_screen, &QScreen::physicalDotsPerInchChanged,
-                     this, &UCUnits::devicePixelRatioChanged);
-    m_devicePixelRatio = screen->devicePixelRatio();
-    setGridUnit(DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
+    if (screen) {
+        QObject::connect(screen, &QScreen::physicalDotsPerInchChanged,
+                            this, &UCUnits::devicePixelRatioChanged);
+        m_devicePixelRatio = screen->devicePixelRatio();
+    }
+    setGridUnit(DEFAULT_GRID_UNIT_PX * getScreenScaling(screen));
 }
 
 void UCUnits::devicePixelRatioChanged(qreal dpi)
@@ -131,19 +139,56 @@ void UCUnits::devicePixelRatioChanged(qreal dpi)
 
 UCUnits *UCUnits::m_units = nullptr;
 
+QScreen* referenceScreen()
+{
+    // The OSK sits on the internal screen and needs to oblige that one's scaling
+    static const Qt::WindowType InputMethodWindowType = (Qt::WindowType)(0x00000080 | Qt::WindowType::Window);
+    for (QWindow* window : QGuiApplication::allWindows()) {
+        if (window->type() & InputMethodWindowType) {
+            return window->screen();
+        }
+    }
+
+    // For everything else there's only two options:
+    // - Select the primary screen
+    // - Multi-monitor: go by last screen as virtual/external
+    //   monitors spawn after the primary one
+    if (qGuiApp->screens().count() > 1)
+        return qGuiApp->screens().last();
+    return qGuiApp->primaryScreen();
+}
+
 UCUnits::UCUnits(QObject *parent) :
     QObject(parent),
-    m_devicePixelRatio(qGuiApp->devicePixelRatio())
+    m_devicePixelRatio(qGuiApp->devicePixelRatio()),
+    m_screen(nullptr)
 {
     if (QHighDpiScaling::isActive())
       m_gridUnit = qCeil(DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
     else
       m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
 
+    QObject::connect(qGuiApp, &QGuiApplication::screenAdded,
+                     this, [=](QScreen*) {
+        float scale = getScreenScaling(referenceScreen());
+        setGridUnit(DEFAULT_GRID_UNIT_PX * scale);
+    });
+    QObject::connect(qGuiApp, &QGuiApplication::screenRemoved,
+                     this, [=](QScreen*) {
+        float scale = getScreenScaling(referenceScreen());
+        setGridUnit(DEFAULT_GRID_UNIT_PX * scale);
+    });
+
     auto nativeInterface = qGuiApp->platformNativeInterface();
     if (nativeInterface) {
         QObject::connect(nativeInterface, &QPlatformNativeInterface::windowPropertyChanged,
                          this, &UCUnits::windowPropertyChanged);
+        QScreen* screen = referenceScreen();
+        if (screen) {
+            float scale = getScreenScaling(screen);
+            if (scale > 0.0f)
+                m_gridUnit = DEFAULT_GRID_UNIT_PX * scale;
+        }
     }
 }
 
@@ -288,6 +333,26 @@ float UCUnits::gridUnitSuffixFromFileName(const QString& fileName)
     }
 }
 
+float UCUnits::getScreenScaling(QScreen* screen)
+{
+    if (!screen)
+        return m_devicePixelRatio;
+
+    if (!qGuiApp)
+        return m_devicePixelRatio;
+
+    auto nativeInterface = qGuiApp->platformNativeInterface();
+    if (!nativeInterface)
+        return m_devicePixelRatio;
+
+    float* scale =
+          reinterpret_cast<float*>(nativeInterface->nativeResourceForScreen("scale", screen));
+    if (!scale)
+        return m_devicePixelRatio;
+
+    return *scale;
+}
+
 void UCUnits::windowPropertyChanged(QPlatformWindow *window, const QString &propertyName)
 {
     if (propertyName != QStringLiteral("scale")) { //don't care otherwise
@@ -317,7 +382,18 @@ void UCUnits::windowPropertyChanged(QPlatformWindow *window, const QString &prop
     }
 
     auto nativeInterface = qGuiApp->platformNativeInterface();
-    QVariant scaleVal = nativeInterface->windowProperty(window, QStringLiteral("scale"));
+    QVariant scaleVal;
+    QScreen* screen = referenceScreen();
+    if (screen) {
+        float* scale =
+          reinterpret_cast<float*>(nativeInterface->nativeResourceForScreen("scale", screen));
+        if (scale && *scale > 0.0f)
+            scaleVal = QVariant::fromValue(*scale);
+    }
+
+    if (!scaleVal.isValid())
+        scaleVal = nativeInterface->windowProperty(window, QStringLiteral("scale"));
+
     if (!scaleVal.isValid()) {
         return;
     }

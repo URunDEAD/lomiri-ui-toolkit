@@ -118,26 +118,27 @@ private Q_SLOTS:
            namely making sure that only one temporary rewritten .sci file is
            created for each source .sci file.
         */
-        QQuickImageBase baseImage;
-        UCQQuickImageExtension* image1 = new UCQQuickImageExtension(&baseImage);
-        UCQQuickImageExtension* image2 = new UCQQuickImageExtension(&baseImage);
-        QUrl sciFileUrl = QUrl::fromLocalFile("./data/test.sci");
 
         unsigned int initialNumberOfSciFiles = numberOfTemporarySciFiles();
 
-        image1->setSource(sciFileUrl);
-        QCOMPARE(numberOfTemporarySciFiles(), initialNumberOfSciFiles + 1);
+        {
+            DummyFileEngineHandler handler;
 
-        image2->setSource(sciFileUrl);
-        QCOMPARE(numberOfTemporarySciFiles(), initialNumberOfSciFiles + 1);
+            QQuickView view(QUrl::fromLocalFile("./data/single_cache_file.qml"));
 
-        delete image1;
-        QCOMPARE(numberOfTemporarySciFiles(), initialNumberOfSciFiles + 1);
+            // Wait until the app is idle
+            bool idle = false;
+            while (!idle) {
+                QEventLoop l;
+                idle = !l.processEvents();
+            }
+
+            QCOMPARE(numberOfTemporarySciFiles(), initialNumberOfSciFiles + 1);
+        }
 
         /* The temporary files will be deleted when the cache is destroyed when
            the application exits.
         */
-        delete image2;
         QCOMPARE(numberOfTemporarySciFiles(), initialNumberOfSciFiles + 1);
     }
 

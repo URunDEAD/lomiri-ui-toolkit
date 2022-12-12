@@ -109,6 +109,9 @@ void UCQQuickImageExtension::reloadSource()
         // nothing to do, we don't have the image instance
         return;
     }
+    if (!qmlEngine(m_image)) {
+        return;
+    }
     if (m_source.isEmpty()) {
         m_image->setSource(m_source);
         return;
