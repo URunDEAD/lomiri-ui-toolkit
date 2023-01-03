@@ -6,11 +6,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
-"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
 "PO-Revision-Date: 2013-07-04 17:02+0000\n"
 "Last-Translator: Jinkyu Yi <Unknown>\n"
 "Language-Team: Korean <ko@li.org>\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -139,19 +140,23 @@ msgid ""
 "ListView has no ViewItems.dragUpdated() signal handler implemented. No "
 "dragging will be possible."
 msgstr ""
-"ListView에는 구현 된 ViewItems.dragUpdated () 시그널 처리가 되어있지 않습니다. 드레깅은 가능하지 않습니다."
+"ListView에는 구현 된 ViewItems.dragUpdated () 시그널 처리가 되어있지 않습니"
+"다. 드레깅은 가능하지 않습니다."
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:176
 #, qt-format
 msgid ""
 "property \"%1\" of object %2 has type %3 and cannot be set to value \"%4\" "
 "of type %5"
-msgstr "객체 %2의 프로퍼티 \"%1\"이(가) 형식 %3을 가지고 있어 형식 %5의 \"%4\" 값으로 설정할 수 없습니다."
+msgstr ""
+"객체 %2의 프로퍼티 \"%1\"이(가) 형식 %3을 가지고 있어 형식 %5의 \"%4\" 값으"
+"로 설정할 수 없습니다."
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:185
 #, qt-format
 msgid "property \"%1\" does not exist or is not writable for object %2"
-msgstr "프로퍼티 \"%1\"이(가) 존재하지 않거나 객체 %2이(가) 기록할 수 없습니다."
+msgstr ""
+"프로퍼티 \"%1\"이(가) 존재하지 않거나 객체 %2이(가) 기록할 수 없습니다."
 
 #: Lomiri/Components/plugin/ucalarm.cpp:41
 #: Lomiri/Components/plugin/ucalarm.cpp:643
@@ -216,7 +221,8 @@ msgstr "경고: 첨부 항목은 반드시 ID가 있어야 합니다. 상태를 
 #, qt-format
 msgid ""
 "Warning: attachee's UUID is already registered, state won't be saved: %1"
-msgstr "경고: 첨부 항목의 UUID가 이미 등록되어 있습니다. 상태를 저장하지 않습니다: %1"
+msgstr ""
+"경고: 첨부 항목의 UUID가 이미 등록되어 있습니다. 상태를 저장하지 않습니다: %1"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:107
 #, qt-format
@@ -244,7 +250,8 @@ msgstr "드래그 모드는 목록보기가 필요합니다."
 msgid ""
 "Dragging is only supported when using a QAbstractItemModel, ListModel or "
 "list."
-msgstr "QAbstractItemModel, ListModel, 리스트를 사용할 때에만 드래그가 지원됩니다."
+msgstr ""
+"QAbstractItemModel, ListModel, 리스트를 사용할 때에만 드래그가 지원됩니다."
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
