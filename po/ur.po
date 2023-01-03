@@ -8,34 +8,36 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-01-04 00:30+0000\n"
+"Last-Translator: Muhammad <muhammad23012009@hotmail.com>\n"
+"Language-Team: Urdu <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit/ur/>\n"
 "Language: ur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
 #: Lomiri/Components/1.3/TextInputPopover.qml:29
 msgid "Select All"
-msgstr ""
+msgstr "تمام منتخب کریں"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:36
 #: Lomiri/Components/1.3/TextInputPopover.qml:36
 msgid "Cut"
-msgstr ""
+msgstr "کاٹیں"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:48
 #: Lomiri/Components/1.3/TextInputPopover.qml:48
 msgid "Copy"
-msgstr ""
+msgstr "نقل"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:57
 #: Lomiri/Components/1.3/TextInputPopover.qml:57
 msgid "Paste"
-msgstr ""
+msgstr "چسپاں کریں"
 
 #: Lomiri/Components/1.2/ToolbarItems.qml:143
 #: Lomiri/Components/1.3/ToolbarItems.qml:143
@@ -247,7 +249,7 @@ msgstr ""
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
 msgid "Cancel"
-msgstr ""
+msgstr "منسوخ کریں"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:88
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:88
@@ -262,7 +264,7 @@ msgstr ""
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:95
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:95
 msgid "Done"
-msgstr ""
+msgstr "ہوگیا"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/ProgressBarStyle.qml:51
 #: Lomiri/Components/Themes/Ambiance/1.3/ProgressBarStyle.qml:50
