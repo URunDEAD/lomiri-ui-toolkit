@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2016-04-04 20:26+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"PO-Revision-Date: 2023-01-04 08:06+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: About.qml:34
 msgid "About..."
@@ -28,16 +30,17 @@ msgstr ""
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "Antall plasser"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "Lang liste"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
+#, fuzzy
 msgid "Disabled"
-msgstr ""
+msgstr "Avskrudd"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
@@ -59,11 +62,11 @@ msgstr ""
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "Rask"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "Treg"
 
 #: Animations.qml:159
 msgid "Sleepy"
@@ -79,24 +82,25 @@ msgstr ""
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "Farge"
 
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "Ring %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
 msgstr ""
 
 #: Buttons.qml:72 Buttons.qml:134
+#, fuzzy
 msgid "Icon+Text"
-msgstr ""
+msgstr "Ikon+tekst"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "Sammenfoldet"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
@@ -108,39 +112,39 @@ msgstr ""
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "Lysegrå"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "Mørkegrå"
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "Rød"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "Grønn"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "Blå"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "Lilla"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "Åpne"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "Skalering"
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "Drakt"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -184,25 +188,25 @@ msgstr ""
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "Verdi 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "Verdi 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "Verdi 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "Verdi 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
@@ -218,17 +222,17 @@ msgstr ""
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "Egendefinert modell"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "Verdi 5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "Verdi 6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
@@ -258,7 +262,7 @@ msgstr ""
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr ""
+msgstr "Gruppert liste"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
@@ -274,7 +278,7 @@ msgstr ""
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "Farget"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
@@ -294,28 +298,28 @@ msgstr ""
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "Flytt"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "Grunnleggende"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "Farget inndeler"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "Uforanderlig"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "Ingen inndeler"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
@@ -323,7 +327,7 @@ msgstr ""
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "Dette er den andre verdien"
 
 #: OptionSelectors.qml:35
 msgid ""
@@ -345,19 +349,19 @@ msgstr ""
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Lineær"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Sirkulær"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Ubegrenset"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Klokke"
 
 #: Pickers.qml:174
 msgid "Overlay"
@@ -369,23 +373,23 @@ msgstr ""
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "Handling #1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "Handling #2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "Handling #3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "Handling #4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "Handling #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
@@ -393,19 +397,20 @@ msgstr ""
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Uten etikett"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "Aktivitetsindikator"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Størrelser"
 
 #: Sections.qml:34
+#, fuzzy
 msgid "Enabled"
-msgstr ""
+msgstr "Påskrudd"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
@@ -418,7 +423,7 @@ msgstr ""
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "Faktisk verdi: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
@@ -430,7 +435,7 @@ msgstr ""
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Etiketter"
 
 #: Sliders.qml:85
 msgid "Small"
@@ -450,15 +455,15 @@ msgstr ""
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "Passord"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "Tall"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "Skrivebeskyttet"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
@@ -470,7 +475,7 @@ msgstr ""
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "Forvalg"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
@@ -494,7 +499,7 @@ msgstr ""
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Bilde"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
