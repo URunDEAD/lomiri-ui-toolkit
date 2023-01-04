@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2023-01-04 00:30+0000\n"
-"Last-Translator: Muhammad <muhammad23012009@hotmail.com>\n"
+"PO-Revision-Date: 2023-01-04 19:46+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Urdu <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/ur/>\n"
 "Language: ur\n"
@@ -46,8 +46,9 @@ msgstr ""
 
 #: Lomiri/Components/ListItems/1.2/Empty.qml:398
 #: Lomiri/Components/ListItems/1.3/Empty.qml:398
+#, fuzzy
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:51
 msgid "No service/path specified"
