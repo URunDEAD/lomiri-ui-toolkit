@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2015-08-12 21:44+0000\n"
-"Last-Translator: Phillip Sz <Unknown>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2023-01-07 17:49+0000\n"
+"Last-Translator: Daniel Frost <one@frostinfo.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: About.qml:34
 msgid "About..."
@@ -456,7 +458,7 @@ msgstr "Passwort"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr "Nummern"
+msgstr "Zahlen"
 
 #: TextInputs.qml:78
 msgid "Read-only"
