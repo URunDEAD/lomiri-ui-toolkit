@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-10 23:56+0000\n"
+"PO-Revision-Date: 2023-01-11 15:55+0000\n"
 "Last-Translator: Dan <denqwerta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/uk/>\n"
@@ -74,7 +74,7 @@ msgstr "Сонливо"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr "Дзвінок"
+msgstr "Виклик"
 
 #: Buttons.qml:37
 msgid "Stroke"
@@ -297,7 +297,7 @@ msgstr "Нетипове делегування дій"
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr "Змінити"
+msgstr "Редагувати"
 
 #: NewListItems.qml:114
 msgid "Move"
@@ -459,7 +459,7 @@ msgstr "Пароль"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr "Числа"
+msgstr "Номери"
 
 #: TextInputs.qml:78
 msgid "Read-only"
