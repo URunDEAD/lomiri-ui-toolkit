@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-14 15:47+0000\n"
-"Last-Translator: Sergii Horichenko <m@sgg.im>\n"
+"PO-Revision-Date: 2023-01-15 00:11+0000\n"
+"Last-Translator: Dan <denqwerta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/uk/>\n"
 "Language: uk\n"
@@ -265,11 +265,11 @@ msgstr "Згрупований список"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr "LomiriListView"
+msgstr "Перегляд списку Lomiri"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr "ExpandablesColumn"
+msgstr "Розгорнутий стовпець"
 
 #: ListItems.qml:364
 msgid "Expandable"
@@ -346,7 +346,7 @@ msgstr "Нетипова висота контейнера"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr "Немає початкового вибору, можливе гортання"
+msgstr "Немає початкового вибору, можна прокручувати."
 
 #: Pickers.qml:31
 msgid "Linear"
