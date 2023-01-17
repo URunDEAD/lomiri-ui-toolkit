@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-07 17:49+0000\n"
+"PO-Revision-Date: 2023-01-19 14:52+0000\n"
 "Last-Translator: Daniel Frost <one@frostinfo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/de/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.15.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: About.qml:34
@@ -296,7 +296,7 @@ msgstr "Benutzerdefinierter Aktionshandler"
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr "Bearbeiten"
+msgstr "Ändern"
 
 #: NewListItems.qml:114
 msgid "Move"
