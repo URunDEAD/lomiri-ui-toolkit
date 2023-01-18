@@ -8,44 +8,47 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-01-19 14:52+0000\n"
+"Last-Translator: Asahi 95 <taiseiwashington@tutamail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.15.1\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "について..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "短いリスト"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "スロット数"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "長いリスト"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "無効"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "数値アニメーション"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "標準"
 
 #: Animations.qml:58
 msgid "Standard Durations"
@@ -86,11 +89,11 @@ msgstr ""
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "アイコン"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "アイコン＋本文"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
