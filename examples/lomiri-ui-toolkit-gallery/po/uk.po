@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-15 00:11+0000\n"
-"Last-Translator: Dan <denqwerta@gmail.com>\n"
+"PO-Revision-Date: 2023-01-20 15:14+0000\n"
+"Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/uk/>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.15.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:14+0000\n"
 
 #: About.qml:34
@@ -44,7 +44,7 @@ msgstr "Вимкнено"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr "Анімація номера"
+msgstr "Цифрова анімація"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
@@ -58,7 +58,7 @@ msgstr "Стандартні тривалості"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr "Прилипання"
+msgstr "Захват"
 
 #: Animations.qml:98
 msgid "Fast"
@@ -87,7 +87,7 @@ msgstr "Колір"
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr "Виклик %1"
+msgstr "Набрати %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
