@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-20 15:14+0000\n"
+"PO-Revision-Date: 2023-01-21 17:30+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/ru/>\n"
@@ -161,7 +161,7 @@ msgstr "Подзаголовок"
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "Вторичная метка"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
@@ -169,11 +169,11 @@ msgstr "Тонкий разделитель"
 
 #: ListItems.qml:73
 msgid "Progression"
-msgstr ""
+msgstr "Прогрессия"
 
 #: ListItems.qml:82
 msgid "Single value"
-msgstr ""
+msgstr "Однозначное значение"
 
 #: ListItems.qml:86
 msgid "Value"
@@ -213,7 +213,7 @@ msgstr "Выбор пункта"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "Расширение"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
@@ -249,7 +249,7 @@ msgstr "Управление"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr ""
+msgstr "Съемный"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
@@ -265,15 +265,15 @@ msgstr "Сгруппированный список"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "Просмотр списка Lomiri"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "Расширяемый столбец"
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "Расширяемый"
 
 #: NewListItems.qml:39
 msgid "Colored"
@@ -281,19 +281,19 @@ msgstr "Цветной"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "Цвет подсветки"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "Начальные действия"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "Завершающие действия"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "Пользовательский обработчик действий"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -305,16 +305,16 @@ msgstr "Переместить"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "Стандарт"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "Цветной разделитель"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "Неизменный"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
@@ -329,14 +329,17 @@ msgid "This is the second value"
 msgstr "Это второе значение"
 
 #: OptionSelectors.qml:35
+#, fuzzy
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
+"nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "Жила-была история, которую никто не рассказывал."
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
@@ -348,27 +351,27 @@ msgstr "Нет первоначального выбора, выполните �
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Линейный"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Круговой"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Бесконечный"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Часы"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "Наложение"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "Мерцающий"
 
 #: Popover.qml:74
 msgid "Action #1"
@@ -392,11 +395,11 @@ msgstr "Действие #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "Полоса выполнения"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Без метки"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
@@ -404,11 +407,11 @@ msgstr "Индикатор активности"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Размеры"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
@@ -418,7 +421,7 @@ msgstr ""
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Название"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
@@ -431,23 +434,23 @@ msgstr "Постоянное обновление"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "Диапазон"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Метки"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Маленький"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Большой"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
@@ -455,7 +458,7 @@ msgstr "Вводите сюда..."
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: TextInputs.qml:67
 msgid "Numbers"
@@ -463,44 +466,44 @@ msgstr "Цифры"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "Только для чтения"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "Здесь нельзя писать"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "Взаимодействие запрещено"
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "Форматированный текст"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "Не отмечено"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "Отмечено"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "Соотношение"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Радиус"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "Градиент"
