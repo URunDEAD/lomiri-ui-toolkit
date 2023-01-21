@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-20 15:14+0000\n"
+"PO-Revision-Date: 2023-01-21 17:30+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/uk/>\n"
@@ -213,11 +213,11 @@ msgstr "Вибір пункту"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr "Розширяється"
+msgstr "Розширення"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr "Позначення багатьох пунктів"
+msgstr "Позначення декількох пунктів"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
@@ -249,11 +249,11 @@ msgstr "Керування"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr "Придатний до вилучення"
+msgstr "Знімний"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr "Проведіть, щоб вилучити"
+msgstr "Проведіть для вилучення"
 
 #: ListItems.qml:215
 msgid "Reset"
@@ -269,7 +269,7 @@ msgstr "Перегляд списку Lomiri"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr "Розгорнутий стовпець"
+msgstr "Розсувний стовпець"
 
 #: ListItems.qml:364
 msgid "Expandable"
@@ -281,7 +281,7 @@ msgstr "З кольором"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr "Колір позначення"
+msgstr "Колір підсвітлення"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
@@ -293,7 +293,7 @@ msgstr "Завершальні дії"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr "Нетипове делегування дій"
+msgstr "Користувацька обробка дій"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -305,7 +305,7 @@ msgstr "Пересунути"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr "Основні"
+msgstr "Стандарт"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
@@ -329,6 +329,7 @@ msgid "This is the second value"
 msgstr "Це друге значення"
 
 #: OptionSelectors.qml:35
+#, fuzzy
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
@@ -370,7 +371,7 @@ msgstr "Накладання"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr "Блимання"
+msgstr "Мерехтливий"
 
 #: Popover.qml:74
 msgid "Action #1"
@@ -394,7 +395,7 @@ msgstr "Дія 5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr "Смужка поступу"
+msgstr "Смуга прогресу"
 
 #: ProgressBars.qml:59
 msgid "No label"
@@ -418,16 +419,16 @@ msgstr "Вигляд Sheet ще недостатньо опрацьовано, �
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr "Заголовок"
+msgstr "Назва"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr "Поточна значення: %1"
+msgstr "Актуальне значення: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr "Інтерактивне оновлення"
+msgstr "Постійне оновлення"
 
 #: Sliders.qml:57
 msgid "Range"
@@ -483,15 +484,15 @@ msgstr "Текст із форматуванням"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr "Непозначений"
+msgstr "Не позначено"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr "Позначений"
+msgstr "Позначено"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr "Вигляд"
+msgstr "Співвідношення"
 
 #: LomiriShape.qml:73
 msgid "Radius"
