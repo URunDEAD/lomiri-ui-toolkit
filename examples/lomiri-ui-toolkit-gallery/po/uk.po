@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-22 18:05+0000\n"
+"PO-Revision-Date: 2023-01-30 11:40+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:14+0000\n"
 
 #: About.qml:34
@@ -329,13 +329,11 @@ msgid "This is the second value"
 msgstr "Це друге значення"
 
 #: OptionSelectors.qml:35
-#, fuzzy
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
-"nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+"Грішний джиґіт, що хотів у Францію, позбувався цієї думки з'їдаючи трюфель."
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
