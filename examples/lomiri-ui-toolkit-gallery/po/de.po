@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-02-01 21:15+0000\n"
+"PO-Revision-Date: 2023-02-06 03:00+0000\n"
 "Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/de/>\n"
@@ -476,7 +476,7 @@ msgstr "Keine Interaktion erlaubt"
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr "Vorgabe"
+msgstr "Standard"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
