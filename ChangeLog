@@ -1,6 +1,471 @@
+2023-02-06 Mike Gabriel
+
+        * Release 1.3.5000 (HEAD -> main, tag: 1.3.5000)
+
+2023-02-05 gnu-ewm
+
+        * Translated using Weblate (Polish) (f122a2ee9)
+
+2023-02-04 Mike Gabriel
+
+        * Translated using Weblate (German) (fd14e4aee)
+
+2023-01-31 Mike Gabriel
+
+        * Translated using Weblate (German) (eead19dee)
+
+2023-01-30 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (4f1f1a826)
+        * Translated using Weblate (Russian) (5573f4b0e)
+        * Translated using Weblate (Ukrainian) (45c496e5d)
+
+2023-01-26 gnu-ewm
+
+        * Translated using Weblate (Polish) (a2395d610)
+
+2023-01-24 gnu-ewm
+
+        * Translated using Weblate (Polish) (62e248d2b)
+
+2023-01-21 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (d9f470eb7)
+        * Translated using Weblate (Russian) (74ee9bada)
+        * Translated using Weblate (Ukrainian) (b4484f76f)
+
+2023-01-20 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (9306d3bb5)
+
+2023-01-21 Sergii Horichenko
+
+        * Translated using Weblate (German) (c83597843)
+
+2023-01-20 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (54e8ce1bc)
+        * Translated using Weblate (Russian) (3e89c634e)
+
+2023-01-19 Daniel Frost
+
+        * Translated using Weblate (German) (c5dde6b53)
+
+2023-01-18 Asahi 95
+
+        * Translated using Weblate (Japanese) (2d4303730)
+
+2023-01-17 Daniel Frost
+
+        * Translated using Weblate (German) (7803b6fd8)
+
+2023-01-15 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (4fa793d2d)
+        * Translated using Weblate (Russian) (0d31eebe7)
+
+2023-01-14 Dan
+
+        * Translated using Weblate (Ukrainian) (a14a55c3e)
+        * Translated using Weblate (Ukrainian) (990a3a68b)
+
+2023-01-13 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (d640ccac8)
+        * Translated using Weblate (Russian) (64c1eebe0)
+
+2023-01-13 Timothy G
+
+        * Translated using Weblate (French) (15a3a13c6)
+        * Translated using Weblate (French) (30eb78f93)
+
+2023-01-11 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/22-compat-theme' into 'main'
+          (f6117cf69)
+
+2023-01-10 Ratchanan Srirattanamet
+
+        * src/imports-compat: add more compat types for Themes.Ambiance
+          (ae0722622)
+          Fixes:
+          https://gitlab.com/ubports/development/core/lomiri-ui-toolkit/-/issues/22
+
+2023-01-11 Dan
+
+        * Translated using Weblate (Ukrainian) (e239d99cc)
+        * Translated using Weblate (Ukrainian) (4c71ff6f3)
+
+2023-01-10 Dan
+
+        * Translated using Weblate (Ukrainian) (6cfa01812)
+
+2023-01-06 Daniel Frost
+
+        * Translated using Weblate (German) (cd687bbb8)
+
+2023-01-04 Muhammad
+
+        * Translated using Weblate (Urdu) (213a5db13)
+
+2023-01-05 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (7114c6be7)
+
+2023-01-05 Mike Gabriel
+
+        * examples/lomiri-ui-toolkit-gallery/po/: Rename Chinese translation
+          files to <country>_<region>.po pattern. (ac408b2fb)
+        * Revert "Deleted translation using Weblate (Chinese (Traditional,
+          Hong Kong))" (ceb922f81)
+        * Revert "Deleted translation using Weblate (Chinese (Traditional,
+          Hong Kong))" (7a707d225)
+        * Revert "Added translation using Weblate (Chinese (Traditional, Hong
+          Kong))" (4a2c7c071)
+        * Revert "Added translation using Weblate (Chinese (Traditional, Hong
+          Kong))" (24e919623)
+
+2023-01-04 Anonymous
+
+        * Translated using Weblate (Pampanga) (c8022525b)
+        * Translated using Weblate (Chinese (Min Nan)) (73048d74e)
+        * Translated using Weblate (Kurdish (Southern)) (8b7fe3695)
+        * Translated using Weblate (French (Switzerland)) (a25c96597)
+        * Translated using Weblate (Kurdish (Northern)) (8c51c29ba)
+        * Translated using Weblate (Shan) (636591d9e)
+        * Translated using Weblate (Bemba) (ef41e2975)
+        * Translated using Weblate (Oromo) (d23e38657)
+        * Translated using Weblate (Dhivehi) (340a73cd2)
+        * Translated using Weblate (Kabyle) (eda8120f4)
+        * Translated using Weblate (Nyanja) (aa6c5ca48)
+        * Translated using Weblate (Lojban) (e471d2f86)
+        * Translated using Weblate (English (United States)) (bcd977110)
+        * Translated using Weblate (Sinhala) (16bc75128)
+        * Translated using Weblate (Macedonian) (547f19d4a)
+        * Translated using Weblate (Maori) (e36be2be3)
+        * Translated using Weblate (Malayalam) (bb78674e0)
+        * Translated using Weblate (Friulian) (3d9f2f2ed)
+        * Translated using Weblate (Malagasy) (620607125)
+        * Translated using Weblate (Icelandic) (3903b70be)
+        * Translated using Weblate (Pashto) (3e65e7ef6)
+        * Translated using Weblate (Telugu) (af7b98bca)
+        * Translated using Weblate (Tajik) (b139b4843)
+        * Translated using Weblate (Turkmen) (39e6f7d10)
+        * Translated using Weblate (Luxembourgish) (c23378730)
+        * Translated using Weblate (Pampanga) (4f0ff9f58)
+        * Translated using Weblate (Chinese (Min Nan)) (6b3dd20b8)
+        * Translated using Weblate (Kurdish (Southern)) (2ce94e0f5)
+        * Translated using Weblate (French (Switzerland)) (659c79cdd)
+        * Translated using Weblate (Kurdish (Northern)) (74aca65bb)
+        * Translated using Weblate (Shan) (b03b5b853)
+        * Translated using Weblate (Bemba) (6b6991e03)
+        * Translated using Weblate (Oromo) (e1f4b1e66)
+        * Translated using Weblate (Dhivehi) (bfae94ac8)
+        * Translated using Weblate (Kabyle) (016c07ac6)
+        * Translated using Weblate (Nyanja) (f1804fb6e)
+        * Translated using Weblate (Sindhi) (db5048346)
+        * Translated using Weblate (Burmese) (8e2350ffe)
+        * Translated using Weblate (Lojban) (9a908410a)
+        * Translated using Weblate (English (United States)) (e96ea819c)
+        * Translated using Weblate (Macedonian) (a9edc18b0)
+        * Translated using Weblate (Maori) (0aab76ed5)
+        * Translated using Weblate (Malayalam) (7a17a7fe9)
+        * Translated using Weblate (Friulian) (cd42cb5c9)
+        * Translated using Weblate (Malagasy) (ac8925d81)
+        * Translated using Weblate (Icelandic) (72c4ff885)
+        * Translated using Weblate (Pashto) (e8490bdeb)
+        * Translated using Weblate (Asturian) (eeb0b4d00)
+        * Translated using Weblate (Bulgarian) (43e265bb0)
+        * Translated using Weblate (Telugu) (29ab470be)
+        * Translated using Weblate (Tajik) (363ffa23b)
+        * Translated using Weblate (Turkmen) (d330a7d27)
+        * Translated using Weblate (Lao) (3e2371795)
+        * Translated using Weblate (Lingala) (19612ba62)
+        * Translated using Weblate (Luxembourgish) (7a605a60d)
+        * Translated using Weblate (Valencian) (087431155)
+
+2023-01-04 Muhammad
+
+        * Translated using Weblate (Urdu) (a1fc16bd4)
+
+2023-01-04 Anonymous
+
+        * Translated using Weblate (Urdu) (181036be8)
+
+2023-01-04 Muhammad
+
+        * Translated using Weblate (Urdu) (da434c4aa)
+
+2023-01-04 Anonymous
+
+        * Translated using Weblate (Tetum) (e34872e2a)
+        * Translated using Weblate (Ido) (308c2918b)
+        * Translated using Weblate (Ido) (0bb53aece)
+        * Translated using Weblate (Tetum) (7694cbba1)
+        * Translated using Weblate (Scots) (5ef8f5169)
+        * Translated using Weblate (Scots) (081483cc2)
+        * Translated using Weblate (Franco-Provençal) (ab91c8507)
+        * Translated using Weblate (Franco-Provençal) (bee121fe1)
+        * Translated using Weblate (Vietnamese) (fefd2fb42)
+        * Translated using Weblate (Sindhi) (e838aaee3)
+        * Translated using Weblate (Nepali) (802a49c59)
+        * Translated using Weblate (Burmese) (d60a76270)
+        * Translated using Weblate (Marathi) (68aa763da)
+        * Translated using Weblate (Lao) (363a630f7)
+        * Translated using Weblate (Lingala) (dbc9666c6)
+        * Translated using Weblate (Estonian) (8c8211d46)
+        * Translated using Weblate (Bulgarian) (c436080fb)
+
+2023-01-04 Weblate
+
+        * Added translation using Weblate (Chinese (Traditional, Hong Kong))
+          (fe951a19f)
+        * Added translation using Weblate (Chinese (Traditional, Hong Kong))
+          (f8c580e5f)
+
+2023-01-04 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (c910442b0)
+
+2023-01-04 Mike Gabriel
+
+        * Deleted translation using Weblate (Chinese (Traditional, Hong
+          Kong)) (1675b9205)
+        * Deleted translation using Weblate (Chinese (Traditional, Hong
+          Kong)) (802ee9cd5)
+
+2023-01-04 Weblate
+
+        * Added translation using Weblate (Pampanga) (ddb1dd4b4)
+        * Added translation using Weblate (Chinese (Min Nan)) (10698e28c)
+        * Added translation using Weblate (Kurdish (Southern)) (364134c15)
+        * Added translation using Weblate (French (Switzerland)) (4c0568484)
+        * Added translation using Weblate (Kurdish (Northern)) (e9fa0ef6c)
+        * Added translation using Weblate (Shan) (f006e9ace)
+        * Added translation using Weblate (Bemba) (37cdf4e80)
+        * Added translation using Weblate (Oromo) (07a3507ae)
+        * Added translation using Weblate (Afar) (805f0c7f4)
+        * Added translation using Weblate (Dhivehi) (ab306d901)
+        * Added translation using Weblate (Bengali (Bangladesh)) (f244672e6)
+        * Added translation using Weblate (Kabyle) (393931e5a)
+        * Added translation using Weblate (Nyanja) (fc4994f91)
+        * Added translation using Weblate (English (Canada)) (8041d5fb7)
+        * Added translation using Weblate (Lojban) (2fe9b1d94)
+        * Added translation using Weblate (Sardinian) (adff65845)
+        * Added translation using Weblate (English (United States))
+          (a586b2cdb)
+        * Added translation using Weblate (Sinhala) (cd4964ff4)
+        * Added translation using Weblate (Georgian) (25d57e4df)
+        * Added translation using Weblate (Macedonian) (5f11fbe26)
+        * Added translation using Weblate (Maori) (c69fc7130)
+        * Added translation using Weblate (Malayalam) (f9cb6f51c)
+        * Added translation using Weblate (Friulian) (85078e3a9)
+        * Added translation using Weblate (Malagasy) (ce04077a3)
+        * Added translation using Weblate (Armenian) (fa6451790)
+        * Added translation using Weblate (Icelandic) (2f4f815e1)
+        * Added translation using Weblate (Pashto) (18e3112fa)
+        * Added translation using Weblate (Telugu) (3c91330d6)
+        * Added translation using Weblate (Tajik) (6484c8320)
+        * Added translation using Weblate (Turkmen) (4a4150f71)
+        * Added translation using Weblate (Luxembourgish) (e01ad4e53)
+        * Added translation using Weblate (Gujarati) (6f864d5b4)
+        * Added translation using Weblate (Pampanga) (9096c92d8)
+        * Added translation using Weblate (Chinese (Min Nan)) (4edd482ac)
+        * Added translation using Weblate (Kurdish (Southern)) (438ce3d34)
+        * Added translation using Weblate (French (Switzerland)) (e00222ece)
+        * Added translation using Weblate (Kurdish (Northern)) (e6def897f)
+        * Added translation using Weblate (Shan) (b45d75c6a)
+        * Added translation using Weblate (Bemba) (9b052fa9b)
+        * Added translation using Weblate (Oromo) (9cf8c2d1d)
+        * Added translation using Weblate (Afar) (3a5d23ce5)
+        * Added translation using Weblate (Dhivehi) (90abd63d1)
+        * Added translation using Weblate (Bengali (Bangladesh)) (c03ac9089)
+        * Added translation using Weblate (Kabyle) (099061b4a)
+        * Added translation using Weblate (Nyanja) (44131483e)
+        * Added translation using Weblate (French (Canada)) (b9acc50b5)
+        * Added translation using Weblate (English (Canada)) (2df629506)
+        * Added translation using Weblate (English (Australia)) (9ada83f08)
+        * Added translation using Weblate (Sindhi) (a3607129e)
+        * Added translation using Weblate (Burmese) (ba7ca33b9)
+        * Added translation using Weblate (Lojban) (4b829c1cb)
+        * Added translation using Weblate (Sardinian) (2d761ff24)
+        * Added translation using Weblate (English (United States))
+          (9b69db656)
+        * Added translation using Weblate (Slovenian) (eaeae4a9e)
+        * Added translation using Weblate (Sinhala) (23ef90963)
+        * Added translation using Weblate (Khmer (Central)) (b16b72987)
+        * Added translation using Weblate (Korean) (165c45cda)
+        * Added translation using Weblate (Albanian) (6414788f8)
+        * Added translation using Weblate (Serbian) (4a2c04116)
+        * Added translation using Weblate (Georgian) (c6b7c4a93)
+        * Added translation using Weblate (Persian) (773b4c5e7)
+        * Added translation using Weblate (Indonesian) (30c70ec46)
+        * Added translation using Weblate (Azerbaijani) (5aa997527)
+        * Added translation using Weblate (Amharic) (c2aa2685f)
+        * Added translation using Weblate (Malay) (1914f368c)
+        * Added translation using Weblate (Macedonian) (6c126b4e0)
+        * Added translation using Weblate (Maori) (5f56e68ce)
+        * Added translation using Weblate (Malayalam) (f20453293)
+        * Added translation using Weblate (Friulian) (164f639a0)
+        * Added translation using Weblate (Malagasy) (7401e6478)
+        * Added translation using Weblate (Hebrew) (42fb03dde)
+        * Added translation using Weblate (Hindi) (35cb77aa4)
+        * Added translation using Weblate (Croatian) (972c64fa2)
+        * Added translation using Weblate (Armenian) (3d2841497)
+        * Added translation using Weblate (English (United Kingdom))
+          (1815d5c1c)
+        * Added translation using Weblate (Icelandic) (bca433f88)
+        * Added translation using Weblate (Punjabi) (2fe553e85)
+        * Added translation using Weblate (Pashto) (634a27c79)
+        * Added translation using Weblate (Czech) (8c7dcbe3c)
+        * Added translation using Weblate (Welsh) (997ca016c)
+        * Added translation using Weblate (Japanese) (f6a3d3ab9)
+        * Added translation using Weblate (Bosnian) (41c761a8f)
+        * Added translation using Weblate (Asturian) (04573e721)
+        * Added translation using Weblate (Bulgarian) (2635ffa63)
+        * Added translation using Weblate (Belarusian) (47357c9de)
+        * Added translation using Weblate (Romanian) (1a7f2d94a)
+        * Added translation using Weblate (Basque) (294d9d270)
+        * Added translation using Weblate (Esperanto) (216efa869)
+        * Added translation using Weblate (Danish) (a3e971ee3)
+        * Added translation using Weblate (Chinese (Traditional, Hong Kong))
+          (9dfc990e3)
+        * Added translation using Weblate (Tamil) (344316cae)
+        * Added translation using Weblate (Telugu) (0745789e9)
+        * Added translation using Weblate (Tajik) (44d72e8d9)
+        * Added translation using Weblate (Thai) (1fe0110cf)
+        * Added translation using Weblate (Turkmen) (5724b7ac3)
+        * Added translation using Weblate (Lithuanian) (9e6c5dfe3)
+        * Added translation using Weblate (Latvian) (aa9ac3ef3)
+        * Added translation using Weblate (Lao) (24e5d282d)
+        * Added translation using Weblate (Lingala) (ed04e8a2d)
+        * Added translation using Weblate (Luxembourgish) (454958d84)
+        * Added translation using Weblate (Valencian) (b1ae2a805)
+        * Added translation using Weblate (Gujarati) (03038ef6e)
+
+2023-01-03 Muhammad
+
+        * Translated using Weblate (Urdu) (c8e15973b)
+
+2023-01-03 Weblate
+
+        * Added translation using Weblate (Urdu) (ca2af4999)
+        * Added translation using Weblate (Urdu) (ca36f1ae2)
+        * Added translation using Weblate (Tetum) (19e1bc302)
+        * Added translation using Weblate (Ido) (38582aeaa)
+        * Added translation using Weblate (Ido) (31512c156)
+        * Added translation using Weblate (Tetum) (58911f14a)
+        * Added translation using Weblate (Scots) (3b823769b)
+        * Added translation using Weblate (Scots) (e577fa31b)
+        * Added translation using Weblate (Franco-Provençal) (67e4a2096)
+        * Added translation using Weblate (Franco-Provençal) (667e9b8a9)
+
+2023-01-03 Hosted Weblate
+
+        * Update translation files (979084452)
+        * Update translation files (6fed8c2dd)
+
+2022-12-12 Marius Gripsgard
+
+        * Merge branch 'personal/fredldotme/ucunits' into 'main' (7d65580fb)
+
+2022-12-05 Alfred Neumayer
+
+        * tests: Adapt qquick_image_extension (b1ea31492)
+
+2022-11-30 Alfred Neumayer
+
+        * LomiriToolkit: Check for QML Engine existance before scaling images
+          (ab928907c)
+
+2022-11-26 Alfred Neumayer
+
+        * LomiriToolkit: nullptr checks & different "reference screen" for
+          OSK (5f6ec032f)
+
+2022-11-24 Alfred Neumayer
+
+        * LomiriToolkit: Hang onto screen added/removed signals for gridUnit
+          calculation (8242d0c9b)
+
+2022-11-20 Alfred Neumayer
+
+        * LomiriToolkit: Get scaling directly from the nativeInterface first
+          (0df3bde6a)
+
+2022-11-23 Mike Gabriel
+
+        * Merge branch 'mr/fix-mispelled-API-name' into 'main' (0754a7017)
+
+2021-05-18 Mike Gabriel
+
+        * components.api (et al.): Fix misspelled property name. (45c965e9f)
+
+2022-11-22 Mike Gabriel
+
+        * Merge branch 'main_-_datepickersuru' into 'main' (2f5057548)
+
+2022-09-23 Lionel Duboeuf
+
+        * set better contrast for picker in suru dark (1d890ff4c)
+
+2022-08-11 Ratchanan Srirattanamet
+
+        * Merge branch 'fix-compat-layer' into 'main' (bdf35cdab)
+
+2022-08-11 Guido Berhoerster
+
+        * Add Ubuntu.Components.UbuntuAnimation to compatibility layer
+          (b0909deae)
+        * Add Ubuntu.Components.UbuntuColors to compatibility layer
+          (7488fc0b9)
+
+2022-07-21 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/ubuntu-test-compat' into 'main'
+          (515ab0629)
+
+2022-07-16 Ratchanan Srirattanamet
+
+        * src/import-compat: add compatibility layer for Ubuntu.Test
+          (ced6bf907)
+
+2022-07-21 Ratchanan Srirattanamet
+
+        * Merge branch 'mr/lomiri-namespace-in-binary-names' into 'main'
+          (90f82670a)
+
+2022-07-21 Mike Gabriel
+
+        * debian/lomiri-app-launch-profiler.install: Adjust executable names
+          to name changes in the upstream code. (225becf84)
+
+2021-05-18 Mike Gabriel
+
+        * app-launch-profile: Use lomiri namespace in binary file names.
+          (061e162fb)
+
+2022-07-19 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/useless-pro' into 'main'
+          (66da7d33b)
+
+2021-10-16 Ratchanan Srirattanamet
+
+        * src/imports: remove useless *Module.pro files (a6f009b7c)
+
+2021-10-09 Ratchanan Srirattanamet
+
+        * src: remove stale Lomiri folder (f6576ff8a)
+
+2022-06-24 Guido Berhoerster
+
+        * Merge branch 'mr/fix-misspelled-protocol-call' into 'main'
+          (2806cdf9b)
+
 2022-06-19 Marius Gripsgard
 
-        * Release 1.3.4000 (HEAD -> main, tag: 1.3.4000)
+        * Release 1.3.4000 (07ae0dbd3) (tag: 1.3.4000)
 
 2022-06-03 Ratchanan Srirattanamet
 
@@ -132,6 +597,8 @@
 
 2021-05-18 Mike Gabriel
 
+        * src/LomiriToolkit/ucactioncontext.cpp: Fix misspelled word in
+          CONTEXT_TRACE call. (421a19473)
         * grammar fix: allows to -> allows one to (b4b26da05)
 
 2021-05-17 Mike Gabriel
