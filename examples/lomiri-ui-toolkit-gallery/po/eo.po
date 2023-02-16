@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-02-16 22:38+0000\n"
+"Last-Translator: phlostically <phlostically@mailinator.com>\n"
+"Language-Team: Esperanto <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 #: About.qml:34
 msgid "About..."
@@ -138,7 +141,7 @@ msgstr ""
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "Etoso"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -448,7 +451,7 @@ msgstr ""
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "Pasvorto"
 
 #: TextInputs.qml:67
 msgid "Numbers"
@@ -468,7 +471,7 @@ msgstr ""
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "Implicite"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
