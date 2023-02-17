@@ -215,7 +215,8 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: ${misc:Depends},
+Depends: liblomirigestures5 (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri gestures library development files
  This package contains the development files for
@@ -227,7 +228,8 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: ${misc:Depends},
+Depends: liblomirigestures5-dev (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri gestures library private development files
  This package contains the private development files for
@@ -250,7 +252,8 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: ${misc:Depends},
+Depends: liblomirimetrics5 (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri metrics library development files
  This package contains the development files for the
@@ -262,7 +265,8 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: ${misc:Depends},
+Depends: liblomirimetrics5-dev (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri metrics library private development files
  This package contains the private development files for
@@ -285,7 +289,8 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: ${misc:Depends},
+Depends: liblomiritoolkit5 (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri toolkit common library development files
  This package contains the development files for
@@ -297,7 +302,8 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: ${misc:Depends},
+Depends: liblomiritoolkit5-dev (= ${binary:Version}),
+         ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri toolkit common library private development files
  This package contains the private development files for
