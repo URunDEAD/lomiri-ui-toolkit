@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2023-01-22 18:05+0000\n"
+"PO-Revision-Date: 2023-02-21 15:39+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/ru/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
@@ -139,7 +139,7 @@ msgstr "ddd, d MMM' 'hh:mm"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:325
 msgid "ddd d MMM' 'HH:mm"
-msgstr "ddd d MMM' 'HH:mm"
+msgstr "ddd, d MMM' 'HH:mm"
 
 #: Lomiri/Components/plugin/privates/listitemdragarea.cpp:122
 msgid ""
@@ -207,9 +207,7 @@ msgstr "рассмотреть переопределение слота rebound
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
-msgstr ""
-"Игнорировать приоритет AfterItem ( Следующий Элемент ) для фильтров "
-"InverseMouse ( Перевернуть Мышь )"
+msgstr "Игнорирование приоритета AfterItem для фильтров InverseMouse."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
