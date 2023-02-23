@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-02-23 00:29+0000\n"
+"PO-Revision-Date: 2023-02-25 11:40+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/nl/>\n"
@@ -57,7 +57,7 @@ msgstr "Standaardduur"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "Vast"
 
 #: Animations.qml:98
 msgid "Fast"
@@ -73,7 +73,7 @@ msgstr "Slaap"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "Gesprek"
 
 #: Buttons.qml:37
 msgid "Stroke"
@@ -86,7 +86,7 @@ msgstr "Kleur"
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "Gesprek %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
@@ -146,153 +146,153 @@ msgstr "Thema"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "Voorafgaande en gevolgacties"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "Label"
 
 #: ListItems.qml:33
 msgid "Subtitled"
-msgstr ""
+msgstr "Ondertitel"
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "Secundair label"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "DunneScheiding"
 
 #: ListItems.qml:73
 msgid "Progression"
-msgstr ""
+msgstr "Voortgang"
 
 #: ListItems.qml:82
 msgid "Single value"
-msgstr ""
+msgstr "Enkele waarde"
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "Waarde"
 
 #: ListItems.qml:91
 msgid "Multi value"
-msgstr ""
+msgstr "Meerdere waarden"
 
 #: ListItems.qml:95 ListItems.qml:113 ListItems.qml:122 ListItems.qml:132
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "Waarde 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "Waarde 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "Waarde 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "Waarde 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "Itemselectie"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "Uitvouwen"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr ""
+msgstr "Meerkeuze"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "Aangepast model"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "Waarde 5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "Waarde 6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
 msgid "Value 7"
-msgstr ""
+msgstr "Waarde 7"
 
 #: ListItems.qml:168 ListItems.qml:183 OptionSelectors.qml:91
 #: OptionSelectors.qml:106
 msgid "Value 8"
-msgstr ""
+msgstr "Waarde 8"
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "Bediening"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr ""
+msgstr "Verwijderbaar"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr ""
+msgstr "Verschuif om te verwijderen"
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "Standaardwaarden"
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr ""
+msgstr "Gegroepeerde lijst"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "LomiriLijstWeergave"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "UitklapbareKolom"
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "Uitklapbaar"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "Ingekleurd"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "Markeerkleur"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "Voorafgaande acties"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "Gevolgacties"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "Aangepaste actieverwijzingen"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -300,16 +300,16 @@ msgstr "Bewerken"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "Verplaatsen"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "Algemeen"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "Gekleurde scheiding"
 
 #: NewListItems.qml:163
 msgid "Immutable"
