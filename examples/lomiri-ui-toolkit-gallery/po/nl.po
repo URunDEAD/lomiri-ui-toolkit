@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-02-25 11:40+0000\n"
+"PO-Revision-Date: 2023-02-27 18:38+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/nl/>\n"
@@ -43,7 +43,7 @@ msgstr "Uitgeschakeld"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr "NummerAnimatie"
+msgstr "GetalAnimatie"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
@@ -313,142 +313,146 @@ msgstr "Gekleurde scheiding"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "Onaanpasbaar"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "Geen scheiding"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "Keuzelijst"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "Dit is de tweede waarde"
 
 #: OptionSelectors.qml:35
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
+"nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "Er was eens… een verhaal dat niemand vertelde."
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "Aangepaste containerhoogte"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "Geen eerste keuze; verschuifbaar."
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Lineair"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Circulair"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Oneindig"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Klok"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "Zwevende laag"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "Snel verschuifbaar"
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "Actie #1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "Actie #2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "Actie #3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "Actie #4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "Actie #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "Voortgangsbalk"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Geen label"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "Activiteitsindicator"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Groottes"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "Ingeschakeld"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
 msgstr ""
+"De vormgeving van het blad is nog niet af en ziet er daarom nog niet goed "
+"uit."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "Daadwerkelijke waarde: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "Live-update"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "Bereik"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Labels"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Klein"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Gemiddeld"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Groot"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "Typ eens iets…"
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -456,19 +460,19 @@ msgstr "Wachtwoord"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr "Nummers"
+msgstr "Getallen"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "Alleen-lezen"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "Verboden te typen"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "Geen interactie toegestaan"
 
 #: TextInputs.qml:107
 msgid "Default"
@@ -476,28 +480,28 @@ msgstr "Standaard"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "Rijk opgemaakt"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "Onaangekruist"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "Aangekruist"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "Verhouding"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Straal"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Afbeelding"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "Kleurverloop"
