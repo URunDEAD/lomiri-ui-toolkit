@@ -1,6 +1,50 @@
+2023-02-27 Mike Gabriel
+
+        * Release 1.3.5010 (HEAD -> main, tag: 1.3.5010)
+
+2023-02-24 gnu-ewm
+
+        * Translated using Weblate (Polish) (326d133d1)
+
+2023-02-23 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (ca5dd9845)
+
+2023-02-22 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (185d4fc17)
+
+2023-02-20 Sergii Horichenko
+
+        * Translated using Weblate (Russian) (47240fe1d)
+        * Translated using Weblate (Ukrainian) (06dc47590)
+        * Translated using Weblate (Russian) (d084889ed)
+
+2023-02-19 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/dev-pkg-deps' into 'main'
+          (a71cd1313)
+
+2023-02-17 Ratchanan Srirattanamet
+
+        * debian/control: fix Depends of *-dev packages (7d57ed805)
+
+2023-02-16 phlostically
+
+        * Translated using Weblate (Esperanto) (44b9462c4)
+        * Translated using Weblate (Esperanto) (9081fefe8)
+
+2023-02-14 Luna Jernberg
+
+        * Translated using Weblate (Swedish) (f16e873f5)
+
+2023-02-08 gnu-ewm
+
+        * Translated using Weblate (Polish) (35bd3ddf4)
+
 2023-02-06 Mike Gabriel
 
-        * Release 1.3.5000 (HEAD -> main, tag: 1.3.5000)
+        * Release 1.3.5000 (5cf9d740c) (tag: 1.3.5000)
 
 2023-02-05 gnu-ewm
 
