@@ -41,29 +41,13 @@ cat $DOC_PATH/qdoc.err
 test ! -s $DOC_PATH/qdoc.err || exit 1
 echo docs: Offline done.
 
-eval "$QHELPGENERATOR -o '$DOC_PATH/lomiriuserinterfacetoolkit.qch' '$DOC_PATH/offline/lomiriuserinterfacetoolkit.qhp' | grep -v ' does not exist! Skipping it'"
+eval "$QHELPGENERATOR -o '$DOC_PATH/lomiriuserinterfacetoolkit.qch' '$DOC_PATH/html/lomiriuserinterfacetoolkit.qhp' | grep -v ' does not exist! Skipping it'"
 echo docs: qch done: $DOC_PATH
-
-# Online docs
-eval "$QDOC $SRC/lomiri-ui-toolkit-online.qdocconf 2> $DOC_PATH/qdoc.log"
-grep -v "error: Output file already exists; overwriting" $DOC_PATH/qdoc.log | grep "error: " > $DOC_PATH/qdoc.err
-cat $DOC_PATH/qdoc.err
-test ! -s $DOC_PATH/qdoc.err || exit 1
-echo docs: Online done.
 
 # Second qdoc pass, this time with indexes for cross-referencing.
 # If we don't do this, bugs in docs from other modules (Qt, Unity) fail our build
-eval "$QDOC $SRC/lomiri-ui-toolkit-offline-indexes.qdocconf 2> $DOC_PATH/qdoc.log"
-grep "error: " $DOC_PATH/qdoc.log | grep -v "error: Output file already exists" > $DOC_PATH/qdoc.err
-cat $DOC_PATH/qdoc.err
-test ! -s $DOC_PATH/qdoc.err || exit 1
-eval "$QDOC $SRC/lomiri-ui-toolkit-online-indexes.qdocconf 2> $DOC_PATH/qdoc.log"
+eval "$QDOC $SRC/lomiri-ui-toolkit-indexes.qdocconf 2> $DOC_PATH/qdoc.log"
 grep "error: " $DOC_PATH/qdoc.log | grep -v "error: Output file already exists" > $DOC_PATH/qdoc.err
 cat $DOC_PATH/qdoc.err
 test ! -s $DOC_PATH/qdoc.err || exit 1
 echo docs: Cross-referenced done.
-
-sed -r -i 's@(</p>)<p/>@\1@g' $DOC_PATH/html/*.html
-sed -r -i 's@(<a class="(next|prev)Page" href=".+">)(.+)(</a>)@<li>\1\3\4</li>@g' $DOC_PATH/html/*.html
-sed -r -i 's@(href="qmlmodule-lomiri-components0-lomiri-components-0-1.html">Basic QML Types)@href="overview-lomiri-sdk.html">Lomiri User Interface Toolkit@g' $DOC_PATH/html/*.html
-echo docs: HTML fixes done.

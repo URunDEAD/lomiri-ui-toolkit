@@ -19,11 +19,11 @@ generate_docs.commands = cd $$ROOT_SOURCE_DIR; SRC=$$ROOT_SOURCE_DIR/documentati
 # QMAKE_CLEAN can't remove a directory, thus this is needed.
 # https://stackoverflow.com/a/29853833
 clean_docs.depends = FORCE
-clean_docs.commands = rm -rf $$DOC_PATH/qdoc.log $$DOC_PATH/qdoc.err $$DOC_PATH/offline/ $$DOC_PATH/lomiriuserinterfacetoolkit.qch $$DOC_PATH/html/
+clean_docs.commands = rm -rf $$DOC_PATH/qdoc.log $$DOC_PATH/qdoc.err $$DOC_PATH/lomiriuserinterfacetoolkit.qch $$DOC_PATH/html/
 clean.depends += clean_docs
 QMAKE_EXTRA_TARGETS += clean_docs clean
 
-#install the online docs only when building outside of Qt
+# install HTML documentation when not building as a Qt submodule
 !qt_submodule_build{
     install_docs.files = $$shadowed($$ROOT_SOURCE_DIR)/documentation/html
     install_docs.path = /usr/share/lomiri-ui-toolkit/doc

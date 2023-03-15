@@ -1,3 +1,4 @@
+include(lomiri-ui-toolkit.qdocconf)
 indexes = \
     /usr/share/qt5/doc/qtqml/qtqml.index \
     /usr/share/qt5/doc/qtquick/qtquick.index \
