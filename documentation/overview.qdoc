@@ -18,7 +18,7 @@
      \page overview-lomiri-sdk.html overview
      \title Lomiri User Interface Toolkit
 
-     \part General Topics
+     \section1 General Topics
      \list
      \li \l{lomiri-whatsnew.html}{What's new in version 1.2?}
      \li \l{lomiri-theming.html}{Styling} components
@@ -30,21 +30,21 @@
      \li \l{Automatic State Saving} provides automatic property saving for components.
      \endlist
 
-     \part Basic QML Types
+     \section1 Basic QML Types
      Available through:
      \code
          import Lomiri.Components 1.3
      \endcode
      \annotatedlist lomiri
 
-     \part Gestures
+     \section1 Gestures
      Available through:
      \code
          import Lomiri.Components 1.3
      \endcode
      \annotatedlist lomiri-gestures
 
-     \part List views, list items
+     \section1 List views, list items
      Components with standardized view items, with conditional actions, multiselect
      and reordering support on scrollable views. Replaces the Lomiri.Components.ListItems
      module components.
@@ -55,7 +55,7 @@
      \endcode
      \annotatedlist lomiri-listitem
 
-     \part List Items module - deprecated
+     \section1 List Items module - deprecated
      This module contains the old set of list items.
 
      Available through:
@@ -64,42 +64,42 @@
      \endcode
      \annotatedlist lomiri-listitems
 
-     \part Pickers
+     \section1 Pickers
      Available through:
      \code
          import Lomiri.Components.Pickers 1.3
      \endcode
      \annotatedlist lomiri-pickers
 
-     \part Popovers, Sheets and Dialogs
+     \section1 Popovers, Sheets and Dialogs
      Available through:
      \code
          import Lomiri.Components.Popups 1.3
      \endcode
      \annotatedlist lomiri-popups
 
-     \part Layouting
+     \section1 Layouting
      Available through:
      \code
          import Lomiri.Layouts 1.0
      \endcode
      \annotatedlist lomiri-layouts
 
-     \part Theming Elements
+     \section1 Theming Elements
      Available through:
      \code
          import Lomiri.Components 1.3
      \endcode
      \annotatedlist theming
 
-     \part Theme module
+     \section1 Theme module
      Available through:
      \code
          import Lomiri.Components.Themes 1.3
      \endcode
      \annotatedlist theme-module
 
-     \part Style API
+     \section1 Style API
      The Style API defines the interface components use to style the visuals.
      Themes must make sure that these interfaces are all implemented.
      Available through:
@@ -108,35 +108,35 @@
      \endcode
      \annotatedlist style-api
 
-     \part Resolution Independence Items
+     \section1 Resolution Independence Items
      Available through:
      \code
          import Lomiri.Components 1.3
      \endcode
      \annotatedlist resolution-independence
 
-     \part Parsing Command-Line Arguments
+     \section1 Parsing Command-Line Arguments
      Available through:
      \code
          import Lomiri.Components 1.3
      \endcode
      \annotatedlist lomiri-commandline
 
-     \part Services
+     \section1 Services
      Available through:
      \code
          import Lomiri.Components 1.3
      \endcode
      \annotatedlist lomiri-services
 
-     \part Performance Metrics
+     \section1 Performance Metrics
      Available through:
      \code
          import Lomiri.PerformanceMetrics 1.0
      \endcode
      \annotatedlist lomiri-performance-metrics
 
-     \part Labs
+     \section1 Labs
      The Labs module contains a set of components which have unstable API. Those
      should not be used in applications as their interface may change any time.
      Available through:
@@ -145,7 +145,7 @@
      \endcode
      \annotatedlist lomiri-labs
 
-     \part Test extensions
+     \section1 Test extensions
      Available through:
      \code
          import Lomiri Test 1.3

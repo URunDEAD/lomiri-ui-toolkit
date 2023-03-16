@@ -26,7 +26,7 @@
     with visual fidelity, quality and usability.
 
 
-    \part Measurement Units
+    \section1 Measurement Units
 
     A new measurement unit is defined called the grid unit, abbreviated \b{\e gu}.
     1 grid unit translates to a given number of pixels depending on the type of
@@ -86,7 +86,7 @@
     }
     \endcode
 
-    \part Bitmaps
+    \section1 Bitmaps
 
     Vector graphics, fonts and programmatically drawn elements will usually scale well
     to the different devices. On the other hand, bitmaps will typically require a bit
@@ -121,7 +121,7 @@
     of 30 / 18 = 1.66667.
 
 
-    \part Fonts
+    \section1 Fonts
 
     It is critical for the font sizes to be consistent across Lomiri and to
     have a rhythm defining them.
