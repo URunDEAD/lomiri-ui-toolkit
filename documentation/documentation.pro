@@ -26,7 +26,7 @@ QMAKE_EXTRA_TARGETS += clean_docs clean
 # install HTML documentation when not building as a Qt submodule
 !qt_submodule_build{
     install_docs.files = $$shadowed($$ROOT_SOURCE_DIR)/documentation/html
-    install_docs.path = /usr/share/lomiri-ui-toolkit/doc
+    install_docs.path = /usr/share/doc/lomiri-ui-toolkit
     install_docs.CONFIG += no_check_exist directory no_build
     install_docs.depends = docs
     INSTALLS += install_docs
