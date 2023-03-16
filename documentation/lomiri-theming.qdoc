@@ -127,8 +127,8 @@
  * A typical example of such a style API is the PullToRefresh component's style:
  * \snippet Styles/1.2/PullToRefreshStyle.qml 0
  * The default style implementation can be found under Lomiri.Components.Themes.Ambiance
- * theme \l {http://bazaar.launchpad.net/~lomiri-sdk-team/lomiri-ui-toolkit/trunk/view/head:/src/imports/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml}
- * {PullToRefreshStyle.qml}.
+ * theme \l {https://gitlab.com/ubports/development/core/lomiri-ui-toolkit/-/blob/main/src/imports/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml}
+ * {src/imports/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml}.
  *
  * Beside these, component styles may provide default values for colors, fonts, widths,
  * margins, thicknesses.
