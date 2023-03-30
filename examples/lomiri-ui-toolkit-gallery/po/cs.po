@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-03-29 17:42+0000\n"
+"PO-Revision-Date: 2023-04-02 03:46+0000\n"
 "Last-Translator: Jozef Mlich <jmlich83@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/cs/>\n"
@@ -42,7 +42,7 @@ msgstr "Zakázáno"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "Číselná animace"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
@@ -263,7 +263,7 @@ msgstr "Seskupený seznam"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "LomiriListView"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
@@ -331,6 +331,8 @@ msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
+"nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
@@ -374,80 +376,80 @@ msgstr "Akce #1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "Akce #2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "Akce #3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "Akce #4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "Akce #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "Ukazetel průběhu"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Žádný popisek"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "Indikátor aktivity"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Velikosti"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "Povoleno"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
-msgstr ""
+msgstr "Vyzuální styl listu je rozpracovaný, takže vypadá na nic."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Nadpis"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "Vlastní hodnota: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "Na živo aktualizovaný"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "Rozsah"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Popisky"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Malý"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Střední"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Velký"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "Piš do mně..."
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -455,19 +457,19 @@ msgstr "Heslo"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "Čísla"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "Pouze pro čtení"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "Nikdo tady nepíše"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "Není povolena interakce"
 
 #: TextInputs.qml:107
 msgid "Default"
@@ -475,28 +477,28 @@ msgstr "Výchozí"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "Bohatý text"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "Nezaškrtnuto"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "Zaškrtnuto"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "Aspekt"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Poloměr"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Obrázek"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "Gradient"
