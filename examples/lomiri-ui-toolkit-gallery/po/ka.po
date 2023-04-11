@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-04-11 19:48+0000\n"
+"PO-Revision-Date: 2023-04-11 20:27+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/ka/>\n"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "გახსნა"
 
 #: Icons.qml:29
 msgid "Scaling"
@@ -141,7 +141,7 @@ msgstr ""
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "თემა"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -151,7 +151,7 @@ msgstr ""
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "ჭდე"
 
 #: ListItems.qml:33
 msgid "Subtitled"
@@ -358,7 +358,7 @@ msgstr ""
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "საათი"
 
 #: Pickers.qml:174
 msgid "Overlay"
