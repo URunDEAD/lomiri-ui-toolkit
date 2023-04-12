@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-04-11 20:27+0000\n"
+"PO-Revision-Date: 2023-04-12 16:20+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/ka/>\n"
@@ -117,15 +117,15 @@ msgstr ""
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "წითელი"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "მწვანე"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "ლურჯი"
 
 #: Colors.qml:66
 msgid "Purple"
@@ -451,7 +451,7 @@ msgstr ""
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "პაროლი"
 
 #: TextInputs.qml:67
 msgid "Numbers"
@@ -471,7 +471,7 @@ msgstr ""
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "ნაგულისხმები"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
