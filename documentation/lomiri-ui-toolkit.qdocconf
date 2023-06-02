@@ -23,8 +23,7 @@ HTML.footer = \
     "<div class=\"shadow\"></div>\n" \
     "<footer>\n" \
     "	<div>\n" \
-    "		<nav role=\"navigation\" class=\"clearfix\">\n" \
-    "		</nav>\n" \
-    "		<p>&copy; 2013 Canonical Ltd. Lomiri and Canonical are registered trademarks of Canonical Ltd.</p>\n" \
+    "		<div role=\"navigation\" class=\"clearfix\"></div>\n" \
+    "		<p>&copy; 2013 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.</p>\n" \
     "	</div>\n" \
     "</footer>\n"
