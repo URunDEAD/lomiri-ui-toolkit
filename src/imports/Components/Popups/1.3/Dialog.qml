@@ -223,7 +223,7 @@ PopupBase {
         property real margins: units.gu(4)
         property real itemSpacing: units.gu(2)
         property Item dismissArea: dialog.dismissArea
-        property real keyboardHeight: dialog.anchorToKeyboard && LomiriApplication.inputMethod.visible ? LomiriApplication.inputMethod.keyboardRectangle.height / Screen.devicePixelRatio : 0
+        property real keyboardHeight: dialog.anchorToKeyboard && LomiriApplication.inputMethod.visible ? LomiriApplication.inputMethod.keyboardRectangle.height : 0
 
         height: Math.min(contentsColumn.height + foreground.margins, dialog.height - keyboardHeight)
 

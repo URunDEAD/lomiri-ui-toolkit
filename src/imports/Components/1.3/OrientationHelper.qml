@@ -118,7 +118,7 @@ Item {
 
             var availableHeight = orientationHelper.parent.height;
             if (d.stateAngle === 0 && LomiriApplication.inputMethod.visible && anchorToKeyboard)
-                availableHeight -= LomiriApplication.inputMethod.keyboardRectangle.height / Screen.devicePixelRatio;
+                availableHeight -= LomiriApplication.inputMethod.keyboardRectangle.height;
             return availableHeight;
         }
 
