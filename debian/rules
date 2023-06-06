@@ -31,7 +31,7 @@ override_dh_auto_configure:
 	qmake -r CONFIG+=debian_build $(CONFIGURE_OPTS)
 
 %:
-	dh $@ --parallel
+	dh $@ --parallel --with migrations
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
