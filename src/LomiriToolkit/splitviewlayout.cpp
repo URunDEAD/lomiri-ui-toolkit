@@ -30,7 +30,7 @@ UT_NAMESPACE_BEGIN
  */
 /*!
  * \qmltype ViewColumn
- * \inmodule Lomiri.Components.Labs
+ * \inqmlmodule Lomiri.Components.Labs
  * \ingroup lomiri-labs
  * \brief View column metrics configuration for SplitView.
  *
@@ -181,7 +181,7 @@ bool ViewColumn::resize(qreal delta)
  */
 /*!
  * \qmltype SplitViewLayout
- * \inmodule Lomiri.Components.Labs
+ * \inqmlmodule Lomiri.Components.Labs
  * \ingroup lomiri-labs
  * \brief Layout configuration for SplitView.
  *

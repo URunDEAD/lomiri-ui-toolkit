@@ -195,7 +195,7 @@ void UCStyleHints::propertyNotFound(const QString &styleName, const QString &pro
 /*!
  * \qmltype StyleHints
  * \instantiates UCStyleHints
- * \inmodule Lomiri Components 1.3
+ * \inqmlmodule Lomiri.Components 1.3
  * \ingroup lomiri
  * \since Lomiri.Components 1.3
  * \brief Component holding style specific properties to configure a particular

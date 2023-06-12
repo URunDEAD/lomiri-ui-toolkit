@@ -49,7 +49,7 @@ void UCBottomEdgeRegionPrivate::init()
  * \qmltype BottomEdgeRegion
  * \instantiates UCBottomEdgeRegion
  * \inherits QtObject
- * \inmodule Lomiri.Components 1.3
+ * \inqmlmodule Lomiri.Components 1.3
  * \since Lomiri.Components 1.3
  * \ingroup lomiri
  * \brief Defines an active region within the BottomEdge component.
