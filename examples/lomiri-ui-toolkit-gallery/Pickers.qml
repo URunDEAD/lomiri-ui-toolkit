@@ -25,7 +25,7 @@ Template {
     property var stringListModel: ["starred", "media-record", "like", "language-chooser", "go-home", "email", "contact-group", "notification", "active-call"]
     TemplateSection {
         className: "Picker"
-        documentation: "Lomiri.Components.Pickers/%1.html".arg(className)
+        documentation: "qml-lomiri-components-pickers-%1.html".arg(className.toLowerCase())
 
         TemplateRow {
             title: i18n.tr("Linear")
@@ -131,7 +131,7 @@ Template {
 
     TemplateSection {
         className: "Dialer"
-        documentation: "Lomiri.Components/%1.html".arg(className)
+        documentation: "qml-lomiri-components-pickers-%1.html".arg(className.toLowerCase())
 
         TemplateRow {
             title: i18n.tr("Clock")
@@ -207,7 +207,7 @@ Template {
     }
     TemplateSection {
         className: "DatePicker"
-        documentation: "Lomiri.Components.Pickers/%1.html".arg(className)
+        documentation: "qml-lomiri-components-pickers-%1.html".arg(className.toLowerCase())
 
         TemplateRow {
             title: "Date"
@@ -240,6 +240,7 @@ Template {
 
     TemplateSection {
         title: "PickerPanel"
+        documentation: "qml-lomiri-components-pickers-%1.html".arg(title.toLowerCase())
         TextField {
             id: textField
             readOnly: true

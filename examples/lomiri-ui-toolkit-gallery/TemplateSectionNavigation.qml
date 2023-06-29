@@ -23,7 +23,7 @@ Column {
     width: parent.width
     property string className
     property string title: className
-    property string documentation: "Lomiri.Components/%1.html".arg(className)
+    property string documentation: "qml-lomiri-components-%1.html".arg(className.toLowerCase())
 
     property string description
     property url designUrl
@@ -38,21 +38,13 @@ Column {
 
     WebLink {
         id: docLink
-        property string prefix: "https://api-docs.ubports.com/sdk/apps/qml/"
+        property string prefix: "https://api-docs.ubports.com/index.html?p=lomiriuserinterfacetoolkit/"
         label: title ? "API Documentation" : "%1 API Documentation".arg(className)
         url: prefix + documentation
         visible: documentation != ""
         textSize: Label.Small
         anchors.left: parent.left
     }
-
-    WebLink {
-        label: "Design guidelines"
-        url: templateSection.designUrl
-        textSize: Label.Small
-        anchors.left: parent.left
-    }
-
     Image {
         fillMode: Image.PreserveAspectFit
         source: templateSection.screenshot

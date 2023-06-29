@@ -23,7 +23,6 @@ Template {
     TemplateSection {
         title: i18n.tr("Progress Bar")
         className: "ProgressBar"
-        documentation: "Lomiri.Components/%1.html".arg(className)
 
         TemplateRow {
             title: i18n.tr("Standard")

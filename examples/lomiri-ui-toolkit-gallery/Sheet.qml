@@ -34,7 +34,7 @@ Template {
     TemplateSection {
         title: "Default sheet"
         className: "DefaultSheet"
-        documentation: "Lomiri.Components.Popups/%1.html".arg(className)
+        documentation: "qml-lomiri-components-popups-%1.html".arg(className.toLowerCase())
 
         TemplateRow {
             title: i18n.tr("Standard")
@@ -67,7 +67,7 @@ Template {
     TemplateSection {
         title: "Composer sheet"
         className: "ComposerSheet"
-        documentation: "Lomiri.Components.Popups/%1.html".arg(className)
+        documentation: "qml-lomiri-components-popups-%1.html".arg(className.toLowerCase())
 
         TemplateRow {
             title: i18n.tr("Standard")

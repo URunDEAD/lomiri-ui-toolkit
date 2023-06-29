@@ -35,4 +35,8 @@ desktop_file.path = /
 desktop_file.files = lomiri-ui-toolkit-gallery.desktop
 desktop_file.CONFIG += no_check_exist
 
-INSTALLS+=config_files qml_files desktop_file
+manifest_file.path = /
+manifest_file.files = manifest.json
+
+
+INSTALLS+=config_files qml_files desktop_file manifest_file
