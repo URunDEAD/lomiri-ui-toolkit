@@ -68,7 +68,6 @@ Page {
         spacing: units.gu(0.7)
         width: parent.width
         padding: units.gu(2)
-        //anchors.top: top.bottom
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         Repeater {
