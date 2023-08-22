@@ -27,7 +27,7 @@ Template {
 
         title: "Palette"
         className: "Palette"
-        documentation: "Lomiri.Components.Themes/%1.html".arg(className)
+        documentation: "qml-lomiri-components-themes-%1.html".arg(className.toLowerCase())
 
         property var palettes: ["normal", "disabled", "selected", "selectedDisabled", "highlighted", "focused"]
         property var paletteValues: [["background", ["backgroundText", "backgroundSecondaryText", "backgroundTertiaryText"]],

@@ -2,13 +2,6 @@ TEMPLATE = subdirs
 
 SUBDIRS += po
 
-#load Lomiri specific features
-load(lomiri-click)
-
-# specify the manifest file, this file is required for click
-# packaging and for the IDE to create runconfigurations
-LOMIRI_MANIFEST_FILE=manifest.json.in
-
 TARGET = lomiri-ui-toolkit-gallery
 
 QML_FILES += $$files(*.qml,true) \
@@ -35,4 +28,15 @@ desktop_file.path = /
 desktop_file.files = lomiri-ui-toolkit-gallery.desktop
 desktop_file.CONFIG += no_check_exist
 
-INSTALLS+=config_files qml_files desktop_file
+PROJECT_VERSION = $$(PROJECT_VERSION)
+isEmpty(PROJECT_VERSION) {
+    #set default version if not set
+    PROJECT_VERSION = 0.6
+}
+
+QMAKE_SUBSTITUTES +=manifest.json.in
+manifest_file.path = /
+manifest_file.files = manifest.json
+
+
+INSTALLS+=config_files qml_files desktop_file manifest_file

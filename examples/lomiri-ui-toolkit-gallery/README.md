@@ -7,7 +7,7 @@ This is a gallery of examples for the lomiri interface toolkit.
 ### Using clickable:
 
 - Deploy to device:
-`clickable`
+`CLICKABLE_ENV_PROJECT_VERSION=0.7 clickable`
 
 - Desktop build:
 `clickable desktop`

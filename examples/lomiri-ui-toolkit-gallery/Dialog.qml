@@ -23,7 +23,7 @@ Template {
 
     TemplateSection {
         className: "Dialog"
-        documentation: "Lomiri.Components.Popups/%1.html".arg(className)
+        documentation: "qml-lomiri-components-popups-%1.html".arg(className.toLowerCase())
 
         TemplateRow {
             title: i18n.tr("Dialog")

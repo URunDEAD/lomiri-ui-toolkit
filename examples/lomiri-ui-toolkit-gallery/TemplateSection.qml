@@ -23,7 +23,7 @@ Column {
     width: parent.width
     property string className
     property string title: className
-    property string documentation: "Lomiri.Components/%1.html".arg(className)
+    property string documentation: "qml-lomiri-components-%1.html".arg(className.toLowerCase())
 
     Item {
         anchors.left: parent.left
@@ -36,12 +36,11 @@ Column {
             textSize: Label.Large
             anchors.left: parent.left
         }
-
         WebLink {
             id: docLink
             anchors.verticalCenter: label.verticalCenter
             anchors.right: parent.right
-            property string prefix: "https://api-docs.ubports.com/sdk/apps/qml/"
+            property string prefix: "https://api-docs.ubports.com/index.html?p=lomiriuserinterfacetoolkit/"
             label: title ? "API Documentation" : "%1 API Documentation".arg(className)
             url: prefix + documentation
             visible: documentation != ""

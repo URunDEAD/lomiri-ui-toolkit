@@ -23,7 +23,7 @@ Template {
     TemplateSection {
         id: crossFadeImageTemplateSection
         className: "CrossFadeImage"
-        documentation: "Lomiri.Components/%1.html".arg(className)
+        documentation: "qml-%1.html".arg(className.toLowerCase())
 
         function next() {
             if (internal.index < internal.paths.length - 1)

@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
+import QtQuick 2.12
 import Lomiri.Components 1.3
 import Lomiri.Components.Themes 1.3
 
@@ -34,17 +34,55 @@ Page {
         title: i18n.tr("About...")
     }
 
+
+    Column {
+        id: top
+        width: parent.width
+        anchors.top: header.bottom
+        spacing: units.gu(2)
+        padding: units.gu(2)
+
+        Label {
+            width: parent.width
+            wrapMode: Text.Wrap
+            horizontalAlignment: Text.AlignHCenter
+            textSize: Label.Large
+            text: "Lomiri UI ToolKit" + " " + i18n.tr("gallery")
+        }
+
+        WebLink {
+            label: i18n.tr("Source code")
+            anchors.horizontalCenter: parent.horizontalCenter
+            url: "https://gitlab.com/ubports/development/core/lomiri-ui-toolkit/-/tree/main/examples/lomiri-ui-toolkit-gallery"
+            textSize: Label.Large
+        }
+        WebLink {
+            label: i18n.tr("Design guidelines")
+            anchors.horizontalCenter: parent.horizontalCenter
+            url: "https://docs.ubports.com/en/latest/humanguide/index.html"
+            textSize: Label.Large
+        }
+    }
+
     Column {
         spacing: units.gu(0.7)
         width: parent.width
-        anchors.centerIn: parent
+        padding: units.gu(2)
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
         Repeater {
             model: ListModel {
                 ListElement {
-                    text: "Copyright 2012-2015 Canonical Ltd.\n\n"
+                    text: "Copyright 2012-2015 Canonical Ltd."
+                }
+                ListElement {
+                    text: "Copyright 2023 Ubports Foundation.\n\n"
                 }
                 ListElement {
                     text: "Contributors\n"
+                }
+                ListElement {
+                    text: "Ubports <dev@ubports.com>"
                 }
                 ListElement {
                     text: "Tim Peeters (#t1mp) <tim.peeters@canonical.com>"
@@ -76,5 +114,4 @@ Page {
             }
         }
     }
-
 }
