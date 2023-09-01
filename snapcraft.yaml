@@ -34,4 +34,4 @@ parts:
         - qtpim5-dev
     stage-packages:
         - suru-icon-theme
-        - ttf-lomiri-font-family
+        - ttf-ubuntu-font-family
