@@ -1,6 +1,212 @@
+2023-10-15 Mike Gabriel
+
+        * Release 1.3.5011 (HEAD -> main, tag: 1.3.5011)
+
+2023-09-13 Alfred Neumayer
+
+        * Merge branch 'personal/peat-psuwit/flickering-ItemSelector' into
+          'main' (fc900668e)
+
+2023-09-13 Ratchanan Srirattanamet
+
+        * OptionSelectorDelegate: don't update our height when it's 0
+          (458a18b8b)
+
+2023-09-06 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (38dff614e)
+
+2023-09-01 Mike Gabriel
+
+        * Merge branch 'mateosalta-main-patch-89638' into 'main' (65fdf8cf6)
+
+2023-08-31 mateosalta
+
+        * font family package not likely to change, the font should still be
+          named ubuntu (1495be9aa)
+
+2023-08-24 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/fix-cross-install_replace-break'
+          into 'main' (96620fe02)
+
+2023-08-24 Ratchanan Srirattanamet
+
+        * debian/control: add Breaks, Replaces after moving file between
+          package (b09ba9362)
+
+2023-08-22 Mike Gabriel
+
+        * Merge branch 'gallery' into 'main' (dcc08cc8a)
+
+2023-07-12 Lionel Duboeuf
+
+        * Update About.qml (be3c24b25)
+
+2023-06-30 Lionel Duboeuf
+
+        * Gallery: Update icon (02b1ce9de)
+        * Gallery: Allow to set manifest version from outside (810f1d491)
+        * Gallery: Use sdk icon (40d3e0e32)
+
+2023-06-29 Lionel Duboeuf
+
+        * Gallery: Adapt links to new API documentation (8cc015bdf)
+
+2023-08-22 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/fix-cross-install' into 'main'
+          (d689f48e1)
+
+2023-08-11 Ratchanan Srirattanamet
+
+        * debian/*: fix foreign-arch install of us and native
+          lomiri-app-launch (27076218b)
+          Fixes: 9012bd4ed896
+          ("session-migration: migrate LUITK's theme config")
+
+2023-08-13 Abdullah AL Shohag
+
+        * Translated using Weblate (Bengali (Bangladesh)) (f445cb18c)
+
+2023-08-12 NPL
+
+        * Translated using Weblate (Japanese) (6d76d25b8)
+
+2023-08-08 Ivo Xavier
+
+        * Translated using Weblate (Portuguese) (d5cd9f2f9)
+
+2023-08-04 Salif Mehmed
+
+        * Translated using Weblate (Bulgarian) (381bb132a)
+
+2023-07-10 abidin toumi
+
+        * Translated using Weblate (Arabic) (dcb3a523c)
+
+2023-06-30 Rudra Harsh V.Singh
+
+        * Translated using Weblate (Sanskrit) (c6d9d6b55)
+
+2023-07-07 NPL
+
+        * Translated using Weblate (Japanese) (e66b9f1bb)
+
+2023-06-30 Weblate
+
+        * Added translation using Weblate (Sanskrit) (e70d52799)
+        * Added translation using Weblate (Sanskrit) (6b3acfb42)
+
+2023-06-27 Rudra Harsh V.Singh
+
+        * Translated using Weblate (English (Canada)) (374e2e100)
+
+2023-06-22 Lionel Duboeuf
+
+        * Translated using Weblate (French) (f019fc908)
+
+2023-06-12 Mike Gabriel
+
+        * Merge branch 'personal/gberh/doc-fixes' into 'main' (7df579c06)
+
+2023-06-12 Guido Berhoerster
+
+        * Fix typo (91d7cb86d)
+
+2023-06-06 Guido Berhoerster
+
+        * Fix qdoc QML module membership (66a8b7e40)
+        * Add missing qdoc module pages (85df3f94b)
+
+2023-06-06 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/config-migration' into 'main'
+          (4f6d66315)
+
+2023-05-24 Ratchanan Srirattanamet
+
+        * session-migration: migrate LUITK's theme config (9012bd4ed)
+
+2023-06-05 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/autoscalefixes' into 'main'
+          (1137a607d)
+
+2023-04-28 Alfred Neumayer
+
+        * qml: Remove now-redundant references to a screen's devicePixelRatio
+          (ff3af0f9d)
+
+2023-04-12 Temuri Doghonadze
+
+        * Translated using Weblate (Georgian) (a1b248b96)
+        * Translated using Weblate (Georgian) (4c787669d)
+
+2023-06-02 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/gber/doc-cleanup' into 'main' (02355d158)
+
+2023-03-16 Guido Berhoerster
+
+        * Remove dead launchpad link (cc16c8825)
+        * Install documentation under /usr/share/doc (c7700a8ae)
+        * Fix footer copyright (7cb29ea9a)
+        * Fix qdoc markup (78c2dc6fa)
+
+2023-03-15 Guido Berhoerster
+
+        * docs.sh: Fix broken quoting (dec6ce54e)
+        * Remove "online" documentation (5531a363e)
+
+2023-04-11 Temuri Doghonadze
+
+        * Translated using Weblate (Georgian) (f0323d488)
+        * Translated using Weblate (Georgian) (e3984e924)
+        * Translated using Weblate (Georgian) (a5d01feed)
+        * Translated using Weblate (Georgian) (6544d5b0f)
+
+2023-03-30 Jozef Mlich
+
+        * Translated using Weblate (Czech) (a4014b911)
+
+2023-03-31 Sylke Vicious
+
+        * Translated using Weblate (Italian) (f9145255d)
+        * Translated using Weblate (Italian) (3ddc1acaf)
+
+2023-03-31 Jozef Mlich
+
+        * Translated using Weblate (Czech) (87232d3d1)
+
+2023-03-30 Sylke Vicious
+
+        * Translated using Weblate (Italian) (9a386fb83)
+
+2023-03-27 Jozef Mlich
+
+        * Translated using Weblate (Czech) (2a7ec2cfd)
+        * Translated using Weblate (Czech) (87231ebae)
+
+2023-02-27 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (57b9c01a6)
+
+2023-02-26 Luna Jernberg
+
+        * Translated using Weblate (Swedish) (3dd1a0519)
+
+2023-02-25 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (473be341d)
+
+2023-02-26 Luna Jernberg
+
+        * Translated using Weblate (Swedish) (d61564dc3)
+
 2023-02-27 Mike Gabriel
 
-        * Release 1.3.5010 (HEAD -> main, tag: 1.3.5010)
+        * Release 1.3.5010 (b996aa8e9) (tag: 1.3.5010)
 
 2023-02-24 gnu-ewm
 
