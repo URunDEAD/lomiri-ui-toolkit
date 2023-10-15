@@ -104,6 +104,7 @@ private Q_SLOTS:
         // Create manually to avoid wrong ownership
         tempDir.mkdir("tst_statesaver");
         setenv("XDG_RUNTIME_DIR", testRuntimeDir.toUtf8(), 1);
+        QFile::setPermissions(testRuntimeDir.toUtf8(), QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ExeOwner);
     }
 
     void cleanupTestCase()
