@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-08-19 16:54+0000\n"
+"PO-Revision-Date: 2023-11-05 13:36+0000\n"
 "Last-Translator: NPL <alterlinuxer@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.2-dev\n"
 
 #: About.qml:34
 msgid "About..."
@@ -255,7 +255,7 @@ msgstr ""
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "リセット"
 
 #: ListItems.qml:226
 msgid "Grouped list"
