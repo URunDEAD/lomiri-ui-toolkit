@@ -28,7 +28,7 @@ Item {
             id: test
             width: units.gu(20)
             height: units.gu(20)
-            source: "/usr/share/icons/lomiri-mobile/actions/scalable/add.svg"
+            source: "/usr/share/icons/suru/actions/scalable/add.svg"
             visible: source != ""
         }
         Image {
