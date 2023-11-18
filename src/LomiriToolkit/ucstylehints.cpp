@@ -51,15 +51,24 @@ void UCStyleHintsParser::verifyProperty(const QQmlRefPointer<QV4::CompiledData::
 void UCStyleHintsParser::verifyProperty(const QV4::CompiledData::Unit *compilationUnit, const QV4::CompiledData::Binding *binding)
 #endif
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 11)
+    if (binding->type() == QV4::CompiledData::Binding::Type_Object) {
+#else
     if (binding->type == QV4::CompiledData::Binding::Type_Object) {
+#endif
         error(compilationUnit->objectAt(binding->value.objectIndex),
               QStringLiteral("StyleHints does not support creating state-specific objects."));
         return;
     }
 
     // group properties or attached properties, we do handle those as well
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 11)
+    if (binding->type() == QV4::CompiledData::Binding::Type_GroupProperty
+            || binding->type() == QV4::CompiledData::Binding::Type_AttachedProperty) {
+#else
     if (binding->type == QV4::CompiledData::Binding::Type_GroupProperty
             || binding->type == QV4::CompiledData::Binding::Type_AttachedProperty) {
+#endif
         const QV4::CompiledData::Object *subObj = compilationUnit->objectAt(binding->value.objectIndex);
         const QV4::CompiledData::Binding *subBinding = subObj->bindingTable();
         for (quint32 i = 0; i < subObj->nBindings; ++i, ++subBinding) {
@@ -111,8 +120,13 @@ void UCStyleHints::decodeBinding(const QString &propertyPrefix, const QV4::Compi
     QString propertyName = propertyPrefix + compilationUnit->stringAt(binding->propertyNameIndex);
 
     // handle grouped properties first
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 11)
+    if (binding->type() == QV4::CompiledData::Binding::Type_GroupProperty
+        || binding->type() == QV4::CompiledData::Binding::Type_AttachedProperty) {
+#else
     if (binding->type == QV4::CompiledData::Binding::Type_GroupProperty
         || binding->type == QV4::CompiledData::Binding::Type_AttachedProperty) {
+#endif
 
         const QV4::CompiledData::Object *subObj = compilationUnit->objectAt(binding->value.objectIndex);
         const QV4::CompiledData::Binding *subBinding = subObj->bindingTable();
@@ -123,7 +137,11 @@ void UCStyleHints::decodeBinding(const QString &propertyPrefix, const QV4::Compi
         return;
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 11)
+    switch (binding->type()) {
+#else
     switch (binding->type) {
+#endif
     case QV4::CompiledData::Binding::Type_Script:
     {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
