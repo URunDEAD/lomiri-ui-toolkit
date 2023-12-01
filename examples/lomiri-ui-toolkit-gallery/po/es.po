@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-11-15 18:06+0000\n"
-"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"PO-Revision-Date: 2023-12-01 21:34+0000\n"
+"Last-Translator: Daniel Delgado Jiménez <danieldelgadojimenez@protonmail.com>"
+"\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/es/>\n"
 "Language: es\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:14+0000\n"
 
 #: About.qml:34
@@ -30,7 +31,7 @@ msgstr "Lista corta"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "Número de ranuras"
 
 #: ActionBars.qml:92
 msgid "Long list"
@@ -43,7 +44,7 @@ msgstr "Desactivado"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "NumberAnimation"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
@@ -146,7 +147,7 @@ msgstr "Tema"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "Acciones principales y acciones secundarias"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
@@ -164,7 +165,7 @@ msgstr "Etiqueta secundaria"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "Separador delgado"
 
 #: ListItems.qml:73
 msgid "Progression"
@@ -268,7 +269,7 @@ msgstr "LomiriListView"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "ExpandablesColumn"
 
 #: ListItems.qml:364
 msgid "Expandable"
