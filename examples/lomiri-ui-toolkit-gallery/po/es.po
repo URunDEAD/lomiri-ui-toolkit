@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-12-01 21:34+0000\n"
-"Last-Translator: Daniel Delgado Jiménez <danieldelgadojimenez@protonmail.com>"
-"\n"
+"PO-Revision-Date: 2023-12-06 00:24+0000\n"
+"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/es/>\n"
 "Language: es\n"
@@ -147,7 +146,7 @@ msgstr "Tema"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr "Acciones principales y acciones secundarias"
+msgstr "Acciones iniciales y finales"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
@@ -285,11 +284,11 @@ msgstr "Color de resaltado"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "Acciones principales"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "Acciones finales"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
@@ -415,6 +414,8 @@ msgstr "Activado"
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
 msgstr ""
+"El estilo visual de la Hoja es de los primeros trabajos y, por tanto, de "
+"aspecto tosco."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
@@ -427,7 +428,7 @@ msgstr "Valor real: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "Actualización en tiempo real"
 
 #: Sliders.qml:57
 msgid "Range"
@@ -451,7 +452,7 @@ msgstr "Grande"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "Escríbeme..."
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -467,7 +468,7 @@ msgstr "Solo lectura"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "Nadie escribe aquí"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
@@ -491,7 +492,7 @@ msgstr "Activada"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "Aspecto"
 
 #: LomiriShape.qml:73
 msgid "Radius"
