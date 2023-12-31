@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-10-18 05:52+0000\n"
+"PO-Revision-Date: 2024-01-04 16:35+0000\n"
 "Last-Translator: phlostically <phlostically@mailinator.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/eo/>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1\n"
+"X-Generator: Weblate 5.4-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "Pri…"
 
 #: ActionBars.qml:68
 msgid "Short list"
@@ -38,7 +38,7 @@ msgstr ""
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "Malŝaltita"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
@@ -48,7 +48,7 @@ msgstr ""
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "Norma"
 
 #: Animations.qml:58
 msgid "Standard Durations"
@@ -60,11 +60,11 @@ msgstr ""
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "Rapida"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "Malrapida"
 
 #: Animations.qml:159
 msgid "Sleepy"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "Koloro"
 
 #: Buttons.qml:53
 #, qt-format
@@ -89,11 +89,11 @@ msgstr ""
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "Piktogramo"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "Piktogramo+teksto"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
@@ -105,35 +105,35 @@ msgstr ""
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "Oranĝa"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "Hele griza"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "Malhele griza"
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "Ruĝa"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "Verda"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "Blua"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "Purpura"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "Malfermi"
 
 #: Icons.qml:29
 msgid "Scaling"
@@ -151,7 +151,7 @@ msgstr ""
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "Etikedo"
 
 #: ListItems.qml:33
 msgid "Subtitled"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "Valoro"
 
 #: ListItems.qml:91
 msgid "Multi value"
@@ -185,25 +185,25 @@ msgstr ""
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "Valoro 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "Valoro 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "Valoro 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "Valoro 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
@@ -224,22 +224,22 @@ msgstr ""
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "Valoro 5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "Valoro 6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
 msgid "Value 7"
-msgstr ""
+msgstr "Valoro 7"
 
 #: ListItems.qml:168 ListItems.qml:183 OptionSelectors.qml:91
 #: OptionSelectors.qml:106
 msgid "Value 8"
-msgstr ""
+msgstr "Valoro 8"
 
 #: ListItems.qml:190
 msgid "Control"
@@ -299,11 +299,11 @@ msgstr "Modifi"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "Movi"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "Baza"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
@@ -312,7 +312,7 @@ msgstr ""
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "Nemodifebla"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
@@ -346,19 +346,19 @@ msgstr ""
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Linia"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Cirkla"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Senfina"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Horloĝo"
 
 #: Pickers.qml:174
 msgid "Overlay"
@@ -370,23 +370,23 @@ msgstr ""
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "Ago n-ro 1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "Ago n-ro 2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "Ago n-ro 3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "Ago n-ro 4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "Ago n-ro 5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
@@ -402,11 +402,11 @@ msgstr ""
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Grandoj"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "Ŝaltita"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
@@ -431,19 +431,19 @@ msgstr ""
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Etikedoj"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Malgranda"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Mezgranda"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Granda"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
@@ -455,7 +455,7 @@ msgstr "Pasvorto"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "Nombroj"
 
 #: TextInputs.qml:78
 msgid "Read-only"
@@ -491,11 +491,11 @@ msgstr ""
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Radiuso"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Bildo"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
