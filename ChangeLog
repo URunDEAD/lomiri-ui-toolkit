@@ -1,6 +1,174 @@
+2024-01-28 Mike Gabriel
+
+        * Release 1.3.5012 (HEAD -> main, tag: 1.3.5012)
+
+2023-12-31 phlostically
+
+        * Translated using Weblate (Esperanto) (d09e76d2b)
+
+2023-12-27 Weblate
+
+        * Added translation using Weblate (Chinese (Simplified)
+          (zh_LATN@pinyin)) (f94a659f0)
+        * Added translation using Weblate (Tamil (Sri Lanka)) (ea0855283)
+        * Added translation using Weblate (German (Walser)) (fd27c964c)
+        * Added translation using Weblate (Meadow Mari) (3b52db4a0)
+        * Added translation using Weblate (Crimean Tatar) (da32d9a75)
+        * Added translation using Weblate (Chuvash) (01afd9bd7)
+        * Added translation using Weblate (Silesian) (ff1ba3be6)
+        * Added translation using Weblate (Latin) (968243ad3)
+        * Added translation using Weblate (Venetian) (089f1931d)
+        * Added translation using Weblate (Ossetian) (63d490e3b)
+        * Added translation using Weblate (Sami (Northern)) (e1d7b0739)
+        * Added translation using Weblate (Greenlandic) (a649857a6)
+        * Added translation using Weblate (Assamese) (e392c2db0)
+        * Added translation using Weblate (Haitian) (b8d370fb6)
+        * Added translation using Weblate (Cornish) (9e9b24113)
+        * Added translation using Weblate (Frisian) (d48b729a0)
+        * Added translation using Weblate (Kashubian) (e7467f2fe)
+        * Added translation using Weblate (Aragonese) (16ba6f95b)
+        * Added translation using Weblate (Tibetan) (60bdc26ed)
+        * Added translation using Weblate (Filipino) (e73e4ef01)
+        * Added translation using Weblate (Tigrinya) (a0243133d)
+        * Added translation using Weblate (Tatar) (3340fdd52)
+        * Added translation using Weblate (Chinese (Simplified)
+          (zh_LATN@pinyin)) (995ce7578)
+        * Added translation using Weblate (Tamil (Sri Lanka)) (806bd8000)
+        * Added translation using Weblate (German (Walser)) (8817912d5)
+        * Added translation using Weblate (Meadow Mari) (bc7b19732)
+        * Added translation using Weblate (Crimean Tatar) (75ad1bcec)
+        * Added translation using Weblate (Chuvash) (ac77ad4c9)
+        * Added translation using Weblate (Silesian) (d0b8e678a)
+        * Added translation using Weblate (Latin) (915746a50)
+        * Added translation using Weblate (Venetian) (3a394f0a5)
+        * Added translation using Weblate (Ossetian) (f396142de)
+        * Added translation using Weblate (Sami (Northern)) (339f00715)
+        * Added translation using Weblate (Greenlandic) (820be2dd1)
+        * Added translation using Weblate (Assamese) (6505de9a1)
+        * Added translation using Weblate (Haitian) (2b3ab055d)
+        * Added translation using Weblate (Cornish) (e06771e2c)
+        * Added translation using Weblate (Frisian) (78a0de7d7)
+        * Added translation using Weblate (Kashubian) (e70abe47f)
+        * Added translation using Weblate (Aragonese) (79f95669c)
+        * Added translation using Weblate (Tibetan) (5437271b5)
+        * Added translation using Weblate (Filipino) (f921848c2)
+        * Added translation using Weblate (Tigrinya) (070e295e5)
+        * Added translation using Weblate (Tatar) (68f24c74a)
+
+2023-12-26 Weblate
+
+        * Added translation using Weblate (Italian (it_CARES)) (e0c24d69a)
+        * Added translation using Weblate (Italian (it_CARES)) (4276727a1)
+
+2023-12-14 gallegonovato
+
+        * Translated using Weblate (Spanish) (b8655ed86)
+
+2023-12-04 Reza Almanda
+
+        * Translated using Weblate (Indonesian) (c0e395718)
+
+2023-12-05 gallegonovato
+
+        * Translated using Weblate (Spanish) (393006f12)
+
+2023-12-04 Reza Almanda
+
+        * Translated using Weblate (Indonesian) (910727f6c)
+
+2023-12-01 Daniel Delgado Jiménez
+
+        * Translated using Weblate (Spanish) (8acebfd78)
+
+2023-11-29 Brohormr
+
+        * Translated using Weblate (French) (162728dea)
+
+2023-11-20 Ratchanan Srirattanamet
+
+        * Merge branch 'fix/qt51511compat' into 'main' (4f999077d)
+
+2023-11-18 OPNA2608
+
+        * LomiriToolkit/ucstylehints: Fix compilation with Qt 5.15.11
+          (80a807eb8)
+
+2023-11-08 gallegonovato
+
+        * Translated using Weblate (Spanish) (0df99ffe9)
+
+2023-11-15 Ratchanan Srirattanamet
+
+        * Merge branch 'fix/some-tests' into 'main' (a8324d670)
+
+2023-11-14 Ratchanan Srirattanamet
+
+        * tests/unit/visual/tst_imageprovider.11.qml: Current icon theme is
+          suru-icon-theme (905222df3)
+
+2023-10-15 OPNA2608
+
+        * tests/tst_imageprovider.11.qml: Fix fallout from treewide
+          ubuntu->lomiri rename (3095e6112)
+        * tests/statesaver: Set permissions of test XDG_RUNTIME_DIR
+          (9d857c0d3)
+
+2023-10-29 NPL
+
+        * Translated using Weblate (Japanese) (c8062dca4)
+
+2023-10-18 Weblate
+
+        * Added translation using Weblate (Xhosa) (0822514d9)
+        * Added translation using Weblate (Manx) (9a023e615)
+        * Added translation using Weblate (Corsican) (e3eac2768)
+        * Added translation using Weblate (Chechen) (46ce12a54)
+        * Added translation using Weblate (Wolof) (bea4ec411)
+        * Added translation using Weblate (Kurdish (Central)) (4bb6b6ad7)
+        * Added translation using Weblate (Uzbek) (2ca3e9d59)
+        * Added translation using Weblate (Kyrgyz) (f36e495ad)
+        * Added translation using Weblate (Kurdish) (8c22b9dbc)
+        * Added translation using Weblate (Sotho (Southern)) (eebfd8585)
+        * Added translation using Weblate (Kannada) (f7c81c2e3)
+        * Added translation using Weblate (Kazakh) (c6f228970)
+        * Added translation using Weblate (Faroese) (bb99d2921)
+        * Added translation using Weblate (Nepali) (7d03c6ce6)
+        * Added translation using Weblate (Norwegian Nynorsk) (2bdd712a4)
+        * Added translation using Weblate (Swahili) (fc97dcda8)
+        * Added translation using Weblate (Afrikaans) (1094e1d22)
+        * Added translation using Weblate (Marathi) (49c83f6a2)
+        * Added translation using Weblate (Vietnamese) (101bae600)
+        * Added translation using Weblate (Odia) (2b8c5872a)
+        * Added translation using Weblate (Bengali) (2d2e2c70b)
+        * Added translation using Weblate (Estonian) (b4b34abf1)
+        * Added translation using Weblate (Irish) (c05246df8)
+        * Added translation using Weblate (Xhosa) (fa6e70584)
+        * Added translation using Weblate (Manx) (22f5018b1)
+        * Added translation using Weblate (Corsican) (dff84c716)
+        * Added translation using Weblate (Wolof) (195c3e942)
+        * Added translation using Weblate (Kurdish (Central)) (6496311d3)
+        * Added translation using Weblate (Uzbek) (efdd4a6b9)
+        * Added translation using Weblate (Kyrgyz) (c4771b97a)
+        * Added translation using Weblate (Sotho (Southern)) (ec7e3129f)
+        * Added translation using Weblate (Kazakh) (35bfc693e)
+        * Added translation using Weblate (Faroese) (7d814aef6)
+        * Added translation using Weblate (Norwegian Nynorsk) (275286b69)
+        * Added translation using Weblate (Swahili) (dabbbc68a)
+        * Added translation using Weblate (Odia) (08ad74f6b)
+        * Added translation using Weblate (Bengali) (f77d69dda)
+
+2023-10-11 phlostically
+
+        * Translated using Weblate (Esperanto) (5c783a307)
+
+2023-10-11 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (8a6a2050a)
+        * Translated using Weblate (Russian) (43ce7b6ed)
+
 2023-10-15 Mike Gabriel
 
-        * Release 1.3.5011 (HEAD -> main, tag: 1.3.5011)
+        * Release 1.3.5011 (2cf160ebc) (tag: 1.3.5011)
 
 2023-09-13 Alfred Neumayer
 
