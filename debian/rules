@@ -73,6 +73,10 @@ else
 	do \
 		touch debian/tmp/`qmake -query QT_INSTALL_QML`/Lomiri/$$module/plugins.qmltypes; \
 	done
+	for module in "Components" "Components/Labs" "Components/Styles" "Metrics"; \
+	do \
+		touch debian/tmp/`qmake -query QT_INSTALL_QML`/Ubuntu/$$module/plugins.qmltypes; \
+	done
 endif
 	rm -f debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/*.la
 	# FIXME: Due to autopilot not being in the archive we ship docs for now
