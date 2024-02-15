@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2024-02-13 19:29+0000\n"
+"PO-Revision-Date: 2024-02-15 10:24+0000\n"
 "Last-Translator: ancalina <yuntk2008@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/ko/>\n"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "색상"
 
 #: Buttons.qml:53
 #, qt-format
