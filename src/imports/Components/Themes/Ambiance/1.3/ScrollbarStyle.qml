@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.4
+import QtQml 2.15
 import Lomiri.Components 1.3
 
 /*
@@ -1110,6 +1111,7 @@ Item {
         when: !__disableStateBinding
         target: visuals
         property: 'state'
+        restoreMode: Binding.RestoreNone
         value: {
             if (!isScrollable && !alwaysOnScrollbars) {
                 return '';
