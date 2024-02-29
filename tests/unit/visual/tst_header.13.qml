@@ -213,9 +213,19 @@ Item {
 
         function scroll(dy) {
             var p = centerOf(flickable);
-            // Use mouseWheel to scroll because mouseDrag is very unreliable
-            // and does not properly handle negative values for dy.
-            mouseWheel(flickable, p.x, p.y, 0, dy);
+
+            /* 
+             * To calculate the velocity that will give the distance requested,
+             * derive a formula from: v^2 = u^2 + 2as
+             * Set the final velocity to 0, we'll get: u^2 = -2as; u = sqrt(-2as)
+             * We know that `a` is a deceleration i.e. is negative, so the sign
+             * cancels out. In reality `flickDeceleration` is already inverted.
+             * Now, the formula assumes positive distance, so if distance is
+             * negative, sign-invert the requested distance and then sign-invert
+             * the velocity back.
+             */
+            var yVelocity = Math.sign(dy) * Math.sqrt(2 * flickable.flickDeceleration * Math.abs(dy));
+            flickable.flick(0, yVelocity);
 
             flickableMovementEnded.wait();
         }
