@@ -14,10 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import QtQuick 2.4
 import QtTest 1.0
 import Lomiri.Test 1.3
 import Lomiri.Components 1.3
-import QtQuick 2.4
 import Lomiri.Components.Popups 1.3
 
 Button {
