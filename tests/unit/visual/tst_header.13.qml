@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.4
+import QtTest 1.4
 import Lomiri.Components 1.3
 import Lomiri.Test 1.0
 
@@ -130,6 +131,12 @@ Item {
             }
             text: "hmm"
         }
+
+        SignalSpy {
+            id: flickableMovementEnded
+            target: flickable
+            signalName: "movementEnded"
+        }
     }
 
     Rectangle {
@@ -209,6 +216,8 @@ Item {
             // Use mouseWheel to scroll because mouseDrag is very unreliable
             // and does not properly handle negative values for dy.
             mouseWheel(flickable, p.x, p.y, 0, dy);
+
+            flickableMovementEnded.wait();
         }
 
         function scroll_down() {
