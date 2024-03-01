@@ -184,7 +184,7 @@ UCUnits::UCUnits(QObject *parent) :
         QObject::connect(nativeInterface, &QPlatformNativeInterface::windowPropertyChanged,
                          this, &UCUnits::windowPropertyChanged);
         QScreen* screen = referenceScreen();
-        if (screen) {
+        if (screen && nativeInterface->nativeResourceForScreen("scale", screen)) {
             float scale = getScreenScaling(screen);
             if (scale > 0.0f)
                 m_gridUnit = DEFAULT_GRID_UNIT_PX * scale;
