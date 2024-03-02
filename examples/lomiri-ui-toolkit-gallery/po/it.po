@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-04-02 03:46+0000\n"
-"Last-Translator: Sylke Vicious <silkevicious@tuta.io>\n"
+"PO-Revision-Date: 2024-03-03 21:21+0000\n"
+"Last-Translator: Ermete D'Oro <liberta-combattente@paranoici.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/it/>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: About.qml:34
@@ -26,15 +26,15 @@ msgstr "Informazioni..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "Breve elenco"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "Numero di slot"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "Lunga lista"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
@@ -43,7 +43,7 @@ msgstr "Disabilitato"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "NumberAnimation"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
@@ -57,7 +57,7 @@ msgstr "Durate Predefinite"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "Snap"
 
 #: Animations.qml:98
 msgid "Fast"
@@ -69,7 +69,7 @@ msgstr "Lento"
 
 #: Animations.qml:159
 msgid "Sleepy"
-msgstr ""
+msgstr "Assonnato"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
@@ -77,7 +77,7 @@ msgstr "Chiama"
 
 #: Buttons.qml:37
 msgid "Stroke"
-msgstr ""
+msgstr "Pennellata"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
@@ -98,11 +98,11 @@ msgstr "Icona+Testo"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "Crollato"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "Espanso"
 
 #: Colors.qml:30
 msgid "Orange"
@@ -138,7 +138,7 @@ msgstr "Apri"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "Scaling"
 
 #: Icons.qml:79
 msgid "Theme"
@@ -146,7 +146,7 @@ msgstr "Tema"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "Azioni principali e di coda"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
@@ -164,7 +164,7 @@ msgstr "Etichetta secondaria"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "ThinDivider"
 
 #: ListItems.qml:73
 msgid "Progression"
@@ -264,11 +264,11 @@ msgstr "Elenco raggruppato"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "LomiriListView"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "ExpandablesColumn"
 
 #: ListItems.qml:364
 msgid "Expandable"
@@ -280,19 +280,19 @@ msgstr "Colorato"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "Evidenzia il colore"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "Azioni principali"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "Azioni di coda"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "Delegati per azioni personalizzate"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -309,19 +309,19 @@ msgstr "Base"
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "Divisorio colorato"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "Immutabile"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "Nessun divisore"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "Selettore di Opzioni"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
@@ -337,124 +337,124 @@ msgstr ""
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "C'era una volta una storia che nessuno raccontava."
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "Altezza contenitore personalizzata"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "Nessuna selezione iniziale, scorrevole."
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Lineare"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Circolare"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Infinito"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Orologio"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "Sovrapposizione"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "Sfogliabile"
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "Azione n. 1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "Azione n. 2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "Azione n. 3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "Azione n. 4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "Azione n. 5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "Barra di Avanzamento"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Nessuna etichetta"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "Indicatore di Attività"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Dimensioni"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "Abilitato"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
-msgstr ""
+msgstr "Lo stile visivo del Foglio è un lavoro precoce e quindi sembra goffo."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "Valore effettivo %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "Aggiornamento in Tempo Reale"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "Gamma"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Etichette"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "Scrivimi..."
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: TextInputs.qml:67
 msgid "Numbers"
@@ -462,44 +462,44 @@ msgstr "Numeri"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "Sola lettura"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "Nessuno scrive qui"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "Nessuna interazione consentita"
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "Predefinito"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "Testo Ricco"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "Non Controllato"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "Controllato"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "Aspetto"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Raggio"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Immagine"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "Gradiente"
