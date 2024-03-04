@@ -49,7 +49,7 @@ AbstractButton {
 
     QtObject {
         id: internal
-        property bool inListView: pickerDelegate.parent && (QuickUtils.className(pickerDelegate.parent) !== "QQuickPathView")
+        property bool inListView: !!pickerDelegate.ListView.view
         property Item itemList: !inListView ? pickerDelegate.PathView.view : pickerDelegate.ListView.view
         property Picker picker: itemList ? itemList.pickerItem : null
     }
