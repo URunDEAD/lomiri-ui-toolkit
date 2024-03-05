@@ -87,13 +87,13 @@ private:
         const QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
 
         Q_FOREACH(const QString &path, paths) {
-            QDir dir(path + "/icons/" + name);
+            QDir dir(path + QStringLiteral("/icons/") + name);
             if (dir.exists())
                 baseDirs.append(dir.absolutePath());
         }
 
         Q_FOREACH(const QString &baseDir, baseDirs) {
-            QString filename = baseDir + "/index.theme";
+            QString filename = baseDir + QStringLiteral("/index.theme");
             if (QFileInfo::exists(filename)) {
                 QSettings settings(filename, QSettings::IniFormat);
 
@@ -103,11 +103,12 @@ private:
                     Directory dir;
                     dir.path = path;
                     dir.sizeType = sizeTypeFromString(
-                        settings.value(path + "/Type", QStringLiteral("Fixed")).toString());
-                    dir.size = settings.value(path + "/Size", 32).toInt();
-                    dir.minSize = settings.value(path + "/MinSize", 0).toInt();
-                    dir.maxSize = settings.value(path + "/MaxSize", 0).toInt();
-                    dir.threshold = settings.value(path + "/Threshold", 0).toInt();
+                        settings.value(path + QStringLiteral("/Type"),
+                            QStringLiteral("Fixed")).toString());
+                    dir.size = settings.value(path + QStringLiteral("/Size"), 32).toInt();
+                    dir.minSize = settings.value(path + QStringLiteral("/MinSize"), 0).toInt();
+                    dir.maxSize = settings.value(path + QStringLiteral("/MaxSize"), 0).toInt();
+                    dir.threshold = settings.value(path + QStringLiteral("/Threshold"), 0).toInt();
                     directories.append(dir);
                 }
 
@@ -180,11 +181,11 @@ private:
         QString svg = QStringLiteral("%1/%2.svg").arg(dir, name);
 
         Q_FOREACH(const QString &baseDir, baseDirs) {
-            QString filename = baseDir + "/" + png;
+            QString filename = baseDir + QStringLiteral("/") + png;
             if (QFileInfo::exists(filename))
                 return filename;
 
-            filename = baseDir + "/" + svg;
+            filename = baseDir + QStringLiteral("/") + svg;
             if (QFileInfo::exists(filename))
                 return filename;
         }

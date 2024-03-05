@@ -124,7 +124,7 @@ LomiriToolkitModule* LomiriToolkitModule::create(QQmlEngine *engine, const QUrl 
         return Q_NULLPTR;
     }
     LomiriToolkitModule *data = new LomiriToolkitModule(engine);
-    data->m_baseUrl = QUrl(baseUrl.toString() + '/');
+    data->m_baseUrl = QUrl(baseUrl.toString() + QStringLiteral("/"));
     engine->setProperty(engineProperty, QVariant::fromValue(data));
     return data;
 }
