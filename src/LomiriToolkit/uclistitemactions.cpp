@@ -292,7 +292,12 @@ QQmlListProperty<UCAction> UCListItemActions::actions()
 QQmlListProperty<QObject> UCListItemActions::data()
 {
     Q_D(UCListItemActions);
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     return QQmlListProperty<QObject>(this, d->data);
+#else
+    return QQmlListProperty<QObject>(this, &d->data);
+#endif
 }
 
 UT_NAMESPACE_END
