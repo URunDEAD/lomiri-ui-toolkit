@@ -354,7 +354,12 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 #else
             metricsLoggingFilter.split(QStringLiteral(","), Qt::SkipEmptyParts);
 #endif
-        UMApplicationMonitor::LoggingFilters filter = 0;
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+        UMApplicationMonitor::LoggingFilters filter =0;
+#else
+        UMApplicationMonitor::LoggingFilters filter;
+#endif
         const int size = filterList.size();
         for (int i = 0; i < size; ++i) {
             if (filterList[i] == QStringLiteral("*")) {
