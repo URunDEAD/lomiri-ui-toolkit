@@ -86,6 +86,9 @@ Panel {
         target: tools
         ignoreUnknownSignals: true
         onOpenedChanged: {
+            if (!tools) // Can happen due to signal emision order
+                return;
+
             if (tools.opened) {
                 toolbar.open();
             } else {
@@ -93,6 +96,9 @@ Panel {
             }
         }
         onLockedChanged: {
+            if (!tools) // Can happen due to signal emision order
+                return;
+
             toolbar.locked = tools.locked;
             // open the toolbar when it becomes unlocked
             // (may be because a new page was pushed to the page stack)
