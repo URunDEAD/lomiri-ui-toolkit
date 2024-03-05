@@ -194,7 +194,7 @@ void MenuPrivate::insertObject(int index, QObject *o)
         m_platformItems[platformObject] = platformWrapper;
         // map the inserted item with the object which sources the platformItem info.
         if (!m_dataPlatformObjectMap.contains(o, platformObject)) {
-            m_dataPlatformObjectMap.insertMulti(o, platformObject);
+            m_dataPlatformObjectMap.insert(o, platformObject);
         }
 
         QObject::connect(platformObject, &QObject::destroyed, q, [o, this](QObject* platformObject) {
