@@ -69,9 +69,10 @@ void notifyThemeReloaded(QQuickItem *item, UCTheme *theme)
 /*************************************************************************
  * Attached to every Item in the system
  */
-static uint xdata = QObject::registerUserData();
-class UCItemAttached : public QObjectUserData, public QQuickItemChangeListener
+static const char * LUITK_ITEMATTACHED = "_LUITK_itemAttached";
+class UCItemAttached : public QObject, public QQuickItemChangeListener
 {
+    Q_OBJECT
 public:
     explicit UCItemAttached(QQuickItem *owner = 0);
     ~UCItemAttached();
@@ -87,7 +88,8 @@ private:
 };
 
 UCItemAttached::UCItemAttached(QQuickItem *owner)
-    : m_item(owner)
+    : QObject(/* parent */ owner)
+    , m_item(owner)
     , m_prevParent(Q_NULLPTR)
 {
     QQuickItemPrivate::get(m_item)->addItemChangeListener(this, QQuickItemPrivate::Parent);
@@ -97,7 +99,7 @@ UCItemAttached::~UCItemAttached()
 {
     /*
      * Apparent problem: the UCItemAttached for a given item may be
-     * destructed along with the user data for that item, which
+     * destructed along with the children of that item, which
      * occurs after the QQuickItemPrivate destructor has run, in the
      * destructor for the base class QObjectPrivate of
      * QQuickItemPrivate. At that point, the destructors of the
@@ -175,7 +177,8 @@ UCThemingExtension::UCThemingExtension(QQuickItem *extendedItem)
     , themedItem(extendedItem)
     , themeType(Inherited)
 {
-    themedItem->setUserData(xdata, new UCItemAttached(themedItem));
+    themedItem->setProperty(
+        LUITK_ITEMATTACHED, QVariant::fromValue<QObject *>(new UCItemAttached(themedItem)));
 }
 
 UCThemingExtension::~UCThemingExtension()
@@ -300,8 +303,9 @@ QQuickItem *UCThemingExtension::ascendantThemed(QQuickItem *item)
 {
     while (item && !isThemed(item)) {
         // if the item has no xdata set, means we haven't been here yet
-        if (!item->userData(xdata)) {
-            item->setUserData(xdata, new UCItemAttached(item));
+        if (!item->property(LUITK_ITEMATTACHED).isValid()) {
+            item->setProperty(LUITK_ITEMATTACHED,
+                QVariant::fromValue<QObject *>(new UCItemAttached(item)));
         }
         item = item->parentItem();
     }
@@ -309,3 +313,5 @@ QQuickItem *UCThemingExtension::ascendantThemed(QQuickItem *item)
 }
 
 UT_NAMESPACE_END
+
+#include "ucthemingextension.moc"
