@@ -145,7 +145,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -174,7 +174,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -203,7 +203,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(10, 10));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 10));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -233,7 +233,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(10, 10));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 10));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -262,9 +262,9 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QTest::mouseMove(view.data(), guPoint(2.2, 2.2));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(2.2, 2.2));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2.2, 2.2));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -293,9 +293,9 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(10, 10));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 10));
         QTest::mouseMove(view.data(), guPoint(10.2, 10.2));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(10.2, 10.2));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10.2, 10.2));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -324,9 +324,9 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QTest::mouseMove(view.data(), guPoint(2.7, 2.7));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(2.7, 2.7));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2.7, 2.7));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -355,9 +355,9 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(10, 10));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 10));
         QTest::mouseMove(view.data(), guPoint(10.6, 10.6));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(10.6, 10.6));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10.6, 10.6));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -394,10 +394,10 @@ private Q_SLOTS:
 
         // introduce small delay to suppress double clicks
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(10, 10));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 10));
         QCoreApplication::processEvents();
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(10, 69));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 69));
         QCoreApplication::processEvents();
         if (!inputPanelPresent()) {
             QEXPECT_FAIL(0, "No OSK installed", Abort);
@@ -429,9 +429,9 @@ private Q_SLOTS:
 
         // make sure we do not get double click because of the previous tests
         preventDblClick();
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QTest::mouseMove(view.data(), guPoint(2.7, 2.7));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(2.7, 2.7));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2.7, 2.7));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -461,9 +461,9 @@ private Q_SLOTS:
 
         // make sure we do not get double click because of the previous tests
         preventDblClick();
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(10, 10));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 10));
         QTest::mouseMove(view.data(), guPoint(10.5, 10.5));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(10.5, 10.5));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10.5, 10.5));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -493,9 +493,9 @@ private Q_SLOTS:
 
         // make sure we do not get double click because of the previous tests
         preventDblClick();
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(10, 10));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 10));
         QTest::mouseMove(view.data(), guPoint(15, 15));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(15, 15));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(15, 15));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -517,8 +517,8 @@ private Q_SLOTS:
         QSignalSpy pressAndHold(filter, SIGNAL(pressAndHold(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        mousePressAndHold(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        mousePressAndHold(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), true);
         QCOMPARE(pressAndHold.count(), 1);
@@ -534,8 +534,8 @@ private Q_SLOTS:
         QSignalSpy pressAndHold(filter, SIGNAL(pressAndHold(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        mousePressAndHold(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        mousePressAndHold(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(view->rootObject()->hasFocus(), true);
         QCOMPARE(pressAndHold.count(), 1);
@@ -555,7 +555,7 @@ private Q_SLOTS:
         QSignalSpy dblClicked(filter, SIGNAL(doubleClicked(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseDClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseDClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QVariant selectedText = input->property("selectedText");
         QCOMPARE(input->hasFocus(), true);
@@ -599,7 +599,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -630,7 +630,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), false);
         // only the pressed was blocked, the rest of the events land in the proxy
@@ -662,7 +662,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -693,7 +693,7 @@ private Q_SLOTS:
         QSignalSpy exited(filter, SIGNAL(exited(QQuickMouseEvent*, QQuickItem*)));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), true);
         QCOMPARE(pressed.count(), 0);
@@ -724,7 +724,7 @@ private Q_SLOTS:
         QSignalSpy exited(target, SIGNAL(exited()));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), false);
         QCOMPARE(pressed.count(), 1);
@@ -756,7 +756,7 @@ private Q_SLOTS:
         QSignalSpy exited(target, SIGNAL(exited()));
 
         preventDblClick();
-        QTest::mouseClick(input->window(), Qt::LeftButton, 0, guPoint(10, 7));
+        QTest::mouseClick(input->window(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 7));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -780,7 +780,7 @@ private Q_SLOTS:
         QSignalSpy doubleClicked(target, SIGNAL(doubleClicked(QQuickMouseEvent*)));
 
         preventDblClick();
-        QTest::mouseDClick(input->window(), Qt::LeftButton, 0, guPoint(10, 7));
+        QTest::mouseDClick(input->window(), Qt::LeftButton, Qt::NoModifier, guPoint(10, 7));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), true);
         QVariant selectedText = input->property("selectedText");
@@ -807,7 +807,7 @@ private Q_SLOTS:
         QSignalSpy exited(target, SIGNAL(exited()));
 
         preventDblClick();
-        QTest::mouseClick(view.data(), Qt::LeftButton, 0, guPoint(2, 2));
+        QTest::mouseClick(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(2, 2));
         QCoreApplication::processEvents();
         QCOMPARE(input->hasFocus(), true);
         QCOMPARE(pressed.count(), 1);
@@ -840,13 +840,13 @@ private Q_SLOTS:
         QSignalSpy flickStart(flickable, SIGNAL(movementStarted()));
 
         preventDblClick();
-        QTest::mousePress(flickable->window(), Qt::LeftButton, 0, guPoint(5, 5));
+        QTest::mousePress(flickable->window(), Qt::LeftButton, Qt::NoModifier, guPoint(5, 5));
         // Avoid sending MouseMove with no movement.
         for (int i = 1; i <= 30; i++) {
             QTest::mouseMove(flickable->window(), guPoint(5 + i, 5 + i));
         }
         QCoreApplication::processEvents();
-        QTest::mouseRelease(flickable->window(), Qt::LeftButton, 0, guPoint(35, 35));
+        QTest::mouseRelease(flickable->window(), Qt::LeftButton, Qt::NoModifier, guPoint(35, 35));
         QCoreApplication::processEvents();
 
         QCOMPARE(pressed.count(), 1);
@@ -880,12 +880,12 @@ private Q_SLOTS:
         QSignalSpy flickStart(flickable, SIGNAL(movementStarted()));
 
         preventDblClick();
-        QTest::mousePress(flickable->window(), Qt::LeftButton, 0, guPoint(5, 5));
+        QTest::mousePress(flickable->window(), Qt::LeftButton, Qt::NoModifier, guPoint(5, 5));
         // Avoid sending MouseMove with no movement.
         for (int i = 1; i <= 30; i++) {
             QTest::mouseMove(flickable->window(), guPoint(5 + i, 5 + i));
         }
-        QTest::mouseRelease(flickable->window(), Qt::LeftButton, 0, guPoint(35, 35));
+        QTest::mouseRelease(flickable->window(), Qt::LeftButton, Qt::NoModifier, guPoint(35, 35));
         QCoreApplication::processEvents();
 
         QCOMPARE(pressed.count(), 1);
@@ -915,7 +915,7 @@ private Q_SLOTS:
         preventDblClick();
         // Note: press inside the filtered area, so entered() exited() positionChanged() will
         // all receive the pressed button
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(5, 5));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(5, 5));
         QCoreApplication::processEvents();
         QCOMPARE(entered.count(), 1);
         // when entered(), buttons are the same as when pressed
@@ -928,7 +928,7 @@ private Q_SLOTS:
         QCOMPARE(mouseEvent2Params.handler, QString("EVENT2"));
         QCOMPARE(mouseEvent2Params.pressedButton, Qt::LeftButton);
 
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(35, 5));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(35, 5));
         QCoreApplication::processEvents();
         QCOMPARE(exited.count(), 1);
         // when entered(), button is the same when pressed, however buttons
@@ -956,7 +956,7 @@ private Q_SLOTS:
         preventDblClick();
         // move mouse while entered() triggers
         int i, x = view->rootObject()->width() / 2;
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, QPoint(x, 0));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, QPoint(x, 0));
         for (i = 0; (i < view->rootObject()->height()) && (entered.count() < 1); i++) {
             QTest::mouseMove(view.data(), QPoint(x, i));
         }
@@ -981,7 +981,7 @@ private Q_SLOTS:
         QCOMPARE(mouseEventParams.pressedButtons, Qt::NoButton);
 
         // cleanup
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, QPoint(x, i));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, QPoint(x, i));
     }
 
     //This is to test that entered/exited events are fired as a consequence of a mouse move.
@@ -1014,7 +1014,7 @@ private Q_SLOTS:
         QCOMPARE(mouseEvent3Params.handler, QString("EVENT4"));
         QCOMPARE(mouseEvent3Params.pressedButton, Qt::NoButton);
 
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, guPoint(15, 15));
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(15, 15));
         QCoreApplication::processEvents();
         QCOMPARE(mouseEventParams.handler, QString("EVENT1"));
         QCOMPARE(mouseEventParams.pressedButton, Qt::LeftButton);
@@ -1048,7 +1048,7 @@ private Q_SLOTS:
         QCOMPARE(mouseEvent3Params.handler, QString("EVENT4"));
         QCOMPARE(mouseEvent3Params.pressedButton, Qt::LeftButton);
 
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, guPoint(45, 15));
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, guPoint(45, 15));
         QCoreApplication::processEvents();
 
         QCOMPARE(positionChanged.count(), 4);
@@ -1106,13 +1106,13 @@ private Q_SLOTS:
 
         // produce long press
         // FIXME move this under LomiriTestCase
-        mousePressAndHold(test.data(), Qt::LeftButton, 0, guPoint(20, 30));
+        mousePressAndHold(test.data(), Qt::LeftButton, Qt::NoModifier, guPoint(20, 30));
         QCoreApplication::processEvents();
         QCOMPARE(hostHoldSpy.count(), 1);
         QCOMPARE(proxyHoldSpy.count(), 1);
 
         // click
-        QTest::mouseRelease(test.data(), Qt::LeftButton, 0, guPoint(20, 30));
+        QTest::mouseRelease(test.data(), Qt::LeftButton, Qt::NoModifier, guPoint(20, 30));
         QCoreApplication::processEvents();
     }
 
@@ -1130,7 +1130,7 @@ private Q_SLOTS:
 
         // produce long press, but move mouse while in delay
         // FIXME move this under LomiriTestCase
-        QTest::mousePress(test.data(), Qt::LeftButton, 0, guPoint(20, 30));
+        QTest::mousePress(test.data(), Qt::LeftButton, Qt::NoModifier, guPoint(20, 30));
         QTest::qWait(UCMouse::DefaultPressAndHoldDelay / 2);
         for (int i = 1; i <= 4; i++) {
             QTest::mouseMove(test.data(), guPoint(20 + i, 30 + i));
@@ -1141,7 +1141,7 @@ private Q_SLOTS:
         QCOMPARE(proxyHoldSpy.count(), 0);
 
         // click
-        QTest::mouseRelease(test.data(), Qt::LeftButton, 0, guPoint(20, 30));
+        QTest::mouseRelease(test.data(), Qt::LeftButton, Qt::NoModifier, guPoint(20, 30));
         QCoreApplication::processEvents();
     }
 
@@ -1164,7 +1164,7 @@ private Q_SLOTS:
         QObject::connect(proxy1, SIGNAL(pressed(QQuickMouseEvent*,QQuickItem*)), this, SLOT(onMouseEvent2(QQuickMouseEvent*,QQuickItem*)));
         QObject::connect(proxy2, SIGNAL(pressed(QQuickMouseEvent*,QQuickItem*)), this, SLOT(onMouseEvent3(QQuickMouseEvent*,QQuickItem*)));
 
-        QTest::mousePress(test.data(), Qt::LeftButton, 0, guPoint(20, 30));
+        QTest::mousePress(test.data(), Qt::LeftButton, Qt::NoModifier, guPoint(20, 30));
         QCoreApplication::processEvents();
         QCOMPARE(hostPressed.count(), 1);
         QCOMPARE(proxy1Pressed.count(), 1);
@@ -1175,7 +1175,7 @@ private Q_SLOTS:
         QCOMPARE(mouseEvent3Params.sender, qobject_cast<QQuickItem*>(proxy1->parent()));
 
         // click
-        QTest::mouseRelease(test.data(), Qt::LeftButton, 0, guPoint(20, 30));
+        QTest::mouseRelease(test.data(), Qt::LeftButton, Qt::NoModifier, guPoint(20, 30));
         QCoreApplication::processEvents();
     }
 
