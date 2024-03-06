@@ -44,7 +44,7 @@ else
 endif
 endif
 
-override_dh_build:
+override_dh_auto_build:
 	dh_auto_build --parallel
 	dh_auto_build --parallel -- docs
 
