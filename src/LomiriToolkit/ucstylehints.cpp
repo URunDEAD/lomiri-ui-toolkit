@@ -184,6 +184,13 @@ void UCStyleHints::decodeBinding(const QString &propertyPrefix, const QV4::Compi
 #endif
         break;
     }
+#if QT_VERSION >= QT_VERSION_CHECK(5, 13, 0)
+    case QV4::CompiledData::Binding::Type_Null:
+    {
+        m_values << qMakePair(propertyName, QVariant::fromValue(nullptr));
+        break;
+    }
+#endif
     case QV4::CompiledData::Binding::Type_Number:
     {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
@@ -198,6 +205,15 @@ void UCStyleHints::decodeBinding(const QString &propertyPrefix, const QV4::Compi
     case QV4::CompiledData::Binding::Type_Boolean:
     {
         m_values << qMakePair(propertyName, binding->valueAsBoolean());
+        break;
+    }
+
+    case QV4::CompiledData::Binding::Type_Invalid: // Why would QML pass it here?
+    case QV4::CompiledData::Binding::Type_Object: // Handled in verifyProperty()
+    case QV4::CompiledData::Binding::Type_AttachedProperty: // Handled above
+    case QV4::CompiledData::Binding::Type_GroupProperty: // Handled above
+    {
+        Q_UNREACHABLE();
         break;
     }
     }
