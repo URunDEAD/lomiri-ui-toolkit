@@ -31,22 +31,22 @@ override_dh_auto_configure:
 	qmake -r CONFIG+=debian_build $(CONFIGURE_OPTS)
 
 %:
-	dh $@ --parallel --with migrations
+	dh $@ --with migrations
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	mkdir -p debian/tmp/home/run
 	chmod +x tests/xvfb.sh
 ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
-	-tests/xvfb.sh dh_auto_test
+	-tests/xvfb.sh dh_auto_test --no-parallel
 else
-	tests/xvfb.sh dh_auto_test
+	tests/xvfb.sh dh_auto_test --no-parallel
 endif
 endif
 
 override_dh_auto_build:
-	dh_auto_build --parallel
-	dh_auto_build --parallel -- docs
+	dh_auto_build
+	dh_auto_build -- docs
 
 override_dh_install:
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
@@ -66,7 +66,7 @@ endif
 	# sphinx-build -b json documentation/autopilot-helpers documentation/autopilot-helpers/_build/json
 	# Drop QML types used to test apicheck only
 	rm -f debian/tmp/usr/lib/*/qt5/qml/Extinct/Animals/*
-	dh_install --fail-missing
+	dh_install
 
 override_dh_auto_clean:
 	dh_auto_clean
