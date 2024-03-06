@@ -30,8 +30,11 @@ override_dh_auto_configure:
 	qmake $(CONFIGURE_OPTS)
 	qmake -r CONFIG+=debian_build $(CONFIGURE_OPTS)
 
+# Add migrations add-on when build on Ubuntu & original name is available.
+DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migrations")
+
 %:
-	dh $@ --with migrations
+	dh $@ $(DH_MIGRATIONS)
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
