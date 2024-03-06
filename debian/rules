@@ -1,16 +1,17 @@
 #!/usr/bin/make -f
 
+# see FEATURE AREAS in dpkg-buildflags(1)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+include /usr/share/dpkg/buildflags.mk
+
 # Uncomment this to turn on verbose mode.
 # export DH_VERBOSE=1
 export DPKG_GENSYMBOLS_CHECK_LEVEL=4
-export CFLAGS := $(shell dpkg-buildflags --get CFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
-export CXXFLAGS := $(shell dpkg-buildflags --get CXXFLAGS) $(shell dpkg-buildflags --get CPPFLAGS)
-export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
+
 export HOME := $(shell realpath .)
 export QT_SELECT=qt5
 
-DEB_HOST_MULTI_ARCH ?= $(shell dpkg-architecture -qDEB_BUILD_MULTIARCH)
-DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+include /usr/share/dpkg/architecture.mk
 
 # Enforce -Werror for an upstream build.
 CONFIGURE_OPTS := CONFIG+=warnings_are_errors
@@ -27,8 +28,12 @@ endif
 testskip_architectures := armhf powerpc ppc64el s390x
 
 override_dh_auto_configure:
-	qmake $(CONFIGURE_OPTS)
-	qmake -r CONFIG+=debian_build $(CONFIGURE_OPTS)
+	qmake -r \
+		CONFIG+=debian_build \
+		$(CONFIGURE_OPTS) \
+		QMAKE_CFLAGS="$(CFLAGS)" \
+		QMAKE_CXX_FLAGS="$(CXXFLAGS)" \
+		QMAKE_LFLAGS="${LDFLAGS}"
 
 # Add migrations add-on when build on Ubuntu & original name is available.
 DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migrations")
@@ -69,10 +74,24 @@ endif
 	# sphinx-build -b json documentation/autopilot-helpers documentation/autopilot-helpers/_build/json
 	# Drop QML types used to test apicheck only
 	rm -f debian/tmp/usr/lib/*/qt5/qml/Extinct/Animals/*
+
+	# drop empty directory
+	rm debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/Makefile
+	rmdir debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/.pch/
+	rmdir debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/.obj/
+
+	# drop references to the build chroot
+	sed -i debian/tmp/usr/lib/*/*.prl -e "/^QMAKE_PRL_BUILD_DIR.*/d"
+	sed -i debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/*.prl -e "/^QMAKE_PRL_BUILD_DIR.*/d"
+
 	dh_install
 
 override_dh_auto_clean:
 	dh_auto_clean
+
+	# Qt / qmake creates <FolderName>.version files which don't
+	# get clean-up properly by 'make distclean'
+	-find . -name '*.version' -delete
 
 	# Delete additional files
 	rm -rvf \
