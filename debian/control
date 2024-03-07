@@ -61,6 +61,7 @@ Build-Depends: accountsservice <!nocheck>,
                qttools5-dev-tools,
                suru-icon-theme (>= 14.04+16.10.20160720),
                uuid-runtime,
+               xauth <!nocheck>,
                xvfb <!nocheck>,
 Standards-Version: 3.9.7
 Homepage: https://launchpad.net/lomiri-ui-toolkit
