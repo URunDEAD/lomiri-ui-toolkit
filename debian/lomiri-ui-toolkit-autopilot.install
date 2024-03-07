@@ -1,2 +1,4 @@
 usr/lib/*/lomiri-ui-toolkit/apicheck
-usr/lib/python3
+# Pybuild will install the file to e.g. usr/lib/python3.12, then dh_install will
+# run, and after that dh_python3 will move the file to usr/lib/python3.
+usr/lib/python3*

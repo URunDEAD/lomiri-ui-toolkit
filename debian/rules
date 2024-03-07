@@ -34,6 +34,7 @@ override_dh_auto_configure:
 		QMAKE_CFLAGS="$(CFLAGS)" \
 		QMAKE_CXX_FLAGS="$(CXXFLAGS)" \
 		QMAKE_LFLAGS="${LDFLAGS}"
+	dh_auto_configure --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 # Add migrations add-on when build on Ubuntu & original name is available.
 DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migrations")
@@ -55,6 +56,11 @@ endif
 override_dh_auto_build:
 	dh_auto_build
 	dh_auto_build -- docs
+	dh_auto_build --sourcedirectory=tests/autopilot --buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install
+	dh_auto_install --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 override_dh_install:
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
@@ -88,6 +94,7 @@ endif
 
 override_dh_auto_clean:
 	dh_auto_clean
+	dh_auto_clean --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 	# Qt / qmake creates <FolderName>.version files which don't
 	# get clean-up properly by 'make distclean'
