@@ -189,7 +189,7 @@ private Q_SLOTS:
         QScopedPointer<BottomEdgeTestCase> test(new BottomEdgeTestCase("BottomEdgeInItem.qml"));
         test->testItem()->hint()->setStatus(UCBottomEdgeHint::Locked);
         UCBottomEdgeHint *hint = test->testItem()->hint();
-        QTest::mouseClick(test->testItem()->hint()->window(), Qt::LeftButton, 0, LomiriTestCase::centerOf(hint, true).toPoint());
+        QTest::mouseClick(test->testItem()->hint()->window(), Qt::LeftButton, Qt::NoModifier, LomiriTestCase::centerOf(hint, true).toPoint());
         QTRY_COMPARE_WITH_TIMEOUT(test->testItem()->status(), UCBottomEdge::Committed, 1000);
     }
 
@@ -217,7 +217,7 @@ private Q_SLOTS:
         QSignalSpy actionSpy(action, SIGNAL(triggered(QVariant)));
         QSignalSpy hintSpy(hint, SIGNAL(triggered(QVariant)));
 
-        QTest::mouseClick(test->testItem()->hint()->window(), Qt::LeftButton, 0, LomiriTestCase::centerOf(hint, true).toPoint());
+        QTest::mouseClick(test->testItem()->hint()->window(), Qt::LeftButton, Qt::NoModifier, LomiriTestCase::centerOf(hint, true).toPoint());
         QTRY_COMPARE_WITH_TIMEOUT(test->testItem()->status(), UCBottomEdge::Committed, 1000);
 
         QCOMPARE(actionSpy.count(), 0);
@@ -296,7 +296,7 @@ private Q_SLOTS:
         }
         // we need to do the swipe in more steps
         if (withMouse) {
-            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, 0, 20);
+            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, Qt::NoModifier, 20);
         } else {
             UCTestExtras::touchDrag(0, bottomEdge, from, delta, 20);
         }
@@ -325,7 +325,7 @@ private Q_SLOTS:
         }
         // we need to do the swipe in more steps
         if (withMouse) {
-            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, 0, 20);
+            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, Qt::NoModifier, 20);
         } else {
             UCTestExtras::touchDrag(0, bottomEdge, from, delta, 20);
         }
@@ -415,14 +415,14 @@ private Q_SLOTS:
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
             from = bottomEdge->mapToScene(from).toPoint();
             to = bottomEdge->mapToScene(to).toPoint();
-            QTest::mousePress(bottomEdge->window(), Qt::LeftButton, 0, from, 20);
+            QTest::mousePress(bottomEdge->window(), Qt::LeftButton, Qt::NoModifier, from, 20);
             QPoint movePos(from);
             while (movePos.y() > to.y()) {
                 QTest::mouseMove(bottomEdge->window(), movePos, 20);
                 movePos += QPoint(0, -10);
                 QVERIFY(style->m_panel->y() >= bottomEdge->y());
             }
-            QTest::mouseRelease(bottomEdge->window(),Qt::LeftButton, 0, movePos, 20);
+            QTest::mouseRelease(bottomEdge->window(), Qt::LeftButton, Qt::NoModifier, movePos, 20);
         } else {
             UCTestExtras::touchPress(0, bottomEdge, from);
             QPoint movePos(from);
@@ -615,7 +615,7 @@ private Q_SLOTS:
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
         }
         if (withMouse) {
-            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, 0);
+            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, Qt::NoModifier);
         } else {
             UCTestExtras::touchDrag(0, bottomEdge, from, delta);
         }
@@ -645,7 +645,7 @@ private Q_SLOTS:
         QPoint delta(0, -(bottomEdge->height() / 2.0f));
         if (withMouse) {
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
-            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, 0);
+            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, Qt::NoModifier);
         } else {
             UCTestExtras::touchDrag(0, bottomEdge, from, delta);
         }
@@ -690,7 +690,7 @@ private Q_SLOTS:
 
         if (withMouse) {
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
-            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, 0);
+            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, Qt::NoModifier);
         } else {
             UCTestExtras::touchDrag(0, bottomEdge, from, delta, 20);
         }
@@ -726,14 +726,14 @@ private Q_SLOTS:
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
             from = bottomEdge->mapToScene(from).toPoint();
             to = bottomEdge->mapToScene(to).toPoint();
-            QTest::mousePress(bottomEdge->window(), Qt::LeftButton, 0, from, 20);
+            QTest::mousePress(bottomEdge->window(), Qt::LeftButton, Qt::NoModifier, from, 20);
             QPoint movePos(from);
             while (movePos.y() > to.y()) {
                 QTest::mouseMove(bottomEdge->window(), movePos, 20);
                 movePos += QPoint(0, -20);
             }
             movePos -= QPoint(0, -20);
-            QTest::mouseRelease(bottomEdge->window(),Qt::LeftButton, 0, movePos, 20);
+            QTest::mouseRelease(bottomEdge->window(), Qt::LeftButton, Qt::NoModifier, movePos, 20);
         } else {
             UCTestExtras::touchPress(0, bottomEdge, from);
             QPoint movePos(from);
@@ -780,13 +780,13 @@ private Q_SLOTS:
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
             from = bottomEdge->mapToScene(from).toPoint();
             to = bottomEdge->mapToScene(to).toPoint();
-            QTest::mousePress(bottomEdge->window(), Qt::LeftButton, 0, from, 20);
+            QTest::mousePress(bottomEdge->window(), Qt::LeftButton, Qt::NoModifier, from, 20);
             QPoint movePos(from);
             while (movePos.y() > to.y() && (bottomEdge->activeRegion() != region)) {
                 QTest::mouseMove(bottomEdge->window(), movePos, 20);
                 movePos += QPoint(0, -10);
             }
-            QTest::mouseRelease(bottomEdge->window(),Qt::LeftButton, 0, movePos, 20);
+            QTest::mouseRelease(bottomEdge->window(), Qt::LeftButton, Qt::NoModifier, movePos, 20);
         } else {
             UCTestExtras::touchPress(0, bottomEdge, from);
             QPoint movePos(from);
@@ -836,7 +836,7 @@ private Q_SLOTS:
         QSignalSpy activeRegion(bottomEdge, SIGNAL(activeRegionChanged(UCBottomEdgeRegion*)));
         if (withMouse) {
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
-            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, 0, 10);
+            UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, Qt::NoModifier, 10);
         } else {
             UCTestExtras::touchDrag(0, bottomEdge, from, delta, 10);
         }

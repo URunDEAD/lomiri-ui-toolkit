@@ -880,10 +880,10 @@ private Q_SLOTS:
         // press the button
         QPointF pressPt(button->width()/2, button->height()/2);
         pressPt = view->rootObject()->mapFromItem(button, pressPt);
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, pressPt.toPoint());
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, pressPt.toPoint());
         color = button->property("color").value<QColor>();
         QCOMPARE(color, QColor("tan"));
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, pressPt.toPoint());
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, pressPt.toPoint());
     }
 
     void test_stylehints_multiple_data()
@@ -924,9 +924,9 @@ private Q_SLOTS:
 
         QPointF pressPt(button->width()/2, button->height()/2);
         pressPt = view->rootObject()->mapFromItem(button, pressPt);
-        QTest::mousePress(view.data(), Qt::LeftButton, 0, pressPt.toPoint());
+        QTest::mousePress(view.data(), Qt::LeftButton, Qt::NoModifier, pressPt.toPoint());
         QColor pressedColor = qmlProperty.read().value<QColor>();
-        QTest::mouseRelease(view.data(), Qt::LeftButton, 0, pressPt.toPoint());
+        QTest::mouseRelease(view.data(), Qt::LeftButton, Qt::NoModifier, pressPt.toPoint());
         QCOMPARE(pressedColor, colorPressed);
     }
 

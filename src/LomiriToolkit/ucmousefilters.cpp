@@ -920,7 +920,11 @@ void UCMouse::setClickAndHoldThreshold(int threshold)
   */
 QQmlListProperty<QQuickItem> UCMouse::forwardTo()
 {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     return QQmlListProperty<QQuickItem>(this, m_forwardList);
+#else
+    return QQmlListProperty<QQuickItem>(this, &m_forwardList);
+#endif
 }
 
 /*!

@@ -32,7 +32,11 @@ void LomiriPerformanceMetricsPlugin::registerTypeVersion(const char *uri, int ma
     qmlRegisterType<UPMRenderingTimes>(uri, major, minor, "RenderingTimes");
     qmlRegisterType<UPMCpuUsage>(uri, major, minor, "CpuUsage");
     qmlRegisterType<UPMTextureFromImage>(uri, major, minor, "TextureFromImage");
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     qmlRegisterType<UPMGraphModel>();
+#else
+    qmlRegisterAnonymousType<UPMGraphModel>(uri, major);
+#endif
 }
 
 void LomiriPerformanceMetricsPlugin::registerTypes(const char *uri)

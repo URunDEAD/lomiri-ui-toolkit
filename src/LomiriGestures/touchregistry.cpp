@@ -164,7 +164,11 @@ void TouchRegistry::freeEndedTouchInfos()
 void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<int> &touchIds,
         QQuickItem *item)
 {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     Qt::TouchPointStates touchPointStates = 0;
+#else
+    Qt::TouchPointStates touchPointStates;
+#endif
     QList<QTouchEvent::TouchPoint> touchPoints;
 
     const QList<QTouchEvent::TouchPoint> &allTouchPoints = event->touchPoints();
@@ -176,11 +180,14 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         const QTouchEvent::TouchPoint &originalTouchPoint = allTouchPoints[i];
         if (touchIds.contains(originalTouchPoint.id())) {
             QTouchEvent::TouchPoint touchPoint = originalTouchPoint;
-
             translateTouchPointFromScreenToWindowCoords(touchPoint);
 
             // Set the point's local coordinates to that of the item
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
             touchPoint.setRect(windowToCandidateTransform.mapRect(touchPoint.sceneRect()));
+#else
+            touchPoint.setPos(windowToCandidateTransform.map(touchPoint.scenePos()));
+#endif
             touchPoint.setStartPos(windowToCandidateTransform.map(touchPoint.startScenePos()));
             touchPoint.setLastPos(windowToCandidateTransform.map(touchPoint.lastScenePos()));
             touchPoint.setVelocity(windowToCandidateMatrix.mapVector(touchPoint.velocity()).toVector2D());
@@ -209,11 +216,19 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
 
 void TouchRegistry::translateTouchPointFromScreenToWindowCoords(QTouchEvent::TouchPoint &touchPoint)
 {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     touchPoint.setScreenRect(touchPoint.sceneRect());
+#else
+    touchPoint.setScreenPos(touchPoint.scenePos());
+#endif
     touchPoint.setStartScreenPos(touchPoint.startScenePos());
     touchPoint.setLastScreenPos(touchPoint.lastScenePos());
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     touchPoint.setSceneRect(touchPoint.rect());
+#else
+    touchPoint.setScenePos(touchPoint.pos());
+#endif
     touchPoint.setStartScenePos(touchPoint.startPos());
     touchPoint.setLastScenePos(touchPoint.lastPos());
 }

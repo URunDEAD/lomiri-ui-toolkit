@@ -203,7 +203,7 @@ QString UCAction::text()
     // if we have a mnemonic, underscore it
     if (!m_mnemonic.isEmpty()) {
 
-        QString mnemonic = "&" + m_mnemonic.toString().remove(QStringLiteral("Alt+"));
+        QString mnemonic = QStringLiteral("&") + m_mnemonic.toString().remove(QStringLiteral("Alt+"));
         // patch special cases
         mnemonic.replace(QStringLiteral("Space"), QStringLiteral(" "));
         int mnemonicIndex = m_text.indexOf(mnemonic);
@@ -217,7 +217,9 @@ QString UCAction::text()
         // https://bugs.launchpad.net/lomiri/+source/lomiri-ui-toolkit/+bug/1276808
         if (QuickUtils::instance()->keyboardAttached()) {
             // underscore the character
-            displayText.replace(mnemonicIndex, mnemonic.length(), "<u>" + mnemonic[1] + "</u>");
+            displayText.replace(
+                mnemonicIndex, mnemonic.length(),
+                QStringLiteral("<u>%1</u>").arg(mnemonic[1]));
         } else {
             displayText.remove(mnemonicIndex, 1);
         }
@@ -333,7 +335,8 @@ void UCAction::setIconName(const QString &name)
     }
     m_iconName = name;
     if (m_factoryIconSource) {
-        m_iconSource = m_iconName.isEmpty() ? QUrl() : QUrl("image://theme/" + m_iconName);
+        m_iconSource = m_iconName.isEmpty()
+            ? QUrl() : QUrl(QStringLiteral("image://theme/") + m_iconName);
         Q_EMIT iconSourceChanged();
     }
     Q_EMIT iconNameChanged();

@@ -127,7 +127,12 @@ void UMFileLoggerPrivate::log(const UMEvent& event)
                     << event.process.cpuUsage << ' '
                     << event.process.vszMemory << ' '
                     << event.process.rssMemory << ' '
-                    << event.process.threadCount << '\n' << flush;
+                    << event.process.threadCount << '\n'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             } else {
                 m_textStream
                     << (m_flags & Colored ? "\033[33mP\033[00m " : "P ")
@@ -136,7 +141,12 @@ void UMFileLoggerPrivate::log(const UMEvent& event)
                     << "VSZ" << dimColon << event.process.vszMemory << "kB "
                     << "RSS" << dimColon << event.process.rssMemory << "kB "
                     << "Threads" << dimColon << event.process.threadCount
-                    << '\n' << flush;
+                    << '\n'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             }
             break;
         }
@@ -152,7 +162,12 @@ void UMFileLoggerPrivate::log(const UMEvent& event)
                     << event.frame.syncTime << ' '
                     << event.frame.renderTime << ' '
                     << event.frame.gpuTime << ' '
-                    << event.frame.swapTime << '\n' << flush;
+                    << event.frame.swapTime << '\n'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             } else {
                 m_textStream
                     << (m_flags & Colored ? "\033[36mF\033[00m " : "F ")
@@ -163,7 +178,12 @@ void UMFileLoggerPrivate::log(const UMEvent& event)
                     << "Sync" << dimColon << event.frame.syncTime / 1000000.0f << "ms "
                     << "Render" << dimColon << event.frame.renderTime / 1000000.0f << "ms "
                     << "GPU" << dimColon << event.frame.gpuTime / 1000000.0f << "ms "
-                    << "Swap" << dimColon << event.frame.swapTime / 1000000.0f << "ms\n" << flush;
+                    << "Swap" << dimColon << event.frame.swapTime / 1000000.0f << "ms\n"
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             }
             break;
 
@@ -175,7 +195,12 @@ void UMFileLoggerPrivate::log(const UMEvent& event)
                     << event.window.id << ' '
                     << event.window.state << ' '
                     << event.window.width << ' '
-                    << event.window.height << '\n' << flush;
+                    << event.window.height << '\n'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             } else {
                 const char* const stateString[] = { "Hidden", "Shown", "Resized" };
                 Q_STATIC_ASSERT(ARRAY_SIZE(stateString) == UMWindowEvent::StateCount);
@@ -185,7 +210,12 @@ void UMFileLoggerPrivate::log(const UMEvent& event)
                     << "Id" << dimColon << event.window.id << ' '
                     << "State" << dimColon << stateString[event.window.state] << ' '
                     << "Size" << dimColon << event.window.width << 'x' << event.window.height
-                    << '\n' << flush;
+                    << '\n'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             }
             break;
         }
@@ -196,14 +226,24 @@ void UMFileLoggerPrivate::log(const UMEvent& event)
                     << "G "
                     << event.timeStamp << ' '
                     << event.generic.id << ' '
-                    << event.generic.string << '\n' << flush;
+                    << event.generic.string << '\n'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             } else {
                 m_textStream
                     << (m_flags & Colored ? "\033[32mG\033[00m " : "G ")
                     << dim << timeString << reset << ' '
                     << "Id" << dimColon << event.generic.id << ' '
                     << "String" << dimColon << '"' << event.generic.string << '"'
-                    << '\n' << flush;
+                    << '\n'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << flush;
+#else
+                    << Qt::flush;
+#endif
             }
             break;
         }

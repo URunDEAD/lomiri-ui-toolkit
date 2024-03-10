@@ -106,8 +106,8 @@ ListItem.Empty {
     highlightWhenPressed: false
     selected: ListView.isCurrentItem
     anchors {
-        left: parent.left
-        right: parent.right
+        left: listView.contentItem.left
+        right: listView.contentItem.right
     }
     onClicked: {
         if (listView.container.currentlyExpanded) {

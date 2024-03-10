@@ -102,13 +102,48 @@ private Q_SLOTS:
 
         QString expected;
         QTextStream expectedStream(&expected);
-        expectedStream << "source: \"image://scaling/1/data/borderInName.png\"" << endl;
-        expectedStream << "border.left: 9" << endl;
-        expectedStream << "border.right: 2" << endl;
-        expectedStream << "border.top: 9" << endl;
-        expectedStream << "border.bottom: 0" << endl;
-        expectedStream << "horizontalTileMode: Stretch" << endl;
-        expectedStream << "verticalTileMode: Stretch" << endl;
+        expectedStream << "source: \"image://scaling/1/data/borderInName.png\""
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                       << endl;
+#else
+                       << Qt::endl;
+#endif
+        expectedStream << "border.left: 9"
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                       << endl;
+#else
+                       << Qt::endl;
+#endif
+        expectedStream << "border.right: 2"
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                       << endl;
+#else
+                       << Qt::endl;
+#endif
+        expectedStream << "border.top: 9"
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                         << endl;
+#else
+                         << Qt::endl;
+#endif
+        expectedStream << "border.bottom: 0"
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                         << endl;
+#else
+                         << Qt::endl;
+#endif
+        expectedStream << "horizontalTileMode: Stretch"
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                       << endl;
+#else
+                       << Qt::endl;
+#endif
+        expectedStream << "verticalTileMode: Stretch"
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                       << endl;
+#else
+                       << Qt::endl;
+#endif
 
         QCOMPARE(result, expected);
     }

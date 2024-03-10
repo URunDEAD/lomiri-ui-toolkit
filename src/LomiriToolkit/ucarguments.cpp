@@ -208,15 +208,36 @@ QString UCArguments::usage() {
     }
 
     // display what each argument is used for
-    usageStream << endl;
-    usageStream << i18n->tr("Options:") << endl;
+    usageStream
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+            << endl;
+#else
+            << Qt::endl;
+#endif
+    usageStream << i18n->tr("Options:")
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                << endl;
+#else
+                << Qt::endl;
+#endif
 
     Q_FOREACH (UCArgument* argument, m_arguments) {
-        usageStream << indentation << argument->usage() << endl;
+        usageStream << indentation << argument->usage()
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+                    << endl;
+#else
+                    << Qt::endl;
+#endif
     }
 
     if (m_defaultArgument != NULL) {
-        usageStream << endl << m_defaultArgument->help();
+        usageStream
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
+               << endl
+#else
+               << Qt::endl
+#endif
+               << m_defaultArgument->help();
     }
 
     return usage;
@@ -446,7 +467,11 @@ QHash<QString, QStringList> UCArguments::parseRawArguments(const QStringList& ra
         if (rawArgument.startsWith('-')) {
             // it starts with a '-' therefore it is a named argument
             // remove all prepended '-'
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
             rawArgument = rawArgument.split('-', QString::SkipEmptyParts).join('-');
+#else
+            rawArgument = rawArgument.split('-', Qt::SkipEmptyParts).join('-');
+#endif
             // string after the '=' sign is a value for the argument
             values = rawArgument.split(QStringLiteral("="));
             name = values.takeAt(0);
