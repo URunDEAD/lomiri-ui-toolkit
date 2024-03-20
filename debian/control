@@ -321,8 +321,8 @@ Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-Breaks: qml-module-lomiri-components (<< 1.3.5012~),
-Replaces: qml-module-lomiri-components (<< 1.3.5012~),
+Breaks: qml-module-lomiri-components (<< 1.3.5011~),
+Replaces: qml-module-lomiri-components (<< 1.3.5011~),
 Description: Qt Components for Lomiri - common files
  Qt Components for Lomiri offers a set of reusable user interface
  components for Qt Quick 2 / QML.
