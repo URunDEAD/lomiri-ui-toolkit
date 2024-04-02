@@ -73,9 +73,9 @@ Multi-Arch: same
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
 Depends: fonts-ubuntu,
-         liblomirigestures5 (= ${binary:Version}),
-         liblomirimetrics5 (= ${binary:Version}),
-         liblomiritoolkit5 (= ${binary:Version}),
+         liblomirigestures5t64 (= ${binary:Version}),
+         liblomirimetrics5t64 (= ${binary:Version}),
+         liblomiritoolkit5t64 (= ${binary:Version}),
          libqt5svg5,
          lomiri-ui-toolkit-common (>= ${source:Version}),
             lomiri-ui-toolkit-common (<< ${source:Version}.1~),
@@ -107,9 +107,9 @@ Multi-Arch: same
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
 Depends: fonts-ubuntu,
-         liblomirigestures5 (= ${binary:Version}),
-         liblomirimetrics5 (= ${binary:Version}),
-         liblomiritoolkit5 (= ${binary:Version}),
+         liblomirigestures5t64 (= ${binary:Version}),
+         liblomirimetrics5t64 (= ${binary:Version}),
+         liblomiritoolkit5t64 (= ${binary:Version}),
          libqt5svg5,
          lomiri-ui-toolkit-theme (= ${binary:Version}),
          qml-module-lomiri-performancemetrics,
@@ -203,7 +203,10 @@ Depends: qml-module-lomiri-components,
 Description: Transitional dummy package for Lomiri UI Toolkit QML plugin
  This package contains the Lomiri Components QML plugin.
 
-Package: liblomirigestures5
+Package: liblomirigestures5t64
+Provides: ${t64:Provides}
+Replaces: liblomirigestures5
+Breaks: liblomirigestures5 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: dpkg (>= 1.15.6~),
@@ -220,7 +223,7 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: liblomirigestures5 (= ${binary:Version}),
+Depends: liblomirigestures5t64 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri gestures library development files
@@ -240,7 +243,10 @@ Description: Lomiri gestures library private development files
  This package contains the private development files for
  Lomiri gestures library with SwipeArea
 
-Package: liblomirimetrics5
+Package: liblomirimetrics5t64
+Provides: ${t64:Provides}
+Replaces: liblomirimetrics5
+Breaks: liblomirimetrics5 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: dpkg (>= 1.15.6~),
@@ -257,7 +263,7 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: liblomirimetrics5 (= ${binary:Version}),
+Depends: liblomirimetrics5t64 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri metrics library development files
@@ -277,7 +283,10 @@ Description: Lomiri metrics library private development files
  This package contains the private development files for
  the Lomiri metrics library
 
-Package: liblomiritoolkit5
+Package: liblomiritoolkit5t64
+Provides: ${t64:Provides}
+Replaces: liblomiritoolkit5
+Breaks: liblomiritoolkit5 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
 Pre-Depends: dpkg (>= 1.15.6~),
@@ -294,7 +303,7 @@ Multi-Arch: same
 Section: libdevel
 Pre-Depends: dpkg (>= 1.15.6~),
              ${misc:Pre-Depends},
-Depends: liblomiritoolkit5 (= ${binary:Version}),
+Depends: liblomiritoolkit5t64 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri toolkit common library development files
