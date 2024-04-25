@@ -27,7 +27,7 @@ Item {
             // we have a custom effect playing, stop it
             effect.stop();
         }
-        if (effect.running) {
+        if (effect.state === Feedback.Running) {
             // this is a global effect, leave
             return;
         }
