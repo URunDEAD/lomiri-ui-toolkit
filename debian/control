@@ -70,8 +70,6 @@ Vcs-Bzr: https://code.launchpad.net/~lomiri-sdk-team/lomiri-ui-toolkit/trunk
 Package: qml-module-lomiri-components
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: fonts-ubuntu,
          liblomirigestures5t64 (= ${binary:Version}),
          liblomirimetrics5t64 (= ${binary:Version}),
@@ -104,8 +102,6 @@ Description: Qt Components for Lomiri - Components QML plugin
 Package: qml-module-lomiri-components-labs
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: fonts-ubuntu,
          liblomirigestures5t64 (= ${binary:Version}),
          liblomirimetrics5t64 (= ${binary:Version}),
@@ -133,8 +129,6 @@ Description: Qt Components Labs for Lomiri - Components QML plugin
 Package: qml-module-lomiri-layouts
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Breaks: qtdeclarative5-lomiri-ui-toolkit-plugin (<< ${source:Version}),
@@ -148,8 +142,6 @@ Description: Qt Components for Lomiri - Layouts QML plugin
 Package: qml-module-lomiri-test
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: qml-module-lomiri-components,
          qml-module-qttest | qtdeclarative5-test-plugin,
          ${misc:Depends},
@@ -165,8 +157,6 @@ Description: Qt Components for Lomiri - Test QML plugin
 Package: qml-module-lomiri-performancemetrics
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Breaks: qtdeclarative5-lomiri-ui-toolkit-plugin (<< ${source:Version}),
@@ -180,8 +170,6 @@ Description: Qt Components for Lomiri - PerformanceMetrics QML plugin
 Package: qml-module-lomiri-metrics
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Breaks: qtdeclarative5-lomiri-ui-toolkit-plugin (<< ${source:Version}),
@@ -209,8 +197,6 @@ Replaces: liblomirigestures5
 Breaks: liblomirigestures5 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri gestures library for Lomiri UI Toolkit
@@ -221,8 +207,6 @@ Package: liblomirigestures5-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: liblomirigestures5t64 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -234,8 +218,6 @@ Package: liblomirigestures5-private-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: liblomirigestures5-dev (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -249,9 +231,6 @@ Replaces: liblomirimetrics5
 Breaks: liblomirimetrics5 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             liblttng-ust1,
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri metrics library for Lomiri UI Toolkit
@@ -261,8 +240,6 @@ Package: liblomirimetrics5-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: liblomirimetrics5t64 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -274,8 +251,6 @@ Package: liblomirimetrics5-private-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: liblomirimetrics5-dev (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -289,8 +264,6 @@ Replaces: liblomiritoolkit5
 Breaks: liblomiritoolkit5 (<< ${source:Version})
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri toolkit common library for Lomiri UI Toolkit
@@ -301,8 +274,6 @@ Package: liblomiritoolkit5-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: liblomiritoolkit5t64 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -314,8 +285,6 @@ Package: liblomiritoolkit5-private-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: liblomiritoolkit5-dev (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -326,8 +295,6 @@ Description: Lomiri toolkit common library private development files
 Package: lomiri-ui-toolkit-common
 Architecture: all
 Multi-Arch: foreign
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Breaks: qml-module-lomiri-components (<< 1.3.5011~),
@@ -342,8 +309,6 @@ Description: Qt Components for Lomiri - common files
 Package: lomiri-ui-toolkit-theme
 Architecture: any
 Multi-Arch: foreign
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Replaces: qt-components-lomiri,
@@ -358,8 +323,6 @@ Section: doc
 Architecture: all
 Multi-Arch: foreign
 Build-Profiles: <!cross>
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: ${misc:Depends},
          ${shlibs:Depends},
 Suggests: qtdeclarative5-doc-html,
@@ -452,8 +415,6 @@ Description: Qt Components for Lomiri - productive tools
 Package: qml-module-ubuntu-components
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: liblomirigestures5 (= ${binary:Version}),
          liblomirimetrics5 (= ${binary:Version}),
          liblomiritoolkit5 (= ${binary:Version}),
@@ -473,8 +434,6 @@ Description: Qt Components for Lomiri - Ubuntu compatiblity layer
 Package: qml-module-ubuntu-components-labs
 Architecture: any   
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: qml-module-lomiri-components-labs (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -490,8 +449,6 @@ Description: Qt Components Labs for Lomiri - Ubuntu compatibility layer
 Package: qml-module-ubuntu-layouts
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: qml-module-lomiri-layouts (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -507,8 +464,6 @@ Description: Qt Components for Lomiri - Ubuntu.Layouts compat layer
 Package: qml-module-ubuntu-performancemetrics
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: qml-module-lomiri-performancemetrics (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -524,8 +479,6 @@ Description: Qt Components for Lomiri - Ubuntu.PerformanceMetrics
 Package: qml-module-ubuntu-metrics
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: qml-module-lomiri-metrics (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
@@ -541,8 +494,6 @@ Description: Qt Components for Lomiri - Ubuntu.Metrics compat layer
 Package: qml-module-ubuntu-test
 Architecture: any
 Multi-Arch: same
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: qml-module-lomiri-test,
          ${misc:Depends},
          ${shlibs:Depends},
@@ -556,8 +507,6 @@ Description: Qt Components for Lomiri - Test QML plugin
 Package: ubuntu-ui-toolkit-theme
 Architecture: any
 Multi-Arch: foreign
-Pre-Depends: dpkg (>= 1.15.6~),
-             ${misc:Pre-Depends},
 Depends: lomiri-ui-toolkit-theme (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
