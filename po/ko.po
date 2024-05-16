@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2024-02-11 17:32+0000\n"
-"Last-Translator: ancalina <yuntk2008@gmail.com>\n"
+"PO-Revision-Date: 2024-05-16 17:56+0000\n"
+"Last-Translator: Daniel Soohan Park <soobak0313@outlook.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/ko/>\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
@@ -149,15 +149,13 @@ msgstr ""
 msgid ""
 "property \"%1\" of object %2 has type %3 and cannot be set to value \"%4\" "
 "of type %5"
-msgstr ""
-"객체 %2의 프로퍼티 \"%1\"이(가) 형식 %3을 가지고 있어 형식 %5의 \"%4\" 값으"
-"로 설정할 수 없습니다."
+msgstr "객체 %2의 프로퍼티 \"%1\"이(가) 타입 %3을 가지고 있어 타입 %5의 값 \"%4\"으로"
+" 설정할 수 없습니다"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:185
 #, qt-format
 msgid "property \"%1\" does not exist or is not writable for object %2"
-msgstr ""
-"프로퍼티 \"%1\"이(가) 존재하지 않거나 객체 %2이(가) 기록할 수 없습니다."
+msgstr "프로퍼티 \"%1\"이(가) 존재하지 않거나 객체 %2에 대해 편집할 수 없습니다"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:41
 #: Lomiri/Components/plugin/ucalarm.cpp:643
@@ -194,19 +192,19 @@ msgstr "%1은(는) 추가 인수가 필요합니다: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr "swipeEvent() 슬롯을 덮어쓰는걸 고려해주십시오!"
+msgstr "swipeEvent() 슬롯을 덮어쓰는 것을 고려해 주세요!"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
-msgstr "rebound() 슬롯을 덮어쓰는걸 고려해주십시오!"
+msgstr "rebound() 슬롯을 덮어쓰는 것을 고려해 주세요!"
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
-msgstr "마우스 반전 부분의 항목의 우선 순위 무시"
+msgstr "InverseMouse 필터에 대해 AfterItem 우선 순위 무시"
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
-msgstr "연결 파라미터를 변경할 수 없습니다"
+msgstr "연결 파라미터를 변경할 수 없습니다."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:160
 #, qt-format
@@ -232,7 +230,7 @@ msgid ""
 "State saving disabled for %1, class %2"
 msgstr ""
 "모든 상위 항목은 ID가 있어야 합니다.\n"
-"%1, 클래스 %2의 상태 저장 기능을 사용하지 않습니다."
+"%1, 클래스 %2의 상태 저장 기능이 비활성화되었습니다"
 
 #: Lomiri/Components/plugin/uctheme.cpp:208
 #, qt-format
@@ -245,7 +243,7 @@ msgstr "팔레트 콤포넌트가 아닙니다."
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:462
 msgid "Dragging mode requires ListView"
-msgstr "드래그 모드는 목록보기가 필요합니다."
+msgstr "드래그 모드를 사용하려면 ListView가 필요합니다"
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:468
 msgid ""
