@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2023-01-04 19:46+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2024-06-12 14:51+0000\n"
+"Last-Translator: Xuan Yun <uimcism@gmail.com>\n"
 "Language-Team: Chinese (Min Nan) <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/nan/>\n"
 "Language: nan\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
 #: Lomiri/Components/1.3/TextInputPopover.qml:29
@@ -251,9 +251,8 @@ msgstr ""
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
-#, fuzzy
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "取消"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:88
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:88
