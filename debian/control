@@ -415,9 +415,9 @@ Description: Qt Components for Lomiri - productive tools
 Package: qml-module-ubuntu-components
 Architecture: any
 Multi-Arch: same
-Depends: liblomirigestures5 (= ${binary:Version}),
-         liblomirimetrics5 (= ${binary:Version}),
-         liblomiritoolkit5 (= ${binary:Version}),
+Depends: liblomirigestures5t64 (= ${binary:Version}),
+         liblomirimetrics5t64 (= ${binary:Version}),
+         liblomiritoolkit5t64 (= ${binary:Version}),
          ubuntu-ui-toolkit-theme (= ${binary:Version}),
          qml-module-lomiri-components (= ${binary:Version}),
          ${misc:Depends},
