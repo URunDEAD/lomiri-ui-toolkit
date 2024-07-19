@@ -25,7 +25,7 @@ Item {
     property var button: styledItem
     property real minimumWidth: units.gu(10)
     property real horizontalPadding: units.gu(1)
-    property color defaultColor: theme.palette.normal.base
+    property color defaultColor: LomiriColors.graphite
     property font defaultFont: Qt.font({family: "Ubuntu", pixelSize: FontUtils.sizeToPixels("medium")})
     property Gradient defaultGradient
     property real buttonFaceOffset: 0
