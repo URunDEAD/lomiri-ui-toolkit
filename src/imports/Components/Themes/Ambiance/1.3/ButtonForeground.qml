@@ -32,7 +32,6 @@ Item {
     property bool hasText: text != ""
     property alias font: label.font
 
-    opacity: enabled ? 1.0 : 0.5
     implicitHeight: Math.max(icon.height, label.height)
     state: hasIcon && hasText ? iconPosition : "center"
 
@@ -42,6 +41,7 @@ Item {
         fillMode: Image.PreserveAspectFit
         width: iconSize
         height: iconSize
+        opacity: enabled ? 1.0 : 0.5
     }
 
     Label {
@@ -51,6 +51,7 @@ Item {
             verticalCenterOffset: units.dp(-1)
         }
         elide: Text.ElideRight
+        opacity: 1.0
     }
 
     states: [
