@@ -99,7 +99,7 @@ Item {
        \qmlproperty url Icon::source
     */
 
-    property alias source: image.source
+    property string source: image.source
 
     /*!
       \qmlproperty bool Icon::asynchronous
@@ -124,7 +124,7 @@ Item {
         }
 
         property bool completed: false
-        source: completed && icon.name ? "image://theme/%1".arg(icon.name) : ""
+        source: completed ? (!icon.source && icon.name ? "image://theme/%1".arg(icon.name) : icon.source) : ""
 
         cache: true
         visible: !colorizedImage.visible
