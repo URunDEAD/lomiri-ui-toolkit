@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-11-05 13:36+0000\n"
-"Last-Translator: NPL <alterlinuxer@gmail.com>\n"
+"PO-Revision-Date: 2024-08-06 14:39+0000\n"
+"Last-Translator: umesaburo sagawa <atowa-notonare-yamatonare427@pm.me>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/ja/>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #: About.qml:34
 msgid "About..."
@@ -52,35 +52,35 @@ msgstr "標準"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr ""
+msgstr "標準的な期間"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "スナップ"
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "速い"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "遅い"
 
 #: Animations.qml:159
 msgid "Sleepy"
-msgstr ""
+msgstr "眠い"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "呼ぶ"
 
 #: Buttons.qml:37
 msgid "Stroke"
-msgstr ""
+msgstr "打つ"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "色"
 
 #: Buttons.qml:53
 #, qt-format
@@ -97,161 +97,161 @@ msgstr "アイコン＋本文"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "崩壊"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "拡大する"
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "オレンジ"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "ライトグレー"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "ダークグレー"
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "赤"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "緑"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "青"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "紫"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "開く"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "規模 拡大・縮小"
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "テーマ"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "先頭と末尾のアクション"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "ラベル"
 
 #: ListItems.qml:33
 msgid "Subtitled"
-msgstr ""
+msgstr "字幕"
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "セカンダリー・ラベル"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "シン・デバイダー"
 
 #: ListItems.qml:73
 msgid "Progression"
-msgstr ""
+msgstr "進行"
 
 #: ListItems.qml:82
 msgid "Single value"
-msgstr ""
+msgstr "単一の値"
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "価値"
 
 #: ListItems.qml:91
 msgid "Multi value"
-msgstr ""
+msgstr "複数の価値"
 
 #: ListItems.qml:95 ListItems.qml:113 ListItems.qml:122 ListItems.qml:132
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "値1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "値2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "値3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "値4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "アイテム選択"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "拡大する"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr ""
+msgstr "複数の選択"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "カスタムモデル"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "値5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "値6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
 msgid "Value 7"
-msgstr ""
+msgstr "値7"
 
 #: ListItems.qml:168 ListItems.qml:183 OptionSelectors.qml:91
 #: OptionSelectors.qml:106
 msgid "Value 8"
-msgstr ""
+msgstr "値8"
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "コントロール"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr ""
+msgstr "着脱可能"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr ""
+msgstr "スライドして外す"
 
 #: ListItems.qml:215
 msgid "Reset"
@@ -259,19 +259,19 @@ msgstr "リセット"
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr ""
+msgstr "グループ・リスト"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "ロミリ一覧表示"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "拡張可能な列"
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "拡張出来る"
 
 #: NewListItems.qml:39
 msgid "Colored"
