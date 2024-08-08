@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2024-08-06 14:39+0000\n"
+"PO-Revision-Date: 2024-08-14 12:07+0000\n"
 "Last-Translator: umesaburo sagawa <atowa-notonare-yamatonare427@pm.me>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/ja/>\n"
@@ -85,7 +85,7 @@ msgstr "色"
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "1%コール"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
@@ -275,23 +275,23 @@ msgstr "拡張出来る"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "カラー"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "ハイライトカラー"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "主なアクション"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "末尾のアクション"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "カスタム・アクション・デリゲート"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -299,155 +299,155 @@ msgstr "編集"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "移動"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "ベーシック"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "カラーディバイダー"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "不変的"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "仕切り無し"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "オプション選択"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "これは2番目の値である"
 
 #: OptionSelectors.qml:35
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
-msgstr ""
+msgstr "※ダミーテキスト。"
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "昔々、誰も語らない物語があった。"
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "コンテナの高さをカスタマイズ"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "初期選択なし、スクロール可能。"
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "線形"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "円形"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "無限"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "時計"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "重ね塗り"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "点滅可能"
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "アクション#1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "アクション#2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "アクション#3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "アクション#4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "アクション#5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "進捗バー"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "ラベルなし"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "アクティビティインディケーター"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "サイズ"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "有効"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
-msgstr ""
+msgstr "シートのビジュアル・スタイルは初期のもので、そのため不格好に見える。"
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "タイトル"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "実測値:1%"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "ライブ・アップデート"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "レンジ"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "ラベル"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "小さい"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "中間"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "大きい"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "入力する..."
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -455,19 +455,19 @@ msgstr "パスワード"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "ナンバー"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "読み取り専用"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "誰もここにタイプしない"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "インタラクション禁止"
 
 #: TextInputs.qml:107
 msgid "Default"
@@ -475,28 +475,28 @@ msgstr "デフォルト"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "リッチテキスト"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "チェックを外す"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "チェック"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "アスペクト"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "半径"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "イメージ"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "階調"
