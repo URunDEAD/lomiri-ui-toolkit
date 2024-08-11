@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2024-08-06 02:17+0000\n"
+"PO-Revision-Date: 2024-08-14 12:07+0000\n"
 "Last-Translator: umesaburo sagawa <atowa-notonare-yamatonare427@pm.me>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/ja/>\n"
@@ -57,12 +57,12 @@ msgstr "サービスやパスが指定されていません"
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:69
 #, qt-format
 msgid "Invalid bus type: %1."
-msgstr ""
+msgstr "無効なバスタイプ："
 
 #. TRANSLATORS: Time based "this is happening/happened now"
 #: Lomiri/Components/plugin/i18n.cpp:268
 msgid "Now"
-msgstr ""
+msgstr "今"
 
 #: Lomiri/Components/plugin/i18n.cpp:275
 #, qt-format
@@ -92,55 +92,56 @@ msgstr "HH:mm"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:293
 msgid "'Yesterday 'h:mm ap"
-msgstr ""
+msgstr "昨日'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:296
 msgid "'Yesterday 'HH:mm"
-msgstr ""
+msgstr "昨日 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:302
 msgid "'Tomorrow 'h:mm ap"
-msgstr ""
+msgstr "明日'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:305
 msgid "'Tomorrow 'HH:mm"
-msgstr ""
+msgstr "明日 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:312
 msgid "ddd' 'h:mm ap"
-msgstr ""
+msgstr "ddd' 'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:315
 msgid "ddd' 'HH:mm"
-msgstr ""
+msgstr "ddd' 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:322
 msgid "ddd d MMM' 'h:mm ap"
-msgstr ""
+msgstr "ddd d MMM' 'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:325
 msgid "ddd d MMM' 'HH:mm"
-msgstr ""
+msgstr "ddd d MMM' 'HH:mm"
 
 #: Lomiri/Components/plugin/privates/listitemdragarea.cpp:122
 msgid ""
 "ListView has no ViewItems.dragUpdated() signal handler implemented. No "
 "dragging will be possible."
-msgstr ""
+msgstr "ListViewにViewItems."
+"dragUpdated()シグナルハンドラが実装されていません。ドラッグは不可能です。"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:176
 #, qt-format
@@ -165,7 +166,7 @@ msgstr "アラーム"
 #: Lomiri/Components/plugin/ucalarm.cpp:635
 #: Lomiri/Components/plugin/ucalarm.cpp:667
 msgid "Alarm has a pending operation."
-msgstr ""
+msgstr "アラームに保留中の動作があります。"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:188
 msgid "Usage: "
@@ -192,29 +193,29 @@ msgstr "%1 は追加の引数を必要とします: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr ""
+msgstr "swipeEvent() スロットのオーバーライドを検討する！"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
-msgstr ""
+msgstr "rebound()スロットのオーバーライドを検討する！"
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
-msgstr ""
+msgstr "InverseMouseフィルターのAfterItem優先度を無視。"
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
-msgstr ""
+msgstr "接続パラメータの変更は禁止されています。"
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:160
 #, qt-format
 msgid ""
 "Binding detected on property '%1' will be removed by the service updates."
-msgstr ""
+msgstr "プロパティ で検出されたバインディングは、サービスの更新によって削除されます。"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:46
 msgid "Warning: attachee must have an ID. State will not be saved."
-msgstr ""
+msgstr "警告：アタッシェにはIDが必要です。状態は保存されません。"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:56
 #, qt-format
@@ -229,6 +230,8 @@ msgid ""
 "All the parents must have an id.\n"
 "State saving disabled for %1, class %2"
 msgstr ""
+"すべての親がIDを持っている必要がある。\n"
+"クラスの状態保存が無効です"
 
 #: Lomiri/Components/plugin/uctheme.cpp:208
 #, qt-format
@@ -237,17 +240,18 @@ msgstr "テーマがありません: \"%1\""
 
 #: Lomiri/Components/plugin/uctheme.cpp:539
 msgid "Not a Palette component."
-msgstr ""
+msgstr "パレットコンポーネントではありません。"
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:462
 msgid "Dragging mode requires ListView"
-msgstr ""
+msgstr "ドラッグモードにはListViewが必要です"
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:468
 msgid ""
 "Dragging is only supported when using a QAbstractItemModel, ListModel or "
 "list."
-msgstr ""
+msgstr "ドラッグは QAbstractItemModel、ListModel、またはリストを使用している場合にの"
+"みサポートされます。"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
