@@ -741,9 +741,11 @@ Lomiri.StyledItem {
     }
 
     // logic
-    /*!\internal - to remove warnings */
     Component.onCompleted: {
+        /*!\internal - to remove warnings */
         editor.linkActivated.connect(control.linkActivated);
+        // init component's height
+        internal.frameSize()
     }
 
 
