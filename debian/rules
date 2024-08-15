@@ -96,6 +96,15 @@ endif
 
 	dh_install
 
+ifeq ($(shell dpkg-vendor --derives-from Ubuntu && echo yes),yes)
+SUBST_VAR := -Vfonts-ubuntu=fonts-ubuntu
+else
+SUBST_VAR := -Vfonts-ubuntu=
+endif
+
+override_dh_gencontrol:
+	dh_gencontrol -- $(SUBST_VAR)
+
 override_dh_auto_clean:
 	dh_auto_clean
 	dh_auto_clean --sourcedirectory=tests/autopilot --buildsystem=pybuild

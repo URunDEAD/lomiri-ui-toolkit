@@ -70,7 +70,7 @@ Vcs-Bzr: https://code.launchpad.net/~lomiri-sdk-team/lomiri-ui-toolkit/trunk
 Package: qml-module-lomiri-components
 Architecture: any
 Multi-Arch: same
-Depends: fonts-ubuntu,
+Depends: ${fonts-ubuntu},
          liblomirigestures5t64 (= ${binary:Version}),
          liblomirimetrics5t64 (= ${binary:Version}),
          liblomiritoolkit5t64 (= ${binary:Version}),
@@ -102,7 +102,7 @@ Description: Qt Components for Lomiri - Components QML plugin
 Package: qml-module-lomiri-components-labs
 Architecture: any
 Multi-Arch: same
-Depends: fonts-ubuntu,
+Depends: ${fonts-ubuntu},
          liblomirigestures5t64 (= ${binary:Version}),
          liblomirimetrics5t64 (= ${binary:Version}),
          liblomiritoolkit5t64 (= ${binary:Version}),
