@@ -64,7 +64,7 @@ BottomEdgeStyle {
 
         Connections {
             target: bottomEdge
-            function onCollapseStarte() { panelItem.collapsing = true }
+            function onCollapseStarted() { panelItem.collapsing = true }
             function onCollapseCompleted() { panelItem.collapsing = false }
         }
 
