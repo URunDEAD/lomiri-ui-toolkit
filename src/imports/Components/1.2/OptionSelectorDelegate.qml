@@ -163,7 +163,7 @@ ListItem.Empty {
     resources: [
         Connections {
             target: listView.container
-            onCurrentlyExpandedChanged: {
+            function onCurrentlyExpandedChanged() {
                 imageExpansion.stop();
                 selectedImageCollapse.stop();
                 deselectedImageCollapse.stop();

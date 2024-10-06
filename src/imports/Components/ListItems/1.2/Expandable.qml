@@ -152,7 +152,7 @@ Empty {
 
     Connections {
         target: priv.isInExpandableListView ? priv.view : null
-        onExpandedIndexChanged: {
+        function onExpandedIndexChanged() {
             if (priv.view.expandedIndex == index) {
                 root.expanded = true;
             } else if (root.expanded = true) {

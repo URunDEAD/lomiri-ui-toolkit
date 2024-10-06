@@ -85,7 +85,7 @@ Panel {
     Connections {
         target: tools
         ignoreUnknownSignals: true
-        onOpenedChanged: {
+        function onOpenedChanged() {
             if (!tools) // Can happen due to signal emision order
                 return;
 
@@ -95,7 +95,7 @@ Panel {
                 toolbar.close();
             }
         }
-        onLockedChanged: {
+        function onLockedChanged() {
             if (!tools) // Can happen due to signal emision order
                 return;
 

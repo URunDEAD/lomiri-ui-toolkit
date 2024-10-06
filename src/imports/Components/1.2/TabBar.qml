@@ -162,6 +162,6 @@ StyledItem {
 
     Connections {
         target: !internal.modelChecked ? tabBar.model : null
-        onCountChanged: internal.checkRoles();
+        function onCountChanged() { internal.checkRoles(); }
     }
 }

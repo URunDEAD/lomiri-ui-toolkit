@@ -72,7 +72,7 @@ Row {
 
     Connections {
         target: row.model
-        onPickerRemoved: disconnectPicker(index)
+        function onPickerRemoved(index) { disconnectPicker(index) }
     }
 
     objectName: "PickerRow_Positioner";

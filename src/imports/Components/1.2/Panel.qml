@@ -276,7 +276,7 @@ Item {
     //  the panel immediately after the application becomes active again
     Connections {
         target: Qt.application
-        onActiveChanged: {
+        function onActiveChanged() {
             if (Qt.application.active) {
                 hideTimer.conditionalRestart();
             } else {

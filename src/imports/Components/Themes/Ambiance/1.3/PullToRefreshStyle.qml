@@ -150,7 +150,7 @@ Style.PullToRefreshStyle {
     // state and content controlling
     Connections {
         target: control
-        onRefreshingChanged: {
+        function onRefreshingChanged() {
             if (!ready || !control.enabled) {
                 return;
             }
@@ -172,24 +172,24 @@ Style.PullToRefreshStyle {
     }
     Connections {
         target: control.target
-        onMovementStarted: {
+        function onMovementStarted() {
             style.wasAtYBeginning = control.target.atYBeginning;
             style.initialContentY = control.target.contentY;
             style.refreshing = false;
             style.releaseToRefresh = false;
         }
-        onMovementEnded: {
+        function onMovementEnded() {
             style.wasAtYBeginning = control.target.atYBeginning;
         }
 
         // catch when to initiate refresh
-        onDraggingChanged: {
+        function onDraggingChanged() {
             if (!control.parent.dragging && style.releaseToRefresh) {
                 style.refreshing = true;
                 style.releaseToRefresh = false;
             }
         }
-        onContentYChanged: {
+        function onContentYChanged() {
             if (style.wasAtYBeginning && control.enabled && control.target.dragging) {
                 style.releaseToRefresh = ((style.initialContentY - control.target.contentY) > style.activationThreshold);
             }

@@ -86,8 +86,8 @@ Item {
 
         Connections {
             target: styledItem
-            onLeftButtonChanged: header.updateButton(styledItem.leftButton, leftButtonContainer)
-            onRightButtonChanged: header.updateButton(styledItem.rightButton, rightButtonContainer)
+            function onLeftButtonChanged() { header.updateButton(styledItem.leftButton, leftButtonContainer) }
+            function onRightButtonChanged() { header.updateButton(styledItem.rightButton, rightButtonContainer) }
         }
     }
 

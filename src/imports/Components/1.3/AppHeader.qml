@@ -134,17 +134,17 @@ Privates.AppHeaderBase {
     Connections {
         target: header.config
         ignoreUnknownSignals: true
-        onVisibleChanged: {
+        function onVisibleChanged() {
             header.exposed = header.config.visible;
         }
-        onLockedChanged: {
+        function onLockedChanged() {
             if (header.config.locked) {
                 header.flickable = null;
             } else {
                 header.flickable = header.config.flickable;
             }
         }
-        onFlickableChanged: {
+        function onFlickableChanged() {
             if (!header.config.locked) {
                 header.flickable = header.config.flickable;
             }

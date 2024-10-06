@@ -228,13 +228,13 @@ StyledItem {
         Connections {
             target: loader.item
             ignoreUnknownSignals: true
-            onMovementEnded: {
+            function onMovementEnded() {
                 if (!loader.completed || !model) return;
                 if (!picker.live) {
                     picker.selectedIndex = loader.item.currentIndex;
                 }
             }
-            onCurrentIndexChanged: {
+            function onCurrentIndexChanged() {
                 movingPoll.kick();
                 if (!loader.completed) return;
                 if (picker.live || (modelWatcher.modelSize() <= 0)
@@ -245,7 +245,7 @@ StyledItem {
                     picker.__clickedIndex = -1;
                 }
             }
-            onModelChanged: {
+            function onModelChanged() {
                 modelWatcher.connectModel(picker.model);
                 if (!loader.completed) return;
                 loader.moveToIndex((loader.completed) ? 0 : picker.selectedIndex);
@@ -254,8 +254,8 @@ StyledItem {
                 }
             }
             // focus handling
-            onMoveStarted: picker.requestFocus(Qt.MouseFocusReason)
-            onFlickStarted: picker.requestFocus(Qt.MouseFocusReason)
+            function onMoveStarted() { picker.requestFocus(Qt.MouseFocusReason) }
+            function onFlickStarted() { picker.requestFocus(Qt.MouseFocusReason) }
         }
 
         function moveToIndex(toIndex) {

@@ -296,9 +296,9 @@ PopupBase {
 
     Connections {
         target: pointerTarget
-        onXChanged: internal.updatePosition()
-        onYChanged: internal.updatePosition()
-        onWidthChanged: internal.updatePosition()
-        onHeightChanged: internal.updatePosition()
+        function onXChanged() { internal.updatePosition() }
+        function onYChanged() { internal.updatePosition() }
+        function onWidthChanged() { internal.updatePosition() }
+        function onHeightChanged() { internal.updatePosition() }
     }
 }

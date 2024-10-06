@@ -291,22 +291,22 @@ MultiPointTouchArea {
     Connections {
         target: main
         ignoreUnknownSignals: true
-        onActiveFocusChanged: {
+        function onActiveFocusChanged() {
             input.focus = main.activeFocus;
         }
-        onKeyNavigationFocusChanged: {
+        function onKeyNavigationFocusChanged() {
             if (main.keyNavigationFocus) {
                 input.forceActiveFocus();
             }
         }
-        onFocusChanged: {
+        function onFocusChanged() {
             LomiriApplication.inputMethod.commit()
             state = (main.focus) ? "" : "inactive";
             if (main.focus) {
                 input.forceActiveFocus()
             }
         }
-        onVisibleChanged: {
+        function onVisibleChanged() {
             if (!main.visible)
                 main.focus = false;
         }
@@ -315,16 +315,16 @@ MultiPointTouchArea {
     // input specific signals
     Connections {
         target: input
-        onCursorRectangleChanged: ensureVisible(input.cursorRectangle)
-        onTextChanged: {
-            textChanged = true;
-            if (oldText != input.text) {
-                textModified()
-                oldText = text
+        function onCursorRectangleChanged() { ensureVisible(input.cursorRectangle) }
+        function onTextChanged() {
+            inputHandler.textChanged = true;
+            if (inputHandler.oldText != input.text) {
+                inputHandler.textModified()
+                inputHandler.oldText = input.text
             }
         }
         // make sure we show the OSK
-        onActiveFocusChanged: {
+        function onActiveFocusChanged() {
             if (!input.activeFocus && popover)
                 PopupUtils.close(popover);
             showInputPanel();
@@ -335,10 +335,10 @@ MultiPointTouchArea {
     Connections {
         target: scroller
         // turn scrolling state on
-        onFlickStarted: toggleScrollingState(true)
-        onMovementStarted: toggleScrollingState(true)
+        function onFlickStarted() { toggleScrollingState(true) }
+        function onMovementStarted() { toggleScrollingState(true) }
         // reset to default state
-        onMovementEnded: toggleScrollingState(false)
+        function onMovementEnded() { toggleScrollingState(false) }
 
         function toggleScrollingState(turnOn) {
             if (!main.focus) {
@@ -483,7 +483,7 @@ MultiPointTouchArea {
     // cursors to use when text is selected
     Connections {
         target: input
-        onSelectedTextChanged: {
+        function onSelectedTextChanged() {
             if (selectedText !== "") {
                 if (!selectionStartCursor) {
                     selectionStartCursor = input.cursorDelegate.createObject(
@@ -510,8 +510,8 @@ MultiPointTouchArea {
                 }
             }
         }
-        onSelectionStartChanged: moveSelectionCursor(selectionStartCursor, true);
-        onSelectionEndChanged: moveSelectionCursor(selectionEndCursor, true);
+        function onSelectionStartChanged() { moveSelectionCursor(selectionStartCursor, true); }
+        function onSelectionEndChanged() { moveSelectionCursor(selectionEndCursor, true); }
 
         function moveSelectionCursor(cursor, updateProperty) {
             if (!cursor) {

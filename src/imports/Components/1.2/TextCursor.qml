@@ -71,15 +71,15 @@ Lomiri.StyledItem {
       */
     Connections {
         target: handler
-        onPressAndHold: {
+        function onPressAndHold(pos, fromTouch) {
             // open context menu only for cursorPosition or selectionStart as to
             // ensure that only one popover gets opened
             if (positionProperty !== "selectionEnd") {
                 openPopover(fromTouch);
             }
         }
-        onTextModified: typing = true
-        onTap: {
+        function onTextModified() { typing = true }
+        function onTap(pos) {
             typing = false
             if (handler.popover != null) {
                 PopupUtils.close(handler.popover);

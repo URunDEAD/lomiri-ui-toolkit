@@ -186,7 +186,7 @@ Style.ActionBarStyle {
                 // https://bugs.launchpad.net/lomiri-ui-toolkit/+bug/1326963
                 Connections {
                     target: styledItem
-                    onActionsChanged: {
+                    function onActionsChanged() {
                         actionsOverflowPopover.hide();
                     }
                 }

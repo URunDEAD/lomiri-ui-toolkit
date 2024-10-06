@@ -241,7 +241,7 @@ bool UCStyledItemBase::requestFocus(Qt::FocusReason reason)
  *
  *     Connections {
  *         target: window
- *         onActiveFocusItemChanged: console.debug("focus on", window.activeFocusItem)
+ *         function onActiveFocusItemChanged() { console.debug("focus on", window.activeFocusItem) }
  *     }
  * }
  * \endqml

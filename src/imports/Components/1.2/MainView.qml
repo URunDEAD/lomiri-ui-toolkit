@@ -193,7 +193,7 @@ MainViewBase {
             Connections {
                 // no connections are made when target is null
                 target: headerItem.tabBar
-                onPressedChanged: {
+                function onPressedChanged() {
                     if (mainView.useDeprecatedToolbar) {
                         if (headerItem.tabBar.pressed) {
                             if (!toolbarLoader.item.locked) toolbarLoader.item.close();
@@ -222,7 +222,7 @@ MainViewBase {
 
         Connections {
             target: Qt.application
-            onActiveChanged: {
+            function onActiveChanged() {
                 if (Qt.application.active) {
                     canvas.animate = false;
                     headerItem.show();

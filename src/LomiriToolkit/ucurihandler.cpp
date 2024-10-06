@@ -52,7 +52,7 @@ void UriHandlerObject::Open(const QStringList& uris, const QHash<QString, QVaria
  * \qml
  * Connections {
  *     target: UriHandler
- *     onOpened: print(uris)
+ *     function onOpened(uris) { print(uris) }
  * }
  * \endqml
  */

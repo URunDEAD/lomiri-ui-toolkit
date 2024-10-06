@@ -64,8 +64,8 @@ BottomEdgeStyle {
 
         Connections {
             target: bottomEdge
-            onCollapseStarted: panelItem.collapsing = true
-            onCollapseCompleted: panelItem.collapsing = false
+            function onCollapseStarte() { panelItem.collapsing = true }
+            function onCollapseCompleted() { panelItem.collapsing = false }
         }
 
         state: bottomEdge.status > BottomEdge.Hidden ? "drop-hint" : ""

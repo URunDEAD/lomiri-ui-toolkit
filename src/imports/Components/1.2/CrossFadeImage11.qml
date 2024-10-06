@@ -158,7 +158,7 @@ Item {
 
     Connections {
         target: internals.nextImage
-        onStatusChanged: {
+        function onStatusChanged() {
             if (internals.nextImage.status == Image.Ready) {
                  internals.swapImages();
              }
