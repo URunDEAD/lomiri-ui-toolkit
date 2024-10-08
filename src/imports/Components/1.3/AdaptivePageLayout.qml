@@ -796,18 +796,18 @@ PageTreeNode {
             onPageChanged: body.updateHeaderHeight(0)
             Connections {
                 target: page
-                onHeaderChanged: body.updateHeaderHeight(0)
+                function onHeaderChanged() { body.updateHeaderHeight(0) }
             }
             Connections {
                 ignoreUnknownSignals: true
                 target: page ? page.header : null
-                onImplicitHeightChanged: {
+                function onImplicitHeightChanged() {
                     if (page.header.hasOwnProperty("automaticHeight") &&
                             page.header.automaticHeight) {
                         body.updateHeaderHeight(page.header.implicitHeight)
                     }
                 }
-                onAutomaticHeightChanged: body.updateHeaderHeight(0)
+                function onAutomaticHeightChanged() { body.updateHeaderHeight(0) }
             }
 
             // prevent the pages from taking the app header height into account.

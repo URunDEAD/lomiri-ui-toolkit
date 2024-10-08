@@ -544,13 +544,13 @@ Style.PageHeadStyle {
                         // https://bugs.launchpad.net/lomiri-ui-toolkit/+bug/1326963
                         Connections {
                             target: styledItem.config
-                            onActionsChanged: {
+                            function onActionsChanged() {
                                 actionsOverflowPopover.hide();
                             }
                         }
                         Connections {
                             target: styledItem
-                            onConfigChanged: {
+                            function onConfigChanged() {
                                 actionsOverflowPopover.hide();
                             }
                         }

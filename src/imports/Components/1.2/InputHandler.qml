@@ -290,7 +290,7 @@ MultiPointTouchArea {
     Connections {
         target: main
         ignoreUnknownSignals: true
-        onFocusChanged: {
+        function onFocusChanged() {
             LomiriApplication.inputMethod.commit()
             state = (main.focus) ? "" : "inactive";
             if (main.focus) {
@@ -302,26 +302,26 @@ MultiPointTouchArea {
     // input specific signals
     Connections {
         target: input
-        onCursorRectangleChanged: ensureVisible(input.cursorRectangle)
-        onTextChanged: {
-            textChanged = true;
-            if (oldText != input.text) {
-                textModified()
-                oldText = text
+        function onCursorRectangleChanged() { ensureVisible(input.cursorRectangle) }
+        function onTextChanged() {
+            inputHandler.textChanged = true;
+            if (inputHandler.oldText != input.text) {
+                inputHandler.textModified()
+                inputHandler.oldText = input.text
             }
         }
         // make sure we show the OSK
-        onActiveFocusChanged: showInputPanel()
+        function onActiveFocusChanged() { showInputPanel() }
     }
 
     // inner or outer Flickable controlling
     Connections {
         target: scroller
         // turn scrolling state on
-        onFlickStarted: toggleScrollingState(true)
-        onMovementStarted: toggleScrollingState(true)
+        function onFlickStarted() { toggleScrollingState(true) }
+        function onMovementStarted() { toggleScrollingState(true) }
         // reset to default state
-        onMovementEnded: toggleScrollingState(false)
+        function onMovementEnded() { toggleScrollingState(false) }
 
         function toggleScrollingState(turnOn) {
             if (!main.focus) {
@@ -465,7 +465,7 @@ MultiPointTouchArea {
     // cursors to use when text is selected
     Connections {
         target: input
-        onSelectedTextChanged: {
+        function onSelectedTextChanged() {
             if (selectedText !== "") {
                 if (!selectionStartCursor) {
                     selectionStartCursor = input.cursorDelegate.createObject(
@@ -492,8 +492,8 @@ MultiPointTouchArea {
                 }
             }
         }
-        onSelectionStartChanged: moveSelectionCursor(selectionStartCursor, true);
-        onSelectionEndChanged: moveSelectionCursor(selectionEndCursor, true);
+        function onSelectionStartChanged() { moveSelectionCursor(selectionStartCursor, true); }
+        function onSelectionEndChanged() { moveSelectionCursor(selectionEndCursor, true); }
 
         function moveSelectionCursor(cursor, updateProperty) {
             if (!cursor) {

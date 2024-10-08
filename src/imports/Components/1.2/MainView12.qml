@@ -112,7 +112,7 @@ MainViewBase {
 
         Connections {
             target: Qt.application
-            onActiveChanged: {
+            function onActiveChanged() {
                 if (Qt.application.active) {
                     headerItem.animate = false;
                     headerItem.show();

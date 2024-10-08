@@ -194,7 +194,7 @@ Toolkit.MainViewBase {
 
         Connections {
             target: Qt.application
-            onActiveChanged: {
+            function onActiveChanged() {
                 if (Qt.application.active) {
                     if (!(headerItem.config &&
                           headerItem.config.hasOwnProperty("locked") &&

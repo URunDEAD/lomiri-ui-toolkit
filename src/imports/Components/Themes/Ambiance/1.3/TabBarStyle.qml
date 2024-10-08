@@ -67,7 +67,7 @@ Item {
     Connections {
         target: styledItem
 
-        onSelectionModeChanged: {
+        function onSelectionModeChanged() {
             if (!styledItem.selectionMode) {
                 buttonView.selectButton(styledItem.model.selectedIndex);
             }
@@ -76,7 +76,7 @@ Item {
 
     Connections {
         target: styledItem.model
-        onSelectedIndexChanged: buttonView.selectButton(styledItem.model.selectedIndex)
+        function onSelectedIndexChanged() { buttonView.selectButton(styledItem.model.selectedIndex) }
     }
 
     /*
@@ -346,11 +346,11 @@ Item {
         //  it when the application is resumed.
         Connections {
             target: Qt.application
-            onActiveChanged: idleTimer.conditionalRestartOrStop()
+            function onActiveChanged() { idleTimer.conditionalRestartOrStop() }
         }
         Connections {
             target: styledItem
-            onSelectionModeChanged: idleTimer.conditionalRestartOrStop()
+            function onSelectionModeChanged() { idleTimer.conditionalRestartOrStop() }
         }
     }
 

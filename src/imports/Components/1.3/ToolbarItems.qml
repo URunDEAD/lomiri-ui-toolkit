@@ -207,7 +207,7 @@ Item {
 
         Connections {
             target: toolbarItems
-            onBackChanged: backContainer.updateBackItem()
+            function onBackChanged() { backContainer.updateBackItem() }
             Component.onCompleted: backContainer.updateBackItem()
         }
     }

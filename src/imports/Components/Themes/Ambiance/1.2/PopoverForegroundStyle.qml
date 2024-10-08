@@ -33,8 +33,8 @@ BubbleShape {
 
         Connections {
             target: styledItem
-            onShow: show()
-            onHide: hide()
+            function onShow() { show() }
+            function onHide() { hide() }
         }
     }
 }

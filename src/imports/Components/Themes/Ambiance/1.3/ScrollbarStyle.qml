@@ -427,8 +427,8 @@ Item {
     //we want to show both the scrollbar in both cases
     Connections {
         target: (flickableItem && initialized) ? flickableItem : null
-        onHeightChanged: flashScrollbar()
-        onWidthChanged: flashScrollbar()
+        function onHeightChanged() { flashScrollbar() }
+        function onWidthChanged() { flashScrollbar() }
         //Use onTotalContentSizeChanged instead of binding to contentWidth/Height changes
         //to trigger the scrollbar hinting when the scrollable content is resized
     }
