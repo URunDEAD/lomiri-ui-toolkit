@@ -482,7 +482,9 @@ void UCTheme::updateEnginePaths(QQmlEngine *engine)
 void UCTheme::_q_defaultThemeChanged()
 {
     updateThemePaths();
+    loadPalette(qmlEngine(this));
     Q_EMIT nameChanged();
+    updateThemedItems();
 }
 
 void UCTheme::updateThemePaths()
