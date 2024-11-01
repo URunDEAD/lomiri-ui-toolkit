@@ -48,7 +48,6 @@ public:
     bool enabled{false};
 };
 
-#ifdef LOMIRITOOLKIT_ENABLE_X11_TOUCH_EMULATION
 class X11MouseTouchAdaptorPrivate : public MouseTouchAdaptorPrivate
 {
     Q_DECLARE_PUBLIC(MouseTouchAdaptor)
@@ -71,7 +70,6 @@ public:
     int m_xi2Minor{-1};
     int m_xiOpCode, m_xiEventBase, m_xiErrorBase;
 };
-#endif
 
 UT_NAMESPACE_END
 

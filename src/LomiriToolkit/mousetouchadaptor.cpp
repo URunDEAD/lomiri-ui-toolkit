@@ -25,10 +25,6 @@
 #include <QtGui/qpa/qplatformnativeinterface.h>
 #include <QtGui/qpa/qwindowsysteminterface.h>
 
-#ifdef LOMIRITOOLKIT_ENABLE_X11_TOUCH_EMULATION
-    #define ENABLE_TOUCH_EMULATION
-#endif
-
 UT_NAMESPACE_BEGIN
 
 QTouchDevice *MouseTouchAdaptor::m_touchDevice = nullptr;
@@ -59,17 +55,9 @@ MouseTouchAdaptorPrivate::~MouseTouchAdaptorPrivate()
  */
 MouseTouchAdaptor::MouseTouchAdaptor(QObject *parent)
     :
-#ifdef LOMIRITOOLKIT_ENABLE_X11_TOUCH_EMULATION
       QObject(*(new X11MouseTouchAdaptorPrivate), parent)
-#else
-      QObject(*(new MouseTouchAdaptorPrivate), parent)
-#endif
 {
-#ifdef ENABLE_TOUCH_EMULATION
     registerTouchDevice();
-#else
-    qWarning() << "MouseTouchAdaptor not available on this architecture.";
-#endif
     Q_D(MouseTouchAdaptor);
     d->init();
 }
@@ -88,14 +76,12 @@ bool MouseTouchAdaptor::registerTouchDevice()
         }
     }
     // if none, register one
-#ifdef ENABLE_TOUCH_EMULATION
     if (!m_touchDevice) {
         m_touchDevice = new QTouchDevice;
         m_touchDevice->setType(QTouchDevice::TouchScreen);
         QWindowSystemInterface::registerTouchDevice(m_touchDevice);
         return true;
     }
-#endif
     return false;
 }
 
