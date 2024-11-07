@@ -10,11 +10,7 @@ unix {
     PKGCONFIG += gio-2.0 dbus-1
 }
 
-!contains(QT_ARCH, arm) {
-    DEFINES += LOMIRITOOLKIT_ENABLE_X11_TOUCH_EMULATION
-    LIBS += -lX11 -lxcb -lXi
-    SOURCES += mousetouchadaptor_x11.cpp
-}
+LIBS += -lX11 -lxcb -lXi
 
 # Uncomment to compile out qDebug() calls.
 # DEFINES += QT_NO_DEBUG_OUTPUT
@@ -161,6 +157,7 @@ SOURCES += \
     $$PWD/menubar.cpp \
     $$PWD/menugroup.cpp \
     $$PWD/mousetouchadaptor.cpp \
+    $$PWD/mousetouchadaptor_x11.cpp \
     $$PWD/privates/appheaderbase.cpp \
     $$PWD/privates/frame.cpp \
     $$PWD/privates/listitemdragarea.cpp \
