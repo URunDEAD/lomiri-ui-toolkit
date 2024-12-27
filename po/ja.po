@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
 "PO-Revision-Date: 2024-08-14 12:07+0000\n"
 "Last-Translator: umesaburo sagawa <atowa-notonare-yamatonare427@pm.me>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/"
-"lomiri-ui-toolkit/ja/>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/lomiri-"
+"ui-toolkit/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -140,8 +140,9 @@ msgstr "ddd d MMM' 'HH:mm"
 msgid ""
 "ListView has no ViewItems.dragUpdated() signal handler implemented. No "
 "dragging will be possible."
-msgstr "ListViewにViewItems."
-"dragUpdated()シグナルハンドラが実装されていません。ドラッグは不可能です。"
+msgstr ""
+"ListViewにViewItems.dragUpdated()シグナルハンドラが実装されていません。ドラッ"
+"グは不可能です。"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:176
 #, qt-format
@@ -211,7 +212,8 @@ msgstr "接続パラメータの変更は禁止されています。"
 #, qt-format
 msgid ""
 "Binding detected on property '%1' will be removed by the service updates."
-msgstr "プロパティ で検出されたバインディングは、サービスの更新によって削除されます。"
+msgstr ""
+"プロパティ で検出されたバインディングは、サービスの更新によって削除されます。"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:46
 msgid "Warning: attachee must have an ID. State will not be saved."
@@ -250,7 +252,8 @@ msgstr "ドラッグモードにはListViewが必要です"
 msgid ""
 "Dragging is only supported when using a QAbstractItemModel, ListModel or "
 "list."
-msgstr "ドラッグは QAbstractItemModel、ListModel、またはリストを使用している場合にの"
+msgstr ""
+"ドラッグは QAbstractItemModel、ListModel、またはリストを使用している場合にの"
 "みサポートされます。"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
