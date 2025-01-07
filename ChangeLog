@@ -1,6 +1,253 @@
+2025-01-07 Mike Gabriel
+
+        * Release 1.3.5110 (HEAD -> main, tag: 1.3.5110)
+
+2024-12-27 Hosted Weblate
+
+        * Update translation files (9ff697d90)
+        * Update translation files (6113c860f)
+
+2024-11-02 Adam Havelka
+
+        * Translated using Weblate (Czech) (87027ae7e)
+
+2024-11-07 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/mouseTouchAdaptor-on-all-arches'
+          into 'main' (22fb6dbed)
+
+2024-11-07 Ratchanan Srirattanamet
+
+        * d/control: install B-Ds for X11 touch emulation on armhf too
+          (3291bd8d5)
+
+2024-11-01 Ratchanan Srirattanamet
+
+        * LomiriToolkit: enable X11 touch emulation on all architectures
+          (c5def134b)
+          Fixes:
+          https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1069558
+
+2024-10-29 Joan CiberSheep
+
+        * Translated using Weblate (Catalan) (1b54e6a78)
+
+2024-10-14 Lars Bahner
+
+        * Translated using Weblate (Norwegian Bokmål) (82d1e64b0)
+
+2024-10-14 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/theme-inotify-main' into 'main'
+          (121b7788f)
+
+2024-10-11 Alfred
+
+        * LomiriToolkit: Load palette & update themed items when the default
+          theme changes (58867757b)
+
+2024-10-12 ikozyris
+
+        * Translated using Weblate (Greek) (1dd4efeed)
+
+2024-10-08 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/fix_deprecatedQML' into 'main'
+          (59d736185)
+
+2024-10-06 Lionel Duboeuf
+
+        * fix typo (6afe951d2)
+        * fix deprecated signal handlers for Connections type (c11b757f9)
+
+2024-09-19 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/libqt5systeminfo5t64' into
+          'main' (aae8e95d0)
+
+2024-09-19 Ratchanan Srirattanamet
+
+        * d/control: don't B-Ds on libqt5systeminfo5 directly (924d882c2)
+
+2024-09-19 Mike Gabriel
+
+        * Merge branch 'improve-disabled-button-text-1' into 'main'
+          (7076597e7)
+
+2024-07-31 Alexander
+
+        * ButtonStyle: improve text colour visibility when the button is
+          disabled (218716cd7)
+
+2024-08-25 Software In Interlingua
+
+        * Translated using Weblate (Interlingua) (9a7a9591d)
+
+2024-08-16 Mike Gabriel
+
+        * Merge branch
+          'personal/peat-psuwit/build-against-noble-debian-installability'
+          into 'main' (b45f281b6)
+
+2024-08-15 Ratchanan Srirattanamet
+
+        * d/control, d/rules: make bin:pkgs depends on some package on Ubuntu
+          only (539442a9f)
+
+2024-08-08 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (eb90f0aac)
+
+2024-08-11 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (338131901)
+
+2024-08-12 Ratchanan Srirattanamet
+
+        * Merge branch 'icon-dynamic-source-switching' into 'main'
+          (da12fbca7)
+
+2024-08-09 Matthias Dahlmanns
+
+        * make Icon.source of url type again (39e75dcec)
+
+2024-08-01 Matthias Dahlmanns
+
+        * don't bind icon.source to internal source (7e21f14d8)
+        * Icon: allow dynamic switching between source and name (3fde40eed)
+
+2024-08-06 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (cb14631ed)
+
+2024-08-05 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (aeca6d686)
+
+2024-07-22 Jiri Grönroos
+
+        * Translated using Weblate (Finnish) (288b2a877)
+        * Translated using Weblate (Finnish) (bd3303b32)
+
+2024-07-19 Ratchanan Srirattanamet
+
+        * Merge branch 'temp-fix-button-style-1' into 'main' (a72422f66)
+
+2024-07-18 Alexander
+
+        * ButtonStyle: change back to hardcoding graphite (0f4925687)
+
+2024-06-30 Mike Gabriel
+
+        * Merge branch
+          'personal/peat-psuwit/build-against-noble-t64-leftover'
+          into 'main' (8f490672f)
+
+2024-06-30 Ratchanan Srirattanamet
+
+        * d/control: fixup depends on non-t64 version of our libraries
+          (db5813f7c)
+          Fixes: b5b7cf4871ce ("debian/: rename libraries
+          to match 64-bit time_t transition in Ubuntu")
+
+2024-06-12 Xuan Yun
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (556828a7c)
+        * Translated using Weblate (Chinese (Min Nan) (nan)) (809e3da19)
+
+2024-06-11 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/binding-restore-mode' into 'main'
+          (f0e493552)
+
+2024-02-26 Mike Gabriel
+
+        * src/imports/Components/Themes/Ambiance/1.3/ScrollbarStyle.qml:
+          Explicitly set >= Qt5.14 property Binding.restoreMode to
+          avoid log warning. (7776b387e)
+
+2024-06-01 Ali Beyaz
+
+        * Translated using Weblate (Turkish) (8d0e9655b)
+
+2024-05-16 Daniel Soohan Park
+
+        * Translated using Weblate (Korean) (f24f88bf8)
+        * Translated using Weblate (Korean) (1f88ed63a)
+
+2024-05-06 Adam Havelka
+
+        * Translated using Weblate (Czech) (3e2931901)
+
+2024-05-08 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/liblttng-ust1t64' into 'main'
+          (0e5eab612)
+
+2024-05-08 Ratchanan Srirattanamet
+
+        * d/control: remove all Pre-Depends (79da84cc5)
+
+2024-05-07 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/bump-version-5101' into 'main'
+          (799d02669)
+
+2024-05-07 Ratchanan Srirattanamet
+
+        * New changelog entry 1.3.5101 (ef94bb002)
+
+2024-05-01 Ratchanan Srirattanamet
+
+        * Merge branch 'button-style-1' into 'main' (e76f8d8df)
+
+2024-02-13 Alexander
+
+        * ButtonStyle.qml: remove specific file for SuruDark theme
+          (cc2947ecf)
+
+2024-04-25 Mike Gabriel
+
+        * Merge branch 'main_-_hapticsfix' into 'main' (b015545cf)
+
+2024-04-23 Kugi Eusebio
+
+        * Check `state` property instead of `running` (ddfa7311d)
+
+2024-04-25 Mike Gabriel
+
+        * Merge branch 'ubuntu-plugin-qmltypes-files-1' into 'main'
+          (8fe74b11b)
+
+2024-02-13 Alexander
+
+        * debian/rules: also create empty qmltypes files in Ubuntu
+          directories (89515a753)
+
+2024-04-02 Mike Gabriel
+
+        * Merge branch
+          'personal/peat-psuwit/build-against-noble-t64-transition'
+          into 'main' (403b57048)
+
+2024-03-25 Mike Gabriel
+
+        * debian/*.lintian-overrides: Adjust library names in
+          package-name-doesnt-match-sonames overrides. (e5f821e43)
+
+2024-03-29 Ratchanan Srirattanamet
+
+        * debian/: rename libraries to match 64-bit time_t transition in
+          Ubuntu (b5b7cf487)
+
+2024-04-01 复予
+
+        * Translated using Weblate (Chinese (Simplified)) (ad2d08522)
+
 2024-03-20 Mike Gabriel
 
-        * Release 1.3.5100 (HEAD -> main, tag: 1.3.5100)
+        * Release 1.3.5100 (ac6604571) (tag: 1.3.5100)
 
 2024-03-19 Mike Gabriel
 
