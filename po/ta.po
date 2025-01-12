@@ -8,16 +8,17 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2015-06-30 11:04+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Tamil <ta@li.org>\n"
+"PO-Revision-Date: 2025-01-13 20:00+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
 #: Lomiri/Components/1.3/TextInputPopover.qml:29
@@ -27,48 +28,48 @@ msgstr ""
 #: Lomiri/Components/1.2/TextInputPopover.qml:36
 #: Lomiri/Components/1.3/TextInputPopover.qml:36
 msgid "Cut"
-msgstr ""
+msgstr "வெட்டு"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:48
 #: Lomiri/Components/1.3/TextInputPopover.qml:48
 msgid "Copy"
-msgstr ""
+msgstr "நகலெடு"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:57
 #: Lomiri/Components/1.3/TextInputPopover.qml:57
 msgid "Paste"
-msgstr ""
+msgstr "ஒட்டு"
 
 #: Lomiri/Components/1.2/ToolbarItems.qml:143
 #: Lomiri/Components/1.3/ToolbarItems.qml:143
 msgid "Back"
-msgstr ""
+msgstr "பின்"
 
 #: Lomiri/Components/ListItems/1.2/Empty.qml:398
 #: Lomiri/Components/ListItems/1.3/Empty.qml:398
 msgid "Delete"
-msgstr ""
+msgstr "நீக்கு"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:51
 msgid "No service/path specified"
-msgstr ""
+msgstr "சேவை/பாதை குறிப்பிடப்படவில்லை"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:69
 #, qt-format
 msgid "Invalid bus type: %1."
-msgstr ""
+msgstr "தவறான பச் வகை: %1."
 
 #. TRANSLATORS: Time based "this is happening/happened now"
 #: Lomiri/Components/plugin/i18n.cpp:268
 msgid "Now"
-msgstr ""
+msgstr "இப்போது"
 
 #: Lomiri/Components/plugin/i18n.cpp:275
 #, qt-format
 msgid "%1 minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 மணித்துளி முன்பு"
+msgstr[1] "%1 நிமிடங்களுக்கு முன்பு"
 
 #: Lomiri/Components/plugin/i18n.cpp:277
 #, qt-format
@@ -81,67 +82,67 @@ msgstr[1] ""
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:284
 msgid "h:mm ap"
-msgstr ""
+msgstr "எச்: மிமீ ஏபி"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:287
 msgid "HH:mm"
-msgstr ""
+msgstr "HH: மிமீ"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:293
 msgid "'Yesterday 'h:mm ap"
-msgstr ""
+msgstr "'நேற்று' எச்: மிமீ ஏபி"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:296
 msgid "'Yesterday 'HH:mm"
-msgstr ""
+msgstr "'நேற்று' எச்.எச்: மிமீ"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:302
 msgid "'Tomorrow 'h:mm ap"
-msgstr ""
+msgstr "'நாளை' எச்: மிமீ ஏபி"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:305
 msgid "'Tomorrow 'HH:mm"
-msgstr ""
+msgstr "'நாளை' HH: மிமீ"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:312
 msgid "ddd' 'h:mm ap"
-msgstr ""
+msgstr "ddd '' h: mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:315
 msgid "ddd' 'HH:mm"
-msgstr ""
+msgstr "ddd '' hh: mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:322
 msgid "ddd d MMM' 'h:mm ap"
-msgstr ""
+msgstr "ddd dd mmm '' hh: mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:325
 msgid "ddd d MMM' 'HH:mm"
-msgstr ""
+msgstr "ddd டி mmm '' hh: mm"
 
 #: Lomiri/Components/plugin/privates/listitemdragarea.cpp:122
 msgid ""
 "ListView has no ViewItems.dragUpdated() signal handler implemented. No "
 "dragging will be possible."
-msgstr ""
+msgstr "லிச்ட்வியூவுக்கு பார்வை இல்லை. எந்த இழுவையும் சாத்தியமில்லை."
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:176
 #, qt-format
@@ -149,21 +150,23 @@ msgid ""
 "property \"%1\" of object %2 has type %3 and cannot be set to value \"%4\" "
 "of type %5"
 msgstr ""
+"பொருள் %2 இன் சொத்து \" %1\" வகை %3 ஐக் கொண்டுள்ளது மற்றும் வகை %5 இன் \" %4\" "
+"மதிப்புக்கு அமைக்க முடியாது"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:185
 #, qt-format
 msgid "property \"%1\" does not exist or is not writable for object %2"
-msgstr ""
+msgstr "சொத்து \" %1\" இல்லை அல்லது பொருள் %2 க்கு எழுத முடியாது"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:41
 #: Lomiri/Components/plugin/ucalarm.cpp:643
 msgid "Alarm"
-msgstr ""
+msgstr "அலாரம்"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:635
 #: Lomiri/Components/plugin/ucalarm.cpp:667
 msgid "Alarm has a pending operation."
-msgstr ""
+msgstr "அலாரத்திற்கு நிலுவையில் உள்ளது."
 
 #: Lomiri/Components/plugin/ucarguments.cpp:188
 msgid "Usage: "
@@ -171,54 +174,57 @@ msgstr ""
 
 #: Lomiri/Components/plugin/ucarguments.cpp:209
 msgid "Options:"
-msgstr ""
+msgstr "விருப்பங்கள்:"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:498
 #, qt-format
 msgid "%1 is expecting an additional argument: %2"
-msgstr ""
+msgstr "%1 கூடுதல் வாதத்தை எதிர்பார்க்கிறது: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:503
 #, qt-format
 msgid "%1 is expecting a value for argument: %2"
-msgstr ""
+msgstr "%1 வாதத்திற்கான மதிப்பை எதிர்பார்க்கிறது: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:520
 #, qt-format
 msgid "%1 is expecting additional arguments: %2"
-msgstr ""
+msgstr "%1 கூடுதல் வாதங்களை எதிர்பார்க்கிறது: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr ""
+msgstr "ச்விபீவென்ட் () ச்லாட்டை மீறுவதைக் கவனியுங்கள்!"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
-msgstr ""
+msgstr "மீள் () ச்லாட்டை மீறுவதைக் கவனியுங்கள்!"
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
-msgstr ""
+msgstr "தலைகீழ் வடிப்பான்களுக்கான முன்னுரிமையை புறக்கணித்தல்."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
-msgstr ""
+msgstr "இணைப்பு அளவுருக்களை மாற்றுதல் தடைசெய்யப்பட்டுள்ளது."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:160
 #, qt-format
 msgid ""
 "Binding detected on property '%1' will be removed by the service updates."
 msgstr ""
+"சொத்து '%1' இல் கண்டறியப்பட்ட பிணைப்பு பணி புதுப்பிப்புகளால் அகற்றப்படும்."
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:46
 msgid "Warning: attachee must have an ID. State will not be saved."
 msgstr ""
+"எச்சரிக்கை: தொடர்பாளருக்கு ஒரு ஐடி இருக்க வேண்டும். மாநிலம் காப்பாற்றப்படாது."
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:56
 #, qt-format
 msgid ""
 "Warning: attachee's UUID is already registered, state won't be saved: %1"
 msgstr ""
+"எச்சரிக்கை: இணைப்பாளரின் UUID ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது, மாநிலம் சேமிக்கப்படாது: %1"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:107
 #, qt-format
@@ -226,35 +232,39 @@ msgid ""
 "All the parents must have an id.\n"
 "State saving disabled for %1, class %2"
 msgstr ""
+"பெற்றோர் அனைவருக்கும் ஒரு ஐடி இருக்க வேண்டும்.\n"
+" %1, வகுப்பு %2 க்கு மாநில சேமிப்பு முடக்கப்பட்டது"
 
 #: Lomiri/Components/plugin/uctheme.cpp:208
 #, qt-format
 msgid "Theme not found: \"%1\""
-msgstr ""
+msgstr "கருப்பொருள் காணப்படவில்லை: \"%1\""
 
 #: Lomiri/Components/plugin/uctheme.cpp:539
 msgid "Not a Palette component."
-msgstr ""
+msgstr "ஒரு தட்டு கூறு அல்ல."
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:462
 msgid "Dragging mode requires ListView"
-msgstr ""
+msgstr "இழுக்கும் பயன்முறையில் பட்டியல் காட்சி தேவை"
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:468
 msgid ""
 "Dragging is only supported when using a QAbstractItemModel, ListModel or "
 "list."
 msgstr ""
+"Qabstractitemmodel, ListModel அல்லது பட்டியலைப் பயன்படுத்தும் போது மட்டுமே இழுத்தல் "
+"ஆதரிக்கப்படுகிறது."
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
 msgid "Cancel"
-msgstr ""
+msgstr "ரத்துசெய்"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:88
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:88
 msgid "Confirm"
-msgstr ""
+msgstr "உறுதிப்படுத்தவும்"
 
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:85
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:85
@@ -264,19 +274,19 @@ msgstr ""
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:95
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:95
 msgid "Done"
-msgstr ""
+msgstr "முடிந்தது"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/ProgressBarStyle.qml:51
 #: Lomiri/Components/Themes/Ambiance/1.3/ProgressBarStyle.qml:50
 msgid "In Progress"
-msgstr ""
+msgstr "முன்னேற்றத்தில் உள்ளது"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/PullToRefreshStyle.qml:28
 #: Lomiri/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml:28
 msgid "Release to refresh..."
-msgstr ""
+msgstr "புதுப்பிக்க வெளியீடு ..."
 
 #: Lomiri/Components/Themes/Ambiance/1.2/PullToRefreshStyle.qml:28
 #: Lomiri/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml:28
 msgid "Pull to refresh..."
-msgstr ""
+msgstr "புதுப்பிக்க இழுக்கவும் ..."
