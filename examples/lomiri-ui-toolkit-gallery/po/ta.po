@@ -8,125 +8,128 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-01-13 20:00+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "பற்றி ..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "குறுகிய பட்டியல்"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "இடங்களின் எண்ணிக்கை"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "நீண்ட பட்டியல்"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "முடக்கப்பட்டது"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "எண் பகுப்பாய்வு"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "தரநிலை"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr ""
+msgstr "நிலையான காலம்"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "ச்னாப்"
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "வேகமாக"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "மெதுவாக"
 
 #: Animations.qml:159
 msgid "Sleepy"
-msgstr ""
+msgstr "தூக்கம்"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "அழைப்பு"
 
 #: Buttons.qml:37
 msgid "Stroke"
-msgstr ""
+msgstr "பக்கவாதம்"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "நிறம்"
 
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "%1 ஐ அழைக்கவும்"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "படவுரு"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "ஐகான்+உரை"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "சரிந்தது"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "விரிவாக்கப்பட்டது"
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "ஆரஞ்சு"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "வெளிர் சாம்பல்"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "இருண்ட சாம்பல்"
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "சிவப்பு"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "பச்சை"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "நீலம்"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "ஊதா"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
@@ -134,7 +137,7 @@ msgstr ""
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "அளவிடுதல்"
 
 #: Icons.qml:79
 msgid "Theme"
@@ -142,264 +145,266 @@ msgstr ""
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "முன்னணி மற்றும் பின்தங்கிய செயல்கள்"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "சிட்டை"
 
 #: ListItems.qml:33
 msgid "Subtitled"
-msgstr ""
+msgstr "வசன வரிகள்"
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "இரண்டாம் நிலை சிட்டை"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "தைண்டிவைடர்"
 
 #: ListItems.qml:73
 msgid "Progression"
-msgstr ""
+msgstr "முன்னேற்றம்"
 
 #: ListItems.qml:82
 msgid "Single value"
-msgstr ""
+msgstr "ஒற்றை மதிப்பு"
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "மதிப்பு"
 
 #: ListItems.qml:91
 msgid "Multi value"
-msgstr ""
+msgstr "பல மதிப்பு"
 
 #: ListItems.qml:95 ListItems.qml:113 ListItems.qml:122 ListItems.qml:132
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "மதிப்பு 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "மதிப்பு 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "மதிப்பு 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "மதிப்பு 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "உருப்படி தேர்வாளர்"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "விரிவாக்குதல்"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr ""
+msgstr "பல தேர்வு"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "தனிப்பயன் மாதிரி"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "மதிப்பு 5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "மதிப்பு 6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
 msgid "Value 7"
-msgstr ""
+msgstr "மதிப்பு 7"
 
 #: ListItems.qml:168 ListItems.qml:183 OptionSelectors.qml:91
 #: OptionSelectors.qml:106
 msgid "Value 8"
-msgstr ""
+msgstr "மதிப்பு 8"
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "கட்டுப்பாடு"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr ""
+msgstr "நீக்கக்கூடியது"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr ""
+msgstr "அகற்ற ச்லைடு"
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "மீட்டமை"
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr ""
+msgstr "குழு பட்டியல்"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "லோமிரிலிச்ட்வியூ"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "விரிவாக்கக்கூடிய நெடுவரிசை"
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "விரிவாக்கக்கூடியது"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "வண்ணம்"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "வண்ணத்தை முன்னிலைப்படுத்தவும்"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "முன்னணி செயல்கள்"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "பின்னணியில் உள்ள செயல்கள்"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "தனிப்பயன் நடவடிக்கை பிரதிநிதிகள்"
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr ""
+msgstr "தொகு"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "நகர்த்தவும்"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "அடிப்படை"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "வண்ண வகுப்பி"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "மாறாத"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "டிவைடர் இல்லை"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "விருப்பம் தேர்வாளர்"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "இது இரண்டாவது மதிப்பு"
 
 #: OptionSelectors.qml:35
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
+"லோரெம் மிகவும் கேரட், ஐட்ரசன் இளங்கலை உருவாக்குபவர், ஆனால் விட்டம் என்ஐபிஎச் செயல்திறன் "
+"உருவாக்குபவர்கள் லாரீட் வலிக்கு ஒரு சிறந்த வார இறுதியில்."
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "ஒரு காலத்தில் யாரும் சொல்லாத கதை இருந்தது."
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "தனிப்பயன் கொள்கலன் உயரம்"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "ஆரம்ப தேர்வு இல்லை, உருட்டக்கூடியது."
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "நேரியல்"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "வட்ட"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "கந்தழி, முடிவிலி"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "கடிகை"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "மேலடுக்கு"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "பெண்"
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "செயல் #1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "செயல் #2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "செயல் #3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "செயல் #4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "செயல் #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "முன்னேற்றப் பட்டி"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "சிட்டை இல்லை"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "செயல்பாட்டு காட்டி"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "அளவுகள்"
 
 #: Sections.qml:34
 msgid "Enabled"
@@ -407,44 +412,44 @@ msgstr ""
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
-msgstr ""
+msgstr "தாளின் காட்சி பாணி ஆரம்பகால வேலை, இதனால் துணிச்சலான தோற்றம்."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "தலைப்பு"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "உண்மையான மதிப்பு: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "நேரடி புதுப்பிப்பு"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "வீச்சு"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "சிட்டைகள்"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "சிறிய"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "சராசரி"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "பெரிய"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "என்னை தட்டச்சு செய்க ..."
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -452,19 +457,19 @@ msgstr ""
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "எண்கள்"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "படிக்க மட்டும்"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "யாரும் இங்கே தட்டச்சு செய்கிறார்கள்"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "எந்த தொடர்பும் அனுமதிக்கப்படவில்லை"
 
 #: TextInputs.qml:107
 msgid "Default"
@@ -472,28 +477,28 @@ msgstr ""
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "பணக்கார உரை"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "தேர்வு செய்யப்படாதது"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "சரிபார்க்கப்பட்டது"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "நற்பொருத்தம்"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "ஆரம்"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "படம்"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "சரிவு"
