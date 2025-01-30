@@ -32,12 +32,7 @@
 #include "ucalarm_p_p.h"
 
 static const QString alarmDatabase = QStringLiteral("%1/alarms.json");
-
-// The main alarm manager engine used from Saucy onwards is EDS (Evolution Data
-// Server) based. Any previous release uses the generic "memory" manager engine
-// which does not store alarm data, does not schedule organizer events and does
-// not give visual or audible reminding.
-static const QString alarmManager = QStringLiteral("eds");
+static const QString edsManager = QStringLiteral("eds");
 static const QString alarmManagerFallback = QStringLiteral("memory");
 static const QString alarmCollection = QStringLiteral("Alarms");
 
@@ -93,7 +88,7 @@ bool AlarmDataAdapter::setDate(const QDateTime &date)
         return false;
     }
     QDateTime dt = AlarmUtils::normalizeDate(date);
-    if (AlarmsAdapter::get()->manager->managerName() == alarmManager) {
+    if (AlarmsAdapter::get()->manager->managerName() == edsManager) {
         // use invalid timezone to simulate floating time for EDS backend
         dt = QDateTime(dt.date(), dt.time(), QTimeZone());
     }
@@ -395,10 +390,12 @@ AlarmsAdapter::AlarmsAdapter(AlarmManager *qq)
 {
     // register QOrganizerItemId comparators so QVariant == operator can compare them
     QMetaType::registerComparators<QOrganizerItemId>();
+    // ensure QOrganizerAbstractRequest::State is registered
+    qRegisterMetaType<QOrganizerAbstractRequest::State>("QOrganizerAbstractRequest::State");
 
     QString envManager = QString::fromLocal8Bit(qgetenv("ALARM_BACKEND"));
     if (envManager.isEmpty())
-        envManager = alarmManager;
+        envManager = edsManager;
     if (!QOrganizerManager::availableManagers().contains(envManager)) {
         qWarning() << "WARNING: alarm manager" << envManager << "not installed, using"
                    << alarmManagerFallback;
