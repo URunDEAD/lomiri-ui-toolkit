@@ -8,29 +8,33 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-02-04 07:51+0000\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "O …"
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "Kratki popis"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "Broj slotova"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "Dugački popis"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
@@ -45,11 +49,11 @@ msgstr ""
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "Standardo"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr ""
+msgstr "Standard trajanje"
 
 #: Animations.qml:62
 msgid "Snap"
@@ -57,11 +61,11 @@ msgstr ""
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "Brzo"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "Sporo"
 
 #: Animations.qml:159
 msgid "Sleepy"
@@ -69,7 +73,7 @@ msgstr ""
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "Poziv"
 
 #: Buttons.qml:37
 msgid "Stroke"
@@ -77,7 +81,7 @@ msgstr ""
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "Boja"
 
 #: Buttons.qml:53
 #, qt-format
@@ -86,51 +90,51 @@ msgstr ""
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "Ikona+Tekst"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "Sklopljeno"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "Rasklopljeno"
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "Narančasta"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "Svjetlosiva"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "Tamnosiva"
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "Crvena"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "Zelena"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "Plava"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "Ljubičasta"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "Otvori"
 
 #: Icons.qml:29
 msgid "Scaling"
@@ -138,7 +142,7 @@ msgstr ""
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -148,7 +152,7 @@ msgstr ""
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "Oznaka"
 
 #: ListItems.qml:33
 msgid "Subtitled"
@@ -156,7 +160,7 @@ msgstr ""
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "Sekundarna oznaka"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
@@ -252,7 +256,7 @@ msgstr ""
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "Resetiraj"
 
 #: ListItems.qml:226
 msgid "Grouped list"
@@ -292,7 +296,7 @@ msgstr ""
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr ""
+msgstr "Uredi"
 
 #: NewListItems.qml:114
 msgid "Move"
@@ -355,7 +359,7 @@ msgstr ""
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Sat"
 
 #: Pickers.qml:174
 msgid "Overlay"
@@ -391,7 +395,7 @@ msgstr ""
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Bez oznake"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
@@ -411,16 +415,16 @@ msgstr ""
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "Stvarna vrijednost: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "Aktualiziranje u živo"
 
 #: Sliders.qml:57
 msgid "Range"
@@ -428,7 +432,7 @@ msgstr ""
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Oznake"
 
 #: Sliders.qml:85
 msgid "Small"
@@ -448,11 +452,11 @@ msgstr ""
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "Lozinka"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "Brojevi"
 
 #: TextInputs.qml:78
 msgid "Read-only"
@@ -468,7 +472,7 @@ msgstr ""
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "Zadano"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
@@ -492,7 +496,7 @@ msgstr ""
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Slika"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
