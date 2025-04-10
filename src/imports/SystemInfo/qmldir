@@ -1,0 +1,4 @@
+module Lomiri.SystemInfo
+plugin LomiriSystemInfoPlugin
+typeinfo plugins.qmltypes
+classname LomiriSystemInfoModule

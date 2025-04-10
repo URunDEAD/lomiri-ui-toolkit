@@ -1,9 +1,6 @@
 TARGET = LomiriToolkit
 QT = core-private gui-private qml-private quick-private testlib dbus svg organizer \
-     LomiriGestures-private LomiriMetrics
-
-#Qt SystemInfo
-QT *= systeminfo systeminfo-private
+     LomiriGestures-private LomiriMetrics systeminfo systeminfo-private
 
 unix {
     CONFIG += link_pkgconfig

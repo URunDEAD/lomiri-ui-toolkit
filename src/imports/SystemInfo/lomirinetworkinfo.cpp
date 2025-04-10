@@ -1,0 +1,624 @@
+/****************************************************************************
+**
+** Copyright (C) 2018 Canonical, Ltd. and/or its subsidiary(-ies).
+** Copyright (C) 2018 The Qt Company Ltd and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the QtSystems module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 3 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL3 included in the
+** packaging of this file. Please review the following information to
+** ensure the GNU Lesser General Public License version 3 requirements
+** will be met: https://www.gnu.org/licenses/lgpl-3.0.html.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 2.0 or (at your option) the GNU General
+** Public license version 3 or any later version approved by the KDE Free
+** Qt Foundation. The licenses are as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-2.0.html and
+** https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+#include "lomirinetworkinfo_p.h"
+
+QT_BEGIN_NAMESPACE
+
+/*!
+    \qmltype NetworkInfo
+    \instantiates LomiriDeclarativeNetworkInfo
+    \inqmlmodule QtSystemInfo
+    \ingroup qml-systeminfo
+    \brief The NetworkInfo element provides various information about the network status.
+ */
+
+/*!
+    \internal
+ */
+LomiriDeclarativeNetworkInfo::LomiriDeclarativeNetworkInfo(QObject *parent)
+    : QObject(parent)
+    , networkInfo(new LomiriNetworkInfo(this))
+    , isMonitorCurrentNetworkMode(false)
+    , isMonitorNetworkSignalStrength(false)
+    , isMonitorNetworkInterfaceCount(false)
+    , isMonitorCurrentCellDataTechnology(false)
+    , isMonitorNetworkStatus(false)
+    , isMonitorCellId(false)
+    , isMonitorCurrentMobileCountryCode(false)
+    , isMonitorCurrentMobileNetworkCode(false)
+    , isMonitorLocationAreaCode(false)
+    , isMonitorNetworkName(false)
+{
+    connect(networkInfo, SIGNAL(networkInterfaceCountChanged(LomiriNetworkInfo::NetworkMode,int)),
+            this, SLOT(_q_networkInterfaceCountChanged(LomiriNetworkInfo::NetworkMode,int)));
+    connect(networkInfo, SIGNAL(currentCellDataTechnologyChanged(int,LomiriNetworkInfo::CellDataTechnology)),
+            this, SLOT(_q_currentCellDataTechnologyChanged(int,LomiriNetworkInfo::CellDataTechnology)));
+    connect(networkInfo, SIGNAL(cellIdChanged(int,QString)), this, SIGNAL(cellIdChanged(int,QString)));
+    connect(networkInfo, SIGNAL(currentMobileCountryCodeChanged(int,QString)),
+            this, SIGNAL(currentMobileCountryCodeChanged(int,QString)));
+    connect(networkInfo, SIGNAL(currentMobileNetworkCodeChanged(int,QString)),
+            this, SIGNAL(currentMobileNetworkCodeChanged(int,QString)));
+    connect(networkInfo, SIGNAL(locationAreaCodeChanged(int,QString)),
+            this, SIGNAL(locationAreaCodeChanged(int,QString)));
+}
+
+/*!
+    \internal
+ */
+LomiriDeclarativeNetworkInfo::~LomiriDeclarativeNetworkInfo()
+{
+}
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorCurrentNetworkMode
+
+    This property holds whether or not monitor the change of current network mode.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorCurrentNetworkMode() const
+{
+    return isMonitorCurrentNetworkMode;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorCurrentNetworkMode(bool monitor)
+{
+    if (monitor != isMonitorCurrentNetworkMode) {
+        isMonitorCurrentNetworkMode = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(currentNetworkModeChanged(LomiriNetworkInfo::NetworkMode)),
+                    this, SIGNAL(currentNetworkModeChanged()));
+        } else {
+            disconnect(networkInfo, SIGNAL(currentNetworkModeChanged(LomiriNetworkInfo::NetworkMode)),
+                       this, SIGNAL(currentNetworkModeChanged()));
+        }
+        Q_EMIT monitorCurrentNetworkModeChanged();
+    }
+}
+
+/*!
+    \qmlproperty enumeration NetworkInfo::currentNetworkMode
+
+    This property holds the current network mode. Possible values are:
+    \list
+    \li NetworkInfo.UnknownMode     - The network is unknown or an error occured.
+    \li NetworkInfo.GsmMode         - Global System for Mobile (GSM) network.
+    \li NetworkInfo.CdmaMode        - Code Division Multiple Access (CDMA) network.
+    \li NetworkInfo.WcdmaMode       - Wideband Code Division Multiple Access (WCDMA) network.
+    \li NetworkInfo.WlanMode        - Wireless local area network (WLAN) network.
+    \li NetworkInfo.EthernetMode    - Local area network (LAN), or Ethernet network.
+    \li NetworkInfo.BluetoothMode   - Bluetooth network.
+    \li NetworkInfo.WimaxMode       - Worldwide Interoperability for Microwave Access (WiMAX) network.
+    \li NetworkInfo.LteMode         - 3GPP Long Term Evolution (LTE) network.
+    \li NetworkInfo.TdscdmaMode     - Time Division Synchronous Code Division Multiple Access (TD-SCDMA) network.
+    \endlist
+ */
+LomiriDeclarativeNetworkInfo::NetworkMode LomiriDeclarativeNetworkInfo::currentNetworkMode() const
+{
+    return static_cast<LomiriDeclarativeNetworkInfo::NetworkMode>(networkInfo->currentNetworkMode());
+}
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorNetworkSignalStrength
+
+    This property holds whether or not monitor the change of network signal strength.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorNetworkSignalStrength() const
+{
+    return isMonitorNetworkSignalStrength;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorNetworkSignalStrength(bool monitor)
+{
+    if (monitor != isMonitorNetworkSignalStrength) {
+        isMonitorNetworkSignalStrength = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(networkSignalStrengthChanged(LomiriNetworkInfo::NetworkMode,int,int)),
+                    this, SLOT(_q_networkSignalStrengthChanged(LomiriNetworkInfo::NetworkMode,int,int)));
+        } else {
+            disconnect(networkInfo, SIGNAL(networkSignalStrengthChanged(LomiriNetworkInfo::NetworkMode,int,int)),
+                       this, SLOT(_q_networkSignalStrengthChanged(LomiriNetworkInfo::NetworkMode,int,int)));
+        }
+        Q_EMIT monitorNetworkSignalStrengthChanged();
+    }
+}
+
+/*!
+    \qmlmethod int NetworkInfo::networkSignalStrength(NetworkMode mode, int interface)
+
+    Returns the signal strength of the given \a mode and \a interface. If the information
+    is not available, or error occurs, -1 is returned.
+ */
+int LomiriDeclarativeNetworkInfo::networkSignalStrength(NetworkMode mode, int interface) const
+{
+    return networkInfo->networkSignalStrength(static_cast<LomiriNetworkInfo::NetworkMode>(mode), interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onNetworkSignalStrengthChanged(NetworkMode mode, int interfaceIndex, int strength)
+
+    This handler is called whenever the signal strength for the \a interfaceIndex of \a mode has changed
+    to \a strength. Note that it won't be called until monitorNetworkSignalStrength is set true.
+
+    \sa networkSignalStrength, monitorNetworkSignalStrength
+ */
+void LomiriDeclarativeNetworkInfo::_q_networkSignalStrengthChanged(LomiriNetworkInfo::NetworkMode mode, int interface, int strength)
+{
+    Q_EMIT networkSignalStrengthChanged(static_cast<NetworkMode>(mode), interface, strength);
+}
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorNetworkInterfaceCount
+
+    This property is obsoleted, and will be removed soon. You don't need to use it at all.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorNetworkInterfaceCount() const
+{
+    return isMonitorNetworkInterfaceCount;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorNetworkInterfaceCount(bool monitor)
+{
+    if (monitor != isMonitorNetworkInterfaceCount) {
+        isMonitorNetworkInterfaceCount = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(networkInterfaceCountChanged(LomiriNetworkInfo::NetworkMode,int)),
+                    this, SLOT(_q_networkInterfaceCountChanged(LomiriNetworkInfo::NetworkMode,int)));
+        } else {
+            disconnect(networkInfo, SIGNAL(networkInterfaceCountChanged(LomiriNetworkInfo::NetworkMode,int)),
+                       this, SLOT(_q_networkInterfaceCountChanged(LomiriNetworkInfo::NetworkMode,int)));
+        }
+        Q_EMIT monitorNetworkInterfaceCountChanged();
+    }
+}
+
+/*!
+    \qmlmethod int NetworkInfo::networkInterfaceCount(NetworkMode mode)
+
+    Returns the interface count of the given \a mode.
+ */
+int LomiriDeclarativeNetworkInfo::networkInterfaceCount(NetworkMode mode) const
+{
+    return networkInfo->networkInterfaceCount(static_cast<LomiriNetworkInfo::NetworkMode>(mode));
+}
+
+/*!
+    \qmlsignal NetworkInfo::onNetworkInterfaceCountChanged(NetworkMode mode, int count)
+
+    This handler is called whenever the number of interfaces of \a mode has changed to \a count.
+    Note that it won't called until monitorNetworkInterfaceCount is set true.
+
+    \sa networkInterfaceCount, monitorNetworkInterfaceCount
+ */
+void LomiriDeclarativeNetworkInfo::_q_networkInterfaceCountChanged(LomiriNetworkInfo::NetworkMode mode, int count)
+{
+    Q_EMIT networkInterfaceCountChanged(static_cast<NetworkMode>(mode), count);
+}
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorCurrentCellDataTechnology
+
+    This property is obsoleted, and will be removed soon. You don't need to use it at all.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorCurrentCellDataTechnology() const
+{
+    return isMonitorCurrentCellDataTechnology;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorCurrentCellDataTechnology(bool monitor)
+{
+    if (monitor != isMonitorCurrentCellDataTechnology) {
+        isMonitorCurrentCellDataTechnology = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(currentCellDataTechnologyChanged(int,LomiriNetworkInfo::CellDataTechnology)),
+                    this, SLOT(_q_currentCellDataTechnologyChanged(int,LomiriNetworkInfo::CellDataTechnology)));
+        } else {
+            disconnect(networkInfo, SIGNAL(currentCellDataTechnologyChanged(int,LomiriNetworkInfo::CellDataTechnology)),
+                       this, SLOT(_q_currentCellDataTechnologyChanged(int,LomiriNetworkInfo::CellDataTechnology)));
+        }
+        Q_EMIT monitorCurrentCellDataTechnologyChanged();
+    }
+}
+
+/*!
+    \qmlmethod CellDataTechnology NetworkInfo::currentCellDataTechnology(int interface)
+
+    Returns the current cell data technology of the given \a interface. Possible values are:
+    \list
+    \li NetworkInfo.UnknownDataTechnology   - The cellular technology is unknown or an error occured.
+    \li NetworkInfo.GprsDataTechnology      - General Packet Radio Service (GPRS) data service.
+    \li NetworkInfo.EdgeDataTechnology      - Enhanced Data Rates for GSM Evolution (EDGE) data service.
+    \li NetworkInfo.UmtsDataTechnology      - Universal Mobile Telecommunications System (UMTS) data service.
+    \li NetworkInfo.HspaDataTechnology      - High Speed Packet Access (HSPA) data service.
+    \endlist
+ */
+int LomiriDeclarativeNetworkInfo::currentCellDataTechnology(int interface) const
+{
+    return networkInfo->currentCellDataTechnology(interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onCurrentCellDataTechnologyChanged(int interfaceIndex, CellDataTechnology tech)
+
+    This handler is called whenever the cell data technology of \a interfaceIndex has been changed to \a tech.
+    Note that the signal won't emit until monitorCurrentCellDataTechnology is set true.
+
+    \sa currentCellDataTechnology, monitorCurrentCellDataTechnology
+ */
+void LomiriDeclarativeNetworkInfo::_q_currentCellDataTechnologyChanged(int interface, LomiriNetworkInfo::CellDataTechnology tech)
+{
+    Q_EMIT currentCellDataTechnologyChanged(interface, static_cast<CellDataTechnology>(tech));
+}
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorNetworkStatus
+
+    This property holds whether or not monitor the network status.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorNetworkStatus() const
+{
+    return isMonitorNetworkStatus;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorNetworkStatus(bool monitor)
+{
+    if (monitor != isMonitorNetworkStatus) {
+        isMonitorNetworkStatus = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(networkStatusChanged(LomiriNetworkInfo::NetworkMode,int,LomiriNetworkInfo::NetworkStatus)),
+                    this, SLOT(_q_networkStatusChanged(LomiriNetworkInfo::NetworkMode,int,LomiriNetworkInfo::NetworkStatus)));
+        } else {
+            disconnect(networkInfo, SIGNAL(networkStatusChanged(LomiriNetworkInfo::NetworkMode,int,LomiriNetworkInfo::NetworkStatus)),
+                       this, SLOT(_q_networkStatusChanged(LomiriNetworkInfo::NetworkMode,int,LomiriNetworkInfo::NetworkStatus)));
+        }
+        Q_EMIT monitorNetworkStatusChanged();
+    }
+}
+
+/*!
+    \qmlmethod NetworkStatus NetworkInfo::networkStatus(NetworkMode mode, int interface)
+
+    Returns the status of the given \a mode and \a interface. Possible values are:
+    \list
+    \li NetworkInfo.UnknownStatus        - The status is unknown or an error occured.
+    \li NetworkInfo.NoNetworkAvailable   - There is no network available.
+    \li NetworkInfo.EmergencyOnly        - The network only allows emergency calls.
+    \li NetworkInfo.Searching            - The device is searching or connecting to the network.
+    \li NetworkInfo.Busy                 - The network is too busy to be connected.
+    \li NetworkInfo.Denied               - The connection to the network has been denied.
+    \li NetworkInfo.HomeNetwork          - The device is connected to the home network.
+    \li NetworkInfo.Roaming              - The device is connected to some roaming network.
+    \endlist
+ */
+int LomiriDeclarativeNetworkInfo::networkStatus(LomiriDeclarativeNetworkInfo::NetworkMode mode, int interface) const
+{
+    return networkInfo->networkStatus(static_cast<LomiriNetworkInfo::NetworkMode>(mode), interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onNetworkStatusChanged(NetworkMode mode, int interfaceIndex, NetworkStatus status)
+
+    This handler is called whenever the status of \a mode and \a interfaceIndex has been changed to \a status.
+    Note that it won't be called until monitorNetworkStatus is set true.
+
+    \sa networkStatus, monitorNetworkStatus
+ */
+void LomiriDeclarativeNetworkInfo::_q_networkStatusChanged(LomiriNetworkInfo::NetworkMode mode, int interface, LomiriNetworkInfo::NetworkStatus status)
+{
+    Q_EMIT networkStatusChanged(static_cast<NetworkMode>(mode), interface, static_cast<NetworkStatus>(status));
+}
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorCellId
+
+    This property is obsoleted, and will be removed soon. You don't need to use it at all.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorCellId() const
+{
+    return isMonitorCellId;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorCellId(bool monitor)
+{
+    if (monitor != isMonitorCellId) {
+        isMonitorCellId = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(cellIdChanged(int,QString)),
+                    this, SIGNAL(cellIdChanged(int,QString)));
+        } else {
+            disconnect(networkInfo, SIGNAL(cellIdChanged(int,QString)),
+                    this, SIGNAL(cellIdChanged(int,QString)));
+        }
+        Q_EMIT monitorCellIdChanged();
+    }
+}
+
+/*!
+    \qmlmethod string NetworkInfo::cellId(int interface)
+
+    Returns the cell ID of the given \a interface. If this information
+    is not available or error occurs, an empty string is returned.
+
+    \sa onCellIdChanged
+ */
+QString LomiriDeclarativeNetworkInfo::cellId(int interface) const
+{
+    return networkInfo->cellId(interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onCellIdChanged(int interfaceIndex, string id)
+
+    This handler is called whenever the cell ID of \a interfaceIndex has been changed to \a id.
+    Note that it won't be called unless monitorCellId is set true.
+
+    \sa cellId, monitorCellId
+ */
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorCurrentMobileCountryCode
+
+    This property is obsoleted, and will be removed soon. You don't need to use it at all.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorCurrentMobileCountryCode() const
+{
+    return isMonitorCurrentMobileCountryCode;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorCurrentMobileCountryCode(bool monitor)
+{
+    if (monitor != isMonitorCurrentMobileCountryCode) {
+        isMonitorCurrentMobileCountryCode = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(currentMobileCountryCodeChanged(int,QString)),
+                    this, SIGNAL(currentMobileCountryCodeChanged(int,QString)));
+        } else {
+            disconnect(networkInfo, SIGNAL(currentMobileCountryCodeChanged(int,QString)),
+                       this, SIGNAL(currentMobileCountryCodeChanged(int,QString)));
+        }
+        Q_EMIT monitorCurrentMobileCountryCodeChanged();
+    }
+}
+
+/*!
+    \qmlmethod string NetworkInfo::currentMobileCountryCode(int interface)
+
+    Returns the current mobile country code of the given \a interface. If this information
+    is not available or error occurs, an empty string is returned.
+ */
+QString LomiriDeclarativeNetworkInfo::currentMobileCountryCode(int interface) const
+{
+    return networkInfo->currentMobileCountryCode(interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onCurrentMobileCountryCodeChanged(int interfaceIndex, string mcc)
+
+    This handler is called whenever the current mobile country code of \a interfaceIndex has been changed
+    to \a mcc. Note that it won't be called unless monitorCurrentMobileCountryCode is set true.
+
+    \sa currentMobileCountryCode, monitorCurrentMobileCountryCode
+ */
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorCurrentMobileNetworkCode
+
+    This property is obsoleted, and will be removed soon. You don't need to use it at all.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorCurrentMobileNetworkCode() const
+{
+    return isMonitorCurrentMobileNetworkCode;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorCurrentMobileNetworkCode(bool monitor)
+{
+    if (monitor != isMonitorCurrentMobileNetworkCode) {
+        isMonitorCurrentMobileNetworkCode = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(currentMobileNetworkCodeChanged(int,QString)),
+                    this, SIGNAL(currentMobileNetworkCodeChanged(int,QString)));
+        } else {
+            disconnect(networkInfo, SIGNAL(currentMobileNetworkCodeChanged(int,QString)),
+                       this, SIGNAL(currentMobileNetworkCodeChanged(int,QString)));
+        }
+        Q_EMIT monitorCurrentMobileNetworkCodeChanged();
+    }
+}
+
+/*!
+    \qmlmethod string NetworkInfo::currentMobileNetworkCode(int interface)
+
+    Returns the current mobile network code of the given \a interface. If this information
+    is not available or error occurs, an empty string is returned.
+ */
+QString LomiriDeclarativeNetworkInfo::currentMobileNetworkCode(int interface) const
+{
+    return networkInfo->currentMobileNetworkCode(interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onCurrentMobileNetworkCodeChanged(int interfaceIndex, string mnc)
+
+    This handler is called whenever the current mobile network code of \a interfaceIndex has been changed
+    to \a mnc. Note that it won't be called unless monitorCurrentMobileNetworkCode is set true.
+
+    \sa currentMobileNetworkCode, monitorCurrentMobileNetworkCode
+ */
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorLocationAreaCode
+
+    This property is obsoleted, and will be removed soon. You don't need to use it at all.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorLocationAreaCode() const
+{
+    return isMonitorLocationAreaCode;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorLocationAreaCode(bool monitor)
+{
+    if (monitor != isMonitorLocationAreaCode) {
+        isMonitorLocationAreaCode = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(locationAreaCodeChanged(int,QString)),
+                    this, SIGNAL(locationAreaCodeChanged(int,QString)));
+        } else {
+            disconnect(networkInfo, SIGNAL(locationAreaCodeChanged(int,QString)),
+                    this, SIGNAL(locationAreaCodeChanged(int,QString)));
+        }
+        Q_EMIT monitorLocationAreaCodeChanged();
+    }
+}
+
+/*!
+    \qmlmethod string NetworkInfo::locationAreaCode(int interface)
+
+    Returns the location area code of the given \a interface. If this information
+    is not available or error occurs, an empty string is returned.
+ */
+QString LomiriDeclarativeNetworkInfo::locationAreaCode(int interface) const
+{
+    return networkInfo->locationAreaCode(interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onLocationAreaCodeChanged(int interfaceIndex, string lac)
+
+    This handler is called whenever the location area code of \a interfaceIndex has been changed to \a lac.
+    Note that it won't be called unless monitorLocationAreaCode is set true.
+
+    \sa locationAreaCode, monitorLocationAreaCode
+ */
+
+/*!
+    \qmlproperty bool NetworkInfo::monitorNetworkName
+
+    This property holds whether or not monitor the change of network names.
+ */
+bool LomiriDeclarativeNetworkInfo::monitorNetworkName() const
+{
+    return isMonitorNetworkName;
+}
+
+void LomiriDeclarativeNetworkInfo::setMonitorNetworkName(bool monitor)
+{
+    if (monitor != isMonitorNetworkName) {
+        isMonitorNetworkName = monitor;
+        if (monitor) {
+            connect(networkInfo, SIGNAL(networkNameChanged(LomiriNetworkInfo::NetworkMode,int,QString)),
+                    this, SLOT(_q_networkNameChanged(LomiriNetworkInfo::NetworkMode,int,QString)));
+        } else {
+            disconnect(networkInfo, SIGNAL(networkNameChanged(LomiriNetworkInfo::NetworkMode,int,QString)),
+                    this, SLOT(_q_networkNameChanged(LomiriNetworkInfo::NetworkMode,int,QString)));
+        }
+        Q_EMIT monitorNetworkNameChanged();
+    }
+}
+
+/*!
+    \qmlmethod string NetworkInfo::networkName(NetworkMode mode, int interface)
+
+    Returns the name of the given \a mode and \a interface. If the information is not available,
+    or an error occurs, an empty string is returned.
+
+    In case of WLAN, the SSID is returned; for Ethernet, the domain name is returned if available.
+ */
+QString LomiriDeclarativeNetworkInfo::networkName(NetworkMode mode, int interface) const
+{
+    return networkInfo->networkName(static_cast<LomiriNetworkInfo::NetworkMode>(mode), interface);
+}
+
+/*!
+    \qmlsignal NetworkInfo::onNetworkNameChanged(NetworkMode mode, int interfaceIndex, string name)
+
+    This handler is called whenever the network name of \a mode and \a interfaceIndex has been changed
+    to \a name. Note that it won't called until monitorNetworkName is set true.
+
+    \sa networkName, monitorNetworkName
+ */
+void LomiriDeclarativeNetworkInfo::_q_networkNameChanged(LomiriNetworkInfo::NetworkMode mode, int interface, const QString &name)
+{
+    Q_EMIT networkNameChanged(static_cast<NetworkMode>(mode), interface, name);
+}
+
+/*!
+    \qmlmethod string NetworkInfo::macAddress(NetworkMode mode, int interface)
+
+    Returns the MAC address for \a interface of \a mode. If the MAC address is not available or error
+    occurs, an empty string is returned.
+*/
+QString LomiriDeclarativeNetworkInfo::macAddress(LomiriDeclarativeNetworkInfo::NetworkMode mode, int interface) const
+{
+    return networkInfo->macAddress(static_cast<LomiriNetworkInfo::NetworkMode>(mode), interface);
+}
+
+/*!
+    \qmlmethod string NetworkInfo::homeMobileCountryCode(int interface)
+
+    Returns the home Mobile Country Code (MCC) for \a interface. An empty string is returned if the
+    information is not available or on error.
+*/
+QString LomiriDeclarativeNetworkInfo::homeMobileCountryCode(int interface) const
+{
+    return networkInfo->homeMobileCountryCode(interface);
+}
+
+/*!
+    \qmlmethod string NetworkInfo::homeMobileNetworkCode(int interface)
+
+    Returns the home Mobile Network Code (MNC) for \a interface. An empty string is returned if the
+    information is not available or on error.
+*/
+QString LomiriDeclarativeNetworkInfo::homeMobileNetworkCode(int interface) const
+{
+    return networkInfo->homeMobileNetworkCode(interface);
+}
+
+/*!
+    \qmlmethod string NetworkInfo::imsi(int interface)
+
+    Returns the International Mobile Subscriber Identity (IMSI) for \a interface. If this information is
+    not available, or error occurs, an empty string is returned.
+*/
+QString LomiriDeclarativeNetworkInfo::imsi(int interface) const
+{
+    return networkInfo->imsi(interface);
+}
+
+QT_END_NAMESPACE
