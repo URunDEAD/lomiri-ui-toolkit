@@ -27,7 +27,7 @@
 #include <QtQuick/QQuickItem>
 #include <QtQuick/private/qquicktextinput_p.h>
 #include <QtQuick/private/qquicktextedit_p.h>
-#include <QtSystemInfo/QInputInfoManager>
+#include <LomiriSystemInfo/lomiriinputinfo.h>
 
 #include <LomiriToolkit/private/ucmainwindow_p.h>
 
@@ -47,30 +47,30 @@ QuickUtils::QuickUtils(QObject *parent) :
     QGuiApplication::instance()->installEventFilter(this);
     m_omitIM << QStringLiteral("ibus") << QStringLiteral("none") << QStringLiteral("compose");
 
-    m_inputInfo = new QInputInfoManager(this);
-    connect(m_inputInfo, &QInputInfoManager::ready,
+    m_inputInfo = new LomiriInputInfoManager(this);
+    connect(m_inputInfo, &LomiriInputInfoManager::ready,
             this, &QuickUtils::onInputInfoReady);
     // the default values of mouse and keyboard attachment depend on the input info
-    connect(m_inputInfo, &QInputInfoManager::deviceAdded,
+    connect(m_inputInfo, &LomiriInputInfoManager::deviceAdded,
             this, &QuickUtils::onDeviceAdded);
-    connect(m_inputInfo, &QInputInfoManager::deviceRemoved,
+    connect(m_inputInfo, &LomiriInputInfoManager::deviceRemoved,
             this, &QuickUtils::onDeviceRemoved);
 }
 
 void QuickUtils::onInputInfoReady()
 {
-    QMapIterator<QString, QInputDevice*> i(m_inputInfo->deviceMap());
+    QMapIterator<QString, LomiriInputDevice*> i(m_inputInfo->deviceMap());
     while (i.hasNext()) {
         i.next();
         registerDevice(i.value(), i.key());
     }
 
-    m_inputInfo->setFilter(QInputDevice::Mouse | QInputDevice::TouchPad | QInputDevice::Keyboard);
+    m_inputInfo->setFilter(LomiriInputDevice::Mouse | LomiriInputDevice::TouchPad | LomiriInputDevice::Keyboard);
 }
 
-void QuickUtils::onDeviceAdded(QInputDevice *device)
+void QuickUtils::onDeviceAdded(LomiriInputDevice *device)
 {
-    QMapIterator<QString, QInputDevice*> i(m_inputInfo->deviceMap());
+    QMapIterator<QString, LomiriInputDevice*> i(m_inputInfo->deviceMap());
     while (i.hasNext()) {
         i.next();
         if (i.value() == device) {
@@ -97,17 +97,17 @@ void QuickUtils::onDeviceRemoved(const QString deviceId)
     }
 }
 
-void QuickUtils::registerDevice(QInputDevice *device, const QString &deviceId)
+void QuickUtils::registerDevice(LomiriInputDevice *device, const QString &deviceId)
 {
-    if (device->types().testFlag(QInputDevice::Keyboard)) {
+    if (device->types().testFlag(LomiriInputDevice::Keyboard)) {
         m_keyboards.insert(deviceId);
         if (!m_explicitKeyboardAttached && !m_keyboardAttached) {
             m_keyboardAttached = true;
             Q_EMIT keyboardAttachedChanged();
         }
     }
-    if (device->types().testFlag(QInputDevice::Mouse)
-            || device->types().testFlag(QInputDevice::TouchPad)) {
+    if (device->types().testFlag(LomiriInputDevice::Mouse)
+            || device->types().testFlag(LomiriInputDevice::TouchPad)) {
         m_mice.insert(deviceId);
         if (!m_explicitMouseAttached && !m_mouseAttached) {
             m_mouseAttached = true;
@@ -221,9 +221,15 @@ QString QuickUtils::inputMethodProvider() const
 bool QuickUtils::touchScreenAvailable() const
 {
     // publish internal context property to detect whether we have touch device or not
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QList<const QInputDevice*> touchDevices = QInputDevice::devices();
+    Q_FOREACH(const QInputDevice *device, touchDevices) {
+        if (device->type() == QInputDevice::DeviceType::TouchScreen) {
+#else
     QList<const QTouchDevice*> touchDevices = QTouchDevice::devices();
     Q_FOREACH(const QTouchDevice *device, touchDevices) {
         if (device->type() == QTouchDevice::TouchScreen) {
+#endif
             return true;
         }
     }

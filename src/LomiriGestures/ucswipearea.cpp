@@ -85,9 +85,17 @@ QString touchEventToString(const QTouchEvent *ev)
 
     Q_FOREACH(const QTouchEvent::TouchPoint& touchPoint, ev->touchPoints()) {
         message.append(
-            QStringLiteral("(id:%1, state:%2, scenePos:(%3,%4)) ")
+            QStringLiteral(
+                "(id:%1, state:"
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+                "%2"
+#endif
+                ", scenePos:(%3,%4)) "
+                )
                 .arg(touchPoint.id())
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                 .arg(touchPointStateToString(touchPoint.state()))
+#endif
                 .arg(touchPoint.scenePos().x())
                 .arg(touchPoint.scenePos().y())
             );
@@ -349,7 +357,7 @@ void UCSwipeArea::setImmediateRecognition(bool enabled)
         Q_EMIT immediateRecognitionChanged(enabled);
     }
 }
-    
+
 /*!
  * \qmlproperty bool SwipeArea::grabGesture
  * If true, any gestures will be grabbed and owned by the SwipeArea as usual.
@@ -417,7 +425,9 @@ void UCSwipeAreaPrivate::unownedTouchEvent(UnownedTouchEvent *unownedTouchEvent)
     Q_Q(UCSwipeArea);
     QTouchEvent *event = unownedTouchEvent->touchEvent();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_ASSERT(!event->touchPointStates().testFlag(Qt::TouchPointPressed));
+#endif
 
     SA_TRACE("Unowned " << timeSource->msecsSinceReference() << " " << qPrintable(touchEventToString(event)));
 
@@ -533,10 +543,12 @@ void UCSwipeAreaPrivate::touchEvent_absent(QTouchEvent *event)
 {
     // FIXME: accept/reject is for the whole event, not per touch id. See how that affects us.
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (!event->touchPointStates().testFlag(Qt::TouchPointPressed)) {
         // Nothing to see here. No touch starting in this event.
         return;
     }
+#endif
 
     // to be proven wrong, if that's the case
     bool allGood = true;
@@ -623,6 +635,7 @@ void UCSwipeAreaPrivate::touchEvent_undecided(QTouchEvent *event)
     event->ignore();
     watchPressedTouchPoints(event->touchPoints());
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (event->touchPointStates().testFlag(Qt::TouchPointPressed) && isWithinTouchCompositionWindow()) {
         // multi-finger drags are not accepted
         SA_TRACE("Multi-finger drags are not accepted");
@@ -634,6 +647,7 @@ void UCSwipeAreaPrivate::touchEvent_undecided(QTouchEvent *event)
 
         setStatus(WaitingForTouch);
     }
+#endif
 }
 
 void UCSwipeAreaPrivate::touchEvent_recognized(QTouchEvent *event)

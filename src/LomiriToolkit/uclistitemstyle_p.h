@@ -18,6 +18,7 @@
 #define UCLISTITEMSTYLE_P_H
 
 #include <QtQuick/QQuickItem>
+#include <QtQuick/private/qquickanimation_p_p.h>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 

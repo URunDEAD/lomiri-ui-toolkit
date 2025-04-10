@@ -6,6 +6,7 @@ qml
 include
 lib
 mkspecs/*
+build*/
 
 Makefile*
 documentation/html/*

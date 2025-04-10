@@ -19,6 +19,9 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDebug>
 #include <QtQuick/private/qquickitem_p.h>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <private/qeventpoint_p.h>
+#endif
 
 #include "candidateinactivitytimer_p.h"
 #include "debughelpers_p.h"
@@ -185,18 +188,31 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
             // Set the point's local coordinates to that of the item
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
             touchPoint.setRect(windowToCandidateTransform.mapRect(touchPoint.sceneRect()));
+#elif QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QMutableEventPoint::setPosition(touchPoint, windowToCandidateTransform.map(touchPoint.scenePos()));
 #else
             touchPoint.setPos(windowToCandidateTransform.map(touchPoint.scenePos()));
 #endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QMutableEventPoint::setGlobalPressPosition(touchPoint, windowToCandidateTransform.map(touchPoint.pressPosition()));
+            QMutableEventPoint::setGlobalLastPosition(touchPoint, windowToCandidateTransform.map(touchPoint.lastPosition()));
+
+            //QMutableEventPoint::setVelocity(touchPoint, windowToCandidateMatrix.mapVector(touchPoint.velocity().toVector2D()));
+#else
+
             touchPoint.setStartPos(windowToCandidateTransform.map(touchPoint.startScenePos()));
             touchPoint.setLastPos(windowToCandidateTransform.map(touchPoint.lastScenePos()));
             touchPoint.setVelocity(windowToCandidateMatrix.mapVector(touchPoint.velocity()).toVector2D());
-
+#endif
             touchPoints.append(touchPoint);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             touchPointStates |= touchPoint.state();
+#endif
         }
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QTouchEvent *eventForItem = new QTouchEvent(event->type(),
                                                 event->device(),
                                                 event->modifiers(),
@@ -212,10 +228,13 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         << "to" << item;
 
     QCoreApplication::sendEvent(item, &unownedTouchEvent);
+#endif
 }
 
 void TouchRegistry::translateTouchPointFromScreenToWindowCoords(QTouchEvent::TouchPoint &touchPoint)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     touchPoint.setScreenRect(touchPoint.sceneRect());
 #else
@@ -231,6 +250,7 @@ void TouchRegistry::translateTouchPointFromScreenToWindowCoords(QTouchEvent::Tou
 #endif
     touchPoint.setStartScenePos(touchPoint.startPos());
     touchPoint.setLastScenePos(touchPoint.lastPos());
+#endif
 }
 
 bool TouchRegistry::eventFilter(QObject *watched, QEvent *event)

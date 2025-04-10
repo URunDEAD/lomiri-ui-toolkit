@@ -22,6 +22,8 @@
 #include <LomiriGestures/lomirigesturesglobal.h>
 
 #include <LomiriToolkit/private/ucactionitem_p.h>
+#include <LomiriGestures/private/ucswipearea_p.h>
+#include <QtQuick/private/qquickflickable_p.h>
 
 class QQuickFlickable;
 UG_FORWARD_DECLARE_CLASS(UCSwipeArea)

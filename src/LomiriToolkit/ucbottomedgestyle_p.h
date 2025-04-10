@@ -22,6 +22,7 @@
 #include <QtQuick/QQuickItem>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#include <QtQuick/private/qquickanimation_p.h>
 
 class QQuickItem;
 class QQuickAbstractAnimation;

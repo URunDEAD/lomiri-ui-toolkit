@@ -29,7 +29,7 @@ class ShapeOverlayShader : public ShapeShader
 {
 public:
     ShapeOverlayShader();
-    char const* const* attributeNames() const override;
+    char const* const* attributeNames() const;
 };
 
 // --- Scene graph material ---
@@ -38,7 +38,7 @@ class ShapeOverlayMaterial : public ShapeMaterial
 {
 public:
     QSGMaterialType* type() const override;
-    QSGMaterialShader* createShader() const override;
+    QSGMaterialShader* createShader() const;
 };
 
 // --- Scene graph node ---

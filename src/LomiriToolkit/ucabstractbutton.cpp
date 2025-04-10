@@ -297,9 +297,15 @@ void UCAbstractButtonPrivate::_q_adjustSensingArea()
     sensingArea.adjust(dx1, dy1, dx2, dy2);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCAbstractButton::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
+{
+    UCActionItem::geometryChange(newGeometry, oldGeometry);
+#else
 void UCAbstractButton::geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry)
 {
     UCActionItem::geometryChanged(newGeometry, oldGeometry);
+#endif
 
     // adjust internal mouse area's size
     d_func()->_q_adjustSensingArea();

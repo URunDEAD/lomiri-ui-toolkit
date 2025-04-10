@@ -334,12 +334,14 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
     // register icon provider
     engine->addImageProvider(QLatin1String("theme"), new LomiriThemeIconProvider);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // Necessary for Screen.orientation (from import QtQuick.Window 2.0) to work
     QGuiApplication::primaryScreen()->setOrientationUpdateMask( Qt::ScreenOrientations(
             Qt::PortraitOrientation |
             Qt::LandscapeOrientation |
             Qt::InvertedPortraitOrientation |
             Qt::InvertedLandscapeOrientation));
+#endif
 
     module->registerWindowContextProperty();
 

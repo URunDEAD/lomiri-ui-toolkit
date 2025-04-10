@@ -27,7 +27,11 @@
 
 UT_NAMESPACE_BEGIN
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QInputDevice *MouseTouchAdaptor::m_touchDevice = nullptr;
+#else
 QTouchDevice *MouseTouchAdaptor::m_touchDevice = nullptr;
+#endif
 
 MouseTouchAdaptorPrivate::~MouseTouchAdaptorPrivate()
 {
@@ -67,18 +71,30 @@ bool MouseTouchAdaptor::registerTouchDevice()
 {
     // check if there is any touch device registered in the system
     if (!m_touchDevice) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QList<const QInputDevice*> touchDevices = QInputDevice::devices();
+        for (const QInputDevice *device : touchDevices) {
+            if (device->type() == QInputDevice::DeviceType::TouchScreen) {
+                m_touchDevice = const_cast<QInputDevice*>(device);
+#else
         QList<const QTouchDevice*> touchDevices = QTouchDevice::devices();
         Q_FOREACH(const QTouchDevice *device, touchDevices) {
             if (device->type() == QTouchDevice::TouchScreen) {
                 m_touchDevice = const_cast<QTouchDevice*>(device);
+#endif
                 return true;
             }
         }
     }
     // if none, register one
     if (!m_touchDevice) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        m_touchDevice = new QInputDevice;
+        m_touchDevice->setType(QInputDevice::DeviceType::TouchScreen);
+#else
         m_touchDevice = new QTouchDevice;
         m_touchDevice->setType(QTouchDevice::TouchScreen);
+#endif
         QWindowSystemInterface::registerTouchDevice(m_touchDevice);
         return true;
     }

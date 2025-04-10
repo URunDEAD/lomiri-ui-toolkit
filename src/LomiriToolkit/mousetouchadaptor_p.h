@@ -25,7 +25,11 @@
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 
 class QMouseEvent;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+class QInputDevice;
+#else
 class QTouchDevice;
+#endif
 class QQmlEngine;
 class QJSEngine;
 
@@ -41,7 +45,11 @@ public:
     explicit MouseTouchAdaptor(QObject *parent = Q_NULLPTR);
 
     static bool registerTouchDevice();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    inline static QInputDevice *touchDevice()
+#else
     inline static QTouchDevice *touchDevice()
+#endif
     {
         return m_touchDevice;
     }
@@ -55,7 +63,11 @@ Q_SIGNALS:
 
 private:
     Q_DECLARE_PRIVATE(MouseTouchAdaptor)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static QInputDevice *m_touchDevice;
+#else
     static QTouchDevice *m_touchDevice;
+#endif
 };
 
 UT_NAMESPACE_END

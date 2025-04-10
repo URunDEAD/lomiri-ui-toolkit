@@ -20,6 +20,7 @@
 #include <QtQuick/private/qquickitem_p.h>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#include "uclabel_p.h"
 
 //The padding between title and the string below it (i.e. subtitle, or
 //summary, when subtitle is empty)

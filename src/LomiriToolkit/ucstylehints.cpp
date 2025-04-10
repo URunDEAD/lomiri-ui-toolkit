@@ -334,7 +334,11 @@ void UCStyleHints::_q_applyStyleHints()
             continue;
         }
         // create a binding object from the expression using the palette context
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QQmlRefPointer<QQmlContextData> cdata = QQmlContextData::get(context);
+#else
         QQmlContextData *cdata = QQmlContextData::get(context);
+#endif
         QQmlBinding *newBinding = 0;
         if (e.id != QQmlBinding::Invalid) {
             QV4::Scope scope(QQmlEnginePrivate::getV4Engine(qmlEngine(this)));

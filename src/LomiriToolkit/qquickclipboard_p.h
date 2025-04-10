@@ -24,6 +24,7 @@
 #include <QtQml/QQmlEngine>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#include "qquickmimedata_p.h"
 
 class QQmlEngine;
 class QJSEngine;

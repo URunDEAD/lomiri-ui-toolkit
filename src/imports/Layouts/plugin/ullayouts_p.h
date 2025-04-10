@@ -60,8 +60,13 @@ private:
 
     // callbacks for the "layouts" QQmlListProperty of ULLayouts
     static void append_layout(QQmlListProperty<ULConditionalLayout>*, ULConditionalLayout*);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype count_layouts(QQmlListProperty<ULConditionalLayout>*);
+    static ULConditionalLayout *at_layout(QQmlListProperty<ULConditionalLayout>*, qsizetype);
+#else
     static int count_layouts(QQmlListProperty<ULConditionalLayout>*);
     static ULConditionalLayout *at_layout(QQmlListProperty<ULConditionalLayout>*, int);
+#endif
     static void clear_layouts(QQmlListProperty<ULConditionalLayout>*);
 
     void reLayout();

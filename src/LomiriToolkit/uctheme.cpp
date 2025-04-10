@@ -154,7 +154,11 @@ quint16 UCTheme::previousVersion = 0;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
 static inline void updateBinding(const QQmlAbstractBinding::Ptr &binding)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (binding->kind() == QQmlAbstractBinding::ValueTypeProxy)
+#else
     if (binding->isValueTypeProxy())
+#endif
         return;
     static_cast<QQmlBinding*>(binding.data())->update();
 }
@@ -281,16 +285,14 @@ void UCTheme::PaletteConfig::restorePalette()
         }
 
         // restore the config binding to the config target
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (config.configBinding && config.configBinding->bindingType() == QQmlAbstractBinding::QmlBinding) {
+#else
         if (config.configBinding && !config.configBinding->isValueTypeProxy()) {
+#endif
             QQmlBinding *qmlBinding = static_cast<QQmlBinding*>(config.configBinding.data());
             qmlBinding->removeFromObject();
             QQmlPropertyPrivate::removeBinding(config.paletteProperty);
-#else
-        if (config.configBinding && config.configBinding->bindingType() == QQmlAbstractBinding::Binding) {
-            QQmlBinding *qmlBinding = static_cast<QQmlBinding*>(config.configBinding);
-            qmlBinding->removeFromObject();
-#endif
             qmlBinding->setTarget(config.configProperty);
         }
 
@@ -383,7 +385,11 @@ void UCTheme::PaletteConfig::apply(QObject *themePalette)
             if (!config.configBinding->isValueTypeProxy()) {
                 QQmlBinding *qmlBinding = static_cast<QQmlBinding*>(config.configBinding.data());
 #else
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            if (config.configBinding->bindingType() == QQmlAbstractBinding::QmlBinding) {
+#else
             if (config.configBinding->bindingType() == QQmlAbstractBinding::Binding) {
+#endif
                 QQmlBinding *qmlBinding = static_cast<QQmlBinding*>(config.configBinding);
 #endif
                 qmlBinding->setTarget(config.paletteProperty);

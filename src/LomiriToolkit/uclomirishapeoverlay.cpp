@@ -28,10 +28,12 @@ UT_NAMESPACE_BEGIN
 
 ShapeOverlayShader::ShapeOverlayShader()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setShaderSourceFile(QOpenGLShader::Vertex, QStringLiteral(":/uc/shaders/shapeoverlay.vert"));
     setShaderSourceFile(QOpenGLShader::Fragment, useDistanceFields() ?
                         QStringLiteral(":/uc/shaders/shapeoverlay.frag") :
                         QStringLiteral(":/uc/shaders/shapeoverlay_mipmap.frag"));
+#endif
 }
 
 char const* const* ShapeOverlayShader::attributeNames() const

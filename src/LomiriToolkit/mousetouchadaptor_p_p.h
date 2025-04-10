@@ -37,8 +37,13 @@ public:
     ~MouseTouchAdaptorPrivate();
 
     virtual void init() {}
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    bool nativeEventFilter(const QByteArray & eventType, void *message, qintptr *result) override
+            { Q_UNUSED(eventType); Q_UNUSED(message); Q_UNUSED(result); return false; }
+#else
     bool nativeEventFilter(const QByteArray & eventType, void *message, long *result) override
             { Q_UNUSED(eventType); Q_UNUSED(message); Q_UNUSED(result); return false; }
+#endif
     bool isEnabled() const;
     virtual void setEnabled(bool enabled);
 

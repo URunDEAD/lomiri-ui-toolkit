@@ -35,10 +35,17 @@ class ShapeShader : public QSGMaterialShader
 {
 public:
     ShapeShader();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    char const* const* attributeNames() const;
+    void initialize();
+    void updateState(
+        const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect);
+#else
     char const* const* attributeNames() const override;
     void initialize() override;
     void updateState(
         const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect) override;
+#endif
     bool useDistanceFields() const { return m_useDistanceFields; }
 
 private:
@@ -79,7 +86,11 @@ public:
     ShapeMaterial();
     ~ShapeMaterial();
     QSGMaterialType* type() const override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QSGMaterialShader *createShader(QSGRendererInterface::RenderMode renderMode) const override;
+#else
     QSGMaterialShader* createShader() const override;
+#endif
     int compare(const QSGMaterial* other) const override;
     virtual void updateTextures();
     const Data* constData() const { return &m_data; }
@@ -298,7 +309,11 @@ protected:
     QString propertyForVersion(quint16 version) const override;
     void componentComplete() override;
     QSGNode* updatePaintNode(QSGNode* oldNode, UpdatePaintNodeData* data) override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void geometryChange(const QRectF& newGeometry, const QRectF& oldGeometry) override;
+#else
     void geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry) override;
+#endif
 
     // Virtual functions for extended shapes.
     virtual QSGNode* createSceneGraphNode() const;

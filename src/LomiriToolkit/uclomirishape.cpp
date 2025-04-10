@@ -59,10 +59,12 @@ const float pressedFactor = 0.85f;
 ShapeShader::ShapeShader() :
     m_useDistanceFields(UCLomiriShape::useDistanceFields(QOpenGLContext::currentContext()))
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setShaderSourceFile(QOpenGLShader::Vertex, QStringLiteral(":/uc/shaders/shape.vert"));
     setShaderSourceFile(QOpenGLShader::Fragment, useDistanceFields() ?
                         QStringLiteral(":/uc/shaders/shape.frag") :
                         QStringLiteral(":/uc/shaders/shape_mipmap.frag"));
+#endif
 }
 
 char const* const* ShapeShader::attributeNames() const
@@ -76,19 +78,24 @@ char const* const* ShapeShader::attributeNames() const
 
 void ShapeShader::initialize()
 {
+    #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QSGMaterialShader::initialize();
 
     program()->bind();
     program()->setUniformValue("shapeTexture", 0);
     program()->setUniformValue("sourceTexture", 1);
+#endif
 
     m_functions = QOpenGLContext::currentContext()->functions();
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_matrixId = program()->uniformLocation("matrix");
     m_opacityFactorsId = program()->uniformLocation("opacityFactors");
     m_sourceOpacityId = program()->uniformLocation("sourceOpacity");
     m_distanceAAId = program()->uniformLocation("distanceAA");
     m_texturedId = program()->uniformLocation("textured");
     m_aspectId = program()->uniformLocation("aspect");
+#endif
 }
 
 void ShapeShader::updateState(
@@ -122,14 +129,20 @@ void ShapeShader::updateState(
                     QSGTexture::Repeat : QSGTexture::ClampToEdge);
             }
             m_functions->glActiveTexture(GL_TEXTURE1);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             sourceTexture->bind();
+#endif
             m_functions->glActiveTexture(GL_TEXTURE0);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             program()->setUniformValue(m_sourceOpacityId, data->sourceOpacity / 255.0f);
+#endif
             textured = true;
         }
     }
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     program()->setUniformValue(m_texturedId, textured);
     program()->setUniformValue(m_aspectId, data->flags & ShapeMaterial::Data::AspectMask);
+#endif
 
     // The pressed aspect is implemented by scaling the final RGB fragment color. It's not a real
     // blending as it was done before deprecation, so for instance transparent colors remain the
@@ -139,7 +152,9 @@ void ShapeShader::updateState(
     const float opacity = state.opacity();
     const QVector2D opacityFactorsVector(
         data->flags & ShapeMaterial::Data::Pressed ? pressedFactor * opacity : opacity, opacity);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     program()->setUniformValue(m_opacityFactorsId, opacityFactorsVector);
+#endif
 
     if (useDistanceFields()) {
         // Send anti-aliasing distance in distance field space, needs to be divided by 2 for the
@@ -147,13 +162,17 @@ void ShapeShader::updateState(
         // apart when the radius size is low, it linearly goes from 1 to 0 to make the corners
         // prettier and to prevent the opacity of the whole shape to slightly lower.
         const float distanceAA = (shapeTextureDistanceAA * distanceAApx) / (2.0 * 255.0f);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         program()->setUniformValue(m_distanceAAId, data->distanceAAFactor * distanceAA);
+#endif
     }
 
     // Update QtQuick engine uniforms.
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (state.isMatrixDirty()) {
         program()->setUniformValue(m_matrixId, state.combinedMatrix());
     }
+#endif
 }
 
 // --- Scene graph material ---
@@ -247,7 +266,11 @@ QSGMaterialType* ShapeMaterial::type() const
     return &type;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QSGMaterialShader* ShapeMaterial::createShader(QSGRendererInterface::RenderMode) const
+#else
 QSGMaterialShader* ShapeMaterial::createShader() const
+#endif
 {
     return new ShapeShader;
 }
@@ -1113,9 +1136,15 @@ void UCLomiriShape::componentComplete()
     m_version = MINOR_VERSION(importVersion(this)) == 3 ? Version13 : Version12;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCLomiriShape::geometryChange(const QRectF& newGeometry, const QRectF& oldGeometry)
+{
+    QQuickItem::geometryChange(newGeometry, oldGeometry);
+#else
 void UCLomiriShape::geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry)
 {
     QQuickItem::geometryChanged(newGeometry, oldGeometry);
+#endif
     m_flags |= DirtySourceTransform;
 }
 

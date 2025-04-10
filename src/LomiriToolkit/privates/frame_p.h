@@ -32,7 +32,11 @@ class UCFrameMaterial : public QSGMaterial
 public:
     UCFrameMaterial();
     QSGMaterialType* type() const override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QSGMaterialShader* createShader(QSGRendererInterface::RenderMode) const override;
+#else
     QSGMaterialShader* createShader() const override;
+#endif
     int compare(const QSGMaterial* other) const override;
 
     quint32 textureId() const { return m_textureId; }

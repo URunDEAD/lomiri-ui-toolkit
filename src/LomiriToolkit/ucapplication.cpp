@@ -87,7 +87,7 @@ void UCApplication::setApplicationName(const QString& applicationName) {
        Docs are ambiguous: in practise applicationName is ignored by default
      */
     QQmlEngine* engine(m_context->engine());
-    QString dataFolder(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+    QString dataFolder(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
     engine->setOfflineStoragePath(dataFolder);
     // Get Qtlabs.settings to use a sane path
     QCoreApplication::setOrganizationDomain(applicationName);

@@ -21,6 +21,7 @@
 #define FILTERBEHAVIOR_P_H
 
 #include <QtCore/QSortFilterProxyModel>
+#include <QRegExp>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 

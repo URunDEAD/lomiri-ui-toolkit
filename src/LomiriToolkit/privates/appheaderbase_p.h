@@ -18,6 +18,7 @@
 #define APPHEADERBASE_P_H
 
 #include <LomiriToolkit/private/ucheader_p.h>
+#include <LomiriToolkit/private/uctheme_p.h>
 
 UT_NAMESPACE_BEGIN
 
