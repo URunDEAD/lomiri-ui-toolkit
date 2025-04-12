@@ -705,6 +705,7 @@ int LomiriNetworkInfoPrivate::getNetworkInterfaceCount(LomiriNetworkInfo::Networ
                 ofonoWrapper = new QOfonoWrapper(this);
             return ofonoWrapper->allModems().size();
         }
+	return -1;
 #endif
 
 //    case LomiriNetworkInfo::WimaxMode:
