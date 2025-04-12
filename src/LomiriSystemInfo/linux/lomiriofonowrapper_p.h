@@ -108,8 +108,8 @@ Q_SIGNALS:
     void networkStatusChanged(LomiriNetworkInfo::NetworkMode mode, int interface, LomiriNetworkInfo::NetworkStatus status);
 
 protected:
-    void connectNotify(const QMetaMethod &signal);
-    void disconnectNotify(const QMetaMethod &signal);
+    void connectNotify(const QMetaMethod &signal) override;
+    void disconnectNotify(const QMetaMethod &signal) override;
 
 private Q_SLOTS:
     void onOfonoModemAdded(const QDBusObjectPath &path);

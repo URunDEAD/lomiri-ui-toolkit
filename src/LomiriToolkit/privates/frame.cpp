@@ -37,8 +37,7 @@ public:
     FrameShader();
     char const* const* attributeNames() const;
     void initialize();
-    void updateState(
-        const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect);
+    void updateState(const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect);
 
 private:
     int m_matrixId;

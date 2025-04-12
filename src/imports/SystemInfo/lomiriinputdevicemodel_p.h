@@ -69,8 +69,8 @@ public:
     explicit LomiriDeclarativeInputDeviceModel(QObject *parent = 0);
     virtual ~LomiriDeclarativeInputDeviceModel();
 
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     void setFilter(LomiriInputDevice::InputTypeFlags filterFlags);
     LomiriInputDevice::InputTypeFlags filter();
@@ -78,7 +78,7 @@ public:
     Q_INVOKABLE int indexOf(const QString &devicePath) const;
 
     Q_INVOKABLE LomiriInputDevice *get(int index) const;
-    QHash<int, QByteArray> roleNames() const;
+    QHash<int, QByteArray> roleNames() const override;
 
 Q_SIGNALS:
     void added(LomiriInputDevice *inputDevice);

@@ -71,8 +71,8 @@ Q_SIGNALS:
     void deviceRemoved(const QString &path);
 
 protected:
-    void connectNotify(const QMetaMethod &signal);
-    void disconnectNotify(const QMetaMethod &signal);
+    void connectNotify(const QMetaMethod &signal) override;
+    void disconnectNotify(const QMetaMethod &signal) override;
 
 private Q_SLOTS:
     void onDeviceAdded(const QDBusObjectPath &path);
@@ -107,8 +107,8 @@ Q_SIGNALS:
     void propertyChanged(QString,QVariant);
 
 protected:
-    void connectNotify(const QMetaMethod &signal);
-    void disconnectNotify(const QMetaMethod &signal);
+    void connectNotify(const QMetaMethod &signal) override;
+    void disconnectNotify(const QMetaMethod &signal) override;
 
 private:
     QVariantMap pMap;
