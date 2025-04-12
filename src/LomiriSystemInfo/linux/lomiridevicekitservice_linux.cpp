@@ -139,7 +139,7 @@ QUPowerDeviceInterface::QUPowerDeviceInterface(const QString &dbusPathName, QObj
     , parent)
 {
     // We make a synchronous properties request here so we have a valid state
-    QDBusMessage propGetMsg = QDBusMessage::createMethodCall(UPOWER_SERVICE, path(), QStringLiteral("org.freedesktop.DBus.Properties"), QLatin1String("GetAll"));
+    QDBusMessage propGetMsg = QDBusMessage::createMethodCall(QStringLiteral(UPOWER_SERVICE), path(), QStringLiteral("org.freedesktop.DBus.Properties"), QLatin1String("GetAll"));
     QList<QVariant> arguments;
     arguments << QLatin1String("org.freedesktop.UPower.Device");
     propGetMsg.setArguments(arguments);
@@ -254,7 +254,7 @@ void QUPowerDeviceInterface::disconnectNotify(const QMetaMethod &signal)
 
 void QUPowerDeviceInterface::propChanged()
 {
-    QDBusMessage propGetMsg = QDBusMessage::createMethodCall(UPOWER_SERVICE, path(), QStringLiteral("org.freedesktop.DBus.Properties"), QLatin1String("GetAll"));
+    QDBusMessage propGetMsg = QDBusMessage::createMethodCall(QStringLiteral(UPOWER_SERVICE), path(), QStringLiteral("org.freedesktop.DBus.Properties"), QLatin1String("GetAll"));
     QList<QVariant> arguments;
     arguments << QLatin1String("org.freedesktop.UPower.Device");
     propGetMsg.setArguments(arguments);
