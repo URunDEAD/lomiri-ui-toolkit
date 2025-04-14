@@ -260,8 +260,10 @@ void LomiriToolkitModule::registerTypesToVersion(const char *uri, int major, int
 #else
     qmlRegisterAnonymousType<QQmlPropertyMap>(uri, major);
 #endif
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qmlRegisterType<UCAlarm>(uri, major, minor, "Alarm");
     qmlRegisterType<UCAlarmModel>(uri, major, minor, "AlarmModel");
+#endif
     qmlRegisterType<UCStateSaver>(uri, major, minor, "StateSaver");
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     qmlRegisterType<UCStateSaverAttached>();
