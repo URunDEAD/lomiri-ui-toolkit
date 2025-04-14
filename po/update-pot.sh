@@ -37,7 +37,7 @@ GETTEXT_FILES=$(mktemp --tmpdir $DOMAIN.lst.XXXXX)
 trap 'rm -f "$GETTEXT_FILES"' EXIT
 cd $SOURCE_DIR
 find \( -name '*.cpp' -o -name '*.qml' -o -name '*.js' -o -name '*.desktop' \) \
-    -a ! \( -path './build/*' \) | sort \
+    -a ! \( -path './build*/*' \) | sort \
 > $GETTEXT_FILES
 
 # Generate pot from our list
