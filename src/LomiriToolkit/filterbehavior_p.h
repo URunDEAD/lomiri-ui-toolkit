@@ -21,7 +21,11 @@
 #define FILTERBEHAVIOR_P_H
 
 #include <QtCore/QSortFilterProxyModel>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QRegularExpression>
+#else
 #include <QRegExp>
+#endif
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 
@@ -31,15 +35,26 @@ class LOMIRITOOLKIT_EXPORT FilterBehavior : public QObject {
     Q_OBJECT
 
     Q_PROPERTY(QString property READ property WRITE setProperty NOTIFY propertyChanged)
-    Q_PROPERTY(QRegExp pattern READ pattern WRITE setPattern NOTIFY patternChanged)
+    Q_PROPERTY(
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+               QRegularExpression
+#else
+	       QRegExp
+#endif
+	       pattern READ pattern WRITE setPattern NOTIFY patternChanged)
 
 public:
     explicit FilterBehavior(QObject *parent = 0);
 
     QString property() const;
     void setProperty(const QString& property);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QRegularExpression pattern() const;
+    void setPattern(QRegularExpression pattern);
+#else
     QRegExp pattern() const;
     void setPattern(QRegExp pattern);
+#endif
 
 Q_SIGNALS:
     void propertyChanged();
@@ -47,7 +62,11 @@ Q_SIGNALS:
 
 private:
     QString m_property;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QRegularExpression m_pattern;
+#else
     QRegExp m_pattern;
+#endif
 };
 
 UT_NAMESPACE_END
