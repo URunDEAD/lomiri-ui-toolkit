@@ -50,8 +50,13 @@ protected:
     QVector<QObject*> m_data;
 
     static void append(QQmlListProperty<QObject> *list, QObject *action);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype count(QQmlListProperty<QObject> *list);
+    static QObject* at(QQmlListProperty<QObject> *list, qsizetype);
+#else
     static int count(QQmlListProperty<QObject> *list);
     static QObject* at(QQmlListProperty<QObject> *list, int);
+#endif
     static void clear(QQmlListProperty<QObject> *list);
 };
 

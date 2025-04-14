@@ -46,8 +46,13 @@ public:
     void _q_updateVisible();
 
     static void data_append(QQmlListProperty<QObject> *prop, QObject *o);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype data_count(QQmlListProperty<QObject> *prop);
+    static QObject *data_at(QQmlListProperty<QObject> *prop, qsizetype index);
+#else
     static int data_count(QQmlListProperty<QObject> *prop);
     static QObject *data_at(QQmlListProperty<QObject> *prop, int index);
+#endif
     static void data_clear(QQmlListProperty<QObject> *prop);
 
     Menu* q_ptr;
