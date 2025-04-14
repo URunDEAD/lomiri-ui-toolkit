@@ -222,7 +222,11 @@ bool X11MouseTouchAdaptorPrivate::xi2HandleEvent(xcb_ge_event_t *event)
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+bool X11MouseTouchAdaptorPrivate::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result)
+#else
 bool X11MouseTouchAdaptorPrivate::nativeEventFilter(const QByteArray &eventType, void *message, long *result)
+#endif
 {
     Q_UNUSED(result);
     static int eventCount = 0;
