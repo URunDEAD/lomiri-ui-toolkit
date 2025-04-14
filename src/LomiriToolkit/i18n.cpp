@@ -18,11 +18,9 @@
 
 #include "i18n_p.h"
 
-namespace C {
 #include <libintl.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-}
 #include <stdlib.h>
 #include <locale.h>
 
@@ -104,7 +102,7 @@ QString LomiriI18n::language() const {
  * in dir_name rather than in the system locale data base.
  */
 void LomiriI18n::bindtextdomain(const QString& domain_name, const QString& dir_name) {
-    C::bindtextdomain(domain_name.toUtf8(), dir_name.toUtf8());
+    ::bindtextdomain(domain_name.toUtf8(), dir_name.toUtf8());
     Q_EMIT domainChanged();
 }
 
@@ -113,7 +111,7 @@ void LomiriI18n::setDomain(const QString &domain) {
         return;
 
     m_domain = domain;
-    C::textdomain(domain.toUtf8());
+    textdomain(domain.toUtf8());
     /*
      The default is /usr/share/locale if we don't set a folder
      For click we use APP_DIR/share/locale
@@ -124,7 +122,7 @@ void LomiriI18n::setDomain(const QString &domain) {
         appDir = QStringLiteral("/usr");
     }
     QString localePath(QDir(appDir).filePath(QStringLiteral("share/locale")));
-    C::bindtextdomain(domain.toUtf8(), localePath.toUtf8());
+    ::bindtextdomain(domain.toUtf8(), localePath.toUtf8());
     Q_EMIT domainChanged();
 }
 
@@ -162,7 +160,7 @@ void LomiriI18n::setLanguage(const QString &lang) {
  */
 QString LomiriI18n::tr(const QString& text)
 {
-    return QString::fromUtf8(C::gettext(text.toUtf8()));
+    return QString::fromUtf8(gettext(text.toUtf8()));
 }
 
 /*!
@@ -175,7 +173,7 @@ QString LomiriI18n::tr(const QString& text)
  */
 QString LomiriI18n::tr(const QString &singular, const QString &plural, int n)
 {
-    return QString::fromUtf8(C::ngettext(singular.toUtf8(), plural.toUtf8(), n));
+    return QString::fromUtf8(ngettext(singular.toUtf8(), plural.toUtf8(), n));
 }
 
 /*!
@@ -185,9 +183,9 @@ QString LomiriI18n::tr(const QString &singular, const QString &plural, int n)
 QString LomiriI18n::dtr(const QString& domain, const QString& text)
 {
     if (domain.isNull()) {
-        return QString::fromUtf8(C::dgettext(NULL, text.toUtf8()));
+        return QString::fromUtf8(dgettext(NULL, text.toUtf8()));
     } else {
-        return QString::fromUtf8(C::dgettext(domain.toUtf8(), text.toUtf8()));
+        return QString::fromUtf8(dgettext(domain.toUtf8(), text.toUtf8()));
     }
 }
 
@@ -201,9 +199,9 @@ QString LomiriI18n::dtr(const QString& domain, const QString& text)
 QString LomiriI18n::dtr(const QString& domain, const QString& singular, const QString& plural, int n)
 {
     if (domain.isNull()) {
-        return QString::fromUtf8(C::dngettext(NULL, singular.toUtf8(), plural.toUtf8(), n));
+        return QString::fromUtf8(dngettext(NULL, singular.toUtf8(), plural.toUtf8(), n));
     } else {
-        return QString::fromUtf8(C::dngettext(domain.toUtf8(), singular.toUtf8(), plural.toUtf8(), n));
+        return QString::fromUtf8(dngettext(domain.toUtf8(), singular.toUtf8(), plural.toUtf8(), n));
     }
 }
 
@@ -225,9 +223,9 @@ QString LomiriI18n::ctr(const QString& context, const QString& text)
 QString LomiriI18n::dctr(const QString& domain, const QString& context, const QString& text)
 {
     if (domain.isNull()) {
-        return QString::fromUtf8(C::g_dpgettext2(NULL, context.toUtf8(), text.toUtf8()));
+        return QString::fromUtf8(g_dpgettext2(NULL, context.toUtf8(), text.toUtf8()));
     } else {
-        return QString::fromUtf8(C::g_dpgettext2(domain.toUtf8(), context.toUtf8(), text.toUtf8()));
+        return QString::fromUtf8(g_dpgettext2(domain.toUtf8(), context.toUtf8(), text.toUtf8()));
     }
 }
 
