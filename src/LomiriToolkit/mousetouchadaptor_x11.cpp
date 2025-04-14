@@ -283,8 +283,13 @@ bool X11MouseTouchAdaptorPrivate::handleButtonPress(WId windowId, uint32_t detai
 
     QPoint windowPos(x / targetWindow->devicePixelRatio(), y / targetWindow->devicePixelRatio());
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QTouchEventSequence touchEvent = QTest::touchEvent(targetWindow, QTest::createTouchDevice(MouseTouchAdaptor::touchDevice()->type()),
+                                                       false /* autoCommit */);
+#else
     QTouchEventSequence touchEvent = QTest::touchEvent(targetWindow, MouseTouchAdaptor::touchDevice(),
                                                        false /* autoCommit */);
+#endif
     touchEvent.press(0 /* touchId */, windowPos, (QWindow*)nullptr);
     if (qtMod == TRI_PRESS_MODIFIER) {
         touchEvent.press(1, windowPos, (QWindow*)nullptr);
@@ -309,8 +314,13 @@ bool X11MouseTouchAdaptorPrivate::handleButtonRelease(WId windowId, uint32_t det
 
     QPoint windowPos(x / targetWindow->devicePixelRatio(), y / targetWindow->devicePixelRatio());
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QTouchEventSequence touchEvent = QTest::touchEvent(targetWindow, QTest::createTouchDevice(MouseTouchAdaptor::touchDevice()->type()),
+                                                       false /* autoCommit */);
+#else
     QTouchEventSequence touchEvent = QTest::touchEvent(targetWindow, MouseTouchAdaptor::touchDevice(),
                                                        false /* autoCommit */);
+#endif
     touchEvent.release(0 /* touchId */, windowPos, (QWindow*)nullptr);
     if (m_triPressModifier) {
         touchEvent.release(1, windowPos, (QWindow*)nullptr);
@@ -334,8 +344,13 @@ bool X11MouseTouchAdaptorPrivate::handleMotionNotify(WId windowId, uint32_t modi
 
     QPoint windowPos(x / targetWindow->devicePixelRatio(), y / targetWindow->devicePixelRatio());
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QTouchEventSequence touchEvent = QTest::touchEvent(targetWindow, QTest::createTouchDevice(MouseTouchAdaptor::touchDevice()->type()),
+                                                       false /* autoCommit */);
+#else
     QTouchEventSequence touchEvent = QTest::touchEvent(targetWindow, MouseTouchAdaptor::touchDevice(),
                                                        false /* autoCommit */);
+#endif
     touchEvent.move(0 /* touchId */, windowPos, (QWindow*)nullptr);
     if (m_triPressModifier) {
         if (qtMod == TRI_PRESS_MODIFIER) {

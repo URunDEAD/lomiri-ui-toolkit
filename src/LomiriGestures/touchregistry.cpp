@@ -69,7 +69,11 @@ void TouchRegistry::update(const QTouchEvent *event)
 {
     UG_DEBUG << "got" << qPrintable(touchEventToString(event));
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QList<QTouchEvent::TouchPoint> &touchPoints = event->points();
+#else
     const QList<QTouchEvent::TouchPoint> &touchPoints = event->touchPoints();
+#endif
     for (int i = 0; i < touchPoints.count(); ++i) {
         const QTouchEvent::TouchPoint &touchPoint = touchPoints.at(i);
         if (touchPoint.state() == Qt::TouchPointPressed) {
@@ -98,8 +102,11 @@ void TouchRegistry::deliverTouchUpdatesToUndecidedCandidatesAndWatchers(const QT
     //       for each point and there should not be many active points at any given moment.
     //       But having three nested for-loops does scare.
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QList<QTouchEvent::TouchPoint> &updatedTouchPoints = event->points();
+#else
     const QList<QTouchEvent::TouchPoint> &updatedTouchPoints = event->touchPoints();
-
+#endif
     // Maps an item to the touches in this event he should be informed about.
     // E.g.: a QTouchEvent might have three touches but a given item might be interested in only
     // one of them. So he will get a UnownedTouchEvent from this QTouchEvent containing only that

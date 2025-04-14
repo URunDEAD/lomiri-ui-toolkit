@@ -89,13 +89,13 @@ bool MouseTouchAdaptor::registerTouchDevice()
     // if none, register one
     if (!m_touchDevice) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        m_touchDevice = new QInputDevice;
-        m_touchDevice->setType(QInputDevice::DeviceType::TouchScreen);
+        m_touchDevice = new QInputDevice(QString(), 0, QInputDevice::DeviceType::TouchScreen);
+        QWindowSystemInterface::registerInputDevice(m_touchDevice);
 #else
         m_touchDevice = new QTouchDevice;
         m_touchDevice->setType(QTouchDevice::TouchScreen);
-#endif
         QWindowSystemInterface::registerTouchDevice(m_touchDevice);
+#endif
         return true;
     }
     return false;
