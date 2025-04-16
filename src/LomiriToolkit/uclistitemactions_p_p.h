@@ -39,9 +39,14 @@ public:
     QList<UCAction*> actions;
     QList<QObject*> data;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype actions_count(QQmlListProperty<UCAction> *p);
+    static UCAction *actions_at(QQmlListProperty<UCAction>*, qsizetype);
+#else
     static int actions_count(QQmlListProperty<UCAction> *p);
-    static void actions_append(QQmlListProperty<UCAction> *p, UCAction *v);
     static UCAction *actions_at(QQmlListProperty<UCAction>*, int);
+#endif
+    static void actions_append(QQmlListProperty<UCAction> *p, UCAction *v);
     static void actions_clear(QQmlListProperty<UCAction>*);
 };
 

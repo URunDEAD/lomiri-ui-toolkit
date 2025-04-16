@@ -103,8 +103,13 @@ public Q_SLOTS:
 
 protected:
     static void regions_append(QQmlListProperty<UCBottomEdgeRegion> *sections, UCBottomEdgeRegion *section);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype regions_count(QQmlListProperty<UCBottomEdgeRegion> *sections);
+    static UCBottomEdgeRegion *regions_at(QQmlListProperty<UCBottomEdgeRegion> *sections, qsizetype index);
+#else
     static int regions_count(QQmlListProperty<UCBottomEdgeRegion> *sections);
     static UCBottomEdgeRegion *regions_at(QQmlListProperty<UCBottomEdgeRegion> *sections, int index);
+#endif
     static void regions_clear(QQmlListProperty<UCBottomEdgeRegion> *sections);
 
     void initializeComponent();

@@ -170,7 +170,11 @@ void UCActionContext::clear(QQmlListProperty<UCAction> *list)
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype UCActionContext::count(QQmlListProperty<UCAction> *list)
+#else
 int UCActionContext::count(QQmlListProperty<UCAction> *list)
+#endif
 {
     UCActionContext *context = qobject_cast<UCActionContext*>(list->object);
     if (context) {

@@ -60,8 +60,13 @@ public:
 
     // methods necessary for implementing property QQmlListProperty arguments
     void appendArguments(UCArgument* argument);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    UCArgument* atArguments(qsizetype index);
+    qsizetype countArguments();
+#else
     UCArgument* atArguments(int index);
     int countArguments();
+#endif
     void clearArguments();
     QQmlListProperty<UCArgument> arguments();
 

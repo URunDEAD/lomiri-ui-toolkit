@@ -71,7 +71,11 @@ void UCActionManager::actionClear(QQmlListProperty<UCAction> *list)
     context->m_actions.clear();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype UCActionManager::actionCount(QQmlListProperty<UCAction> *list)
+#else
 int UCActionManager::actionCount(QQmlListProperty<UCAction> *list)
+#endif
 {
     Q_UNUSED(list);
     return ActionProxy::instance().globalContext->m_actions.count();
@@ -100,7 +104,11 @@ void UCActionManager::contextClear(QQmlListProperty<UCActionContext> *list)
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype UCActionManager::contextCount(QQmlListProperty<UCActionContext> *list)
+#else
 int UCActionManager::contextCount(QQmlListProperty<UCActionContext> *list)
+#endif
 {
     Q_UNUSED(list);
     return ActionProxy::instance().localContexts().count();

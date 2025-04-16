@@ -57,11 +57,19 @@ public Q_SLOTS:
 private:
     static void contextAppend(QQmlListProperty<UCActionContext> *list, UCActionContext *context);
     static void contextClear(QQmlListProperty<UCActionContext> *list);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype contextCount(QQmlListProperty<UCActionContext> *list);
+#else
     static int contextCount(QQmlListProperty<UCActionContext> *list);
+#endif
 
     static void actionAppend(QQmlListProperty<UCAction> *list, UCAction *action);
     static void actionClear(QQmlListProperty<UCAction> *list);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype actionCount(QQmlListProperty<UCAction> *list);
+#else
     static int actionCount(QQmlListProperty<UCAction> *list);
+#endif
 };
 
 UT_NAMESPACE_END

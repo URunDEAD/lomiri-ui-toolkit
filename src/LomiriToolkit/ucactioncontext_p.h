@@ -76,7 +76,11 @@ protected:
 
     static void append(QQmlListProperty<UCAction> *list, UCAction *action);
     static void clear(QQmlListProperty<UCAction> *list);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype count(QQmlListProperty<UCAction> *list);
+#else
     static int count(QQmlListProperty<UCAction> *list);
+#endif
 };
 
 class LOMIRITOOLKIT_EXPORT UCPopupContext : public UCActionContext

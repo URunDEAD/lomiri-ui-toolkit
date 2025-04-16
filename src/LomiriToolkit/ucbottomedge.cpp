@@ -1064,13 +1064,21 @@ void UCBottomEdge::regions_append(QQmlListProperty<UCBottomEdgeRegion> *regions,
     bottomEdge->appendRegion(region);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype UCBottomEdge::regions_count(QQmlListProperty<UCBottomEdgeRegion> *regions)
+#else
 int UCBottomEdge::regions_count(QQmlListProperty<UCBottomEdgeRegion> *regions)
+#endif
 {
     UCBottomEdgePrivate *bottomEdge = UCBottomEdgePrivate::get(static_cast<UCBottomEdge*>(regions->object));
     return bottomEdge->regions.size();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+UCBottomEdgeRegion *UCBottomEdge::regions_at(QQmlListProperty<UCBottomEdgeRegion> *regions, qsizetype index)
+#else
 UCBottomEdgeRegion *UCBottomEdge::regions_at(QQmlListProperty<UCBottomEdgeRegion> *regions, int index)
+#endif
 {
     UCBottomEdgePrivate *bottomEdge = UCBottomEdgePrivate::get(static_cast<UCBottomEdge*>(regions->object));
     Q_ASSERT((index >= 0) && (index < bottomEdge->regions.size()));
