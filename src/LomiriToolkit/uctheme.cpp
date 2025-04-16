@@ -286,7 +286,7 @@ void UCTheme::PaletteConfig::restorePalette()
 
         // restore the config binding to the config target
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        if (config.configBinding && config.configBinding->bindingType() == QQmlAbstractBinding::QmlBinding) {
+        if (config.configBinding && config.configBinding->kind() == QQmlAbstractBinding::QmlBinding) {
 #else
         if (config.configBinding && !config.configBinding->isValueTypeProxy()) {
 #endif
@@ -381,16 +381,17 @@ void UCTheme::PaletteConfig::apply(QObject *themePalette)
         // apply configuration
         if (config.configBinding) {
             // transfer binding's target
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            if (config.configBinding->kind() == QQmlAbstractBinding::QmlBinding) {
+                QQmlBinding *qmlBinding = static_cast<QQmlBinding*>(config.configBinding.data());
+#else
 #if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
             if (!config.configBinding->isValueTypeProxy()) {
                 QQmlBinding *qmlBinding = static_cast<QQmlBinding*>(config.configBinding.data());
 #else
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-            if (config.configBinding->bindingType() == QQmlAbstractBinding::QmlBinding) {
-#else
             if (config.configBinding->bindingType() == QQmlAbstractBinding::Binding) {
-#endif
                 QQmlBinding *qmlBinding = static_cast<QQmlBinding*>(config.configBinding);
+#endif
 #endif
                 qmlBinding->setTarget(config.paletteProperty);
             }
