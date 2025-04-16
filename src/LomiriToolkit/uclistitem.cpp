@@ -1402,7 +1402,7 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
                 if (swiped) {
                     // handle as full press and grab the event from the children
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-                    QScopedPointer<QMouseEvent> mouseEvent(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPosOpt));
+                    QScopedPointer<QMouseEvent> mouseEvent(static_cast<QMouseEvent*>(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPosOpt)));
 #else
                     QScopedPointer<QMouseEvent> mouseEvent(QQuickWindowPrivate::cloneMouseEvent(event, &localPos));
 #endif
@@ -1418,7 +1418,7 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
         }
         case QEvent::MouseButtonRelease: {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-            QScopedPointer<QMouseEvent> mouseEvent(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPos));
+            QScopedPointer<QMouseEvent> mouseEvent(static_cast<QMouseEvent*>(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPos)));
 #else
             QScopedPointer<QMouseEvent> mouseEvent(QQuickWindowPrivate::cloneMouseEvent(event, &localPos));
 #endif
