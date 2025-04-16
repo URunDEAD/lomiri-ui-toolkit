@@ -22,6 +22,7 @@
 #include <QtQml/QQmlParserStatus>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#include "ucactioncontext_p.h"
 
 UT_NAMESPACE_BEGIN
 

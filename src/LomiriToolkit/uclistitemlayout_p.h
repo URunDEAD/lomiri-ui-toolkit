@@ -20,6 +20,8 @@
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 #include <LomiriToolkit/private/ucslotslayout_p.h>
 
+#include "uclabel_p.h"
+
 UT_NAMESPACE_BEGIN
 
 class UCLabel;

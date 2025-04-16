@@ -19,6 +19,7 @@
 
 #include <QtQuick/QQuickItem>
 #include <QtQuick/private/qquickanimation_p_p.h>
+#include <QtQuick/private/qquickflickable_p.h>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 

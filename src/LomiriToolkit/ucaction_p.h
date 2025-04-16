@@ -26,6 +26,7 @@
 #include <QtQml/private/qpodvector_p.h>
 
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#include "exclusivegroup_p.h"
 
 class QQmlComponent;
 class QQuickItem;

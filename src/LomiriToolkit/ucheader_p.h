@@ -18,6 +18,7 @@
 #define UCHEADER_P_H
 
 #include <QtCore/QPointer>
+#include <QtQuick/private/qquickflickable_p.h>
 
 #include <LomiriToolkit/private/ucstyleditembase_p.h>
 
