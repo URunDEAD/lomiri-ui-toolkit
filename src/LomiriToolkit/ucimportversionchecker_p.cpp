@@ -63,7 +63,7 @@ quint16 UCImportVersionChecker::importVersion(QObject *object)
         Q_ASSERT(!property.isEmpty());
         QQmlPropertyData l;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        QQmlPropertyData *p = QQmlPropertyCache::property(object, property, cdata, &l);
+        const QQmlPropertyData *p = QQmlPropertyCache::property(object, property, cdata, &l);
 #else
         QQmlPropertyData *p = QQmlPropertyCache::property(engine, object, property, cdata, l);
 #endif
