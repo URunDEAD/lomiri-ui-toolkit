@@ -26,8 +26,13 @@
 class QQuickItem;
 class QQmlEngine;
 class QQmlComponent;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 class LomiriInputInfoManager;
 class LomiriInputDevice;
+#else
+class QInputInfoManager;
+class QInputDevice;
+#endif
 
 UT_NAMESPACE_BEGIN
 
@@ -89,7 +94,11 @@ private:
     explicit QuickUtils(QObject *parent = 0);
     QPointer<QQuickWindow> m_rootWindow;
     QPointer<QQuickView> m_rootView;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     LomiriInputInfoManager *m_inputInfo;
+#else
+    QInputInfoManager *m_inputInfo;
+#endif
     QStringList m_omitIM;
     QSet<QString> m_mice;
     QSet<QString> m_keyboards;
@@ -101,12 +110,20 @@ private:
     static QuickUtils *m_instance;
 
     void lookupQuickView();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     void registerDevice(LomiriInputDevice *device, const QString &deviceId);
+#else
+    void registerDevice(QInputDevice *device, const QString &deviceId);
+#endif
     void setMouseAttached(bool set);
     void setKeyboardAttached(bool set);
 private Q_SLOTS:
     void onInputInfoReady();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     void onDeviceAdded(LomiriInputDevice *device);
+#else
+    void onDeviceAdded(QInputDevice *device);
+#endif
     void onDeviceRemoved(const QString deviceId);
 };
 

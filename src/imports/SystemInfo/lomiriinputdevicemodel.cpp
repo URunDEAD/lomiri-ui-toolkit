@@ -39,7 +39,7 @@
 ****************************************************************************/
 
 #include "lomiriinputdevicemodel_p.h"
-#include "LomiriSystemInfo/lomiriinputinfo.h"
+#include "LomiriSystemInfo-qt6/lomiriinputinfo.h"
 
 QT_BEGIN_NAMESPACE
 
