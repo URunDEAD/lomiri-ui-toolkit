@@ -220,7 +220,7 @@ int main(int argc, const char *argv[])
     if (args.isSet(_metricsLoggingFilter)) {
         QStringList filterList = QString(args.value(_metricsLoggingFilter)).split(
             QChar(','), Qt::SkipEmptyParts);
-        UMApplicationMonitor::LoggingFilters filter = 0;
+        UMApplicationMonitor::LoggingFilters filter;
         const int size = filterList.size();
         for (int i = 0; i < size; ++i) {
             if (filterList[i] == "*") {
