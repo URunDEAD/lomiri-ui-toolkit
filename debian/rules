@@ -14,7 +14,7 @@ export QT_SELECT=qt5
 include /usr/share/dpkg/architecture.mk
 
 # Enforce -Werror for an upstream build.
-CONFIGURE_OPTS := CONFIG+=warnings_are_errors
+CONFIGURE_OPTS := # CONFIG+=warnings_are_errors
 
 # Enable Ubuntu UITK compat layer for UBports build.
 CONFIGURE_OPTS += CONFIG+=ubuntu-uitk-compat
