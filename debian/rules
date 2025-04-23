@@ -14,7 +14,7 @@ include /usr/share/dpkg/architecture.mk
 
 # Enforce -Werror for an upstream build.
 CONFIGURE_OPTS_QT5 := # CONFIG+=warnings_are_errors
-CONFIGURE_OPTS_QT6 :=
+CONFIGURE_OPTS_QT6 := CONFIG+=no_docs
 
 # Enable Ubuntu UITK compat layer for UBports build.
 CONFIGURE_OPTS_QT5 += CONFIG+=ubuntu-uitk-compat
@@ -37,7 +37,6 @@ DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migra
 override_dh_auto_configure:
 	dh_auto_configure --builddirectory=build-qt6 --buildsystem=qmake6 -- \
 		CONFIG+=debian_build \
-		CONFIG+=no_docs \
 		$(CONFIGURE_OPTS_QT6) \
 		QMAKE_CFLAGS="$(CFLAGS)" \
 		QMAKE_CXXFLAGS="$(CXXFLAGS)" \
@@ -56,7 +55,6 @@ override_dh_auto_build:
 	dh_auto_build --builddirectory=build-qt6 --buildsystem=qmake6 ..
 	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake ..
 	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake -- docs ..
-	dh_auto_build -- docs
 	dh_auto_build --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 override_dh_auto_test:
