@@ -18,7 +18,11 @@
 
 #include <QtCore/QDebug>
 #include <QtCore/QString>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QTextCodec>
+#else
 #include <QtCore/QTextCodec>
+#endif
 #include <QtQml/QQmlEngine>
 #include <QtTest/QSignalSpy>
 #include <QtTest/QTest>
