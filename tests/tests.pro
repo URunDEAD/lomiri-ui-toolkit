@@ -4,4 +4,4 @@ SUBDIRS += api
 
 OTHER_FILES += qmlapicheck.sh
 
-check.commands += $$PWD/qmlapicheck.sh || exit 1;
+check.commands += env UITK_BUILD_ROOT=$$ROOT_BUILD_DIR $$PWD/qmlapicheck.sh || exit 1;

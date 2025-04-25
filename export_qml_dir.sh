@@ -1,4 +1,3 @@
-#!/bin/sh
 #
 # Copyright 2012 - 2016 Canonical Ltd.
 #
@@ -15,22 +14,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# Get the current script directory (compatible with Bash and ZSH)
-SCRIPT_DIR=`dirname ${BASH_SOURCE[0]-$0}`
-SCRIPT_DIR=`cd $SCRIPT_DIR && pwd`
+if [[ ! $UITK_BUILD_ROOT ]]; then
+    printf 'please specify the build root via the UITK_BUILD_ROOT environment variable\n' >&2
+    exit 1
+fi
+BUILD_DIR="$(realpath "${UITK_BUILD_ROOT}")"
+SRC_DIR="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
-source "$SCRIPT_DIR/build_paths.inc" || return 1
 export QML_IMPORT_PATH=$BUILD_DIR/qml
 export QML2_IMPORT_PATH=$BUILD_DIR/qml
 export LOMIRI_UI_TOOLKIT_THEMES_PATH=$BUILD_DIR/qml
-LOMIRI_QML_ROOT=$BUILD_DIR/qml/Lomiri
-LOMIRI_QML_DIRS=$LOMIRI_QML_ROOT/Components:$LOMIRI_QML_ROOT/Test:$LOMIRI_QML_ROOT/Layouts:$LOMIRI_QML_ROOT/PerformanceMetrics
-export LD_LIBRARY_PATH=$BUILD_DIR/lib:$LOMIRI_QML_DIRS${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-# Build machines may not have initctl and don't need it
-test -f /sbin/initctl || return 0
-# initctl may be available but not working (for example in a lxd container without upstart)
-/sbin/initctl list > /dev/null || return 0
-/sbin/initctl set-env --global QML_IMPORT_PATH=$BUILD_DIR/qml
-/sbin/initctl set-env --global QML2_IMPORT_PATH=$BUILD_DIR/qml
-/sbin/initctl set-env --global LOMIRI_UI_TOOLKIT_THEMES_PATH=$BUILD_DIR/qml
-/sbin/initctl set-env --global LD_LIBRARY_PATH=$BUILD_DIR/lib
+LOMIRI_QML_ROOT="$BUILD_DIR/qml/Lomiri"
+LOMIRI_QML_DIRS="$LOMIRI_QML_ROOT/Components:$LOMIRI_QML_ROOT/Test:$LOMIRI_QML_ROOT/Layouts:$LOMIRI_QML_ROOT/PerformanceMetrics"
+export LD_LIBRARY_PATH="$BUILD_DIR/lib:$LOMIRI_QML_DIRS${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"

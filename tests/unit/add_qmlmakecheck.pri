@@ -6,7 +6,7 @@ check.target = check
 check.commands = "set -e;"
 for(TEST, TESTS) {
   _uitk_command = cd $$_PRO_FILE_PWD_;
-  _uitk_command += env UITK_TEST_KEEP_RUNNING=1
+  _uitk_command += env UITK_TEST_KEEP_RUNNING=1 UITK_BUILD_ROOT=$$ROOT_BUILD_DIR
   _uitk_command += '$${ROOT_SOURCE_DIR}/tests/unit/runtest.sh "$$shadowed($$_PRO_FILE_PWD_)/$${TARGET}" "$${_PRO_FILE_PWD_}/$${TEST}" minimal';
 
   check.commands += $${_uitk_command}

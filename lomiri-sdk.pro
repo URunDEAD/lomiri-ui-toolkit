@@ -2,11 +2,6 @@ DEFINES += QT_DISABLE_DEPRECATED_UP_TO=0x050F00
 
 #include( documentation/documentation.pri )
 
-BUILD_PATH_CONTENTS="SRC_DIR=\"$$PWD\"" \
-                    "BUILD_DIR=\"$$OUT_PWD\""
-
-write_file($$PWD/build_paths.inc,BUILD_PATH_CONTENTS)
-
 requires(qtHaveModule(quick))
 load(qt_parts)
 
