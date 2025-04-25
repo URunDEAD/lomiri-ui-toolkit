@@ -16,6 +16,8 @@
 
 # Based on pbuilderjenkins license checking script.
 
+command -v licensecheck >/dev/null 2>&1 || exit 1
+
 include_files="\.(c(c|pp|xx)?|h(h|pp|xx)?|p(l|m)|php|py(|x)|java|js|vala|qml)$"
 exclude_dirs="(3rd_party|qrc_|moc_|_build|include)"
 allowed_licenses="(Canonical|Android|Google|Digia|Qt Company Ltd)"
