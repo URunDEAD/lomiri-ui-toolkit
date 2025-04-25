@@ -64,7 +64,7 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
 	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt6 --buildsystem=qmake6
 else
-	env UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt6 --buildsystem=qmake6
+	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt6 --buildsystem=qmake6
 endif
 ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
 	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt5 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt5 --buildsystem=qmake
