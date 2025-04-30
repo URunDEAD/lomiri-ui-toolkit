@@ -297,8 +297,6 @@ QSharedPointer<class IconTheme> LomiriThemeIconProvider::getTheme()
 
 QImage LomiriThemeIconProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
 {
-    // The hicolor theme will be searched last as per
-    // https://specifications.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
     QSet<QString> alreadySearchedThemes;
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     const QStringList names = id.split(QLatin1Char(','), QString::SkipEmptyParts);
@@ -307,9 +305,21 @@ QImage LomiriThemeIconProvider::requestImage(const QString &id, QSize *size, con
 #endif
     QImage image = getTheme()->findBestIcon(names, size, requestedSize, &alreadySearchedThemes);
 
+    // Many LUITK apps, and even LUITK itself, uses icons that are available on
+    // Suru icon theme only (mostly UI elements e.g. the chevron stuffs). Add
+    // Suru as an additional default theme pursuant Icon Theme Specification
+    // § 5. Icon Lookup.
+    // https://specifications.freedesktop.org/icon-theme-spec/latest/#icon_lookup
+    if (image.isNull()) {
+        IconTheme::IconThemePointer theme = IconTheme::get(QStringLiteral("suru"));
+        image = theme->findBestIcon(names, size, requestedSize, &alreadySearchedThemes);
+    }
+
+    // The hicolor theme will be searched last as per
+    // https://specifications.freedesktop.org/icon-theme-spec/latest/#icon_lookup
     if (image.isNull()) {
         IconTheme::IconThemePointer theme = IconTheme::get(QStringLiteral("hicolor"));
-        return theme->findBestIcon(names, size, requestedSize, nullptr);
+        image = theme->findBestIcon(names, size, requestedSize, nullptr);
     }
 
     return image;
