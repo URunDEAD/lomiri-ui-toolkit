@@ -53,6 +53,7 @@ public:
     tst_StateSaverTest() {}
 
 private:
+    QTemporaryDir *tempDir = nullptr;
     QString m_modulePath;
     QQmlEngine *engine = nullptr;
 
@@ -97,18 +98,19 @@ private Q_SLOTS:
         QVERIFY(modules.exists());
         m_modulePath = modules.absolutePath();
         // XDG_RUNTIME_DIR may not be set in a test environment
-        QDir tempDir(QStandardPaths::writableLocation(QStandardPaths::TempLocation));
-        QString testRuntimeDir(tempDir.filePath("tst_statesaver"));
-        // Remove to guarantee subsequent test runs are consistent
-        QDir(testRuntimeDir).removeRecursively();
+
+        tempDir = new QTemporaryDir();
+        QVERIFY(tempDir->isValid());
+        QString testRuntimeDir(tempDir->filePath("tst_statesaver"));
         // Create manually to avoid wrong ownership
-        tempDir.mkdir("tst_statesaver");
+        QDir(testRuntimeDir).mkdir("tst_statesaver");
         setenv("XDG_RUNTIME_DIR", testRuntimeDir.toUtf8(), 1);
         QFile::setPermissions(testRuntimeDir.toUtf8(), QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ExeOwner);
     }
 
     void cleanupTestCase()
     {
+        delete tempDir;
     }
 
     void init()
