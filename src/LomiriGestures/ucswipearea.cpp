@@ -46,6 +46,7 @@ const char *statusToString(UCSwipeAreaPrivate::Status status)
     }
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 QString touchPointStateToString(Qt::TouchPointState state)
 {
     switch (state) {
@@ -61,6 +62,7 @@ QString touchPointStateToString(Qt::TouchPointState state)
         return QStringLiteral("INVALID_STATE");
     }
 }
+#endif
 
 QString touchEventToString(const QTouchEvent *ev)
 {
