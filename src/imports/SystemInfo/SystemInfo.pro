@@ -1,5 +1,5 @@
 CXX_MODULE = qml
-TARGET  = LomiriSystemInfoModule
+TARGET  = LomiriSystemInfo
 TARGETPATH = Lomiri/SystemInfo
 IMPORT_VERSION = 0.1
 

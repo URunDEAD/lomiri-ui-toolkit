@@ -61,15 +61,15 @@ public:
     {
         Q_ASSERT(QLatin1String(uri) == QLatin1String("LomiriSystemInfo"));
 
-        int major = 5;
-        int minor = 0;
+        int major = 0;
+        int minor = 1;
         qmlRegisterType<LomiriBatteryInfo>(uri, major, minor, "BatteryInfo");
         qmlRegisterType<LomiriDeclarativeDeviceInfo>(uri, major, minor, "DeviceInfo");
         qmlRegisterType<LomiriDeclarativeNetworkInfo>(uri, major, minor, "NetworkInfo");
         qmlRegisterType<LomiriScreenSaver>(uri, major, minor, "ScreenSaver");
 
 #if defined(Q_OS_LINUX)
-        minor = 5;
+        minor = 1;
         qmlRegisterType<LomiriInputInfoManager>(uri, major, minor, "InputDeviceManager");
         qmlRegisterType<LomiriDeclarativeInputDeviceModel>(uri, major, minor, "InputDeviceModel");
         qmlRegisterType<LomiriInputDevice>(uri, major, minor, "InputInfo");
