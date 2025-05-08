@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-05-10 18:00+0000\n"
+"Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: About.qml:34
 msgid "About..."
@@ -35,7 +38,7 @@ msgstr ""
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "Pole kasutusel"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
@@ -69,7 +72,7 @@ msgstr ""
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "Helista"
 
 #: Buttons.qml:37
 msgid "Stroke"
@@ -77,7 +80,7 @@ msgstr ""
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "Värv"
 
 #: Buttons.qml:53
 #, qt-format
@@ -114,15 +117,15 @@ msgstr ""
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "Punane"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "Roheline"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "Sinine"
 
 #: Colors.qml:66
 msgid "Purple"
@@ -130,7 +133,7 @@ msgstr ""
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "Ava"
 
 #: Icons.qml:29
 msgid "Scaling"
@@ -138,7 +141,7 @@ msgstr ""
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "Kujundus"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -148,7 +151,7 @@ msgstr ""
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "Silt"
 
 #: ListItems.qml:33
 msgid "Subtitled"
@@ -292,7 +295,7 @@ msgstr ""
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr ""
+msgstr "Muuda"
 
 #: NewListItems.qml:114
 msgid "Move"
@@ -355,7 +358,7 @@ msgstr ""
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Kell"
 
 #: Pickers.qml:174
 msgid "Overlay"
@@ -411,7 +414,7 @@ msgstr ""
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Pealkiri"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
@@ -448,11 +451,11 @@ msgstr ""
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "Salasõna"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "Numbrid"
 
 #: TextInputs.qml:78
 msgid "Read-only"
@@ -468,7 +471,7 @@ msgstr ""
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "Vaikimisi"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
@@ -492,7 +495,7 @@ msgstr ""
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Pilt"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
