@@ -22,7 +22,11 @@
 #include <QtQml/QQmlEngine>
 #include <QtTest/QtTest>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 class tst_components_benchmark: public QObject
 {

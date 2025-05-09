@@ -17,7 +17,11 @@
 #include "testplugin.h"
 
 #include <QtQml/QtQml>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/mousetouchadaptor_p.h>
+#else
 #include <LomiriToolkit/private/mousetouchadaptor_p.h>
+#endif
 
 #include "uctestextras.h"
 

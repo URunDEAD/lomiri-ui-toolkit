@@ -22,11 +22,31 @@
 #include <QtQuick/private/qquickevents_p_p.h>
 #include <QtQuick/private/qquickmousearea_p.h>
 #include <QtTest/QtTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/inversemouseareatype_p.h>
+#else
 #include <LomiriToolkit/private/inversemouseareatype_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/quickutils_p.h>
+#else
 #include <LomiriToolkit/private/quickutils_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucinversemouse_p.h>
+#else
 #include <LomiriToolkit/private/ucinversemouse_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucmouse_p.h>
+#else
 #include <LomiriToolkit/private/ucmouse_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucunits_p.h>
+#else
 #include <LomiriToolkit/private/ucunits_p.h>
+#endif
 
 #include "uctestcase.h"
 #include "uctestextras.h"

@@ -19,9 +19,19 @@
 #ifndef UCACTIONITEM_P_P_H
 #define UCACTIONITEM_P_P_H
 
-#include <LomiriToolkit/private/ucactionitem_p.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucactionitem_p.h>
+#else
+#include <LomiriToolkit/private/ucactionitem_p.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucstyleditembase_p_p.h>
+#else
 #include <LomiriToolkit/private/ucstyleditembase_p_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

@@ -20,9 +20,21 @@
 
 #include <QtCore/QSize>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/events.h>
+#else
 #include <LomiriMetrics/events.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/private/bitmaptext_p.h>
+#else
 #include <LomiriMetrics/private/bitmaptext_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/private/lomirimetricsglobal_p.h>
+#else
 #include <LomiriMetrics/private/lomirimetricsglobal_p.h>
+#endif
 
 #if !defined QT_NO_DEBUG
 class QOpenGLContext;

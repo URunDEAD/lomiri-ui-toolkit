@@ -18,7 +18,13 @@
 #ifndef EVENTS_H
 #define EVENTS_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/lomirimetricsglobal.h>
+#else
 #include <LomiriMetrics/lomirimetricsglobal.h>
+#endif
 
 // FIXME(loicm) Using alignas() in that public header requires users to have a
 //     C++11 compiler. That also makes the use of Q_NULLPTR and Q_OVERRIDE in

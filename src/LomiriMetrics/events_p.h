@@ -18,13 +18,23 @@
 #ifndef EVENTS_P_H
 #define EVENTS_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/events.h>
+#else
 #include <LomiriMetrics/events.h>
+#endif
 
 #include <sys/times.h>
 
 #include <QtCore/QElapsedTimer>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/private/lomirimetricsglobal_p.h>
+#else
 #include <LomiriMetrics/private/lomirimetricsglobal_p.h>
+#endif
 
 class LOMIRI_METRICS_PRIVATE_EXPORT EventUtilsPrivate
 {

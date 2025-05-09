@@ -42,7 +42,7 @@
 
 #include <QObject>
 #include <QAbstractListModel>
-#include <LomiriSystemInfo/lomiriinputinfo.h>
+#include <LomiriSystemInfoQt6/lomiriinputinfo.h>
 
 QT_BEGIN_NAMESPACE
 

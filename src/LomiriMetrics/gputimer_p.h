@@ -23,7 +23,11 @@
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/private/lomirimetricsglobal_p.h>
+#else
 #include <LomiriMetrics/private/lomirimetricsglobal_p.h>
+#endif
 
 // GPUTimer is used to measure the amount of time taken by the GPU to fully
 // complete a set of graphics commands. As opposed to a basic timer which would

@@ -19,7 +19,13 @@
 #ifndef UCSLOTSLAYOUT_P_P_H
 #define UCSLOTSLAYOUT_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucslotslayout_p.h>
+#else
 #include <LomiriToolkit/private/ucslotslayout_p.h>
+#endif
 
 #include <QtQuick/private/qquickitem_p.h>
 

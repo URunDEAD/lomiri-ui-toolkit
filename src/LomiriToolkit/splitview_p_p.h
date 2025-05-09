@@ -19,7 +19,13 @@
 #ifndef SPLITVIEW_P_P_H
 #define SPLITVIEW_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/splitview_p.h>
+#else
 #include <LomiriToolkit/private/splitview_p.h>
+#endif
 
 #include <QtCore/private/qobject_p.h>
 

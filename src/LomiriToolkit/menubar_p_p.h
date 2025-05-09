@@ -17,9 +17,19 @@
 #ifndef MENUBAR_P_P_H
 #define MENUBAR_P_P_H
 
-#include <LomiriToolkit/private/menubar_p.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/menubar_p.h>
+#else
+#include <LomiriToolkit/private/menubar_p.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 class QPlatformMenuBar;
 

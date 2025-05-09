@@ -17,14 +17,28 @@
 #ifndef UCLISTITEM_P_P_H
 #define UCLISTITEM_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/uclistitem_p.h>
+#else
 #include <LomiriToolkit/private/uclistitem_p.h>
+#endif
 
 #include <QtCore/QPointer>
 #include <QtCore/QBasicTimer>
 #include <QtQuick/private/qquickrectangle_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/uclistitemstyle_p.h>
+#else
 #include <LomiriToolkit/private/uclistitemstyle_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucstyleditembase_p_p.h>
+#else
 #include <LomiriToolkit/private/ucstyleditembase_p_p.h>
+#endif
 
 #define IMPLICIT_LISTITEM_WIDTH_GU      40
 #define IMPLICIT_LISTITEM_HEIGHT_GU     7

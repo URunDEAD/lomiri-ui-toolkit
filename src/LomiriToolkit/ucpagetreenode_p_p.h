@@ -17,9 +17,19 @@
 #ifndef UCPAGETREENODE_P_P_H
 #define UCPAGETREENODE_P_P_H
 
-#include <LomiriToolkit/private/ucpagetreenode_p.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucpagetreenode_p.h>
+#else
+#include <LomiriToolkit/private/ucpagetreenode_p.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucstyleditembase_p_p.h>
+#else
 #include <LomiriToolkit/private/ucstyleditembase_p_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

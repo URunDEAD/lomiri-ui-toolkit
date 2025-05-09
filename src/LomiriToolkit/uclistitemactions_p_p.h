@@ -17,7 +17,13 @@
 #ifndef UCLISTITEMACTIONS_P_P_H
 #define UCLISTITEMACTIONS_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/uclistitemactions_p.h>
+#else
 #include <LomiriToolkit/private/uclistitemactions_p.h>
+#endif
 
 #include <QtCore/private/qobject_p.h>
 #include <QtQml/QQmlListProperty>

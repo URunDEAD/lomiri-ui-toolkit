@@ -19,9 +19,17 @@
 #include <QtQml/QQmlEngine>
 #include <QtQuick/private/qquickimagebase_p.h>
 #include <QtTest/QtTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/lomiritoolkitmodule.h>
+#else
 #include <LomiriToolkit/lomiritoolkitmodule.h>
+#endif
 #define protected public
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucqquickimageextension_p.h>
+#else
 #include <LomiriToolkit/private/ucqquickimageextension_p.h>
+#endif
 #undef protected
 #include <QtCore/private/qabstractfileengine_p.h>
 #include <QQuickView>

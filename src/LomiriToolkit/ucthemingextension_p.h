@@ -25,7 +25,11 @@
 #include <QtQml/QtQml>
 #include <QtQuick/private/qquickitem_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 class QQuickItem;
 

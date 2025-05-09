@@ -17,7 +17,13 @@
 #ifndef UCMAINVIEWBASE_P_H
 #define UCMAINVIEWBASE_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucpagetreenode_p.h>
+#else
 #include <LomiriToolkit/private/ucpagetreenode_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

@@ -19,8 +19,16 @@
 
 #include <QtQml/QQmlParserStatus>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/menu_p.h>
+#else
 #include <LomiriToolkit/private/menu_p.h>
+#endif
 
 class QPlatformMenuBar;
 

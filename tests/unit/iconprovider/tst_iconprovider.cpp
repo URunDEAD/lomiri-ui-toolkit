@@ -16,7 +16,11 @@
 
 #include <QtTest/QtTest>
 #define private public
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/lomirithemeiconprovider_p.h>
+#else
 #include <LomiriToolkit/private/lomirithemeiconprovider_p.h>
+#endif
 #undef private
 
 UT_USE_NAMESPACE

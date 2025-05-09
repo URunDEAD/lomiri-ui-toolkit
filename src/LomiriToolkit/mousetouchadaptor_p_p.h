@@ -19,7 +19,13 @@
 #ifndef MOUSETOUCHADAPTOR_P_P_H
 #define MOUSETOUCHADAPTOR_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/mousetouchadaptor_p.h>
+#else
 #include <LomiriToolkit/private/mousetouchadaptor_p.h>
+#endif
 
 #include <QtCore/QAbstractNativeEventFilter>
 #include <QtCore/private/qobject_p.h>

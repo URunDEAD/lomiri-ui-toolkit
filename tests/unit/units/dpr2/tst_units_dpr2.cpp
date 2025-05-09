@@ -15,7 +15,11 @@
  */
 
 #include <QtTest/QtTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucunits_p.h>
+#else
 #include <LomiriToolkit/private/ucunits_p.h>
+#endif
 
 UT_USE_NAMESPACE
 

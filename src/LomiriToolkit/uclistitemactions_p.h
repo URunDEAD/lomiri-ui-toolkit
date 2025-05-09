@@ -19,7 +19,11 @@
 
 #include <QtCore/QObject>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/uclistitem_p_p.h>
+#else
 #include <LomiriToolkit/private/uclistitem_p_p.h>
+#endif
 
 class QQmlComponent;
 

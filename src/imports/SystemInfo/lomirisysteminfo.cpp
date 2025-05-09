@@ -46,8 +46,8 @@
 #if defined(Q_OS_LINUX)
 #include "lomiriinputdevicemodel_p.h"
 #endif
-#include <LomiriSystemInfo/lomiriscreensaver.h>
-#include <LomiriSystemInfo/lomiriinputinfo.h>
+#include <LomiriSystemInfoQt6/lomiriscreensaver.h>
+#include <LomiriSystemInfoQt6/lomiriinputinfo.h>
 
 QT_BEGIN_NAMESPACE
 

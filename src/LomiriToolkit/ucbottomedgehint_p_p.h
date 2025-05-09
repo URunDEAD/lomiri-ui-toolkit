@@ -19,9 +19,19 @@
 #ifndef UCBOTTOMEDGEHINT_P_P_H
 #define UCBOTTOMEDGEHINT_P_P_H
 
-#include <LomiriToolkit/private/ucbottomedgehint_p.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucbottomedgehint_p.h>
+#else
+#include <LomiriToolkit/private/ucbottomedgehint_p.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucactionitem_p_p.h>
+#else
 #include <LomiriToolkit/private/ucactionitem_p_p.h>
+#endif
 
 UG_FORWARD_DECLARE_CLASS(UCSwipeArea)
 

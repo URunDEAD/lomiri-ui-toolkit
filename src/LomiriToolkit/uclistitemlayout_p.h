@@ -17,8 +17,18 @@
 #ifndef UCLISTITEMLAYOUT_P_H
 #define UCLISTITEMLAYOUT_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucslotslayout_p.h>
+#else
 #include <LomiriToolkit/private/ucslotslayout_p.h>
+#endif
 
 #include "uclabel_p.h"
 

@@ -33,8 +33,16 @@
 #include <QtQuick/private/qsgcontext_p.h>
 #include <QtCore/QCommandLineParser>
 #include <QtCore/QCommandLineOption>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/mousetouchadaptor_p.h>
+#else
 #include <LomiriToolkit/private/mousetouchadaptor_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetricsQt6/applicationmonitor.h>
+#else
 #include <LomiriMetrics/applicationmonitor.h>
+#endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QtGui/QInputDevice>
 #else

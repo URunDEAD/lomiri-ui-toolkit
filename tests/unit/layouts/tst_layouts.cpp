@@ -24,8 +24,16 @@
 #include <QtQuick/QQuickView>
 #include <QtQuick/private/qquickanchors_p_p.h>
 #include <QtTest/QtTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucunits_p.h>
+#else
 #include <LomiriToolkit/private/ucunits_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/uctheme_p.h>
+#else
 #include <LomiriToolkit/private/uctheme_p.h>
+#endif
 
 #include "uctestcase.h"
 #include "ullayouts.h"

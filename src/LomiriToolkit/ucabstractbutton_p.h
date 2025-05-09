@@ -19,8 +19,16 @@
 
 #include <QtQuick/private/qquickevents_p_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucactionitem_p.h>
+#else
 #include <LomiriToolkit/private/ucactionitem_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucmargins_p.h>
+#else
 #include <LomiriToolkit/private/ucmargins_p.h>
+#endif
 
 class QQuickMouseArea;
 class QQuickMouseEvent;

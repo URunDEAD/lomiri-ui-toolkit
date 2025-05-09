@@ -18,10 +18,26 @@
 #include <QtGui/QTouchEvent>
 #include <QtQuick/QQuickItem>
 #include <QtTest/QtTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGesturesQt6/private/timer_p.h>
+#else
 #include <LomiriGestures/private/timer_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGesturesQt6/private/touchownershipevent_p.h>
+#else
 #include <LomiriGestures/private/touchownershipevent_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGesturesQt6/private/touchregistry_p.h>
+#else
 #include <LomiriGestures/private/touchregistry_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGesturesQt6/private/unownedtouchevent_p.h>
+#else
 #include <LomiriGestures/private/unownedtouchevent_p.h>
+#endif
 
 UG_NAMESPACE_BEGIN
 

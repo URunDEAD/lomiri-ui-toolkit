@@ -20,7 +20,11 @@
 #include <QtCore/QSharedPointer>
 #include <QtCore/QVariant>
 #include <QtTest/QTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/tree_p.h>
+#else
 #include <LomiriToolkit/private/tree_p.h>
+#endif
 
 UT_USE_NAMESPACE
 

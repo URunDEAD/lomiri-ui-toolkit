@@ -18,8 +18,16 @@
 #define UCNAMESPACE_H
 
 #include <QtCore/QObject>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/quickutils_p.h>
+#else
 #include <LomiriToolkit/private/quickutils_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

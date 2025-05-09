@@ -27,7 +27,11 @@
 #include <QtQml/QQmlParserStatus>
 #include <QtQml/QQmlPropertyMap>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkitQt6/private/ucargument_p.h>
+#else
 #include <LomiriToolkit/private/ucargument_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 
