@@ -51,6 +51,9 @@ FrameShader::FrameShader()
         QOpenGLShader::Vertex, QStringLiteral(":/uc/privates/shaders/frame.vert"));
     setShaderSourceFile(
         QOpenGLShader::Fragment, QStringLiteral(":/uc/privates/shaders/frame.frag"));
+#else
+    setShaderFileName(VertexStage, QStringLiteral(":/uc/privates/shaders/frame.vert.qsb"));
+    setShaderFileName(FragmentStage, QStringLiteral(":/uc/privates/shaders/frame.frag.qsb"));
 #endif
 }
 

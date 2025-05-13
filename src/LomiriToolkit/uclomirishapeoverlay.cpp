@@ -33,6 +33,11 @@ ShapeOverlayShader::ShapeOverlayShader()
     setShaderSourceFile(QOpenGLShader::Fragment, useDistanceFields() ?
                         QStringLiteral(":/uc/shaders/shapeoverlay.frag") :
                         QStringLiteral(":/uc/shaders/shapeoverlay_mipmap.frag"));
+#else
+    setShaderFileName(VertexStage, QStringLiteral(":/uc/shaders/shapeoverlay.vert.qsb"));
+    setShaderFileName(FragmentStage, useDistanceFields() ?
+                        QStringLiteral(":/uc/shaders/shapeoverlay.frag.qsb") :
+                        QStringLiteral(":/uc/shaders/shapeoverlay_mipmap.frag.qsb"));
 #endif
 }
 

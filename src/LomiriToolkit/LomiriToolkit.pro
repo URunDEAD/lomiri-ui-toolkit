@@ -238,17 +238,6 @@ ubuntu-uitk-compat {
         $$PWD/deprecationprinter.cpp
 }
 
-RESOURCES += \
-    $$PWD/resources.qrc
-
-OTHER_FILES += \
-    $$PWD/shaders/shape.vert \
-    $$PWD/shaders/shape.frag \
-    $$PWD/shaders/shape_no_dfdy.frag \
-    $$PWD/shaders/shapeoverlay.vert \
-    $$PWD/shaders/shapeoverlay.frag \
-    $$PWD/shaders/shapeoverlay_no_dfdy.frag \
-    $$PWD/privates/shaders/frame.vert \
-    $$PWD/privates/shaders/frame.frag
+RESOURCES += $$PWD/resources.qrc
 
 load(lomiri_qt_module)

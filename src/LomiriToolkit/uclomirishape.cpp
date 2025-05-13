@@ -64,6 +64,11 @@ ShapeShader::ShapeShader() :
     setShaderSourceFile(QOpenGLShader::Fragment, useDistanceFields() ?
                         QStringLiteral(":/uc/shaders/shape.frag") :
                         QStringLiteral(":/uc/shaders/shape_mipmap.frag"));
+#else
+    setShaderFileName(VertexStage, QStringLiteral(":/uc/shaders/shape.vert.qsb"));
+    setShaderFileName(FragmentStage, useDistanceFields() ?
+                        QStringLiteral(":/uc/shaders/shape.frag.qsb") :
+                        QStringLiteral(":/uc/shaders/shape_mipmap.frag.qsb"));
 #endif
 }
 
