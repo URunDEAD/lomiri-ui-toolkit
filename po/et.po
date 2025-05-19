@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2025-05-10 18:00+0000\n"
+"PO-Revision-Date: 2025-05-19 11:58+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/et/>\n"
@@ -265,7 +265,7 @@ msgstr "Sulge"
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:95
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:95
 msgid "Done"
-msgstr "Valmis"
+msgstr "Tehtud"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/ProgressBarStyle.qml:51
 #: Lomiri/Components/Themes/Ambiance/1.3/ProgressBarStyle.qml:50
