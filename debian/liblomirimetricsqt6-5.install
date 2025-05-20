@@ -1,0 +1,2 @@
+usr/lib/*/libLomiriMetricsQt6.so.*
+usr/lib/*/qt6/plugins/lomiri/metrics/libumlttng.so

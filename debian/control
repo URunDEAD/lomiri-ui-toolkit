@@ -41,7 +41,7 @@ Build-Depends: accountsservice <!nocheck>,
                python3-setuptools <!cross>,
                qml6-module-qt-labs-settings,
 #               qml6-module-qtfeedback,
-#               qml6-module-qtgraphicaleffects,
+               qml6-module-qt5compat-graphicaleffects,
                qml6-module-qtqml-models,
                qml6-module-qtqml-workerscript,
                qml6-module-qtquick-layouts,
@@ -538,3 +538,268 @@ Description: Qt Components for Lomiri - Lomiri Theme
  .
  This package contains the Ubuntu compatibility themes for Qt Lomiri
  Components.
+
+Package: qml6-module-lomiri-components
+Architecture: any
+Multi-Arch: same
+Depends: ${fonts-ubuntu},
+         liblomirigesturesqt6-5 (= ${binary:Version}),
+         liblomirimetricsqt6-5 (= ${binary:Version}),
+         liblomiritoolkitqt6-5 (= ${binary:Version}),
+         liblomirisysteminfoqt6-5 (= ${binary:Version}),
+         libqt6svg6,
+         lomiri-ui-toolkit-theme-qt6 (= ${binary:Version}),
+         qml6-module-lomiri-components-labs,
+         qml6-module-lomiri-performancemetrics,
+#         qml6-module-qtfeedback,
+         qml6-module-qt5compat-graphicaleffects,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-window,
+         qml6-module-qtquick,
+         suru-icon-theme (>= 14.04+16.10.20160720),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt 6 Components for Lomiri - Components QML plugin
+ Qt 6 Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Lomiri Components QML plugin.
+
+Package: qml6-module-lomiri-components-labs
+Architecture: any
+Multi-Arch: same
+Depends: ${fonts-ubuntu},
+         liblomirigesturesqt6-5 (= ${binary:Version}),
+         liblomirimetricsqt6-5 (= ${binary:Version}),
+         liblomiritoolkitqt6-5 (= ${binary:Version}),
+         liblomirisysteminfoqt6-5 (= ${binary:Version}),
+         libqt6svg6,
+         lomiri-ui-toolkit-theme-qt6 (= ${binary:Version}),
+         qml6-module-lomiri-performancemetrics,
+#         qml6-module-qtfeedback,
+         qml6-module-qt5compat-graphicaleffects,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-window,
+         qml6-module-qtquick,
+         suru-icon-theme,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt 6 Components Labs for Lomiri - Components QML plugin
+ Qt 6 Components Labs for Lomiri offers a set of non-released and mostly
+ unstable user interface components for Qt Quick 2 / QML.
+ .
+ This package contains the Lomiri Components Labs QML plugin.
+
+Package: qml6-module-lomiri-layouts
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt 6 Components for Lomiri - Layouts QML plugin
+ Qt 6 Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Lomiri Layouts QML plugin.
+
+Package: qml6-module-lomiri-test
+Architecture: any
+Multi-Arch: same
+Depends: qml6-module-lomiri-components,
+         qml6-module-qttest,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt 6 Components for Lomiri - Test QML plugin
+ Qt 6 Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Lomiri Test QML plugin.
+
+Package: qml6-module-lomiri-performancemetrics
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt 6 Components for Lomiri - PerformanceMetrics QML plugin
+ Qt 6 Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Lomiri PerformanceMetrics QML plugin.
+
+Package: qml6-module-lomiri-metrics
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt Components for Lomiri - Metrics QML plugin
+ Qt Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Lomiri Metrics QML plugin.
+
+Package: qml6-module-lomiri-systeminfo
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt Components for Lomiri - SystemInfo QML plugin
+ Qt Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Lomiri SystemInfo QML plugin.
+
+Package: liblomirigesturesqt6-5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri gestures library for Lomiri UI Toolkit
+ Library supporting Gesture recognition for Lomiri UI Toolkit
+ Classes for SwipeArea, and for Lomiri Gestures in general.
+
+Package: liblomirigesturesqt6-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomirigesturesqt6-5 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri gestures library development files
+ This package contains the development files for
+ Lomiri gestures library with SwipeArea
+
+Package: liblomirigesturesqt6-private-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomirigesturesqt6-dev (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri gestures library private development files
+ This package contains the private development files for
+ Lomiri gestures library with SwipeArea
+
+Package: liblomirimetricsqt6-5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri metrics library for Lomiri UI Toolkit
+ Library for monitoring QtQuick 2 applications
+
+Package: liblomirimetricsqt6-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomirimetricsqt6-5 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri metrics library development files
+ This package contains the development files for the
+ Lomiri metrics library
+
+Package: liblomirimetricsqt6-private-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomirimetricsqt6-dev (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri metrics library private development files
+ This package contains the private development files for
+ the Lomiri metrics library
+
+Package: liblomiritoolkitqt6-5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri toolkit common library for Lomiri UI Toolkit
+ Contains components and helper classes that are shared between the
+ Lomiri QML plugins
+
+Package: liblomiritoolkitqt6-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomiritoolkitqt6-5 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri toolkit common library development files
+ This package contains the development files for
+ Lomiri toolkit common library
+
+Package: liblomiritoolkitqt6-private-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomiritoolkitqt6-dev (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri toolkit common library private development files
+ This package contains the private development files for
+ Lomiri toolkit common library
+
+Package: lomiri-ui-toolkit-theme-qt6
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Replaces: qt-components-lomiri,
+Description: Qt 6 Components for Lomiri - Lomiri Theme
+ Qt 6 Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the Ambiance theme for Qt Lomiri Components.
+
+Package: liblomirisysteminfoqt6-5
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri system info library for Lomiri UI Toolkit
+ Library providing access to system-related information and capabilities.
+
+Package: liblomirisysteminfoqt6-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomirisysteminfoqt6-5 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri system info library development files
+ This package contains the development files for the
+ Lomiri system info library.
+
+Package: liblomirisysteminfoqt6-private-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: liblomirisysteminfoqt6-dev (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Lomiri system info library private development files
+ This package contains the private development files for the
+ Lomiri system info library.
+
+Package: lomiri-app-launch-profiler-qt6
+Architecture: any
+Depends: lttng-tools,
+         python3-babeltrace,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt 6 Components for Lomiri - startup time profiling tool
+ Qt Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the application startup time profiling tools.
+
+Package: lomiri-ui-toolkit-tools-qt6
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Description: Qt 6 Components for Lomiri - productive tools
+ Qt Components for Lomiri offers a set of reusable user interface
+ components for Qt Quick 2 / QML.
+ .
+ This package contains the application launcher, which is a drop-in
+ replacement for qmlscene, oxideqmlscene, qml and derivatives.
