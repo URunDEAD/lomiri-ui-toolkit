@@ -77,9 +77,9 @@ override_dh_auto_install:
 	# FIXME work around qmlplugindump crashing while parsing the
 	# LomiriSystemInfo module
 	sed -i 's,exec /.*/qmlplugindump,exec /bin/true,' build-qt6/src/imports/SystemInfo/wrapper.sh
-	dh_auto_install --builddirectory=build-qt6 --buildsystem=qmake6 ..
-	dh_auto_install --builddirectory=build-qt5 --buildsystem=qmake ..
-	dh_auto_install --sourcedirectory=tests/autopilot --buildsystem=pybuild
+	dh_auto_install --no-parallel --builddirectory=build-qt6 --buildsystem=qmake6 ..
+	dh_auto_install --no-parallel --builddirectory=build-qt5 --buildsystem=qmake ..
+	dh_auto_install --no-parallel --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 override_dh_install:
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
