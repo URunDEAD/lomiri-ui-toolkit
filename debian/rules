@@ -104,14 +104,8 @@ endif
 	# Drop QML types used to test apicheck only
 	rm -f debian/tmp/usr/lib/*/qt*/qml/Extinct/Animals/*
 
-	# drop empty directory
-	rm debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/Makefile
-	rmdir debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/.pch/
-	rmdir debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/.obj/
-
 	# drop references to the build chroot
 	sed -i debian/tmp/usr/lib/*/*.prl -e "/^QMAKE_PRL_BUILD_DIR.*/d"
-	sed -i debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/*.prl -e "/^QMAKE_PRL_BUILD_DIR.*/d"
 
 	# remove Qt 6 examples
 	rm -rf debian/tmp/usr/lib/*/qt6/examples
