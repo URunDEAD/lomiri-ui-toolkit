@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2025-05-18 15:49+0000\n"
+"PO-Revision-Date: 2025-05-31 03:15+0000\n"
 "Last-Translator: Ida Brenna <ida@larald.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/nb_NO/>\n"
@@ -195,11 +195,11 @@ msgstr "%1 forventer flere argumenter: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr "du bør vurdere å overstyre swipeEvent()."
+msgstr "du bør vurdere å overstyre swipeEvent()!"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
-msgstr "du bør vurdere å overstyre rebound()."
+msgstr "du bør vurdere å overstyre rebound()!"
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
