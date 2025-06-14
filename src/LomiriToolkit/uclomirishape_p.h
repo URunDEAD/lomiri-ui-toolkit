@@ -44,10 +44,8 @@ class ShapeShader : public QSGMaterialShader
 public:
     ShapeShader();
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    char const* const* attributeNames() const;
-    void initialize();
-    void updateState(
-        const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect);
+    bool updateUniformData(RenderState& state, QSGMaterial* newMaterial, QSGMaterial * oldMaterial) override;
+    void updateSampledImage(RenderState& state, int bining, QSGTexture **texture, QSGMaterial *newMaterial, QSGMaterial *oldMaterial) override;
 #else
     char const* const* attributeNames() const override;
     void initialize() override;

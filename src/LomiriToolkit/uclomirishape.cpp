@@ -67,6 +67,8 @@ ShapeShader::ShapeShader() :
 #endif
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+
 char const* const* ShapeShader::attributeNames() const
 {
     static char const* const attributes[] = {
@@ -78,24 +80,20 @@ char const* const* ShapeShader::attributeNames() const
 
 void ShapeShader::initialize()
 {
-    #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QSGMaterialShader::initialize();
 
     program()->bind();
     program()->setUniformValue("shapeTexture", 0);
     program()->setUniformValue("sourceTexture", 1);
-#endif
 
     m_functions = QOpenGLContext::currentContext()->functions();
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_matrixId = program()->uniformLocation("matrix");
     m_opacityFactorsId = program()->uniformLocation("opacityFactors");
     m_sourceOpacityId = program()->uniformLocation("sourceOpacity");
     m_distanceAAId = program()->uniformLocation("distanceAA");
     m_texturedId = program()->uniformLocation("textured");
     m_aspectId = program()->uniformLocation("aspect");
-#endif
 }
 
 void ShapeShader::updateState(
@@ -129,20 +127,14 @@ void ShapeShader::updateState(
                     QSGTexture::Repeat : QSGTexture::ClampToEdge);
             }
             m_functions->glActiveTexture(GL_TEXTURE1);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             sourceTexture->bind();
-#endif
             m_functions->glActiveTexture(GL_TEXTURE0);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             program()->setUniformValue(m_sourceOpacityId, data->sourceOpacity / 255.0f);
-#endif
             textured = true;
         }
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     program()->setUniformValue(m_texturedId, textured);
     program()->setUniformValue(m_aspectId, data->flags & ShapeMaterial::Data::AspectMask);
-#endif
 
     // The pressed aspect is implemented by scaling the final RGB fragment color. It's not a real
     // blending as it was done before deprecation, so for instance transparent colors remain the
@@ -152,9 +144,7 @@ void ShapeShader::updateState(
     const float opacity = state.opacity();
     const QVector2D opacityFactorsVector(
         data->flags & ShapeMaterial::Data::Pressed ? pressedFactor * opacity : opacity, opacity);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     program()->setUniformValue(m_opacityFactorsId, opacityFactorsVector);
-#endif
 
     if (useDistanceFields()) {
         // Send anti-aliasing distance in distance field space, needs to be divided by 2 for the
@@ -162,18 +152,72 @@ void ShapeShader::updateState(
         // apart when the radius size is low, it linearly goes from 1 to 0 to make the corners
         // prettier and to prevent the opacity of the whole shape to slightly lower.
         const float distanceAA = (shapeTextureDistanceAA * distanceAApx) / (2.0 * 255.0f);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         program()->setUniformValue(m_distanceAAId, data->distanceAAFactor * distanceAA);
-#endif
     }
 
     // Update QtQuick engine uniforms.
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (state.isMatrixDirty()) {
         program()->setUniformValue(m_matrixId, state.combinedMatrix());
     }
-#endif
 }
+
+#else
+
+bool ShapeShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial, QSGMaterial* oldMaterial)
+{
+    Q_UNUSED(oldMaterial)
+
+    bool changed = false;
+    QByteArray *buf = state.uniformData();
+
+    ShapeMaterial* material = static_cast<ShapeMaterial*>(newMaterial);
+    const ShapeMaterial::Data* data = material->constData();
+
+    if (state.isMatrixDirty()) {
+        const QMatrix4x4 m = state.combinedMatrix();
+        memcpy(buf->data(), m.constData(), 64);
+        changed = true;
+    }
+
+    if (state.isOpacityDirty()) {
+        const float opacity = state.opacity();
+        const QVector2D opacityFactorsVector(
+            data->flags & ShapeMaterial::Data::Pressed ? pressedFactor * opacity : opacity, opacity);
+        memcpy(buf->data() + 64, &opacityFactorsVector, 8);
+        changed = true;
+    }
+    
+    //TODO: set value for other uniforms
+
+    return changed;
+}
+
+void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture **texture, QSGMaterial *newMaterial, QSGMaterial *oldMaterial)
+{
+    Q_UNUSED(state)
+    ShapeMaterial* material = static_cast<ShapeMaterial*>(newMaterial);
+    const ShapeMaterial::Data* data = material->constData();
+
+    switch (binding) {
+        case 1:
+            //TODO figure out how to bind shape texture
+            // m_functions->glBindTexture(GL_TEXTURE_2D, material->textureIds()[data->shapeTextureIndex]);
+            break;
+        case 2:
+            if (data->flags & ShapeMaterial::Data::Textured) {
+                QSGTextureProvider* provider = data->sourceTextureProvider;
+                QSGTexture* sourceTexture = provider ? provider->texture() : NULL;
+                if (sourceTexture) {
+                    *texture = sourceTexture;
+                }
+            }
+            break;
+        default:
+            return;
+    }
+}
+
+#endif
 
 // --- Scene graph material ---
 

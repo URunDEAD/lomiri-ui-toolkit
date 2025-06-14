@@ -14,29 +14,39 @@
 //
 // Author: Loïc Molinari <loic.molinari@canonical.com>
 
-uniform highp mat4 matrix;  // mediump was interpreted as lowp on PowerVR Rogue G6200 (arale).
-uniform bool textured;
+#version 440
 
-attribute highp vec4 positionAttrib;  // highp because of matrix precision qualifier.
-attribute mediump vec2 shapeCoordAttrib;
-attribute mediump vec4 sourceCoordAttrib;
-attribute lowp float yCoordAttrib;
-attribute lowp vec4 backgroundColorAttrib;
+layout(location = 0) in vec4 positionAttrib;
+layout(location = 1) in vec2 shapeCoordAttrib;
+layout(location = 2) in vec4 sourceCoordAttrib;
+layout(location = 3) in float yCoordAttrib;
+layout(location = 4) in vec4 backgroundColorAttrib;
+
+layout(std140, binding=0) uniform buf {
+    mat4 matrix;
+    vec2 opacityFactors;
+    float sourceOpacity;
+    float distanceAA;
+    // FIXME workaround for Qt <= 6.7
+    // bool textured;
+    int textured;
+    int aspect;
+} ubuf;
 
 // FIXME(loicm) Optimize by reducing/packing varyings.
-varying mediump vec2 shapeCoord;
-varying mediump vec4 sourceCoord;
-varying lowp float yCoord;
-varying lowp vec4 backgroundColor;
+layout(location = 0) out vec2 shapeCoord;
+layout(location = 1) out vec4 sourceCoord;
+layout(location = 2) out float yCoord;
+layout(location = 3) out vec4 backgroundColor;
 
 void main()
 {
     shapeCoord = shapeCoordAttrib;
-    if (textured) {
+    if (ubuf.textured != 0) {
         sourceCoord = sourceCoordAttrib;
     }
     yCoord = yCoordAttrib;
     backgroundColor = backgroundColorAttrib;
 
-    gl_Position = matrix * positionAttrib;
+    gl_Position = ubuf.matrix * positionAttrib;
 }

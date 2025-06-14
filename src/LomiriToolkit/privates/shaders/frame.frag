@@ -16,18 +16,27 @@
  * Author: Loïc Molinari <loic.molinari@canonical.com>
  */
 
-uniform sampler2D texture;
-uniform lowp float opacity;
-varying mediump vec2 outerCoord;
-varying mediump vec2 innerCoord;
-varying lowp vec4 color;
+#version 440
+
+layout(location = 0) in vec2 outerCoord;
+layout(location = 1) in vec2 innerCoord;
+layout(location = 2) in vec4 color;
+
+layout(location = 0) out vec4 fragColor;
+
+layout(std140, binding = 0) uniform buf {
+    mat4 qt_Matrix;
+    float qt_Opacity;
+} ubuf;
+
+layout(binding = 1) uniform sampler2D sourceTexture;
 
 void main(void)
 {
-    lowp float shapeOut = texture2D(texture, outerCoord).r;
-    lowp float shapeIn = texture2D(texture, innerCoord).r;
+    float shapeOut = texture(sourceTexture, outerCoord).r;
+    float shapeIn = texture(sourceTexture, innerCoord).r;
     // Fused multiply-add friendly version of (shapeOut * (1.0 - shapeIn))
-    lowp float shape = (shapeOut * -shapeIn) + shapeOut;
+    float shape = (shapeOut * -shapeIn) + shapeOut;
     // shape is squared to make thinner corners (particularly visible at stroke 1).
-    gl_FragColor = vec4(shape * shape * opacity) * color;
+    fragColor = vec4(shape * shape * ubuf.qt_Opacity) * color;
 }
