@@ -8,21 +8,24 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-20 15:43+0000\n"
+"Last-Translator: Øjvind Fritjof Arnfred <fritjof@mencagli-arnfred.dk>\n"
+"Language-Team: Danish <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "Informationer..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "Kort liste"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
