@@ -8,13 +8,17 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-06-28 18:47+0000\n"
+"Last-Translator: Capsia Tech <oyqddksr@emlhub.com>\n"
+"Language-Team: Slovenian <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 #: About.qml:34
 msgid "About..."
@@ -69,7 +73,7 @@ msgstr ""
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "Kliči"
 
 #: Buttons.qml:37
 msgid "Stroke"
@@ -452,7 +456,7 @@ msgstr ""
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "Številke"
 
 #: TextInputs.qml:78
 msgid "Read-only"
