@@ -665,6 +665,19 @@ QUrl UCTheme::styleUrl(const QString& styleName, quint16 version, bool *isFallba
         (*isFallback) = false;
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    // For Qt6 only register 2.0 version for now.
+    Q_FOREACH (const ThemeRecord &themePath, m_themePaths) {
+        const quint16 major = 2;
+        const quint16 minor = 0;
+        QUrl styleUrl;
+        QString versionedName = QStringLiteral("%1.%2/%3").arg(major).arg(minor).arg(styleName);
+        styleUrl = themePath.path.resolved(versionedName);
+        if (styleUrl.isValid() && QFile::exists(styleUrl.toLocalFile())) {
+            return styleUrl;
+        }
+    }
+#else
     // loop through the versions first, so we will look after the style in all
     // the parents, then fall back to the older version
     quint16 major = MAJOR_VERSION(version);
@@ -686,7 +699,6 @@ QUrl UCTheme::styleUrl(const QString& styleName, quint16 version, bool *isFallba
             if (themePath.shared && (minor < 2)) {
                 styleVersion = LATEST_UITK_VERSION;
             }
-
             QString versionedName = QStringLiteral("%1.%2/%3").arg(major).arg(minor).arg(styleName);
             styleUrl = themePath.path.resolved(versionedName);
             if (styleUrl.isValid() && QFile::exists(styleUrl.toLocalFile())) {
@@ -706,6 +718,7 @@ QUrl UCTheme::styleUrl(const QString& styleName, quint16 version, bool *isFallba
             }
         }
     }
+#endif
 
     return QUrl();
 }
@@ -803,7 +816,7 @@ QQmlComponent* UCTheme::createStyleComponent(const QString& styleName, QObject* 
             }
         } else {
             qmlWarning(parent) <<
-               QStringLiteral("Warning: Style %1 not found in theme %2").arg(styleName).arg(name());
+               QStringLiteral("Warning: Style %1 not found in theme %2; url %3").arg(styleName).arg(name()).arg(version);
         }
     }
 
