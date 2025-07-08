@@ -1,9 +1,5 @@
-usr/lib/*/qt6/qml/Lomiri/Components/1.0/*.qml
-usr/lib/*/qt6/qml/Lomiri/Components/1.1/*.qml
-usr/lib/*/qt6/qml/Lomiri/Components/1.2/*.js
-usr/lib/*/qt6/qml/Lomiri/Components/1.2/*.qml
-usr/lib/*/qt6/qml/Lomiri/Components/1.3/*.js
-usr/lib/*/qt6/qml/Lomiri/Components/1.3/*.qml
+usr/lib/*/qt6/qml/Lomiri/Components/2.0/*.js
+usr/lib/*/qt6/qml/Lomiri/Components/2.0/*.qml
 usr/lib/*/qt6/qml/Lomiri/Components/ListItems/1.2/*.qml
 usr/lib/*/qt6/qml/Lomiri/Components/ListItems/1.3/*.qml
 usr/lib/*/qt6/qml/Lomiri/Components/ListItems/qmldir
