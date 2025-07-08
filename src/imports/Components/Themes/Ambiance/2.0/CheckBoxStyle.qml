@@ -1,0 +1,182 @@
+/*
+ * Copyright 2015 Canonical Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import QtQuick 2.4
+import Lomiri.Components
+
+Item {
+    id: checkBoxStyle
+
+    /*!
+      The padding between the background shape and the outside border of the checkbox.
+     */
+    property real backgroundPadding: 0
+
+    /*!
+      The background color when the checkbox is not checked.
+     */
+    property color uncheckedBackgroundColor: styledItem.enabled
+                                                ? theme.palette.normal.foreground
+                                                : theme.palette.disabled.foreground
+
+    /*!
+      The background color when the checkbox is checked.
+     */
+    property color checkedBackgroundColor: styledItem.enabled
+                                            ? theme.palette.normal.positive
+                                            : theme.palette.disabled.raised
+
+    /*!
+      The image to show inside the checkbox when it is checked.
+     */
+    property url iconSource: "image://theme/tick"
+
+    /*!
+      The color of the icon.
+     */
+    property color iconColor: styledItem.enabled
+                                ? theme.palette.normal.positiveText
+                                : theme.palette.disabled.raisedText
+
+    /*!
+      The padding between the icon and the border of the thumb.
+     */
+    property real iconPadding: units.gu(0.4)
+
+    implicitWidth: units.gu(2)
+    implicitHeight: Math.max(checkBoxLbl.contentHeight, units.gu(2))
+
+    FocusShape {
+    }
+
+    LomiriShape {
+        id: background
+        aspect: LomiriShape.Inset
+        anchors {
+            margins: checkBoxStyle.backgroundPadding
+        }
+        width: units.gu(2)
+        height: units.gu(2)
+
+        property real iconSize: units.gu(2) - 2*checkBoxStyle.iconPadding
+
+        Icon {
+            color: checkBoxStyle.iconColor
+            width: background.iconSize
+            height: background.iconSize
+            id: tick
+            anchors.centerIn: parent
+            smooth: true
+            source: checkBoxStyle.iconSource
+            visible: styledItem.checked || transitionToChecked.running || transitionToUnchecked.running
+        }
+
+        state: styledItem.checked ? "checked" : "unchecked"
+        states: [
+            State {
+                name: "checked"
+                PropertyChanges {
+                    target: tick
+                    anchors.verticalCenterOffset: 0
+                }
+                PropertyChanges {
+                    target: background
+                    backgroundColor: checkBoxStyle.checkedBackgroundColor
+                }
+            },
+            State {
+                name: "unchecked"
+                PropertyChanges {
+                    target: tick
+                    anchors.verticalCenterOffset: checkBoxStyle.height
+                }
+                PropertyChanges {
+                    target: background
+                    backgroundColor: checkBoxStyle.uncheckedBackgroundColor
+                }
+            }
+        ]
+
+        transitions: [
+            Transition {
+                id: transitionToUnchecked
+                to: "unchecked"
+                ColorAnimation {
+                    target: background
+                    duration: LomiriAnimation.FastDuration
+                    easing: LomiriAnimation.StandardEasingReverse
+                }
+                SequentialAnimation {
+                    PropertyAction {
+                        target: background
+                        property: "clip"
+                        value: true
+                    }
+                    NumberAnimation {
+                        target: tick
+                        property: "anchors.verticalCenterOffset"
+                        duration: LomiriAnimation.FastDuration
+                        easing: LomiriAnimation.StandardEasingReverse
+                    }
+                    PropertyAction {
+                        target: background
+                        property: "clip"
+                        value: false
+                    }
+                }
+            },
+            Transition {
+                id: transitionToChecked
+                to: "checked"
+                ColorAnimation {
+                    target: background
+                    duration: LomiriAnimation.FastDuration
+                    easing: LomiriAnimation.StandardEasing
+                }
+                SequentialAnimation {
+                    PropertyAction {
+                        target: background
+                        property: "clip"
+                        value: true
+                    }
+                    NumberAnimation {
+                        target: tick
+                        property: "anchors.verticalCenterOffset"
+                        duration: LomiriAnimation.FastDuration
+                        easing: LomiriAnimation.StandardEasing
+                    }
+                    PropertyAction {
+                        target: background
+                        property: "clip"
+                        value: false
+                    }
+                }
+            }
+        ]
+    }
+
+    Label {
+        id: checkBoxLbl
+        text: styledItem.text
+        anchors.left: background.right
+        anchors.leftMargin: units.gu(1)
+        anchors.right: parent.right
+        height: parent.height
+        enabled: styledItem.enabled
+        visible: styledItem.text
+        wrapMode: Text.WordWrap
+    }
+}
