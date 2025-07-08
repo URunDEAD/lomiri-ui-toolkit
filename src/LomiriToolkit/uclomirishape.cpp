@@ -202,11 +202,13 @@ void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture
     Q_UNUSED(state)
     ShapeMaterial* material = static_cast<ShapeMaterial*>(newMaterial);
     const ShapeMaterial::Data* data = material->constData();
+    QSGTexture *shapeTexture = data->shapeTexture;
 
     switch (binding) {
         case 1:
-            //TODO figure out how to bind shape texture
-            // m_functions->glBindTexture(GL_TEXTURE_2D, material->textureIds()[data->shapeTextureIndex]);
+            if (shapeTexture) {
+                *texture = shapeTexture;
+            }
             break;
         case 2:
             if (data->flags & ShapeMaterial::Data::Textured) {
@@ -1393,10 +1395,20 @@ QSGNode* UCLomiriShape::createSceneGraphNode() const
 void UCLomiriShape::updateMaterial(
     QSGNode* node, float radius, quint8 shapeTextureIndex, bool textured)
 {
-    ShapeMaterial::Data* materialData = static_cast<ShapeNode*>(node)->material()->data();
+    ShapeMaterial* material = static_cast<ShapeNode*>(node)->material();
+    ShapeMaterial::Data* materialData = material->data();
     quint8 flags = 0;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QSize shapeShaderSize(shapeTextureWidth, shapeTextureHeight);
+    QSGTexture *shapeWrapper = QNativeInterface::QSGOpenGLTexture::fromNative(material->textureIds()[shapeTextureIndex],
+                                                                              window(),
+                                                                              shapeShaderSize);
+    materialData->shapeTexture = shapeWrapper;
+
+#else
     materialData->shapeTextureIndex = shapeTextureIndex;
+#endif
     if (textured) {
         materialData->sourceTextureProvider = m_sourceTextureProvider;
         materialData->sourceOpacity = m_sourceOpacity;

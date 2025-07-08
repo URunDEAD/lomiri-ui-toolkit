@@ -83,7 +83,11 @@ public:
             Pressed              = (1 << 6)
         };
         QSGTextureProvider* sourceTextureProvider;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QSGTexture* shapeTexture;
+#else
         quint8 shapeTextureIndex;
+#endif
         quint8 distanceAAFactor;
         quint8 sourceOpacity;
         quint8 flags;
