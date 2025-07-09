@@ -31,14 +31,14 @@ layout(location=3) in vec4 backgroundColor;
 layout(location = 0) out vec4 fragColor;
 
 layout(std140, binding=0) uniform buf {
-    mat4 matrix;
-    vec2 opacityFactors;
-    float sourceOpacity;
-    float distanceAA;
+    mat4 matrix; // offset 0, size 64
+    vec2 opacityFactors; // offset 64, size 8(?)
+    float sourceOpacity; // offset 72, size 4
+    float distanceAA; // offset 76, size 4
     // FIXME workaround for Qt <= 6.7
     // bool textured;
-    int textured;
-    int aspect;
+    int textured; // offset 80, size 4
+    int aspect; // offset 84, size 4
 } ubuf;
 
 layout(binding=1) uniform sampler2D shapeTexture;
