@@ -132,6 +132,7 @@ equals(QT_MAJOR_VERSION, 5) {
                  1.3/PageHeader.qml \
                  1.3/Icon.qml
 
+    DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
 } else {
     QML_FILES += 2.0/ActionBar.qml \
                  2.0/ActivityIndicator.qml \
@@ -183,9 +184,12 @@ equals(QT_MAJOR_VERSION, 5) {
                  2.0/ScrollView.qml \
                  2.0/PageHeader.qml \
                  2.0/Icon.qml
+
+    DYNAMIC_QMLDIR = $$cat(qmldir-qt6, lines)
 }
 
-OTHER_FILES+= qmldir \
+OTHER_FILES+= qmldir-qt5 \
+             qmldir-qt6 \
              1.3/CrossFadeImage.qdoc \
              1.3/PageHeadConfiguration.qdoc \
              1.3/MainView.qdoc \

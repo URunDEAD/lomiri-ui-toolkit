@@ -124,6 +124,8 @@ QML_FILES += 1.2/ActivityIndicatorStyle.qml \
              1.3/SectionsForPageHead.qml \
              1.3/SectionsForPageHeadStyle.qml \
              $$ARTWORK_FILES
+
+    DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
 } else {
 
 QML_FILES += 2.0/AmbianceNormal.qml \
@@ -175,6 +177,8 @@ QML_FILES += 2.0/AmbianceNormal.qml \
              2.0/SectionsForPageHead.qml \
              2.0/SectionsForPageHeadStyle.qml \
              $$ARTWORK_FILES
+
+    DYNAMIC_QMLDIR = $$cat(qmldir-qt6, lines)
 }
 
 load(lomiri_qml_module)
