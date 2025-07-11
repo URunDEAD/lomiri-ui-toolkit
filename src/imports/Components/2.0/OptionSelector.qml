@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import Lomiri.Components.ListItems 1.3 as ListItem
+import Lomiri.Components.ListItems as ListItem
 import Lomiri.Components as Toolkit
 
 /*!

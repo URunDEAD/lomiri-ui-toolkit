@@ -41,7 +41,7 @@
 
   \qml
       import Lomiri.Components
-      import Lomiri.Components.Popups 1.3
+      import Lomiri.Components.Popups
 
       Button {
           onClicked: PopupUtils.open(popoverComponent, popoverButton, { 'dummy': true } )
@@ -109,7 +109,7 @@ function open(popup, caller, params) {
 
   \qml
       import Lomiri.Components
-      import Lomiri.Components.Popups 1.3
+      import Lomiri.Components.Popups
 
       Button {
           onClicked: PopupUtils.close(popup)

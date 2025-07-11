@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import Lomiri.Components
-import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Popups
 
 /*!
     \qmltype ComboButton
@@ -78,7 +78,7 @@ import Lomiri.Components.Popups 1.3
         \qml
         import QtQuick 2.4
         import Lomiri.Components
-        import Lomiri.Components.ListItems 1.3
+        import Lomiri.Components.ListItems
         ComboButton {
             text: "listview"
             ListView {
@@ -261,7 +261,7 @@ AbstractButton {
       \qml
       import QtQuick 2.4
       import Lomiri.Components
-      import Lomiri.Components.ListItems 1.3
+      import Lomiri.Components.ListItems
       ComboButton {
           id: combo
           text: "Full comboList size"

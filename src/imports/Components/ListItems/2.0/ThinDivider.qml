@@ -30,7 +30,7 @@ import Lomiri.Components
 
     Examples:
     \qml
-        import Lomiri.Components.ListItems 1.3 as ListItem
+        import Lomiri.Components.ListItems as ListItem
         Column {
             width: 250
             ListItem.ThinDivider {} //can be used as header for list

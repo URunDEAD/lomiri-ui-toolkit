@@ -30,7 +30,7 @@ import Lomiri.Components
     Examples:
     \qml
         import Lomiri.Components
-        import Lomiri.Components.ListItems 1.3 as ListItem
+        import Lomiri.Components.ListItems as ListItem
 
         ListItem.ExpandablesColumn {
             anchors { left: parent.left; right: parent.right }

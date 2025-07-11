@@ -26,7 +26,7 @@ import Lomiri.Components
 
     Examples:
     \qml
-        import Lomiri.Components.ListItems 1.3 as ListItem
+        import Lomiri.Components.ListItems as ListItem
         Column {
             ListItem.MultiValue {
                 text: "Label"

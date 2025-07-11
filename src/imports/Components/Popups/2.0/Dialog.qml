@@ -35,7 +35,7 @@ import "internalPopupUtils.js" as InternalPopupUtils
     \qml
         import QtQuick 2.4
         import Lomiri.Components
-        import Lomiri.Components.Popups 1.3
+        import Lomiri.Components.Popups
 
         Item {
             width: units.gu(80)
@@ -146,7 +146,7 @@ PopupBase {
       \qml
         import QtQuick 2.4
         import Lomiri.Components
-        import Lomiri.Components.Popups 1.3
+        import Lomiri.Components.Popups
         MainView {
             width: units.gu(40)
             height: units.gu(71)

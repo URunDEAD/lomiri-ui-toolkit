@@ -33,8 +33,8 @@ import Lomiri.Components
     \qml
         import QtQuick 2.4
         import Lomiri.Components
-        import Lomiri.Components.Popups 1.3
-        import Lomiri.Components.ListItems 1.3 as Old_ListItem
+        import Lomiri.Components.Popups
+        import Lomiri.Components.ListItems as Old_ListItem
         Rectangle {
             color: theme.palette.normal.background
             width: units.gu(80)

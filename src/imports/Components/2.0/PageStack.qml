@@ -79,7 +79,7 @@ import Lomiri.Components.Private 1.3
     \qml
         import QtQuick 2.4
         import Lomiri.Components
-        import Lomiri.Components.ListItems 1.3 as ListItem
+        import Lomiri.Components.ListItems as ListItem
 
         MainView {
             width: units.gu(48)

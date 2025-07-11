@@ -35,7 +35,7 @@ import Lomiri.Components
     import QtQuick 2.4
     import QtQuick.XmlListModel 2.0
     import Lomiri.Components
-    import Lomiri.Components.ListItems 1.3
+    import Lomiri.Components.ListItems
 
     MainView {
         width: units.gu(40)
@@ -85,7 +85,7 @@ import Lomiri.Components
     import QtQuick 2.4
     import QtQuick.XmlListModel 2.0
     import Lomiri.Components
-    import Lomiri.Components.ListItems 1.3
+    import Lomiri.Components.ListItems
 
     MainView {
         width: units.gu(40)
@@ -133,7 +133,7 @@ import Lomiri.Components
     import QtQuick 2.4
     import QtQuick.XmlListModel 2.0
     import Lomiri.Components
-    import Lomiri.Components.ListItems 1.3
+    import Lomiri.Components.ListItems
 
     MainView {
         id: main

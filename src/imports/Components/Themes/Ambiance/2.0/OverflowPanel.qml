@@ -15,9 +15,9 @@
  */
 
 import QtQuick 2.4
-import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Popups
 import Lomiri.Components
-import Lomiri.Components.ListItems 1.3 as ListItem
+import Lomiri.Components.ListItems as ListItem
 
 /*!
   \internal

@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import Lomiri.Components as Lomiri
-import Lomiri.Components.Popups 1.3
+import Lomiri.Components.Popups
 
 Lomiri.StyledItem {
     id: cursorItem

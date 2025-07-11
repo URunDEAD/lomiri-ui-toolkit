@@ -33,7 +33,7 @@ import Lomiri.Components
     Example:
     \qml
         import Lomiri.Components
-        import Lomiri.Components.Popups 1.3
+        import Lomiri.Components.Popups
 
         Item {
             Component {
