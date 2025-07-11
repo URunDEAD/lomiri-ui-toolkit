@@ -1,0 +1,19 @@
+module Lomiri.Components.ListItems
+
+#################################################
+#version 2.0
+Empty 2.0 2.0/Empty.qml
+Base 2.0 2.0/Base.qml
+Caption 2.0 2.0/Caption.qml
+Divider 2.0 2.0/Divider.qml
+Header 2.0 2.0/ListItemHeader.qml
+MultiValue 2.0 2.0/MultiValue.qml
+ItemSelector 2.0 2.0/ItemSelector.qml
+ValueSelector 2.0 2.0/ValueSelector.qml
+SingleValue 2.0 2.0/SingleValue.qml
+Standard 2.0 2.0/Standard.qml
+Subtitled 2.0 2.0/Subtitled.qml
+SingleControl 2.0 2.0/SingleControl.qml
+ThinDivider 2.0 2.0/ThinDivider.qml
+Expandable 2.0 2.0/Expandable.qml
+ExpandablesColumn 2.0 2.0/ExpandablesColumn.qml
