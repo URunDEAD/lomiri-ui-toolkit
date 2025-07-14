@@ -194,7 +194,7 @@ msgstr "%1 đang mong đợi các đối số bổ sung: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr "cân nhắc ghi đè lên vị trí swipeEvent()!"
+msgstr "cân nhắc ghi đè lên vị trí swipeEvent() !"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
@@ -202,27 +202,31 @@ msgstr "Cân nhắc ghi đè lên vị trí rebound() !"
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
-msgstr ""
+msgstr "Bỏ qua mức độ ưu tiên AfterItem cho bộ lọc InverseMouse."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
-msgstr ""
+msgstr "Thay đổi thông số kết nối bị cấm."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:160
 #, qt-format
 msgid ""
 "Binding detected on property '%1' will be removed by the service updates."
 msgstr ""
+"Liên kết được phát hiện trên thuộc tính '%1' sẽ bị xóa bởi các bản cập nhật "
+"dịch vụ."
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:46
 msgid "Warning: attachee must have an ID. State will not be saved."
-msgstr ""
+msgstr "Cảnh báo: người đính kèm phải có ID. Trạng thái sẽ không được lưu."
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:56
 #, qt-format
 msgid ""
 "Warning: attachee's UUID is already registered, state won't be saved: %1"
 msgstr ""
+"Cảnh báo: UUID của người đính kèm đã được đăng ký, trạng thái sẽ không được "
+"lưu: %1"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:107
 #, qt-format
@@ -230,6 +234,7 @@ msgid ""
 "All the parents must have an id.\n"
 "State saving disabled for %1, class %2"
 msgstr ""
+"Tất cả nhánh mẹ phải có ID. Lưu trạng thái bị vô hiệu hóa cho %1, lớp %2"
 
 #: Lomiri/Components/plugin/uctheme.cpp:208
 #, qt-format
