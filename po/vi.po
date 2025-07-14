@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2025-07-06 03:56+0000\n"
+"PO-Revision-Date: 2025-07-14 02:19+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/vi/>\n"
@@ -52,17 +52,17 @@ msgstr "Xóa bỏ"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:51
 msgid "No service/path specified"
-msgstr ""
+msgstr "Không có dịch vụ/đường dẫn được đề cập đến"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:69
 #, qt-format
 msgid "Invalid bus type: %1."
-msgstr ""
+msgstr "Loại bus không hợp lệ: %1."
 
 #. TRANSLATORS: Time based "this is happening/happened now"
 #: Lomiri/Components/plugin/i18n.cpp:268
 msgid "Now"
-msgstr ""
+msgstr "Bây giờ"
 
 #: Lomiri/Components/plugin/i18n.cpp:275
 #, qt-format
@@ -80,19 +80,19 @@ msgstr[0] "%1 phút"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:284
 msgid "h:mm ap"
-msgstr ""
+msgstr "hh:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:287
 msgid "HH:mm"
-msgstr ""
+msgstr "hh:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:293
 msgid "'Yesterday 'h:mm ap"
-msgstr ""
+msgstr "'Hôm qua 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
