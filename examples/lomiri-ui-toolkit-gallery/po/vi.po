@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-06-28 18:47+0000\n"
+"PO-Revision-Date: 2025-07-17 00:37+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/vi/>\n"
@@ -38,7 +38,7 @@ msgstr ""
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "Vô hiệu hóa"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
@@ -414,7 +414,7 @@ msgstr ""
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Tiêu đề"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
@@ -455,7 +455,7 @@ msgstr "Mật khẩu"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr "Số"
+msgstr "Số điện thoại"
 
 #: TextInputs.qml:78
 msgid "Read-only"
