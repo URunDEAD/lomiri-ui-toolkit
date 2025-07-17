@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-07-17 00:37+0000\n"
+"PO-Revision-Date: 2025-07-18 06:47+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/vi/>\n"
@@ -121,11 +121,11 @@ msgstr ""
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "Xanh lá"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "Xanh"
 
 #: Colors.qml:66
 msgid "Purple"
