@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-07-18 06:47+0000\n"
+"PO-Revision-Date: 2025-07-18 15:29+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/vi/>\n"
@@ -259,39 +259,39 @@ msgstr "Đặt lại"
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr ""
+msgstr "Danh sách nhóm"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "LomiriListView"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "ExpandablesColumn"
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "Có thể mở rộng"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "Có màu"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "Màu nổi bật"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "Hành động hàng đầu"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "Hành động theo sau"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "Đại diện hành động tùy chỉnh"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -299,62 +299,64 @@ msgstr "Chỉnh sửa"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "Di chuyển"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "Cơ bản"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "Đường phân cách có màu sắc"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "Không thể thay đổi"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "Không có bộ chia"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "Bộ chọn tùy chọn"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "Đây là giá trị thứ hai"
 
 #: OptionSelectors.qml:35
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
+"nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "Ngày xửa ngày xưa, có một câu chuyện không ai kể."
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "Chiều cao container tùy chỉnh"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "Không có lựa chọn ban đầu, có thể cuộn."
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Tuyến tính"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Hình tròn"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Vô hạn"
 
 #: Pickers.qml:137
 msgid "Clock"
@@ -362,55 +364,57 @@ msgstr "Đồng hồ"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "Lớp phủ"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "Có thể vuốt"
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "Hành động #1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "Hành động #2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "Hành động #3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "Hành động #4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "Hành động #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "Thanh tiến trình"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Không có nhãn"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "Chỉ số hoạt động"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Kích thước"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "Đã kích hoạt"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
 msgstr ""
+"Phong cách hiển thị của Trang tính đang trong giai đoạn phát triển ban đầu, "
+"vì vậy trông còn thô kệch/vụng về."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
@@ -419,35 +423,35 @@ msgstr "Tiêu đề"
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "Giá trị thực tế: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "Cập nhật trực tuyến"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "Phạm vi"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Nhãn"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Nhỏ"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Trung bình"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Lớn"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "Điền tôi vào..."
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -459,15 +463,15 @@ msgstr "Số điện thoại"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "Chỉ được đọc"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "Không có ai nhập ở đây"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "Không được phép tương tác"
 
 #: TextInputs.qml:107
 msgid "Default"
@@ -475,28 +479,28 @@ msgstr "Mặc định"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "Văn bản phong phú"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "Chưa kiểm tra"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "Đã kiểm tra"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "Diện mạo"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Bán kính"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "Ảnh"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "Độ dốc"
