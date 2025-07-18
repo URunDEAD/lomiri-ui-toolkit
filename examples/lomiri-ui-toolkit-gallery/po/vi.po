@@ -25,7 +25,7 @@ msgstr "Về..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr "Danh sách rút gọn"
+msgstr "Danh sách ngắn"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
@@ -42,33 +42,33 @@ msgstr "Vô hiệu hóa"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "NumberAnimation"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "Tiêu chuẩn"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr ""
+msgstr "Thời lượng tiêu chuẩn"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "Dính"
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "Nhanh"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "Chậm"
 
 #: Animations.qml:159
 msgid "Sleepy"
-msgstr ""
+msgstr "Ngủ đông"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
@@ -76,7 +76,7 @@ msgstr "Gọi"
 
 #: Buttons.qml:37
 msgid "Stroke"
-msgstr ""
+msgstr "Đường viền"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
@@ -85,35 +85,35 @@ msgstr "Màu"
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "Gọi %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "Biểu tượng"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "Biểu tượng+Văn bản"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "Thu gọn"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "Mở rộng"
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "Cam"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "Xám nhạt"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "Xám đậm (tối)"
 
 #: Colors.qml:48
 msgid "Red"
@@ -129,7 +129,7 @@ msgstr "Xanh dương"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "TÍm"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
