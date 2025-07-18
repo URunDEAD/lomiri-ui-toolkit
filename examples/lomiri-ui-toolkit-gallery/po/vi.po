@@ -129,7 +129,7 @@ msgstr "Xanh dương"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr "TÍm"
+msgstr "Tím"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
@@ -137,7 +137,7 @@ msgstr "Mở"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "Tỷ lệ"
 
 #: Icons.qml:79
 msgid "Theme"
@@ -145,7 +145,7 @@ msgstr "Chủ đề giao diện"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "Hành động đầu và hành động sau"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
@@ -155,107 +155,107 @@ msgstr "Nhãn"
 
 #: ListItems.qml:33
 msgid "Subtitled"
-msgstr ""
+msgstr "Có phụ đề"
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "Nhãn phụ"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "ThinDivider"
 
 #: ListItems.qml:73
 msgid "Progression"
-msgstr ""
+msgstr "Tiến triển"
 
 #: ListItems.qml:82
 msgid "Single value"
-msgstr ""
+msgstr "Giá trị đơn"
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "Giá trị"
 
 #: ListItems.qml:91
 msgid "Multi value"
-msgstr ""
+msgstr "Nhiều giá trị"
 
 #: ListItems.qml:95 ListItems.qml:113 ListItems.qml:122 ListItems.qml:132
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "Giá trị 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "Giá trị 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "Giá trị 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "Giá trị 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "Bộ chọn mục"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "Mở rộng"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr ""
+msgstr "Chọn nhiều"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "Mô hình tùy chỉnh"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "Giá trị 5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "Giá trị 6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
 msgid "Value 7"
-msgstr ""
+msgstr "Gía trị 7"
 
 #: ListItems.qml:168 ListItems.qml:183 OptionSelectors.qml:91
 #: OptionSelectors.qml:106
 msgid "Value 8"
-msgstr ""
+msgstr "Giá trị 8"
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "Điều khiển"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr ""
+msgstr "Có thể tháo rời"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr ""
+msgstr "Trượt để xóa"
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "Đặt lại"
 
 #: ListItems.qml:226
 msgid "Grouped list"
