@@ -58,7 +58,7 @@ private:
     Q_DECLARE_PRIVATE(UMFileLogger)
 };
 
-#if defined(Q_OS_LINUX)
+#if defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)
 
 // Log events to LTTng.
 class LOMIRI_METRICS_EXPORT UMLTTNGLogger : public UMLogger
@@ -75,6 +75,6 @@ private:
     Q_DECL_UNUSED_MEMBER void* __reserved;
 };
 
-#endif  // defined(Q_OS_LINUX)
+#endif  // defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)
 
 #endif  // LOGGER_H

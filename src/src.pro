@@ -17,7 +17,7 @@ SUBDIRS += src_toolkit_lib
 
 # Plugins
 
-linux {
+linux:!CONFIG(no_lttng) {
     src_metrics_lttng_plugin.subdir = LomiriMetrics/lttng
     src_metrics_lttng_plugin.target = sub-metrics-lttng-plugin
     SUBDIRS += src_metrics_lttng_plugin

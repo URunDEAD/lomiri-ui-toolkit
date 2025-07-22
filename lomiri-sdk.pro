@@ -11,7 +11,10 @@ load(qt_parts)
 src_uitk_launcher.subdir = lomiri-ui-toolkit-launcher
 src_uitk_launcher.depends = sub-src
 
-SUBDIRS += po app-launch-profiler src_uitk_launcher apicheck
+SUBDIRS += po src_uitk_launcher apicheck
+!CONFIG(no_lttng) {
+    SUBDIRS += app-launch-profiler
+}
 !CONFIG(no_docs) {
     SUBDIRS += documentation
 }

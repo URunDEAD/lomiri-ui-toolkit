@@ -5,7 +5,7 @@ LIBS += -ldl
 CONFIG += egl
 DEFINES += MESA_EGL_NO_X11_HEADERS EGL_NO_X11
 
-linux {
+linux:!CONFIG(no_lttng) {
     DEFINES += \
         LTTNG_PLUGIN_INSTALL_PATH=\\\"$$[QT_INSTALL_PLUGINS]/lomiri/metrics/libumlttng.so\\\"
     DEFINES += LTTNG_PLUGIN_BUILD_PATH=\\\"$$OUT_PWD/lttng/libumlttng.so\\\"
