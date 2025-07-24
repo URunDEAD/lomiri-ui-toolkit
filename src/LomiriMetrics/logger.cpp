@@ -271,7 +271,7 @@ bool UMFileLogger::parsable()
     return !!(d_func()->m_flags & UMFileLoggerPrivate::Parsable);
 }
 
-#if defined(Q_OS_LINUX)
+#if defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)
 
 UMLTTNGPlugin* UMLTTNGLogger::m_plugin = nullptr;
 bool UMLTTNGLogger::m_error = false;
@@ -363,4 +363,4 @@ void UMLTTNGLogger::log(const UMEvent& event)
     }
 }
 
-#endif  // defined(Q_OS_LINUX)
+#endif  // defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)

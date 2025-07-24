@@ -239,10 +239,10 @@ int main(int argc, const char *argv[])
         QString device = args.value(_metricsLogging);
         if (device.isEmpty() || device == "stdout") {
             logger = new UMFileLogger(stdout);
-#if defined(Q_OS_LINUX)
+#if defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)
         } else if (device == "lttng") {
             logger = new UMLTTNGLogger();
-#endif  // defined(Q_OS_LINUX)
+#endif  // defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)
         } else {
             logger = new UMFileLogger(device);
         }

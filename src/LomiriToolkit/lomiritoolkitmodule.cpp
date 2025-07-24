@@ -382,10 +382,10 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
         UMLogger* logger;
         if (metricsLogging.isEmpty() || metricsLogging == "stdout") {
             logger = new UMFileLogger(stdout);
-#if defined(Q_OS_LINUX)
+#if defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)
         } else if (metricsLogging == "lttng") {
             logger = new UMLTTNGLogger();
-#endif  // defined(Q_OS_LINUX)
+#endif  // defined(Q_OS_LINUX) && defined(LTTNG_PLUGIN_BUILD_PATH)
         } else {
             logger = new UMFileLogger(QString::fromLocal8Bit(metricsLogging));
         }
