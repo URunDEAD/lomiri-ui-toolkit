@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-06-04 19:41+0000\n"
+"PO-Revision-Date: 2025-08-12 17:02+0000\n"
 "Last-Translator: Ida Brenna <ida@larald.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: About.qml:34
@@ -370,9 +370,8 @@ msgid "Overlay"
 msgstr "Overlag"
 
 #: Popover.qml:38
-#, fuzzy
 msgid "Flickable"
-msgstr "Kan avhendiges"
+msgstr "Veivbar"
 
 #: Popover.qml:74
 msgid "Action #1"
