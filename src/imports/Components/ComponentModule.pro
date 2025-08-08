@@ -184,7 +184,13 @@ equals(QT_MAJOR_VERSION, 5) {
                  2.0/ScrollView.qml \
                  2.0/PageHeader.qml \
                  2.0/Haptics.qml \
-                 2.0/Icon.qml
+                 2.0/Icon.qml \
+                 2.0/AbstractButton.qml \
+                 2.0/ActionList.qml \
+                 2.0/Label.qml \
+                 2.0/MainViewBase.qml \
+                 2.0/PageTreeNode.qml \
+                 2.0/PageWrapper.qml
 
     DYNAMIC_QMLDIR = $$cat(qmldir-qt6, lines)
 }

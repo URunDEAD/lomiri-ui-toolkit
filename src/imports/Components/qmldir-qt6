@@ -46,3 +46,9 @@ PageHeader 2.0 2.0/PageHeader.qml
 Toolbar 2.0 2.0/Toolbar.qml
 singleton LomiriColors 2.0 2.0/LomiriColors.qml
 Icon 2.0 2.0/Icon.qml
+AbstractButton 2.0 2.0/AbstractButton.qml
+ActionList 2.0 2.0/ActionList.qml
+Label 2.0 2.0/Label.qml
+MainViewBase 2.0 2.0/MainViewBase.qml
+PageTreeNode 2.0 2.0/PageTreeNode.qml
+PageWrapper 2.0 2.0/PageWrapper.qml
