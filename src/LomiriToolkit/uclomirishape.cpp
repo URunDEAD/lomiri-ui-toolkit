@@ -172,6 +172,7 @@ bool ShapeShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial
 {
     Q_UNUSED(oldMaterial)
 
+    bool changed = false;
     QByteArray *buf = state.uniformData();
 
     ShapeMaterial* material = static_cast<ShapeMaterial*>(newMaterial);
@@ -180,6 +181,7 @@ bool ShapeShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial
     if (state.isMatrixDirty()) {
         const QMatrix4x4 m = state.combinedMatrix();
         memcpy(buf->data(), m.constData(), 64);
+        changed = true;
     }
 
     if (state.isOpacityDirty()) {
@@ -187,30 +189,34 @@ bool ShapeShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial
         const QVector2D opacityFactorsVector(
             data->flags & ShapeMaterial::Data::Pressed ? pressedFactor * opacity : opacity, opacity);
         memcpy(buf->data() + 64, &opacityFactorsVector, 8);
+        changed = true;
     }
     
-    // TODO: make bool later on
-    int textured = 0;
-    if (data->flags & ShapeMaterial::Data::Textured) {
-        const float sourceOpacity = data->sourceOpacity / 255.0f;
-        memcpy(buf->data() + 72, &sourceOpacity, 4);
-        textured = 1;
+    if (!oldMaterial || newMaterial->compare(oldMaterial) != 0) {
+        // TODO: make bool later on
+        int textured = 0;
+        if (data->flags & ShapeMaterial::Data::Textured) {
+            const float sourceOpacity = data->sourceOpacity / 255.0f;
+            memcpy(buf->data() + 72, &sourceOpacity, 4);
+            textured = 1;
+        }
+        memcpy(buf->data() + 80, &textured, 4);
+
+        int aspect = data->flags & ShapeMaterial::Data::AspectMask;
+        memcpy(buf->data() + 84, &aspect, 4);
+
+        if (useDistanceFields()) {
+            // Send anti-aliasing distance in distance field space, needs to be divided by 2 for the
+            // shader and by 255 for distanceAAFactor dequantization. The factor is 1 most of the time
+            // apart when the radius size is low, it linearly goes from 1 to 0 to make the corners
+            // prettier and to prevent the opacity of the whole shape to slightly lower.
+            const float distanceAA = ((shapeTextureDistanceAA * distanceAApx) / (2.0 * 255.0f)) * data->distanceAAFactor;
+            memcpy(buf->data() + 76, &distanceAA, 4);
+        }
+        changed = true;
     }
-    memcpy(buf->data() + 80, &textured, 4);
 
-    int aspect = data->flags & ShapeMaterial::Data::AspectMask;
-    memcpy(buf->data() + 84, &aspect, 4);
-
-    if (useDistanceFields()) {
-        // Send anti-aliasing distance in distance field space, needs to be divided by 2 for the
-        // shader and by 255 for distanceAAFactor dequantization. The factor is 1 most of the time
-        // apart when the radius size is low, it linearly goes from 1 to 0 to make the corners
-        // prettier and to prevent the opacity of the whole shape to slightly lower.
-        const float distanceAA = ((shapeTextureDistanceAA * distanceAApx) / (2.0 * 255.0f)) * data->distanceAAFactor;
-        memcpy(buf->data() + 76, &distanceAA, 4);
-    }
-
-    return true;
+    return changed;
 }
 
 void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture **texture, QSGMaterial *newMaterial, QSGMaterial *oldMaterial)
@@ -224,13 +230,15 @@ void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture
         case 1:
             if (shapeTexture) {
                 *texture = shapeTexture;
+            } else {
+                *texture = nullptr;
             }
             break;
         case 2:
             if (data->flags & ShapeMaterial::Data::Textured) {
                 QSGTextureProvider* provider = data->sourceTextureProvider;
-                QSGTexture* sourceTexture = provider ? provider->texture() : NULL;
-                if (data->flags & ShapeMaterial::Data::Repeated) {
+                QSGTexture* sourceTexture = provider ? provider->texture() : nullptr;
+                if (sourceTexture && data->flags & ShapeMaterial::Data::Repeated) {
                     if (sourceTexture->isAtlasTexture()) {
                         // A texture in an atlas can't be repeated with builtin GPU facility (exposed by
                         // GL_REPEAT with OpenGL), so we extract it and create a new dedicated one.
@@ -242,10 +250,13 @@ void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture
                     sourceTexture->setVerticalWrapMode(
                         data->flags & ShapeMaterial::Data::VerticallyRepeated ?
                         QSGTexture::Repeat : QSGTexture::ClampToEdge);
+                    sourceTexture->setFiltering(QSGTexture::Filtering::Linear);
+                    sourceTexture->commitTextureOperations(state.rhi(), state.resourceUpdateBatch());
                 }
-                if (sourceTexture) {
-                    *texture = sourceTexture;
-                }
+                *texture = sourceTexture;
+            } else {
+                *texture = nullptr;
+                return;
             }
             break;
         default:
