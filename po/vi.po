@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
 "PO-Revision-Date: 2025-08-12 17:02+0000\n"
-"Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
+"Last-Translator: \"Bảo Nam (Namm)\" <namb20994@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/vi/>\n"
 "Language: vi\n"
@@ -43,7 +43,7 @@ msgstr "Dán"
 #: Lomiri/Components/1.2/ToolbarItems.qml:143
 #: Lomiri/Components/1.3/ToolbarItems.qml:143
 msgid "Back"
-msgstr "Trở lại"
+msgstr "Quay lại"
 
 #: Lomiri/Components/ListItems/1.2/Empty.qml:398
 #: Lomiri/Components/ListItems/1.3/Empty.qml:398
@@ -260,7 +260,7 @@ msgstr ""
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
 msgid "Cancel"
-msgstr "Hủy bỏ"
+msgstr "Huỷ bỏ"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:88
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:88
