@@ -1,0 +1,18 @@
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+add_subdirectory(LomiriGestures)
+#add_subdirectory(LomiriMetrics)
+add_subdirectory(LomiriToolkit)
+#add_subdirectory(LomiriSystemInfo)
+
+add_subdirectory(imports)
+#if(LINUX)
+#    add_subdirectory(LomiriMetrics/lttng)
+#endif()
+#if(ubuntu-uitk-compat)
+#    add_subdirectory(imports-compat/Components)
+#    add_subdirectory(imports-compat/Layouts)
+#    add_subdirectory(imports-compat/Metrics)
+#    add_subdirectory(imports-compat/PerformanceMetrics)
+#    add_subdirectory(imports-compat/Test)
+#endif()
