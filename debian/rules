@@ -47,9 +47,9 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	mkdir -p debian/tmp/home/run
 	chmod +x tests/xvfb.sh
 ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
-	-tests/xvfb.sh dh_auto_test --no-parallel
+	-env UITK_BUILD_ROOT=$(CURDIR) tests/xvfb.sh dh_auto_test --no-parallel
 else
-	tests/xvfb.sh dh_auto_test --no-parallel
+	env UITK_BUILD_ROOT=$(CURDIR) tests/xvfb.sh dh_auto_test --no-parallel
 endif
 endif
 
