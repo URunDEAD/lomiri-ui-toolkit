@@ -32,7 +32,7 @@ override_dh_auto_configure:
 		CONFIG+=debian_build \
 		$(CONFIGURE_OPTS) \
 		QMAKE_CFLAGS="$(CFLAGS)" \
-		QMAKE_CXX_FLAGS="$(CXXFLAGS)" \
+		QMAKE_CXXFLAGS="$(CXXFLAGS)" \
 		QMAKE_LFLAGS="${LDFLAGS}"
 	dh_auto_configure --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
