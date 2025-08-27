@@ -14,7 +14,7 @@ include /usr/share/dpkg/architecture.mk
 
 # Enforce -Werror for an upstream build.
 CONFIGURE_OPTS_QT5 := # CONFIG+=warnings_are_errors
-CONFIGURE_OPTS_QT6 := CONFIG+=no_docs
+CONFIGURE_OPTS_QT6 := # CONFIG+=no_docs
 
 # Enable Ubuntu UITK compat layer for UBports build.
 CONFIGURE_OPTS_QT5 += CONFIG+=ubuntu-uitk-compat
@@ -22,7 +22,7 @@ CONFIGURE_OPTS_QT5 += CONFIG+=ubuntu-uitk-compat
 ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 	# Cross compiling
 	CONFIGURE_OPTS_QT5 += "CONFIG+=no_docs" "CONFIG+=cross_compile"
-	CONFIGURE_OPTS_QT6 += "CONFIG+=cross_compile"
+	CONFIGURE_OPTS_QT6 += # "CONFIG+=cross_compile"
 endif
 
 # Skip tests on the archs they are known to be flaky  with current configuration
@@ -35,12 +35,8 @@ DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migra
 	dh $@ $(DH_MIGRATIONS)
 
 override_dh_auto_configure:
-	dh_auto_configure --builddirectory=build-qt6 --buildsystem=qmake6 -- \
-		CONFIG+=debian_build \
+	dh_auto_configure --builddirectory=build-qt6 --buildsystem=cmake -- \
 		$(CONFIGURE_OPTS_QT6) \
-		QMAKE_CFLAGS="$(CFLAGS)" \
-		QMAKE_CXXFLAGS="$(CXXFLAGS)" \
-		QMAKE_LFLAGS="${LDFLAGS}" \
 		..
 	dh_auto_configure --builddirectory=build-qt5 --buildsystem=qmake -- \
 		CONFIG+=debian_build \
@@ -52,7 +48,7 @@ override_dh_auto_configure:
 	dh_auto_configure --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 override_dh_auto_build:
-	dh_auto_build --builddirectory=build-qt6 --buildsystem=qmake6 ..
+	dh_auto_build --builddirectory=build-qt6 --buildsystem=cmake ..
 	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake ..
 	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake -- docs ..
 	dh_auto_build --sourcedirectory=tests/autopilot --buildsystem=pybuild
@@ -62,9 +58,9 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	mkdir -p debian/tmp/home/run
 	chmod +x tests/xvfb.sh
 ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
-	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt6 --buildsystem=qmake6
+	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
 else
-	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt6 --buildsystem=qmake6
+	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
 endif
 ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
 	-env UITK_BUILD_ROOT=$(CURDIR)/build-qt5 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt5 --buildsystem=qmake
@@ -77,7 +73,7 @@ override_dh_auto_install:
 	# FIXME work around qmlplugindump crashing while parsing the
 	# LomiriSystemInfo module
 	sed -i 's,exec /.*/qmlplugindump,exec /bin/true,' build-qt6/src/imports/SystemInfo/wrapper.sh
-	dh_auto_install --no-parallel --builddirectory=build-qt6 --buildsystem=qmake6 ..
+	dh_auto_install --no-parallel --builddirectory=build-qt6 --buildsystem=cmake ..
 	dh_auto_install --no-parallel --builddirectory=build-qt5 --buildsystem=qmake ..
 	dh_auto_install --no-parallel --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
@@ -125,7 +121,7 @@ override_dh_gencontrol:
 	dh_gencontrol -- $(SUBST_VAR)
 
 override_dh_auto_clean:
-	dh_auto_clean --builddirectory=build-qt6 --buildsystem=qmake6 ..
+	dh_auto_clean --builddirectory=build-qt6 --buildsystem=cmake ..
 	dh_auto_clean --builddirectory=build-qt5 --buildsystem=qmake ..
 	dh_auto_clean --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
