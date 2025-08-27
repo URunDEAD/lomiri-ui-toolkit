@@ -76,7 +76,7 @@ private:
     qreal m_previous_header_height;
     bool m_exposed:1;
     bool m_moving:1;
-    bool m_automaticHeight:1;
+    bool m_automaticHeight;
 
     // used to set the easing and duration of m_showHideAnimation
     static UCLomiriAnimation *s_lomiriAnimation;

@@ -51,7 +51,7 @@
 #ifndef QDECLARATIVENETWORKINFO_P_H
 #define QDECLARATIVENETWORKINFO_P_H
 
-#include <lomirinetworkinfo.h>
+#include <LomiriSystemInfoQt6/lomirinetworkinfo.h>
 
 QT_BEGIN_NAMESPACE
 

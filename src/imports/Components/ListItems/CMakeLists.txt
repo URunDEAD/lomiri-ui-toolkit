@@ -2,67 +2,27 @@
 set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Components/ListItems")
 
 # Define QML files for version 1.2
-set(QML_FILES_1_2
-    "1.2/Base.qml"
-    "1.2/Caption.qml"
-    "1.2/Divider.qml"
-    "1.2/Empty.qml"
-    "1.2/Expandable.qml"
-    "1.2/ExpandablesColumn.qml"
-    "1.2/ListItemHeader.qml"
-    "1.2/IconVisual.qml"
-    "1.2/ImageWithFallback.qml"
-    "1.2/ItemSelector.qml"
-    "1.2/LabelVisual.qml"
-    "1.2/MultiValue.qml"
-    "1.2/ProgressionVisual.qml"
-    "1.2/SingleControl.qml"
-    "1.2/SingleValue.qml"
-    "1.2/Standard.qml"
-    "1.2/Subtitled.qml"
-    "1.2/ThinDivider.qml"
-    "1.2/ValueSelector.qml"
+set(QML_FILES
+    "2.0/Base.qml"
+    "2.0/Caption.qml"
+    "2.0/Divider.qml"
+    "2.0/Empty.qml"
+    "2.0/Expandable.qml"
+    "2.0/ExpandablesColumn.qml"
+    "2.0/ListItemHeader.qml"
+    "2.0/IconVisual.qml"
+    "2.0/ImageWithFallback.qml"
+    "2.0/ItemSelector.qml"
+    "2.0/LabelVisual.qml"
+    "2.0/MultiValue.qml"
+    "2.0/ProgressionVisual.qml"
+    "2.0/SingleControl.qml"
+    "2.0/SingleValue.qml"
+    "2.0/Standard.qml"
+    "2.0/Subtitled.qml"
+    "2.0/ThinDivider.qml"
+    "2.0/ValueSelector.qml"
 )
 
-# Define QML files for version 1.3
-set(QML_FILES_1_3
-    "1.3/Base.qml"
-    "1.3/Caption.qml"
-    "1.3/Divider.qml"
-    "1.3/Empty.qml"
-    "1.3/Expandable.qml"
-    "1.3/ExpandablesColumn.qml"
-    "1.3/ListItemHeader.qml"
-    "1.3/IconVisual.qml"
-    "1.3/ImageWithFallback.qml"
-    "1.3/ItemSelector.qml"
-    "1.3/LabelVisual.qml"
-    "1.3/MultiValue.qml"
-    "1.3/ProgressionVisual.qml"
-    "1.3/SingleControl.qml"
-    "1.3/SingleValue.qml"
-    "1.3/Standard.qml"
-    "1.3/Subtitled.qml"
-    "1.3/ThinDivider.qml"
-    "1.3/ValueSelector.qml"
-)
-
-# Define other files (if any)
-set(OTHER_FILES
-    "qmldir"
-)
-
-# Combine all QML files
-set(ALL_QML_FILES
-    ${QML_FILES_1_2}
-    ${QML_FILES_1_3}
-    ${OTHER_FILES}
-)
-
-install(FILES ${QML_FILES_1_2}
-    DESTINATION ${QML_PLUGIN_DIR}/1.2
-)
-
-install(FILES ${QML_FILES_1_3}
-    DESTINATION ${QML_PLUGIN_DIR}/1.3
-)
+install(FILES ${QML_FILES} DESTINATION ${QML_PLUGIN_DIR}/2.0)
+install(FILES "qmldir-qt6" DESTINATION ${QML_PLUGIN_DIR}/ RENAME "qmldir")

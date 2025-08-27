@@ -176,7 +176,11 @@ void UCAbstractButtonPrivate::completeComponentInitialization()
 // may not be available on compoennt completion
 void UCAbstractButtonPrivate::_q_mouseAreaPressed()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+    if (!mouseArea->isPressed()) {
+#else
     if (!mouseArea->pressed()) {
+#endif
         return;
     }
     bool longPressConnected = isPressAndHoldConnected();
@@ -318,7 +322,11 @@ void UCAbstractButton::geometryChanged(const QRectF &newGeometry, const QRectF &
 bool UCAbstractButton::pressed() const
 {
     Q_D(const UCAbstractButton);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+    return d->mouseArea ? d->mouseArea->isPressed() : false;
+#else
     return d->mouseArea ? d->mouseArea->pressed() : false;
+#endif
 }
 
 /*!

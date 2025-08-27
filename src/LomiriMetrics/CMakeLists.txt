@@ -23,7 +23,7 @@ target_link_libraries(LomiriMetrics PRIVATE
     ${EGL_LIBRARIES}
 )
 
-if(LINUX)
+if(LINUX AND LTTngUST_FOUND)
     target_compile_definitions(LomiriMetrics PRIVATE
         LTTNG_PLUGIN_BUILD_PATH=\"${CMAKE_CURRENT_BINARY_DIR}/lttng/libumlttng.so\"
         LTTNG_PLUGIN_INSTALL_PATH=\"$$[QT_INSTALL_PLUGINS]/lomiri/metrics/libumlttng.so\"

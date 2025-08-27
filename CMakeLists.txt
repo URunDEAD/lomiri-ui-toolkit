@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(lomiri-sdk VERSION 1.0 LANGUAGES C CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-option(ENABLE_QT6 "Enable building with Qt6" OFF)
+option(ENABLE_QT6 "Enable building with Qt6" ON)
 
 if (ENABLE_QT6)
     set(QT_VERSION_MAJOR 6)
@@ -12,6 +12,12 @@ endif()
 
 find_package(QT NAMES Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Test)
+
+include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/include/LomiriGesturesQt6/5.5.0)
+include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/include/LomiriMetricsQt6/5.5.0)
+include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/include/LomiriSystemInfoQt6/5.5.0)
+include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/include/LomiriToolkitQt6/5.5.0)
 
 # if qt6 also include qt5compat
 set(QT5COMPAT "")

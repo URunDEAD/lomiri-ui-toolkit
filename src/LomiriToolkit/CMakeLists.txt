@@ -24,11 +24,9 @@ add_library(LomiriToolkit SHARED
     ${MOUSE_TOUCH_ADAPTOR_SOURCES}
     actionlist.cpp actionlist_p.h
     adapters/actionsproxy_p.cpp adapters/actionsproxy_p.h
-    adapters/alarmsadapter_p.h
-    adapters/alarmsadapter_organizer.cpp
+    #adapters/alarmsadapter_p.h
+    #adapters/alarmsadapter_organizer.cpp
     adapters/dbuspropertywatcher_p.cpp adapters/dbuspropertywatcher_p.h
-    alarmmanager_p.cpp alarmmanager_p.h
-    alarmmanager_p_p.h
     asyncloader.cpp asyncloader_p.h
     asyncloader_p_p.h
     colorutils.cpp colorutils_p.h
@@ -83,9 +81,6 @@ add_library(LomiriToolkit SHARED
     ucactionitem.cpp ucactionitem_p.h
     ucactionitem_p_p.h
     ucactionmanager.cpp ucactionmanager_p.h
-    ucalarm.cpp ucalarm_p.h
-    ucalarm_p_p.h
-    ucalarmmodel.cpp ucalarmmodel_p.h
     ucapplication.cpp ucapplication_p.h
     ucargument.cpp ucargument_p.h
     ucarguments.cpp ucarguments_p.h
@@ -166,8 +161,6 @@ target_link_libraries(LomiriToolkit PRIVATE
  #   Qt::SystemInfoPrivate
     ${QT5COMPAT}
 
-    ${QTORGANIZER_LIBRARIES}
-
     LomiriSystemInfo
 
     ${DBUS_LIBRARIES}
@@ -199,17 +192,6 @@ set(resources_resource_files
     "shaders/shapeoverlay.vert"
     "shaders/shapeoverlay_mipmap.frag"
 )
-
-
-if(ubuntu-uitk-compat)
-    target_sources(LomiriToolkit PUBLIC
-        deprecationprinter.cpp deprecationprinter_p.h
-    )
-
-    target_compile_definitions(LomiriToolkit PRIVATE
-        LOMIRI_UITK_WANT_UBUNTU_COMPAT
-    )
-endif()
 
 # install
 install(TARGETS LomiriToolkit

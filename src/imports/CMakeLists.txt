@@ -1,6 +1,6 @@
 add_subdirectory(Components)
 add_subdirectory(Layouts)
-#add_subdirectory(Metrics)
+add_subdirectory(Metrics)
 add_subdirectory(PerformanceMetrics)
 add_subdirectory(Test)
-#add_subdirectory(SystemInfo)
+add_subdirectory(SystemInfo)

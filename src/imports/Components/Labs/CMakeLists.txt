@@ -17,6 +17,4 @@ target_link_libraries(LomiriComponentsLabs PRIVATE
 )
 
 # install
-install(TARGETS LomiriComponentsLabs
-    LIBRARY DESTINATION "${QML_PLUGIN_DIR}/Lomiri/Components/Labs"
-)
+install(TARGETS LomiriComponentsLabs LIBRARY DESTINATION "${QML_PLUGIN_DIR}")

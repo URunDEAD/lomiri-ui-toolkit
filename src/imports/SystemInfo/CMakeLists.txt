@@ -1,8 +1,8 @@
 add_library(LomiriSystemInfoPlugin SHARED
-   #lomirideviceinfo.cpp lomirideviceinfo_p.h
-   #lomirinetworkinfo.cpp lomirinetworkinfo_p.h
+    lomirideviceinfo.cpp lomirideviceinfo_p.h
+    lomirinetworkinfo.cpp lomirinetworkinfo_p.h
     lomiriinputdevicemodel.cpp lomiriinputdevicemodel_p.h
-    qsysteminfo.cpp
+    lomirisysteminfo.cpp
 )
 
 target_link_libraries(LomiriSystemInfoPlugin PRIVATE

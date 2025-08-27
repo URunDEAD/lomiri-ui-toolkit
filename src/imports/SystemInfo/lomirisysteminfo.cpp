@@ -40,7 +40,7 @@
 #include <QtQml/qqmlextensionplugin.h>
 #include <QtQml/qqml.h>
 
-#include "lomiribatteryinfo.h"
+#include <LomiriSystemInfoQt6/lomiribatteryinfo.h>
 #include "lomirideviceinfo_p.h"
 #include "lomirinetworkinfo_p.h"
 #if defined(Q_OS_LINUX)
