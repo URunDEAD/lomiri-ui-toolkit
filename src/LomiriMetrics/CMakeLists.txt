@@ -1,3 +1,7 @@
+file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../LomiriMetricsQt6 SYMBOLIC)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/PerformanceMetrics")
 
 add_library(LomiriMetrics SHARED
@@ -32,7 +36,7 @@ if(LINUX AND LTTngUST_FOUND)
     add_subdirectory(lttng)
 endif()
 
-target_include_directories(LomiriMetrics PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)
+target_include_directories(LomiriMetrics PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/..)
 
 # install
 install(TARGETS LomiriMetrics

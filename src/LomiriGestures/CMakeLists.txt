@@ -1,3 +1,5 @@
+file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../LomiriGesturesQt6 SYMBOLIC)
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 add_library(LomiriGestures SHARED
@@ -22,7 +24,7 @@ target_link_libraries(LomiriGestures PRIVATE
     Qt::QuickPrivate
 )
 
-target_include_directories(LomiriGestures PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+target_include_directories(LomiriGestures PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/..)
 
 # install
 install(TARGETS LomiriGestures

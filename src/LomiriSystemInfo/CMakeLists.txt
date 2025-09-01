@@ -1,3 +1,6 @@
+file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../LomiriSystemInfoQt6 SYMBOLIC)
+
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 pkg_check_modules(UDEV REQUIRED libudev)
 pkg_check_modules(EVDEV REQUIRED libevdev)
@@ -27,7 +30,7 @@ add_library(LomiriSystemInfo SHARED
 
 target_include_directories(LomiriSystemInfo
     PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/..
+        ${CMAKE_CURRENT_BINARY_DIR}/..
         #${MIRCLIENT_INCLUDE_DIRS}
         ${EVDEV_INCLUDE_DIRS}
 )
