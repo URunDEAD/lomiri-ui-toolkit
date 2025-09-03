@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-08-01 05:18+0000\n"
+"PO-Revision-Date: 2025-09-09 13:02+0000\n"
 "Last-Translator: ButterflyOfFire <boffire@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Kabyle <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/kab/>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "Ɣef…"
 
 #: ActionBars.qml:68
 msgid "Short list"
@@ -47,8 +47,9 @@ msgstr ""
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
+#, fuzzy
 msgid "Standard"
-msgstr ""
+msgstr "Alugan"
 
 #: Animations.qml:58
 msgid "Standard Durations"
@@ -60,7 +61,7 @@ msgstr ""
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "Arurad"
 
 #: Animations.qml:134
 msgid "Slow"
@@ -72,7 +73,7 @@ msgstr ""
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "Siwel"
 
 #: Buttons.qml:37
 msgid "Stroke"
@@ -80,7 +81,7 @@ msgstr ""
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "Ini"
 
 #: Buttons.qml:53
 #, qt-format
@@ -89,11 +90,11 @@ msgstr ""
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "Tignit"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "Tignit + aḍris"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
@@ -105,7 +106,7 @@ msgstr ""
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "Ačini"
 
 #: Colors.qml:36
 msgid "Light grey"
@@ -117,19 +118,19 @@ msgstr ""
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "Azeggaɣ"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "Adal"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "Azegzaw"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "Arẓaẓ"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
@@ -175,7 +176,7 @@ msgstr ""
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "Azal"
 
 #: ListItems.qml:91
 msgid "Multi value"
@@ -243,7 +244,7 @@ msgstr ""
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "Asenqed"
 
 #: ListItems.qml:202
 msgid "Removable"
