@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2025-02-07 15:53+0000\n"
+"PO-Revision-Date: 2025-09-09 13:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/hr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
@@ -53,7 +53,7 @@ msgstr "Obriši"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:51
 msgid "No service/path specified"
-msgstr "Nema određene usluge/putanje"
+msgstr "Nijedna usluga/staza nije određena"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:69
 #, qt-format
@@ -133,13 +133,13 @@ msgstr "ddd' 'HH:mm"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:322
 msgid "ddd d MMM' 'h:mm ap"
-msgstr "ddd d MMM' 'h:mm ap"
+msgstr "ddd, d. MMM' 'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:325
 msgid "ddd d MMM' 'HH:mm"
-msgstr "ddd d MMM' 'HH:mm"
+msgstr "ddd, d MMM' 'HH:mm"
 
 #: Lomiri/Components/plugin/privates/listitemdragarea.cpp:122
 msgid ""
@@ -175,7 +175,7 @@ msgstr "Radnja alarma je u tijeku."
 
 #: Lomiri/Components/plugin/ucarguments.cpp:188
 msgid "Usage: "
-msgstr "Upotreba: "
+msgstr "Korištenje: "
 
 #: Lomiri/Components/plugin/ucarguments.cpp:209
 msgid "Options:"
