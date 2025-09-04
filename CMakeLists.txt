@@ -13,6 +13,10 @@ endif()
 find_package(QT NAMES Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Test)
 
+if (ENABLE_QT6)
+    find_package(Qt6 REQUIRED COMPONENTS ShaderTools)
+endif()
+
 # if qt6 also include qt5compat
 set(QT5COMPAT "")
 if (QT_VERSION_MAJOR EQUAL 6)

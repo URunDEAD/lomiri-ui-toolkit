@@ -182,16 +182,21 @@ target_compile_definitions(LomiriToolkit PRIVATE
 
 lomiri_target_prepare_includes(LomiriToolkit LomiriToolkit-Qt6)
 
-# Resources:
-set(resources_resource_files
-    "privates/shaders/frame.frag"
-    "privates/shaders/frame.vert"
-    "shaders/shape.frag"
-    "shaders/shape.vert"
-    "shaders/shape_mipmap.frag"
-    "shaders/shapeoverlay.frag"
-    "shaders/shapeoverlay.vert"
-    "shaders/shapeoverlay_mipmap.frag"
+qt6_add_shaders(LomiriToolkit "LomiriToolkit_shaders"
+    BATCHABLE
+    PRECOMPILE
+    OPTIMIZED
+    PREFIX
+        "/uc"
+    FILES
+        "privates/shaders/frame.vert"
+        "privates/shaders/frame.frag"
+        "shaders/shape.vert"
+        "shaders/shape.frag"
+        "shaders/shape_mipmap.frag"
+        "shaders/shapeoverlay.vert"
+        "shaders/shapeoverlay.frag"
+        "shaders/shapeoverlay_mipmap.frag"
 )
 
 # install

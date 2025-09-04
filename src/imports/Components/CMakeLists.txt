@@ -12,6 +12,16 @@ target_link_libraries(LomiriComponents PRIVATE
     Qt::Quick
 )
 
+qt6_add_shaders(LomiriComponents "LomiriComponents_shaders"
+    PRECOMPILE
+    OPTIMIZED
+    FILES
+        "1.0/shaders/colorizeimage.frag"
+        "1.2/shaders/colourshader.frag"
+        "Themes/Ambiance/shaders/magnifier.frag"
+        "Themes/Ambiance/shaders/partialcolorize.frag"
+)
+
 set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Components")
 
 # Install the QML files
