@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-09-09 13:02+0000\n"
+"PO-Revision-Date: 2025-09-17 20:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/hr/>\n"
@@ -292,7 +292,7 @@ msgstr "Naknadne radnje"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "Razvojni programeri prilagođene radnje"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -434,7 +434,7 @@ msgstr "Raspon"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr "Oznake"
+msgstr "Etikete"
 
 #: Sliders.qml:85
 msgid "Small"
