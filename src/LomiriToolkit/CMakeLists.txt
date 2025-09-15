@@ -27,6 +27,7 @@ add_library(LomiriToolkit SHARED
     #adapters/alarmsadapter_p.h
     #adapters/alarmsadapter_organizer.cpp
     adapters/dbuspropertywatcher_p.cpp adapters/dbuspropertywatcher_p.h
+    #alarmmanager_p.cpp alarmmanager_p.h alarmmanager_p_p.h
     asyncloader.cpp asyncloader_p.h
     asyncloader_p_p.h
     colorutils.cpp colorutils_p.h
@@ -81,6 +82,8 @@ add_library(LomiriToolkit SHARED
     ucactionitem.cpp ucactionitem_p.h
     ucactionitem_p_p.h
     ucactionmanager.cpp ucactionmanager_p.h
+    #ucalarm.cpp ucalarm_p.h ucalarm_p_p.h
+    #ucalarmmodel.cpp ucalarmmodel_p.h
     ucapplication.cpp ucapplication_p.h
     ucargument.cpp ucargument_p.h
     ucarguments.cpp ucarguments_p.h
@@ -140,15 +143,24 @@ add_library(LomiriToolkit SHARED
     ucviewitemsattached.cpp
     unixsignalhandler_p.cpp unixsignalhandler_p.h
 )
+add_library(LomiriToolkit::LomiriToolkit ALIAS LomiriToolkit)
 
 # -fpermissive
 target_compile_options(LomiriToolkit PRIVATE
     -fpermissive
 )
 
-target_link_libraries(LomiriToolkit PRIVATE
+set_target_properties(LomiriToolkit PROPERTIES
+    VERSION     ${LOMIRI_UI_TOOLKIT_VERSION}
+    SOVERSION   ${LOMIRI_UI_TOOLKIT_SOVERSION}
+    OUTPUT_NAME "LomiriToolkit-Qt6"
+    EXPORT_NAME "LomiriToolkit-Qt6"
+)
+
+target_link_libraries(LomiriToolkit PUBLIC
     LomiriGestures
     LomiriMetrics
+    LomiriSystemInfo
     Qt::CorePrivate
     Qt::DBus
     Qt::GuiPrivate
@@ -157,15 +169,22 @@ target_link_libraries(LomiriToolkit PRIVATE
     Qt::Svg
     Qt::Test
  #   Qt::Organizer
- #   Qt::SystemInfo
- #   Qt::SystemInfoPrivate
     ${QT5COMPAT}
-
-    LomiriSystemInfo
 
     ${DBUS_LIBRARIES}
     ${GLIB_LIBRARIES}
     ${MOUSE_TOUCH_ADAPTOR_LIBS}
+)
+
+ecm_generate_export_header(LomiriToolkit
+    VERSION ${LOMIRI_UI_TOOLKIT_VERSION}
+    BASE_NAME LomiriToolkit
+)
+
+ecm_generate_headers(LomiriToolkit_FORWARDING_HEADERS
+    HEADER_NAMES
+        LomiriToolkitModule
+    COMMON_HEADER LomiriToolkit
 )
 
 target_include_directories(LomiriToolkit
@@ -180,7 +199,7 @@ target_compile_definitions(LomiriToolkit PRIVATE
     ${MOUSE_TOUCH_ADAPTOR_DEFINES}
 )
 
-lomiri_target_prepare_includes(LomiriToolkit LomiriToolkit-Qt6)
+lomiri_target_prepare_headers(LomiriToolkit SUBDIRECTORY LomiriToolkit-Qt6)
 
 qt6_add_shaders(LomiriToolkit "LomiriToolkit_shaders"
     BATCHABLE
@@ -201,5 +220,50 @@ qt6_add_shaders(LomiriToolkit "LomiriToolkit_shaders"
 
 # install
 install(TARGETS LomiriToolkit
+    EXPORT LomiriToolkitTargets
     LIBRARY DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}
+)
+
+set(CMAKECONFIG_INSTALL_DIR "${LOMIRI_INSTALL_CMAKEPACKAGEDIR}/LomiriToolkit-Qt6")
+set(LomiriToolkit_VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/lomiritoolkitversion.h")
+
+ecm_setup_version(
+    PROJECT
+    VARIABLE_PREFIX LomiriToolkit
+    VERSION_HEADER "${LomiriToolkit_VERSION_HEADER}"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6ConfigVersion.cmake"
+    SOVERSION ${LOMIRI_UI_TOOLKIT_SOVERSION}
+)
+
+lomiri_target_install_headers(LomiriToolkit
+    EXTRA_FILES
+        ${LomiriToolkit_FORWARDING_HEADERS}
+        "${LomiriToolkit_VERSION_HEADER}"
+    DESTINATION "${LOMIRI_INSTALL_INCLUDEDIR}/LomiriToolkit-Qt6"
+)
+
+ecm_generate_pkgconfig_file(BASE_NAME LomiriToolkit-Qt6
+    INCLUDE_INSTALL_DIR ${LOMIRI_INSTALL_INCLUDEDIR}/LomiriToolkit-Qt6
+    DEPS "Qt6CorePrivate Qt6DBus Qt6GuiPrivate Qt6QmlPrivate Qt6QuickPrivate Qt6Svg Qt6Test Qt6Core5Compat LomiriSystemInfo glib-2.0 dbus-1 x11 xcb xi"
+    INSTALL
+)
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/LomiriToolkit-Qt6Config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6Config.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    PATH_VARS CMAKE_INSTALL_PREFIX
+)
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6Config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6ConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+)
+
+install(EXPORT LomiriToolkitTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE LomiriToolkit-Qt6Targets.cmake
+    NAMESPACE LomiriToolkit::
 )

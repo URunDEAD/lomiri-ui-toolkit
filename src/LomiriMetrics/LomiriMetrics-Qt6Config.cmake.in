@@ -1,0 +1,12 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(Qt6CorePrivate Qt6GuiPrivate Qt6QuickPrivate @REQUIRED_QT_VERSION@) # FIXME dl egl
+
+# Any changes in this ".cmake" file will be overwritten by CMake, the source is the ".cmake.in" file.
+
+include("${CMAKE_CURRENT_LIST_DIR}/LomiriSystemInfoQt6Targets.cmake")
+
+set(SystemInfo_INSTALL_PREFIX "@PACKAGE_CMAKE_INSTALL_PREFIX@")
+
+@PACKAGE_INCLUDE_QCHTARGETS@

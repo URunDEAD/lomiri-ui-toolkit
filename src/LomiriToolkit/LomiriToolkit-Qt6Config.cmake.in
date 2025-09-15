@@ -1,0 +1,12 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(LomiriGestures-Qt6 LomiriMetrics-Qt6 LomiriSystemInfoQt6 Qt6CorePrivate Qt6DBus Qt6GuiPrivate Qt6QmlPrivate Qt6QuickPrivate Qt6Svg Qt6Test @REQUIRED_QT_VERSION@) # FIXME
+
+# Any changes in this ".cmake" file will be overwritten by CMake, the source is the ".cmake.in" file.
+
+include("${CMAKE_CURRENT_LIST_DIR}/LomiriToolkit-Qt6Targets.cmake")
+
+set(SystemInfo_INSTALL_PREFIX "@PACKAGE_CMAKE_INSTALL_PREFIX@")
+
+@PACKAGE_INCLUDE_QCHTARGETS@
