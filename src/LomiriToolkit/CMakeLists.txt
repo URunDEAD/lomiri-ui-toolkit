@@ -1,24 +1,22 @@
 set(QML_PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml/Lomiri/Components")
 
-if(NOT (TEST_architecture_arch STREQUAL "arm") AND FALSE)
-    pkg_check_modules(X11 REQUIRED x11)
-    pkg_check_modules(XCB REQUIRED xcb)
-    pkg_check_modules(Xi REQUIRED xi)
+pkg_check_modules(X11 REQUIRED x11)
+pkg_check_modules(XCB REQUIRED xcb)
+pkg_check_modules(XI REQUIRED xi)
 
-    set(MOUSE_TOUCH_ADAPTOR_SOURCES
-        mousetouchadaptor_x11.cpp
-    )
+set(MOUSE_TOUCH_ADAPTOR_SOURCES
+    mousetouchadaptor_x11.cpp
+)
 
-    set(MOUSE_TOUCH_ADAPTOR_DEFINES
-        LOMIRITOOLKIT_ENABLE_X11_TOUCH_EMULATION
-    )
+set(MOUSE_TOUCH_ADAPTOR_DEFINES
+    LOMIRITOOLKIT_ENABLE_X11_TOUCH_EMULATION
+)
 
-    set(MOUSE_TOUCH_ADAPTOR_LIBS
-        ${X11_LIBRARIES}
-        ${XCB_LIBRARIES}
-        ${Xi_LIBRARIES}
-    )
-endif()
+set(MOUSE_TOUCH_ADAPTOR_LIBS
+    ${X11_LIBRARIES}
+    ${XCB_LIBRARIES}
+    ${XI_LIBRARIES}
+)
 
 add_library(LomiriToolkit SHARED
     ${MOUSE_TOUCH_ADAPTOR_SOURCES}
@@ -188,8 +186,6 @@ ecm_generate_headers(LomiriToolkit_FORWARDING_HEADERS
 )
 
 target_include_directories(LomiriToolkit
-    PUBLIC
-        ${CMAKE_CURRENT_BINARY_DIR}/..
     PRIVATE
         # glib
         ${GLIB_INCLUDE_DIRS}
