@@ -167,7 +167,7 @@ target_link_libraries(LomiriToolkit PUBLIC
     Qt::Svg
     Qt::Test
  #   Qt::Organizer
-    ${QT5COMPAT}
+    Qt6::Core5Compat
 
     ${DBUS_LIBRARIES}
     ${GLIB_LIBRARIES}

@@ -4,29 +4,13 @@ set(LOMIRI_UI_TOOLKIT_SOVERSION "5")
 project(lomiri-ui-toolkit VERSION ${LOMIRI_UI_TOOLKIT_VERSION} LANGUAGES C CXX)
 cmake_policy(SET CMP0048 NEW) # for ecm_setup_version
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-option(ENABLE_QT6 "Enable building with Qt6" ON)
-
-if (ENABLE_QT6)
-    set(QT_VERSION_MAJOR 6)
-else()
-    set(QT_VERSION_MAJOR 5)
-endif()
+set(QT_VERSION_MAJOR 6)
 
 find_package(QT NAMES Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Test)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Test Core5Compat)
 
-if (ENABLE_QT6)
-    find_package(Qt6 REQUIRED COMPONENTS ShaderTools)
-endif()
+find_package(Qt6 REQUIRED COMPONENTS ShaderTools)
 
-# if qt6 also include qt5compat
-set(QT5COMPAT "")
-if (QT_VERSION_MAJOR EQUAL 6)
-message("Building with Qt6")
-    find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core5Compat)
-    set(QT5COMPAT Qt${QT_VERSION_MAJOR}::Core5Compat)
-endif()
 
 find_package(LTTngUST)
 
@@ -62,10 +46,10 @@ set(LOMIRI_INSTALL_CMAKEPACKAGEDIR "${CMAKE_INSTALL_LIBDIR}/cmake")
 # build LomiriToolkit without namespace
 add_definitions(-DLOMIRITOOLKIT_NO_NAMESPACE)
 
-enable_testing()
-
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(LomiriHeaders)
+
+enable_testing()
 
 add_subdirectory(apicheck)
 add_subdirectory(app-launch-profiler)
