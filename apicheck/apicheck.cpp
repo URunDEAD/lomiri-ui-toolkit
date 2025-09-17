@@ -307,25 +307,21 @@ QSet<const QMetaObject *> collectReachableMetaObjects(QQmlEngine *engine,
         QObject *object = 0;
 
         if (ty.isSingleton()) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QQmlType::SingletonInstanceInfo::ConstPtr siinfo = ty.singletonInstanceInfo();
+            if (siinfo.isNull()) {
+#else
             QQmlType::SingletonInstanceInfo *siinfo = ty.singletonInstanceInfo();
             if (!siinfo) {
+#endif
                 std::cerr << "Internal error, " << qPrintable(tyName)
                           << "(" << qPrintable( QString::fromUtf8(ty.typeName()) ) << ")"
                           << " is singleton, but has no singletonInstanceInfo" << std::endl;
                 continue;
             }
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
             if (ty.isQObjectSingleton()) {
-#else
-            if (siinfo->qobjectCallback) {
-                siinfo->init(engine);
-#endif
                 collectReachableMetaObjects(object, &metas);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
                 object = QQmlEnginePrivate::get(engine)->singletonInstance<QObject*>(ty);
-#else
-                object = siinfo->qobjectApi(engine);
-#endif
             } else {
                 inObjectInstantiation.clear();
                 continue; // we don't handle QJSValue singleton types.
