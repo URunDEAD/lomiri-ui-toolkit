@@ -1,4 +1,4 @@
-add_library(LomiriMetricsPlugin SHARED
+add_library(LomiriMetricsPlugin MODULE
     plugin.cpp
 )
 

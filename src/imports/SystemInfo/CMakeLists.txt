@@ -1,4 +1,4 @@
-add_library(LomiriSystemInfoPlugin SHARED
+add_library(LomiriSystemInfoPlugin MODULE
     lomirideviceinfo.cpp lomirideviceinfo_p.h
     lomirinetworkinfo.cpp lomirinetworkinfo_p.h
     lomiriinputdevicemodel.cpp lomiriinputdevicemodel_p.h

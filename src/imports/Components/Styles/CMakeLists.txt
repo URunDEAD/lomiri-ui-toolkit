@@ -1,4 +1,4 @@
-add_library(LomiriComponentsStyles SHARED
+add_library(LomiriComponentsStyles MODULE
     plugin/plugin.cpp
 )
 

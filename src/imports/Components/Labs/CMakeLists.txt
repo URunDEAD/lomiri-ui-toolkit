@@ -1,6 +1,6 @@
 set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Components/Labs")
 
-add_library(LomiriComponentsLabs SHARED
+add_library(LomiriComponentsLabs MODULE
     plugin/plugin.cpp
 )
 

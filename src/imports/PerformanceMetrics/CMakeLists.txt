@@ -1,4 +1,4 @@
-add_library(LomiriPerformanceMetrics SHARED
+add_library(LomiriPerformanceMetrics MODULE
     plugin/rendertimer.cpp plugin/rendertimer.h
     plugin/upmcpuusage.cpp plugin/upmcpuusage.h
     plugin/upmgraphmodel.cpp plugin/upmgraphmodel.h

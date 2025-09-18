@@ -1,4 +1,4 @@
-add_library(LomiriTest SHARED
+add_library(LomiriTest MODULE
     plugin/testplugin.cpp plugin/testplugin.h
     plugin/uctestcase.cpp plugin/uctestcase.h
     plugin/uctestextras.cpp plugin/uctestextras.h

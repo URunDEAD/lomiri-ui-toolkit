@@ -1,4 +1,4 @@
-add_library(LomiriLayouts SHARED
+add_library(LomiriLayouts MODULE
     plugin/propertychanges.cpp plugin/propertychanges_p.h
     plugin/ulconditionallayout.cpp plugin/ulconditionallayout.h plugin/ulconditionallayout_p.h
     plugin/ulitemlayout.cpp plugin/ulitemlayout.h
