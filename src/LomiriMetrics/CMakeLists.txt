@@ -37,10 +37,10 @@ ecm_generate_export_header(LomiriMetrics
     BASE_NAME LomiriMetrics
 )
 
-if(LINUX AND LTTngUST_FOUND)
+if(LTTngUST_FOUND)
     target_compile_definitions(LomiriMetrics PRIVATE
         LTTNG_PLUGIN_BUILD_PATH=\"${CMAKE_CURRENT_BINARY_DIR}/lttng/libumlttng.so\"
-        LTTNG_PLUGIN_INSTALL_PATH=\"$$[QT_INSTALL_PLUGINS]/lomiri/metrics/libumlttng.so\"
+        LTTNG_PLUGIN_INSTALL_PATH=\"${QT_INSTALL_PLUGINS}/lomiri/metrics/libumlttng.so\"
     )
 
     add_subdirectory(lttng)
