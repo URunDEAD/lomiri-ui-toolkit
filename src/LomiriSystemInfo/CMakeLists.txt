@@ -1,27 +1,41 @@
 pkg_check_modules(UDEV REQUIRED libudev)
 pkg_check_modules(EVDEV REQUIRED libevdev)
+pkg_check_modules(BLUEZ REQUIRED bluez)
 #pkg_check_modules(MIRCLIENT REQUIRED mir1client)
 
 add_library(LomiriSystemInfo SHARED
-    lomiriinputinfomanager.cpp
-    lomiriinputinfomanager_p.h
-    lomiriinputinfo.cpp
-    lomiriinputinfo.h
-
-    lomiriscreensaver.cpp
-    lomiriscreensaver.h
-
-    #linux/lomiriinputinfomanagermir.cpp
-    #linux/lomiriinputinfomanagermir_p.h
-
+    linux/lomiribatteryinfo_upower.cpp
+    linux/lomiribatteryinfo_upower_p.h
+    linux/lomirideviceinfo_linux.cpp
+    linux/lomirideviceinfo_linux_p.h
+    linux/lomiridevicekitservice_linux.cpp
+    linux/lomiridevicekitservice_linux_p.h
     linux/lomiriinputinfomanagerudev.cpp
     linux/lomiriinputinfomanagerudev_p.h
-
+    #linux/lomiriinputinfomanagermir.cpp
+    #linux/lomiriinputinfomanagermir_p.h
+    linux/lomirinetworkinfo_linux.cpp
+    linux/lomirinetworkinfo_linux_p.h
+    linux/lomiriofonowrapper.cpp
+    linux/lomiriofonowrapper_p.h
     linux/lomiriscreensaver_mir.cpp
     linux/lomiriscreensaver_mir_p.h
-
-    #linux/qscreensaver_x11.cpp
-    #linux/qscreensaver_x11_p.h
+    linux/lomiriudevwrapper.cpp
+    linux/lomiriudevwrapper_p.h
+    lomiribatteryinfo.cpp
+    lomiribatteryinfo.h
+    lomirideviceinfo.cpp
+    lomirideviceinfo.h
+    lomiriinputinfo.cpp
+    lomiriinputinfo.h
+    lomiriinputinfomanager.cpp
+    lomiriinputinfomanager_p.h
+    lomirinetworkinfo.cpp
+    lomirinetworkinfo.h
+    lomiriscreensaver.cpp
+    lomiriscreensaver.h
+    lomirisysteminfoglobal.h
+    lomirisysteminfoglobal_p.h
 )
 add_library(LomiriSystemInfo::LomiriSystemInfo ALIAS LomiriSystemInfo)
 
@@ -48,6 +62,7 @@ target_link_libraries(LomiriSystemInfo
 
     ${UDEV_LIBRARIES}
     ${EVDEV_LIBRARIES}
+    ${BLUEZ_LIBRARIES}
     #${MIRCLIENT_LIBRARIES}
 )
 
