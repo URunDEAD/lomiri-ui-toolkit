@@ -15,9 +15,12 @@ set(QML_FILES_1_3
     "1.3/TabBarStyle.qml"
 )
 
+set(ARTWORK_FILES
+    "artwork/chevron@27.png"
+)
+
 set(OTHER_FILES
     "parent_theme"
-    "artwork/chevron@27.png"
     "qmldir"
 )
 
@@ -32,4 +35,8 @@ install(FILES ${QML_FILES_1_3}
 
 install(FILES ${OTHER_FILES}
     DESTINATION ${QML_PLUGIN_DIR}
+)
+
+install(FILES ${ARTWORK_FILES}
+    DESTINATION ${QML_PLUGIN_DIR}/artwork
 )
