@@ -546,10 +546,10 @@ Package: qml6-module-lomiri-components
 Architecture: any
 Multi-Arch: same
 Depends: ${fonts-ubuntu},
-         liblomirigesturesqt6-5 (= ${binary:Version}),
-         liblomirimetricsqt6-5 (= ${binary:Version}),
-         liblomiritoolkitqt6-5 (= ${binary:Version}),
-         liblomirisysteminfoqt6-5 (= ${binary:Version}),
+         liblomirigestures-qt6-5 (= ${binary:Version}),
+         liblomirimetrics-qt6-5 (= ${binary:Version}),
+         liblomiritoolkit-qt6-5 (= ${binary:Version}),
+         liblomirisysteminfo-qt6-5 (= ${binary:Version}),
          libqt6svg6,
          lomiri-ui-toolkit-theme-qt6 (= ${binary:Version}),
          qml6-module-lomiri-components-labs,
@@ -572,10 +572,10 @@ Package: qml6-module-lomiri-components-labs
 Architecture: any
 Multi-Arch: same
 Depends: ${fonts-ubuntu},
-         liblomirigesturesqt6-5 (= ${binary:Version}),
-         liblomirimetricsqt6-5 (= ${binary:Version}),
-         liblomiritoolkitqt6-5 (= ${binary:Version}),
-         liblomirisysteminfoqt6-5 (= ${binary:Version}),
+         liblomirigestures-qt6-5 (= ${binary:Version}),
+         liblomirimetrics-qt6-5 (= ${binary:Version}),
+         liblomiritoolkit-qt6-5 (= ${binary:Version}),
+         liblomirisysteminfo-qt6-5 (= ${binary:Version}),
          libqt6svg6,
          lomiri-ui-toolkit-theme-qt6 (= ${binary:Version}),
          qml6-module-lomiri-performancemetrics,
@@ -650,7 +650,7 @@ Description: Qt Components for Lomiri - SystemInfo QML plugin
  .
  This package contains the Lomiri SystemInfo QML plugin.
 
-Package: liblomirigesturesqt6-5
+Package: liblomirigestures-qt6-5
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -659,29 +659,29 @@ Description: Lomiri gestures library for Lomiri UI Toolkit
  Library supporting Gesture recognition for Lomiri UI Toolkit
  Classes for SwipeArea, and for Lomiri Gestures in general.
 
-Package: liblomirigesturesqt6-dev
+Package: liblomirigestures-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirigesturesqt6-5 (= ${binary:Version}),
+Depends: liblomirigestures-qt6-5 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri gestures library development files
  This package contains the development files for
  Lomiri gestures library with SwipeArea
 
-Package: liblomirigesturesqt6-private-dev
+Package: liblomirigestures-qt6-private-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirigesturesqt6-dev (= ${binary:Version}),
+Depends: liblomirigestures-qt6-dev (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri gestures library private development files
  This package contains the private development files for
  Lomiri gestures library with SwipeArea
 
-Package: liblomirimetricsqt6-5
+Package: liblomirimetrics-qt6-5
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -689,29 +689,29 @@ Depends: ${misc:Depends},
 Description: Lomiri metrics library for Lomiri UI Toolkit
  Library for monitoring QtQuick 2 applications
 
-Package: liblomirimetricsqt6-dev
+Package: liblomirimetrics-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirimetricsqt6-5 (= ${binary:Version}),
+Depends: liblomirimetrics-qt6-5 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri metrics library development files
  This package contains the development files for the
  Lomiri metrics library
 
-Package: liblomirimetricsqt6-private-dev
+Package: liblomirimetrics-qt6-private-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirimetricsqt6-dev (= ${binary:Version}),
+Depends: liblomirimetrics-qt6-dev (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri metrics library private development files
  This package contains the private development files for
  the Lomiri metrics library
 
-Package: liblomiritoolkitqt6-5
+Package: liblomiritoolkit-qt6-5
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -720,22 +720,22 @@ Description: Lomiri toolkit common library for Lomiri UI Toolkit
  Contains components and helper classes that are shared between the
  Lomiri QML plugins
 
-Package: liblomiritoolkitqt6-dev
+Package: liblomiritoolkit-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomiritoolkitqt6-5 (= ${binary:Version}),
+Depends: liblomiritoolkit-qt6-5 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri toolkit common library development files
  This package contains the development files for
  Lomiri toolkit common library
 
-Package: liblomiritoolkitqt6-private-dev
+Package: liblomiritoolkit-qt6-private-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomiritoolkitqt6-dev (= ${binary:Version}),
+Depends: liblomiritoolkit-qt6-dev (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri toolkit common library private development files
@@ -754,7 +754,7 @@ Description: Qt 6 Components for Lomiri - Lomiri Theme
  .
  This package contains the Ambiance theme for Qt Lomiri Components.
 
-Package: liblomirisysteminfoqt6-5
+Package: liblomirisysteminfo-qt6-5
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -762,22 +762,22 @@ Depends: ${misc:Depends},
 Description: Lomiri system info library for Lomiri UI Toolkit
  Library providing access to system-related information and capabilities.
 
-Package: liblomirisysteminfoqt6-dev
+Package: liblomirisysteminfo-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirisysteminfoqt6-5 (= ${binary:Version}),
+Depends: liblomirisysteminfo-qt6-5 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri system info library development files
  This package contains the development files for the
  Lomiri system info library.
 
-Package: liblomirisysteminfoqt6-private-dev
+Package: liblomirisysteminfo-qt6-private-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirisysteminfoqt6-dev (= ${binary:Version}),
+Depends: liblomirisysteminfo-qt6-dev (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri system info library private development files

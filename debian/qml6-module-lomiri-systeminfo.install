@@ -1,3 +1,3 @@
 usr/lib/*/qt6/qml/Lomiri/SystemInfo/libLomiriSystemInfo.so
-usr/lib/*/qt6/qml/Lomiri/SystemInfo/plugins.qmltypes
+#usr/lib/*/qt6/qml/Lomiri/SystemInfo/plugins.qmltypes
 usr/lib/*/qt6/qml/Lomiri/SystemInfo/qmldir
