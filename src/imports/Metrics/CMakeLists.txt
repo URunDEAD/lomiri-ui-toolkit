@@ -9,6 +9,10 @@ target_link_libraries(LomiriMetricsPlugin PRIVATE
     Qt::Qml
 )
 
+set_target_properties(LomiriMetricsPlugin PROPERTIES
+    OUTPUT_NAME "LomiriMetrics"
+)
+
 # Install the plugin
 install(TARGETS LomiriMetricsPlugin
     DESTINATION "${QML_PLUGIN_BASE_DIR}/Metrics"

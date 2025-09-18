@@ -12,6 +12,10 @@ target_link_libraries(LomiriSystemInfoPlugin PRIVATE
     LomiriSystemInfo
 )
 
+set_target_properties(LomiriSystemInfoPlugin PROPERTIES
+    OUTPUT_NAME "LomiriSystemInfo"
+)
+
 set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/SystemInfo")
 
 # Install the QML files
