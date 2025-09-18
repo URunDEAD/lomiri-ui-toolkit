@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-08-27 20:31+0000\n"
+"PO-Revision-Date: 2025-09-25 15:02+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/et/>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "Rakenduse teave..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "Lühiloend"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "Pikk loend"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
@@ -85,35 +85,35 @@ msgstr "Värv"
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "Helista: %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "Ikoon"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "Ikoon+tekst"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "Ahendatud"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "Laiendatud"
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "Oranž"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "Helehall"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "Tumehall"
 
 #: Colors.qml:48
 msgid "Red"
@@ -129,7 +129,7 @@ msgstr "Sinine"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "Purpurpunane"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
@@ -137,7 +137,7 @@ msgstr "Ava"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "Skaleerimine"
 
 #: Icons.qml:79
 msgid "Theme"
@@ -185,29 +185,29 @@ msgstr ""
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "Väärtus 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "Väärtus 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "Väärtus 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "Väärtus 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "Objektivalija"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
@@ -431,19 +431,19 @@ msgstr "Vahemik"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "Sildid"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Väike"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Keskmine"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Suur"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
