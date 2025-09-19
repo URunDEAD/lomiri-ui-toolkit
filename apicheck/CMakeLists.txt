@@ -20,5 +20,5 @@ target_link_libraries(apicheck PRIVATE
 
 install(
   TARGETS apicheck
-  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_LIBEXECDIR}/lomiri-ui-toolkit
 )

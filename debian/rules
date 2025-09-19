@@ -107,7 +107,7 @@ endif
 	rm -rf debian/tmp/usr/lib/*/qt6/examples
 
 	# remove Qt 6 apicheck for now
-	rm -f debian/tmp/usr/lib/*/lomiri-ui-toolkit/apicheck-qt6
+	rm -f debian/tmp/usr/libexec/lomiri-ui-toolkit/apicheck-qt6
 
 	dh_install
 
