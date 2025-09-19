@@ -4,6 +4,11 @@ add_library(LomiriTest MODULE
     plugin/uctestextras.cpp plugin/uctestextras.h
 )
 
+set(QML_FILES
+    LomiriTestCase.qml
+    LomiriTestCase13.qml
+)
+
 target_compile_definitions(LomiriTest PRIVATE
     LOMIRI_QML_IMPORT_PATH="/qml"
 )
@@ -19,4 +24,12 @@ target_link_libraries(LomiriTest PRIVATE
     Qt::QmlPrivate
     Qt::QuickPrivate
     Qt::Test
+)
+
+install(TARGETS LomiriTest
+    DESTINATION "${QML_PLUGIN_BASE_DIR}/Test"
+)
+
+install(FILES ${QML_FILES} qmldir
+    DESTINATION "${QML_PLUGIN_BASE_DIR}/Test"
 )
