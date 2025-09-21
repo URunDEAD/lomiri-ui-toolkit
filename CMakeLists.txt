@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
-set(LOMIRI_UI_TOOLKIT_VERSION "5.5.0")
-set(LOMIRI_UI_TOOLKIT_SOVERSION "5")
-project(lomiri-ui-toolkit VERSION ${LOMIRI_UI_TOOLKIT_VERSION} LANGUAGES C CXX)
+project(lomiri-ui-toolkit VERSION 1.3.6000 LANGUAGES C CXX)
 cmake_policy(SET CMP0048 NEW) # for ecm_setup_version
 
+set(LOMIRI_UI_TOOLKIT_VERSION "5.5.0")
+set(LOMIRI_UI_TOOLKIT_SOVERSION "5")
 set(QT_VERSION_MAJOR 6)
 
 find_package(QT NAMES Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
