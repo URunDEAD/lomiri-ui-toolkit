@@ -131,5 +131,8 @@ override_dh_auto_clean:
 		.cache/ \
 		.config/ \
 		.local/ \
+		.pybuild \
+		po/*.mo \
+		examples/lomiri-ui-toolkit-gallery/po/*.mo \
 		xvfb.err \
 		;
