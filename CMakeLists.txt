@@ -13,8 +13,6 @@ endif()
 find_package(QT NAMES Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Test)
 
-include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/src/)
-
 # if qt6 also include qt5compat
 set(QT5COMPAT "")
 if (QT_VERSION_MAJOR EQUAL 6)
@@ -47,6 +45,9 @@ set(QML_PLUGIN_BASE_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml/Lomir
 add_definitions(-DLOMIRITOOLKIT_NO_NAMESPACE)
 
 enable_testing()
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+include(LomiriTargetPrepareIncludes)
 
 #add_subdirectory(apicheck)
 #add_subdirectory(app-launch-profiler)

@@ -1,7 +1,3 @@
-file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../LomiriToolkitQt6 SYMBOLIC)
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 set(QML_PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml/Lomiri/Components")
 
 if(NOT (TEST_architecture_arch STREQUAL "arm") AND FALSE)
@@ -184,6 +180,7 @@ target_compile_definitions(LomiriToolkit PRIVATE
     ${MOUSE_TOUCH_ADAPTOR_DEFINES}
 )
 
+lomiri_target_prepare_includes(LomiriToolkit LomiriToolkit-Qt6)
 
 # Resources:
 set(resources_resource_files

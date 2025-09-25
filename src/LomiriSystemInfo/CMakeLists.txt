@@ -1,7 +1,3 @@
-file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../LomiriSystemInfoQt6 SYMBOLIC)
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 pkg_check_modules(UDEV REQUIRED libudev)
 pkg_check_modules(EVDEV REQUIRED libevdev)
 #pkg_check_modules(MIRCLIENT REQUIRED mir1client)
@@ -54,6 +50,8 @@ target_compile_definitions(LomiriSystemInfo
         QT_UNITY8
         QT_NO_MIR
 )
+
+lomiri_target_prepare_includes(LomiriSystemInfo LomiriSystemInfo-Qt6)
 
 # install
 install(TARGETS LomiriSystemInfo

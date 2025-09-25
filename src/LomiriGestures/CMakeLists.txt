@@ -1,7 +1,3 @@
-file(CREATE_LINK ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/../LomiriGesturesQt6 SYMBOLIC)
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
 add_library(LomiriGestures SHARED
     candidateinactivitytimer.cpp candidateinactivitytimer_p.h
     damper.cpp damper_p.h
@@ -24,7 +20,7 @@ target_link_libraries(LomiriGestures PRIVATE
     Qt::QuickPrivate
 )
 
-target_include_directories(LomiriGestures PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/..)
+lomiri_target_prepare_includes(LomiriGestures LomiriGestures-Qt6)
 
 # install
 install(TARGETS LomiriGestures
