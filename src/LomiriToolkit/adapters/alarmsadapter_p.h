@@ -25,9 +25,9 @@
 #include <QtOrganizer/QOrganizerTodo>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
-#include <LomiriToolkitQt6/private/ucalarm_p_p.h>
-#include <LomiriToolkitQt6/private/alarmmanager_p_p.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#include <LomiriToolkit-Qt6/private/ucalarm_p_p.h>
+#include <LomiriToolkit-Qt6/private/alarmmanager_p_p.h>
 #else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 #include <LomiriToolkit/private/ucalarm_p_p.h>

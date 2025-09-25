@@ -24,12 +24,12 @@
 #include <QtCore/QSortFilterProxyModel>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/sortbehavior_p.h>
+#include <LomiriToolkit-Qt6/private/sortbehavior_p.h>
 #else
 #include <LomiriToolkit/private/sortbehavior_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/filterbehavior_p.h>
+#include <LomiriToolkit-Qt6/private/filterbehavior_p.h>
 #else
 #include <LomiriToolkit/private/filterbehavior_p.h>
 #endif

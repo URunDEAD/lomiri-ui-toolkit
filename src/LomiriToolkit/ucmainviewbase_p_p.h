@@ -20,7 +20,7 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucmainviewbase_p.h>
+#include <LomiriToolkit-Qt6/private/ucmainviewbase_p.h>
 #else
 #include <LomiriToolkit/private/ucmainviewbase_p.h>
 #endif
@@ -28,7 +28,7 @@
 #include <QtQml/QQmlProperty>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucpagetreenode_p_p.h>
+#include <LomiriToolkit-Qt6/private/ucpagetreenode_p_p.h>
 #else
 #include <LomiriToolkit/private/ucpagetreenode_p_p.h>
 #endif

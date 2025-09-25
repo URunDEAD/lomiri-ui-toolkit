@@ -22,7 +22,7 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucbottomedgeregion_p.h>
+#include <LomiriToolkit-Qt6/private/ucbottomedgeregion_p.h>
 #else
 #include <LomiriToolkit/private/ucbottomedgeregion_p.h>
 #endif
@@ -30,7 +30,7 @@
 #include <QtCore/private/qobject_p.h>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/asyncloader_p_p.h>
+#include <LomiriToolkit-Qt6/private/asyncloader_p_p.h>
 #else
 #include <LomiriToolkit/private/asyncloader_p_p.h>
 #endif

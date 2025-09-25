@@ -33,29 +33,29 @@
 #include <QtTest/QSignalSpy>
 #include <QtTest/QtTest>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/lomiritoolkitmodule.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitmodule.h>
 #else
 #include <LomiriToolkit/lomiritoolkitmodule.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/quickutils_p.h>
+#include <LomiriToolkit-Qt6/private/quickutils_p.h>
 #else
 #include <LomiriToolkit/private/quickutils_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucapplication_p.h>
+#include <LomiriToolkit-Qt6/private/ucapplication_p.h>
 #else
 #include <LomiriToolkit/private/ucapplication_p.h>
 #endif
 #define protected public
 #define private public
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucstatesaver_p.h>
+#include <LomiriToolkit-Qt6/private/ucstatesaver_p.h>
 #else
 #include <LomiriToolkit/private/ucstatesaver_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/statesaverbackend_p.h>
+#include <LomiriToolkit-Qt6/private/statesaverbackend_p.h>
 #else
 #include <LomiriToolkit/private/statesaverbackend_p.h>
 #endif

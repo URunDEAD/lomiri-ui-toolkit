@@ -30,7 +30,7 @@
 #include <QtQuick/private/qquickflickable_p.h>
 #include <QtQuick/private/qquickitem_p.h>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/ucswipearea_p_p.h>
+#include <LomiriGestures-Qt6/private/ucswipearea_p_p.h>
 #else
 #include <LomiriGestures/private/ucswipearea_p_p.h>
 #endif

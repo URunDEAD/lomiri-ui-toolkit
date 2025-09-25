@@ -25,12 +25,12 @@
 #include <QtQuick/qsgmaterial.h>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucimportversionchecker_p.h>
+#include <LomiriToolkit-Qt6/private/ucimportversionchecker_p.h>
 #else
 #include <LomiriToolkit/private/ucimportversionchecker_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/uclomirishapetextures_p.h>
+#include <LomiriToolkit-Qt6/private/uclomirishapetextures_p.h>
 #else
 #include <LomiriToolkit/private/uclomirishapetextures_p.h>
 #endif

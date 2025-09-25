@@ -28,13 +28,13 @@
 #include <QtQuick/private/qquicktextinput_p.h>
 #include <QtQuick/private/qquicktextedit_p.h>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriSystemInfoQt6/lomiriinputinfo.h>
+#include <LomiriSystemInfo-Qt6/lomiriinputinfo.h>
 #else
 #include <QtSystemInfo/QInputInfoManager>
 #endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucmainwindow_p.h>
+#include <LomiriToolkit-Qt6/private/ucmainwindow_p.h>
 #else
 #include <LomiriToolkit/private/ucmainwindow_p.h>
 #endif

@@ -51,7 +51,7 @@
 #ifndef QDECLARATIVEDEVICEINFO_P_H
 #define QDECLARATIVEDEVICEINFO_P_H
 
-#include <LomiriSystemInfoQt6/lomirideviceinfo.h>
+#include <LomiriSystemInfo-Qt6/lomirideviceinfo.h>
 
 QT_BEGIN_NAMESPACE
 

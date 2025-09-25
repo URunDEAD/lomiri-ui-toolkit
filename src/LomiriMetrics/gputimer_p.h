@@ -24,7 +24,7 @@
 #include <EGL/eglext.h>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriMetricsQt6/private/lomirimetricsglobal_p.h>
+#include <LomiriMetrics-Qt6/private/lomirimetricsglobal_p.h>
 #else
 #include <LomiriMetrics/private/lomirimetricsglobal_p.h>
 #endif

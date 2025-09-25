@@ -22,7 +22,7 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/splitview_p.h>
+#include <LomiriToolkit-Qt6/private/splitview_p.h>
 #else
 #include <LomiriToolkit/private/splitview_p.h>
 #endif

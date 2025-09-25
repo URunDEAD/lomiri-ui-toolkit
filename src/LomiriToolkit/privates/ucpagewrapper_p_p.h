@@ -20,18 +20,18 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucpagewrapper_p.h>
+#include <LomiriToolkit-Qt6/private/ucpagewrapper_p.h>
 #else
 #include <LomiriToolkit/private/ucpagewrapper_p.h>
 #endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
 #else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucpagetreenode_p_p.h>
+#include <LomiriToolkit-Qt6/private/ucpagetreenode_p_p.h>
 #else
 #include <LomiriToolkit/private/ucpagetreenode_p_p.h>
 #endif

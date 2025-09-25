@@ -37,17 +37,17 @@
 #include <QtTest/QSignalSpy>
 #include <QtTest/QTest>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/lomiritoolkitmodule.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitmodule.h>
 #else
 #include <LomiriToolkit/lomiritoolkitmodule.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucapplication_p.h>
+#include <LomiriToolkit-Qt6/private/ucapplication_p.h>
 #else
 #include <LomiriToolkit/private/ucapplication_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucunits_p.h>
+#include <LomiriToolkit-Qt6/private/ucunits_p.h>
 #else
 #include <LomiriToolkit/private/ucunits_p.h>
 #endif

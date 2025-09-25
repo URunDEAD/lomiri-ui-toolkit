@@ -21,12 +21,12 @@
 #include <QtCore/QPointer>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
 #else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/actionlist_p.h>
+#include <LomiriToolkit-Qt6/private/actionlist_p.h>
 #else
 #include <LomiriToolkit/private/actionlist_p.h>
 #endif

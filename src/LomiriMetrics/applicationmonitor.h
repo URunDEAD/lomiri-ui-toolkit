@@ -21,17 +21,17 @@
 #include <QtCore/QList>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriMetricsQt6/logger.h>
+#include <LomiriMetrics-Qt6/logger.h>
 #else
 #include <LomiriMetrics/logger.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriMetricsQt6/events.h>
+#include <LomiriMetrics-Qt6/events.h>
 #else
 #include <LomiriMetrics/events.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriMetricsQt6/lomirimetricsglobal.h>
+#include <LomiriMetrics-Qt6/lomirimetricsglobal.h>
 #else
 #include <LomiriMetrics/lomirimetricsglobal.h>
 #endif

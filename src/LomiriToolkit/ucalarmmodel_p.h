@@ -23,7 +23,7 @@
 #include <QtQml/QQmlParserStatus>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucalarm_p_p.h>
+#include <LomiriToolkit-Qt6/private/ucalarm_p_p.h>
 #else
 #include <LomiriToolkit/private/ucalarm_p_p.h>
 #endif

@@ -40,14 +40,14 @@
 #include <QtQml/qqmlextensionplugin.h>
 #include <QtQml/qqml.h>
 
-#include <LomiriSystemInfoQt6/lomiribatteryinfo.h>
+#include <LomiriSystemInfo-Qt6/lomiribatteryinfo.h>
 #include "lomirideviceinfo_p.h"
 #include "lomirinetworkinfo_p.h"
 #if defined(Q_OS_LINUX)
 #include "lomiriinputdevicemodel_p.h"
 #endif
-#include <LomiriSystemInfoQt6/lomiriscreensaver.h>
-#include <LomiriSystemInfoQt6/lomiriinputinfo.h>
+#include <LomiriSystemInfo-Qt6/lomiriscreensaver.h>
+#include <LomiriSystemInfo-Qt6/lomiriinputinfo.h>
 
 QT_BEGIN_NAMESPACE
 

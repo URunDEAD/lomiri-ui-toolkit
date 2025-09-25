@@ -22,7 +22,7 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucstyleditembase_p.h>
+#include <LomiriToolkit-Qt6/private/ucstyleditembase_p.h>
 #else
 #include <LomiriToolkit/private/ucstyleditembase_p.h>
 #endif
@@ -30,12 +30,12 @@
 #include <QtQuick/private/qquickitem_p.h>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucthemingextension_p.h>
+#include <LomiriToolkit-Qt6/private/ucthemingextension_p.h>
 #else
 #include <LomiriToolkit/private/ucthemingextension_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucimportversionchecker_p.h>
+#include <LomiriToolkit-Qt6/private/ucimportversionchecker_p.h>
 #else
 #include <LomiriToolkit/private/ucimportversionchecker_p.h>
 #endif

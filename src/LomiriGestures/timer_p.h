@@ -22,12 +22,12 @@
 #include <QtCore/QTimer>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/lomirigesturesglobal.h>
+#include <LomiriGestures-Qt6/lomirigesturesglobal.h>
 #else
 #include <LomiriGestures/lomirigesturesglobal.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/timesource_p.h>
+#include <LomiriGestures-Qt6/private/timesource_p.h>
 #else
 #include <LomiriGestures/private/timesource_p.h>
 #endif

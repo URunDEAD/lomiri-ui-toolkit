@@ -20,7 +20,7 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/uclistitem_p.h>
+#include <LomiriToolkit-Qt6/private/uclistitem_p.h>
 #else
 #include <LomiriToolkit/private/uclistitem_p.h>
 #endif
@@ -30,12 +30,12 @@
 #include <QtQuick/private/qquickrectangle_p.h>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/uclistitemstyle_p.h>
+#include <LomiriToolkit-Qt6/private/uclistitemstyle_p.h>
 #else
 #include <LomiriToolkit/private/uclistitemstyle_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucstyleditembase_p_p.h>
+#include <LomiriToolkit-Qt6/private/ucstyleditembase_p_p.h>
 #else
 #include <LomiriToolkit/private/ucstyleditembase_p_p.h>
 #endif

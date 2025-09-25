@@ -18,7 +18,7 @@
 
 #include <QtQml/QQmlExtensionPlugin>
 #if QT_VERSION > QT_VERSION_CHECK(6, 8, 0)
-#include <LomiriToolkitQt6/lomiritoolkitmodule.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitmodule.h>
 #else
 #include <lomiritoolkitmodule.h>
 #endif

@@ -35,7 +35,7 @@
 #include <QtGui/QGuiApplication>
 #include <QtGui/QScreen>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriMetricsQt6/applicationmonitor.h>
+#include <LomiriMetrics-Qt6/applicationmonitor.h>
 #else
 #include <LomiriMetrics/applicationmonitor.h>
 #endif

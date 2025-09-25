@@ -21,7 +21,7 @@
 #include <QtCore/QPointer>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
 #else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 #endif

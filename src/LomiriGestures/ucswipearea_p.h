@@ -21,17 +21,17 @@
 #include <QtQuick/QQuickItem>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/lomirigesturesglobal.h>
+#include <LomiriGestures-Qt6/lomirigesturesglobal.h>
 #else
 #include <LomiriGestures/lomirigesturesglobal.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/pool_p.h>
+#include <LomiriGestures-Qt6/private/pool_p.h>
 #else
 #include <LomiriGestures/private/pool_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/timer_p.h>
+#include <LomiriGestures-Qt6/private/timer_p.h>
 #else
 #include <LomiriGestures/private/timer_p.h>
 #endif

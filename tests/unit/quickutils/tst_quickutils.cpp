@@ -16,7 +16,7 @@
 
 #include <QtQml/QQmlEngine>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/quickutils_p.h>
+#include <LomiriToolkit-Qt6/private/quickutils_p.h>
 #else
 #include <LomiriToolkit/private/quickutils_p.h>
 #endif

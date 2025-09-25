@@ -23,7 +23,7 @@
 #include <QtCore/QTimer>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/livetimer_p.h>
+#include <LomiriToolkit-Qt6/private/livetimer_p.h>
 #else
 #include <LomiriToolkit/private/livetimer_p.h>
 #endif

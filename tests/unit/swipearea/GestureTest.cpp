@@ -21,12 +21,12 @@
 #include <QtQuick/QQuickView>
 #include <QtTest/QtTest>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/timer_p.h>
+#include <LomiriGestures-Qt6/private/timer_p.h>
 #else
 #include <LomiriGestures/private/timer_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/touchregistry_p.h>
+#include <LomiriGestures-Qt6/private/touchregistry_p.h>
 #else
 #include <LomiriGestures/private/touchregistry_p.h>
 #endif

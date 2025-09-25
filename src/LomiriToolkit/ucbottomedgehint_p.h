@@ -22,18 +22,18 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/lomirigesturesglobal.h>
+#include <LomiriGestures-Qt6/lomirigesturesglobal.h>
 #else
 #include <LomiriGestures/lomirigesturesglobal.h>
 #endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucactionitem_p.h>
+#include <LomiriToolkit-Qt6/private/ucactionitem_p.h>
 #else
 #include <LomiriToolkit/private/ucactionitem_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/ucswipearea_p.h>
+#include <LomiriGestures-Qt6/private/ucswipearea_p.h>
 #else
 #include <LomiriGestures/private/ucswipearea_p.h>
 #endif

@@ -20,12 +20,12 @@
 #include <QtQuick/QQuickWindow>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/i18n_p.h>
+#include <LomiriToolkit-Qt6/private/i18n_p.h>
 #else
 #include <LomiriToolkit/private/i18n_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucunits_p.h>
+#include <LomiriToolkit-Qt6/private/ucunits_p.h>
 #else
 #include <LomiriToolkit/private/ucunits_p.h>
 #endif

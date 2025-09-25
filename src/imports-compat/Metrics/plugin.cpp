@@ -16,13 +16,13 @@
 
 #include <QtQml/QtQml>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriMetricsQt6/applicationmonitor.h>
+#include <LomiriMetrics-Qt6/applicationmonitor.h>
 #else
 #include <LomiriMetrics/applicationmonitor.h>
 #endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/deprecationprinter_p.h>
+#include <LomiriToolkit-Qt6/private/deprecationprinter_p.h>
 #else
 #include <LomiriToolkit/private/deprecationprinter_p.h>
 #endif

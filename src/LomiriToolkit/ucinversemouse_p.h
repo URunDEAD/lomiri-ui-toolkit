@@ -20,12 +20,12 @@
 #include <QtQml/QtQml>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/lomiritoolkitglobal.h>
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
 #else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucmouse_p.h>
+#include <LomiriToolkit-Qt6/private/ucmouse_p.h>
 #else
 #include <LomiriToolkit/private/ucmouse_p.h>
 #endif

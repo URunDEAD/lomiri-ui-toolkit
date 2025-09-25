@@ -20,12 +20,12 @@
 #include <QtGlobal>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/ucheader_p.h>
+#include <LomiriToolkit-Qt6/private/ucheader_p.h>
 #else
 #include <LomiriToolkit/private/ucheader_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/uctheme_p.h>
+#include <LomiriToolkit-Qt6/private/uctheme_p.h>
 #else
 #include <LomiriToolkit/private/uctheme_p.h>
 #endif

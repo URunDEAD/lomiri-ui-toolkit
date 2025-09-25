@@ -21,12 +21,12 @@
 #include <QtGui/QOpenGLContext>
 #include <QtGui/qpa/qwindowsysteminterface.h>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriToolkitQt6/private/mousetouchadaptor_p.h>
+#include <LomiriToolkit-Qt6/private/mousetouchadaptor_p.h>
 #else
 #include <LomiriToolkit/private/mousetouchadaptor_p.h>
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#include <LomiriGesturesQt6/private/ucswipearea_p_p.h>
+#include <LomiriGestures-Qt6/private/ucswipearea_p_p.h>
 #else
 #include <LomiriGestures/private/ucswipearea_p_p.h>
 #endif
