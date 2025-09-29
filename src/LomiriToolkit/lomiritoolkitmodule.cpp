@@ -67,8 +67,11 @@
 #include "ucactioncontext_p.h"
 #include "ucactionitem_p.h"
 #include "ucactionmanager_p.h"
+// FIXME: depends on QtPim
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include "ucalarm_p.h"
 #include "ucalarmmodel_p.h"
+#endif
 #include "ucapplication_p.h"
 #include "ucargument_p.h"
 #include "ucarguments_p.h"
