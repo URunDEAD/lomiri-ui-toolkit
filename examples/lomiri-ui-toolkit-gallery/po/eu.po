@@ -8,34 +8,38 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-10-07 23:05+0000\n"
+"Last-Translator: Joana R <git@joana.click>\n"
+"Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/"
+"lomiri-ui-toolkit-gallery-example/eu/>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "Honi buruz..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "Zerrenda laburra"
 
 #: ActionBars.qml:79
+#, fuzzy
 msgid "Number of slots"
-msgstr ""
+msgstr "Lekuen zenbatekoa"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "Zerrenda luzea"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "Desgaitua"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
@@ -252,7 +256,7 @@ msgstr ""
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "Berrezarri"
 
 #: ListItems.qml:226
 msgid "Grouped list"
