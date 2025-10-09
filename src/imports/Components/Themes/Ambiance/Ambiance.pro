@@ -36,7 +36,6 @@ ARTWORK_FILES += artwork/background_paper@27.png \
              artwork/toolbar_dropshadow@20.png \
              artwork/toolkit_scrollbar-stepper.svg
 
-equals(QT_MAJOR_VERSION, 5) {
 QML_FILES += 1.2/ActivityIndicatorStyle.qml \
              1.2/BubbleShape.qml \
              1.2/ButtonForeground.qml \
@@ -125,61 +124,7 @@ QML_FILES += 1.2/ActivityIndicatorStyle.qml \
              1.3/SectionsForPageHeadStyle.qml \
              $$ARTWORK_FILES
 
-    DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
-} else {
-
-QML_FILES += 2.0/AmbianceNormal.qml \
-             2.0/AmbianceSelected.qml \
-             2.0/ActionBarStyle.qml \
-             2.0/ActivityIndicatorStyle.qml \
-             2.0/BubbleShape.qml \
-             2.0/ButtonForeground.qml \
-             2.0/ButtonStyle.qml \
-             2.0/CheckBoxStyle.qml \
-             2.0/ComboButtonStyle.qml \
-             2.0/DatePickerStyle.qml \
-             2.0/DialerHandStyle.qml \
-             2.0/DialerStyle.qml \
-             2.0/DialogForegroundStyle.qml \
-             2.0/HighlightMagnifier.qml \
-             2.0/ListItemOptionSelectorStyle.qml \
-             2.0/ListItemStyle.qml \
-             2.0/MainViewStyle.qml \
-             2.0/OptionSelectorStyle.qml \
-             2.0/OverflowPanel.qml \
-             2.0/PageHeadButton.qml \
-             2.0/PageHeadStyle.qml \
-             2.0/Palette.qml \
-             2.0/PartialColorize.qml \
-             2.0/PickerDelegateStyle.qml \
-             2.0/PickerStyle.qml \
-             2.0/PopoverForegroundStyle.qml \
-             2.0/ProgressBarStyle.qml \
-             2.0/ProgressionVisualStyle.qml \
-             2.0/PullToRefreshStyle.qml \
-             2.0/ScrollbarStyle.qml \
-             2.0/ScrollingActionBarStyle.qml \
-             2.0/SectionsStyle.qml \
-             2.0/SheetForegroundStyle.qml \
-             2.0/SliderStyle.qml \
-             2.0/SwitchStyle.qml \
-             2.0/TabBarStyle.qml \
-             2.0/TextAreaStyle.qml \
-             2.0/TextCursorStyle.qml \
-             2.0/TextFieldStyle.qml \
-             2.0/ToolbarButtonStyle.qml \
-             2.0/ToolbarStyle.qml \
-             2.0/IconButtonStyle.qml \
-             2.0/PageHeaderStyle.qml \
-             2.0/BottomEdgeHintStyle.qml \
-             2.0/BottomEdgeStyle.qml \
-             2.0/FocusShape.qml \
-             2.0/SectionsForPageHead.qml \
-             2.0/SectionsForPageHeadStyle.qml \
-             $$ARTWORK_FILES
-
-    DYNAMIC_QMLDIR = $$cat(qmldir-qt6, lines)
-}
+DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
 
 load(lomiri_qml_module)
 
