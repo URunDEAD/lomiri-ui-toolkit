@@ -388,14 +388,12 @@ AlarmsAdapter::AlarmsAdapter(AlarmManager *qq)
     , AlarmManagerPrivate(qq)
     , manager(0)
 {
-    // register QOrganizerItemId comparators so QVariant == operator can compare them
-    // if not qt6
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    // register QOrganizerItemId comparators so QVariant == operator can compare them
     QMetaType::registerComparators<QOrganizerItemId>();
 #endif
     // ensure QOrganizerAbstractRequest::State is registered
     qRegisterMetaType<QOrganizerAbstractRequest::State>("QOrganizerAbstractRequest::State");
-
 
     QString envManager = QString::fromLocal8Bit(qgetenv("ALARM_BACKEND"));
     if (envManager.isEmpty())

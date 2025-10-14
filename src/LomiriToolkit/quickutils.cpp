@@ -97,11 +97,14 @@ void QuickUtils::onInputInfoReady()
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 void QuickUtils::onDeviceAdded(LomiriInputDevice *device)
-{
-    QMapIterator<QString, LomiriInputDevice*> i(m_inputInfo->deviceMap());
 #else
 void QuickUtils::onDeviceAdded(QInputDevice *device)
+#endif
 {
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QMapIterator<QString, LomiriInputDevice*> i(m_inputInfo->deviceMap());
+#else
     QMapIterator<QString, QInputDevice*> i(m_inputInfo->deviceMap());
 #endif
     while (i.hasNext()) {

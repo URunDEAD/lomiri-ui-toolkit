@@ -19,7 +19,6 @@
 
 #include <QtCore/QString>
 
-// if qt 6
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QEventPoint>
 #endif
@@ -27,7 +26,6 @@
 class QMouseEvent;
 class QTouchEvent;
 
-// if qt 6
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 QString touchPointStateToString(QEventPoint::State state);
 #else

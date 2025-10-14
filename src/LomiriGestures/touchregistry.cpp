@@ -193,9 +193,7 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
             translateTouchPointFromScreenToWindowCoords(touchPoint);
 
             // Set the point's local coordinates to that of the item
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-            touchPoint.setRect(windowToCandidateTransform.mapRect(touchPoint.sceneRect()));
-#elif QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             QMutableEventPoint::setPosition(touchPoint, windowToCandidateTransform.map(touchPoint.scenePos()));
 #else
             touchPoint.setPos(windowToCandidateTransform.map(touchPoint.scenePos()));
@@ -241,20 +239,11 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
 void TouchRegistry::translateTouchPointFromScreenToWindowCoords(QTouchEvent::TouchPoint &touchPoint)
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    touchPoint.setScreenRect(touchPoint.sceneRect());
-#else
     touchPoint.setScreenPos(touchPoint.scenePos());
-#endif
     touchPoint.setStartScreenPos(touchPoint.startScenePos());
     touchPoint.setLastScreenPos(touchPoint.lastScenePos());
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    touchPoint.setSceneRect(touchPoint.rect());
-#else
     touchPoint.setScenePos(touchPoint.pos());
-#endif
     touchPoint.setStartScenePos(touchPoint.startPos());
     touchPoint.setLastScenePos(touchPoint.lastPos());
 #endif

@@ -80,8 +80,8 @@ private:
     static qsizetype columns_Count(QQmlListProperty<ViewColumn> *);
     static ViewColumn *columns_At(QQmlListProperty<ViewColumn> *, qsizetype);
 #else
-    static ViewColumn *columns_At(QQmlListProperty<ViewColumn> *, int);
     static int columns_Count(QQmlListProperty<ViewColumn> *);
+    static ViewColumn *columns_At(QQmlListProperty<ViewColumn> *, int);
 #endif
     static void columns_Clear(QQmlListProperty<ViewColumn> *);
 };
