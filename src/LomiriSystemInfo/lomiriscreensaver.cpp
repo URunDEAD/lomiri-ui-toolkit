@@ -40,7 +40,7 @@
 #include "lomiriscreensaver.h"
 
 #if defined(Q_OS_LINUX)
-#  if defined(QT_UNITY8)
+#  if defined(LOMIRI_MIR)
 #    include "linux/lomiriscreensaver_mir_p.h"
 #  else
 #    include "linux/lomiriscreensaver_linux_p.h"

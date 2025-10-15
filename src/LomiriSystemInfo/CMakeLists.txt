@@ -66,12 +66,13 @@ target_link_libraries(LomiriSystemInfo
     #${MIRCLIENT_LIBRARIES}
 )
 
-# define QT_UNITY8
-target_compile_definitions(LomiriSystemInfo
-    PRIVATE
-        QT_UNITY8
-        QT_NO_MIR
-)
+if(WITH_LOMIRI_MIR)
+    target_compile_definitions(LomiriSystemInfo
+        PRIVATE
+            LOMIRI_MIR
+            QT_NO_MIR
+    )
+endif()
 
 lomiri_target_prepare_headers(LomiriSystemInfo SUBDIRECTORY LomiriSystemInfo-Qt6)
 
