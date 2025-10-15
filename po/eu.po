@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2025-10-07 23:05+0000\n"
+"PO-Revision-Date: 2025-10-20 04:51+0000\n"
 "Last-Translator: Joana R <git@joana.click>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit/eu/>\n"
@@ -28,7 +28,7 @@ msgstr "Aukeratu Denak"
 #: Lomiri/Components/1.2/TextInputPopover.qml:36
 #: Lomiri/Components/1.3/TextInputPopover.qml:36
 msgid "Cut"
-msgstr "Ebaki"
+msgstr "Moztu"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:48
 #: Lomiri/Components/1.3/TextInputPopover.qml:48
