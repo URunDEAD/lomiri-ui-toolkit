@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-10-07 23:05+0000\n"
+"PO-Revision-Date: 2025-10-20 04:51+0000\n"
 "Last-Translator: Joana R <git@joana.click>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/eu/>\n"
@@ -28,7 +28,6 @@ msgid "Short list"
 msgstr "Zerrenda laburra"
 
 #: ActionBars.qml:79
-#, fuzzy
 msgid "Number of slots"
 msgstr "Lekuen zenbatekoa"
 
@@ -43,33 +42,34 @@ msgstr "Desgaitua"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "AnimazioZenbakia"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "Arrunta"
 
 #: Animations.qml:58
+#, fuzzy
 msgid "Standard Durations"
-msgstr ""
+msgstr "Iraunpen Arrunta"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "Finkotu"
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "Azkar"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "Astiro"
 
 #: Animations.qml:159
 msgid "Sleepy"
-msgstr ""
+msgstr "Loguratsua"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
