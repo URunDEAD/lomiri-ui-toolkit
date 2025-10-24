@@ -816,7 +816,7 @@ QQmlComponent* UCTheme::createStyleComponent(const QString& styleName, QObject* 
             }
         } else {
             qmlWarning(parent) <<
-               QStringLiteral("Warning: Style %1 not found in theme %2; url %3").arg(styleName).arg(name()).arg(version);
+               QStringLiteral("Warning: Style %1 not found in theme %2").arg(styleName).arg(name());
         }
     }
 
