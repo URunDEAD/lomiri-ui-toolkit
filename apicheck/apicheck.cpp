@@ -148,13 +148,7 @@ bool typeNameSort(const QQmlType type1, const QQmlType type2)
 */
 QByteArray convertToId(const QString &cppName)
 {
-    QString qmlType(QString(qPrintable(cppName)).replace(
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    QRegularExpression
-#else
-    QRegExp
-#endif
-    ("(QQmlListProperty|QList)<(.+)>"), "\\2"));
+    QString qmlType(QString(qPrintable(cppName)).replace(QRegularExpression("(QQmlListProperty|QList)<(.+)>"), "\\2"));
     QString typeFormat(qmlType != cppName ? "list<%1>" : "%1");
 
     QList<QQmlType>types(qmlTypesByCppName[qPrintable(qmlType)].values());
@@ -1026,30 +1020,12 @@ int main(int argc, char *argv[])
         if (!c.errors().isEmpty()) {
             Q_FOREACH (const QQmlError &error, c.errors()) {
                 // Despite the error we get all type information we need from singletons
-                if (error.description().contains(
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-                    QRegularExpression
-#else
-                    QRegExp
-#endif
-                    ("(Composite Singleton Type .+|Element) is not creatable")))
-                std::cerr << qPrintable( error.toString() ) << std::endl;
-                if (error.description().contains(
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-                    QRegularExpression
-#else
-                    QRegExp
-#endif
-                    ("(Composite Singleton Type .+|Element) is not creatable")))
+                if (error.description().contains(QRegularExpression("(Composite Singleton Type .+|Element) is not creatable")))
+                    std::cerr << qPrintable( error.toString() ) << std::endl;
+                if (error.description().contains(QRegularExpression("(Composite Singleton Type .+|Element) is not creatable")))
                     continue;
                 // If we guessed the version, we may have been wrong
-                if (error.description().contains(
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-                    QRegularExpression
-#else
-                    QRegExp
-#endif
-                    ("version .+ is not installed"))) {
+                if (error.description().contains(QRegularExpression("version .+ is not installed"))) {
                     // First letter must be uppercase
                     QString pluginAlias(QString("A%1.%2").arg(pluginImportUri).replace(".", "_"));
                     // 1.0 should work if 0.1 didn't and qmldir didn't specify
