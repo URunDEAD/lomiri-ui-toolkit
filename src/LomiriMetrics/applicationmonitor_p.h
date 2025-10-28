@@ -27,6 +27,7 @@
 #include <QtCore/QElapsedTimer>
 #include <QtCore/QRunnable>
 #include <QtCore/QAtomicInteger>
+#include <QtGui/QGuiApplication>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <LomiriMetrics-Qt6/applicationmonitor.h>

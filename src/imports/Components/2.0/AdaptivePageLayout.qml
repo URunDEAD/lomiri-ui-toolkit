@@ -14,15 +14,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
-import QtQuick.Layouts 1.1
+import QtQuick 6.8
+import QtQuick.Layouts 6.8
 import Lomiri.Components
-import Lomiri.Components.Private 1.3
+import Lomiri.Components.Private
 
 /*!
   \qmltype AdaptivePageLayout
   \inqmlmodule Lomiri.Components
-  \since Lomiri.Components 1.3
+  \since Lomiri.Components
   \ingroup lomiri
   \brief View with multiple columns of Pages.
 

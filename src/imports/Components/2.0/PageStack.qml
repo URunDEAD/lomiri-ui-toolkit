@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import "../1.2/stack.js" as Stack
+import "./stack.js" as Stack
 import Lomiri.Components
 import Lomiri.Components.Private 1.3
 
