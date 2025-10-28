@@ -197,7 +197,7 @@ bool ShapeShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial
         if (data->flags & ShapeMaterial::Data::Textured) {
             const float sourceOpacity = data->sourceOpacity / 255.0f;
             memcpy(buf->data() + 72, &sourceOpacity, 4);
-            textured = false;
+            textured = true;
         }
         memcpy(buf->data() + 80, &textured, 4);
 
@@ -254,7 +254,7 @@ void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture
                 }
                 *texture = sourceTexture;
             } else {
-                *texture = nullptr;
+                *texture = data->dummyTexture;
                 return;
             }
             break;
@@ -1444,6 +1444,14 @@ void UCLomiriShape::updateMaterial(
                                                                               window(),
                                                                               shapeShaderSize);
     materialData->shapeTexture = shapeWrapper;
+
+    // Create a 1x1 dummy texture if it doesn't exist yet
+    if (!materialData->dummyTexture) {
+        // Create a 1x1 opaque white and transparent image
+        QImage dummyImage(1, 1, QImage::Format_RGBA8888);
+        dummyImage.fill(QColor(255, 255, 255, 0));
+        materialData->dummyTexture = window()->createTextureFromImage(dummyImage);
+    }
 
 #else
     materialData->shapeTextureIndex = shapeTextureIndex;

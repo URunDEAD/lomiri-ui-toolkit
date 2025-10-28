@@ -85,6 +85,7 @@ public:
         QSGTextureProvider* sourceTextureProvider;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
         QSGTexture* shapeTexture;
+        QSGTexture* dummyTexture;
 #else
         quint8 shapeTextureIndex;
 #endif
