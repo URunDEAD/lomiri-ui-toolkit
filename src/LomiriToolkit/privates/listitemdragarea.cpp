@@ -93,7 +93,11 @@ void ListItemDragArea::timerEvent(QTimerEvent *event)
 // cancelled, no dragging will happen
 void ListItemDragArea::mousePressEvent(QMouseEvent *event)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     mousePos = event->localPos();
+#else
+    mousePos = event->position();
+#endif
     QPointF pos = mapDragAreaPos();
     UCListItem *listItem = itemAt(pos.x(), pos.y());
     if (!listItem) {
@@ -141,7 +145,11 @@ void ListItemDragArea::mousePressEvent(QMouseEvent *event)
 // and clears temporary item
 void ListItemDragArea::mouseReleaseEvent(QMouseEvent *event)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     mousePos = event->localPos();
+#else
+    mousePos = event->position();
+#endif
     if (item.isNull()) {
         return;
     }
@@ -167,7 +175,11 @@ void ListItemDragArea::mouseReleaseEvent(QMouseEvent *event)
 void ListItemDragArea::mouseMoveEvent(QMouseEvent *event)
 {
     if (event) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         mousePos = event->localPos();
+#else
+        mousePos = event->position();
+#endif
     }
     if (!item) {
         return;

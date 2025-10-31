@@ -222,6 +222,7 @@ void QQuickMimeData::setMimeData(const QVariant &mimeData)
     QMimeDatabase db;
     bool emitSignal = false;
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (mimeData.type() == QVariant::List) {
         // the list can be a list of URLs or a list of (type, data) pairs or a
         // plain list formatted so that every 2k element describes a type and
@@ -255,6 +256,41 @@ void QQuickMimeData::setMimeData(const QVariant &mimeData)
         m_mimeData->setColorData(mimeData);
         emitSignal = true;
     } else {
+#else
+    if (mimeData.typeId() == QMetaType::QVariantList) {
+        // the list can be a list of URLs or a list of (type, data) pairs or a
+        // plain list formatted so that every 2k element describes a type and
+        // every 2k+1 defines the data
+        QVariantList mlist= mimeData.toList();
+        if (mlist[0].typeId() == QMetaType::QVariantList) {
+            Q_FOREACH(const QVariant &item, mlist) {
+                // should not have more than two elements
+                QVariantList block = item.toList();
+                if (setMimeType(m_mimeData, block))
+                    emitSignal = true;
+            }
+        } else {
+            QUrl url(mlist[0].toUrl());
+            if (!url.scheme().isEmpty()) {
+                // we have a list or URLs, push them
+                QList<QUrl> ulist;
+                Q_FOREACH(const QVariant &v, mlist) {
+                    ulist << v.toUrl();
+                }
+                setUrls(ulist);
+                emitSignal = true;
+            } else if (!(mlist.length() % 2)) {
+                // the count of the list is a pair number, so we might have the
+                // mime (type,data) pairs
+                emitSignal = setMimeType(m_mimeData, mlist);
+            }
+        }
+    } else if (mimeData.typeId() == QMetaType::QColor){
+        // color must e handled separately
+        m_mimeData->setColorData(mimeData);
+        emitSignal = true;
+    } else {
+#endif
         // try to detect the mime data within the variant
         // text/plain, text/html and application/x-color types
         QByteArray data = mimeData.toByteArray();

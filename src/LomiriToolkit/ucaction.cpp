@@ -303,6 +303,7 @@ UCAction::~UCAction()
     resetText();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 bool UCAction::isValidType(QVariant::Type valueType)
 {
     bool valid = (valueType == QVariant::String && m_parameterType == String) ||
@@ -313,6 +314,18 @@ bool UCAction::isValidType(QVariant::Type valueType)
                 (valueType == (QVariant::Type)QMetaType::QObjectStar && m_parameterType == Object);
     return valid;
 }
+#else
+bool UCAction::isValidType(QMetaType::Type valueType)
+{
+    bool valid = (valueType == QMetaType::QString && m_parameterType == String) ||
+                (valueType == QMetaType::Int && m_parameterType == Integer) ||
+                (valueType == QMetaType::Bool && m_parameterType == Bool) ||
+                (valueType == QMetaType::Double && m_parameterType == Real) ||
+                (valueType == QMetaType::UnknownType && m_parameterType == None) ||
+                (valueType == QMetaType::QObjectStar && m_parameterType == Object);
+    return valid;
+}
+#endif
 
 void UCAction::generateName()
 {
@@ -399,12 +412,21 @@ void UCAction::setItemHint(QQmlComponent *)
 #endif
 
 QKeySequence sequenceFromVariant(const QVariant& variant) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (variant.type() == QVariant::Int) {
         return static_cast<QKeySequence::StandardKey>(variant.toInt());
     }
     if (variant.type() == QVariant::String) {
         return QKeySequence::fromString(variant.toString());
     }
+#else
+    if (variant.typeId() == QMetaType::Int) {
+        return static_cast<QKeySequence::StandardKey>(variant.toInt());
+    }
+    if (variant.typeId() == QMetaType::QString) {
+        return QKeySequence::fromString(variant.toString());
+    }
+#endif
     return QKeySequence();
 }
 
@@ -642,7 +664,11 @@ void UCAction::trigger(const QVariant &value)
         setChecked(!m_checked);
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (!isValidType(value.type())) {
+#else
+    if (!isValidType(static_cast<QMetaType::Type>(value.typeId()))) {
+#endif
         Q_EMIT triggered(QVariant());
     } else {
         Q_EMIT triggered(value);

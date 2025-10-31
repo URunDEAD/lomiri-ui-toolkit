@@ -53,7 +53,11 @@ bool UCListItemExpansion::eventFilter(QObject *target, QEvent *event)
         QMouseEvent *mouse = static_cast<QMouseEvent*>(event);
         QQuickWindow *window = qobject_cast<QQuickWindow*>(target);
         if (window) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             QPointF myPos(window->contentItem()->mapToItem(m_listItem, mouse->localPos()));
+#else
+            QPointF myPos(window->contentItem()->mapToItem(m_listItem, mouse->position()));
+#endif
             if (!m_listItem->contains(myPos)) {
                 UCListItemPrivate *listItem = UCListItemPrivate::get(m_listItem);
                 UCViewItemsAttachedPrivate *viewItems = UCViewItemsAttachedPrivate::get(listItem->parentAttached);
