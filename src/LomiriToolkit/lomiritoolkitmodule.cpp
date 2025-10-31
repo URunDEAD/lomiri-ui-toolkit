@@ -236,8 +236,10 @@ void LomiriToolkitModule::registerTypesToVersion(const char *uri, int major, int
     qmlRegisterType<UCStyledItemBase>(uri, major, minor, "StyledItem");
     qmlRegisterUncreatableType<LomiriI18n>(
        uri, major, minor, "I18n", QStringLiteral("Singleton object"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qmlRegisterExtendedType<
         QQuickImageBase, UCQQuickImageExtension>(uri, major, minor, "QQuickImageBase");
+#endif
     qmlRegisterUncreatableType<UCUnits>(uri, major, minor, "UCUnits", notInstantiatable);
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     if (uri == QLatin1String("Ubuntu.Components")) {
@@ -338,7 +340,9 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 
     HapticsProxy::instance(engine);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     engine->addImageProvider(QLatin1String("scaling"), new UCScalingImageProvider);
+#endif
 
     // register icon provider
     engine->addImageProvider(QLatin1String("theme"), new LomiriThemeIconProvider);

@@ -123,8 +123,8 @@ add_library(LomiriToolkit SHARED
     ucpagetreenode_p_p.h
     ucperformancemonitor.cpp ucperformancemonitor_p.h
     ucproportionalshape.cpp ucproportionalshape_p.h
-    ucqquickimageextension.cpp ucqquickimageextension_p.h
-    ucscalingimageprovider.cpp ucscalingimageprovider_p.h
+    #ucqquickimageextension.cpp ucqquickimageextension_p.h
+    #ucscalingimageprovider.cpp ucscalingimageprovider_p.h
     ucserviceproperties.cpp ucserviceproperties_p.h
     ucserviceproperties_p_p.h
     ucslotslayout.cpp ucslotslayout_p.h
