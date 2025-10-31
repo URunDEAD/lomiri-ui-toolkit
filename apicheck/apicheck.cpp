@@ -911,7 +911,11 @@ int main(int argc, char *argv[])
     Q_FOREACH (const QString& pluginImportUri, modules) {
         QString pluginImportVersion;
         QStringList pathList((QString(getenv("QML2_IMPORT_PATH"))
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                               + ":" + QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath))
+#else
+                              + ":" + QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath))
+#endif
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
                              .split(':', QString::SkipEmptyParts));
 #else

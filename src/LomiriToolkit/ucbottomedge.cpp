@@ -411,7 +411,11 @@ void UCBottomEdgePrivate::patchContentItemHeader()
 
     LOG << "PATCH HEADER" << currentContentItem.data();
     // get the navigationActions and inject an action there
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QQmlListReference navigationActions(header, /* property */ "navigationActions", qmlEngine(q_func()));
+#else
+    QQmlListReference navigationActions(header, /* property */ "navigationActions");
+#endif
 
     // do we have any action in the list?
     if (navigationActions.count()) {
@@ -814,7 +818,11 @@ bool UCBottomEdge::eventFilter(QObject *target, QEvent *event)
     case QEvent::MouseButtonPress:
     {
         QMouseEvent *mouse = static_cast<QMouseEvent*>(event);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         d->mousePressed = d->hint->contains(mouse->localPos());
+#else
+        d->mousePressed = d->hint->contains(mouse->position());
+#endif
         LOG << "drag with mouse";
         break;
     }
@@ -828,7 +836,11 @@ bool UCBottomEdge::eventFilter(QObject *target, QEvent *event)
     {
         if (d->mousePressed) {
             QMouseEvent *mouse = static_cast<QMouseEvent*>(event);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             qreal mouseItemY = mapFromScene(mouse->windowPos()).y();
+#else
+            qreal mouseItemY = mapFromScene(mouse->scenePosition()).y();
+#endif
             qreal distance = qFabs(height() - mouseItemY);
             d->updateProgressionStates(distance);
         }

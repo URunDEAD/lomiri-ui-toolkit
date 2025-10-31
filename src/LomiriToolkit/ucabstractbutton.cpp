@@ -246,7 +246,11 @@ void UCAbstractButton::touchEvent(QTouchEvent *event)
     case QEvent::TouchBegin:
     {
         // send an event to MouseArea to handle the event
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         QMouseEvent mouse(QEvent::MouseButtonPress, QPointF(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+#else
+        QMouseEvent mouse(QEvent::MouseButtonPress, QPointF(0,0), QPointF(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+#endif
         qApp->sendEvent(d->mouseArea, &mouse);
         event->accept();
         break;
@@ -254,7 +258,11 @@ void UCAbstractButton::touchEvent(QTouchEvent *event)
     case QEvent::TouchCancel:
     case QEvent::TouchEnd:
     {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         QMouseEvent mouse(QEvent::MouseButtonRelease, QPointF(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+#else
+        QMouseEvent mouse(QEvent::MouseButtonRelease, QPointF(0,0), QPointF(0,0), Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+#endif
         qApp->sendEvent(d->mouseArea, &mouse);
         event->accept();
         break;

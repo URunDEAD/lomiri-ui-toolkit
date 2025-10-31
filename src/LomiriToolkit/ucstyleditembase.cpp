@@ -613,7 +613,11 @@ bool UCStyledItemBase::childMouseEventFilter(QQuickItem *child, QEvent *event)
         QMouseEvent *mouse = static_cast<QMouseEvent*>(event);
         // the event may occur outside of the parent's boundaries if not clipped
         // therefore must check containment
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         QPointF point = mapFromItem(child, mouse->localPos());
+#else
+        QPointF point = mapFromItem(child, mouse->position());
+#endif
         if (contains(point)) {
             requestFocus(Qt::MouseFocusReason);
         }

@@ -495,14 +495,24 @@ void UCViewItemsAttached::setDragMode(bool value)
         // warn if the model is anything else but Instance model (ObjectModel or DelegateModel)
         // or a derivate of QAbstractItemModel
         QString warning = QStringLiteral("Dragging is only supported when using a QAbstractItemModel, ListModel or list.");
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         if (model.isValid() && !model.value<QQmlInstanceModel*>() && !model.value<QAbstractItemModel*>() && !(model.type() == QVariant::List)) {
+#else
+        if (model.isValid() && !model.value<QQmlInstanceModel*>() && !model.value<QAbstractItemModel*>() && !(model.typeId() == QMetaType::QVariantList)) {
+#endif
             qmlWarning(parent()) << warning;
         }
         // if we have a QQmlDelegateModel we must also check the model property of it
         QQmlDelegateModel *delegateModel = model.value<QQmlDelegateModel*>();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         if (delegateModel && delegateModel->model().isValid() &&
                              !delegateModel->model().value<QAbstractItemModel*>() &&
                              !(delegateModel->model().type() == QVariant::List)) {
+#else
+        if (delegateModel && delegateModel->model().isValid() &&
+                             !delegateModel->model().value<QAbstractItemModel*>() &&
+                             !(delegateModel->model().typeId() == QMetaType::QVariantList)) {
+#endif
             qmlWarning(parent()) << warning;
         }
     }
