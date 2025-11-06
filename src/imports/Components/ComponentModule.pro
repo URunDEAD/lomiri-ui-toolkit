@@ -134,15 +134,4 @@ OTHER_FILES+= qmldir-qt5 \
              1.3/MainView.qdoc \
              1.3/Icon.qdoc
 
-QT_FRAG_SHADERS = \
-    1.0/shaders/colorizeimage.frag \
-    1.2/shaders/colourshader.frag \
-    Themes/Ambiance/shaders/magnifier.frag \
-    Themes/Ambiance/shaders/partialcolorize.frag
-
-QT_VERT_SHADERS = \
-    Themes/Ambiance/shaders/magnifier.vert
-
-OTHER_FILES += $$QT_FRAG_SHADERS $$QT_VERT_SHADERS
-
 load(lomiri_qml_plugin)

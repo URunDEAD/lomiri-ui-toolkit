@@ -1021,7 +1021,7 @@ int main(int argc, char *argv[])
             Q_FOREACH (const QQmlError &error, c.errors()) {
                 // Despite the error we get all type information we need from singletons
                 if (error.description().contains(QRegularExpression("(Composite Singleton Type .+|Element) is not creatable")))
-                    std::cerr << qPrintable( error.toString() ) << std::endl;
+                    std::cerr << qPrintable(error.toString()) << std::endl;
                 if (error.description().contains(QRegularExpression("(Composite Singleton Type .+|Element) is not creatable")))
                     continue;
                 // If we guessed the version, we may have been wrong
