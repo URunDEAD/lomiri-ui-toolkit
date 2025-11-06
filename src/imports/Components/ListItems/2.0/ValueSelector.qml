@@ -202,11 +202,12 @@ Empty {
                     id: accordionIcon
                     anchors.right: parent.right
                     anchors.verticalCenter: parent.verticalCenter
-                    source: Qt.resolvedUrl("../../artwork/chevron.png")
+                    source: Qt.resolvedUrl("../../artwork/chevron@18.png")
                     opacity: enabled ? 1.0 : 0.5
                     rotation: expanded ? 270 : 90
                     width: implicitWidth / 1.5
                     height: implicitHeight / 1.5
+                    scale: units.gridUnit / 18
 
                     states: [
                         State {

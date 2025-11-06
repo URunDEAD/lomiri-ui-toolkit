@@ -103,7 +103,8 @@ Item {
         anchors.fill: parent
         anchors.margins: square ? -units.gu(1) : -units.dp(2)
         anchors.topMargin: square ? 0 : anchors.margins
-        source: !square ? Qt.resolvedUrl("../artwork/bubble_shadow.sci") : Qt.resolvedUrl("../artwork/header_overflow_dropshadow.sci")
+        source: !square ? Qt.resolvedUrl("../artwork/bubble_shadow@30.sci") : Qt.resolvedUrl("../artwork/header_overflow_dropshadow@27.sci")
+        scale: !square ? units.gridUnit / 30 : units.gridUnit / 27
         opacity: 0.8
     }
 

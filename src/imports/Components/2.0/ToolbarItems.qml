@@ -140,7 +140,7 @@ Item {
      */
     property Item back: ToolbarButton {
         objectName: "back_toolbar_button"
-        iconSource: Qt.resolvedUrl("../artwork/back.png")
+        iconSource: Qt.resolvedUrl("../artwork/back@18.png")
         text: i18n.dtr('lomiri-ui-toolkit', "Back")
         visible: toolbarItems.pageStack && toolbarItems.pageStack.depth > 1
         /*!

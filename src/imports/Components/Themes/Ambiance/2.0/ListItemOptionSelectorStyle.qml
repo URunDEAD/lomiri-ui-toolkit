@@ -21,7 +21,7 @@ import Lomiri.Components
 Item {
     id: ambianceStyle
 
-    property url chevron: Qt.resolvedUrl("../artwork/chevron_down.png")
-    property url tick: Qt.resolvedUrl("../artwork/tick.png")
+    property url chevron: Qt.resolvedUrl("../artwork/chevron_down@30.png")
+    property url tick: Qt.resolvedUrl("../artwork/tick@30.png")
     property bool colourComponent: true
 }

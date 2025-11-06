@@ -20,8 +20,8 @@ import Lomiri.Components
 Item {
     id: progressionVisualStyle
 
-    property url progressionDividerSource: Qt.resolvedUrl("../artwork/progression_divider.png")
-    property url progressionIconSource: Qt.resolvedUrl("../artwork/chevron.png")
+    property url progressionDividerSource: Qt.resolvedUrl("../artwork/progression_divider@18.png")
+    property url progressionIconSource: Qt.resolvedUrl("../artwork/chevron@18.png")
 
     implicitWidth: progressIcon.width + (styledItem.showSplit ? styledItem.splitMargin + progressionDivider.width : 0)
 
@@ -32,6 +32,7 @@ Item {
             verticalCenter: parent.verticalCenter
             right: parent.right
         }
+        scale: units.gridUnit / 18
 
         opacity: enabled ? 1.0 : 0.5
         mirror: Qt.application.layoutDirection == Qt.RightToLeft
@@ -47,6 +48,7 @@ Item {
             rightMargin: styledItem.splitMargin
         }
         source: visible ? progressionDividerSource : ""
+        scale: units.gridUnit / 18
         opacity: enabled ? 1.0 : 0.5
     }
 }

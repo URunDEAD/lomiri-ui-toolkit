@@ -389,12 +389,13 @@ AbstractButton {
 
                     spacing: units.gu(2)
                     Image {
-                        source: Qt.resolvedUrl("../../artwork/delete.png")
+                        source: Qt.resolvedUrl("../../artwork/delete@8.png")
                         fillMode: Image.Pad
                         anchors {
                             verticalCenter: parent.verticalCenter
                         }
                         width: units.gu(5)
+                        scale: units.gridUnit / 8
                     }
                     Label {
                         text: i18n.dtr('lomiri-ui-toolkit', "Delete")

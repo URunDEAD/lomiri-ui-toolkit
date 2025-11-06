@@ -25,7 +25,8 @@ Image {
     fillMode: Image.PreserveAspectFit
     horizontalAlignment: Image.AlignHCenter
     verticalAlignment: Image.AlignVCenter
-    source: visible ? Qt.resolvedUrl("../artwork/spinner.png") : ""
+    source: visible ? Qt.resolvedUrl("../artwork/spinner@32.png") : ""
+    scale: units.gridUnit / 32
     asynchronous: true
 
     RotationAnimator on rotation {

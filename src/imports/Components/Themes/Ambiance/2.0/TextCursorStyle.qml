@@ -80,7 +80,8 @@ Item {
     // caretItem
     Image {
         id: caretItem
-        source: Qt.resolvedUrl("../artwork/caret_noshadow.png")
+        source: Qt.resolvedUrl("../artwork/caret_noshadow@27.png")
+        scale: units.gridUnit / 27
         objectName: "text_cursor_style_caret_" + styledItem.positionProperty
         property bool flip: styledItem.positionProperty !== "selectionStart"
         rotation: flip ? 180 : 0
