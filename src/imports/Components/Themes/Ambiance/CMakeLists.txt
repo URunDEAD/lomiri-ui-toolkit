@@ -3,10 +3,6 @@ set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Components/Themes/Ambiance")
 
 # Define artwork files
 set(ARTWORK_FILES
-    "artwork/background_paper@27.png"
-    "artwork/bubble_arrow@20.png"
-    "artwork/bubble_arrow@30.png"
-    "artwork/bubble_arrow@8.png"
     "artwork/bubble_shadow@20.png"
     "artwork/bubble_shadow@20.sci"
     "artwork/bubble_shadow@30.png"
@@ -16,27 +12,14 @@ set(ARTWORK_FILES
     "artwork/caret_noshadow@27.png"
     "artwork/chevron@27.png"
     "artwork/chevron_down@30.png"
-    "artwork/cross@30.png"
     "artwork/header_overflow_dropshadow@27.png"
     "artwork/header_overflow_dropshadow@27.sci"
-    "artwork/PageHeaderBaseDividerBottom@18.png"
-    "artwork/PageHeaderBaseDividerLight@18.png"
-    "artwork/PageHeaderBaseDividerLight@18.sci"
     "artwork/progression_divider@18.png"
-    "artwork/ScrollbarBottomIdle@8.png"
-    "artwork/ScrollbarBottomPressed@8.png"
-    "artwork/ScrollbarLeftIdle@8.png"
-    "artwork/ScrollbarLeftPressed@8.png"
-    "artwork/ScrollbarRightIdle@8.png"
-    "artwork/ScrollbarRightPressed@8.png"
-    "artwork/ScrollbarTopIdle@8.png"
-    "artwork/ScrollbarTopPressed@8.png"
     "artwork/spinner@16.png"
     "artwork/spinner@32.png"
     "artwork/spinner@8.png"
     "artwork/stroke_button@27.png"
     "artwork/tick@30.png"
-    "artwork/toolbar_dropshadow@20.png"
     "artwork/toolkit_scrollbar-stepper.svg"
 )
 

@@ -13,7 +13,6 @@ ARTWORK_FILES += artwork/background_paper@27.png \
              artwork/caret_noshadow@27.png \
              artwork/chevron@27.png \
              artwork/chevron_down@30.png \
-             artwork/cross@30.png \
              artwork/header_overflow_dropshadow@27.png \
              artwork/header_overflow_dropshadow@27.sci \
              artwork/PageHeaderBaseDividerBottom@18.png \

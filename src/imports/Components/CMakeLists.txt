@@ -29,7 +29,11 @@ install(TARGETS LomiriComponents
     DESTINATION ${QML_PLUGIN_DIR}
 )
 
-file(GLOB ARTWORK_FILES "artwork/*")
+set(ARTWORK_FILES
+    "artwork/back@18.png"
+    "artwork/chevron@27.png"
+    "artwork/delete@8.png"
+)
 
 set(QML_FILES
     "2.0/ActionBar.qml"
