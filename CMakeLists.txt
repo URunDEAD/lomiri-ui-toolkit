@@ -5,7 +5,7 @@ cmake_policy(SET CMP0048 NEW) # for ecm_setup_version
 option(WITH_LOMIRI_MIR "Enable mir support in LomiriSystemInfo" ON)
 
 set(LOMIRI_UI_TOOLKIT_VERSION "5.5.0")
-set(LOMIRI_UI_TOOLKIT_SOVERSION "5")
+set(LOMIRI_UI_TOOLKIT_SOVERSION "1")
 set(QT_VERSION_MAJOR 6)
 
 find_package(QT NAMES Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
