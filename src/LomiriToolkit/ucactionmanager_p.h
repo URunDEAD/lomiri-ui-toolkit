@@ -54,10 +54,12 @@ Q_SIGNALS:
     void quit();
 
 public Q_SLOTS:
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void addAction(UT_PREPEND_NAMESPACE(UCAction) *action);
     void removeAction(UT_PREPEND_NAMESPACE(UCAction) *action);
     void addLocalContext(UT_PREPEND_NAMESPACE(UCActionContext) *context);
     void removeLocalContext(UT_PREPEND_NAMESPACE(UCActionContext) *context);
+#endif
 
 private:
     static void contextAppend(QQmlListProperty<UCActionContext> *list, UCActionContext *context);

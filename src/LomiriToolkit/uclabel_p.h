@@ -47,8 +47,10 @@ class LOMIRITOOLKIT_EXPORT UCLabel : public QQuickText, public UCThemingExtensio
     Q_PROPERTY(QFont font READ font WRITE setFont2 NOTIFY fontChanged2)
     Q_PROPERTY(QColor color READ color WRITE setColor2 NOTIFY colorChanged2)
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // Deprecated.
     Q_PROPERTY(QString fontSize READ fontSize WRITE setFontSize NOTIFY fontSizeChanged)
+#endif
 
 public:
 
@@ -76,9 +78,11 @@ public:
     void setColor2(const QColor &color);
     void setRenderType(RenderType renderType);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // Deprecated.
     QString fontSize() const;
     void setFontSize(const QString& fontSize);
+#endif
 
 protected:
     // from QQuickItem
@@ -95,8 +99,10 @@ Q_SIGNALS:
     void fontChanged2();
     void colorChanged2();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // Deprecated.
     void fontSizeChanged();
+#endif
 
 private:
     QScopedPointer<UCLabelPrivate> d_ptr;

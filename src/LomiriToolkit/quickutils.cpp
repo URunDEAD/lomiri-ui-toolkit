@@ -202,6 +202,7 @@ bool QuickUtils::eventFilter(QObject *obj, QEvent *event)
     return QObject::eventFilter(obj, event);
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 /*!
  * \internal
  * \deprecated
@@ -214,6 +215,7 @@ QQuickItem *QuickUtils::rootObject()
         lookupQuickView();
     return (m_rootView) ? m_rootView->rootObject() : 0;
 }
+#endif
 
 /*!
  * \internal
@@ -332,6 +334,7 @@ void QuickUtils::lookupQuickView()
     Q_FOREACH (QWindow *w, QGuiApplication::topLevelWindows()) {
         m_rootWindow = qobject_cast<QQuickWindow*>(w);
         m_rootView = qobject_cast<QQuickView*>(w);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         if (m_rootView) {
             // connect in case we get the root object changed
             QObject::connect(m_rootView, SIGNAL(statusChanged(QQuickView::Status)),
@@ -341,6 +344,7 @@ void QuickUtils::lookupQuickView()
                 Q_EMIT rootObjectChanged();
             break;
         }
+#endif
     }
 }
 

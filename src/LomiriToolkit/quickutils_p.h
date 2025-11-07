@@ -43,7 +43,9 @@ UT_NAMESPACE_BEGIN
 class LOMIRITOOLKIT_EXPORT QuickUtils : public QObject
 {
     Q_OBJECT
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_PROPERTY(QQuickItem *rootObject READ rootObject NOTIFY rootObjectChanged)
+#endif
     Q_PROPERTY(QString inputMethodProvider READ inputMethodProvider)
     Q_PROPERTY(bool touchScreenAvailable READ touchScreenAvailable NOTIFY touchScreenAvailableChanged)
     Q_PROPERTY(bool mouseAttached MEMBER m_mouseAttached WRITE setMouseAttached NOTIFY mouseAttachedChanged)
@@ -61,7 +63,9 @@ public:
     }
     ~QuickUtils() { m_instance = Q_NULLPTR; }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QQuickItem *rootObject();
+#endif
     Q_INVOKABLE QQuickItem *rootItem(QObject *object);
     QString inputMethodProvider() const;
     bool touchScreenAvailable() const;
@@ -84,7 +88,9 @@ public:
     }
 
 Q_SIGNALS:
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void rootObjectChanged();
+#endif
     void activated();
     void deactivated();
     void touchScreenAvailableChanged();

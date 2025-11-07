@@ -74,7 +74,9 @@ public:
     QQuickItem* m_activeLeafNode;
     QQuickItem* m_pageStack;
     QObject* m_propagated;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QQuickItem* m_toolbar;
+#endif
     qint8 m_flags;
     bool m_isLeaf:1;
     bool m_active:1;

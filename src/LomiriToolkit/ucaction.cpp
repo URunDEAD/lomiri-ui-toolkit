@@ -279,7 +279,9 @@ void UCAction::setMnemonicFromText(const QString &text)
 UCAction::UCAction(QObject *parent)
     : QObject(parent)
     , m_exclusiveGroup(Q_NULLPTR)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     , m_itemHint(Q_NULLPTR)
+#endif
     , m_parameterType(None)
     , m_factoryIconSource(true)
     , m_enabled(true)
@@ -383,6 +385,7 @@ void UCAction::setIconSource(const QUrl &url)
     Q_EMIT iconSourceChanged();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 /*!
  * \qmlproperty Component Action::itemHint
  * \deprecated
@@ -393,6 +396,7 @@ void UCAction::setItemHint(QQmlComponent *)
 {
     qWarning() << "Action.itemHint is a DEPRECATED property. Use ActionItems to specify the representation of an Action.";
 }
+#endif
 
 QKeySequence sequenceFromVariant(const QVariant& variant) {
     if (variant.type() == QVariant::Int) {

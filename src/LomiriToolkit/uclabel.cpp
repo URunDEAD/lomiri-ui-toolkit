@@ -188,7 +188,9 @@ void UCLabel::setTextSize(TextSize size)
 {
     Q_D(UCLabel);
     if (!(d->flags & UCLabelPrivate::TextSizeSet)) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         Q_EMIT fontSizeChanged();
+#endif
         d->flags |= UCLabelPrivate::TextSizeSet;
     }
 
@@ -224,6 +226,7 @@ void UCLabel::setRenderType(RenderType renderType)
     QQuickText::setRenderType(renderType);
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 /*!
  * \qmlproperty string Label::fontSize
  * \deprecated
@@ -284,6 +287,7 @@ void UCLabel::setFontSize(const QString& fontSize)
         Q_EMIT fontSizeChanged();
     }
 }
+#endif
 
 UT_NAMESPACE_END
 

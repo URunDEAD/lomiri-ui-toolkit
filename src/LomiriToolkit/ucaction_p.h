@@ -81,7 +81,9 @@ class LOMIRITOOLKIT_EXPORT UCAction : public QObject
     // Toolkit Actions API
     Q_PROPERTY(QUrl iconSource READ iconSource WRITE setIconSource NOTIFY iconSourceChanged)
     Q_PROPERTY(bool visible READ visible WRITE setVisible NOTIFY visibleChanged)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_PROPERTY(QQmlComponent *itemHint MEMBER m_itemHint WRITE setItemHint)
+#endif
 
     // QtQuickControls.Action
     Q_PROPERTY(QVariant shortcut READ shortcut WRITE setShortcut RESET resetShortcut NOTIFY shortcutChanged REVISION 1)
@@ -122,7 +124,9 @@ public:
     void setIconName(const QString &name);
     QUrl iconSource() const { return m_iconSource; }
     void setIconSource(const QUrl &url);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void setItemHint(QQmlComponent *);
+#endif
     QVariant shortcut() const { return m_shortcut; }
     void setShortcut(const QVariant&);
     void resetShortcut();
@@ -170,7 +174,9 @@ private:
     QString m_keywords;
     QVariant m_shortcut;
     QKeySequence m_mnemonic;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QQmlComponent *m_itemHint;
+#endif
     Type m_parameterType;
     bool m_factoryIconSource:1;
     bool m_enabled:1;

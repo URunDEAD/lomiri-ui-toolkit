@@ -234,6 +234,7 @@ void UCActionContext::setEffectiveActive(bool active)
     Q_EMIT activeChanged();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 /*!
  * \qmlmethod ActionContext::addAction(Action action)
  * \deprecated
@@ -259,6 +260,7 @@ void UCActionContext::removeAction(UCAction *action)
     }
     m_actions.remove(action);
 }
+#endif
 
 
 /*!

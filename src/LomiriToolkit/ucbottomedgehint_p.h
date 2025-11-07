@@ -58,8 +58,10 @@ class LOMIRITOOLKIT_EXPORT UCBottomEdgeHint : public UCActionItem
 #else
     Q_PROPERTY(UCSwipeArea* swipeArea READ swipeArea CONSTANT FINAL)
 #endif
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // deprecated
     Q_PROPERTY(QString state READ state WRITE setState NOTIFY stateChanged)
+#endif
 public:
     enum Status {
         Hidden,
@@ -77,9 +79,11 @@ public:
     void setDeactivateTimeout(int timeout);
     UG_PREPEND_NAMESPACE(UCSwipeArea) *swipeArea() const;
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // deprecated
     QString state() const;
     void setState(const QString &state);
+#endif
 
 Q_SIGNALS:
     void textChanged();
@@ -91,8 +95,10 @@ Q_SIGNALS:
 
     void clicked();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // deprecated
     void stateChanged();
+#endif
 protected:
     UCBottomEdgeHint(UCBottomEdgeHintPrivate &&, QQuickItem *parent);
     void classBegin() override;

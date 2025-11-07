@@ -47,6 +47,7 @@ public:
     UCMainViewBasePrivate();
     void init();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     enum PropertyFlags {
         CustomHeaderColor     = 0x01,
         CustomBackgroundColor = 0x02,
@@ -55,14 +56,19 @@ public:
 
     void _q_headerColorBinding (const QColor &col);
     void _q_footerColorBinding (const QColor &col);
+#endif
     void doAutoTheme();
     void _q_updateWindow();
 
     QString m_applicationName;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QColor m_headerColor;
-    QColor m_backgroundColor;
     QColor m_footerColor;
+#endif
+    QColor m_backgroundColor;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     UCActionManager *m_actionManager = nullptr;
+#endif
     UCPopupContext* m_actionContext = nullptr;
     qint8 m_flags;
     bool m_anchorToKeyboard:1;

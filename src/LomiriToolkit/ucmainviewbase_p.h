@@ -37,16 +37,24 @@ class LOMIRITOOLKIT_EXPORT UCMainViewBase : public UCPageTreeNode
     Q_OBJECT
     Q_PROPERTY(QString applicationName READ applicationName WRITE setApplicationName NOTIFY applicationNameChanged)
     Q_PROPERTY(bool anchorToKeyboard READ anchorToKeyboard WRITE setAnchorToKeyboard NOTIFY anchorToKeyboardChanged)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_PROPERTY(QColor headerColor READ headerColor WRITE setHeaderColor NOTIFY headerColorChanged)
+#endif
     Q_PROPERTY(QColor backgroundColor READ backgroundColor WRITE setBackgroundColor NOTIFY backgroundColorChanged)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_PROPERTY(QColor footerColor READ footerColor WRITE setFooterColor NOTIFY footerColorChanged)
+#endif
 #ifndef Q_QDOC
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_PROPERTY(QQmlListProperty<UT_PREPEND_NAMESPACE(UCAction)> actions READ actions)
     Q_PROPERTY(UT_PREPEND_NAMESPACE(UCActionManager)* actionManager READ actionManager NOTIFY actionManagerChanged)
+#endif
     Q_PROPERTY(UT_PREPEND_NAMESPACE(UCPopupContext)* actionContext READ actionContext NOTIFY actionContextChanged)
 #else
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_PROPERTY(QQmlListProperty<UCAction> actions READ actions)
     Q_PROPERTY(UCActionManager* actionManager READ actionManager NOTIFY actionManagerChanged)
+#endif
     Q_PROPERTY(UCPopupContext* actionContext READ actionContext NOTIFY actionContextChanged)
 #endif
 
@@ -60,14 +68,18 @@ public:
     bool anchorToKeyboard() const;
     void setAnchorToKeyboard(bool anchorToKeyboard);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QColor headerColor() const;
     void setHeaderColor(QColor headerColor);
+#endif
 
     QColor backgroundColor() const;
     void setBackgroundColor(QColor backgroundColor);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QColor footerColor() const;
     void setFooterColor(QColor footerColor);
+#endif
 
     QQmlListProperty<UCAction> actions() const;
 
@@ -82,9 +94,11 @@ public:
 Q_SIGNALS:
     void applicationNameChanged(QString applicationName);
     void anchorToKeyboardChanged(bool anchorToKeyboard);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void headerColorChanged(const QColor &headerColor);
-    void backgroundColorChanged(const QColor &backgroundColor);
     void footerColorChanged(const QColor &footerColor);
+#endif
+    void backgroundColorChanged(const QColor &backgroundColor);
 #ifndef Q_QDOC
     void actionManagerChanged(UT_PREPEND_NAMESPACE(UCActionManager)* actionManager);
     void actionContextChanged(UT_PREPEND_NAMESPACE(UCPopupContext)* actionContext);
