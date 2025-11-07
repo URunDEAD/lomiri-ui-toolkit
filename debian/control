@@ -547,10 +547,10 @@ Package: qml6-module-lomiri-components
 Architecture: any
 Multi-Arch: same
 Depends: ${fonts-ubuntu},
-         liblomirigestures-qt6-5 (= ${binary:Version}),
-         liblomirimetrics-qt6-5 (= ${binary:Version}),
-         liblomiritoolkit-qt6-5 (= ${binary:Version}),
-         liblomirisysteminfo-qt6-5 (= ${binary:Version}),
+         liblomirigestures-qt6-1 (= ${binary:Version}),
+         liblomirimetrics-qt6-1 (= ${binary:Version}),
+         liblomiritoolkit-qt6-1 (= ${binary:Version}),
+         liblomirisysteminfo-qt6-1 (= ${binary:Version}),
          libqt6svg6,
          lomiri-ui-toolkit-theme-qt6 (= ${binary:Version}),
          qml6-module-lomiri-components-labs,
@@ -573,10 +573,10 @@ Package: qml6-module-lomiri-components-labs
 Architecture: any
 Multi-Arch: same
 Depends: ${fonts-ubuntu},
-         liblomirigestures-qt6-5 (= ${binary:Version}),
-         liblomirimetrics-qt6-5 (= ${binary:Version}),
-         liblomiritoolkit-qt6-5 (= ${binary:Version}),
-         liblomirisysteminfo-qt6-5 (= ${binary:Version}),
+         liblomirigestures-qt6-1 (= ${binary:Version}),
+         liblomirimetrics-qt6-1 (= ${binary:Version}),
+         liblomiritoolkit-qt6-1 (= ${binary:Version}),
+         liblomirisysteminfo-qt6-1 (= ${binary:Version}),
          libqt6svg6,
          lomiri-ui-toolkit-theme-qt6 (= ${binary:Version}),
          qml6-module-lomiri-performancemetrics,
@@ -653,7 +653,7 @@ Description: Qt Components for Lomiri - Qt 6 SystemInfo QML plugin
  .
  This package contains the Qt 6 variant of the Lomiri SystemInfo QML plugin.
 
-Package: liblomirigestures-qt6-5
+Package: liblomirigestures-qt6-1
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -666,7 +666,7 @@ Package: liblomirigestures-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirigestures-qt6-5 (= ${binary:Version}),
+Depends: liblomirigestures-qt6-1 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri gestures Qt 6 library development files
@@ -684,7 +684,7 @@ Description: Lomiri gestures Qt 6 library private development files
  This package contains the private development files for
  Lomiri gestures Qt 6 library with SwipeArea
 
-Package: liblomirimetrics-qt6-5
+Package: liblomirimetrics-qt6-1
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -696,7 +696,7 @@ Package: liblomirimetrics-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirimetrics-qt6-5 (= ${binary:Version}),
+Depends: liblomirimetrics-qt6-1 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri metrics Qt 6 library development files
@@ -714,7 +714,7 @@ Description: Lomiri metrics Qt 6 library private development files
  This package contains the private development files for
  the Lomiri metrics Qt 6 library
 
-Package: liblomiritoolkit-qt6-5
+Package: liblomiritoolkit-qt6-1
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -727,7 +727,7 @@ Package: liblomiritoolkit-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomiritoolkit-qt6-5 (= ${binary:Version}),
+Depends: liblomiritoolkit-qt6-1 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri toolkit common Qt 6 library development files
@@ -758,7 +758,7 @@ Description: Qt Components for Lomiri - Qt 6 Lomiri Theme
  This package contains the Qt 6 variant of the Ambiance theme for Qt Lomiri
  Components.
 
-Package: liblomirisysteminfo-qt6-5
+Package: liblomirisysteminfo-qt6-1
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -770,7 +770,7 @@ Package: liblomirisysteminfo-qt6-dev
 Architecture: any
 Multi-Arch: same
 Section: libdevel
-Depends: liblomirisysteminfo-qt6-5 (= ${binary:Version}),
+Depends: liblomirisysteminfo-qt6-1 (= ${binary:Version}),
          ${misc:Depends},
          ${shlibs:Depends},
 Description: Lomiri system info library development files
