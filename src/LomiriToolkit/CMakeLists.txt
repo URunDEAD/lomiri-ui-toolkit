@@ -141,7 +141,7 @@ add_library(LomiriToolkit SHARED
     ucviewitemsattached.cpp
     unixsignalhandler_p.cpp unixsignalhandler_p.h
 )
-add_library(LomiriToolkit::LomiriToolkit ALIAS LomiriToolkit)
+add_library(LomiriUIToolkit::LomiriToolkit ALIAS LomiriToolkit)
 
 # -fpermissive
 target_compile_options(LomiriToolkit PRIVATE
@@ -261,5 +261,5 @@ install(FILES
 install(EXPORT LomiriToolkitTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE LomiriToolkit-Qt6Targets.cmake
-    NAMESPACE LomiriToolkit::
+    NAMESPACE LomiriUIToolkit::
 )

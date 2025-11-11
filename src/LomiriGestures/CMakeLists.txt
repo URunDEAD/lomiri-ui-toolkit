@@ -13,7 +13,7 @@ add_library(LomiriGestures SHARED
     ucswipearea_p_p.h
     unownedtouchevent.cpp unownedtouchevent_p.h
 )
-add_library(LomiriGestures::LomiriGestures ALIAS LomiriGestures)
+add_library(LomiriUIToolkit::LomiriGestures ALIAS LomiriGestures)
 
 set_target_properties(LomiriGestures PROPERTIES
     VERSION     ${LOMIRI_UI_TOOLKIT_VERSION}
@@ -88,5 +88,5 @@ install(FILES
 install(EXPORT LomiriGesturesTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE LomiriGestures-Qt6Targets.cmake
-    NAMESPACE LomiriGestures::
+    NAMESPACE LomiriUIToolkit::
 )

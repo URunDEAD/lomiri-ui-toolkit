@@ -10,7 +10,7 @@ add_library(LomiriMetrics SHARED
     lomirimetricsglobal.cpp lomirimetricsglobal.h lomirimetricsglobal_p.h
     overlay.cpp overlay_p.h
 )
-add_library(LomiriMetrics::LomiriMetrics ALIAS LomiriMetrics)
+add_library(LomiriUIToolkit::LomiriMetrics ALIAS LomiriMetrics)
 
 target_compile_definitions(LomiriMetrics PRIVATE
     EGL_NO_X11
@@ -93,5 +93,5 @@ install(FILES
 install(EXPORT LomiriMetricsTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE LomiriMetrics-Qt6Targets.cmake
-    NAMESPACE LomiriMetrics::
+    NAMESPACE LomiriUIToolkit::
 )

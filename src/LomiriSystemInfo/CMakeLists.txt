@@ -37,7 +37,7 @@ add_library(LomiriSystemInfo SHARED
     lomirisysteminfoglobal.h
     lomirisysteminfoglobal_p.h
 )
-add_library(LomiriSystemInfo::LomiriSystemInfo ALIAS LomiriSystemInfo)
+add_library(LomiriUIToolkit::LomiriSystemInfo ALIAS LomiriSystemInfo)
 
 set_target_properties(LomiriSystemInfo PROPERTIES
     VERSION     ${LOMIRI_UI_TOOLKIT_VERSION}
@@ -138,5 +138,5 @@ install(FILES
 install(EXPORT LomiriSystemInfoTargets
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     FILE LomiriSystemInfo-Qt6Targets.cmake
-    NAMESPACE LomiriSystemInfo::
+    NAMESPACE LomiriUIToolkit::
 )
