@@ -143,11 +143,6 @@ add_library(LomiriToolkit SHARED
 )
 add_library(LomiriUIToolkit::LomiriToolkit ALIAS LomiriToolkit)
 
-# -fpermissive
-target_compile_options(LomiriToolkit PRIVATE
-    -fpermissive
-)
-
 set_target_properties(LomiriToolkit PROPERTIES
     VERSION     ${LOMIRI_UI_TOOLKIT_VERSION}
     SOVERSION   ${LOMIRI_UI_TOOLKIT_SOVERSION}
