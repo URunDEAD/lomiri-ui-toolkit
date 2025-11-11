@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2024-06-12 14:51+0000\n"
-"Last-Translator: Xuan Yun <uimcism@gmail.com>\n"
+"PO-Revision-Date: 2025-11-11 13:51+0000\n"
+"Last-Translator: Wenwen Luo <wenwenluo130@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "lomiri/lomiri-ui-toolkit/zh_LATN@pinyin/>\n"
 "Language: zh_LATN@pinyin\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
 #: Lomiri/Components/1.3/TextInputPopover.qml:29
 msgid "Select All"
-msgstr ""
+msgstr "全选"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:36
 #: Lomiri/Components/1.3/TextInputPopover.qml:36
 msgid "Cut"
-msgstr ""
+msgstr "剪切"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:48
 #: Lomiri/Components/1.3/TextInputPopover.qml:48
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:57
 #: Lomiri/Components/1.3/TextInputPopover.qml:57
 msgid "Paste"
-msgstr ""
+msgstr "粘贴"
 
 #: Lomiri/Components/1.2/ToolbarItems.qml:143
 #: Lomiri/Components/1.3/ToolbarItems.qml:143
@@ -47,7 +47,7 @@ msgstr ""
 #: Lomiri/Components/ListItems/1.2/Empty.qml:398
 #: Lomiri/Components/ListItems/1.3/Empty.qml:398
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:51
 msgid "No service/path specified"
