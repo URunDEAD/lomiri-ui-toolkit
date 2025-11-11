@@ -72,7 +72,7 @@ private:
 
     bool m_decoded:1;
     bool m_completed:1;
-    bool m_ignoreUnknownProperties;
+    bool m_ignoreUnknownProperties:1;
     QPointer<UCStyledItemBase> m_styledItem;
     QList<Expression> m_expressions;
     QList< QPair<QString, QVariant> > m_values;

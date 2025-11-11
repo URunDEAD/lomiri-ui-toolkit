@@ -166,7 +166,7 @@ protected:
     bool m_longPress:1;
     bool m_hovered:1;
     bool m_doubleClicked:1;
-    bool m_ignoreSynthesizedEvents;
+    bool m_ignoreSynthesizedEvents:1;
 };
 
 UT_NAMESPACE_END
