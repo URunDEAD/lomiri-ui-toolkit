@@ -1391,10 +1391,6 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
     bool consumed = false;
     if (contentItem->contains(contentItem->mapFromScene(event->windowPos()))) {
         QPointF localPos = q->mapFromScene(event->windowPos());
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        std::optional<QPointF> localPosOpt = std::optional<QPointF>(localPos);
-#endif
-
         switch (event->type()) {
         case QEvent::MouseButtonPress: {
             // remember pressed point over active areas
@@ -1402,7 +1398,7 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
                 if (swiped) {
                     // handle as full press and grab the event from the children
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-                    QScopedPointer<QMouseEvent> mouseEvent(static_cast<QMouseEvent*>(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPosOpt)));
+                    QScopedPointer<QMouseEvent> mouseEvent(static_cast<QMouseEvent*>(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPos)));
 #else
                     QScopedPointer<QMouseEvent> mouseEvent(QQuickWindowPrivate::cloneMouseEvent(event, &localPos));
 #endif
