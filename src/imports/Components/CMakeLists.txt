@@ -16,8 +16,8 @@ qt6_add_shaders(LomiriComponents "LomiriComponents_shaders"
     PRECOMPILE
     OPTIMIZED
     FILES
-        "1.0/shaders/colorizeimage.frag"
-        "1.2/shaders/colourshader.frag"
+        "2.0/shaders/colorizeimage.frag"
+        "2.0/shaders/colourshader.frag"
         "Themes/Ambiance/shaders/magnifier.frag"
         "Themes/Ambiance/shaders/partialcolorize.frag"
 )

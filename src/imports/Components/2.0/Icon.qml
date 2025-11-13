@@ -145,6 +145,6 @@ Item {
         property color keyColorIn: "#808080"
         property real threshold: 0.1
 
-        fragmentShader: "qrc:/1.0/shaders/colorizeimage.frag.qsb"
+        fragmentShader: "qrc:/2.0/shaders/colorizeimage.frag.qsb"
     }
 }

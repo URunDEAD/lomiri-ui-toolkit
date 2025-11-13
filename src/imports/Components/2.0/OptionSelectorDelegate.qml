@@ -91,7 +91,7 @@ ListItem.Empty {
     /*!
       Colourising fragment shader.
      */
-    readonly property string fragColourShader: "qrc:/1.2/shaders/colourshader.frag.qsb"
+    readonly property string fragColourShader: "qrc:/2.0/shaders/colourshader.frag.qsb"
 
     showDivider: index !== listView.count - 1 ? 1 : 0
     highlightWhenPressed: false

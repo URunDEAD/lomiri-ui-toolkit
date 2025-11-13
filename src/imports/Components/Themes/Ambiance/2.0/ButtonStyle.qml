@@ -110,7 +110,7 @@ Item {
         property color keyColorIn: Qt.rgba(1.0, 1.0, 1.0, 1.0)
         property real threshold: 1.0
 
-        fragmentShader: "qrc:/1.0/shaders/colorizeimage.frag.qsb"
+        fragmentShader: "qrc:/2.0/shaders/colorizeimage.frag.qsb"
     }
 
     LomiriShape {
