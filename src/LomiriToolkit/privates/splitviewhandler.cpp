@@ -95,7 +95,7 @@ void SplitViewHandler::onReleased(QQuickMouseEvent *event)
 
 void SplitViewHandler::onPositionChanged(QQuickMouseEvent *event)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     if (!isPressed()) {
 #else
     if (!pressed()) {
