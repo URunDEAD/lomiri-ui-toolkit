@@ -61,6 +61,15 @@ LomiriTestCase::LomiriTestCase(const QString& file, ResizeMode resize, bool asse
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+LomiriTestCase::~LomiriTestCase()
+{
+    if (m_spy) {
+        delete m_spy;
+    }
+}
+#endif
+
 /*!
  * The number of all warnings from the point of loading the first line of QML code.
  */
