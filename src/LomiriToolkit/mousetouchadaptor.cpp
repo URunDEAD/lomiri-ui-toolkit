@@ -24,11 +24,14 @@
 #include <QtGui/QMouseEvent>
 #include <QtGui/qpa/qplatformnativeinterface.h>
 #include <QtGui/qpa/qwindowsysteminterface.h>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QtTest>
+#endif
 
 UT_NAMESPACE_BEGIN
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-QInputDevice *MouseTouchAdaptor::m_touchDevice = nullptr;
+QPointingDevice *MouseTouchAdaptor::m_touchDevice = nullptr;
 #else
 QTouchDevice *MouseTouchAdaptor::m_touchDevice = nullptr;
 #endif
@@ -74,8 +77,10 @@ bool MouseTouchAdaptor::registerTouchDevice()
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
         QList<const QInputDevice*> touchDevices = QInputDevice::devices();
         for (const QInputDevice *device : touchDevices) {
-            if (device->type() == QInputDevice::DeviceType::TouchScreen) {
-                m_touchDevice = const_cast<QInputDevice*>(device);
+            const QPointingDevice* pointingDevice;
+            if (device->type() == QInputDevice::DeviceType::TouchScreen &&
+                    (pointingDevice = qobject_cast<const QPointingDevice*>(device))) {
+                m_touchDevice = const_cast<QPointingDevice*>(pointingDevice);
 #else
         QList<const QTouchDevice*> touchDevices = QTouchDevice::devices();
         Q_FOREACH(const QTouchDevice *device, touchDevices) {
@@ -89,8 +94,7 @@ bool MouseTouchAdaptor::registerTouchDevice()
     // if none, register one
     if (!m_touchDevice) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        m_touchDevice = new QInputDevice(QString(), 0, QInputDevice::DeviceType::TouchScreen);
-        QWindowSystemInterface::registerInputDevice(m_touchDevice);
+        m_touchDevice = QTest::createTouchDevice(QInputDevice::DeviceType::TouchScreen);
 #else
         m_touchDevice = new QTouchDevice;
         m_touchDevice->setType(QTouchDevice::TouchScreen);

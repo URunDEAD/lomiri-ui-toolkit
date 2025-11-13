@@ -30,7 +30,7 @@
 
 class QMouseEvent;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-class QInputDevice;
+class QPointingDevice;
 #else
 class QTouchDevice;
 #endif
@@ -50,7 +50,7 @@ public:
 
     static bool registerTouchDevice();
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    inline static QInputDevice *touchDevice()
+    inline static QPointingDevice *touchDevice()
 #else
     inline static QTouchDevice *touchDevice()
 #endif
@@ -68,7 +68,7 @@ Q_SIGNALS:
 private:
     Q_DECLARE_PRIVATE(MouseTouchAdaptor)
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    static QInputDevice *m_touchDevice;
+    static QPointingDevice *m_touchDevice;
 #else
     static QTouchDevice *m_touchDevice;
 #endif
