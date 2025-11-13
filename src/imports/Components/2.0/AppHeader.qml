@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import Lomiri.Components.Private 1.3 as Privates
+import Lomiri.Components.Private as Privates
 
 /*!
     \internal

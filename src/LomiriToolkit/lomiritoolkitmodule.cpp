@@ -315,6 +315,7 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 
     // Register private types.
     const char *privateUri = "Lomiri.Components.Private";
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qmlRegisterType<UCFrame>(privateUri, 1, 3, "Frame");
     qmlRegisterType<UCPageWrapper>(privateUri, 1, 3, "PageWrapper");
     qmlRegisterType<UCAppHeaderBase>(privateUri, 1, 3, "AppHeaderBase");
@@ -322,6 +323,15 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 
     //FIXME: move to a more generic location, i.e StyledItem or QuickUtils
     qmlRegisterSimpleSingletonType<UCScrollbarUtils>(privateUri, 1, 3, "PrivateScrollbarUtils");
+#else
+    qmlRegisterType<UCFrame>(privateUri, 2, 0, "Frame");
+    qmlRegisterType<UCPageWrapper>(privateUri, 2, 0, "PageWrapper");
+    qmlRegisterType<UCAppHeaderBase>(privateUri, 2, 0, "AppHeaderBase");
+    qmlRegisterType<Tree>(privateUri, 2, 0, "Tree");
+
+    //FIXME: move to a more generic location, i.e StyledItem or QuickUtils
+    qmlRegisterSimpleSingletonType<UCScrollbarUtils>(privateUri, 2, 0, "PrivateScrollbarUtils");
+#endif
 
 #   ifdef LOMIRI_UITK_WANT_UBUNTU_COMPAT
     // Used by QML forwarder types to trigger deprecation warnings.

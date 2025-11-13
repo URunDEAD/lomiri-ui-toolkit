@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import org.kde.tactilefeedback
-import Lomiri.Components 1.1
+import Lomiri.Components
 
 Item {
     readonly property bool enabled: true

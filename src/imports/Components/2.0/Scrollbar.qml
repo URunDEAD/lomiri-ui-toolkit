@@ -16,7 +16,7 @@
 
 import QtQuick 2.4
 import Lomiri.Components as Toolkit
-import Lomiri.Components.Private 1.3 as Private
+import Lomiri.Components.Private as Private
 
 /*!
     \qmltype Scrollbar

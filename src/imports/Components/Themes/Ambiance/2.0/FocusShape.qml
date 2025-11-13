@@ -18,7 +18,7 @@
 
 import QtQuick 2.4
 import Lomiri.Components
-import Lomiri.Components.Private 1.3
+import Lomiri.Components.Private
 
 Frame {
     anchors.fill: parent
