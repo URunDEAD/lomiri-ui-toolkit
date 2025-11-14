@@ -20,8 +20,16 @@
 #include <QtCore/QBasicTimer>
 #include <QtCore/QPointer>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/uclistitem_p.h>
+#else
 #include <LomiriToolkit/private/uclistitem_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 class QQuickFlickable;
 

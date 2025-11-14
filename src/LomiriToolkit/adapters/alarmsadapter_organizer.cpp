@@ -388,8 +388,10 @@ AlarmsAdapter::AlarmsAdapter(AlarmManager *qq)
     , AlarmManagerPrivate(qq)
     , manager(0)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // register QOrganizerItemId comparators so QVariant == operator can compare them
     QMetaType::registerComparators<QOrganizerItemId>();
+#endif
     // ensure QOrganizerAbstractRequest::State is registered
     qRegisterMetaType<QOrganizerAbstractRequest::State>("QOrganizerAbstractRequest::State");
 
@@ -476,7 +478,7 @@ void AlarmsAdapter::loadAlarms()
     if (manager->managerName() != alarmManagerFallback) {
         return;
     }
-    QFile file(alarmDatabase.arg(QStandardPaths::writableLocation(QStandardPaths::DataLocation)));
+    QFile file(alarmDatabase.arg(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation)));
     if (!file.open(QFile::ReadOnly)) {
         return;
     }
@@ -511,9 +513,9 @@ void AlarmsAdapter::saveAlarms()
     if (manager->managerName() != alarmManagerFallback) {
         return;
     }
-    QDir dir(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+    QDir dir(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation));
     if (!dir.exists()) {
-        dir.mkpath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+        dir.mkpath(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation));
     }
     QFile file(alarmDatabase.arg(dir.path()));
     if (!file.open(QFile::WriteOnly | QFile::Truncate)) {

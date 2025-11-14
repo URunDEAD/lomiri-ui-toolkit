@@ -214,7 +214,11 @@ void UCPageWrapperPrivate::copyProperties(QObject *target)
         if (!qstrcmp(i.value().typeName(), "std::nullptr_t")) {
             // we have std::nullptr_t, we cannot convert that one, so we must force the conversion
             void *pvalue = i.value().value<std::nullptr_t>();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QVariant value(prop.propertyMetaType(), pvalue);
+#else
             QVariant value(QVariant::Type(prop.propertyType()), pvalue);
+#endif
             convertible = value.isValid();
             if (convertible) {
                 convertible = prop.write(value);

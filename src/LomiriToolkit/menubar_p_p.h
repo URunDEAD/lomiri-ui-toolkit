@@ -17,9 +17,19 @@
 #ifndef MENUBAR_P_P_H
 #define MENUBAR_P_P_H
 
-#include <LomiriToolkit/private/menubar_p.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/menubar_p.h>
+#else
+#include <LomiriToolkit/private/menubar_p.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 class QPlatformMenuBar;
 
@@ -38,8 +48,13 @@ public:
     void removeMenu(Menu *menu);
 
     static void menu_append(QQmlListProperty<Menu> *prop, Menu *o);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype menu_count(QQmlListProperty<Menu> *prop);
+    static Menu *menu_at(QQmlListProperty<Menu> *prop, qsizetype index);
+#else
     static int menu_count(QQmlListProperty<Menu> *prop);
     static Menu *menu_at(QQmlListProperty<Menu> *prop, int index);
+#endif
     static void menu_clear(QQmlListProperty<Menu> *prop);
 
     MenuBar* q_ptr;

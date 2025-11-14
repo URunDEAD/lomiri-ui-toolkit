@@ -19,11 +19,21 @@
 #ifndef UCBOTTOMEDGEREGION_P_P_H
 #define UCBOTTOMEDGEREGION_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucbottomedgeregion_p.h>
+#else
 #include <LomiriToolkit/private/ucbottomedgeregion_p.h>
+#endif
 
 #include <QtCore/private/qobject_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/asyncloader_p_p.h>
+#else
 #include <LomiriToolkit/private/asyncloader_p_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

@@ -84,13 +84,21 @@ void MenuBarPrivate::menu_append(QQmlListProperty<Menu> *prop, Menu *o)
     q->insertMenu(q->m_menus.count(), o);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype MenuBarPrivate::menu_count(QQmlListProperty<Menu> *prop)
+#else
 int MenuBarPrivate::menu_count(QQmlListProperty<Menu> *prop)
+#endif
 {
     MenuBarPrivate *p = static_cast<MenuBarPrivate *>(prop->data);
     return p->m_menus.count();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+Menu *MenuBarPrivate::menu_at(QQmlListProperty<Menu> *prop, qsizetype index)
+#else
 Menu *MenuBarPrivate::menu_at(QQmlListProperty<Menu> *prop, int index)
+#endif
 {
     MenuBarPrivate *p = static_cast<MenuBarPrivate *>(prop->data);
     return p->m_menus.value(index);

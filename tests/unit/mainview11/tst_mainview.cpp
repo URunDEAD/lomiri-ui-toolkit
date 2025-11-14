@@ -25,16 +25,32 @@
 #include <QtCore/QSettings>
 #include <QtCore/QStandardPaths>
 #include <QtCore/QString>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QTextCodec>
+#else
 #include <QtCore/QTextCodec>
+#endif
 #include <QtCore/QThread>
 #include <QtQml/QQmlEngine>
 #include <QtQuick/QQuickItem>
 #include <QtQuick/QQuickView>
 #include <QtTest/QSignalSpy>
 #include <QtTest/QTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitmodule.h>
+#else
 #include <LomiriToolkit/lomiritoolkitmodule.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucapplication_p.h>
+#else
 #include <LomiriToolkit/private/ucapplication_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucunits_p.h>
+#else
 #include <LomiriToolkit/private/ucunits_p.h>
+#endif
 
 #include "uctestcase.h"
 
@@ -116,7 +132,7 @@ private Q_SLOTS:
     void testExpectedDataFolder() {
         QString appName("net.weight.gain");
         UCApplication::instance()->setApplicationName(appName);
-        QString dataFolder(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+        QString dataFolder(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
         QString xdgDataHome(QProcessEnvironment::systemEnvironment().value("XDG_DATA_HOME",
             QProcessEnvironment::systemEnvironment().value("HOME") + "/.local/share"));
         QString expectedDataFolder(xdgDataHome + "/" + appName);
@@ -141,7 +157,7 @@ private Q_SLOTS:
         QCOMPARE(applicationName, QString("tv.island.pacific"));
         QCOMPARE(applicationName, QCoreApplication::applicationName());
         QCOMPARE(QString(""), QCoreApplication::organizationName());
-        QString dataFolder(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
+        QString dataFolder(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
         QString databaseFolder(dataFolder + "/Databases");
         QVERIFY(QFile::exists(databaseFolder));
         QString hash(QCryptographicHash::hash("pacific.island.tv", QCryptographicHash::Md5).toHex());

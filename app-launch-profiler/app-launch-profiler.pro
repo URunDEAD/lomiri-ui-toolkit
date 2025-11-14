@@ -13,7 +13,8 @@ SOURCES += app-launch-tracepoints.c
 TARGET = lomiri-app-launch-tracepoints
 installPath = $$[QT_INSTALL_PREFIX]/bin/
 app-launch-tracepoints.path = $$installPath
-app-launch-tracepoints.files = lomiri-app-launch-tracepoints
+app-launch-tracepoints.files = $$OUT_PWD/$$TARGET
+app-launch-tracepoints.CONFIG = no_check_exist
 app-launch-scripts.path = $$installPath
 app-launch-scripts.files = lomiri-app-launch-profiler-lttng \
                            lomiri-appstart-profile \

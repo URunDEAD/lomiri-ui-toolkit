@@ -21,7 +21,11 @@
 
 #include <QtQuick/private/qquickpositioners_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 
@@ -141,7 +145,11 @@ protected:
 
     // overrides
     void componentComplete() override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry) override;
+#else
     void geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry) override;
+#endif
     void itemChange(ItemChange, const ItemChangeData &) override;
 private:
     // QQuickBasePositionerPrivate is not an exported API, therefore we cannot derive from it

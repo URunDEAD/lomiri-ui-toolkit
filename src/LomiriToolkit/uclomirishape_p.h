@@ -24,8 +24,16 @@
 #include <QtQuick/QSGNode>
 #include <QtQuick/qsgmaterial.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucimportversionchecker_p.h>
+#else
 #include <LomiriToolkit/private/ucimportversionchecker_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/uclomirishapetextures_p.h>
+#else
 #include <LomiriToolkit/private/uclomirishapetextures_p.h>
+#endif
 
 // --- Scene graph shader ---
 
@@ -35,10 +43,15 @@ class ShapeShader : public QSGMaterialShader
 {
 public:
     ShapeShader();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    bool updateUniformData(RenderState& state, QSGMaterial* newMaterial, QSGMaterial * oldMaterial) override;
+    void updateSampledImage(RenderState& state, int bining, QSGTexture **texture, QSGMaterial *newMaterial, QSGMaterial *oldMaterial) override;
+#else
     char const* const* attributeNames() const override;
     void initialize() override;
     void updateState(
         const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect) override;
+#endif
     bool useDistanceFields() const { return m_useDistanceFields; }
 
 private:
@@ -70,7 +83,12 @@ public:
             Pressed              = (1 << 6)
         };
         QSGTextureProvider* sourceTextureProvider;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QSGTexture* shapeTexture;
+        QSGTexture* dummyTexture;
+#else
         quint8 shapeTextureIndex;
+#endif
         quint8 distanceAAFactor;
         quint8 sourceOpacity;
         quint8 flags;
@@ -79,7 +97,11 @@ public:
     ShapeMaterial();
     ~ShapeMaterial();
     QSGMaterialType* type() const override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QSGMaterialShader *createShader(QSGRendererInterface::RenderMode renderMode) const override;
+#else
     QSGMaterialShader* createShader() const override;
+#endif
     int compare(const QSGMaterial* other) const override;
     virtual void updateTextures();
     const Data* constData() const { return &m_data; }
@@ -298,7 +320,11 @@ protected:
     QString propertyForVersion(quint16 version) const override;
     void componentComplete() override;
     QSGNode* updatePaintNode(QSGNode* oldNode, UpdatePaintNodeData* data) override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void geometryChange(const QRectF& newGeometry, const QRectF& oldGeometry) override;
+#else
     void geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry) override;
+#endif
 
     // Virtual functions for extended shapes.
     virtual QSGNode* createSceneGraphNode() const;

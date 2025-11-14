@@ -160,7 +160,11 @@ void HapticsProxy::initialize()
     }
     // load haptics proxy from file system/qrc
     QUrl path(LomiriToolkitModule::baseUrl(m_engine).resolved(
+#if QT_VERSION > QT_VERSION_CHECK(6, 0, 0)
+        QUrl(QStringLiteral("2.0/Haptics.qml"))));
+#else
         QUrl(QStringLiteral("1.1/Haptics.qml"))));
+#endif
 
     QQmlComponent component(m_engine, path, QQmlComponent::PreferSynchronous);
     if (!component.isError()) {

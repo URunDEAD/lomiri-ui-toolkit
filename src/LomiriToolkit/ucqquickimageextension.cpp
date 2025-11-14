@@ -91,7 +91,9 @@ void UCQQuickImageExtension::setSource(const QUrl& url)
             // See https://codereview.qt-project.org/#/c/187967/
             connect(m_image, SIGNAL(sourceSizeChanged()), this, SLOT(onSourceSizeChanged()));
             QQmlEnginePrivate *engPriv = QQmlEnginePrivate::get(qmlEngine(m_image));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             engPriv->registerFinalizeCallback(m_image, m_image->metaObject()->indexOfSignal("sourceSizeChanged()"));
+#endif
         }
     }
 }

@@ -26,6 +26,9 @@
 #include <QtQml/private/qqmlcomponentattached_p.h>
 #include <QtQml/private/qqmlcontext_p.h>
 #include <QtQml/private/qqmldata_p.h>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QtQml/private/qqmlcontextdata_p.h>
+#endif
 
 #include "i18n_p.h"
 #include "quickutils_p.h"
@@ -89,7 +92,11 @@ void UCStateSaverAttachedPrivate::_q_globalEnableChanged(bool enabled)
 QString UCStateSaverAttachedPrivate::absoluteId(const QString &id)
 {
     QQmlContext *attacheeContext = qmlContext(m_attachee);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QQmlRefPointer<QQmlContextData> cdata = QQmlContextData::get(attacheeContext);
+#else
     QQmlContextData *cdata = QQmlContextData::get(attacheeContext);
+#endif
 #if QT_VERSION >= QT_VERSION_CHECK(5, 5, 0)
     QUrl url(cdata->url());
 #else

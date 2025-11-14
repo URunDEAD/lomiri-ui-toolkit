@@ -1,0 +1,35 @@
+module Lomiri.Components.Themes.Ambiance
+#version 2.0
+AmbianceNormal 2.0 ./2.0/AmbianceNormal.qml
+ActionBarStyle 2.0 ./2.0/ActionBarStyle.qml
+ScrollingActionBarStyle 2.0 ./2.0/ScrollingActionBarStyle.qml
+MainViewStyle 2.0 ./2.0/MainViewStyle.qml
+ListItemOptionSelector 2.0 ./2.0/ListItemOptionSelector.qml
+OptionSelectorStyle 2.0 ./2.0/OptionSelectorStyle.qml
+PopoverForegroundStyle 2.0 ./2.0/PopoverForegroundStyle.qml
+TabBarStyle 2.0 ./2.0/TabBarStyle.qml
+TextAreaStyle 2.0 ./2.0/TextAreaStyle.qml
+TextFieldStyle 2.0 ./2.0/TextFieldStyle.qml
+PickerStyle 2.0 ./2.0/PickerStyle.qml
+DatePickerStyle 2.0 ./2.0/DatePickerStyle.qml
+PickerDelegateStyle 2.0 ./2.0/PickerDelegateStyle.qml
+DialerStyle 2.0 ./2.0/DialerStyle.qml
+DialerHandStyle 2.0 ./2.0/DialerHandStyle.qml
+
+ComboButtonStyle 2.0 ./2.0/ComboButtonStyle.qml
+PullToRefreshStyle 2.0 ./2.0/PullToRefreshStyle.qml
+PageHeadStyle 2.0 ./2.0/PageHeadStyle.qml
+Palette 2.0 ./2.0/Palette.qml
+ButtonStyle 2.0 ./2.0/ButtonStyle.qml
+SliderStyle 2.0 ./2.0/SliderStyle.qml
+SwitchStyle 2.0 ./2.0/SwitchStyle.qml
+CheckBoxStyle 2.0 ./2.0/CheckBoxStyle.qml
+
+ListItemStyle 2.0 ./2.0/ListItemStyle.qml
+internal SliderUtils 2.0/sliderUtils.js
+PageHeaderStyle 2.0 ./2.0/PageHeaderStyle.qml
+BottomEdgeHintStyle 2.0 ./2.0/BottomEdgeHintStyle.qml
+BottomEdgeStyle 2.0 ./2.0/BottomEdgeStyle.qml
+ToolbarStyle 2.0 ./2.0/ToolbarStyle.qml
+internal SectionsForPageHead ./2.0/SectionsForPageHead.qml
+internal SectionsForPageHeadStyle ./2.0/SectionsForPageHeadStyle.qml

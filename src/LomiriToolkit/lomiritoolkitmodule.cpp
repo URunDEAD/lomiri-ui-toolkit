@@ -34,7 +34,11 @@
 #include <QtDBus/QDBusConnection>
 #include <QtGui/QGuiApplication>
 #include <QtGui/QScreen>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/applicationmonitor.h>
+#else
 #include <LomiriMetrics/applicationmonitor.h>
+#endif
 
 #include "actionlist_p.h"
 #include "colorutils_p.h"
@@ -63,8 +67,11 @@
 #include "ucactioncontext_p.h"
 #include "ucactionitem_p.h"
 #include "ucactionmanager_p.h"
+// FIXME: depends on QtPim
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include "ucalarm_p.h"
 #include "ucalarmmodel_p.h"
+#endif
 #include "ucapplication_p.h"
 #include "ucargument_p.h"
 #include "ucarguments_p.h"
@@ -229,8 +236,10 @@ void LomiriToolkitModule::registerTypesToVersion(const char *uri, int major, int
     qmlRegisterType<UCStyledItemBase>(uri, major, minor, "StyledItem");
     qmlRegisterUncreatableType<LomiriI18n>(
        uri, major, minor, "I18n", QStringLiteral("Singleton object"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qmlRegisterExtendedType<
         QQuickImageBase, UCQQuickImageExtension>(uri, major, minor, "QQuickImageBase");
+#endif
     qmlRegisterUncreatableType<UCUnits>(uri, major, minor, "UCUnits", notInstantiatable);
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     if (uri == QLatin1String("Ubuntu.Components")) {
@@ -260,8 +269,10 @@ void LomiriToolkitModule::registerTypesToVersion(const char *uri, int major, int
 #else
     qmlRegisterAnonymousType<QQmlPropertyMap>(uri, major);
 #endif
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qmlRegisterType<UCAlarm>(uri, major, minor, "Alarm");
     qmlRegisterType<UCAlarmModel>(uri, major, minor, "AlarmModel");
+#endif
     qmlRegisterType<UCStateSaver>(uri, major, minor, "StateSaver");
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     qmlRegisterType<UCStateSaverAttached>();
@@ -304,6 +315,7 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 
     // Register private types.
     const char *privateUri = "Lomiri.Components.Private";
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qmlRegisterType<UCFrame>(privateUri, 1, 3, "Frame");
     qmlRegisterType<UCPageWrapper>(privateUri, 1, 3, "PageWrapper");
     qmlRegisterType<UCAppHeaderBase>(privateUri, 1, 3, "AppHeaderBase");
@@ -311,6 +323,15 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 
     //FIXME: move to a more generic location, i.e StyledItem or QuickUtils
     qmlRegisterSimpleSingletonType<UCScrollbarUtils>(privateUri, 1, 3, "PrivateScrollbarUtils");
+#else
+    qmlRegisterType<UCFrame>(privateUri, 2, 0, "Frame");
+    qmlRegisterType<UCPageWrapper>(privateUri, 2, 0, "PageWrapper");
+    qmlRegisterType<UCAppHeaderBase>(privateUri, 2, 0, "AppHeaderBase");
+    qmlRegisterType<Tree>(privateUri, 2, 0, "Tree");
+
+    //FIXME: move to a more generic location, i.e StyledItem or QuickUtils
+    qmlRegisterSimpleSingletonType<UCScrollbarUtils>(privateUri, 2, 0, "PrivateScrollbarUtils");
+#endif
 
 #   ifdef LOMIRI_UITK_WANT_UBUNTU_COMPAT
     // Used by QML forwarder types to trigger deprecation warnings.
@@ -329,17 +350,21 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 
     HapticsProxy::instance(engine);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     engine->addImageProvider(QLatin1String("scaling"), new UCScalingImageProvider);
+#endif
 
     // register icon provider
     engine->addImageProvider(QLatin1String("theme"), new LomiriThemeIconProvider);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // Necessary for Screen.orientation (from import QtQuick.Window 2.0) to work
     QGuiApplication::primaryScreen()->setOrientationUpdateMask( Qt::ScreenOrientations(
             Qt::PortraitOrientation |
             Qt::LandscapeOrientation |
             Qt::InvertedPortraitOrientation |
             Qt::InvertedLandscapeOrientation));
+#endif
 
     module->registerWindowContextProperty();
 
@@ -407,9 +432,14 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
 
 void LomiriToolkitModule::defineModule(const char *uri)
 {
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    registerTypesToVersion(uri, 2, 0);
+#else
     // register 0.1 for backward compatibility
     registerTypesToVersion(uri, 0, 1);
     registerTypesToVersion(uri, 1, 0);
+#endif
 
     // register custom event
     ForwardedEvent::registerForwardedEvent();
@@ -418,6 +448,7 @@ void LomiriToolkitModule::defineModule(const char *uri)
     qmlRegisterUncreatableType<QAbstractItemModel>(
         uri, 1, 1, "QAbstractItemModel", notInstantiatable);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // register 1.1 only API
     qmlRegisterType<UCStyledItemBase, 1>(uri, 1, 1, "StyledItem");
     qmlRegisterType<QSortFilterProxyModelQML>(uri, 1, 1, "SortFilterModel");
@@ -427,22 +458,14 @@ void LomiriToolkitModule::defineModule(const char *uri)
 
     // register 1.2 only API
     qmlRegisterType<UCListItem>(uri, 1, 2, "ListItem");
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    qmlRegisterType<UCListItemDivider>();
-#else
     qmlRegisterAnonymousType<UCListItemDivider>(uri, 1);
-#endif
     qmlRegisterUncreatableType<UCSwipeEvent>(
         uri, 1, 2, "SwipeEvent", QStringLiteral("This is an event object."));
     qmlRegisterUncreatableType<UCDragEvent>(
         uri, 1, 2, "ListItemDrag", QStringLiteral("This is an event object"));
     qmlRegisterType<UCListItemActions>(uri, 1, 2, "ListItemActions");
     qmlRegisterUncreatableType<UCViewItemsAttached>(uri, 1, 2, "ViewItems", notInstantiatable);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    if (uri == QLatin1String("Ubuntu.Components")) {
-#else
     if (QLatin1String(uri) == QLatin1String("Ubuntu.Components")) {
-#endif
         // FIXME/DEPRECATED: Ubuntu.* is exported for backwards compatibility only
         qmlRegisterType<UCLomiriShape, 1>(uri, 1, 2, "UbuntuShape");
         qmlRegisterType<UCLomiriShapeOverlay>(uri, 1, 2, "UbuntuShapeOverlay");
@@ -452,25 +475,16 @@ void LomiriToolkitModule::defineModule(const char *uri)
         qmlRegisterType<UCLomiriShapeOverlay>(uri, 1, 2, "LomiriShapeOverlay");
         qmlRegisterSimpleSingletonType<UT_PREPEND_NAMESPACE(UCNamespace)>(uri, 1, 2, "Lomiri");
     }
-
     // register 1.3 API
     qmlRegisterType<UCListItem, 1>(uri, 1, 3, "ListItem");
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    qmlRegisterType<UCListItemExpansion>();
-#else
     qmlRegisterAnonymousType<UCListItemExpansion>(uri, 1);
-#endif
     qmlRegisterType<UCTheme>(uri, 1, 3, "ThemeSettings");
     qmlRegisterType<UCStyledItemBase, 2>(uri, 1, 3, "StyledItem");
     qmlRegisterType<UCStyledItemBase, 2>(uri, 1, 3, "StyledItem");
     qmlRegisterCustomType<UCStyleHints>(uri, 1, 3, "StyleHints", new UCStyleHintsParser);
     qmlRegisterType<UCAction, 1>(uri, 1, 3, "Action");
     qmlRegisterType<UCSlotsLayout>(uri, 1, 3, "SlotsLayout");
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    if (uri == QLatin1String("Ubuntu.Components")) {
-#else
     if (QLatin1String(uri) == QLatin1String("Ubuntu.Components")) {
-#endif
         // FIXME/DEPRECATED: Ubuntu.* is exported for backwards compatibility only
         qmlRegisterType<UCLomiriShape, 2>(uri, 1, 3, "UbuntuShape");
         qmlRegisterSimpleSingletonType<UT_PREPEND_NAMESPACE(UCNamespaceV13)>(uri, 1, 3, "Ubuntu");
@@ -481,11 +495,7 @@ void LomiriToolkitModule::defineModule(const char *uri)
     qmlRegisterType<UCProportionalShape>(uri, 1, 3, "ProportionalShape");
     qmlRegisterType<LiveTimer>(uri, 1, 3, "LiveTimer");
     qmlRegisterType<UCAbstractButton>(uri, 1, 3, "AbstractButton");
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    qmlRegisterType<UCMargins>();
-#else
     qmlRegisterAnonymousType<UCMargins>(uri, 1);
-#endif
     qmlRegisterUncreatableType<UCSlotsAttached>(uri, 1, 3, "SlotsAttached", notInstantiatable);
     qmlRegisterUncreatableType<UCSlotsLayoutPadding>(
         uri, 1, 3, "SlotsLayoutPadding", notInstantiatable);
@@ -501,15 +511,56 @@ void LomiriToolkitModule::defineModule(const char *uri)
     qmlRegisterType<ActionList>(uri, 1, 3, "ActionList");
     qmlRegisterType<ExclusiveGroup>(uri, 1, 3, "ExclusiveGroup");
 
-#   ifdef LOMIRI_UITK_WANT_UBUNTU_COMPAT
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    if (uri == QLatin1String("Ubuntu.Components")) {
 #else
-    if (QLatin1String(uri) == QLatin1String("Ubuntu.Components")) {
+    qmlRegisterUncreatableType<UCSwipeEvent>(
+        uri, 2, 0, "SwipeEvent", QStringLiteral("This is an event object."));
+    qmlRegisterUncreatableType<UCDragEvent>(
+        uri, 2, 0, "ListItemDrag", QStringLiteral("This is an event object"));
+    qmlRegisterType<UCListItemActions>(uri, 2, 0, "ListItemActions");
+    qmlRegisterUncreatableType<UCViewItemsAttached>(uri, 2, 0, "ViewItems", notInstantiatable);
+    qmlRegisterType<QSortFilterProxyModelQML>(uri, 2, 0, "SortFilterModel");
+    qmlRegisterUncreatableType<FilterBehavior>(uri, 2, 0, "FilterBehavior", notInstantiatable);
+    qmlRegisterUncreatableType<SortBehavior>(uri, 2, 0, "SortBehavior", notInstantiatable);
+    qmlRegisterType<UCServiceProperties, 1>(uri, 2, 0, "ServiceProperties");
+    // register 2.0 API
+    qmlRegisterType<UCListItem, 1>(uri, 2, 0, "ListItem");
+    qmlRegisterAnonymousType<UCListItemExpansion>(uri, 1);
+    qmlRegisterType<UCTheme>(uri, 2, 0, "ThemeSettings");
+    qmlRegisterType<UCStyledItemBase, 2>(uri, 2, 0, "StyledItem");
+    qmlRegisterType<UCStyledItemBase, 2>(uri, 2, 0, "StyledItem");
+    qmlRegisterCustomType<UCStyleHints>(uri, 2, 0, "StyleHints", new UCStyleHintsParser);
+    qmlRegisterType<UCAction, 1>(uri, 2, 0, "Action");
+    qmlRegisterType<UCSlotsLayout>(uri, 2, 0, "SlotsLayout");
+    qmlRegisterType<UCLomiriShape, 2>(uri, 2, 0, "LomiriShape");
+    qmlRegisterSimpleSingletonType<UT_PREPEND_NAMESPACE(UCNamespaceV13)>(uri, 2, 0, "Lomiri");
+    qmlRegisterType<UCProportionalShape>(uri, 2, 0, "ProportionalShape");
+    qmlRegisterType<LiveTimer>(uri, 2, 0, "LiveTimer");
+    qmlRegisterType<UCAbstractButton>(uri, 2, 0, "AbstractButton");
+    qmlRegisterAnonymousType<UCMargins>(uri, 1);
+    qmlRegisterUncreatableType<UCSlotsAttached>(uri, 2, 0, "SlotsAttached", notInstantiatable);
+    qmlRegisterUncreatableType<UCSlotsLayoutPadding>(
+        uri, 2, 0, "SlotsLayoutPadding", notInstantiatable);
+    qmlRegisterType<UCListItemLayout>(uri, 2, 0, "ListItemLayout");
+    qmlRegisterType<UCHeader>(uri, 2, 0, "Header");
+    qmlRegisterType<UCLabel>(uri, 2, 0, "Label");
+    qmlRegisterType<UCBottomEdgeHint>(uri, 2, 0, "BottomEdgeHint");
+    qmlRegisterType<UCBottomEdge>(uri, 2, 0, "BottomEdge");
+    qmlRegisterType<UCBottomEdgeRegion>(uri, 2, 0, "BottomEdgeRegion");
+    qmlRegisterType<UCPageTreeNode>(uri, 2, 0, "PageTreeNode");
+    qmlRegisterType<UCPopupContext>(uri, 2, 0, "PopupContext");
+    qmlRegisterType<UCMainViewBase>(uri, 2, 0, "MainViewBase");
+    qmlRegisterType<ActionList>(uri, 2, 0, "ActionList");
+    qmlRegisterType<ExclusiveGroup>(uri, 2, 0, "ExclusiveGroup");
+
 #endif
+
+#   ifdef LOMIRI_UITK_WANT_UBUNTU_COMPAT
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    if (QLatin1String(uri) == QLatin1String("Ubuntu.Components")) {
         DeprecationPrinter::instance()->printDeprecation(
             DeprecationPrinter::COMPONENTS);
     }
+#endif
 #   endif
 }
 

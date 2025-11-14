@@ -283,13 +283,21 @@ void MenuPrivate::data_append(QQmlListProperty<QObject> *prop, QObject *o)
     q->appendObject(o);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype MenuPrivate::data_count(QQmlListProperty<QObject> *prop)
+#else
 int MenuPrivate::data_count(QQmlListProperty<QObject> *prop)
+#endif
 {
     MenuPrivate *p = static_cast<MenuPrivate *>(prop->data);
     return p->m_data.count();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QObject *MenuPrivate::data_at(QQmlListProperty<QObject> *prop, qsizetype index)
+#else
 QObject *MenuPrivate::data_at(QQmlListProperty<QObject> *prop, int index)
+#endif
 {
     MenuPrivate *p = static_cast<MenuPrivate *>(prop->data);
     return p->m_data.value(index, Q_NULLPTR);

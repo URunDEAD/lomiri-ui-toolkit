@@ -660,3 +660,6 @@ void UCAction::removeOwningItem(QQuickItem *item)
 }
 
 UT_NAMESPACE_END
+
+QML_DECLARE_TYPE(UT_PREPEND_NAMESPACE(UCAction))
+

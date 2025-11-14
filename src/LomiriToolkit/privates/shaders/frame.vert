@@ -16,19 +16,27 @@
  * Author: Loïc Molinari <loic.molinari@canonical.com>
  */
 
-uniform highp mat4 matrix;
-attribute highp vec4 positionAttrib;
-attribute mediump vec2 outerCoordAttrib;
-attribute mediump vec2 innerCoordAttrib;
-attribute lowp vec4 colorAttrib;
-varying mediump vec2 outerCoord;
-varying mediump vec2 innerCoord;
-varying lowp vec4 color;
+#version 440
+
+layout(location = 0) in vec4 positionAttrib;
+layout(location = 1) in vec2 outerCoordAttrib;
+layout(location = 2) in vec2 innerCoordAttrib;
+layout(location = 3) in vec4 colorAttrib;
+
+layout(location = 0) out vec2 outerCoord;
+layout(location = 1) out vec2 innerCoord;
+layout(location = 2) out vec4 color;
+
+layout(std140, binding = 0) uniform buf {
+    mat4 qt_Matrix;
+    float qt_Opacity;
+} ubuf;
+
 
 void main()
 {
     outerCoord = outerCoordAttrib;
     innerCoord = innerCoordAttrib;
     color = colorAttrib;
-    gl_Position = matrix * positionAttrib;
+    gl_Position = ubuf.qt_Matrix * positionAttrib;
 }

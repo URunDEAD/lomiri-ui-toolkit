@@ -21,8 +21,16 @@
 
 #include <QtQuick/private/qquicktext_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucthemingextension_p.h>
+#else
 #include <LomiriToolkit/private/ucthemingextension_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

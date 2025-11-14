@@ -21,7 +21,11 @@
 
 #include <QtGui/QTouchEvent>
 #include <QtQuick/QQuickItem>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/lomirigesturesglobal.h>
+#else
 #include <LomiriGestures/lomirigesturesglobal.h>
+#endif
 
 class LomiriTestCase;
 class QTouchDevice;

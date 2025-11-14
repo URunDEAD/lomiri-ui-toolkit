@@ -18,5 +18,9 @@ QML_FILES += 1.2/ActionSelectionPopover.qml \
              1.3/PopupBase.qml \
              1.3/popupUtils.js \
              1.3/SheetBase.qml
+DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
+
+OTHER_FILES+= qmldir-qt5
+
 
 load(lomiri_qml_module)

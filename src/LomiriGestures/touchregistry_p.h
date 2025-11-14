@@ -24,10 +24,26 @@
 #include <QtGui/QTouchEvent>
 #include <QtQuick/QQuickItem>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/lomirigesturesglobal.h>
+#else
 #include <LomiriGestures/lomirigesturesglobal.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/candidateinactivitytimer_p.h>
+#else
 #include <LomiriGestures/private/candidateinactivitytimer_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/timer_p.h>
+#else
 #include <LomiriGestures/private/timer_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/pool_p.h>
+#else
 #include <LomiriGestures/private/pool_p.h>
+#endif
 
 UG_FORWARD_DECLARE_CLASS(AbstractTimerFactory)
 

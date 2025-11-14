@@ -17,7 +17,13 @@
 #ifndef UCPAGETREENODE_P_H
 #define UCPAGETREENODE_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucstyleditembase_p.h>
+#else
 #include <LomiriToolkit/private/ucstyleditembase_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

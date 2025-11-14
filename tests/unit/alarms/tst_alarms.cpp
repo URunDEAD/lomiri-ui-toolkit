@@ -18,16 +18,40 @@
 
 #include <QtCore/QDebug>
 #include <QtCore/QString>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QTextCodec>
+#else
 #include <QtCore/QTextCodec>
+#endif
 #include <QtCore/QTimeZone>
 #include <QtQml/QQmlEngine>
 #include <QtTest/QTest>
 #include <QtTest/QSignalSpy>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitmodule.h>
+#else
 #include <LomiriToolkit/lomiritoolkitmodule.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucalarm_p_p.h>
+#else
 #include <LomiriToolkit/private/ucalarm_p_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/alarmmanager_p_p.h>
+#else
 #include <LomiriToolkit/private/alarmmanager_p_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucalarmmodel_p.h>
+#else
 #include <LomiriToolkit/private/ucalarmmodel_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/alarmsadapter_p.h>
+#else
 #include <LomiriToolkit/private/alarmsadapter_p.h>
+#endif
 
 #include "uctestcase.h"
 

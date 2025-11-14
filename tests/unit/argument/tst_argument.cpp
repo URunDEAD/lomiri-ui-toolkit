@@ -19,7 +19,11 @@
 #include <QtCore/QString>
 #include <QtTest/QTest>
 #define protected public
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucargument_p.h>
+#else
 #include <LomiriToolkit/private/ucargument_p.h>
+#endif
 #undef protected
 
 UT_USE_NAMESPACE

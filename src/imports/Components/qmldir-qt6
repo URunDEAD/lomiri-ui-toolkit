@@ -1,0 +1,54 @@
+module Lomiri.Components
+plugin LomiriComponents
+typeinfo plugins.qmltypes
+
+#################################################
+#version 2.0
+ActionBar 2.0 2.0/ActionBar.qml
+AdaptivePageLayout 2.0 2.0/AdaptivePageLayout.qml
+PageColumnsLayout 2.0 2.0/PageColumnsLayout.qml
+PageColumn 2.0 2.0/PageColumn.qml
+ToolbarItems 2.0 2.0/ToolbarItems.qml
+ToolbarButton 2.0 2.0/ToolbarButton.qml
+MainView 2.0 2.0/MainView.qml
+ComboButton 2.0 2.0/ComboButton.qml
+Button 2.0 2.0/Button.qml
+Panel 2.0 2.0/Panel.qml
+Tab 2.0 2.0/Tab.qml
+TabBar 2.0 2.0/TabBar.qml
+Tabs 2.0 2.0/Tabs.qml
+ActivityIndicator 2.0 2.0/ActivityIndicator.qml
+ProgressBar 2.0 2.0/ProgressBar.qml
+TextField 2.0 2.0/TextField.qml
+TextArea 2.0 2.0/TextArea.qml
+Switch 2.0 2.0/Switch.qml
+CheckBox 2.0 2.0/CheckBox.qml
+Slider 2.0 2.0/Slider.qml
+Scrollbar 2.0 2.0/Scrollbar.qml
+OptionSelector 2.0 2.0/OptionSelector.qml
+OptionSelectorDelegate 2.0 2.0/OptionSelectorDelegate.qml
+Page 2.0 2.0/Page.qml
+PageStack 2.0 2.0/PageStack.qml
+PageHeadConfiguration 2.0 2.0/PageHeadConfiguration.qml
+PageHeadSections 2.0 2.0/PageHeadSections.qml
+PageHeadState 2.0 2.0/PageHeadState.qml
+Sections 2.0 2.0/Sections.qml
+CrossFadeImage 2.0 2.0/CrossFadeImage.qml
+OrientationHelper 2.0 2.0/OrientationHelper.qml
+LomiriNumberAnimation 2.0 2.0/LomiriNumberAnimation.qml
+PullToRefresh 2.0 2.0/PullToRefresh.qml
+LomiriListView 2.0 2.0/LomiriListView.qml
+Captions 2.0 2.0/Captions.qml
+DateUtils 2.0 2.0/dateUtils.js
+ProgressionSlot 2.0 2.0/ProgressionSlot.qml
+ScrollView 2.0 2.0/ScrollView.qml
+PageHeader 2.0 2.0/PageHeader.qml
+Toolbar 2.0 2.0/Toolbar.qml
+singleton LomiriColors 2.0 2.0/LomiriColors.qml
+Icon 2.0 2.0/Icon.qml
+AbstractButton 2.0 2.0/AbstractButton.qml
+ActionList 2.0 2.0/ActionList.qml
+Label 2.0 2.0/Label.qml
+MainViewBase 2.0 2.0/MainViewBase.qml
+PageTreeNode 2.0 2.0/PageTreeNode.qml
+PageWrapper 2.0 2.0/PageWrapper.qml

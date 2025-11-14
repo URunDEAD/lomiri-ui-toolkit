@@ -19,7 +19,13 @@
 #ifndef SPLITVIEW_P_P_H
 #define SPLITVIEW_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/splitview_p.h>
+#else
 #include <LomiriToolkit/private/splitview_p.h>
+#endif
 
 #include <QtCore/private/qobject_p.h>
 
@@ -70,8 +76,13 @@ public:
 
 private:
     static void columns_Append(QQmlListProperty<ViewColumn> *, ViewColumn*);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype columns_Count(QQmlListProperty<ViewColumn> *);
+    static ViewColumn *columns_At(QQmlListProperty<ViewColumn> *, qsizetype);
+#else
     static int columns_Count(QQmlListProperty<ViewColumn> *);
     static ViewColumn *columns_At(QQmlListProperty<ViewColumn> *, int);
+#endif
     static void columns_Clear(QQmlListProperty<ViewColumn> *);
 };
 
@@ -144,12 +155,16 @@ public:
 
 private:
     static void layout_Append(QQmlListProperty<SplitViewLayout> *, SplitViewLayout*);
-    static int layout_Count(QQmlListProperty<SplitViewLayout> *);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype layout_Count(QQmlListProperty<SplitViewLayout> *);
+    static SplitViewLayout *layout_At(QQmlListProperty<SplitViewLayout> *, qsizetype);
+#else
     static SplitViewLayout *layout_At(QQmlListProperty<SplitViewLayout> *, int);
+    static int layout_Count(QQmlListProperty<SplitViewLayout> *);
+#endif
     static void layout_Clear(QQmlListProperty<SplitViewLayout> *);
 };
 
 UT_NAMESPACE_END
 
 #endif // SPLITVIEW_P_P_H
-

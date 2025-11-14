@@ -278,13 +278,21 @@ void SplitViewPrivate::layout_Append(QQmlListProperty<SplitViewLayout> *list, Sp
     QObject::connect(layout, SIGNAL(whenChanged()), view, SLOT(changeLayout()), Qt::DirectConnection);
     Q_EMIT view->layoutsChanged();
 }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype SplitViewPrivate::layout_Count(QQmlListProperty<SplitViewLayout> *list)
+#else
 int SplitViewPrivate::layout_Count(QQmlListProperty<SplitViewLayout> *list)
+#endif
 {
     SplitView *view = static_cast<SplitView*>(list->object);
     SplitViewPrivate *d = SplitViewPrivate::get(view);
     return d->columnLatouts.size();
 }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+SplitViewLayout *SplitViewPrivate::layout_At(QQmlListProperty<SplitViewLayout> *list, qsizetype index)
+#else
 SplitViewLayout *SplitViewPrivate::layout_At(QQmlListProperty<SplitViewLayout> *list, int index)
+#endif
 {
     SplitView *view = static_cast<SplitView*>(list->object);
     SplitViewPrivate *d = SplitViewPrivate::get(view);
@@ -615,9 +623,15 @@ void SplitView::componentComplete()
     QQuickBasePositioner::componentComplete();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void SplitView::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
+{
+    QQuickBasePositioner::geometryChange(newGeometry, oldGeometry);
+#else
 void SplitView::geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry)
 {
     QQuickBasePositioner::geometryChanged(newGeometry, oldGeometry);
+#endif
     // if we have fillWidths, recalculate those!
     // call this on horizontal resize, vertical one will do its job
     if (newGeometry.width() != oldGeometry.width()) {

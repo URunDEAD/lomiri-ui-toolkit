@@ -26,7 +26,11 @@
 #endif
 
 #define BUILD_VERSION(major, minor)     ((((major) & 0x00FF) << 8) | ((minor) & 0x00FF))
-#define LATEST_UITK_VERSION             BUILD_VERSION(1, 3)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    #define LATEST_UITK_VERSION             BUILD_VERSION(2, 0)
+#else
+    #define LATEST_UITK_VERSION             BUILD_VERSION(1, 3)
+#endif
 #define MAJOR_VERSION(version)          ((version) >> 8)
 #define MINOR_VERSION(version)          ((version) & 0x00FF)
 

@@ -13,7 +13,6 @@ ARTWORK_FILES += artwork/background_paper@27.png \
              artwork/caret_noshadow@27.png \
              artwork/chevron@27.png \
              artwork/chevron_down@30.png \
-             artwork/cross@30.png \
              artwork/header_overflow_dropshadow@27.png \
              artwork/header_overflow_dropshadow@27.sci \
              artwork/PageHeaderBaseDividerBottom@18.png \
@@ -116,13 +115,15 @@ QML_FILES += 1.2/ActivityIndicatorStyle.qml \
              1.3/ToolbarButtonStyle.qml \
              1.3/ToolbarStyle.qml \
              1.3/IconButtonStyle.qml \
-	     1.3/PageHeaderStyle.qml \
+             1.3/PageHeaderStyle.qml \
              1.3/BottomEdgeHintStyle.qml \
              1.3/BottomEdgeStyle.qml \
              1.3/FocusShape.qml \
-	     1.3/SectionsForPageHead.qml \
-	     1.3/SectionsForPageHeadStyle.qml \
+             1.3/SectionsForPageHead.qml \
+             1.3/SectionsForPageHeadStyle.qml \
              $$ARTWORK_FILES
+
+DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
 
 load(lomiri_qml_module)
 

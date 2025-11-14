@@ -17,9 +17,19 @@
 #ifndef UCABSTRACTBUTTON_P_P_H
 #define UCABSTRACTBUTTON_P_P_H
 
-#include <LomiriToolkit/private/ucabstractbutton_p.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucabstractbutton_p.h>
+#else
+#include <LomiriToolkit/private/ucabstractbutton_p.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucactionitem_p_p.h>
+#else
 #include <LomiriToolkit/private/ucactionitem_p_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

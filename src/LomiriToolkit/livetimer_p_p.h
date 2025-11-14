@@ -17,7 +17,13 @@
 #ifndef LIVETIMER_P_P_H
 #define LIVETIMER_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/livetimer_p.h>
+#else
 #include <LomiriToolkit/private/livetimer_p.h>
+#endif
 
 #include <QtCore/QTimer>
 

@@ -53,13 +53,21 @@ void ULLayoutsPrivate::append_layout(QQmlListProperty<ULConditionalLayout> *list
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype ULLayoutsPrivate::count_layouts(QQmlListProperty<ULConditionalLayout> *list)
+#else
 int ULLayoutsPrivate::count_layouts(QQmlListProperty<ULConditionalLayout> *list)
+#endif
 {
     ULLayouts *_this = static_cast<ULLayouts*>(list->object);
     return _this->d_ptr->layouts.count();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+ULConditionalLayout *ULLayoutsPrivate::at_layout(QQmlListProperty<ULConditionalLayout> *list, qsizetype index)
+#else
 ULConditionalLayout *ULLayoutsPrivate::at_layout(QQmlListProperty<ULConditionalLayout> *list, int index)
+#endif
 {
     ULLayouts *_this = static_cast<ULLayouts*>(list->object);
     return _this->d_ptr->layouts.at(index);
@@ -582,10 +590,17 @@ void ULLayouts::componentComplete()
     d->updateLayout();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void ULLayouts::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
+{
+    Q_D(ULLayouts);
+    QQuickItem::geometryChange(newGeometry, oldGeometry);
+#else
 void ULLayouts::geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry)
 {
     Q_D(ULLayouts);
     QQuickItem::geometryChanged(newGeometry, oldGeometry);
+#endif
     // simply update the container's width/height to the new width/height
     d->contentItem->setSize(newGeometry.size());
 }

@@ -17,9 +17,19 @@
 #ifndef MENU_P_P_H
 #define MENU_P_P_H
 
-#include <LomiriToolkit/private/menu_p.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/menu_p.h>
+#else
+#include <LomiriToolkit/private/menu_p.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 class QObject;
 class QQmlComponent;
@@ -46,8 +56,13 @@ public:
     void _q_updateVisible();
 
     static void data_append(QQmlListProperty<QObject> *prop, QObject *o);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype data_count(QQmlListProperty<QObject> *prop);
+    static QObject *data_at(QQmlListProperty<QObject> *prop, qsizetype index);
+#else
     static int data_count(QQmlListProperty<QObject> *prop);
     static QObject *data_at(QQmlListProperty<QObject> *prop, int index);
+#endif
     static void data_clear(QQmlListProperty<QObject> *prop);
 
     Menu* q_ptr;

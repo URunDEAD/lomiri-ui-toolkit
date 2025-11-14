@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 #
 # Copyright 2015 Canonical Ltd.
 #
@@ -16,7 +16,12 @@
 #
 ################################################################################
 
-. `dirname $0`/../../build_paths.inc
+SRC_DIR="$(realpath "$(dirname "$0")/../../")"
+if [[ ! $UITK_BUILD_ROOT ]]; then
+    printf 'please specify the build root via the UITK_BUILD_ROOT environment variable\n' >&2
+    exit 1
+fi
+BUILD_DIR="$(realpath "${UITK_BUILD_ROOT}")"
 
 if [ ! -e $BUILD_DIR/apicheck/apicheck ]; then
     echo API check tool not built!

@@ -137,7 +137,11 @@ void MenuGroup::append(QQmlListProperty<QObject> *list, QObject *object)
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype MenuGroup::count(QQmlListProperty<QObject> *list)
+#else
 int MenuGroup::count(QQmlListProperty<QObject> *list)
+#endif
 {
     MenuGroup *menuGroup = qobject_cast<MenuGroup*>(list->object);
     if (menuGroup) {
@@ -146,7 +150,11 @@ int MenuGroup::count(QQmlListProperty<QObject> *list)
     return 0;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QObject* MenuGroup::at(QQmlListProperty<QObject> *list, qsizetype index)
+#else
 QObject* MenuGroup::at(QQmlListProperty<QObject> *list, int index)
+#endif
 {
     MenuGroup *menuGroup = qobject_cast<MenuGroup*>(list->object);
     if (menuGroup && index >=0 && menuGroup->m_data.count() > index) {

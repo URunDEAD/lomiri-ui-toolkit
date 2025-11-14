@@ -18,8 +18,13 @@
 #define UCHEADER_P_H
 
 #include <QtCore/QPointer>
+#include <QtQuick/private/qquickflickable_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucstyleditembase_p.h>
+#else
 #include <LomiriToolkit/private/ucstyleditembase_p.h>
+#endif
 
 class QQuickFlickable;
 class QQuickNumberAnimation;

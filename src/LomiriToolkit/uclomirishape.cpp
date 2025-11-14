@@ -59,11 +59,20 @@ const float pressedFactor = 0.85f;
 ShapeShader::ShapeShader() :
     m_useDistanceFields(UCLomiriShape::useDistanceFields(QOpenGLContext::currentContext()))
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setShaderSourceFile(QOpenGLShader::Vertex, QStringLiteral(":/uc/shaders/shape.vert"));
     setShaderSourceFile(QOpenGLShader::Fragment, useDistanceFields() ?
                         QStringLiteral(":/uc/shaders/shape.frag") :
                         QStringLiteral(":/uc/shaders/shape_mipmap.frag"));
+#else
+    setShaderFileName(VertexStage, QStringLiteral(":/uc/shaders/shape.vert.qsb"));
+    setShaderFileName(FragmentStage, useDistanceFields() ?
+                        QStringLiteral(":/uc/shaders/shape.frag.qsb") :
+                        QStringLiteral(":/uc/shaders/shape_mipmap.frag.qsb"));
+#endif
 }
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 
 char const* const* ShapeShader::attributeNames() const
 {
@@ -83,6 +92,7 @@ void ShapeShader::initialize()
     program()->setUniformValue("sourceTexture", 1);
 
     m_functions = QOpenGLContext::currentContext()->functions();
+
     m_matrixId = program()->uniformLocation("matrix");
     m_opacityFactorsId = program()->uniformLocation("opacityFactors");
     m_sourceOpacityId = program()->uniformLocation("sourceOpacity");
@@ -155,6 +165,105 @@ void ShapeShader::updateState(
         program()->setUniformValue(m_matrixId, state.combinedMatrix());
     }
 }
+
+#else
+
+bool ShapeShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial, QSGMaterial* oldMaterial)
+{
+    Q_UNUSED(oldMaterial)
+
+    bool changed = false;
+    QByteArray *buf = state.uniformData();
+
+    ShapeMaterial* material = static_cast<ShapeMaterial*>(newMaterial);
+    const ShapeMaterial::Data* data = material->constData();
+
+    if (state.isMatrixDirty()) {
+        const QMatrix4x4 m = state.combinedMatrix();
+        memcpy(buf->data(), m.constData(), 64);
+        changed = true;
+    }
+
+    if (state.isOpacityDirty()) {
+        const float opacity = state.opacity();
+        const QVector2D opacityFactorsVector(
+            data->flags & ShapeMaterial::Data::Pressed ? pressedFactor * opacity : opacity, opacity);
+        memcpy(buf->data() + 64, &opacityFactorsVector, 8);
+        changed = true;
+    }
+    
+    if (!oldMaterial || newMaterial->compare(oldMaterial) != 0) {
+        bool textured = false;
+        if (data->flags & ShapeMaterial::Data::Textured) {
+            const float sourceOpacity = data->sourceOpacity / 255.0f;
+            memcpy(buf->data() + 72, &sourceOpacity, 4);
+            textured = true;
+        }
+        memcpy(buf->data() + 80, &textured, 4);
+
+        int aspect = data->flags & ShapeMaterial::Data::AspectMask;
+        memcpy(buf->data() + 84, &aspect, 4);
+
+        if (useDistanceFields()) {
+            // Send anti-aliasing distance in distance field space, needs to be divided by 2 for the
+            // shader and by 255 for distanceAAFactor dequantization. The factor is 1 most of the time
+            // apart when the radius size is low, it linearly goes from 1 to 0 to make the corners
+            // prettier and to prevent the opacity of the whole shape to slightly lower.
+            const float distanceAA = ((shapeTextureDistanceAA * distanceAApx) / (2.0 * 255.0f)) * data->distanceAAFactor;
+            memcpy(buf->data() + 76, &distanceAA, 4);
+        }
+        changed = true;
+    }
+
+    return changed;
+}
+
+void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture **texture, QSGMaterial *newMaterial, QSGMaterial *oldMaterial)
+{
+    Q_UNUSED(state)
+    ShapeMaterial* material = static_cast<ShapeMaterial*>(newMaterial);
+    const ShapeMaterial::Data* data = material->constData();
+    QSGTexture *shapeTexture = data->shapeTexture;
+
+    switch (binding) {
+        case 1:
+            if (shapeTexture) {
+                *texture = shapeTexture;
+            } else {
+                *texture = nullptr;
+            }
+            break;
+        case 2:
+            if (data->flags & ShapeMaterial::Data::Textured) {
+                QSGTextureProvider* provider = data->sourceTextureProvider;
+                QSGTexture* sourceTexture = provider ? provider->texture() : nullptr;
+                if (sourceTexture && data->flags & ShapeMaterial::Data::Repeated) {
+                    if (sourceTexture->isAtlasTexture()) {
+                        // A texture in an atlas can't be repeated with builtin GPU facility (exposed by
+                        // GL_REPEAT with OpenGL), so we extract it and create a new dedicated one.
+                        sourceTexture = sourceTexture->removedFromAtlas();
+                    }
+                    sourceTexture->setHorizontalWrapMode(
+                        data->flags & ShapeMaterial::Data::HorizontallyRepeated ?
+                        QSGTexture::Repeat : QSGTexture::ClampToEdge);
+                    sourceTexture->setVerticalWrapMode(
+                        data->flags & ShapeMaterial::Data::VerticallyRepeated ?
+                        QSGTexture::Repeat : QSGTexture::ClampToEdge);
+                    sourceTexture->setFiltering(QSGTexture::Filtering::Linear);
+                    sourceTexture->commitTextureOperations(state.rhi(), state.resourceUpdateBatch());
+                }
+                *texture = sourceTexture;
+            } else {
+                *texture = data->dummyTexture;
+                return;
+            }
+            break;
+        default:
+            return;
+    }
+}
+
+#endif
 
 // --- Scene graph material ---
 
@@ -247,7 +356,11 @@ QSGMaterialType* ShapeMaterial::type() const
     return &type;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QSGMaterialShader* ShapeMaterial::createShader(QSGRendererInterface::RenderMode) const
+#else
 QSGMaterialShader* ShapeMaterial::createShader() const
+#endif
 {
     return new ShapeShader;
 }
@@ -1113,9 +1226,15 @@ void UCLomiriShape::componentComplete()
     m_version = MINOR_VERSION(importVersion(this)) == 3 ? Version13 : Version12;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCLomiriShape::geometryChange(const QRectF& newGeometry, const QRectF& oldGeometry)
+{
+    QQuickItem::geometryChange(newGeometry, oldGeometry);
+#else
 void UCLomiriShape::geometryChanged(const QRectF& newGeometry, const QRectF& oldGeometry)
 {
     QQuickItem::geometryChanged(newGeometry, oldGeometry);
+#endif
     m_flags |= DirtySourceTransform;
 }
 
@@ -1315,10 +1434,28 @@ QSGNode* UCLomiriShape::createSceneGraphNode() const
 void UCLomiriShape::updateMaterial(
     QSGNode* node, float radius, quint8 shapeTextureIndex, bool textured)
 {
-    ShapeMaterial::Data* materialData = static_cast<ShapeNode*>(node)->material()->data();
+    ShapeMaterial* material = static_cast<ShapeNode*>(node)->material();
+    ShapeMaterial::Data* materialData = material->data();
     quint8 flags = 0;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QSize shapeShaderSize(shapeTextureWidth, shapeTextureHeight);
+    QSGTexture *shapeWrapper = QNativeInterface::QSGOpenGLTexture::fromNative(material->textureIds()[shapeTextureIndex],
+                                                                              window(),
+                                                                              shapeShaderSize);
+    materialData->shapeTexture = shapeWrapper;
+
+    // Create a 1x1 dummy texture if it doesn't exist yet
+    if (!materialData->dummyTexture) {
+        // Create a 1x1 opaque white and transparent image
+        QImage dummyImage(1, 1, QImage::Format_RGBA8888);
+        dummyImage.fill(QColor(255, 255, 255, 0));
+        materialData->dummyTexture = window()->createTextureFromImage(dummyImage);
+    }
+
+#else
     materialData->shapeTextureIndex = shapeTextureIndex;
+#endif
     if (textured) {
         materialData->sourceTextureProvider = m_sourceTextureProvider;
         materialData->sourceOpacity = m_sourceOpacity;

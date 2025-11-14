@@ -20,7 +20,11 @@
 #include <QtCore/QObject>
 #include <QtQml/QQmlListProperty>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 
@@ -53,8 +57,14 @@ protected:
 
     static void append(QQmlListProperty<UCAction> *list, UCAction *action);
     static void clear(QQmlListProperty<UCAction> *list);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static UCAction* at(QQmlListProperty<UCAction> *list, qsizetype index);
+    static qsizetype count(QQmlListProperty<UCAction> *list);
+#else
     static UCAction* at(QQmlListProperty<UCAction> *list, int index);
     static int count(QQmlListProperty<UCAction> *list);
+#endif
 };
 
 UT_NAMESPACE_END

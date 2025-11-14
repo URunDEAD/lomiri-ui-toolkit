@@ -18,7 +18,13 @@
 #ifndef LOMIRIMETRICSGLOBAL_P_H
 #define LOMIRIMETRICSGLOBAL_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/lomirimetricsglobal.h>
+#else
 #include <LomiriMetrics/lomirimetricsglobal.h>
+#endif
 
 // Logging macros, debug macros are compiled out for release builds.
 #define LOG(...) qDebug(__VA_ARGS__)

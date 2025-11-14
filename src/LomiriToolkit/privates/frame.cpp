@@ -35,10 +35,9 @@ class FrameShader : public QSGMaterialShader
 {
 public:
     FrameShader();
-    char const* const* attributeNames() const override;
-    void initialize() override;
-    void updateState(
-        const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect) override;
+    char const* const* attributeNames() const;
+    void initialize();
+    void updateState(const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect);
 
 private:
     int m_matrixId;
@@ -47,10 +46,15 @@ private:
 
 FrameShader::FrameShader()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setShaderSourceFile(
         QOpenGLShader::Vertex, QStringLiteral(":/uc/privates/shaders/frame.vert"));
     setShaderSourceFile(
         QOpenGLShader::Fragment, QStringLiteral(":/uc/privates/shaders/frame.frag"));
+#else
+    setShaderFileName(VertexStage, QStringLiteral(":/uc/privates/shaders/frame.vert.qsb"));
+    setShaderFileName(FragmentStage, QStringLiteral(":/uc/privates/shaders/frame.frag.qsb"));
+#endif
 }
 
 char const* const* FrameShader::attributeNames() const
@@ -63,11 +67,13 @@ char const* const* FrameShader::attributeNames() const
 
 void FrameShader::initialize()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QSGMaterialShader::initialize();
     program()->bind();
     program()->setUniformValue("texture", 0);
     m_matrixId = program()->uniformLocation("matrix");
     m_opacityId = program()->uniformLocation("opacity");
+#endif
 }
 
 void FrameShader::updateState(
@@ -79,12 +85,14 @@ void FrameShader::updateState(
     funcs->glBindTexture(
         GL_TEXTURE_2D, static_cast<UCFrameMaterial*>(newEffect)->textureId());
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (state.isMatrixDirty()) {
         program()->setUniformValue(m_matrixId, state.combinedMatrix());
     }
     if (state.isOpacityDirty()) {
         program()->setUniformValue(m_opacityId, state.opacity());
     }
+#endif
 }
 
 // --- Material ---
@@ -163,7 +171,11 @@ QSGMaterialType* UCFrameMaterial::type() const
     return &type;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QSGMaterialShader* UCFrameMaterial::createShader(QSGRendererInterface::RenderMode) const
+#else
 QSGMaterialShader* UCFrameMaterial::createShader() const
+#endif
 {
     return new FrameShader;
 }

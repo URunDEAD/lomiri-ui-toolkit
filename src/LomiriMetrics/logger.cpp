@@ -45,7 +45,9 @@ UMFileLoggerPrivate::UMFileLoggerPrivate(const QString& fileName, bool parsable)
 
     if (m_file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Unbuffered)) {
         m_textStream.setDevice(&m_file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         m_textStream.setCodec("ISO 8859-1");
+#endif
         m_textStream.setRealNumberPrecision(2);
         m_textStream.setRealNumberNotation(QTextStream::FixedNotation);
         m_flags = Open | Parsable;
@@ -68,7 +70,9 @@ UMFileLoggerPrivate::UMFileLoggerPrivate(FILE* fileHandle, bool parsable)
 {
     if (m_file.open(fileHandle, QIODevice::WriteOnly | QIODevice::Text | QIODevice::Unbuffered)) {
         m_textStream.setDevice(&m_file);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         m_textStream.setCodec("ISO 8859-1");
+#endif
         m_textStream.setRealNumberPrecision(2);
         m_textStream.setRealNumberNotation(QTextStream::FixedNotation);
         if ((fileHandle == stdout || fileHandle == stderr) &&

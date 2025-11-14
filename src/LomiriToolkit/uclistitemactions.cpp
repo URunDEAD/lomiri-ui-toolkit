@@ -250,7 +250,11 @@ void UCListItemActions::setDelegate(QQmlComponent *delegate)
  * }
  * \endqml
  */
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype UCListItemActionsPrivate::actions_count(QQmlListProperty<UCAction> *p)
+#else
 int UCListItemActionsPrivate::actions_count(QQmlListProperty<UCAction> *p)
+#endif
 {
     return reinterpret_cast<QList<UCAction *> *>(p->data)->count();
 }
@@ -262,7 +266,11 @@ void UCListItemActionsPrivate::actions_append(QQmlListProperty<UCAction> *p, UCA
     }
     reinterpret_cast<QList<UCAction *> *>(p->data)->append(v);
 }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+UCAction *UCListItemActionsPrivate::actions_at(QQmlListProperty<UCAction> *p, qsizetype i)
+#else
 UCAction *UCListItemActionsPrivate::actions_at(QQmlListProperty<UCAction> *p, int i)
+#endif
 {
     return reinterpret_cast<QList<UCAction *> *>(p->data)->at(i);
 }

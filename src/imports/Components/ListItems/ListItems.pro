@@ -37,6 +37,9 @@ QML_FILES += 1.2/Base.qml \
              1.3/Standard.qml \
              1.3/Subtitled.qml \
              1.3/ThinDivider.qml \
-             1.3/ValueSelector.qml \
+             1.3/ValueSelector.qml
+DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
+
+OTHER_FILES+= qmldir-qt5
 
 load(lomiri_qml_module)

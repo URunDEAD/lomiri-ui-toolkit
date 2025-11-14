@@ -1,0 +1,8 @@
+module Lomiri.Components.Pickers
+#version 2.0
+Picker 2.0 2.0/Picker.qml
+PickerDelegate 2.0 2.0/PickerDelegate.qml
+Dialer 2.0 2.0/Dialer.qml
+DialerHand 2.0 2.0/DialerHand.qml
+DatePicker 2.0 2.0/DatePicker.qml
+singleton PickerPanel 2.0 2.0/PickerPanel.qml

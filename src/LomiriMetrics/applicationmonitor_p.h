@@ -18,7 +18,7 @@
 #ifndef APPLICATIONMONITOR_P_H
 #define APPLICATIONMONITOR_P_H
 
-#include <LomiriMetrics/applicationmonitor.h>
+#include <QtGlobal>
 
 #include <QtCore/QTimer>
 #include <QtCore/QThread>
@@ -27,10 +27,19 @@
 #include <QtCore/QElapsedTimer>
 #include <QtCore/QRunnable>
 #include <QtCore/QAtomicInteger>
+#include <QtGui/QGuiApplication>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/applicationmonitor.h>
+#include <LomiriMetrics-Qt6/private/overlay_p.h>
+#include <LomiriMetrics-Qt6/private/gputimer_p.h>
+#include <LomiriMetrics-Qt6/private/lomirimetricsglobal_p.h>
+#else
+#include <LomiriMetrics/applicationmonitor.h>
 #include <LomiriMetrics/private/overlay_p.h>
 #include <LomiriMetrics/private/gputimer_p.h>
 #include <LomiriMetrics/private/lomirimetricsglobal_p.h>
+#endif
 
 class LoggingThread;
 class WindowMonitor;

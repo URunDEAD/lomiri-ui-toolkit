@@ -18,8 +18,14 @@
 #define UCLISTITEMSTYLE_P_H
 
 #include <QtQuick/QQuickItem>
+#include <QtQuick/private/qquickanimation_p_p.h>
+#include <QtQuick/private/qquickflickable_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 class QQmlComponent;
 class QQuickAbstractAnimation;

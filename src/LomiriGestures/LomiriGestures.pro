@@ -1,6 +1,12 @@
 TARGET = LomiriGestures
 QT = core-private gui-private qml-private quick-private
 
+# warnings_are_errors depending on the compiler version, sometimes it doesn't
+# add the required flags (for instance for recent clang version on old Qt).
+warnings_are_errors:!contains(QMAKE_CXXFLAGS_WARN_ON, -Werror){
+    QMAKE_CXXFLAGS_WARN_ON += -Werror
+}
+
 HEADERS += \
     $$PWD/candidateinactivitytimer_p.h \
     $$PWD/damper_p.h \

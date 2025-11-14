@@ -20,14 +20,38 @@
 #include <QtQml/QQmlContext>
 #include <QtQml/QQmlEngine>
 #include <QtTest/QtTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitmodule.h>
+#else
 #include <LomiriToolkit/lomiritoolkitmodule.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/quickutils_p.h>
+#else
 #include <LomiriToolkit/private/quickutils_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/uclabel_p.h>
+#else
 #include <LomiriToolkit/private/uclabel_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucstyleditembase_p_p.h>
+#else
 #include <LomiriToolkit/private/ucstyleditembase_p_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucunits_p.h>
+#else
 #include <LomiriToolkit/private/ucunits_p.h>
+#endif
 #define private public
 #define protected public
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/uctheme_p.h>
+#else
 #include <LomiriToolkit/private/uctheme_p.h>
+#endif
 #undef protected
 #undef private
 

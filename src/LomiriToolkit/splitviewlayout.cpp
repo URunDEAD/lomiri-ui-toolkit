@@ -204,13 +204,21 @@ void SplitViewLayoutPrivate::columns_Append(QQmlListProperty<ViewColumn> *list, 
     d->columnData.append(data);
     Q_EMIT layout->columnsChanged();
 }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype SplitViewLayoutPrivate::columns_Count(QQmlListProperty<ViewColumn> *list)
+#else
 int SplitViewLayoutPrivate::columns_Count(QQmlListProperty<ViewColumn> *list)
+#endif
 {
     SplitViewLayout *layout = static_cast<SplitViewLayout*>(list->object);
     SplitViewLayoutPrivate *d = SplitViewLayoutPrivate::get(layout);
     return d->columnData.size();
 }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+ViewColumn *SplitViewLayoutPrivate::columns_At(QQmlListProperty<ViewColumn> *list, qsizetype index)
+#else
 ViewColumn *SplitViewLayoutPrivate::columns_At(QQmlListProperty<ViewColumn> *list, int index)
+#endif
 {
     SplitViewLayout *layout = static_cast<SplitViewLayout*>(list->object);
     SplitViewLayoutPrivate *d = SplitViewLayoutPrivate::get(layout);

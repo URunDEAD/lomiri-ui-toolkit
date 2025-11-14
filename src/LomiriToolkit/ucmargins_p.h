@@ -20,7 +20,11 @@
 #include <QtCore/QObject>
 #include <QtQuick/QQuickItem>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

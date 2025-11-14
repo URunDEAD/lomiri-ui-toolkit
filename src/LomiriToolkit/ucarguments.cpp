@@ -326,12 +326,20 @@ void UCArguments::appendArguments(UCArgument* argument)
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+UCArgument* UCArguments::atArguments(qsizetype index)
+#else
 UCArgument* UCArguments::atArguments(int index)
+#endif
 {
     return m_arguments.at(index);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype UCArguments::countArguments()
+#else
 int UCArguments::countArguments()
+#endif
 {
     return m_arguments.size();
 }
@@ -349,13 +357,21 @@ void staticAppendArguments(QQmlListProperty<UCArgument>* property, UCArgument* a
     arguments->appendArguments(argument);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+UCArgument* staticAtArguments(QQmlListProperty<UCArgument>* property, qsizetype index)
+#else
 UCArgument* staticAtArguments(QQmlListProperty<UCArgument>* property, int index)
+#endif
 {
     UCArguments* arguments = static_cast<UCArguments*>(property->data);
     return arguments->atArguments(index);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype staticCountArguments(QQmlListProperty<UCArgument>* property)
+#else
 int staticCountArguments(QQmlListProperty<UCArgument>* property)
+#endif
 {
     UCArguments* arguments = static_cast<UCArguments*>(property->data);
     return arguments->countArguments();

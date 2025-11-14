@@ -29,6 +29,9 @@
 #include <QtQuick/private/qquickmousearea_p.h>
 #include <QtQuick/private/qquickpositioners_p.h>
 #include <QtQuick/private/qsgadaptationlayer_p.h>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QtQuick/private/qquickdeliveryagent_p_p.h>
+#endif
 
 #include "i18n_p.h"
 #include "privates/listitemselection_p.h"
@@ -1388,14 +1391,17 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
     bool consumed = false;
     if (contentItem->contains(contentItem->mapFromScene(event->windowPos()))) {
         QPointF localPos = q->mapFromScene(event->windowPos());
-
         switch (event->type()) {
         case QEvent::MouseButtonPress: {
             // remember pressed point over active areas
             if (event->button() == Qt::LeftButton) {
                 if (swiped) {
                     // handle as full press and grab the event from the children
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+                    QScopedPointer<QMouseEvent> mouseEvent(static_cast<QMouseEvent*>(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPos)));
+#else
                     QScopedPointer<QMouseEvent> mouseEvent(QQuickWindowPrivate::cloneMouseEvent(event, &localPos));
+#endif
                     handleLeftButtonPress(mouseEvent.data());
                     consumed = true;
                 } else {
@@ -1407,7 +1413,11 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
             break;
         }
         case QEvent::MouseButtonRelease: {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QScopedPointer<QMouseEvent> mouseEvent(static_cast<QMouseEvent*>(QQuickDeliveryAgentPrivate::clonePointerEvent(event, localPos)));
+#else
             QScopedPointer<QMouseEvent> mouseEvent(QQuickWindowPrivate::cloneMouseEvent(event, &localPos));
+#endif
             handleLeftButtonRelease(mouseEvent.data());
             suppressClick = false;
             break;
@@ -1838,7 +1848,7 @@ void UCListItemPrivate::setDragMode(bool draggable)
 }
 
 /*!
- * 
+ *
  * \qmlproperty bool ListItem::selected
  * The property drives whether a list item is selected or not. Defaults to false.
  *

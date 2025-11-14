@@ -33,9 +33,21 @@
 #include <QtQuick/private/qsgcontext_p.h>
 #include <QtCore/QCommandLineParser>
 #include <QtCore/QCommandLineOption>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/mousetouchadaptor_p.h>
+#else
 #include <LomiriToolkit/private/mousetouchadaptor_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/applicationmonitor.h>
+#else
 #include <LomiriMetrics/applicationmonitor.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QtGui/QInputDevice>
+#else
 #include <QtGui/QTouchDevice>
+#endif
 #include <QtQml/qqml.h>
 
 static QObject *s_testRootObject = 0;
@@ -215,8 +227,8 @@ int main(int argc, const char *argv[])
     UMApplicationMonitor* applicationMonitor = UMApplicationMonitor::instance();
     if (args.isSet(_metricsLoggingFilter)) {
         QStringList filterList = QString(args.value(_metricsLoggingFilter)).split(
-            QChar(','), QString::SkipEmptyParts);
-        UMApplicationMonitor::LoggingFilters filter = 0;
+            QChar(','), Qt::SkipEmptyParts);
+        UMApplicationMonitor::LoggingFilters filter;
         const int size = filterList.size();
         for (int i = 0; i < size; ++i) {
             if (filterList[i] == "*") {

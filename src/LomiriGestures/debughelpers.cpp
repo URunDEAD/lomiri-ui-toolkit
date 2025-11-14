@@ -19,6 +19,23 @@
 #include <QtGui/QMouseEvent>
 #include <QtGui/QTouchEvent>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QString touchPointStateToString(QEventPoint::State state)
+{
+    switch (state) {
+    case QEventPoint::Pressed:
+        return QStringLiteral("pressed");
+    case QEventPoint::Updated:
+        return QStringLiteral("moved/updated");
+    case QEventPoint::Stationary:
+        return QStringLiteral("stationary");
+    case QEventPoint::Released:
+        return QStringLiteral("released");
+    default:
+        return QStringLiteral("INVALID_STATE");
+    }
+}
+#else
 QString touchPointStateToString(Qt::TouchPointState state)
 {
     switch (state) {
@@ -34,6 +51,7 @@ QString touchPointStateToString(Qt::TouchPointState state)
         return QStringLiteral("INVALID_STATE");
     }
 }
+#endif
 
 QString touchEventToString(const QTouchEvent *ev)
 {
@@ -56,13 +74,22 @@ QString touchEventToString(const QTouchEvent *ev)
         message.append(QStringLiteral("INVALID_TOUCH_EVENT_TYPE "));
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    Q_FOREACH(const QTouchEvent::TouchPoint& touchPoint, ev->points()) {
+#else
     Q_FOREACH(const QTouchEvent::TouchPoint& touchPoint, ev->touchPoints()) {
+#endif
         message.append(
             QStringLiteral("(id:%1, state:%2, scenePos:(%3,%4)) ")
                 .arg(touchPoint.id())
                 .arg(touchPointStateToString(touchPoint.state()))
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+                .arg(touchPoint.scenePosition().x())
+                .arg(touchPoint.scenePosition().y())
+#else
                 .arg(touchPoint.scenePos().x())
                 .arg(touchPoint.scenePos().y())
+#endif
             );
     }
 
@@ -90,7 +117,10 @@ QString mouseEventToString(const QMouseEvent *ev)
         message.append(QStringLiteral("INVALID_MOUSE_EVENT_TYPE "));
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    message.append(QStringLiteral("pos(%1, %2)").arg(qRound(ev->position().x())).arg(qRound(ev->position().y())));
+#else
     message.append(QStringLiteral("pos(%1, %2)").arg(ev->x()).arg(ev->y()));
-
+#endif
     return message;
 }

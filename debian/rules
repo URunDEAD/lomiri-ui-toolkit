@@ -9,32 +9,24 @@ include /usr/share/dpkg/buildflags.mk
 export DPKG_GENSYMBOLS_CHECK_LEVEL=4
 
 export HOME := $(shell realpath .)
-export QT_SELECT=qt5
 
 include /usr/share/dpkg/architecture.mk
 
 # Enforce -Werror for an upstream build.
-CONFIGURE_OPTS := CONFIG+=warnings_are_errors
+CONFIGURE_OPTS_QT5 := # CONFIG+=warnings_are_errors
+CONFIGURE_OPTS_QT6 := # CONFIG+=no_docs
 
 # Enable Ubuntu UITK compat layer for UBports build.
-CONFIGURE_OPTS += CONFIG+=ubuntu-uitk-compat
+CONFIGURE_OPTS_QT5 += CONFIG+=ubuntu-uitk-compat
 
 ifneq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 	# Cross compiling
-	CONFIGURE_OPTS += "CONFIG+=no_docs" "CONFIG+=cross_compile"
+	CONFIGURE_OPTS_QT5 += "CONFIG+=no_docs" "CONFIG+=cross_compile"
+	CONFIGURE_OPTS_QT6 += # "CONFIG+=cross_compile"
 endif
 
 # Skip tests on the archs they are known to be flaky  with current configuration
 testskip_architectures := armhf powerpc ppc64el s390x
-
-override_dh_auto_configure:
-	qmake -r \
-		CONFIG+=debian_build \
-		$(CONFIGURE_OPTS) \
-		QMAKE_CFLAGS="$(CFLAGS)" \
-		QMAKE_CXX_FLAGS="$(CXXFLAGS)" \
-		QMAKE_LFLAGS="${LDFLAGS}"
-	dh_auto_configure --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 # Add migrations add-on when build on Ubuntu & original name is available.
 DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migrations")
@@ -42,31 +34,51 @@ DH_MIGRATIONS = $(shell type dh_migrations >/dev/null 2>&1 && echo "--with migra
 %:
 	dh $@ $(DH_MIGRATIONS)
 
+override_dh_auto_configure:
+	dh_auto_configure --builddirectory=build-qt6 --buildsystem=cmake -- \
+		$(CONFIGURE_OPTS_QT6) \
+		..
+	dh_auto_configure --builddirectory=build-qt5 --buildsystem=qmake -- \
+		CONFIG+=debian_build \
+		$(CONFIGURE_OPTS_QT5) \
+		QMAKE_CFLAGS="$(CFLAGS)" \
+		QMAKE_CXXFLAGS="$(CXXFLAGS)" \
+		QMAKE_LFLAGS="${LDFLAGS}" \
+		..
+	dh_auto_configure --sourcedirectory=tests/autopilot --buildsystem=pybuild
+
+override_dh_auto_build:
+	dh_auto_build --builddirectory=build-qt6 --buildsystem=cmake ..
+	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake ..
+	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake -- docs ..
+	dh_auto_build --sourcedirectory=tests/autopilot --buildsystem=pybuild
+
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	mkdir -p debian/tmp/home/run
 	chmod +x tests/xvfb.sh
 ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
-	-tests/xvfb.sh dh_auto_test --no-parallel
+	-UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
 else
-	tests/xvfb.sh dh_auto_test --no-parallel
+	-UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
+endif
+ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
+	-UITK_BUILD_ROOT=$(CURDIR)/build-qt5 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt5 --buildsystem=qmake
+else
+	UITK_BUILD_ROOT=$(CURDIR)/build-qt5 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt5 --buildsystem=qmake
 endif
 endif
-
-override_dh_auto_build:
-	dh_auto_build
-	dh_auto_build -- docs
-	dh_auto_build --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 override_dh_auto_install:
-	dh_auto_install
-	dh_auto_install --sourcedirectory=tests/autopilot --buildsystem=pybuild
+	dh_auto_install --no-parallel --builddirectory=build-qt6 --buildsystem=cmake ..
+	dh_auto_install --no-parallel --builddirectory=build-qt5 --buildsystem=qmake ..
+	dh_auto_install --no-parallel --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 override_dh_install:
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 	mkdir -p debian/tmp/`qmake -query QT_INSTALL_DOCS`/qch
 	mkdir -p debian/tmp/usr/share/lomiri-ui-toolkit/doc
-	cp -r $(CURDIR)/documentation/*qch debian/tmp/`qmake -query QT_INSTALL_DOCS`/qch
+	cp -r $(CURDIR)/build-qt5/documentation/*qch debian/tmp/`qmake -query QT_INSTALL_DOCS`/qch
 else
 	# Add empty qmltypes files
 	for module in "Components" "Components/Labs" "Components/Styles" "Layouts" "Metrics" "PerformanceMetrics"; \
@@ -83,16 +95,16 @@ endif
 	# sphinx-build -b singlehtml documentation/autopilot-helpers documentation/autopilot-helpers/_build/html
 	# sphinx-build -b json documentation/autopilot-helpers documentation/autopilot-helpers/_build/json
 	# Drop QML types used to test apicheck only
-	rm -f debian/tmp/usr/lib/*/qt5/qml/Extinct/Animals/*
-
-	# drop empty directory
-	rm debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/Makefile
-	rmdir debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/.pch/
-	rmdir debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/.obj/
+	rm -f debian/tmp/usr/lib/*/qt*/qml/Extinct/Animals/*
 
 	# drop references to the build chroot
 	sed -i debian/tmp/usr/lib/*/*.prl -e "/^QMAKE_PRL_BUILD_DIR.*/d"
-	sed -i debian/tmp/usr/lib/*/qt5/examples/lomiri-ui-toolkit/examples/calculator/components/*.prl -e "/^QMAKE_PRL_BUILD_DIR.*/d"
+
+	# remove Qt 6 examples
+	rm -rf debian/tmp/usr/lib/*/qt6/examples
+
+	# remove Qt 6 apicheck for now
+	rm -f debian/tmp/usr/libexec/lomiri-ui-toolkit/qt6/apicheck
 
 	dh_install
 
@@ -106,7 +118,8 @@ override_dh_gencontrol:
 	dh_gencontrol -- $(SUBST_VAR)
 
 override_dh_auto_clean:
-	dh_auto_clean
+	dh_auto_clean --builddirectory=build-qt6 --buildsystem=cmake ..
+	dh_auto_clean --builddirectory=build-qt5 --buildsystem=qmake ..
 	dh_auto_clean --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 	# Qt / qmake creates <FolderName>.version files which don't
@@ -118,5 +131,8 @@ override_dh_auto_clean:
 		.cache/ \
 		.config/ \
 		.local/ \
+		.pybuild \
+		po/*.mo \
+		examples/lomiri-ui-toolkit-gallery/po/*.mo \
 		xvfb.err \
 		;

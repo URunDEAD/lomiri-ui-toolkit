@@ -29,6 +29,9 @@ class LomiriTestCase : public QQuickView
     Q_OBJECT
 public:
     LomiriTestCase(const QString& file, ResizeMode resize = SizeViewToRootObject, bool assertOnFailure = true, QWindow* parent = 0);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    ~LomiriTestCase();
+#endif
     int warnings() const;
     // getter
     template<class T>

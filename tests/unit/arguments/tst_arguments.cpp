@@ -18,13 +18,25 @@
 
 #include <QtCore/QDebug>
 #include <QtCore/QString>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QTextCodec>
+#else
 #include <QtCore/QTextCodec>
+#endif
 #include <QtQml/QQmlEngine>
 #include <QtTest/QSignalSpy>
 #include <QtTest/QTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/i18n_p.h>
+#else
 #include <LomiriToolkit/private/i18n_p.h>
+#endif
 #define protected public
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucarguments_p.h>
+#else
 #include <LomiriToolkit/private/ucarguments_p.h>
+#endif
 #undef protected
 
 #include "uctestcase.h"

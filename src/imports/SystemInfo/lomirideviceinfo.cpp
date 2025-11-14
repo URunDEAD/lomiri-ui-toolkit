@@ -1,0 +1,277 @@
+/****************************************************************************
+**
+** Copyright (C) 2018 The Qt Company Ltd and/or its subsidiary(-ies).
+** Contact: http://www.qt-project.org/legal
+**
+** This file is part of the QtSystems module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 3 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL3 included in the
+** packaging of this file. Please review the following information to
+** ensure the GNU Lesser General Public License version 3 requirements
+** will be met: https://www.gnu.org/licenses/lgpl-3.0.html.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 2.0 or (at your option) the GNU General
+** Public license version 3 or any later version approved by the KDE Free
+** Qt Foundation. The licenses are as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-2.0.html and
+** https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+#include "lomirideviceinfo_p.h"
+
+QT_BEGIN_NAMESPACE
+
+/*!
+    \qmltype DeviceInfo
+    \instantiates LomiriDeclarativeDeviceInfo
+    \inqmlmodule QtSystemInfo
+    \ingroup qml-systeminfo
+    \brief The DeviceInfo element provides various information about the device.
+*/
+
+/*!
+    \internal
+*/
+LomiriDeclarativeDeviceInfo::LomiriDeclarativeDeviceInfo(QObject *parent)
+    : QObject(parent)
+    , deviceInfo(new LomiriDeviceInfo(this))
+    , isMonitorThermalState(false)
+{
+}
+
+/*!
+    \internal
+ */
+LomiriDeclarativeDeviceInfo::~LomiriDeclarativeDeviceInfo()
+{
+}
+
+/*!
+    \qmlproperty flag DeviceInfo::activatedLocks
+
+    This property holds the activated locks. Available locks include:
+    \list
+    \li DeviceInfo.NoLock               - No lock.
+    \li DeviceInfo.PinLock              - Device can be locked by PIN code or password.
+    \li DeviceInfo.TouchOrKeyboardLock  - Device can be locked by touch or keyboard.
+    \li DeviceInfo.UnknownLock          - Lock types requested but no result received yet.
+    \endlist
+*/
+LomiriDeclarativeDeviceInfo::LockTypeFlags LomiriDeclarativeDeviceInfo::activatedLocks() const
+{
+    connect(deviceInfo, SIGNAL(activatedLocksChanged(LomiriDeviceInfo::LockTypeFlags)),
+            this, SIGNAL(activatedLocksChanged()), Qt::UniqueConnection);
+
+    LomiriDeviceInfo::LockTypeFlags locks(deviceInfo->activatedLocks());
+    if (locks.testFlag(LomiriDeviceInfo::UnknownLock))
+       return LomiriDeclarativeDeviceInfo::UnknownLock;
+    LockTypeFlags declarativeLocks(NoLock);
+    if (locks.testFlag(LomiriDeviceInfo::PinLock))
+        declarativeLocks |= PinLock;
+    if (locks.testFlag(LomiriDeviceInfo::TouchOrKeyboardLock))
+        declarativeLocks |= TouchOrKeyboardLock;
+    return declarativeLocks;
+}
+
+/*!
+    \qmlproperty flag DeviceInfo::enabledLocks
+
+    This property holds the enabled locks. Available locks include:
+    \list
+    \li DeviceInfo.NoLock               - No lock.
+    \li DeviceInfo.PinLock              - Device can be locked by PIN code or password.
+    \li DeviceInfo.TouchOrKeyboardLock  - Device can be locked by touch or keyboard.
+    \li DeviceInfo.UnknownLock          - Lock types requested but no result received yet.
+    \endlist
+*/
+LomiriDeclarativeDeviceInfo::LockTypeFlags LomiriDeclarativeDeviceInfo::enabledLocks() const
+{
+    connect(deviceInfo, SIGNAL(enabledLocksChanged(LomiriDeviceInfo::LockTypeFlags)),
+            this, SIGNAL(enabledLocksChanged()), Qt::UniqueConnection);
+
+    LomiriDeviceInfo::LockTypeFlags locks(deviceInfo->enabledLocks());
+    if (locks.testFlag(LomiriDeviceInfo::UnknownLock))
+       return LomiriDeclarativeDeviceInfo::UnknownLock;
+    LockTypeFlags declarativeLocks(NoLock);
+    if (locks.testFlag(LomiriDeviceInfo::PinLock))
+        declarativeLocks |= PinLock;
+    if (locks.testFlag(LomiriDeviceInfo::TouchOrKeyboardLock))
+        declarativeLocks |= TouchOrKeyboardLock;
+    return declarativeLocks;
+}
+
+/*!
+    \qmlproperty bool DeviceInfo::monitorThermalState
+
+    This property holds whether or not monitor the change of thermal state.
+ */
+bool LomiriDeclarativeDeviceInfo::monitorThermalState() const
+{
+    return isMonitorThermalState;
+}
+
+void LomiriDeclarativeDeviceInfo::setMonitorThermalState(bool monitor)
+{
+    if (monitor != isMonitorThermalState) {
+        isMonitorThermalState = monitor;
+        if (monitor) {
+            connect(deviceInfo, SIGNAL(thermalStateChanged(LomiriDeviceInfo::ThermalState)),
+                    this, SIGNAL(thermalStateChanged()));
+        } else {
+            disconnect(deviceInfo, SIGNAL(thermalStateChanged(LomiriDeviceInfo::ThermalState)),
+                       this, SIGNAL(thermalStateChanged()));
+        }
+        Q_EMIT monitorThermalStateChanged();
+    }
+}
+
+/*!
+    \qmlproperty enumeration DeviceInfo::thermalState
+
+    This property holds the thermal state. Possible values are:
+    \list
+    \li DeviceInfo.UnknownThermal   - The thermal state is unknown.
+    \li DeviceInfo.NormalThermal    - The thermal state is normal.
+    \li DeviceInfo.WarningThermal   - The thermal state is warning.
+    \li DeviceInfo.AlertThermal     - The thermal state is alert.
+    \li DeviceInfo.ErrorThermal     - The thermal state is error.
+    \endlist
+*/
+LomiriDeclarativeDeviceInfo::ThermalState LomiriDeclarativeDeviceInfo::thermalState() const
+{
+    return static_cast<ThermalState>(deviceInfo->thermalState());
+}
+
+/*!
+    \qmlmethod bool DeviceInfo::hasFeature(Feature feature)
+
+    Returns true if the \a feature is supported, otherwise false. The following features can be
+    queried:
+    \list
+    \li DeviceInfo.BluetoothFeature      - Bluetooth feature.
+    \li DeviceInfo.CameraFeature         - Camera feature.
+    \li DeviceInfo.FmRadioFeature        - Frequency modulation (FM) radio feature.
+    \li DeviceInfo.FmTransmitterFeature  - Frequency modulation (FM) radio transmitter feature.
+    \li DeviceInfo.InfraredFeature       - Infrared communication feature.
+    \li DeviceInfo.LedFeature            - Light-emitting diode (LED) feature.
+    \li DeviceInfo.MemoryCardFeature     - Memory card feature.
+    \li DeviceInfo.UsbFeature            - Universal system bus (USB) feature.
+    \li DeviceInfo.VibrationFeature      - Vibration feature.
+    \li DeviceInfo.WlanFeature           - Wireless local area network (WLAN) feature.
+    \li DeviceInfo.SimFeature            - Subscriber identity module (SIM) feature.
+    \li DeviceInfo.PositioningFeature    - Positioning feature, e.g. Global Positioning System (GPS).
+    \li DeviceInfo.VideoOutFeature       - Video out feature.
+    \li DeviceInfo.HapticsFeature        - Haptics feature, the platform can provide audio and/or visual and/or vibration feedback.
+    \li DeviceInfo.NfcFeature            - Near Field Communication (NFC) feature
+    \endlist
+*/
+bool LomiriDeclarativeDeviceInfo::hasFeature(LomiriDeclarativeDeviceInfo::Feature feature) const
+{
+    return deviceInfo->hasFeature(static_cast<LomiriDeviceInfo::Feature>(feature));
+}
+
+/*!
+    \qmlmethod int DeviceInfo::imeiCount()
+
+    Returns the count of available International Mobile Equipment Identity (IMEI) of the device. In
+    case of error, or the information is not available, -1 is returned.
+*/
+int LomiriDeclarativeDeviceInfo::imeiCount() const
+{
+    return deviceInfo->imeiCount();
+}
+
+/*!
+    \qmlmethod string DeviceInfo::imei(int interface)
+
+    Returns the International Mobile Equipment Identity (IMEI) of the given \a interface on the device.
+    In case of error, or the information is not available, an empty string is returned.
+*/
+QString LomiriDeclarativeDeviceInfo::imei(int interface) const
+{
+    return deviceInfo->imei(interface);
+}
+
+/*!
+    \qmlmethod string DeviceInfo::manufacturer()
+
+    Returns the name of the manufacturer of this device, or the name of the vendor of the motherboard
+    as a fallback. In case of error, or the information is not available, an empty string is returned.
+*/
+QString LomiriDeclarativeDeviceInfo::manufacturer() const
+{
+    return deviceInfo->manufacturer();
+}
+
+/*!
+    \qmlmethod string DeviceInfo::model()
+
+    Returns the model information of the device, e.g. N8, or the CPU architect as a fallback. In case
+    of error, or the information is not available, an empty string is returned.
+*/
+QString LomiriDeclarativeDeviceInfo::model() const
+{
+    return deviceInfo->model();
+}
+
+/*!
+    \qmlmethod string DeviceInfo::productName()
+
+    Returns the internal product name of the device, e.g. RM-774. In case of error, or the information
+    is not available, an empty string is returned.
+
+    For Linux, it returns the codename of the distribution if any.
+*/
+QString LomiriDeclarativeDeviceInfo::productName() const
+{
+    return deviceInfo->productName();
+}
+
+/*!
+    \qmlmethod string DeviceInfo::uniqueDeviceID()
+
+    Returns a unique identifier for the device, or an empty string if on error or not available.
+*/
+QString LomiriDeclarativeDeviceInfo::uniqueDeviceID() const
+{
+    return deviceInfo->uniqueDeviceID();
+}
+
+/*!
+    \qmlmethod string DeviceInfo::version(Version type)
+
+    Returns the version of \a type. In case of error, or the version is unknown, an empty string
+    is returned. The following versions can be queried:
+    \list
+    \li DeviceInfo.Os         - Operating system version. For Linux, it returns the version of the
+                                distribution if any.
+    \li DeviceInfo.Firmware   - Version of (flashable) system as a whole. For Linux, it's the version
+                                of the kernel.
+    \endlist
+*/
+QString LomiriDeclarativeDeviceInfo::version(LomiriDeclarativeDeviceInfo::Version type) const
+{
+    return deviceInfo->version(static_cast<LomiriDeviceInfo::Version>(type));
+}
+
+QT_END_NAMESPACE

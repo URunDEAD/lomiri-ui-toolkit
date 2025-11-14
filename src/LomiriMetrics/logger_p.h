@@ -18,13 +18,27 @@
 #ifndef LOGGER_P_H
 #define LOGGER_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/logger.h>
+#else
 #include <LomiriMetrics/logger.h>
+#endif
 
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/events.h>
+#else
 #include <LomiriMetrics/events.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/private/lomirimetricsglobal_p.h>
+#else
 #include <LomiriMetrics/private/lomirimetricsglobal_p.h>
+#endif
 
 class LOMIRI_METRICS_PRIVATE_EXPORT UMFileLoggerPrivate
 {

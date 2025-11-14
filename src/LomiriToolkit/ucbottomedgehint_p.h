@@ -19,9 +19,25 @@
 #ifndef UCBOTTOMEDGEHINT_P_H
 #define UCBOTTOMEDGEHINT_P_H
 
-#include <LomiriGestures/lomirigesturesglobal.h>
+#include <QtGlobal>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/lomirigesturesglobal.h>
+#else
+#include <LomiriGestures/lomirigesturesglobal.h>
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucactionitem_p.h>
+#else
 #include <LomiriToolkit/private/ucactionitem_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/ucswipearea_p.h>
+#else
+#include <LomiriGestures/private/ucswipearea_p.h>
+#endif
+#include <QtQuick/private/qquickflickable_p.h>
 
 class QQuickFlickable;
 UG_FORWARD_DECLARE_CLASS(UCSwipeArea)

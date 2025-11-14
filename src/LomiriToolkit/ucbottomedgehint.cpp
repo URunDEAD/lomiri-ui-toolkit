@@ -20,7 +20,11 @@
 
 #include <QtQml/private/qqmlproperty_p.h>
 #include <QtQuick/private/qquickflickable_p.h>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/ucswipearea_p_p.h>
+#else
 #include <LomiriGestures/private/ucswipearea_p_p.h>
+#endif
 
 #include "propertychange_p.h"
 #include "quickutils_p.h"

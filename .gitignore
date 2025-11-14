@@ -6,6 +6,7 @@ qml
 include
 lib
 mkspecs/*
+build*/
 
 Makefile*
 documentation/html/*
@@ -18,7 +19,6 @@ plugins.qmltypes
 *.mo
 apicheck/apicheck
 lomiri-ui-toolkit-launcher/lomiri-ui-toolkit-launcher
-build_paths.inc
 
 components.api.new
 app-launch-profiler/app-launch-tracepoints

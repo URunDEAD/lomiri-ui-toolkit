@@ -17,11 +17,21 @@
 #ifndef UCSWIPEAREA_P_P_H
 #define UCSWIPEAREA_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/ucswipearea_p.h>
+#else
 #include <LomiriGestures/private/ucswipearea_p.h>
+#endif
 
 #include <QtQuick/private/qquickitem_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/damper_p.h>
+#else
 #include <LomiriGestures/private/damper_p.h>
+#endif
 
 UG_NAMESPACE_BEGIN
 

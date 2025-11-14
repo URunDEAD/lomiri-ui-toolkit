@@ -23,7 +23,11 @@
 #include <QtCore/QPointer>
 #include <QtQuick/private/qquickitemchangelistener_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucstyleditembase_p.h>
+#else
 #include <LomiriToolkit/private/ucstyleditembase_p.h>
+#endif
 
 class QQuickAbstractAnimation;
 
@@ -103,8 +107,13 @@ public Q_SLOTS:
 
 protected:
     static void regions_append(QQmlListProperty<UCBottomEdgeRegion> *sections, UCBottomEdgeRegion *section);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    static qsizetype regions_count(QQmlListProperty<UCBottomEdgeRegion> *sections);
+    static UCBottomEdgeRegion *regions_at(QQmlListProperty<UCBottomEdgeRegion> *sections, qsizetype index);
+#else
     static int regions_count(QQmlListProperty<UCBottomEdgeRegion> *sections);
     static UCBottomEdgeRegion *regions_at(QQmlListProperty<UCBottomEdgeRegion> *sections, int index);
+#endif
     static void regions_clear(QQmlListProperty<UCBottomEdgeRegion> *sections);
 
     void initializeComponent();

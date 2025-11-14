@@ -21,10 +21,18 @@
 #include <QtQuick/private/qquickmousearea_p.h>
 #include <QtQml/QQmlEngine>
 #include <QtTest/QtTest>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/ucswipearea_p_p.h>
+#else
 #include <LomiriGestures/private/ucswipearea_p_p.h>
+#endif
 #define protected public
 #define private public
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/touchregistry_p.h>
+#else
 #include <LomiriGestures/private/touchregistry_p.h>
+#endif
 #undef protected
 #undef private
 

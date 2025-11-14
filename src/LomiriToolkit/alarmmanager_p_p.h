@@ -19,11 +19,21 @@
 #ifndef ALARMMANAGER_P_P_H
 #define ALARMMANAGER_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/alarmmanager_p.h>
+#else
 #include <LomiriToolkit/private/alarmmanager_p.h>
+#endif
 
 #include <QtCore/QUrl>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucalarm_p.h>
+#else
 #include <LomiriToolkit/private/ucalarm_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

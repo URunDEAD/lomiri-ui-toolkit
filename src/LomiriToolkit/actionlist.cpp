@@ -116,7 +116,8 @@ QQmlListProperty<UCAction> ActionList::actions()
                                       ActionList::append,
                                       ActionList::count,
                                       ActionList::at,
-                                      ActionList::clear);
+                                      ActionList::clear
+                                      );
 }
 
 const QList<UCAction*> &ActionList::list() const
@@ -141,7 +142,11 @@ void ActionList::clear(QQmlListProperty<UCAction> *list)
     }
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+UCAction* ActionList::at(QQmlListProperty<UCAction> *list, qsizetype index)
+#else
 UCAction* ActionList::at(QQmlListProperty<UCAction> *list, int index)
+#endif
 {
     ActionList *actionList = qobject_cast<ActionList*>(list->object);
     if (actionList) {
@@ -150,7 +155,11 @@ UCAction* ActionList::at(QQmlListProperty<UCAction> *list, int index)
     return Q_NULLPTR;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+qsizetype ActionList::count(QQmlListProperty<UCAction> *list)
+#else
 int ActionList::count(QQmlListProperty<UCAction> *list)
+#endif
 {
     ActionList *actionList = qobject_cast<ActionList*>(list->object);
     if (actionList) {

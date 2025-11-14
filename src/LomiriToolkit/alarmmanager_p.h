@@ -23,7 +23,11 @@
 #include <QtCore/QSet>
 #include <QtQml/QQmlListProperty>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucalarm_p.h>
+#else
 #include <LomiriToolkit/private/ucalarm_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

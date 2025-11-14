@@ -17,7 +17,13 @@
 #ifndef UCSERVICEPROPERTIES_P_P_H
 #define UCSERVICEPROPERTIES_P_P_H
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucserviceproperties_p.h>
+#else
 #include <LomiriToolkit/private/ucserviceproperties_p.h>
+#endif
 
 #include <QtCore/QStringList>
 

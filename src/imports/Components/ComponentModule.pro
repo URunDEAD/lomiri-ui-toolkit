@@ -78,7 +78,7 @@ QML_FILES += 1.2/AbstractButton.qml \
 #1.3
 QML_FILES += 1.3/ActionBar.qml \
              1.3/ActivityIndicator.qml \
-	     1.3/AdaptivePageLayout.qml \
+             1.3/AdaptivePageLayout.qml \
              1.3/AnimatedItem.qml \
              1.3/AppHeader.qml \
              1.3/Button.qml \
@@ -127,7 +127,8 @@ QML_FILES += 1.3/ActionBar.qml \
              1.3/PageHeader.qml \
              1.3/Icon.qml
 
-OTHER_FILES+= qmldir \
+DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
+OTHER_FILES+= qmldir-qt5 \
              1.3/CrossFadeImage.qdoc \
              1.3/PageHeadConfiguration.qdoc \
              1.3/MainView.qdoc \

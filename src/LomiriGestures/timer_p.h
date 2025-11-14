@@ -21,8 +21,13 @@
 #include <QtCore/QPointer>
 #include <QtCore/QTimer>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/lomirigesturesglobal.h>
+#include <LomiriGestures-Qt6/private/timesource_p.h>
+#else
 #include <LomiriGestures/lomirigesturesglobal.h>
 #include <LomiriGestures/private/timesource_p.h>
+#endif
 
 UG_NAMESPACE_BEGIN
 

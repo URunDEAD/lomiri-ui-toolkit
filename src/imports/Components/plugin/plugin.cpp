@@ -17,8 +17,16 @@
 #include "plugin.h"
 
 #include <QtQml/QQmlEngine>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitmodule.h>
+#else
 #include <LomiriToolkit/lomiritoolkitmodule.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/lomirigesturesmodule.h>
+#else
 #include <LomiriGestures/lomirigesturesmodule.h>
+#endif
 
 LomiriComponentsPlugin::~LomiriComponentsPlugin()
 {

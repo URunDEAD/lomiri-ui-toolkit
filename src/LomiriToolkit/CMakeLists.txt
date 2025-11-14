@@ -1,0 +1,260 @@
+set(QML_PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml/Lomiri/Components")
+
+pkg_check_modules(X11 REQUIRED x11)
+pkg_check_modules(XCB REQUIRED xcb)
+pkg_check_modules(XI REQUIRED xi)
+
+set(MOUSE_TOUCH_ADAPTOR_SOURCES
+    mousetouchadaptor_x11.cpp
+)
+
+set(MOUSE_TOUCH_ADAPTOR_DEFINES
+    LOMIRITOOLKIT_ENABLE_X11_TOUCH_EMULATION
+)
+
+set(MOUSE_TOUCH_ADAPTOR_LIBS
+    ${X11_LIBRARIES}
+    ${XCB_LIBRARIES}
+    ${XI_LIBRARIES}
+)
+
+add_library(LomiriToolkit SHARED
+    ${MOUSE_TOUCH_ADAPTOR_SOURCES}
+    actionlist.cpp actionlist_p.h
+    adapters/actionsproxy_p.cpp adapters/actionsproxy_p.h
+    #adapters/alarmsadapter_p.h
+    #adapters/alarmsadapter_organizer.cpp
+    adapters/dbuspropertywatcher_p.cpp adapters/dbuspropertywatcher_p.h
+    #alarmmanager_p.cpp alarmmanager_p.h alarmmanager_p_p.h
+    asyncloader.cpp asyncloader_p.h
+    asyncloader_p_p.h
+    colorutils.cpp colorutils_p.h
+    exclusivegroup.cpp exclusivegroup_p.h
+    filterbehavior.cpp filterbehavior_p.h
+    i18n.cpp i18n_p.h
+    inversemouseareatype.cpp inversemouseareatype_p.h
+    label_p.h
+    listener.cpp listener_p.h
+    livetimer.cpp livetimer_p.cpp livetimer_p.h
+    livetimer_p_p.h
+    lomirithemeiconprovider.cpp lomirithemeiconprovider_p.h
+    lomiritoolkitglobal.h
+    lomiritoolkitmodule.cpp lomiritoolkitmodule.h
+    menu.cpp menu_p.h
+    menu_p_p.h
+    menubar.cpp menubar_p.h
+    menubar_p_p.h
+    menugroup.cpp menugroup_p.h
+    mousetouchadaptor.cpp mousetouchadaptor_p.h
+    mousetouchadaptor_p_p.h
+    privates/appheaderbase.cpp privates/appheaderbase_p.h
+    privates/frame.cpp privates/frame_p.h
+    privates/listitemdragarea.cpp privates/listitemdragarea_p.h
+    privates/listitemdraghandler.cpp privates/listitemdraghandler_p.h
+    privates/listitemexpansion.cpp
+    privates/listitemselection.cpp privates/listitemselection_p.h
+    privates/listviewextensions.cpp privates/listviewextensions_p.h
+    privates/splitviewhandler.cpp privates/splitviewhandler_p.h
+    privates/threelabelsslot_p.cpp privates/threelabelsslot_p.h
+    privates/ucpagewrapper.cpp privates/ucpagewrapper_p.h
+    privates/ucpagewrapper_p_p.h
+    privates/ucpagewrapperincubator.cpp privates/ucpagewrapperincubator_p.h
+    privates/ucscrollbarutils.cpp privates/ucscrollbarutils_p.h
+    propertychange.cpp propertychange_p.h
+    qquickclipboard.cpp qquickclipboard_p.h
+    qquickclipboard_p_p.h
+    qquickmimedata.cpp qquickmimedata_p.h
+    quickutils.cpp quickutils_p.h
+    sortbehavior.cpp sortbehavior_p.h
+    sortfiltermodel.cpp sortfiltermodel_p.h
+    splitview.cpp splitview_p.h
+    splitview_p_p.h
+    splitviewlayout.cpp
+    statesaverbackend_p.cpp statesaverbackend_p.h
+    timeutils_p.h
+    tree.cpp tree_p.h
+    ucabstractbutton.cpp ucabstractbutton_p.h
+    ucabstractbutton_p_p.h
+    ucaction.cpp ucaction_p.h
+    ucactioncontext.cpp ucactioncontext_p.h
+    ucactionitem.cpp ucactionitem_p.h
+    ucactionitem_p_p.h
+    ucactionmanager.cpp ucactionmanager_p.h
+    #ucalarm.cpp ucalarm_p.h ucalarm_p_p.h
+    #ucalarmmodel.cpp ucalarmmodel_p.h
+    ucapplication.cpp ucapplication_p.h
+    ucargument.cpp ucargument_p.h
+    ucarguments.cpp ucarguments_p.h
+    ucbottomedge.cpp ucbottomedge_p.h
+    ucbottomedge_p_p.h
+    ucbottomedgehint.cpp ucbottomedgehint_p.h
+    ucbottomedgehint_p_p.h
+    ucbottomedgeregion.cpp ucbottomedgeregion_p.h
+    ucbottomedgeregion_p_p.h
+    ucbottomedgestyle.cpp ucbottomedgestyle_p.h
+    ucdefaulttheme.cpp ucdefaulttheme_p.h
+    ucdeprecatedtheme.cpp ucdeprecatedtheme_p.h
+    ucfontutils.cpp ucfontutils_p.h
+    uchaptics.cpp uchaptics_p.h
+    ucheader.cpp ucheader_p.h
+    ucimportversionchecker_p.cpp ucimportversionchecker_p.h
+    ucinversemouse_p.h
+    uclabel.cpp uclabel_p.h
+    uclistitem.cpp uclistitem_p.h
+    uclistitem_p_p.h
+    uclistitemactions.cpp uclistitemactions_p.h
+    uclistitemactions_p_p.h
+    uclistitemlayout.cpp uclistitemlayout_p.h
+    uclistitemstyle.cpp uclistitemstyle_p.h
+    uclomirianimation.cpp uclomirianimation_p.h
+    uclomirishape.cpp uclomirishape_p.h
+    uclomirishapeoverlay.cpp uclomirishapeoverlay_p.h
+    uclomirishapetextures.cpp uclomirishapetextures_p.h
+    ucmainviewbase.cpp ucmainviewbase_p.h
+    ucmainviewbase_p_p.h
+    ucmainwindow.cpp ucmainwindow_p.h
+    ucmainwindow_p_p.h
+    ucmargins_p.h
+    ucmathutils.cpp ucmathutils_p.h
+    ucmouse_p.h
+    ucmousefilters.cpp
+    ucnamespace.cpp ucnamespace_p.h
+    ucpagetreenode.cpp ucpagetreenode_p.h
+    ucpagetreenode_p_p.h
+    ucperformancemonitor.cpp ucperformancemonitor_p.h
+    ucproportionalshape.cpp ucproportionalshape_p.h
+    #ucqquickimageextension.cpp ucqquickimageextension_p.h
+    #ucscalingimageprovider.cpp ucscalingimageprovider_p.h
+    ucserviceproperties.cpp ucserviceproperties_p.h
+    ucserviceproperties_p_p.h
+    ucslotslayout.cpp ucslotslayout_p.h
+    ucslotslayout_p_p.h
+    ucstatesaver.cpp ucstatesaver_p.h
+    ucstatesaver_p_p.h
+    ucstyleditembase.cpp ucstyleditembase_p.h
+    ucstyleditembase_p_p.h
+    ucstylehints.cpp ucstylehints_p.h
+    uctheme.cpp uctheme_p.h
+    ucthemingextension.cpp ucthemingextension_p.h
+    ucunits.cpp ucunits_p.h
+    ucurihandler.cpp ucurihandler_p.h
+    ucviewitemsattached.cpp
+    unixsignalhandler_p.cpp unixsignalhandler_p.h
+)
+add_library(LomiriUIToolkit::LomiriToolkit ALIAS LomiriToolkit)
+
+set_target_properties(LomiriToolkit PROPERTIES
+    VERSION     ${LOMIRI_UI_TOOLKIT_VERSION}
+    SOVERSION   ${LOMIRI_UI_TOOLKIT_SOVERSION}
+    OUTPUT_NAME "LomiriToolkit-Qt6"
+    EXPORT_NAME "LomiriToolkit-Qt6"
+)
+
+target_link_libraries(LomiriToolkit PUBLIC
+    LomiriGestures
+    LomiriMetrics
+    LomiriSystemInfo
+    Qt::CorePrivate
+    Qt::DBus
+    Qt::GuiPrivate
+    Qt::QmlPrivate
+    Qt::QuickPrivate
+    Qt::Svg
+    Qt::Test
+ #   Qt::Organizer
+    Qt6::Core5Compat
+
+    ${DBUS_LIBRARIES}
+    ${GLIB_LIBRARIES}
+    ${MOUSE_TOUCH_ADAPTOR_LIBS}
+)
+
+ecm_generate_export_header(LomiriToolkit
+    VERSION ${LOMIRI_UI_TOOLKIT_VERSION}
+    BASE_NAME LomiriToolkit
+)
+
+ecm_generate_headers(LomiriToolkit_FORWARDING_HEADERS
+    HEADER_NAMES
+        LomiriToolkitModule
+    COMMON_HEADER LomiriToolkit
+)
+
+target_include_directories(LomiriToolkit
+    PRIVATE
+        # glib
+        ${GLIB_INCLUDE_DIRS}
+)
+
+target_compile_definitions(LomiriToolkit PRIVATE
+    ${MOUSE_TOUCH_ADAPTOR_DEFINES}
+)
+
+lomiri_target_prepare_headers(LomiriToolkit SUBDIRECTORY LomiriToolkit-Qt6)
+
+qt6_add_shaders(LomiriToolkit "LomiriToolkit_shaders"
+    BATCHABLE
+    PRECOMPILE
+    OPTIMIZED
+    PREFIX
+        "/uc"
+    FILES
+        "privates/shaders/frame.vert"
+        "privates/shaders/frame.frag"
+        "shaders/shape.vert"
+        "shaders/shape.frag"
+        "shaders/shape_mipmap.frag"
+        "shaders/shapeoverlay.vert"
+        "shaders/shapeoverlay.frag"
+        "shaders/shapeoverlay_mipmap.frag"
+)
+
+# install
+install(TARGETS LomiriToolkit
+    EXPORT LomiriToolkitTargets
+    LIBRARY DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}
+)
+
+set(CMAKECONFIG_INSTALL_DIR "${LOMIRI_INSTALL_CMAKEPACKAGEDIR}/LomiriToolkit-Qt6")
+set(LomiriToolkit_VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/lomiritoolkitversion.h")
+
+ecm_setup_version(
+    PROJECT
+    VARIABLE_PREFIX LomiriToolkit
+    VERSION_HEADER "${LomiriToolkit_VERSION_HEADER}"
+    PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6ConfigVersion.cmake"
+    SOVERSION ${LOMIRI_UI_TOOLKIT_SOVERSION}
+)
+
+lomiri_target_install_headers(LomiriToolkit
+    EXTRA_FILES
+        ${LomiriToolkit_FORWARDING_HEADERS}
+        "${LomiriToolkit_VERSION_HEADER}"
+    DESTINATION "${LOMIRI_INSTALL_INCLUDEDIR}/LomiriToolkit-Qt6"
+)
+
+ecm_generate_pkgconfig_file(BASE_NAME LomiriToolkit-Qt6
+    INCLUDE_INSTALL_DIR ${LOMIRI_INSTALL_INCLUDEDIR}/LomiriToolkit-Qt6
+    DEPS "Qt6CorePrivate Qt6DBus Qt6GuiPrivate Qt6QmlPrivate Qt6QuickPrivate Qt6Svg Qt6Test Qt6Core5Compat LomiriSystemInfo glib-2.0 dbus-1 x11 xcb xi"
+    INSTALL
+)
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/LomiriToolkit-Qt6Config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6Config.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    PATH_VARS CMAKE_INSTALL_PREFIX
+)
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6Config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/LomiriToolkit-Qt6ConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
+)
+
+install(EXPORT LomiriToolkitTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE LomiriToolkit-Qt6Targets.cmake
+    NAMESPACE LomiriUIToolkit::
+)

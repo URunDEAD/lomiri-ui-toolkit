@@ -25,7 +25,12 @@
 #include <QtQml/QQmlListProperty>
 #include <QtQml/private/qpodvector_p.h>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
+#else
 #include <LomiriToolkit/lomiritoolkitglobal.h>
+#endif
+#include "exclusivegroup_p.h"
 
 class QQmlComponent;
 class QQuickItem;
@@ -190,6 +195,5 @@ private:
 
 UT_NAMESPACE_END
 
-QML_DECLARE_TYPE(UT_PREPEND_NAMESPACE(UCAction))
 
 #endif // UCACTION_P_H

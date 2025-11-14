@@ -20,7 +20,11 @@
 
 #include <QtCore/QFile>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/lomirimetricsglobal.h>
+#else
 #include <LomiriMetrics/lomirimetricsglobal.h>
+#endif
 
 class UMFileLoggerPrivate;
 struct UMLTTNGPlugin;

@@ -21,7 +21,11 @@
 #include <QtCore/QSet>
 #include <QtCore/QPointer>
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucaction_p.h>
+#else
 #include <LomiriToolkit/private/ucaction_p.h>
+#endif
 
 UT_NAMESPACE_BEGIN
 

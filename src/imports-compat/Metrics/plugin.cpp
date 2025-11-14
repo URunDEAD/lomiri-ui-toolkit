@@ -15,9 +15,17 @@
 // along with Lomiri UI Toolkit. If not, see <http://www.gnu.org/licenses/>.
 
 #include <QtQml/QtQml>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriMetrics-Qt6/applicationmonitor.h>
+#else
 #include <LomiriMetrics/applicationmonitor.h>
+#endif
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/deprecationprinter_p.h>
+#else
 #include <LomiriToolkit/private/deprecationprinter_p.h>
+#endif
 
 // FIXME(loicm)
 //   - Not sure how to add support for the loggers API?

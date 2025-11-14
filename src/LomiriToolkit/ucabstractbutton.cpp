@@ -176,7 +176,11 @@ void UCAbstractButtonPrivate::completeComponentInitialization()
 // may not be available on compoennt completion
 void UCAbstractButtonPrivate::_q_mouseAreaPressed()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (!mouseArea->isPressed()) {
+#else
     if (!mouseArea->pressed()) {
+#endif
         return;
     }
     bool longPressConnected = isPressAndHoldConnected();
@@ -297,9 +301,15 @@ void UCAbstractButtonPrivate::_q_adjustSensingArea()
     sensingArea.adjust(dx1, dy1, dx2, dy2);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCAbstractButton::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
+{
+    UCActionItem::geometryChange(newGeometry, oldGeometry);
+#else
 void UCAbstractButton::geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry)
 {
     UCActionItem::geometryChanged(newGeometry, oldGeometry);
+#endif
 
     // adjust internal mouse area's size
     d_func()->_q_adjustSensingArea();
@@ -312,7 +322,11 @@ void UCAbstractButton::geometryChanged(const QRectF &newGeometry, const QRectF &
 bool UCAbstractButton::pressed() const
 {
     Q_D(const UCAbstractButton);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    return d->mouseArea ? d->mouseArea->isPressed() : false;
+#else
     return d->mouseArea ? d->mouseArea->pressed() : false;
+#endif
 }
 
 /*!

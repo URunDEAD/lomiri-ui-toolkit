@@ -14,18 +14,64 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <QtGlobal>
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriGestures-Qt6/private/ucswipearea_p_p.h>
+#else
 #include <LomiriGestures/private/ucswipearea_p_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucaction_p.h>
+#else
 #include <LomiriToolkit/private/ucaction_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucbottomedge_p.h>
+#else
 #include <LomiriToolkit/private/ucbottomedge_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucbottomedge_p_p.h>
+#else
 #include <LomiriToolkit/private/ucbottomedge_p_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucbottomedgehint_p.h>
+#else
 #include <LomiriToolkit/private/ucbottomedgehint_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucbottomedgeregion_p.h>
+#else
 #include <LomiriToolkit/private/ucbottomedgeregion_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucbottomedgeregion_p_p.h>
+#else
 #include <LomiriToolkit/private/ucbottomedgeregion_p_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucheader_p.h>
+#else
 #include <LomiriToolkit/private/ucheader_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucunits_p.h>
+#else
 #include <LomiriToolkit/private/ucunits_p.h>
+#endif
 #define private public
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/quickutils_p.h>
+#else
 #include <LomiriToolkit/private/quickutils_p.h>
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <LomiriToolkit-Qt6/private/ucbottomedgestyle_p.h>
+#else
 #include <LomiriToolkit/private/ucbottomedgestyle_p.h>
+#endif
 #undef private
 #include <QtQml/QQmlListReference>
 #include <QtQml/QtQml>

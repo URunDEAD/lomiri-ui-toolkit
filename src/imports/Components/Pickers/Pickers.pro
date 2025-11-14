@@ -30,5 +30,8 @@ QML_FILES += 1.2/DatePicker.qml \
              1.3/PickerRow.qml \
              1.3/SecondsModel.qml \
              1.3/YearModel.qml
+DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
+
+OTHER_FILES+= qmldir-qt5
 
 load(lomiri_qml_module)
