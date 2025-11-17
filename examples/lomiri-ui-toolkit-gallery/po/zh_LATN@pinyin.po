@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-11-11 13:51+0000\n"
+"PO-Revision-Date: 2025-11-18 14:51+0000\n"
 "Last-Translator: Wenwen Luo <wenwenluo130@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "lomiri/lomiri-ui-toolkit-gallery-example/zh_LATN@pinyin/>\n"
@@ -38,21 +38,21 @@ msgstr "长清单"
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "禁用"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "数字动画"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "标准"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr ""
+msgstr "标准时长"
 
 #: Animations.qml:62
 msgid "Snap"
@@ -151,7 +151,7 @@ msgstr ""
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "标签"
 
 #: ListItems.qml:33
 msgid "Subtitled"
