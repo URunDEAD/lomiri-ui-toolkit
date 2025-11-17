@@ -545,7 +545,12 @@ void SplitView::doPositioning(QSizeF *contentSize)
     qreal hoffset = 0;
 
     QList<qreal> hoffsets;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    int positionedItemsSize = int(positionedItems.size());
+    for (int ii = 0; ii < positionedItemsSize; ++ii) {
+#else
     for (int ii = 0; ii < positionedItems.count(); ++ii) {
+#endif
         PositionedItem &child = positionedItems[ii];
 
         if (!d->effectiveLayoutMirror) {
@@ -578,7 +583,12 @@ void SplitView::doPositioning(QSizeF *contentSize)
     }
 
     int acc = 0;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    positionedItemsSize = int(positionedItems.size());
+    for (int ii = 0; ii < positionedItemsSize; ++ii) {
+#else
     for (int ii = 0; ii < positionedItems.count(); ++ii) {
+#endif
         PositionedItem &child = positionedItems[ii];
         hoffset = end - hoffsets[acc++] - child.item->width();
         positionItemX(hoffset, &child);
@@ -589,7 +599,12 @@ void SplitView::reportConflictingAnchors()
 {
     // Inspired from QtQuick QQuickColumn code
     bool anchorConflict = false;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+    int positionedItemsSize = int(positionedItems.size());
+    for (int ii = 0; ii < positionedItemsSize; ++ii) {
+#else
     for (int ii = 0; ii < positionedItems.count(); ++ii) {
+#endif
         const PositionedItem &child = positionedItems.at(ii);
         if (child.item) {
             QQuickAnchors *anchors = QQuickItemPrivate::get(static_cast<QQuickItem *>(child.item))->_anchors;
