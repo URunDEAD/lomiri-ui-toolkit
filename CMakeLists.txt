@@ -13,6 +13,11 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Te
 
 find_package(Qt6 REQUIRED COMPONENTS ShaderTools)
 
+message(STATUS "Qt6 version ${Qt6Core_VERSION}")
+
+if (Qt6Core_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    find_package(Qt6 REQUIRED COMPONENTS CorePrivate GuiPrivate QmlPrivate QuickPrivate)
+endif()
 
 find_package(LTTngUST)
 

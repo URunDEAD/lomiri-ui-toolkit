@@ -160,13 +160,23 @@ protected:
     Priority m_priority;
     int m_moveThreshold;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    bool m_signalWhenContains;
+    bool m_enabled;
+    bool m_moved;
+    bool m_longPress;
+    bool m_hovered;
+    bool m_doubleClicked;
+    bool m_ignoreSynthesizedEvents;
+#else
     bool m_signalWhenContains:1;
-    bool m_enabled: 1;
+    bool m_enabled:1;
     bool m_moved:1;
     bool m_longPress:1;
     bool m_hovered:1;
     bool m_doubleClicked:1;
     bool m_ignoreSynthesizedEvents:1;
+#endif
 };
 
 UT_NAMESPACE_END
