@@ -70,9 +70,15 @@ private:
         int column;
     };
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    bool m_decoded;
+    bool m_completed;
+    bool m_ignoreUnknownProperties;
+#else
     bool m_decoded:1;
     bool m_completed:1;
     bool m_ignoreUnknownProperties:1;
+#endif
     QPointer<UCStyledItemBase> m_styledItem;
     QList<Expression> m_expressions;
     QList< QPair<QString, QVariant> > m_values;

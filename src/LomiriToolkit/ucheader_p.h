@@ -74,10 +74,15 @@ private:
 
     qreal m_previous_contentY;
     qreal m_previous_header_height;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    bool m_exposed;
+    bool m_moving;
+    bool m_automaticHeight;
+#else
     bool m_exposed:1;
     bool m_moving:1;
     bool m_automaticHeight:1;
-
+#endif
     // used to set the easing and duration of m_showHideAnimation
     static UCLomiriAnimation *s_lomiriAnimation;
 
