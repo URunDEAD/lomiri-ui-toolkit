@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-11-18 14:51+0000\n"
+"PO-Revision-Date: 2025-11-28 10:00+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/"
 "lomiri-ui-toolkit-gallery-example/et/>\n"
@@ -145,7 +145,7 @@ msgstr "Kujundus"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "Eelnevad ja järgnevad tegevused"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
@@ -283,11 +283,11 @@ msgstr "Aktsentvärv"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "Eelnevad tegevused"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "Järgnevad tegevused"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
@@ -348,15 +348,15 @@ msgstr ""
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Lineaarne"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Ringjas"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Lõputu"
 
 #: Pickers.qml:137
 msgid "Clock"
@@ -364,7 +364,7 @@ msgstr "Kell"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "Ülekate"
 
 #: Popover.qml:38
 msgid "Flickable"
@@ -400,11 +400,11 @@ msgstr "Silt puudub"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "Aktiivsuse indikaator"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Suurused"
 
 #: Sections.qml:34
 msgid "Enabled"
@@ -461,15 +461,15 @@ msgstr "Numbrid"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "Ainult loetav"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "Keegi ei saa siia kirjutada"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "Mitte mingit suhestumist pole lubatud"
 
 #: TextInputs.qml:107
 msgid "Default"
