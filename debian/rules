@@ -83,11 +83,11 @@ else
 	# Add empty qmltypes files
 	for module in "Components" "Components/Labs" "Components/Styles" "Layouts" "Metrics" "PerformanceMetrics"; \
 	do \
-		touch debian/tmp/`qmake -query QT_INSTALL_QML`/Lomiri/$$module/plugins.qmltypes; \
+		touch debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/qt5/qml/Lomiri/$$module/plugins.qmltypes; \
 	done
 	for module in "Components" "Components/Labs" "Components/Styles" "Metrics"; \
 	do \
-		touch debian/tmp/`qmake -query QT_INSTALL_QML`/Ubuntu/$$module/plugins.qmltypes; \
+		touch debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/qt5/qml/Ubuntu/$$module/plugins.qmltypes; \
 	done
 endif
 	rm -f debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/*.la
