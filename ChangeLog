@@ -1,6 +1,730 @@
+2025-12-01 Mike Gabriel
+
+        * Release 1.3.5900 (HEAD -> main, tag: 1.3.5900)
+
+2025-11-26 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (feb606cae)
+
+2025-11-21 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (bb910cf11)
+        * Translated using Weblate (Estonian) (c3252f5a0)
+
+2025-11-25 Mike Gabriel
+
+        * Merge branch 'personal/bshah/fix-cross' into 'main' (676394606)
+
+2025-11-25 Bhushan Shah
+
+        * d/rules: Fix cross-compile with qmake (9d2be3a3f)
+
+2025-11-17 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (b58d520e4)
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (229da085c)
+
+2025-11-13 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (25377bcac)
+
+2025-11-17 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/bshah/6.10-fixes' into 'main' (2004a67e4)
+
+2025-11-17 Bhushan Shah
+
+        * src: remove bitfield entries in Qt6 (8e53f869b)
+        * splitview: adapt to changes in QQuickPositioner (cd7d76b36)
+        * cmake: add find_package for Private components we are linking to
+          (4708c8ada)
+
+2025-11-14 Guido Berhörster
+
+        * Merge branch 'personal/sunweaver+gber/qt6-qmake' into 'main'
+          (8d1640ae8)
+
+2025-11-13 Guido Berhoerster
+
+        * Replace QTouchDevice usage with QPointingDevice in
+          MouseTouchAdaptor (24b76096f)
+
+2025-11-13 Bhushan Shah
+
+        * uctestcase: delete QSignalSpy (f16d25b98)
+        * toolkit: migrate Lomiri.Toolkit.Private to 2.0 version (1304dffa6)
+        * Fixes in qmake2cmake based cmake conversion (a326417cd)
+        * imports: move qt6 shaders to 2.0 directory (eec24bf18)
+
+2025-11-12 Bhushan Shah
+
+        * uclistitem: remove spurious local std::optional (8d6090569)
+
+2025-11-11 Guido Berhoerster
+
+        * Remove unnecessary usage of -fpermissive (8d3fb03eb)
+        * Use common CMake namespace (4b6341d50)
+
+2025-11-11 Bhushan Shah
+
+        * src: fix some porting issues (a74f4269c)
+
+2025-11-11 Guido Berhoerster
+
+        * Fix VERSION property for all libraries (436e9526d)
+        * Remove leftover qmake file (ef56c1e71)
+
+2025-11-07 Guido Berhoerster
+
+        * Adjust packaging of shared libraries to SOVERSION change
+          (9a4de12bc)
+        * Reset SOVERSION for Qt 6 variants (1e71258a2)
+
+2025-11-06 Guido Berhoerster
+
+        * Clean up installed images (2efefd00d)
+        * Use suffixed icons directly and scale them correctly (15ee45e75)
+
+2025-11-06 Bhushan Shah
+
+        * chore: fix some minor issues (b2478c767)
+
+2025-10-31 Guido Berhoerster
+
+        * Remove image and scaling extensions from Qt 6-based builds
+          (667feec33)
+
+2025-10-28 Cyril Jacquet
+
+        * Fix texture handling in UCLomiriShape (24c8a7c84)
+        * Migrate AdaptivePageLayout and PageStack to Qt6 (9345cee79)
+
+2025-10-27 Bhushan Shah
+
+        * apicheck: port to QRegularExpression (13feb10fa)
+
+2025-10-17 Guido Berhoerster
+
+        * debian: adjust handling of apicheck binary to new installation path
+          (fd24a3287)
+        * Install apicheck in a Qt-version specific subdirectory (565359de4)
+
+2025-10-15 Guido Berhoerster
+
+        * Rename QT_UNITY8 and make it configurable (2f507e409)
+        * Remove left over qmake file (d3d0d7dcc)
+        * Remove unused sources from LomiriSystemInfo (7006130d9)
+
+2025-10-14 Bhushan Shah
+
+        * treewide: fixes and cleanups in multiple areas (273f72561)
+        * d/rules: remove the unneeded env variable (80b3f1ea0)
+
+2025-10-09 Bhushan Shah
+
+        * Remove installation for qt6 qml files from qmake (1182d6de3)
+        * toolkit: remove workaround in shaders that was added for qt6.4
+          (b52b83192)
+
+2025-09-23 Guido Berhoerster
+
+        * debian: Improve package descriptions (0a7c2b45d)
+        * debian: Ensure source dir clean-up after build (6e7fa5b38)
+
+2025-09-21 Mike Gabriel
+
+        * Don't use LOMIRI_UI_TOOLKIT_VERSION for PROJECT_VERSION (213b28503)
+
+2025-09-19 Guido Berhoerster
+
+        * debian: Remove workaround for qmlplugindump crash (614356e11)
+
+2025-09-18 Guido Berhoerster
+
+        * debian: Adapt packaged files of Qt 6 dev packages to CMake-based
+          build (6fe626f7d)
+
+2025-09-19 Guido Berhoerster
+
+        * Install apicheck under libexecdir (b621eced0)
+        * Install Qt 6 Test Qml module (ef045101e)
+
+2025-09-18 Guido Berhoerster
+
+        * Fix LomiriSystemInfo source files (f76753612)
+        * Fix installation of artwork files (4c42698ad)
+        * Fix Qml plugin names (3277ccd9a)
+        * Build QML plugins as CMake module and not shared libraries
+          (75ce76fef)
+        * Fix build of LTTng module in LomiriMetrics (f789e6729)
+        * Build lomiri-ui-toolkit-launcher for Qt 6 (ffbcdd5ac)
+
+2025-09-17 Guido Berhoerster
+
+        * Add -qt6 suffix to apicheck when built against Qt 6 (7c985d187)
+        * Properly build and install app-launch-profiler (04a34dfea)
+        * Adjust apicheck to QQmlType changes in Qt 6 (b9ab1113e)
+        * Remove defunct Qt 5 support (ff3970cd1)
+        * Reenable build of apicheck and app-launch-profiler (368ad878b)
+
+2025-09-16 Guido Berhoerster
+
+        * Reenable build of X11 touch emulation in LomiriToolkit (03c2ff812)
+
+2025-09-15 Guido Berhoerster
+
+        * debian: Add dependency on extra-cmake-modules (da3915da9)
+
+2025-09-29 Guido Berhoerster
+
+        * Fix include issues (407d560c5)
+
+2025-09-15 Guido Berhoerster
+
+        * Use ECM for creating wrapper headers, CMake config files,
+          pkg-config files (0e28c7f00)
+
+2025-09-05 Guido Berhoerster
+
+        * debian: Depend on qt6-shadertools-dev needed by cmake (2f78cbcab)
+
+2025-09-04 Bhushan Shah
+
+        * src: include shaders in LomiriComponents and LomiriToolkit
+          (0e16e386d)
+
+2025-09-25 Guido Berhoerster
+
+        * Change suffix for Qt 6 variant from "Qt6" to "-Qt6". (0374c9cc7)
+        * Copy headers to subdirectory in CMake current binary directory.
+          (41d62e904)
+
+2025-09-01 Guido Berhoerster
+
+        * Build Qt 6 variant without syncqt (bd9744420)
+
+2025-08-27 Guido Berhoerster
+
+        * debian: Build Qt 6 version using CMake (12642eebb)
+
+2025-08-27 Bhushan Shah
+
+        * Fixes in qmake2cmake based cmake conversion (be7157e14)
+
+2025-08-20 Marius Gripsgard
+
+        * Initial port to cmake (996d7e3b8)
+
+2025-08-21 Guido Berhoerster
+
+        * debian: Add dependencies on KTactileFeedback (186f03906)
+
+2025-07-11 Bhushan Shah
+
+        * debian: update packaging for 2.0 module (265fb0df3)
+
+2025-07-08 Bhushan Shah
+
+        * debian: update package with new files (24696b7d0)
+
+2025-08-21 Guido Berhoerster
+
+        * debian: Add dependency on qt6-shader-baker (382651af2)
+
+2025-05-21 Guido Berhoerster
+
+        * debian: disable parallel make for installation (3ac265cfa)
+        * debian: remove modification/removal of non-existent files
+          (b8cd214ad)
+
+2025-05-20 Guido Berhoerster
+
+        * debian: Add Qt6 subpackages (6a1e8fd76)
+        * debian: Add temporary workaround for qmlplugindump crashes
+          preventing installation (892d6793e)
+
+2025-04-25 Guido Berhoerster
+
+        * debian: Temporarily allow Qt6 tests to fail (3588ae4a6)
+
+2025-04-24 Guido Berhoerster
+
+        * debian: Add missing dependencies for building tests for Qt6
+          (408a9fa42)
+
+2025-04-23 Guido Berhoerster
+
+        * debian: Properly disable docs build for Qt6 variant (bb5696f7a)
+
+2025-04-14 Mike Gabriel
+
+        * debian/: Support building dually against Qt5 + Qt6. (17be36002)
+
+2025-08-21 Guido Berhoerster
+
+        * debian: Adjust to shadow build changes (44a876e90)
+
+2025-04-22 Guido Berhoerster
+
+        * debian: Do not try to build the Qt5 variant with -Werror
+          (856a6d08d)
+
+2025-08-21 Guido Berhoerster
+
+        * debian: Fix typo (3de16def3)
+
+2025-08-11 Bhushan Shah
+
+        * toolkit: change uniform buffer only if material changed (ff89bcad3)
+
+2025-08-08 Guido Berhoerster
+
+        * Add back missing components to Lomiri.Components 2.0 (cc91d81f5)
+
+2025-08-01 Guido Berhoerster
+
+        * Allow passing url type to popupUtils.open (8ad58b6cf)
+
+2025-10-24 Bhushan Shah
+
+        * fix: fix qt5 unit tests (d29981447)
+
+2025-07-21 Bhushan Shah
+
+        * imports: add copy of 1.1 Haptics for Qt 6 (8f1e4c698)
+
+2025-07-11 Bhushan Shah
+
+        * src/imports: use non-versioned import where relevant (030607bb3)
+        * src/imports: install 2.0 version on Qt6 (052697096)
+        * imports: copy 1.3 as 2.0 version where relevant (6cd71d122)
+
+2025-07-10 Guido Berhoerster
+
+        * Use Qt-version specific qmldir files (11f05bc89)
+
+2025-07-09 Bhushan Shah
+
+        * toolkit: update values for other uniforms (509a51607)
+
+2025-07-08 Bhushan Shah
+
+        * toolkit: bind shape texture by creating QSGTexture wrapper
+          (c3f366658)
+        * LomiriToolkit: do not register 1.x and deprecated versions for qt6
+          (aeb4f1f82)
+        * uctheme: for Qt6 register only 2.0 version (c3bbbfc2f)
+        * imports: install 2.0 version for qt6 (61371871e)
+        * imports: make copy of 1.3 as a 2.0 version for qt6 (9f30eebd1)
+
+2025-05-13 Guido Berhoerster
+
+        * Use setShaderFileName to load shaders in Qt6 (4099fa6a8)
+
+2025-06-14 Bhushan Shah
+
+        * Port shaders to new glsl language (f69f68184)
+
+2025-06-10 Guido Berhoerster
+
+        * Exclude tests depending on QtPIM when building againt Qt 6
+          (afe35da72)
+
+2025-05-09 Guido Berhoerster
+
+        * Adapt includes for namespaced Qt6 build (57ee7820d)
+
+2025-05-07 Guido Berhoerster
+
+        * Fix incorrectly named LomiriSystemInfo plugin (a14ffa9ed)
+        * Do not rely on a temporary directory with a predicatable path
+          (81ffa3ea0)
+        * touchPointStateToString() is only used for Qt5 (a4bdfb709)
+
+2025-05-02 Guido Berhoerster
+
+        * Fix installation for shadow builds (90c0772a2)
+
+2025-04-25 Guido Berhoerster
+
+        * Allow multiple simultaneous shadow builds (baa135409)
+        * Fix license test (d1f0eaa71)
+
+2025-04-24 Guido Berhoerster
+
+        * Port tests to Qt6 (77c77dca8)
+        * Port apicheck to Qt6 (80e770ac3)
+
+2025-04-17 Guido Berhoerster
+
+        * Fix initialization of UMApplicationMonitor::LoggingFilters enum
+          (cd570e11e)
+        * Replace obsolete variant of QString::split() (b256584f6)
+        * Build SystemInfo only for Qt6 and later (0b4e325a6)
+        * Add missing declaration for Qt6 (a3cd80dc5)
+
+2025-04-16 Guido Berhoerster
+
+        * Add missing headers for Qt6 (24ff85142)
+        * Fix UCAction type declaration (db9c66f82)
+        * Fix adaptations to QQmlAbstractBinding in Qt6 (c506a4df2)
+        * Fix cloning of QMouseEvent in Qt6 (ef51204a7)
+        * Adapt to QQmlPropertyCache::property return value in Qt6
+          (05217b14b)
+        * Adjust QQmlListProperty's CountFunction and AtFunction for Qt 6
+          (998fb823b)
+
+2025-04-14 Mike Gabriel
+
+        * Adjust to touch input changes in Qt 6 (5f7b477e2)
+        * More adjustments for X11MouseTouchAdaptorPrivate::nativeEventFilter
+          in Qt6. (35f60cb3f)
+        * menu::data count typo difference for QQmlListProperty between Qt5
+          and Qt6. (1f247ff47)
+        * C:: vs. no-prefix for gettext functions. (15f0970a9)
+        * src/LomiriMetrics/logger.cpp: No setCodec() for QTextStream in Qt6
+          anymore. (6025afa56)
+        * src/LomiriGestures/debughelpers.cpp: More adjustments for Qt6
+          build. (790d6c324)
+        * Use QRegularExpression instead of QRegExp with Qt6. (ee8e8ce9e)
+        * src/LomiriToolkit/LomiriToolkit.pro: Omit QOrganizer dependent code
+          (adapters/alarmsadapter_organizer.cpp) from Qt6 build (for
+          now). (639837ed4)
+        * src/LomiriSystemInfo/CMakeLists.txt: Drop file. Should not be part
+          of this MR. (0becbf4bd)
+        * src/LomiriGestures/LomiriGestures.pro: Propagate building w/o
+          -Werror to LomiriGestures properly. (2003378bc)
+
+2025-04-12 Mike Gabriel
+
+        * src/LomiriSystemInfo/linux/lomiridevicekitservice_linux.cpp: In
+          createMethodCall, wrap UPOWER_SERVICE in QStringLiteral().
+          (259a2e6f8)
+        * src/LomiriSystemInfo/linux/lomirinetworkinfo_linux.cpp: Avoid
+          implicit-fallthrough in
+          LomiriNetworkInfoPrivate::getNetworkInterfaceCount().
+          (313610c9c)
+        * Mark various methods with 'override'. (6651de187)
+
+2025-04-11 Marius Gripsgard
+
+        * debian: Add libbluetooth-dev (70f23418c)
+
+2025-04-10 Marius Gripsgard
+
+        * Add qt6 support (1f7d05c7e)
+        * Fork QSystemInfo and rename to LomiriSystemInfo (d70417835)
+
+2025-11-10 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (d85f0a0e5)
+
+2025-11-11 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (5314c1dfd)
+
+2025-10-30 Omer I.S.
+
+        * Translated using Weblate (Hebrew) (9c7a2b8fd)
+
+2025-10-17 Joana R
+
+        * Translated using Weblate (Basque) (773b0ddc2)
+
+2025-10-16 Joana R
+
+        * Translated using Weblate (Basque) (e867b37d9)
+
+2025-10-06 Joana R
+
+        * Translated using Weblate (Basque) (bd21cbc3b)
+
+2025-10-02 Joana R
+
+        * Translated using Weblate (Basque) (70c99bc75)
+
+2025-09-18 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (4ef9edf7e)
+
+2025-09-21 Libre Fox
+
+        * Translated using Weblate (Ukrainian) (68e97b082)
+        * Translated using Weblate (Ukrainian) (eca400ee5)
+
+2025-09-13 Milo Ivir
+
+        * Translated using Weblate (Croatian) (8a1506cb0)
+
+2025-09-16 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (d04863e8a)
+
+2025-09-17 Milo Ivir
+
+        * Translated using Weblate (Croatian) (72dd69a0d)
+
+2025-09-03 ButterflyOfFire
+
+        * Translated using Weblate (Kabyle) (4c64c0491)
+        * Translated using Weblate (Kabyle) (5cf9dfc46)
+
+2025-09-05 Milo Ivir
+
+        * Translated using Weblate (Croatian) (dc480649f)
+
+2025-09-03 Milo Ivir
+
+        * Translated using Weblate (Croatian) (e901ace9f)
+
+2025-08-31 Niko
+
+        * Translated using Weblate (Serbian) (b24084320)
+        * Translated using Weblate (Serbian) (dbe233213)
+
+2025-08-24 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (9eb9f7d36)
+
+2025-08-25 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (b14f78964)
+
+2025-08-24 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (6f0e3c4c7)
+
+2025-08-17 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (11a32f523)
+
+2025-08-11 Bảo Nam (Namm)
+
+        * Translated using Weblate (Vietnamese) (13a061a7d)
+
+2025-08-10 Steve
+
+        * Translated using Weblate (French (Switzerland)) (e43bf26c1)
+
+2025-08-07 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (b26d7db2b)
+
+2025-08-05 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (3a02aa7f3)
+
+2025-08-11 Bảo Nam (Namm)
+
+        * Translated using Weblate (Vietnamese) (43f2d36d3)
+
+2025-08-11 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (328d8aa5f)
+
+2025-08-11 Bảo Nam (Namm)
+
+        * Translated using Weblate (Vietnamese) (e65998a8e)
+
+2025-08-07 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (34b2bf4d7)
+
+2025-08-09 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (c751683de)
+
+2025-07-25 ButterflyOfFire
+
+        * Translated using Weblate (Kabyle) (151a59fe4)
+        * Translated using Weblate (Kabyle) (2a41e8fd6)
+
+2025-07-24 Ratchanan Srirattanamet
+
+        * Merge branch 'add-no-metrics-option' into 'main' (083ae10f7)
+
+2025-07-22 ell1e
+
+        * LomiriUiToolkit: Add no_lttng option to disable the lttng
+          components (5ddafe050)
+
+2025-07-18 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (3b4a276fd)
+        * Translated using Weblate (Vietnamese) (9032b11c2)
+        * Translated using Weblate (Vietnamese) (5ba589b4d)
+        * Translated using Weblate (Vietnamese) (a9bbacf72)
+
+2025-07-17 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (efc2e7bcb)
+
+2025-07-16 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (c238a6214)
+        * Translated using Weblate (Vietnamese) (7df4ca5ea)
+        * Translated using Weblate (Vietnamese) (4ae2a67f3)
+
+2025-07-11 Alioc
+
+        * Translated using Weblate (Chinese (Simplified Han script))
+          (1bf528b01)
+
+2025-07-14 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (139d3dd7d)
+        * Translated using Weblate (Vietnamese) (d34c51e42)
+        * Translated using Weblate (Vietnamese) (ce8e753d3)
+        * Translated using Weblate (Vietnamese) (7c9dbfb13)
+        * Translated using Weblate (Vietnamese) (8cff7b9a5)
+
+2025-06-29 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (160d56263)
+
+2025-06-27 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (4400ae3e4)
+
+2025-06-27 Capsia Tech
+
+        * Translated using Weblate (Slovenian) (0d3b8040f)
+
+2025-06-28 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (a17fb09d5)
+
+2025-06-19 Øjvind Fritjof Arnfred
+
+        * Translated using Weblate (Danish) (4f0422d64)
+
+2025-06-04 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (ca965884d)
+
+2025-05-27 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (ca3b7e951)
+
+2025-05-26 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (217cc1572)
+
+2025-05-22 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (cb9720f88)
+
+2025-05-19 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (849f37b76)
+
+2025-05-18 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (cafcec111)
+        * Translated using Weblate (Norwegian Bokmål) (d586cee59)
+
+2025-05-08 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (cc33f0bfb)
+
+2025-05-05 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (33d69a07b)
+
+2025-05-04 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (786985e08)
+
+2025-04-30 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/icontheme-fallback-suru' into
+          'main' (ce19c6050)
+
+2025-04-28 Ratchanan Srirattanamet
+
+        * iconprovider: add "suru" icon theme as an additional default theme
+          (6057817a5)
+
+2025-04-28 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/python-setuptools' into 'main'
+          (a6418d831)
+
+2025-04-28 Ratchanan Srirattanamet
+
+        * d/control: B-Ds on python3-setuptools to fix build on Debian
+          testing (387b4b6a0)
+
+2025-04-03 Valery Levanchuk
+
+        * Translated using Weblate (Belarusian) (d415c5f48)
+
+2025-03-25 Niko
+
+        * Translated using Weblate (Serbian) (98ece2613)
+
+2025-03-13 Niko
+
+        * Translated using Weblate (Serbian) (52e488884)
+        * Translated using Weblate (Serbian) (189631c70)
+        * Translated using Weblate (Serbian) (d96571a35)
+
+2025-03-12 Niko
+
+        * Translated using Weblate (Serbian) (68b9c4e88)
+
+2025-03-03 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (26b901f90)
+
+2025-02-06 Milo Ivir
+
+        * Translated using Weblate (Croatian) (ab5a608a3)
+        * Translated using Weblate (Croatian) (605b28581)
+
+2025-02-05 Milo Ivir
+
+        * Translated using Weblate (Croatian) (9f988dcb7)
+        * Translated using Weblate (Croatian) (8c313677b)
+
+2025-02-01 Milo Ivir
+
+        * Translated using Weblate (Croatian) (925cdf7ec)
+
+2025-01-31 Ricky Tigg
+
+        * Translated using Weblate (Finnish) (1904eae9f)
+
+2025-02-01 Milo Ivir
+
+        * Translated using Weblate (Croatian) (595158f65)
+
+2025-01-30 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/lduboeuf/mkcal_adaptation' into 'main'
+          (aece262d2)
+
+2025-01-27 Lionel Duboeuf
+
+        * prepare Alarm component to support others alarm backend (1389f79e7)
+
+2025-01-19 reimu105
+
+        * Translated using Weblate (Chinese (Traditional Han script))
+          (d151187d8)
+
+2025-01-12 தமிழ்நேரம்
+
+        * Translated using Weblate (Tamil) (6b3a65697)
+        * Translated using Weblate (Tamil) (f72fe00df)
+
 2025-01-07 Mike Gabriel
 
-        * Release 1.3.5110 (HEAD -> main, tag: 1.3.5110)
+        * Release 1.3.5110 (4111d119b) (tag: 1.3.5110)
 
 2024-12-27 Hosted Weblate
 
