@@ -38,7 +38,7 @@ Item {
         value: styledItem.animate
     }
     property int headerTextFadeDuration: animate ? 350 : 0
-    property url indicatorImageSource: Qt.resolvedUrl("../artwork/chevron@18.png")
+    property url indicatorImageSource: Qt.resolvedUrl("../artwork/chevron@27.png")
 
     property string headerAdaptiveLabelSize: Label.XLarge
     property int headerTextStyle: Text.Normal
@@ -167,7 +167,7 @@ Item {
                         x: button.width - width
                         // FIXME: temporary hack for the chevron's height to match the font size
                         height: 0.82*sourceSize.height
-                        scale: units.gridUnit / 18
+                        scale: units.gridUnit / 27
 
                         // The indicator image must be visible after the selected tab button, when the
                         // tab bar is not in selection mode, or after the "last" button (starting with
