@@ -83,6 +83,9 @@ Build-Depends: accountsservice <!nocheck>,
                qtsystems5-dev,
                qtsystems5-private-dev,
                qttools5-dev-tools,
+# TODO: remove spirv-tools (should come from qt6-shadertools)
+# see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1125195
+               spirv-tools,
                suru-icon-theme (>= 14.04+16.10.20160720),
                uuid-runtime,
                xauth <!nocheck>,
