@@ -1,3 +1,0 @@
-module Lomiri.Test
-plugin LomiriTest
-LomiriTestCase 2.0 LomiriTestCase20.qml

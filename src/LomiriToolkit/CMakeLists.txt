@@ -1,5 +1,3 @@
-set(QML_PLUGIN_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml/Lomiri/Components")
-
 pkg_check_modules(X11 REQUIRED x11)
 pkg_check_modules(XCB REQUIRED xcb)
 pkg_check_modules(XI REQUIRED xi)

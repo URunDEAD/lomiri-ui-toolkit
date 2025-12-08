@@ -1,81 +1,85 @@
-# Set the plugin directory for Ambiance theme
-set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Components/Themes/Ambiance")
-
-# Define artwork files
-set(ARTWORK_FILES
-    "artwork/bubble_shadow@20.png"
-    "artwork/bubble_shadow@20.sci"
-    "artwork/bubble_shadow@30.png"
-    "artwork/bubble_shadow@30.sci"
-    "artwork/bubble_shadow@8.png"
-    "artwork/bubble_shadow@8.sci"
-    "artwork/caret_noshadow@27.png"
-    "artwork/chevron@27.png"
-    "artwork/chevron_down@30.png"
-    "artwork/header_overflow_dropshadow@27.png"
-    "artwork/header_overflow_dropshadow@27.sci"
-    "artwork/progression_divider@18.png"
-    "artwork/spinner@16.png"
-    "artwork/spinner@32.png"
-    "artwork/spinner@8.png"
-    "artwork/stroke_button@27.png"
-    "artwork/tick@30.png"
-    "artwork/toolkit_scrollbar-stepper.svg"
+set_source_files_properties(
+    2.0/SectionsForPageHead.qml
+    2.0/SectionsForPageHeadStyle.qml
+    PROPERTIES
+        QT_QML_INTERNAL_TYPE TRUE
 )
 
-# Define QML files for version 1.2
-set(QML_FILES
-    "2.0/AmbianceNormal.qml"
-    "2.0/AmbianceSelected.qml"
-    "2.0/ActionBarStyle.qml"
-    "2.0/ActivityIndicatorStyle.qml"
-    "2.0/BubbleShape.qml"
-    "2.0/ButtonForeground.qml"
-    "2.0/ButtonStyle.qml"
-    "2.0/CheckBoxStyle.qml"
-    "2.0/ComboButtonStyle.qml"
-    "2.0/DatePickerStyle.qml"
-    "2.0/DialerHandStyle.qml"
-    "2.0/DialerStyle.qml"
-    "2.0/DialogForegroundStyle.qml"
-    "2.0/HighlightMagnifier.qml"
-    "2.0/ListItemOptionSelectorStyle.qml"
-    "2.0/ListItemStyle.qml"
-    "2.0/MainViewStyle.qml"
-    "2.0/OptionSelectorStyle.qml"
-    "2.0/OverflowPanel.qml"
-    "2.0/PageHeadButton.qml"
-    "2.0/PageHeadStyle.qml"
-    "2.0/Palette.qml"
-    "2.0/PartialColorize.qml"
-    "2.0/PickerDelegateStyle.qml"
-    "2.0/PickerStyle.qml"
-    "2.0/PopoverForegroundStyle.qml"
-    "2.0/ProgressBarStyle.qml"
-    "2.0/ProgressionVisualStyle.qml"
-    "2.0/PullToRefreshStyle.qml"
-    "2.0/ScrollbarStyle.qml"
-    "2.0/ScrollingActionBarStyle.qml"
-    "2.0/SectionsStyle.qml"
-    "2.0/SheetForegroundStyle.qml"
-    "2.0/SliderStyle.qml"
-    "2.0/SwitchStyle.qml"
-    "2.0/TabBarStyle.qml"
-    "2.0/TextAreaStyle.qml"
-    "2.0/TextCursorStyle.qml"
-    "2.0/TextFieldStyle.qml"
-    "2.0/ToolbarButtonStyle.qml"
-    "2.0/ToolbarStyle.qml"
-    "2.0/IconButtonStyle.qml"
-    "2.0/PageHeaderStyle.qml"
-    "2.0/BottomEdgeHintStyle.qml"
-    "2.0/BottomEdgeStyle.qml"
-    "2.0/FocusShape.qml"
-    "2.0/SectionsForPageHead.qml"
-    "2.0/SectionsForPageHeadStyle.qml"
+qt_add_qml_module(LomiriComponentsThemesAmbiance
+    URI Lomiri.Components.Themes.Ambiance
+    VERSION 2.0
+    PLUGIN_TARGET LomiriComponentsThemesAmbiance
+    OUTPUT_DIRECTORY "${QML_BUILD_DIR}/Lomiri/Components/Themes/Ambiance"
+    NO_GENERATE_EXTRA_QMLDIRS
+    NO_PLUGIN_OPTIONAL
+    QML_FILES
+        2.0/ActionBarStyle.qml
+        2.0/ActivityIndicatorStyle.qml
+        2.0/AmbianceNormal.qml
+        2.0/AmbianceSelected.qml
+        2.0/BottomEdgeHintStyle.qml
+        2.0/BottomEdgeStyle.qml
+        2.0/BubbleShape.qml
+        2.0/ButtonForeground.qml
+        2.0/ButtonStyle.qml
+        2.0/CheckBoxStyle.qml
+        2.0/ComboButtonStyle.qml
+        2.0/DatePickerStyle.qml
+        2.0/DialerHandStyle.qml
+        2.0/DialerStyle.qml
+        2.0/DialogForegroundStyle.qml
+        2.0/FocusShape.qml
+        2.0/HighlightMagnifier.qml
+        2.0/IconButtonStyle.qml
+        2.0/ListItemOptionSelectorStyle.qml
+        2.0/ListItemStyle.qml
+        2.0/MainViewStyle.qml
+        2.0/OptionSelectorStyle.qml
+        2.0/OverflowPanel.qml
+        2.0/PageHeadButton.qml
+        2.0/PageHeadStyle.qml
+        2.0/PageHeaderStyle.qml
+        2.0/Palette.qml
+        2.0/PartialColorize.qml
+        2.0/PickerDelegateStyle.qml
+        2.0/PickerStyle.qml
+        2.0/PopoverForegroundStyle.qml
+        2.0/ProgressBarStyle.qml
+        2.0/ProgressionVisualStyle.qml
+        2.0/PullToRefreshStyle.qml
+        2.0/ScrollbarStyle.qml
+        2.0/ScrollingActionBarStyle.qml
+        2.0/SectionsForPageHead.qml
+        2.0/SectionsForPageHeadStyle.qml
+        2.0/SectionsStyle.qml
+        2.0/SheetForegroundStyle.qml
+        2.0/SliderStyle.qml
+        2.0/SwitchStyle.qml
+        2.0/TabBarStyle.qml
+        2.0/TextAreaStyle.qml
+        2.0/TextCursorStyle.qml
+        2.0/TextFieldStyle.qml
+        2.0/ToolbarButtonStyle.qml
+        2.0/ToolbarStyle.qml
+    RESOURCES
+        artwork/bubble_shadow@20.png
+        artwork/bubble_shadow@20.sci
+        artwork/bubble_shadow@30.png
+        artwork/bubble_shadow@30.sci
+        artwork/bubble_shadow@8.png
+        artwork/bubble_shadow@8.sci
+        artwork/caret_noshadow@27.png
+        artwork/chevron@27.png
+        artwork/chevron_down@30.png
+        artwork/header_overflow_dropshadow@27.png
+        artwork/header_overflow_dropshadow@27.sci
+        artwork/progression_divider@18.png
+        artwork/spinner@16.png
+        artwork/spinner@32.png
+        artwork/spinner@8.png
+        artwork/stroke_button@27.png
+        artwork/tick@30.png
+        artwork/toolkit_scrollbar-stepper.svg
 )
 
-# Install files
-install(FILES ${QML_FILES} DESTINATION ${QML_PLUGIN_DIR}/2.0)
-install(FILES ${ARTWORK_FILES} DESTINATION ${QML_PLUGIN_DIR}/artwork)
-install(FILES "qmldir-qt6" DESTINATION ${QML_PLUGIN_DIR}/ RENAME "qmldir")
+install_qml_module(LomiriComponentsThemesAmbiance)

@@ -12,7 +12,7 @@ set(LOMIRI_UI_TOOLKIT_SOVERSION "1")
 set(QT_VERSION_MAJOR 6)
 
 find_package(QT NAMES Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Test Core5Compat)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS DBus Gui Qml Quick Svg Test QuickTest Core5Compat)
 
 find_package(Qt6 REQUIRED COMPONENTS ShaderTools)
 
@@ -22,6 +22,11 @@ if (Qt6Core_VERSION VERSION_GREATER_EQUAL "6.10.0")
     find_package(Qt6 REQUIRED COMPONENTS CorePrivate GuiPrivate QmlPrivate QuickPrivate)
 endif()
 
+qt_standard_project_setup()
+qt_policy(SET QTP0001 NEW) # "/qt/qml/" resource prefix
+qt_policy(SET QTP0004 NEW) # place qmldir files in subdirs
+set(QT_QML_GENERATE_AOTSTATS OFF) # not used
+
 find_package(LTTngUST)
 
 find_package(PkgConfig REQUIRED)
@@ -29,14 +34,6 @@ pkg_check_modules(XCB REQUIRED xcb)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
 pkg_check_modules(DBUS REQUIRED dbus-1)
 pkg_check_modules(EGL REQUIRED egl)
-
-#pkg_check_modules(QTORGANIZER REQUIRED Qt${QT_VERSION_MAJOR}Organizer)
-#pkg_check_modules(QTSYSTEMINFO REQUIRED Qt${QT_VERSION_MAJOR}SystemInfo)
-
-include(GNUInstallDirs)
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 
 find_package(ECM "6.13.0" NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -47,7 +44,8 @@ include(CMakePackageConfigHelpers)
 include(ECMSetupVersion)
 include(ECMGeneratePkgConfigFile)
 
-set(QML_PLUGIN_BASE_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml/Lomiri")
+set(QML_BUILD_DIR "${CMAKE_BINARY_DIR}/qml")
+set(QML_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/qml")
 set(QT_INSTALL_PLUGINS "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/plugins")
 set(LOMIRI_INSTALL_INCLUDEDIR "${CMAKE_INSTALL_INCLUDEDIR}/${CMAKE_LIBRARY_ARCHITECTURE}")
 set(LOMIRI_INSTALL_CMAKEPACKAGEDIR "${CMAKE_INSTALL_LIBDIR}/cmake")
