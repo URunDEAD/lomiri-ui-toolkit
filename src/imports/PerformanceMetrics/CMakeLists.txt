@@ -22,7 +22,7 @@ qt_add_qml_module(LomiriPerformanceMetrics
         plugin/upmtexturefromimage.cpp
         plugin/upmtexturefromimage.h
     QML_FILES
-        BarGraph.qml
+        2.0/BarGraph.qml
         PerformanceOverlay.qml
 )
 
@@ -31,6 +31,14 @@ target_link_libraries(LomiriPerformanceMetrics PRIVATE
     Qt::Gui
     Qt::Qml
     Qt::Quick
+)
+
+qt_add_shaders(LomiriPerformanceMetrics "LomiriPerformanceMetrics_shaders"
+    PRECOMPILE
+    OPTIMIZED
+    FILES
+        "2.0/shaders/bargraph.frag"
+        "2.0/shaders/bargraph.vert"
 )
 
 install_qml_module(LomiriPerformanceMetrics)

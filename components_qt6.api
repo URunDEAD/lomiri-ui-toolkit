@@ -134,6 +134,15 @@ Lomiri.Components.Aspect: Enum
 Lomiri.Components.BackgroundMode: Enum
     SolidColor
     VerticalGradient
+Lomiri.PerformanceMetrics.BarGraph 1.0 BarGraphQt6: Item
+    property color aboveThresholdColor
+    property color backgroundColor
+    property color color
+    property string labelFormat
+    property var labels
+    property double maximumValue
+    property var model
+    property double threshold
 Lomiri.Components.ListItems.Base 2.0: Empty
     property string fallbackIconName
     property url fallbackIconSource
