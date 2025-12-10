@@ -123,6 +123,7 @@ public:
     virtual void registerTypes(const char* uri) override
     {
         Q_ASSERT(QLatin1String(uri) == QLatin1String("Lomiri.Metrics"));
+        qmlRegisterModule(uri, 0, 1);
         qmlRegisterSingletonType<ApplicationMonitorWrapper>(
             uri, 1, 0, "ApplicationMonitor", applicationMonitorSingletonProvider);
     }
