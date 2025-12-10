@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 #
 # Copyright 2015 Canonical Ltd.
 #
@@ -19,16 +19,16 @@
 command -v licensecheck >/dev/null 2>&1 || exit 1
 
 include_files="\.(c(c|pp|xx)?|h(h|pp|xx)?|p(l|m)|php|py(|x)|java|js|vala|qml)$"
-exclude_dirs="(3rd_party|qrc_|moc_|_build|include)"
-allowed_licenses="(Canonical|Android|Google|Digia|Qt Company Ltd)"
-issues_count=`licensecheck --noconf -r * --copyright -m -c $include_files -i $exclude_dirs | egrep -v $allowed_licenses | wc -l`
+exclude_dirs="(3rd_party|qrc_|moc_|_build|include|^build)"
+allowed_licenses="(Canonical|UBports|Android|Google|Digia|Qt Company Ltd)"
+tab_char="$(echo -e \\t)"
+issues=`licensecheck -r * --copyright -m -c "$include_files" -i "$exclude_dirs" | egrep -v "$tab_char.*$allowed_licenses"`
 
-if [ $issues_count -eq 0 ]; then
+if [ -z "$issues" ]; then
     echo No license problems found.
     exit 0
 else
-    echo Found $issues_count license problems:
-    # Run it a second time to print a nice list of issues
-    licensecheck --noconf -r * --copyright -m -c $include_files -i $exclude_dirs | egrep -v $allowed_licenses
+    echo "Found $(echo "$issues" | wc -l) license problem(s):"
+    echo "$issues"
     exit 1
 fi
