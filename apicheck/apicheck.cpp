@@ -129,8 +129,7 @@ public:
 */
 static QHash<QByteArray, QSet<QQmlType> > qmlTypesByCppName;
 
-// No different versioning possible for a composite type.
-static QMap<QString, QQmlType> qmlTypesByCompositeName;
+static QMultiMap<QString, QQmlType> qmlTypesByCompositeName;
 
 static QHash<QByteArray, QByteArray> cppToId;
 
@@ -208,11 +207,12 @@ QByteArray convertToId(const QMetaObject *mo)
 // Collect all metaobjects for types registered with qmlRegisterType() without parameters
 void collectReachableMetaObjectsWithoutQmlName( QSet<const QMetaObject *>& metas ) {
     Q_FOREACH (QQmlType ty, QQmlMetaType::qmlAllTypes()) {
-        if ( ! metas.contains(ty.metaObject()) ) {
+        const QMetaObject *tyMeta = ty.metaObject();
+        if (tyMeta && !metas.contains(tyMeta)) {
             if (!ty.isComposite()) {
                 collectReachableMetaObjects(ty, &metas);
             } else {
-                qmlTypesByCompositeName[ty.elementName()] = ty;
+                qmlTypesByCompositeName.insert(ty.elementName(), ty);
             }
         }
     }
@@ -228,17 +228,20 @@ QSet<const QMetaObject *> collectReachableMetaObjects(QQmlEngine *engine,
 
     QHash<QByteArray, QSet<QByteArray> > extensions;
     Q_FOREACH (const QQmlType ty, QQmlMetaType::qmlTypes()) {
-        if (!ty.isCreatable())
-            noncreatables.insert(ty.metaObject());
-        if (ty.isSingleton())
-            singletons.insert(ty.metaObject());
+        const QMetaObject *tyMeta = ty.metaObject();
+        if (!ty.isCreatable() && tyMeta)
+            noncreatables.insert(tyMeta);
+        if (ty.isSingleton() && tyMeta)
+            singletons.insert(tyMeta);
         if (!ty.isComposite()) {
-            qmlTypesByCppName[ty.metaObject()->className()].insert(ty);
-            if (ty.isExtendedType())
-                extensions[ty.typeName()].insert(ty.metaObject()->className());
+            if (tyMeta) {
+                qmlTypesByCppName[tyMeta->className()].insert(ty);
+                if (ty.isExtendedType())
+                    extensions[ty.typeName()].insert(tyMeta->className());
+            }
             collectReachableMetaObjects(ty, &metas);
         } else {
-            qmlTypesByCompositeName[ty.elementName()] = ty;
+            qmlTypesByCompositeName.insert(ty.elementName(), ty);
         }
     }
 
@@ -978,9 +981,16 @@ int main(int argc, char *argv[])
             int highestMajor = 0, highestMinor = 1;
             Q_FOREACH(QQmlDirParser::Component c, p.components()) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+                if (!c.version.hasMajorVersion() || !c.version.hasMinorVersion()) {
+                    continue;
+                }
                 int majorVersion = c.version.majorVersion();
                 int minorVersion = c.version.minorVersion();
 #else
+                // Work-around for version -1, -1
+                if (c.majorVersion == -1) {
+                    continue;
+                }
                 int majorVersion = c.majorVersion;
                 int minorVersion = c.minorVersion;
 #endif
@@ -991,10 +1001,6 @@ int main(int argc, char *argv[])
                 } else if (majorVersion == highestMajor && minorVersion > highestMinor) {
                     highestMinor = minorVersion;
                 }
-
-                // Work-around for version -1, -1
-                if (majorVersion == -1)
-                    continue;
                 importVersions << QString("%1.%2").arg(majorVersion).arg(minorVersion);
             }
             pluginImportVersion = QString("%1.%2").arg(highestMajor).arg(highestMinor);
