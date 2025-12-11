@@ -107,6 +107,7 @@ void UCStyledItemBasePrivate::setFocusable(bool focus)
 {
     Q_Q(UCStyledItemBase);
     q->setAcceptedMouseButtons(focus ? (Qt::LeftButton | Qt::RightButton | Qt::MiddleButton) : Qt::NoButton);
+    q->setAcceptTouchEvents(focus);
     q->setFiltersChildMouseEvents(focus);
 }
 

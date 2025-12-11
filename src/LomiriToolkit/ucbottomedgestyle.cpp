@@ -38,6 +38,7 @@ void UCBottomEdgeStyle::setConsumeMouse(bool consume)
     } else {
         setAcceptedMouseButtons(Qt::NoButton);
     }
+    setAcceptTouchEvents(consume);
 }
 
 void UCBottomEdgeStyle::mousePressEvent(QMouseEvent *event)

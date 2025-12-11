@@ -195,6 +195,8 @@ UCSwipeArea::UCSwipeArea(QQuickItem *parent)
 {
     Q_D(UCSwipeArea);
     d->init();
+
+    setAcceptTouchEvents(true);
 }
 
 /*!

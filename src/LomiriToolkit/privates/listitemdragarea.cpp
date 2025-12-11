@@ -46,6 +46,7 @@ ListItemDragArea::ListItemDragArea(QQuickItem *parent)
     , max(-1)
 {
     setAcceptedMouseButtons(Qt::LeftButton);
+    setAcceptTouchEvents(true);
 
     // for testing purposes
     setObjectName(QStringLiteral("drag_area"));
