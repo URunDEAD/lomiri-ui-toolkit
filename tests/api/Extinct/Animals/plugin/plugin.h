@@ -28,6 +28,9 @@ class ExtinctAnimalsPlugin : public QQmlExtensionPlugin
 public:
     void registerTypes(const char *uri) override;
     void initializeEngine(QQmlEngine *engine, const char *uri) override;
+
+private:
+    QString m_baseUrl;
 };
 
 #endif // PLUGIN_H

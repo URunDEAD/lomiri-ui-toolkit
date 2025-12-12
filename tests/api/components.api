@@ -1,3 +1,5 @@
+Extinct.Animals.Andrewsarchus 0.1: Item
+    property double skullSize
 Extinct.Animals.Andrewsarchus 2.0 Paratriisodon: Item
     property double saggitalCrestSize
     property double skullSize

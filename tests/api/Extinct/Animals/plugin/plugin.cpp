@@ -19,6 +19,9 @@
 #include "plugin.h"
 
 #include <QtQuick/private/qquickimagebase_p.h>
+#include <QFile>
+#include <QFileInfo>
+#include <QUrl>
 
 #include "europe.h"
 #include "pangaea.h"
@@ -46,11 +49,36 @@ void ExtinctAnimalsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
 {
     Q_UNUSED(uri);
     Q_UNUSED(engine);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    Q_INIT_RESOURCE(ea_resources);
+#endif
 }
 
 void ExtinctAnimalsPlugin::registerTypes(const char *uri)
 {
     Q_ASSERT(uri == QLatin1String("Extinct.Animals"));
+
+    QString base;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    // In Qt6, QQmlExtensionPlugin::baseUrl() is deprecated.
+    // Finding the absolute path of the Extinct.Animals module to register our
+    // types doesn't seem very straightformward. The environment variable
+    // QML2_IMPORT_PATH is available in the test environment.
+    QStringList pathList = QString(getenv("QML2_IMPORT_PATH")).split(':', Qt::SkipEmptyParts);
+    for (const QString &path : pathList) {
+        QString modulePath = path + "/Extinct/Animals";
+        if (QFile::exists(modulePath + "/qmldir")) {
+            QFileInfo moduleInfo(modulePath);
+            base = QUrl::fromLocalFile(moduleInfo.absoluteFilePath()).toString();
+            break;
+        }
+    }
+#else
+    base = baseUrl().toString();
+#endif
+    Q_ASSERT_X(!base.isEmpty(),
+        "ExtinctAnimalsPlugin::registerTypes",
+        "Could not find the import path containing the Extinct.Animals module");
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     qmlRegisterType<EATarpan>();
@@ -60,12 +88,10 @@ void ExtinctAnimalsPlugin::registerTypes(const char *uri)
     qmlRegisterType<EASmilodon>(uri, 1, 0, "Smilodon");
     qmlRegisterType<EASmilodon>(uri, 0, 1, "ScimitarCat");
 
-    qmlRegisterType(QUrl(baseUrl().toString() + "/Andrewsarchus.qml"), uri, 0, 1, "Andrewsarchus");
-    // The second call overrrides the previous one, only the last version will show up
-    qmlRegisterType(QUrl(baseUrl().toString() + "/Paratriisodon.qml"), uri, 2, 0, "Andrewsarchus");
+    qmlRegisterType(QUrl(base + "/Andrewsarchus.qml"), uri, 0, 1, "Andrewsarchus");
+    qmlRegisterType(QUrl(base + "/Paratriisodon.qml"), uri, 2, 0, "Andrewsarchus");
 
     qmlRegisterType(QUrl("qrc:///ea/Paratriisodon.qml"), uri, 2, 3, "AndrewsarchusMongoliensis");
-    // The second call overrrides the previous one, only the last version will show up
     qmlRegisterType(QUrl("qrc:///ea/Paratriisodon.qml"), uri, 2, 4, "AndrewsarchusMongoliensis");
 
     qmlRegisterSingletonType<EAPangaea>(uri, 1, 0, "Pangaea", registerPangaea);
