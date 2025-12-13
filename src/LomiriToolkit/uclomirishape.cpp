@@ -193,11 +193,12 @@ bool ShapeShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial
     }
     
     if (!oldMaterial || newMaterial->compare(oldMaterial) != 0) {
-        bool textured = false;
+        // TODO: make bool later on
+        int textured = 0;
         if (data->flags & ShapeMaterial::Data::Textured) {
             const float sourceOpacity = data->sourceOpacity / 255.0f;
             memcpy(buf->data() + 72, &sourceOpacity, 4);
-            textured = true;
+            textured = 1;
         }
         memcpy(buf->data() + 80, &textured, 4);
 

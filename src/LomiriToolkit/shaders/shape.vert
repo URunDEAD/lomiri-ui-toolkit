@@ -27,7 +27,9 @@ layout(std140, binding=0) uniform buf {
     vec2 opacityFactors;
     float sourceOpacity;
     float distanceAA;
-    bool textured;
+    // FIXME workaround for Qt <= 6.7
+    // bool textured;
+    int textured;
     int aspect;
 } ubuf;
 
@@ -40,7 +42,7 @@ layout(location = 3) out vec4 backgroundColor;
 void main()
 {
     shapeCoord = shapeCoordAttrib;
-    if (ubuf.textured) {
+    if (ubuf.textured != 0) {
         sourceCoord = sourceCoordAttrib;
     }
     yCoord = yCoordAttrib;
