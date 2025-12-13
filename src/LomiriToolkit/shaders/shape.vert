@@ -27,7 +27,9 @@ layout(std140, binding=0) uniform buf {
     vec2 opacityFactors;
     float sourceOpacity;
     float distanceAA;
-    // FIXME workaround for Qt <= 6.7
+    // FIXME: Qt does not handle SPIRV-cross lower `bool` to `lowp int` instead
+    // of `uint` in GLSL ES 100.
+    // https://qt-project.atlassian.net/browse/QTBUG-142725
     // bool textured;
     int textured;
     int aspect;
