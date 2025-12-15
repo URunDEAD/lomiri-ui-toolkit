@@ -27,7 +27,11 @@ layout(std140, binding=0) uniform buf {
     vec2 opacityFactors;
     float sourceOpacity;
     float distanceAA;
-    bool textured;
+    // FIXME: Qt does not handle SPIRV-cross lower `bool` to `lowp int` instead
+    // of `uint` in GLSL ES 100.
+    // https://qt-project.atlassian.net/browse/QTBUG-142725
+    // bool textured;
+    int textured;
     int aspect;
 } ubuf;
 
@@ -40,7 +44,7 @@ layout(location = 3) out vec4 backgroundColor;
 void main()
 {
     shapeCoord = shapeCoordAttrib;
-    if (ubuf.textured) {
+    if (ubuf.textured != 0) {
         sourceCoord = sourceCoordAttrib;
     }
     yCoord = yCoordAttrib;

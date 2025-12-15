@@ -38,7 +38,11 @@ layout(std140, binding = 0) uniform buf {
     vec2 opacityFactors;
     float sourceOpacity;
     float distanceAA;
-    bool textured;
+    // FIXME: Qt does not handle SPIRV-cross lower `bool` to `lowp int` instead
+    // of `uint` in GLSL ES 100.
+    // https://qt-project.atlassian.net/browse/QTBUG-142725
+    // bool textured;
+    int textured;
     int aspect;
 } ubuf;
 
@@ -54,7 +58,7 @@ void main(void)
     vec4 shapeData = texture(shapeTexture, shapeCoord);
     vec4 color = backgroundColor;
 
-    if (ubuf.textured) {
+    if (ubuf.textured != 0) {
         // Blend the source over the current color.
         // FIXME(loicm) sign() is far from optimal. Call texture2D() at beginning of scope.
         vec2 axisMask = -sign((sourceCoord.zw * sourceCoord.zw) - vec2(1.0));
