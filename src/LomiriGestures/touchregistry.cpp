@@ -174,9 +174,7 @@ void TouchRegistry::freeEndedTouchInfos()
 void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<int> &touchIds,
         QQuickItem *item)
 {
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    Qt::TouchPointStates touchPointStates = 0;
-#else
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Qt::TouchPointStates touchPointStates;
 #endif
     QList<QTouchEvent::TouchPoint> touchPoints;
@@ -190,6 +188,10 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         const QTouchEvent::TouchPoint &originalTouchPoint = allTouchPoints[i];
         if (touchIds.contains(originalTouchPoint.id())) {
             QTouchEvent::TouchPoint touchPoint = originalTouchPoint;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QMutableEventPoint::detach(touchPoint);
+#endif
+
             translateTouchPointFromScreenToWindowCoords(touchPoint);
 
             // Set the point's local coordinates to that of the item
@@ -202,8 +204,7 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             QMutableEventPoint::setGlobalPressPosition(touchPoint, windowToCandidateTransform.map(touchPoint.pressPosition()));
             QMutableEventPoint::setGlobalLastPosition(touchPoint, windowToCandidateTransform.map(touchPoint.lastPosition()));
-
-            //QMutableEventPoint::setVelocity(touchPoint, windowToCandidateMatrix.mapVector(touchPoint.velocity().toVector2D()));
+            QMutableEventPoint::setVelocity(touchPoint, windowToCandidateMatrix.mapVector(touchPoint.velocity().toVector3D()).toVector2D());
 #else
 
             touchPoint.setStartPos(windowToCandidateTransform.map(touchPoint.startScenePos()));
@@ -217,7 +218,16 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         }
     }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QTouchEvent *eventForItem = new QTouchEvent(event->type(),
+                                                event->pointingDevice(),
+                                                event->modifiers(),
+                                                touchPoints);
+
+    eventForItem->setTimestamp(event->timestamp());
+    QMutableTouchEvent::setTarget(eventForItem, event->target());
+    // window() is moved to QEventPoint.
+#else
     QTouchEvent *eventForItem = new QTouchEvent(event->type(),
                                                 event->device(),
                                                 event->modifiers(),
@@ -226,6 +236,7 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
     eventForItem->setWindow(event->window());
     eventForItem->setTimestamp(event->timestamp());
     eventForItem->setTarget(event->target());
+#endif
 
     UnownedTouchEvent unownedTouchEvent(eventForItem);
 
@@ -233,12 +244,19 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         << "to" << item;
 
     QCoreApplication::sendEvent(item, &unownedTouchEvent);
-#endif
 }
 
 void TouchRegistry::translateTouchPointFromScreenToWindowCoords(QTouchEvent::TouchPoint &touchPoint)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QMutableEventPoint::setGlobalPosition(touchPoint, touchPoint.scenePosition());
+    QMutableEventPoint::setGlobalPressPosition(touchPoint, touchPoint.scenePressPosition());
+    QMutableEventPoint::setGlobalLastPosition(touchPoint, touchPoint.sceneLastPosition());
+
+    QMutableEventPoint::setScenePosition(touchPoint, touchPoint.position());
+    // Qt 6 now calculates scene{Press,Last}Position from global{Press,Last}Position,
+    // globalPosition, and scenePosition.
+#else
     touchPoint.setScreenPos(touchPoint.scenePos());
     touchPoint.setStartScreenPos(touchPoint.startScenePos());
     touchPoint.setLastScreenPos(touchPoint.lastScenePos());
