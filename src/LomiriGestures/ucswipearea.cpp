@@ -22,6 +22,7 @@
 #include <QtQuick/QQuickWindow>
 #include <QtQuick/private/qquickwindow_p.h>
 
+#include "debughelpers_p.h"
 #include "touchownershipevent_p.h"
 #include "touchregistry_p.h"
 #include "unownedtouchevent_p.h"
@@ -45,67 +46,6 @@ const char *statusToString(UCSwipeAreaPrivate::Status status)
         return "Recognized";
     }
 }
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-QString touchPointStateToString(Qt::TouchPointState state)
-{
-    switch (state) {
-    case Qt::TouchPointPressed:
-        return QStringLiteral("pressed");
-    case Qt::TouchPointMoved:
-        return QStringLiteral("moved");
-    case Qt::TouchPointStationary:
-        return QStringLiteral("stationary");
-    case Qt::TouchPointReleased:
-        return QStringLiteral("released");
-    default:
-        return QStringLiteral("INVALID_STATE");
-    }
-}
-#endif
-
-QString touchEventToString(const QTouchEvent *ev)
-{
-    QString message;
-
-    switch (ev->type()) {
-    case QEvent::TouchBegin:
-        message.append(QStringLiteral("TouchBegin "));
-        break;
-    case QEvent::TouchUpdate:
-        message.append(QStringLiteral("TouchUpdate "));
-        break;
-    case QEvent::TouchEnd:
-        message.append(QStringLiteral("TouchEnd "));
-        break;
-    case QEvent::TouchCancel:
-        message.append(QStringLiteral("TouchCancel "));
-        break;
-    default:
-        message.append(QStringLiteral("INVALID_TOUCH_EVENT_TYPE "));
-    }
-
-    Q_FOREACH(const QTouchEvent::TouchPoint& touchPoint, ev->touchPoints()) {
-        message.append(
-            QStringLiteral(
-                "(id:%1, state:"
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                "%2"
-#endif
-                ", scenePos:(%3,%4)) "
-                )
-                .arg(touchPoint.id())
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                .arg(touchPointStateToString(touchPoint.state()))
-#endif
-                .arg(touchPoint.scenePos().x())
-                .arg(touchPoint.scenePos().y())
-            );
-    }
-
-    return message;
-}
-
 } // namespace {
 
 class Direction
