@@ -37,7 +37,10 @@ UT_NAMESPACE_BEGIN
   \brief The base class for MainView and MultiColumnView.
 */
 UCMainViewBasePrivate::UCMainViewBasePrivate()
-    : m_actionManager(nullptr),
+    :
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+      m_actionManager(nullptr),
+#endif
       m_actionContext(nullptr),
       m_flags(0),
       m_anchorToKeyboard(false)
@@ -49,7 +52,9 @@ void UCMainViewBasePrivate::init()
     Q_Q(UCMainViewBase);
 
     //need to init here because the q pointer is null in constructor
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_actionManager = new UCActionManager(q);
+#endif
     m_actionContext = new UCPopupContext(q);
 
     m_actionContext->setObjectName(QStringLiteral("RootContext"));
@@ -58,14 +63,17 @@ void UCMainViewBasePrivate::init()
     // until the MainView (and all its children) are complete
     // to prevent bug #1570886.
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QObject::connect(m_actionManager,&UCActionManager::quit, [](){
         // FIXME Wire this up to the application lifecycle management API instead of quit().
         qApp->quit();
     });
+#endif
 
     QObject::connect(q, SIGNAL(windowChanged(QQuickWindow*)), q, SLOT(_q_updateWindow()));
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void UCMainViewBasePrivate::_q_headerColorBinding(const QColor &col)
 {
     Q_Q(UCMainViewBase);
@@ -87,6 +95,7 @@ void UCMainViewBasePrivate::_q_footerColorBinding(const QColor &col)
     m_footerColor = col;
     Q_EMIT q->footerColorChanged(col);
 }
+#endif
 
 void UCMainViewBasePrivate::doAutoTheme()
 {
@@ -181,6 +190,7 @@ void UCMainViewBase::setAnchorToKeyboard(bool anchorToKeyboard)
     Q_EMIT anchorToKeyboardChanged(anchorToKeyboard);
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 // deprecated
 QColor UCMainViewBase::headerColor() const
 {
@@ -201,6 +211,7 @@ void UCMainViewBase::setHeaderColor(QColor headerColor)
     d->_q_headerColorBinding(headerColor);
     UC_QML_DEPRECATION_WARNING("MainView.headerColor is deprecated in Lomiri.Components 1.3.")
 }
+#endif
 
 /*!
   \qmlproperty color MainViewBase::backgroundColor
@@ -234,10 +245,12 @@ void UCMainViewBase::setBackgroundColor(QColor backgroundColor)
 
     Q_EMIT backgroundColorChanged(backgroundColor);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (!(d->m_flags & UCMainViewBasePrivate::CustomHeaderColor))
         d->_q_headerColorBinding(d->m_backgroundColor);
     if (!(d->m_flags & UCMainViewBasePrivate::CustomFooterColor))
         d->_q_footerColorBinding(d->m_backgroundColor);
+#endif
 
     d->_q_updateWindow();
 
@@ -246,6 +259,7 @@ void UCMainViewBase::setBackgroundColor(QColor backgroundColor)
     d->doAutoTheme();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 // deprecated
 QColor UCMainViewBase::footerColor() const
 {
@@ -295,6 +309,7 @@ UCActionManager *UCMainViewBase::actionManager() const
 {
     return d_func()->m_actionManager;
 }
+#endif
 
 /*!
   \qmlproperty ActionContext MainViewBase::actionContext
@@ -319,8 +334,10 @@ void UCMainViewBase::componentComplete()
     if (d->m_actionContext)
         d->m_actionContext->componentComplete();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (d->m_actionManager)
         d->m_actionManager->componentComplete();
+#endif
 }
 
 void UCMainViewBase::classBegin()
@@ -329,10 +346,12 @@ void UCMainViewBase::classBegin()
     UCPageTreeNode::classBegin();
 
     QQmlContext *contextForThis = qmlContext(this);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (d->m_actionManager) {
         QQmlEngine::setContextForObject(d->m_actionManager, contextForThis);
         d->m_actionManager->classBegin();
     }
+#endif
 
     if (d->m_actionContext) {
         QQmlEngine::setContextForObject(d->m_actionContext, contextForThis);

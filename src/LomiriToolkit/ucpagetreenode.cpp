@@ -29,7 +29,9 @@ UCPageTreeNodePrivate::UCPageTreeNodePrivate()
       m_activeLeafNode(nullptr),
       m_pageStack(nullptr),
       m_propagated(nullptr),
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
       m_toolbar(nullptr),
+#endif
       m_flags(0),
       m_isLeaf(false),
       m_active(false)
@@ -529,6 +531,7 @@ void UCPageTreeNode::setPropagated(QObject *propagated)
     d->_q_propagatedBinding(propagated);
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 /*!
   \qmlproperty Item PageTreeNode::toolbar
   \deprecated
@@ -549,6 +552,7 @@ void UCPageTreeNode::setToolbar(QQuickItem *toolbar)
     d->m_toolbar = toolbar;
     Q_EMIT toolbarChanged(toolbar);
 }
+#endif
 
 /*!
   \internal

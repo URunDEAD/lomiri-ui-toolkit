@@ -334,6 +334,7 @@ void UCBottomEdgeHint::handleFlickableActivation()
     }
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 /*!
   \qmlproperty string BottomEdgeHint::state
   \deprecated
@@ -374,6 +375,7 @@ void UCBottomEdgeHint::setState(const QString &state)
         setStatus(Inactive);
     }
 }
+#endif
 
 /*!
   \qmlproperty Status BottomEdgeHint::status

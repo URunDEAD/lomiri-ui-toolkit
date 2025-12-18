@@ -124,6 +124,7 @@ UCActionContext *UCActionManager::globalContext() const
     return ActionProxy::instance().globalContext;
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 /*!
  * \qmlmethod ActionManager::addAction(Action action)
  * \deprecated
@@ -181,5 +182,6 @@ void UCActionManager::removeLocalContext(UCActionContext *context)
     }
     ActionProxy::removeContext(context);
 }
+#endif
 
 UT_NAMESPACE_END

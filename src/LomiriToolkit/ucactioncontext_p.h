@@ -66,8 +66,10 @@ Q_SIGNALS:
     void activeChanged();
 
 public Q_SLOTS:
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void addAction(UT_PREPEND_NAMESPACE(UCAction) *action);
     void removeAction(UT_PREPEND_NAMESPACE(UCAction) *action);
+#endif
 
 protected:
     QSet<UCAction*> m_actions;

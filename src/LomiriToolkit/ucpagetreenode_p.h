@@ -32,7 +32,9 @@ class LOMIRITOOLKIT_EXPORT UCPageTreeNode : public UCStyledItemBase
 {
     Q_OBJECT
     Q_PROPERTY(bool isLeaf READ isLeaf WRITE setIsLeaf NOTIFY isLeafChanged)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_PROPERTY(QQuickItem* toolbar READ toolbar WRITE setToolbar NOTIFY toolbarChanged)
+#endif
     Q_PROPERTY(QQuickItem* activeLeafNode READ activeLeafNode NOTIFY activeLeafNodeChanged)
     Q_PROPERTY(bool active READ active WRITE setActive NOTIFY activeChanged)
 #ifndef Q_QDOC
@@ -65,8 +67,10 @@ public:
     void setPropagated(QObject *propagated);
     void resetPropagated();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QQuickItem *toolbar() const;
     void setToolbar(QQuickItem *toolbar);
+#endif
 
     bool isPageTreeNode() const;
 
@@ -86,7 +90,9 @@ Q_SIGNALS:
     void pageStackChanged(QQuickItem* pageStack);
     void activeLeafNodeChanged(QQuickItem* activeLeafNode);
     void propagatedChanged(QObject* propagated);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void toolbarChanged(QQuickItem* toolbar);
+#endif
     void isPageTreeNodeChanged(bool isPageTreeNode);
 
 protected:
