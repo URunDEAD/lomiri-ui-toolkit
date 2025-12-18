@@ -1,8 +1,3 @@
-Lomiri.Components.AbstractButton 2.0: ActionItem
-    property bool hovered
-    signal clicked()
-    signal pressAndHold()
-    property bool pressed
 Lomiri.Components.AbstractButton 2.0 UCAbstractButton: ActionItem
     readonly property bool hovered
     signal clicked()
@@ -17,7 +12,6 @@ Lomiri.Components.Action 2.0 2.0 UCAction: QTestRootObject
     property ExclusiveGroup exclusiveGroup 2.0
     property string iconName
     property url iconSource
-    property Component itemHint
     property string keywords
     signal triggered(var value)
     signal toggled(bool value) 2.0
@@ -43,8 +37,6 @@ Lomiri.Components.Styles.ActionBarStyle 1.3: Item
 Lomiri.Components.ActionContext 2.0 UCActionContext: QTestRootObject
     default property list<Action> actions
     property bool active
-    function addAction(Action action)
-    function removeAction(Action action)
 Lomiri.Components.ActionItem 2.0 UCActionItem: StyledItem
     property Action action
     property string iconName
@@ -75,10 +67,6 @@ Lomiri.Components.ActionManager 2.0 UCActionManager: QTestRootObject
     readonly property ActionContext globalContext
     property list<ActionContext> localContexts
     signal quit()
-    function addAction(Action action)
-    function removeAction(Action action)
-    function addLocalContext(ActionContext context)
-    function removeLocalContext(ActionContext context)
 Lomiri.Components.Popups.ActionSelectionPopover 2.0: Popover
     property var actions
     property Component delegate
@@ -134,7 +122,7 @@ Lomiri.Components.Aspect: Enum
 Lomiri.Components.BackgroundMode: Enum
     SolidColor
     VerticalGradient
-Lomiri.PerformanceMetrics.BarGraph 1.0 BarGraphQt6: Item
+Lomiri.PerformanceMetrics.BarGraph 1.0: Item
     property color aboveThresholdColor
     property color backgroundColor
     property color color
@@ -274,6 +262,7 @@ Lomiri.Components.Pickers.DatePicker 2.0: StyledItem
     readonly property int seconds
     readonly property int week
     readonly property int year
+Lomiri.Components.DateUtils 2.0
 Lomiri.Components.Pickers.DayModel 2.0: PickerModelBase
     function var reset()
     function var resetLimits(var label, var margin)
@@ -387,9 +376,6 @@ Lomiri.Components.HAlignment: Enum
     AlignHCenter
     AlignLeft
     AlignRight
-Lomiri.Components.Haptics 2.0: Item
-    readonly property HapticsEffect effect
-    function var play(var customEffect)
 Lomiri.Components.Haptics 2.0: QTestRootObject singleton
     readonly property QTestRootObject effect
     readonly property bool enabled
@@ -428,6 +414,7 @@ Lomiri.Components.Icon 2.0: Item
     property color keyColor
     property string name
     property url source
+    readonly property Status status
 Lomiri.Components.ListItems.IconVisual 2.0: Item
     property string fallbackIconName
     property url fallbackSource
@@ -484,6 +471,11 @@ Lomiri.Components.InputHandler 2.0: MultiPointTouchArea
     property bool suppressReleaseEvent
     property bool textChanged
     property Item visibleArea
+Lomiri.Components.Internal__Haptics 2.0: Item
+    readonly property HapticsEffect effect
+    function var play(var customEffect)
+Lomiri.Components.Internal__ListItemPopover 2.0: ActionSelectionPopover
+    function var mergeActions(var to, var from)
 Lomiri.Components.InverseMouse 2.0 UCInverseMouse: Mouse
 Lomiri.Components.InverseMouseArea 2.0 InverseMouseAreaType: MouseArea
     function bool contains(QPointF point)
@@ -503,10 +495,7 @@ Lomiri.Components.ListItems.ItemSelector 2.0: Empty
     property var model
     property bool multiSelection
     property int selectedIndex
-Lomiri.Components.Label 2.0: Text
-    property string fontSize
 Lomiri.Components.Label 2.0 UCLabel: Text
-    property string fontSize
     property TextSize textSize
 Lomiri.Components.ListItems.LabelVisual 2.0: Label
     function var isInsideOverlay(var item)
@@ -554,8 +543,6 @@ Lomiri.Components.ListItemLayout 2.0 UCListItemLayout: SlotsLayout
     readonly property Label subtitle
     readonly property Label summary
     readonly property Label title
-Lomiri.Components.ListItemPopover 2.0: ActionSelectionPopover
-    function var mergeActions(var to, var from)
 Lomiri.Components.Styles.ListItemStyle 1.3 1.2 UCListItemStyle: Item
     readonly property bool animatePanels
     property Item dragPanel
@@ -636,28 +623,14 @@ Lomiri.Test.LomiriTestCase 2.0 LomiriTestCase20: TestCase
 Lomiri.Components.MainView 2.0: MainViewBase
     property bool automaticOrientation
     default property list<QTestRootObject> contentsItem
-Lomiri.Components.MainViewBase 2.0: PageTreeNode
-    readonly property ActionManager actionManager
-    property list<Action> actions
-    property bool anchorToKeyboard
-    property string applicationName
-    property color backgroundColor
-    property color footerColor
-    property color headerColor
 Lomiri.Components.MainViewBase 2.0 UCMainViewBase: PageTreeNode
     readonly property PopupContext actionContext
-    readonly property ActionManager actionManager
-    property list<Action> actions
     property bool anchorToKeyboard
     property string applicationName
     property color backgroundColor
-    property color footerColor
-    property color headerColor
     signal applicationNameChanged(string applicationName)
     signal anchorToKeyboardChanged(bool anchorToKeyboard)
-    signal headerColorChanged(color headerColor)
     signal backgroundColorChanged(color backgroundColor)
-    signal footerColorChanged(color footerColor)
     signal actionManagerChanged(ActionManager actionManager)
     signal actionContextChanged(PopupContext actionContext)
 Lomiri.Components.MathUtils 2.0: QTestRootObject singleton
@@ -702,7 +675,7 @@ Lomiri.Components.Mouse 2.0 UCMouse: QTestRootObject
     signal entered(MouseEvent event, Item host)
     signal exited(MouseEvent event, Item host)
     property Priority priority
-Lomiri.Test.MouseTouchAdaptor 1.0: QTestRootObject singleton
+Lomiri.Test.MouseTouchAdaptor 2.0: QTestRootObject singleton
     property bool enabled
     signal enabledChanged(bool value)
 Lomiri.Components.ListItems.MultiValue 2.0: Base
@@ -804,14 +777,6 @@ Lomiri.Components.PageStack 2.0: PageTreeNode
     function var push(var page, var properties)
     function var pop()
     function var clear()
-Lomiri.Components.PageTreeNode 2.0: StyledItem
-    property bool active
-    property Item activeLeafNode
-    property Item header
-    property bool isLeaf
-    property Item pageStack
-    property Item parentNode
-    property Toolbar toolbar
 Lomiri.Components.PageTreeNode 2.0 UCPageTreeNode: StyledItem
     property bool active
     readonly property Item activeLeafNode
@@ -822,19 +787,10 @@ Lomiri.Components.PageTreeNode 2.0 UCPageTreeNode: StyledItem
     signal pageStackChanged(Item pageStack)
     signal activeLeafNodeChanged(Item activeLeafNode)
     signal propagatedChanged(QTestRootObject propagated)
-    signal toolbarChanged(Item toolbar)
     signal isPageTreeNodeChanged(bool isPageTreeNode)
     function dumpNodeTree()
     property Item pageStack
     property PageTreeNode parentNode
-    property Item toolbar
-Lomiri.Components.PageWrapper 2.0: PageTreeNode
-    property bool canDestroy
-    function var destroyObject()
-    property Item object
-    property var properties
-    property var reference
-Lomiri.Components.PageWrapperUtils 2.0
 Lomiri.Components.Themes.Palette 2.0: QTestRootObject
     property PaletteValues disabled
     property PaletteValues focused
@@ -1121,7 +1077,6 @@ Lomiri.Components.StyleHints 2.0 UCStyleHints: QTestRootObject
 Lomiri.Components.StyledItem 2.0 2.0 2.0 UCStyledItemBase: Item
     property bool activeFocusOnPress 2.0
     readonly property bool keyNavigationFocus 2.0
-    signal activeFocusOnTabChanged2() 2.0
     function bool requestFocus(Qt.FocusReason reason) 2.0
     function bool requestFocus() 2.0
     property Component style
@@ -1177,7 +1132,7 @@ Lomiri.Components.Tabs 2.0: PageTreeNode
     property int selectedTabIndex
     property TabBar tabBar
     default property list<QTestRootObject> tabChildren
-Lomiri.Test.TestExtras 1.0: QTestRootObject singleton
+Lomiri.Test.TestExtras 2.0: QTestRootObject singleton
     function string openGLflavor()
     function string cpuArchitecture()
     function bool touchDevicePresent()
