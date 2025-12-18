@@ -2,9 +2,6 @@
 # Not sure why they are located in a 1.2 directory.
 set(QML_FILES_1_1
     1.2/MainViewStyle.qml
-    1.2/OptionSelectorStyle.qml
-    1.2/Palette.qml
-    1.2/TabBarStyle.qml
 )
 set_source_files_properties(${QML_FILES_1_1}
     PROPERTIES

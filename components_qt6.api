@@ -768,15 +768,6 @@ Lomiri.Components.PageHeadState 2.0: State
     property Action backAction
     property Item contents
     property PageHeadConfiguration head
-Lomiri.Components.Styles.PageHeadStyle 1.1: Item
-    property double contentHeight
-    property string fontSize
-    property int fontWeight
-    property int maximumNumberOfActions
-    property url separatorBottomSource
-    property url separatorSource
-    property color textColor
-    property double textLeftMargin
 Lomiri.Components.Styles.PageHeadStyle 1.3: Item
     property double contentHeight
     property string fontSize
@@ -844,16 +835,6 @@ Lomiri.Components.PageWrapper 2.0: PageTreeNode
     property var properties
     property var reference
 Lomiri.Components.PageWrapperUtils 2.0
-Lomiri.Components.Themes.Palette 0.1: QTestRootObject
-    property PaletteValues normal
-    property PaletteValues selected
-Lomiri.Components.Themes.Palette 1.3: QTestRootObject
-    property PaletteValues disabled
-    property PaletteValues focused
-    property PaletteValues highlighted
-    property PaletteValues normal
-    property PaletteValues selected
-    property PaletteValues selectedDisabled
 Lomiri.Components.Themes.Palette 2.0: QTestRootObject
     property PaletteValues disabled
     property PaletteValues focused
@@ -861,47 +842,6 @@ Lomiri.Components.Themes.Palette 2.0: QTestRootObject
     property PaletteValues normal
     property PaletteValues selected
     property PaletteValues selectedDisabled
-Lomiri.Components.Themes.PaletteValues 0.1: QTestRootObject
-    property color background
-    property color backgroundText
-    property color base
-    property color baseText
-    property color field
-    property color fieldText
-    property color foreground
-    property color foregroundText
-    property color overlay
-    property color overlayText
-    property color selection
-Lomiri.Components.Themes.PaletteValues 1.3: QTestRootObject
-    property color activity
-    property color activityText
-    property color background
-    property color backgroundSecondaryText
-    property color backgroundTertiaryText
-    property color backgroundText
-    property color base
-    property color baseText
-    property color field
-    property color fieldText
-    property color focus
-    property color focusText
-    property color foreground
-    property color foregroundText
-    property color negative
-    property color negativeText
-    property color overlay
-    property color overlaySecondaryText
-    property color overlayText
-    property color position
-    property color positionText
-    property color positive
-    property color positiveText
-    property color raised
-    property color raisedSecondaryText
-    property color raisedText
-    property color selection
-    property color selectionText
 Lomiri.Components.Themes.PaletteValues 2.0: QTestRootObject
     property color activity
     property color activityText

@@ -2,7 +2,6 @@
 # Not sure why they are located in a 1.2 directory.
 set(QML_FILES_1_1
     1.2/ComboButtonStyle.qml
-    1.2/PageHeadStyle.qml
     1.2/PullToRefreshStyle.qml
 )
 set_source_files_properties(${QML_FILES_1_1}
