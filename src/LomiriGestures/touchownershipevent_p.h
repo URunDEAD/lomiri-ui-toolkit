@@ -25,6 +25,11 @@
 #include <LomiriGestures/lomirigesturesglobal.h>
 #endif
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+class QEventPoint;
+class QPointerEvent;
+#endif
+
 UG_NAMESPACE_BEGIN
 /*
    When an item get an ownership event for a touch it can grab/steal that touch
@@ -33,7 +38,14 @@ UG_NAMESPACE_BEGIN
 class LOMIRIGESTURES_EXPORT TouchOwnershipEvent : public QEvent
 {
 public:
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    TouchOwnershipEvent(int touchId,
+                        bool gained,
+                        QPointerEvent * pointerEvent,
+                        const QEventPoint * point);
+#else
     TouchOwnershipEvent(int touchId, bool gained);
+#endif
 
     static Type touchOwnershipEventType();
 
@@ -47,10 +59,29 @@ public:
      */
     int touchId() const { return m_touchId; }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    /*
+      QPointerEvent which causes this event to be sent. May be `nullptr` if this
+      event is not caused by a QPointerEvent.
+     */
+    QPointerEvent * pointerEvent() const { return m_pointerEvent; }
+
+    /*
+      A QEventPoint which refers to the touch id. This point is guaranteed to
+      be inside `event()`. May be `nullptr` if `event()` is a `nullptr`.
+     */
+    const QEventPoint * point() const { return m_point; }
+#endif
+
 private:
     static Type m_touchOwnershipType;
     int m_touchId;
     bool m_gained;
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QPointerEvent * m_pointerEvent;
+    const QEventPoint * m_point;
+#endif
 };
 
 UG_NAMESPACE_END

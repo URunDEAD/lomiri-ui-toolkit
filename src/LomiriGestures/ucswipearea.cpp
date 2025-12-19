@@ -33,6 +33,7 @@ Q_LOGGING_CATEGORY(ucSwipeArea, "lomiri.components.SwipeArea", QtMsgType::QtWarn
 Q_LOGGING_CATEGORY(ucActiveTouchInfo, "lomiri.components.SwipeArea.ActiveTouchInfo", QtMsgType::QtWarningMsg)
 
 #define SA_TRACE(params) qCDebug(ucSwipeArea).nospace() << "[SwipeArea(" << qPrintable(objectName()) << ")] " << params
+#define SA_WARN(params) qCWarning(ucSwipeArea).nospace() << "[SwipeArea(" << qPrintable(objectName()) << ")] " << params
 #define TI_TRACE(params) qCDebug(ucActiveTouchInfo).nospace() << "[ActiveTouchInfo] " << params
 
 namespace {
@@ -352,10 +353,20 @@ void UCSwipeAreaPrivate::touchOwnershipEvent(TouchOwnershipEvent *event)
 {
     Q_Q(UCSwipeArea);
     if (event->gained()) {
+        SA_TRACE("grabbing touch");
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QPointerEvent *pointerEvent = event->pointerEvent();
+        const QEventPoint *point = event->point();
+        if (pointerEvent && point) {
+            pointerEvent->setExclusiveGrabber(*point, q);
+        } else {
+            SA_WARN("Receives a TouchOwnershipEvent without a QPointerEvent");
+        }
+#else
         QVector<int> ids;
         ids.append(event->touchId());
-        SA_TRACE("grabbing touch");
         q->grabTouchPoints(ids);
+#endif
     } else {
         // We still wanna know when it ends for keeping the composition time window up-to-date
         TouchRegistry::instance()->addTouchWatcher(touchId, q);
