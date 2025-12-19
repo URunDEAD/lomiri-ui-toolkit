@@ -36,19 +36,33 @@ private Q_SLOTS:
     void testAt() {
         UCArgument argument;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(argument.at(-2).typeId(), QMetaType::UnknownType);
+        QCOMPARE(argument.at(0).typeId(), QMetaType::UnknownType);
+        QCOMPARE(argument.at(1).typeId(), QMetaType::UnknownType);
+        QCOMPARE(argument.at(2).typeId(), QMetaType::UnknownType);
+#else
         QCOMPARE(argument.at(-2).type(), QVariant::Invalid);
         QCOMPARE(argument.at(0).type(), QVariant::Invalid);
         QCOMPARE(argument.at(1).type(), QVariant::Invalid);
         QCOMPARE(argument.at(2).type(), QVariant::Invalid);
+#endif
 
         QStringList values;
         values << "value1" << "value2";
         argument.setValues(values);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(argument.at(-2).typeId(), QMetaType::UnknownType);
+        QCOMPARE(argument.at(0).typeId(), QMetaType::QString);
+        QCOMPARE(argument.at(1).typeId(), QMetaType::QString);
+        QCOMPARE(argument.at(2).typeId(), QMetaType::UnknownType);
+#else
         QCOMPARE(argument.at(-2).type(), QVariant::Invalid);
         QCOMPARE(argument.at(0).type(), QVariant::String);
         QCOMPARE(argument.at(1).type(), QVariant::String);
         QCOMPARE(argument.at(2).type(), QVariant::Invalid);
+#endif
 
         QCOMPARE(argument.at(0).toString(), QString("value1"));
         QCOMPARE(argument.at(1).toString(), QString("value2"));

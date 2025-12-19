@@ -242,7 +242,11 @@ void tst_UCDeprecatedTheme::testThemesRelativePathWithParentOneXDGPathSet()
 
 void tst_UCDeprecatedTheme::testNoImportPathSet()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (!QFile(QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#else
     if (!QFile(QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#endif
         QSKIP("This can only be tested if the UITK is installed");
 
     qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");
@@ -256,7 +260,11 @@ void tst_UCDeprecatedTheme::testNoImportPathSet()
 
 void tst_UCDeprecatedTheme::testBogusImportPathSet()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (!QFile(QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#else
     if (!QFile(QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#endif
         QSKIP("This can only be tested if the UITK is installed");
 
     qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");
@@ -270,7 +278,11 @@ void tst_UCDeprecatedTheme::testBogusImportPathSet()
 
 void tst_UCDeprecatedTheme::testMultipleImportPathsSet()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (!QFile(QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#else
     if (!QFile(QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#endif
         QSKIP("This can only be tested if the UITK is installed");
 
     qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");

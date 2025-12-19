@@ -41,4 +41,4 @@ private:
 
 Register r;
 
-QUICK_TEST_MAIN(components)
+QUICK_TEST_MAIN(visual)

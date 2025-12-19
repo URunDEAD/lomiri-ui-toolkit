@@ -146,7 +146,11 @@ public:
             return false;
         }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QQmlListReference navigationActions(header, /* property */ "navigationActions");
+#else
         QQmlListReference navigationActions(header, /* property */ "navigationActions", qmlEngine(header));
+#endif
         if (navigationActions.count() <= 0) {
             return false;
         }
