@@ -65,9 +65,17 @@ void TouchRegistry::setTimerFactory(AbstractTimerFactory *timerFactory)
     m_timerFactory = timerFactory;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void TouchRegistry::update(QTouchEvent *event)
+#else
 void TouchRegistry::update(const QTouchEvent *event)
+#endif
 {
     UG_DEBUG << "got" << qPrintable(touchEventToString(event));
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    m_eventsInDelivery.append(event);
+#endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     const QList<QTouchEvent::TouchPoint> &touchPoints = event->points();
@@ -93,6 +101,10 @@ void TouchRegistry::update(const QTouchEvent *event)
     deliverTouchUpdatesToUndecidedCandidatesAndWatchers(event);
 
     freeEndedTouchInfos();
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    m_eventsInDelivery.takeLast();
+#endif
 }
 
 void TouchRegistry::deliverTouchUpdatesToUndecidedCandidatesAndWatchers(const QTouchEvent *event)
@@ -174,9 +186,7 @@ void TouchRegistry::freeEndedTouchInfos()
 void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<int> &touchIds,
         QQuickItem *item)
 {
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    Qt::TouchPointStates touchPointStates = 0;
-#else
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Qt::TouchPointStates touchPointStates;
 #endif
     QList<QTouchEvent::TouchPoint> touchPoints;
@@ -190,6 +200,10 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         const QTouchEvent::TouchPoint &originalTouchPoint = allTouchPoints[i];
         if (touchIds.contains(originalTouchPoint.id())) {
             QTouchEvent::TouchPoint touchPoint = originalTouchPoint;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QMutableEventPoint::detach(touchPoint);
+#endif
+
             translateTouchPointFromScreenToWindowCoords(touchPoint);
 
             // Set the point's local coordinates to that of the item
@@ -202,8 +216,7 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
             QMutableEventPoint::setGlobalPressPosition(touchPoint, windowToCandidateTransform.map(touchPoint.pressPosition()));
             QMutableEventPoint::setGlobalLastPosition(touchPoint, windowToCandidateTransform.map(touchPoint.lastPosition()));
-
-            //QMutableEventPoint::setVelocity(touchPoint, windowToCandidateMatrix.mapVector(touchPoint.velocity().toVector2D()));
+            QMutableEventPoint::setVelocity(touchPoint, windowToCandidateMatrix.mapVector(touchPoint.velocity().toVector3D()).toVector2D());
 #else
 
             touchPoint.setStartPos(windowToCandidateTransform.map(touchPoint.startScenePos()));
@@ -217,7 +230,16 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         }
     }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QTouchEvent *eventForItem = new QTouchEvent(event->type(),
+                                                event->pointingDevice(),
+                                                event->modifiers(),
+                                                touchPoints);
+
+    eventForItem->setTimestamp(event->timestamp());
+    QMutableTouchEvent::setTarget(eventForItem, event->target());
+    // window() is moved to QEventPoint.
+#else
     QTouchEvent *eventForItem = new QTouchEvent(event->type(),
                                                 event->device(),
                                                 event->modifiers(),
@@ -226,6 +248,11 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
     eventForItem->setWindow(event->window());
     eventForItem->setTimestamp(event->timestamp());
     eventForItem->setTarget(event->target());
+#endif
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    m_eventsInDelivery.append(eventForItem);
+#endif
 
     UnownedTouchEvent unownedTouchEvent(eventForItem);
 
@@ -233,12 +260,24 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
         << "to" << item;
 
     QCoreApplication::sendEvent(item, &unownedTouchEvent);
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    m_eventsInDelivery.takeLast();
 #endif
+    // `eventForItem` is freed by `unownedTouchEvent`.
 }
 
 void TouchRegistry::translateTouchPointFromScreenToWindowCoords(QTouchEvent::TouchPoint &touchPoint)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QMutableEventPoint::setGlobalPosition(touchPoint, touchPoint.scenePosition());
+    QMutableEventPoint::setGlobalPressPosition(touchPoint, touchPoint.scenePressPosition());
+    QMutableEventPoint::setGlobalLastPosition(touchPoint, touchPoint.sceneLastPosition());
+
+    QMutableEventPoint::setScenePosition(touchPoint, touchPoint.position());
+    // Qt 6 now calculates scene{Press,Last}Position from global{Press,Last}Position,
+    // globalPosition, and scenePosition.
+#else
     touchPoint.setScreenPos(touchPoint.scenePos());
     touchPoint.setStartScreenPos(touchPoint.startScenePos());
     touchPoint.setLastScreenPos(touchPoint.lastScenePos());
@@ -367,14 +406,23 @@ void TouchRegistry::removeCandidateOwnerForTouchByIndex(Pool<TouchRegistry::Touc
     if (candidateIndex == 0 && touchInfo->candidates[candidateIndex].state != CandidateInfo::Undecided) {
         qCritical("TouchRegistry: touch owner is being removed.");
     }
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QQuickItem * candidateItem = touchInfo->candidates[candidateIndex].item;
+#endif
+
     removeCandidateHelper(touchInfo, candidateIndex);
 
-    if (candidateIndex == 0) {
+    if (candidateIndex == 0 && touchInfo->isOwned()) {
         // the top candidate has been removed. if the new top candidate
         // wants the touch let him know he's now the owner.
-        if (touchInfo->isOwned()) {
-            touchInfo->notifyCandidatesOfOwnershipResolution();
-        }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        auto [pointerEvent, point] = findMostRelavantEventForId(
+                touchInfo->id, candidateItem);
+        touchInfo->notifyCandidatesOfOwnershipResolution(pointerEvent, point);
+#else
+        touchInfo->notifyCandidatesOfOwnershipResolution();
+#endif
     }
 
     if (!m_inDispatchLoop && touchInfo->ended()) {
@@ -421,7 +469,12 @@ void TouchRegistry::requestTouchOwnership(int id, QQuickItem *candidate)
     // If it's the top candidate it means it's now the owner. Let
     // it know about it.
     if (candidateIndex == 0) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        auto [pointerEvent, point] = findMostRelavantEventForId(id, candidate);
+        touchInfo->notifyCandidatesOfOwnershipResolution(pointerEvent, point);
+#else
         touchInfo->notifyCandidatesOfOwnershipResolution();
+#endif
     }
 }
 
@@ -441,6 +494,54 @@ Pool<TouchRegistry::TouchInfo>::Iterator TouchRegistry::findTouchInfo(int id)
     return touchInfo;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+static const QEventPoint * findPointInEvent(const QPointerEvent *event, int id)
+{
+    if (!event)
+        return nullptr;
+
+    const auto & points = event->points();
+
+    for (const auto & point : points) {
+        if (point.id() == id)
+            return &point;
+    }
+
+    return nullptr;
+}
+
+std::pair<QPointerEvent *, const QEventPoint *>
+TouchRegistry::findMostRelavantEventForId(int id, QQuickItem *item)
+{
+    QPointerEvent *event = nullptr;
+    const QEventPoint *point = nullptr;
+
+    for (int i = m_eventsInDelivery.size() - 1; i > 0; i--) {
+        point = findPointInEvent(m_eventsInDelivery[i], id);
+        if (point) {
+            event = m_eventsInDelivery[i];
+            break;
+        }
+    }
+
+    if (!event && item) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 1, 0)
+        QQuickItemPrivate *itemPriv = QQuickItemPrivate::get(item);
+        auto quickEventInDelivery = itemPriv->deliveryAgentPrivate()->eventInDelivery();
+#else
+        QQuickWindowPrivate *windowPriv = QQuickWindowPrivate::get(window());
+        auto quickEventInDelivery = windowPriv->eventInDelivery();
+#endif
+
+        point = findPointInEvent(quickEventInDelivery, id);
+        if (point) {
+            event = quickEventInDelivery;
+        }
+    }
+
+    return { event, point };
+}
+#endif
 
 void TouchRegistry::rejectCandidateOwnerForTouch(int id, QQuickItem *candidate)
 {
@@ -478,19 +579,35 @@ void TouchRegistry::rejectCandidateOwnerForTouch(int id, QQuickItem *candidate)
 
     Q_ASSERT(rejectedCandidateIndex >= 0 && rejectedCandidateIndex < touchInfo->candidates.size());
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    auto [pointerEvent, point] = findMostRelavantEventForId(id, candidate);
+    if (!pointerEvent) {
+        qWarning() << "Can't find a QPointerEvent for touch id" << id;
+        // XXX: proceed to send TouchOwnershipEvent; even without pointerEvent
+        // the item losing focus might still have to do internal rollback.
+    }
+#endif
+
     {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        TouchOwnershipEvent lostOwnershipEvent(
+                id, false /*gained*/, pointerEvent, point);
+#else
         TouchOwnershipEvent lostOwnershipEvent(id, false /*gained*/);
+#endif
         QCoreApplication::sendEvent(candidate, &lostOwnershipEvent);
     }
 
     removeCandidateHelper(touchInfo, rejectedCandidateIndex);
 
-    if (rejectedCandidateIndex == 0) {
+    if (rejectedCandidateIndex == 0 && touchInfo->isOwned()) {
         // the top candidate has been removed. if the new top candidate
         // wants the touch let him know he's now the owner.
-        if (touchInfo->isOwned()) {
-            touchInfo->notifyCandidatesOfOwnershipResolution();
-        }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        touchInfo->notifyCandidatesOfOwnershipResolution(pointerEvent, point);
+#else
+        touchInfo->notifyCandidatesOfOwnershipResolution();
+#endif
     }
 }
 
@@ -546,12 +663,25 @@ bool TouchRegistry::TouchInfo::ended() const
     return physicallyEnded && (isOwned() || candidates.isEmpty());
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void TouchRegistry::TouchInfo::notifyCandidatesOfOwnershipResolution(
+            QPointerEvent *pointerEvent, const QEventPoint *point)
+#else
 void TouchRegistry::TouchInfo::notifyCandidatesOfOwnershipResolution()
+#endif
 {
     Q_ASSERT(isOwned());
 
     UG_DEBUG << "sending TouchOwnershipEvent(id =" << id
         << " gained) to candidate" << candidates[0].item;
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    if (!pointerEvent) {
+        qWarning() << "Can't find a QPointerEvent for touch id" << id
+                   << ", candidate" << candidates[0].item
+                   << "might not be able to grab the point";
+    }
+#endif
 
     // need to take a copy of the item list in case
     // we call back in to remove candidate during the lost ownership event.
@@ -560,10 +690,21 @@ void TouchRegistry::TouchInfo::notifyCandidatesOfOwnershipResolution()
         items << info.item;
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    TouchOwnershipEvent gainedOwnershipEvent(
+        id, true /*gained*/, pointerEvent, point);
+#else
     TouchOwnershipEvent gainedOwnershipEvent(id, true /*gained*/);
+#endif
     QCoreApplication::sendEvent(items[0], &gainedOwnershipEvent);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    TouchOwnershipEvent lostOwnershipEvent(
+        id, false /*gained*/, pointerEvent, point);
+#else
     TouchOwnershipEvent lostOwnershipEvent(id, false /*gained*/);
+#endif
+
     for (int i = 1; i < items.count(); ++i) {
         UG_DEBUG << "sending TouchOwnershipEvent(id =" << id << " lost) to candidate"
             << items[i];

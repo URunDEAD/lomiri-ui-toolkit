@@ -17,6 +17,8 @@
 #ifndef TOUCHREGISTRY_P_H
 #define TOUCHREGISTRY_P_H
 
+#include <utility>
+
 #include <QtCore/QLoggingCategory>
 #include <QtCore/QObject>
 #include <QtCore/QPointer>
@@ -117,7 +119,11 @@ public:
     // Returns a pointer to the application's TouchRegistry instance.
     static TouchRegistry *instance();
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void update(QTouchEvent *event);
+#else
     void update(const QTouchEvent *event);
+#endif
 
     // Calls update() if the given event is a QTouchEvent
     bool eventFilter(QObject *watched, QEvent *event) override;
@@ -182,7 +188,12 @@ private:
         bool physicallyEnded;
         bool isOwned() const;
         bool ended() const;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        void notifyCandidatesOfOwnershipResolution(QPointerEvent *pointerEvent,
+                                                   const QEventPoint *point);
+#else
         void notifyCandidatesOfOwnershipResolution();
+#endif
 
         // TODO optimize storage (s/QList/Pool)
         QList<CandidateInfo> candidates;
@@ -199,8 +210,13 @@ private:
 
     static void translateTouchPointFromScreenToWindowCoords(QTouchEvent::TouchPoint &touchPoint);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void dispatchPointsToItem(const QTouchEvent *event, const QList<int> &touchIds,
+                              QQuickItem *item);
+#else
     static void dispatchPointsToItem(const QTouchEvent *event, const QList<int> &touchIds,
                                      QQuickItem *item);
+#endif
     void freeEndedTouchInfos();
 
     Pool<TouchInfo> m_touchInfoPool;
@@ -211,6 +227,13 @@ private:
     bool m_inDispatchLoop;
 
     AbstractTimerFactory *m_timerFactory;
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QList<QPointerEvent *> m_eventsInDelivery;
+    
+    std::pair<QPointerEvent *, const QEventPoint *>
+        findMostRelavantEventForId(int id, QQuickItem *item);
+#endif
 
     friend class tst_TouchRegistry;
     friend class tst_DirectionalDragArea;

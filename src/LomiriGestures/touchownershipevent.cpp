@@ -20,10 +20,21 @@ UG_NAMESPACE_BEGIN
 
 QEvent::Type TouchOwnershipEvent::m_touchOwnershipType = (QEvent::Type)-1;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+TouchOwnershipEvent::TouchOwnershipEvent(int touchId,
+                                         bool gained,
+                                         QPointerEvent * pointerEvent,
+                                         const QEventPoint * point)
+#else
 TouchOwnershipEvent::TouchOwnershipEvent(int touchId, bool gained)
+#endif
     : QEvent(touchOwnershipEventType())
     , m_touchId(touchId)
     , m_gained(gained)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    , m_pointerEvent(pointerEvent)
+    , m_point(point)
+#endif
 {
 }
 
