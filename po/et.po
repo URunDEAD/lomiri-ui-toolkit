@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2025-11-28 10:00+0000\n"
+"PO-Revision-Date: 2025-12-25 03:39+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/"
-"lomiri-ui-toolkit/et/>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri-"
+"ui-toolkit/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
@@ -118,25 +118,25 @@ msgstr "'Homme 'HH:mm"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:312
 msgid "ddd' 'h:mm ap"
-msgstr ""
+msgstr "ddd' 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:315
 msgid "ddd' 'HH:mm"
-msgstr ""
+msgstr "ddd' 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:322
 msgid "ddd d MMM' 'h:mm ap"
-msgstr ""
+msgstr "ddd d. MMM' 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:325
 msgid "ddd d MMM' 'HH:mm"
-msgstr ""
+msgstr "ddd d. MMM' 'HH:mm"
 
 #: Lomiri/Components/plugin/privates/listitemdragarea.cpp:122
 msgid ""
@@ -155,6 +155,7 @@ msgstr ""
 #, qt-format
 msgid "property \"%1\" does not exist or is not writable for object %2"
 msgstr ""
+"„%1“ objekti omadust pole olemas või see pole „%2“ objekti jaoks kirjutatavad"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:41
 #: Lomiri/Components/plugin/ucalarm.cpp:643
@@ -177,17 +178,17 @@ msgstr "Valikud:"
 #: Lomiri/Components/plugin/ucarguments.cpp:498
 #, qt-format
 msgid "%1 is expecting an additional argument: %2"
-msgstr ""
+msgstr "%1 eeldab täiendavat argumenti: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:503
 #, qt-format
 msgid "%1 is expecting a value for argument: %2"
-msgstr ""
+msgstr "%1 eeldab argumendi väärtust: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:520
 #, qt-format
 msgid "%1 is expecting additional arguments: %2"
-msgstr ""
+msgstr "%1 eeldab täiendavaid argumente: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
@@ -235,7 +236,7 @@ msgstr "Kujundust ei leidu: „%1“"
 
 #: Lomiri/Components/plugin/uctheme.cpp:539
 msgid "Not a Palette component."
-msgstr ""
+msgstr "Pole paleti komponent."
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:462
 msgid "Dragging mode requires ListView"
