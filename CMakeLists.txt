@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(lomiri-ui-toolkit VERSION 1.3.5901 LANGUAGES C CXX)
+project(lomiri-ui-toolkit VERSION 1.3.5902 LANGUAGES C CXX)
 cmake_policy(SET CMP0048 NEW) # for ecm_setup_version
 
 option(WITH_LOMIRI_MIR "Enable mir support in LomiriSystemInfo" ON)
