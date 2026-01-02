@@ -838,7 +838,7 @@ Lomiri.ActionItem {
     activeFocusOnPress: true
 
     // Escape should close the context menu even if the menu takes no input focus
-    Keys.onEscapePressed: {
+    Keys.onEscapePressed: function(event) {
         if (activeFocus && inputHandler.popover) {
             PopupUtils.close(inputHandler.popover)
         } else {

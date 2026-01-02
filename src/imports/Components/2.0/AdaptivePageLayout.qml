@@ -630,8 +630,8 @@ PageTreeNode {
                 prevLayouts[i].whenChanged.disconnect(updateLayout);
             }
             prevLayouts = layouts;
-            for (var i = 0; i < layouts.length; i++) {
-                layouts[i].whenChanged.connect(updateLayout);
+            for (var j = 0; j < layouts.length; j++) {
+                layouts[j].whenChanged.connect(updateLayout);
             }
             // first time evaluation
             updateLayout();

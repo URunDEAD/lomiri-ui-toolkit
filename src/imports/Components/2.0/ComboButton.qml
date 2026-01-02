@@ -335,7 +335,7 @@ AbstractButton {
         }
     }
 
-    Keys.onReleased: {
+    Keys.onReleased: function(event) {
         if (event.key === Qt.Key_Space) {
             // Space should expand, not trigger
             event.accepted = true;

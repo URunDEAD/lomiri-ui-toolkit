@@ -269,7 +269,7 @@ ListItem.Empty {
             id : label
 
             text: optionSelector.text
-            visible: optionSelector.text !== "" ? true : false
+            visible: optionSelector.text !== ""
         }
 
         Toolkit.StyledItem {
@@ -342,7 +342,7 @@ ListItem.Empty {
                 Toolkit.Mouse.onClicked: optionSelector.requestFocus(Qt.MouseFocusReason)
 
                 onDelegateClicked: optionSelector.delegateClicked(index);
-                interactive: listContainer.height !== list.contentHeight && listContainer.currentlyExpanded ? true : false
+                interactive: listContainer.height !== list.contentHeight && listContainer.currentlyExpanded
                 clip: true
                 currentIndex: 0
                 model: optionSelector.model

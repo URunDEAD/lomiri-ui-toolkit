@@ -705,7 +705,7 @@ Item {
                     anchors.fill: trough
 
                     enabled: isScrollable && interactive && __canFitSteppersAndShorterThumb
-                    onPressed: {
+                    onPressed: function(mouse){
                         cacheMousePosition(mouse)
                         //potentially we allow using touch to trigger mouse interactions, in case the
                         //mouse has previously hovered over the area and activated the steppers style
@@ -734,7 +734,7 @@ Item {
                             mouse.accepted = false
                         }
                     }
-                    onPositionChanged: {
+                    onPositionChanged: function(mouse) {
                         //avoid shaking the view when the user is draggin via touch
                         if (Math.abs(mouse.x - previousX) < visuals.dragThreshold
                                 && Math.abs(mouse.y - previousY) < visuals.dragThreshold) {
@@ -765,7 +765,7 @@ Item {
                         resetDrag()
                         pressHoldTimer.stop()
                     }
-                    onReleased: {
+                    onReleased: function(mouse) {
                         //don't call handleHover here as touch release also triggers this handler
                         //see bug #1616868
                         resetDrag()
@@ -809,11 +809,11 @@ Item {
                     //will not trigger when using touch
                     Mouse.ignoreSynthesizedEvents: true
                     Mouse.enabled: true
-                    Mouse.onEntered: {
+                    Mouse.onEntered: function(event) {
                         hoveringThumb = false
                         handleHover(event.x, event.y)
                     }
-                    Mouse.onPositionChanged: {
+                    Mouse.onPositionChanged: function(mouse) {
                         //We need to update the hover state also onPosChanged because this area
                         //covers the whole trough, not just the thumb, so entered/exited are not enough
                         //e.g. when mouse moves from inside the thumb to inside the trough, or when you
@@ -823,7 +823,7 @@ Item {
                     Mouse.onExited: {
                         hoveringThumb = false
                     }
-                    Mouse.onReleased: {
+                    Mouse.onReleased: function(mouse) {
                         handleHover(mouse.x, mouse.y)
                     }
 

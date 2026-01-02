@@ -119,7 +119,7 @@ StyledItem {
             verticalScrollbar.__styleInstance.scrollBy(-flickableItem.height*internal.shortScrollingRatio, true)
         }
     }
-    Keys.onPressed:  {
+    Keys.onPressed: function(event) {
         if (event.key === Qt.Key_Escape) {
             var scrollbarWithActiveDrag = (horizontalScrollbar.__styleInstance && horizontalScrollbar.__styleInstance.draggingThumb && horizontalScrollbar)
                     || (verticalScrollbar.__styleInstance && verticalScrollbar.__styleInstance.draggingThumb && verticalScrollbar)
@@ -326,7 +326,7 @@ StyledItem {
             //recently
             MouseArea {
                 anchors.fill: parent
-                onPressed: {
+                onPressed: function(mouse) {
                     //FIXME: we can't force focus on the viewport, this breaks text selection inside scrollview!
                     //+ it still doesn't work in Sliders page, for yet unknown reasons
                     //Without this we can't shift focus from a child ScrollView to a parent ScrollView

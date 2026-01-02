@@ -104,7 +104,7 @@ MultiPointTouchArea {
         return singleLine ? input.positionAt(x, TextInput.CursorOnCharacter) : input.positionAt(x, y, TextInput.CursorOnCharacter);
     }
     // returns the cursor position taking frame into account
-    function cursorPosition(x, y) {
+    function cursorPosition(x, y): point {
         var frameSpacing = main.__styleInstance.frameSpacing;
         var cursorPosition = unadulteratedCursorPosition(x, y);
         if (cursorPosition === 0)
@@ -115,18 +115,18 @@ MultiPointTouchArea {
     }
 
     // returns the mouse position
-    function mousePosition(mouse) {
+    function mousePosition(mouse): point {
         return cursorPosition(mouse.x, mouse.y);
     }
     // checks whether the position is in the selected text
-    function positionInSelection(pos) {
+    function positionInSelection(pos): bool {
         return (input.selectionStart !== input.selectionEnd)
                 && (pos >= Math.min(input.selectionStart, input.selectionEnd))
                 && (pos <= Math.max(input.selectionStart, input.selectionEnd));
     }
 
     // check whether the mouse is inside a selected text area
-    function mouseInSelection(mouse) {
+    function mouseInSelection(mouse): bool {
         var pos = mousePosition(mouse);
         return positionInSelection(pos);
     }
@@ -410,10 +410,10 @@ MultiPointTouchArea {
 
     // Mouse handling
     Mouse.forwardTo: [main]
-    Mouse.onPressed: handlePressed(mouse)
-    Mouse.onReleased: handleReleased(mouse)
-    Mouse.onPositionChanged: handleMove(mouse)
-    Mouse.onDoubleClicked: handleDblClick(mouse)
+    Mouse.onPressed: function(mouse) { handlePressed(mouse); }
+    Mouse.onReleased: function(mouse) { handleReleased(mouse); }
+    Mouse.onPositionChanged: function(mouse) { handleMove(mouse); }
+    Mouse.onDoubleClicked: function(mouse) { handleDblClick(mouse); }
 
     // right button handling
     MouseArea {
@@ -473,8 +473,8 @@ MultiPointTouchArea {
             tapCount = running;
         }
     }
-    onPressed: handlePressed(touchPoints[0])
-    onReleased: handleReleased(touchPoints[0])
+    onPressed: { handlePressed(touchPoints[0]); }
+    onReleased: { handleReleased(touchPoints[0]); }
 
     property Item cursorPositionCursor: null
     property Item selectionStartCursor: null

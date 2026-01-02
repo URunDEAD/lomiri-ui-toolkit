@@ -763,7 +763,7 @@ Lomiri.StyledItem {
     activeFocusOnPress: true
 
     // Escape should close the context menu even if the menu takes no input focus
-    Keys.onEscapePressed: {
+    Keys.onEscapePressed: function(event)  {
         if (activeFocus && inputHandler.popover) {
             PopupUtils.close(inputHandler.popover)
         } else {
@@ -805,7 +805,7 @@ Lomiri.StyledItem {
 
     // grab Enter/Return keys which may be stolen from parent components of TextArea
     // due to forwarded keys from TextEdit
-    Keys.onPressed: {
+    Keys.onPressed: function(event)  {
         if (readOnly)
             return;
         if ((event.key === Qt.Key_Enter) || (event.key === Qt.Key_Return)) {
@@ -820,7 +820,9 @@ Lomiri.StyledItem {
             event.accepted = false;
         }
     }
-    Keys.onReleased: event.accepted = (event.key === Qt.Key_Enter) || (event.key === Qt.Key_Return)
+    Keys.onReleased: function (event) {
+        event.accepted = (event.key === Qt.Key_Enter) || (event.key === Qt.Key_Return);
+    }
 
     // holding default values
     Lomiri.Label { id: fontHolder }

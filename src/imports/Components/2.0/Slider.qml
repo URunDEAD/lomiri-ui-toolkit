@@ -186,7 +186,7 @@ Toolkit.StyledItem {
            That prevents us from doing interesting animations upon press.
         */
         property bool isPressed: false
-        onPressed: {
+        onPressed: function(mouse) {
             isPressed = true;
             var thumbPressed = mouse.x >= thumb.x && mouse.x <= thumb.x + thumb.width;
             if (!thumbPressed) {
