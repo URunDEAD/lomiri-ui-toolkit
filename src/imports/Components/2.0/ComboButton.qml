@@ -315,7 +315,7 @@ AbstractButton {
         right: -combo.__styleInstance.dropDownWidth
     }
     __mouseArea.objectName: "combobutton_mainbutton"
-    height: collapsedHeight + __styleInstance.comboListPanel.height
+    height: collapsedHeight + (combo.__styleInstance ? combo.__styleInstance.comboListPanel.height : 0)
 
     // dropdown button
     AbstractButton {
@@ -395,6 +395,7 @@ AbstractButton {
         }
     }
     Scrollbar {
+        parent: combo.__styleInstance ? combo.__styleInstance.comboListHolder : combo
         flickableItem: comboHolder
     }
 

@@ -157,9 +157,9 @@ Lomiri.StyledItem {
     //dragged item
     property Item draggedItem: Item {
         objectName: cursorItem.positionProperty + "_draggeditem"
-        width: caret.width + units.gu(2)
+        width: (caret ? caret.width : 0) + units.gu(2)
         onWidthChanged: draggedItem.moveToCaret()
-        height: cursorItem.height + caret.height + threshold
+        height: cursorItem.height + (caret ? caret.height : 0) + threshold
         property real threshold: units.gu(4)
         parent: fakeCursor.parent
         visible: caret.visible
