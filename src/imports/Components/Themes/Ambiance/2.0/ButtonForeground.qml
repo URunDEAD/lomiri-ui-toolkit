@@ -35,13 +35,14 @@ Item {
     implicitHeight: Math.max(icon.height, label.height)
     state: hasIcon && hasText ? iconPosition : "center"
 
-    Image {
+    Icon {
         id: icon
+        visible: hasIcon
         anchors.verticalCenter: parent.verticalCenter
-        fillMode: Image.PreserveAspectFit
         width: iconSize
         height: iconSize
-        opacity: enabled ? 1.0 : 0.5
+        color: label.color
+        source: iconSource
     }
 
     Label {
