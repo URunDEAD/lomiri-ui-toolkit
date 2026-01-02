@@ -19,6 +19,7 @@ qt6_add_shaders(LomiriComponents "LomiriComponents_shaders"
         "2.0/shaders/colorizeimage.frag"
         "2.0/shaders/colourshader.frag"
         "Themes/Ambiance/shaders/magnifier.frag"
+        "Themes/Ambiance/shaders/magnifier.vert"
         "Themes/Ambiance/shaders/partialcolorize.frag"
 )
 
