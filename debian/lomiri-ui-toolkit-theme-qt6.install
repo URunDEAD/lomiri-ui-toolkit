@@ -1,5 +1,4 @@
-usr/lib/*/qt6/qml/Lomiri/Components/Themes/1.2/*.qml
-usr/lib/*/qt6/qml/Lomiri/Components/Themes/1.3/*.qml
+usr/lib/*/qt6/qml/Lomiri/Components/Themes/2.0/*.qml
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/Ambiance/2.0/*.qml
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/Ambiance/artwork
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/Ambiance/qmldir
