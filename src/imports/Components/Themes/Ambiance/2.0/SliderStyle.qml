@@ -62,8 +62,8 @@ Item {
         }
 
         property real barMinusThumbWidth: background.width - (thumb.width + 2.0*thumbSpacing)
-        property real position: thumbSpacing + SliderUtils.normalizedValue(styledItem) * barMinusThumbWidth
-        property bool pressed: SliderUtils.isPressed(styledItem)
+        property real position: thumbSpacing + styledItem.__internals.normalizedValue * barMinusThumbWidth
+        property bool pressed: styledItem.__internals.isPressed
         property bool positionReached: x == position
         x: position
 
@@ -107,7 +107,7 @@ Item {
         y: globalTarget.y - height - pointerSize
         target: Qt.point(globalTarget.x - x, globalTarget.y - y)
 
-        property bool pressed: SliderUtils.isPressed(styledItem)
+        property bool pressed: styledItem.__internals.isPressed
         property bool shouldShow: pressed && label.text != ""
         onShouldShowChanged: if (shouldShow) {
                                 show();
@@ -118,7 +118,7 @@ Item {
         Label {
             id: label
             anchors.centerIn: parent
-            text: styledItem.formatValue(SliderUtils.liveValue(styledItem))
+            text: styledItem.formatValue(styledItem.__internals.liveValue)
             textSize: Label.Medium
             color: theme.palette.normal.overlayText
         }
