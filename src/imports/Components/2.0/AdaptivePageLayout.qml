@@ -14,8 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 6.8
-import QtQuick.Layouts 6.8
+import QtQuick
+import QtQuick.Layouts
 import Lomiri.Components
 import Lomiri.Components.Private
 
