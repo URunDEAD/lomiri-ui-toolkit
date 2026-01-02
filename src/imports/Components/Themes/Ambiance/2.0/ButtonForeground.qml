@@ -28,8 +28,8 @@ Item {
     property string iconPosition
     property real iconSize
     property real spacing
-    property bool hasIcon: iconSource != ""
-    property bool hasText: text != ""
+    property bool hasIcon: iconSource !== ""
+    property bool hasText: text !== ""
     property alias font: label.font
 
     implicitHeight: Math.max(icon.height, label.height)

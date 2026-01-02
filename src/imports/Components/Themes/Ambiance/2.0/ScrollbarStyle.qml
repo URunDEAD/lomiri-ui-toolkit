@@ -266,7 +266,7 @@ Item {
         //to trigger the transition to thumb style, and in that case we want to hint again using thumb
         //style)
         if (initialized && isScrollable && !draggingThumb && !pressHoldTimer.running
-                && (state == '' || state === 'hidden' || (__disableStateBinding && visuals.state !== hintingStyle))) {
+                && (state === '' || state === 'hidden' || (__disableStateBinding && visuals.state !== hintingStyle))) {
             __disableStateBinding = true
             __hinting = true
             visuals.state = hintingStyle
@@ -688,8 +688,8 @@ Item {
                         //In that case, we can't do anything to bring back the view to where it was
                         //when the drag started, so we'd better not do anything instead of doing something
                         //which we're sure will be wrong
-                        if (originXAtDragStart != flickableItem.originX
-                                || originYAtDragStart != flickableItem.originY) {
+                        if (originXAtDragStart !== flickableItem.originX
+                                || originYAtDragStart !== flickableItem.originY) {
                             return
                         }
                         flickableItem.contentX = contentXAtDragStart
@@ -742,7 +742,7 @@ Item {
                         }
                         cacheMousePosition(mouse)
 
-                        if (pressedButtons == Qt.LeftButton && (slider.mouseDragging || slider.touchDragging)) {
+                        if (pressedButtons === Qt.LeftButton && (slider.mouseDragging || slider.touchDragging)) {
                             if (!__disableDragResetFeature &&
                                     ((isVertical && Math.abs(mouse.x - thumbArea.x) >= flowContainer.thickness * 10)
                                      || (!isVertical && Math.abs(mouse.y - thumbArea.y) >= flowContainer.thickness * 10))) {

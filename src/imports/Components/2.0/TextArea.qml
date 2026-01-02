@@ -771,7 +771,7 @@ Lomiri.StyledItem {
         }
     }
 
-    LayoutMirroring.enabled: Qt.application.layoutDirection == Qt.RightToLeft
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
     QtObject {
@@ -833,7 +833,7 @@ Lomiri.StyledItem {
             margins: internal.frameSpacing
         }
         // hint is shown till user types something in the field
-        visible: (editor.text == "") && !editor.inputMethodComposing
+        visible: (editor.text === "") && !editor.inputMethodComposing
         color: theme.palette.normal.baseText
         font: editor.font
         elide: Text.ElideRight

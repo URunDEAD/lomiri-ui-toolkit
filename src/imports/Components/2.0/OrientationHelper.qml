@@ -153,7 +153,7 @@ Item {
             onTriggered: { d.tryUpdateState(); }
         }
 
-        readonly property bool flipDimensions: d.stateAngle == 90 || d.stateAngle == 270
+        readonly property bool flipDimensions: d.stateAngle === 90 || d.stateAngle === 270
 
         property bool transitioning: false
         onTransitioningChanged: { d.tryUpdateState(); }

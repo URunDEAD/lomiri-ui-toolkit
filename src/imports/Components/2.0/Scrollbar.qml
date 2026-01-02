@@ -229,7 +229,7 @@ Toolkit.StyledItem {
         // LTR and RTL are provided by LayoutMirroring, so no need to check that
         function leftAnchor(object)
         {
-            if (!internals.vertical || (align == Qt.AlignLeading)) {
+            if (!internals.vertical || (align === Qt.AlignLeading)) {
                 return object.left;
             }
             return undefined;
@@ -254,7 +254,7 @@ Toolkit.StyledItem {
         }
         function rightAnchor(object)
         {
-            if (!internals.vertical || (align == Qt.AlignTrailing)) {
+            if (!internals.vertical || (align === Qt.AlignTrailing)) {
                 return object.right;
             }
             return undefined;
@@ -279,7 +279,7 @@ Toolkit.StyledItem {
         }
         function topAnchor(object)
         {
-            if (internals.vertical || (align == Qt.AlignTop))
+            if (internals.vertical || (align === Qt.AlignTop))
                 return object.top;
             return undefined;
         }
@@ -304,7 +304,7 @@ Toolkit.StyledItem {
         }
         function bottomAnchor(object)
         {
-            if (internals.vertical || (align == Qt.AlignBottom))
+            if (internals.vertical || (align === Qt.AlignBottom))
                 return object.bottom;
             return undefined;
         }

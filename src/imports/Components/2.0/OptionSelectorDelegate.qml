@@ -63,7 +63,7 @@ ListItem.Empty {
       Left icon url.
      */
     property url icon: iconSource
-    onIconChanged: if (icon != iconSource) {
+    onIconChanged: if (icon !== iconSource) {
                        console.warn("WARNING: OptionSelectorDelegate.icon is DEPRECATED. " +
                                      "Use iconName and iconSource instead.")
                    }
@@ -119,7 +119,7 @@ ListItem.Empty {
         target: listView
         property: "itemHeight"
         value: childrenRect.height
-        when: childrenRect.height != 0
+        when: childrenRect.height !== 0
     }
 
     //Since we don't want to add states to our divider, we use the exposed alias provided in Empty to access it and alter it's opacity from here.

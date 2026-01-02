@@ -47,7 +47,7 @@ Item {
         backgroundColor: sliderStyle.backgroundColor
         aspect: LomiriShape.Flat
         overlayColor: sliderStyle.foregroundColor
-        overlayRect: Qt.application.layoutDirection == Qt.LeftToRight ?
+        overlayRect: Qt.application.layoutDirection === Qt.LeftToRight ?
             Qt.rect(0.0, 0.0, thumb.x / thumb.barMinusThumbWidth, 1.0) :
             Qt.rect(thumb.x / thumb.barMinusThumbWidth, 0.0, 1 - (thumb.x / thumb.barMinusThumbWidth), 1.0)
     }
@@ -64,7 +64,7 @@ Item {
         property real barMinusThumbWidth: background.width - (thumb.width + 2.0*thumbSpacing)
         property real position: thumbSpacing + styledItem.__internals.normalizedValue * barMinusThumbWidth
         property bool pressed: styledItem.__internals.isPressed
-        property bool positionReached: x == position
+        property bool positionReached: x === position
         x: position
 
         /* Enable the animation on x when pressing the slider.
@@ -108,7 +108,7 @@ Item {
         target: Qt.point(globalTarget.x - x, globalTarget.y - y)
 
         property bool pressed: styledItem.__internals.isPressed
-        property bool shouldShow: pressed && label.text != ""
+        property bool shouldShow: pressed && label.text !== ""
         onShouldShowChanged: if (shouldShow) {
                                 show();
                              } else {

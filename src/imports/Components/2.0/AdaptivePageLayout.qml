@@ -193,7 +193,7 @@ import Lomiri.Components.Private
 PageTreeNode {
     id: layout
 
-    LayoutMirroring.enabled: Qt.application.layoutDirection == Qt.RightToLeft
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
     Page {
@@ -360,7 +360,7 @@ PageTreeNode {
       pages will be removed.
       */
     function removePages(page) {
-        d.removeAllPages(page, page != layout.primaryPage);
+        d.removeAllPages(page, page !== layout.primaryPage);
     }
 
     /*
@@ -476,7 +476,7 @@ PageTreeNode {
             if (wrapper.incubator) {
                 wrapper.pageLoaded.connect(finalizeAddingPage.bind(wrapper));
                 wrapper.incubator.onStatusChanged = function (status) {
-                    if (status == Component.Ready) {
+                    if (status === Component.Ready) {
                         internalPropertyUpdate("primaryPage", wrapper.incubator.object);
                         prevPrimaryPage = wrapper.incubator.object;
                     }
@@ -529,7 +529,7 @@ PageTreeNode {
             if (page && page.hasOwnProperty("parentNode")) {
                 var w = page.parentNode;
                 if (w && w.hasOwnProperty("object") && w.hasOwnProperty("reference")) {
-                    if (w.object == page) {
+                    if (w.object === page) {
                         return w;
                     } else {
                         console.error("Page is not wrapped by its parentNode. This should not happen!");
@@ -613,7 +613,7 @@ PageTreeNode {
             var newWrapper = tree.top(effectiveColumn, effectiveColumn < d.columns - 1);
             var oldWrapper = columnHolder.pageWrapper;
 
-            if (newWrapper != oldWrapper) {
+            if (newWrapper !== oldWrapper) {
                 columnHolder.detachCurrentPage();
                 oldWrapper.parent = null;
                 if (newWrapper) {
@@ -652,7 +652,7 @@ PageTreeNode {
 
         // relayouts when column count changes
         function relayout() {
-            if (body.children.length == d.columns) return;
+            if (body.children.length === d.columns) return;
             if (body.children.length > d.columns) {
                 // need to remove few columns, the last ones
                 while (body.children.length > d.columns) {
@@ -685,13 +685,13 @@ PageTreeNode {
                     continue;
                 }
                 // detach current page from holder if differs
-                if (holder.pageWrapper != pageWrapper) {
+                if (holder.pageWrapper !== pageWrapper) {
                     holder.detachCurrentPage();
                 }
-                if (pageWrapper.parent == holder.hiddenPool || pageWrapper.parent == hiddenPages) {
+                if (pageWrapper.parent === holder.hiddenPool || pageWrapper.parent === hiddenPages) {
                     // add the page to the column
                     holder.attachPage(pageWrapper);
-                } else if (pageWrapper.pageHolder != holder) {
+                } else if (pageWrapper.pageHolder !== holder) {
                     // detach the pageWrapper from its holder
                     if (pageWrapper.pageHolder) {
                         pageWrapper.pageHolder.detachCurrentPage();
@@ -764,7 +764,7 @@ PageTreeNode {
 
             PageColumn {
                 id: defaultMetrics
-                fillWidth: (holder.column + 1) == d.columns
+                fillWidth: (holder.column + 1) === d.columns
                 minimumWidth: d.defaultColumnWidth
             }
 
@@ -896,7 +896,7 @@ PageTreeNode {
                     right: parent.right
                     rightMargin: dividerThickness
                 }
-                width: (column == (d.columns - 1)) ? 0 : units.dp(1)
+                width: (column === (d.columns - 1)) ? 0 : units.dp(1)
                 color: theme.palette.normal.base
                 MouseArea {
                     id: resizerSensing

@@ -121,14 +121,14 @@ ListView {
         function positionViewAtIndexAnimated(expandedIndex) {
             animation.from = root.contentY;
             root.currentIndex = expandedIndex;
-            if (expandedIndex == root.count - 1) {
+            if (expandedIndex === root.count - 1) {
                 root.positionViewAtIndex(expandedIndex, ListView.End);
             } else {
                 root.positionViewAtIndex(expandedIndex + 1, ListView.End);
             }
 
             var effectiveExpandedHeight = Math.min(root.currentItem.expandedHeight, root.height - root.currentItem.collapsedHeight);
-            if (root.contentY - root.originY == 0) {
+            if (root.contentY - root.originY === 0) {
                 if (((root.currentIndex + 1) * root.currentItem.collapsedHeight) + effectiveExpandedHeight > root.height) {
                     animation.to = ((root.currentIndex + 1) * root.currentItem.collapsedHeight + effectiveExpandedHeight) - root.height + root.originY
                 } else {
@@ -184,7 +184,7 @@ ListView {
         parent: contentItem
         anchors.fill: parent
         z: 2
-        enabled: root.expandedIndex != -1
+        enabled: root.expandedIndex !== -1
         onClicked: root.expandedIndex = -1;
     }
 

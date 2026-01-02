@@ -81,7 +81,7 @@ MultiPointTouchArea {
     // or one of the input's parent Flickable
     readonly property bool scrollingDisabled: main && main.hasOwnProperty("autoSize") ?
                                                   (main.autoSize && (main.maximumLineCount <= 0)) : false
-    onScrollingDisabledChanged: if (state == "") flickable.interactive = !scrollingDisabled
+    onScrollingDisabledChanged: if (state === "") flickable.interactive = !scrollingDisabled
     readonly property Flickable grandScroller: firstFlickableParent(main)
     readonly property Flickable scroller: (scrollingDisabled && grandScroller) ? grandScroller : flickable
 
@@ -107,9 +107,9 @@ MultiPointTouchArea {
     function cursorPosition(x, y) {
         var frameSpacing = main.__styleInstance.frameSpacing;
         var cursorPosition = unadulteratedCursorPosition(x, y);
-        if (cursorPosition == 0)
+        if (cursorPosition === 0)
             cursorPosition = unadulteratedCursorPosition(x + frameSpacing, y + frameSpacing);
-        if (cursorPosition == text.length)
+        if (cursorPosition === text.length)
             cursorPosition = unadulteratedCursorPosition(x - frameSpacing, y - frameSpacing);
         return cursorPosition
     }
@@ -318,7 +318,7 @@ MultiPointTouchArea {
         function onCursorRectangleChanged() { ensureVisible(input.cursorRectangle) }
         function onTextChanged() {
             inputHandler.textChanged = true;
-            if (inputHandler.oldText != input.text) {
+            if (inputHandler.oldText !== input.text) {
                 inputHandler.textModified()
                 inputHandler.oldText = input.text
             }

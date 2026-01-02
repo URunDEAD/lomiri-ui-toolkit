@@ -69,7 +69,7 @@ Item {
                 property bool shouldBlink: styledItem.positionProperty === "cursorPosition" && !styledItem.readOnly && !styledItem.contextMenuVisible
                 property bool timerShowCursor: true
                 onTriggered: {
-                    interval = (interval == cursorStyle.cursorVisibleTimeout) ?
+                    interval = (interval === cursorStyle.cursorVisibleTimeout) ?
                                 cursorStyle.cursorHiddenTimeout : cursorStyle.cursorVisibleTimeout;
                     timerShowCursor = !timerShowCursor;
                 }

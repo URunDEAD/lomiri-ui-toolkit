@@ -216,7 +216,7 @@ ListItem.Empty {
             return;
         }
         var newIndex = Toolkit.MathUtils.clamp(list.currentIndex + increment, 0, list.count - 1);
-        if (newIndex != list.currentIndex) {
+        if (newIndex !== list.currentIndex) {
             event.accepted = true;
         }
     }
@@ -243,7 +243,7 @@ ListItem.Empty {
         if (!listContainer.currentlyExpanded)
             return;
         var newIndex = Toolkit.MathUtils.clamp(list.currentIndex + increment, 0, list.count - 1);
-        if (newIndex != list.currentIndex) {
+        if (newIndex !== list.currentIndex) {
             event.accepted = true;
             list.delegateClicked(newIndex);
             var shifted = (event.modifiers & Qt.ShiftModifier);

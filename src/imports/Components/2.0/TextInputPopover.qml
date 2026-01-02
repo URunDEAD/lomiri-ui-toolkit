@@ -23,7 +23,7 @@ Popover {
     objectName: "text_input_contextmenu"
     property Item target
     property bool canCopy: target && target.selectedText !== "" && !popover.password
-    property bool password: target && target.hasOwnProperty('echoMode') && target.echoMode == TextInput.Password
+    property bool password: target && target.hasOwnProperty('echoMode') && target.echoMode === TextInput.Password
     property list<Action> actions: [
         Action {
             text: i18n.dtr('lomiri-ui-toolkit', "Select All")

@@ -336,7 +336,7 @@ AbstractButton {
     }
 
     Keys.onReleased: {
-        if (event.key == Qt.Key_Space) {
+        if (event.key === Qt.Key_Space) {
             // Space should expand, not trigger
             event.accepted = true;
             combo.expanded = !combo.expanded;

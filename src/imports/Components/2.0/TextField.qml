@@ -707,7 +707,7 @@ Lomiri.ActionItem {
     */
     function positionAt(x, position)
     {
-        if (position == undefined)
+        if (position === undefined)
             return editor.positionAt(x);
         else
             return editor.positionAt(x, position);
@@ -846,7 +846,7 @@ Lomiri.ActionItem {
         }
     }
 
-    LayoutMirroring.enabled: Qt.application.layoutDirection == Qt.RightToLeft
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
     // grab clicks from the area between the frame and the input
@@ -872,11 +872,11 @@ Lomiri.ActionItem {
         property int type: action ? action.parameterType : Lomiri.Action.None
         onTypeChanged: {
             // Don't undo explicitly specified hints
-            if (inputMethodHints != Qt.ImhNone)
+            if (inputMethodHints !== Qt.ImhNone)
                 return
 
-            if (type == Lomiri.Action.Integer
-             || type == Lomiri.Action.Real)
+            if (type === Lomiri.Action.Integer
+             || type === Lomiri.Action.Real)
                 inputMethodHints = Qt.ImhDigitsOnly
         }
     }
@@ -986,7 +986,7 @@ Lomiri.ActionItem {
             margins: internal.spacing
         }
         // hint is shown till user types something in the field
-        visible: (editor.text == "") && !editor.inputMethodComposing
+        visible: (editor.text === "") && !editor.inputMethodComposing
         color: theme.palette.normal.baseText
         font: editor.font
         elide: Text.ElideRight

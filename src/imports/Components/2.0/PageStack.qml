@@ -250,7 +250,7 @@ PageTreeNode {
         function finishPreviousAction() {
             // no action required when animating IN because the PageStack was
             // already updated before that transition started.
-            if (internal.animateHeader && internal.headStyle.state == "OUT") {
+            if (internal.animateHeader && internal.headStyle.state === "OUT") {
                 // force instant update of the PageStack without waiting for
                 // the OUT animation to finish:
                 internal.headStyle.animateOutFinished();

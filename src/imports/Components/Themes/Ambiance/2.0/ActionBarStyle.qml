@@ -156,7 +156,7 @@ Style.ActionBarStyle {
             }
             onItemAdded: {
                 if (count <= previousCount) return; // no items added
-                if (index == 0) fadeIn(item);
+                if (index === 0) fadeIn(item);
             }
         }
 

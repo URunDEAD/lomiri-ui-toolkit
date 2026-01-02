@@ -155,7 +155,7 @@ Toolkit.StyledItem {
             }
         }
         function normalizedValueFromValue(value) {
-            if (Qt.application.layoutDirection == Qt.RightToLeft) {
+            if (Qt.application.layoutDirection === Qt.RightToLeft) {
                 return Toolkit.MathUtils.clampAndProject(value, slider.minimumValue,
                                                  slider.maximumValue, 1.0, 0.0);
             } else {
@@ -166,7 +166,7 @@ Toolkit.StyledItem {
         }
 
         function valueFromNormalizedValue(normalizedValue) {
-            if (Qt.application.layoutDirection == Qt.RightToLeft) {
+            if (Qt.application.layoutDirection === Qt.RightToLeft) {
                 return Toolkit.MathUtils.lerp(Toolkit.MathUtils.clamp(normalizedValue, 0.0, 1.0),
                                       slider.maximumValue, slider.minimumValue);
             } else {
@@ -176,7 +176,7 @@ Toolkit.StyledItem {
         }
 
         function adjustValue(increment) {
-            if (Qt.application.layoutDirection == Qt.RightToLeft)
+            if (Qt.application.layoutDirection === Qt.RightToLeft)
                 increment *= -1;
             slider.value = Toolkit.MathUtils.clamp(slider.value + increment, slider.minimumValue, slider.maximumValue);
         }
