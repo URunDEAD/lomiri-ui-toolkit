@@ -1,0 +1,15 @@
+{
+    \"architecture\": \"all\",
+    \"description\": \"Component showcase gallery of the Ubuntu user interface toolkit (UITK)\",
+    \"framework\": \"@CLICK_FRAMEWORK@\",
+    \"hooks\": {
+        \"lomiri-ui-toolkit-gallery\": {
+            \"apparmor\": \"lomiri-ui-toolkit-gallery.apparmor\",
+            \"desktop\": \"lomiri-ui-toolkit-gallery.desktop\"
+        }
+    },
+    \"maintainer\": \"UBports <dev@ubports.com>\",
+    \"name\": \"uitk-gallery.ubports\",
+    \"title\": \"Lomiri UI Toolkit Gallery\",
+    \"version\": \"$${PROJECT_VERSION}\"
+}
