@@ -212,6 +212,7 @@ ListItem.Empty {
             break;
         case Qt.Key_Down:
             increment = 1;
+            break;
         default:
             return;
         }
@@ -236,6 +237,7 @@ ListItem.Empty {
                 event.accepted = true;
                 listContainer.currentlyExpanded = !listContainer.currentlyExpanded;
             }
+            break;
         default:
             return;
         }
