@@ -33,8 +33,8 @@ qt_add_qml_module(LomiriComponents
         2.0/ComboButton.qml
         2.0/CrossFadeImage.qml
         2.0/DraggingArea.qml
-        2.0/Haptics.qml
         2.0/Icon.qml
+        2.0/Internal__Haptics.qml # fails to load in uchaptics.cpp if marked internal
         2.0/InputHandler.qml
         2.0/ListItemPopover.qml
         2.0/LomiriColors.qml

@@ -55,7 +55,7 @@ class LOMIRITOOLKIT_EXPORT LomiriToolkitModule : public QObject
 {
     Q_OBJECT
 public:
-
+    QT_DEPRECATED_X("Remove after dropping Qt5")
     static QUrl baseUrl(QQmlEngine *engine);
 
     static void initializeModule(QQmlEngine *engine, const QUrl &pluginBaseUrl);
