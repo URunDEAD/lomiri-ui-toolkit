@@ -104,8 +104,13 @@ void UCStyleHints::decodeBinding(const QString &propertyPrefix, const QQmlRefPoi
     QString propertyName = propertyPrefix + compilationUnit->stringAt(binding->propertyNameIndex);
 
     // handle grouped properties first
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 11)
     if (binding->type() == QV4::CompiledData::Binding::Type_GroupProperty
         || binding->type() == QV4::CompiledData::Binding::Type_AttachedProperty) {
+#else
+    if (binding->type == QV4::CompiledData::Binding::Type_GroupProperty
+        || binding->type == QV4::CompiledData::Binding::Type_AttachedProperty) {
+#endif
 
         const QV4::CompiledData::Object *subObj = compilationUnit->objectAt(binding->value.objectIndex);
         const QV4::CompiledData::Binding *subBinding = subObj->bindingTable();
@@ -116,7 +121,11 @@ void UCStyleHints::decodeBinding(const QString &propertyPrefix, const QQmlRefPoi
         return;
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 11)
     switch (binding->type()) {
+#else
+    switch (binding->type) {
+#endif
     case QV4::CompiledData::Binding::Type_Script:
     {
         QString expression = compilationUnit->bindingValueAsScriptString(binding);
