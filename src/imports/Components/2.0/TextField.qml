@@ -104,6 +104,7 @@ Lomiri.ActionItem {
 
     implicitWidth: units.gu(25)
     implicitHeight: units.gu(4)
+    activeFocusOnTab: true
     /*!
       The property presents whether the TextField is highlighted or not. By
       default the TextField gets highlighted when gets the focus, so can accept
@@ -939,6 +940,7 @@ Lomiri.ActionItem {
         id: clearButton
         objectName: "clear_button"
         activeFocusOnPress: false
+        activeFocusOnTab: false
 
         anchors {
             top: parent.top

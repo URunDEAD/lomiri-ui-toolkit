@@ -83,6 +83,7 @@ void UCStyledItemBase::setKeyNavigationFocus(bool v)
     Q_EMIT keyNavigationFocusChanged();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 bool UCStyledItemBase::activeFocusOnTab2() const
 {
     return activeFocusOnTab();
@@ -91,16 +92,19 @@ void UCStyledItemBase::setActiveFocusOnTab2(bool v)
 {
     setActiveFocusOnTab(v);
 }
+#endif
 
 UCStyledItemBasePrivate::~UCStyledItemBasePrivate()
 {
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void UCStyledItemBasePrivate::init()
 {
     Q_Q(UCStyledItemBase);
     QObject::connect(q, &::QQuickItem::activeFocusOnTabChanged, q, &UCStyledItemBase::activeFocusOnTabChanged2);
 }
+#endif
 
 
 void UCStyledItemBasePrivate::setFocusable(bool focus)
@@ -169,16 +173,20 @@ UCStyledItemBase::UCStyledItemBase(QQuickItem *parent)
     : QQuickItem(*(new UCStyledItemBasePrivate), parent)
     , UCThemingExtension(this)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_D(UCStyledItemBase);
     d->init();
+#endif
 }
 
 UCStyledItemBase::UCStyledItemBase(UCStyledItemBasePrivate &dd, QQuickItem *parent)
     : QQuickItem(dd, parent)
     , UCThemingExtension(this)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_D(UCStyledItemBase);
     d->init();
+#endif
 }
 
 /*!

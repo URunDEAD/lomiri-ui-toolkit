@@ -199,6 +199,7 @@ ListItem.Empty {
     __height: column.height
     showDivider: false
 
+    activeFocusOnTab: true
 
     // Prevent scrolling on pressed when released changes the index
     Keys.onPressed: {

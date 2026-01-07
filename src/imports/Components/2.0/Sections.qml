@@ -29,6 +29,7 @@ import Lomiri.Components
 StyledItem {
     id: sections
     styleName: "SectionsStyle"
+    activeFocusOnTab: true
 
     /*!
       List of actions that represent the sections.

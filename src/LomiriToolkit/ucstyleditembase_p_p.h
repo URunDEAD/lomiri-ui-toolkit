@@ -59,7 +59,9 @@ public:
 
     UCStyledItemBasePrivate();
     virtual ~UCStyledItemBasePrivate();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void init();
+#endif
 
     virtual void setFocusable(bool focus);
     bool isParentFocusable();
