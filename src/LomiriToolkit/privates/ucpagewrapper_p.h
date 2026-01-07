@@ -55,9 +55,11 @@ class LOMIRITOOLKIT_EXPORT UCPageWrapper : public UCPageTreeNode
     //overrides
     Q_PROPERTY(bool visible READ isVisible WRITE setVisible2 NOTIFY visibleChanged2 FINAL)
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // FIXME Re-expose property that would be inaccessible due to a QML bug
     // https://bugs.launchpad.net/lomiri/+source/qtdeclarative-opensource-src/+bug/1389721
     Q_PROPERTY(UCTheme *theme READ getTheme2 WRITE setTheme2 RESET resetTheme2 NOTIFY themeChanged2 FINAL)
+#endif
 public:
     explicit UCPageWrapper(QQuickItem *parent = 0);
     virtual ~UCPageWrapper();
@@ -100,9 +102,11 @@ public:
     //override QQuickItem properties
     void setVisible2(bool visible);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     UCTheme *getTheme2();
     void setTheme2(UCTheme * theme);
     void resetTheme2();
+#endif
 
 Q_SIGNALS:
     void referenceChanged(const QVariant &reference);
@@ -117,7 +121,9 @@ Q_SIGNALS:
     void parentPageChanged(QQuickItem* parentPage);
     void incubatorChanged(QObject* incubator);
     void visibleChanged2();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void themeChanged2();
+#endif
 
 protected:
     UCPageWrapper(UCPageWrapperPrivate &dd, QQuickItem *parent);

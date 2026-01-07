@@ -35,10 +35,13 @@ UCAppHeaderBase::UCAppHeaderBase(QQuickItem *parent)
     : UCHeader(parent)
     , m_animate(true)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     connect(this, &UCHeader::themeChanged, this, &UCAppHeaderBase::themeChanged2);
+#endif
     UCStyledItemBasePrivate::get(this)->styleDocument = QStringLiteral("PageHeadStyle");
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 UCTheme* UCAppHeaderBase::theme2()
 {
     return getTheme();
@@ -48,6 +51,7 @@ void UCAppHeaderBase::setTheme2(UCTheme* value)
 {
     setTheme(value);
 }
+#endif
 
 void UCAppHeaderBase::show(bool animate) {
     UCHeader::show(m_animate && animate);

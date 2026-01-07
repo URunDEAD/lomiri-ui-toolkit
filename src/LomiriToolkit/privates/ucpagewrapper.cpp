@@ -68,8 +68,10 @@ void UCPageWrapperPrivate::init()
         }
     });
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     //FIXME bind re-exposed property signals lp:1389721
     QObject::connect(q, SIGNAL(themeChanged()), q, SIGNAL(themeChanged2()));
+#endif
 }
 
 /*!
@@ -769,6 +771,7 @@ void UCPageWrapper::setVisible2(bool visible)
     setVisible(visible);
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 UCTheme *UCPageWrapper::getTheme2()
 {
     return getTheme();
@@ -783,6 +786,7 @@ void UCPageWrapper::resetTheme2()
 {
     resetTheme();
 }
+#endif
 
 /*!
   \qmlsignal PageWrapper::pageLoaded()
