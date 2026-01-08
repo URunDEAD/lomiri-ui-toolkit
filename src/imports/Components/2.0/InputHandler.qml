@@ -357,7 +357,7 @@ MultiPointTouchArea {
         }
     }
 
-    // touch and mous handling
+    // touch and mouse handling
     function handlePressed(event) {
         if (event.touch) {
             // we do not have longTap or double tap, therefore we need to generate those
