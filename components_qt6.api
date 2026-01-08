@@ -26,7 +26,7 @@ Lomiri.Components.ActionBar 2.0: StyledItem
     property list<Action> actions
     property Component delegate
     property int numberOfSlots
-Lomiri.Components.Styles.ActionBarStyle 1.3: Item
+Lomiri.Components.Styles.ActionBarStyle 2.0: Item
     property color backgroundColor
     readonly property ActionItemProperties buttons
     property Component defaultDelegate
@@ -45,7 +45,7 @@ Lomiri.Components.ActionItem 2.0 UCActionItem: StyledItem
     function trigger(var value)
     function trigger()
     property string text
-Lomiri.Components.Styles.ActionItemProperties 1.3: QTestRootObject
+Lomiri.Components.Styles.ActionItemProperties 2.0: QTestRootObject
     property color backgroundColor
     property color disabledBackgroundColor
     property color disabledForegroundColor
@@ -177,7 +177,7 @@ Lomiri.Components.BottomEdgeRegion 2.0 UCBottomEdgeRegion: QTestRootObject
     signal exited()
     signal dragEnded()
     property double to
-Lomiri.Components.Styles.BottomEdgeStyle 1.3 UCBottomEdgeStyle: Item
+Lomiri.Components.Styles.BottomEdgeStyle 2.0 UCBottomEdgeStyle: Item
     property Item contentItem
     property Item panel
     property Animation panelAnimation
@@ -219,7 +219,7 @@ Lomiri.Components.ComboButton 2.0: AbstractButton
     property QQuickGradient gradient
     property string iconPosition
     property color strokeColor
-Lomiri.Components.Styles.ComboButtonStyle 1.1: Item
+Lomiri.Components.Styles.ComboButtonStyle 2.0: Item
     property Item comboListHolder
     property double comboListMargin
     property Item comboListPanel
@@ -543,12 +543,12 @@ Lomiri.Components.ListItemLayout 2.0 UCListItemLayout: SlotsLayout
     readonly property Label subtitle
     readonly property Label summary
     readonly property Label title
-Lomiri.Components.Styles.ListItemStyle 1.3 1.2 UCListItemStyle: Item
+Lomiri.Components.Styles.ListItemStyle 2.0 UCListItemStyle: Item
     readonly property bool animatePanels
     property Item dragPanel
     property PropertyAnimation dropAnimation
-    readonly property Flickable flickable 1.3
-    readonly property int listItemIndex 1.3
+    readonly property Flickable flickable 2.0
+    readonly property int listItemIndex 2.0
     function swipeEvent(SwipeEvent event)
     function rebound()
     property Animation snapAnimation
@@ -741,7 +741,7 @@ Lomiri.Components.PageHeadState 2.0: State
     property Action backAction
     property Item contents
     property PageHeadConfiguration head
-Lomiri.Components.Styles.PageHeadStyle 1.3: Item
+Lomiri.Components.Styles.PageHeadStyle 2.0: Item
     property double contentHeight
     property string fontSize
     property int fontWeight
@@ -760,7 +760,7 @@ Lomiri.Components.PageHeader 2.0: Header
     property string subtitle
     property string title
     readonly property ActionBar trailingActionBar
-Lomiri.Components.Styles.PageHeaderStyle 1.3: Item
+Lomiri.Components.Styles.PageHeaderStyle 2.0: Item
     property color backgroundColor
     readonly property ActionItemProperties buttons
     property double contentHeight
@@ -930,7 +930,7 @@ Lomiri.Components.PullToRefresh 2.0: StyledItem
     property bool refreshing
     readonly property bool releaseToRefresh
     property Flickable target
-Lomiri.Components.Styles.PullToRefreshStyle 1.1: Item
+Lomiri.Components.Styles.PullToRefreshStyle 2.0: Item
     property double activationThreshold
     property Component defaultContent
     property bool releaseToRefresh
@@ -960,7 +960,7 @@ Lomiri.Components.Sections 2.0: StyledItem
     property list<Action> actions
     property var model
     property int selectedIndex
-Lomiri.Components.Styles.SectionsStyle 1.3: Item
+Lomiri.Components.Styles.SectionsStyle 2.0: Item
     property color pressedBackgroundColor
     property color sectionColor
     property color selectedSectionColor
@@ -1320,7 +1320,7 @@ Lomiri.Components.ToolbarItems 2.0: Item
     property bool locked
     property bool opened
     property Item pageStack
-Lomiri.Components.Styles.ToolbarStyle 1.3: Item
+Lomiri.Components.Styles.ToolbarStyle 2.0: Item
     property color backgroundColor
     readonly property ActionItemProperties buttons
     property Component defaultDelegate
