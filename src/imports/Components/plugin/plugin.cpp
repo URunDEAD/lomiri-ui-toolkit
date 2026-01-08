@@ -45,6 +45,10 @@ void LomiriComponentsPlugin::registerTypes(const char *uri)
 
 void LomiriComponentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     UT_PREPEND_NAMESPACE(LomiriToolkitModule)::initializeModule(engine, baseUrl());
+#else
+    UT_PREPEND_NAMESPACE(LomiriToolkitModule)::initializeModule(engine, QUrl());
+#endif
     QQmlExtensionPlugin::initializeEngine(engine, uri);
 }

@@ -212,11 +212,12 @@ ListItem.Empty {
             break;
         case Qt.Key_Down:
             increment = 1;
+            break;
         default:
             return;
         }
         var newIndex = Toolkit.MathUtils.clamp(list.currentIndex + increment, 0, list.count - 1);
-        if (newIndex != list.currentIndex) {
+        if (newIndex !== list.currentIndex) {
             event.accepted = true;
         }
     }
@@ -236,6 +237,7 @@ ListItem.Empty {
                 event.accepted = true;
                 listContainer.currentlyExpanded = !listContainer.currentlyExpanded;
             }
+            break;
         default:
             return;
         }
@@ -243,7 +245,7 @@ ListItem.Empty {
         if (!listContainer.currentlyExpanded)
             return;
         var newIndex = Toolkit.MathUtils.clamp(list.currentIndex + increment, 0, list.count - 1);
-        if (newIndex != list.currentIndex) {
+        if (newIndex !== list.currentIndex) {
             event.accepted = true;
             list.delegateClicked(newIndex);
             var shifted = (event.modifiers & Qt.ShiftModifier);
@@ -269,7 +271,7 @@ ListItem.Empty {
             id : label
 
             text: optionSelector.text
-            visible: optionSelector.text !== "" ? true : false
+            visible: optionSelector.text !== ""
         }
 
         Toolkit.StyledItem {
@@ -342,7 +344,7 @@ ListItem.Empty {
                 Toolkit.Mouse.onClicked: optionSelector.requestFocus(Qt.MouseFocusReason)
 
                 onDelegateClicked: optionSelector.delegateClicked(index);
-                interactive: listContainer.height !== list.contentHeight && listContainer.currentlyExpanded ? true : false
+                interactive: listContainer.height !== list.contentHeight && listContainer.currentlyExpanded
                 clip: true
                 currentIndex: 0
                 model: optionSelector.model

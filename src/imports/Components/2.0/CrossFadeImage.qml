@@ -54,7 +54,7 @@ Item {
       \internal
      */
     onSourceSizeChanged: {
-        if (internals.loadingImage && (sourceSize != Qt.size(internals.loadingImage.sourceSize.width, internals.loadingImage.sourceSize.height))) {
+        if (internals.loadingImage && (sourceSize !== Qt.size(internals.loadingImage.sourceSize.width, internals.loadingImage.sourceSize.height))) {
             internals.forcedSourceSize = sourceSize;
         }
     }
@@ -140,7 +140,7 @@ Item {
         nextImageFadeIn.stop();
 
         // Don't fade in initial picture, only fade changes
-        if (internals.currentImage.source == "") {
+        if (internals.currentImage.source === "") {
             internals.currentImage.source = source;
             internals.loadingImage = internals.currentImage;
         } else {
@@ -159,7 +159,7 @@ Item {
     Connections {
         target: internals.nextImage
         function onStatusChanged() {
-            if (internals.nextImage.status == Image.Ready) {
+            if (internals.nextImage.status === Image.Ready) {
                  internals.swapImages();
              }
         }

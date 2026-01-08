@@ -1,0 +1,4 @@
+clickable_minimum_required: '7'
+builder: pure-qml-qmake
+build_args: "${SRC_DIR}/lomiri-ui-toolkit-gallery-click.pro CONFIG+=CLICKABLE"
+kill: qmlscene

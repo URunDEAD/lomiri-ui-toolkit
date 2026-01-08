@@ -34,9 +34,15 @@
 #include <QtQml/QQmlInfo>
 #include <QtQuick/private/qsgadaptationlayer_p.h>
 // This private header uses the emit keyword while we build with QT_NO_KEYWORDS set. See #1507910.
+#ifndef emit
 #define emit Q_EMIT
+#define UNDEF_EMIT
+#endif
 #include <QtQuick/private/qquickimage_p.h>
+#ifdef UNDEF_EMIT
 #undef emit
+#undef UNDEF_EMIT
+#endif
 
 #include "quickutils_p.h"
 #include "lomiritoolkitglobal.h"

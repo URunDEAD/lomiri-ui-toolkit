@@ -21,7 +21,7 @@ ShaderEffect {
 
     implicitWidth: source.implicitWidth
     implicitHeight: source.implicitHeight
-    visible: source != null && source.visible
+    visible: source !== null && source.visible
 
     property Item sourceItem
     property var source: ShaderEffectSource {

@@ -26,7 +26,11 @@ UG_NAMESPACE_BEGIN
 
 void LomiriGesturesModule::defineModule(const char *uri)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     qmlRegisterType<UCSwipeArea>(uri, 1, 3, "SwipeArea");
+#else
+    qmlRegisterType<UCSwipeArea>(uri, 2, 0, "SwipeArea");
+#endif
 }
 
 void LomiriGesturesModule::undefineModule()

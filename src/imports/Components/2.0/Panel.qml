@@ -239,7 +239,7 @@ Item {
     property bool locked: false
     /*! \internal */
     onLockedChanged: {
-        if (state == "hint" || state == "moving") {
+        if (state === "hint" || state === "moving") {
             draggingArea.finishMoving();
         }
         if (!hideTimer.conditionalRestart()) {
@@ -432,9 +432,9 @@ Item {
 
     /*! \internal */
     onStateChanged: {
-        if (state == "hint") {
+        if (state === "hint") {
             internal.movingDelta = panel.hintSize + draggingArea.initialPosition - bar.size;
-        } else if (state == "moving" && internal.previousState == "spread") {
+        } else if (state === "moving" && internal.previousState === "spread") {
             internal.movingDelta = draggingArea.initialPosition;
         }
     }
@@ -459,7 +459,7 @@ Item {
             if (!panel.locked) panel.close();
         }
         propagateComposedEvents: true
-        visible: panel.__closeOnContentsClicks && panel.locked == false && panel.state == "spread"
+        visible: panel.__closeOnContentsClicks && panel.locked === false && panel.state === "spread"
     }
 
     /*!
@@ -542,7 +542,7 @@ Item {
             pressedItem = getTriggerableItem(mouse);
             if (panel.locked) return;
             initialPosition = getMousePosition();
-            if (panel.state == "") panel.state = "hint";
+            if (panel.state === "") panel.state = "hint";
         }
 
         /*!
@@ -555,11 +555,11 @@ Item {
         onPositionChanged: {
             if (!pressed) return;
             if (panel.locked) return;
-            if (panel.state == "hint" && mousePosition < initialPosition - dragThreshold) {
+            if (panel.state === "hint" && mousePosition < initialPosition - dragThreshold) {
                 internal.previousState = "hint";
                 panel.state = "moving";
                 pressedItem = null;
-            } else if (panel.state == "spread" && mousePosition > initialPosition + dragThreshold) {
+            } else if (panel.state === "spread" && mousePosition > initialPosition + dragThreshold) {
                 internal.previousState = "spread";
                 panel.state = "moving";
                 pressedItem = null;
@@ -567,7 +567,7 @@ Item {
         }
 
         onReleased: {
-            if (panel.state == "moving" || panel.state == "hint") {
+            if (panel.state === "moving" || panel.state === "hint") {
                 finishMoving();
             } else {
                 hideTimer.conditionalRestart();
@@ -575,7 +575,7 @@ Item {
         }
         // Mouse cursor moving out of the window while pressed on desktop
         onCanceled: {
-            if (panel.state == "moving" || panel.state == "hint") {
+            if (panel.state === "moving" || panel.state === "hint") {
                 finishMoving();
             } else {
                 hideTimer.conditionalRestart();

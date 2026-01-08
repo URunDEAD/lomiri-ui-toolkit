@@ -29,7 +29,7 @@ Item {
     property font defaultFont: Qt.font({family: "Ubuntu", pixelSize: FontUtils.sizeToPixels("medium")})
     property Gradient defaultGradient
     property real buttonFaceOffset: 0
-    property bool stroke: button.hasOwnProperty("strokeColor") && button.strokeColor != Qt.rgba(0.0, 0.0, 0.0, 0.0)
+    property bool stroke: button.hasOwnProperty("strokeColor") && button.strokeColor !== Qt.rgba(0.0, 0.0, 0.0, 0.0)
     /*!
       The property overrides the button's default background with an item. This
       item can be used by derived styles to reuse the ButtonStyle and override
@@ -43,7 +43,7 @@ Item {
     implicitWidth: Math.max(minimumWidth, foreground.implicitWidth + 2*horizontalPadding)
     implicitHeight: units.gu(4)
 
-    LayoutMirroring.enabled: Qt.application.layoutDirection == Qt.RightToLeft
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
     /*! \internal */

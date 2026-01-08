@@ -37,7 +37,7 @@ Style.ComboButtonStyle {
     implicitWidth: mainButton.implicitWidth
     implicitHeight: mainButton.implicitHeight
 
-    LayoutMirroring.enabled: Qt.application.layoutDirection == Qt.RightToLeft
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
     Item {
@@ -71,14 +71,14 @@ Style.ComboButtonStyle {
         )
         implicitHeight: units.gu(4)
 
-        LayoutMirroring.enabled: Qt.application.layoutDirection == Qt.RightToLeft
+        LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
         LayoutMirroring.childrenInherit: true
 
         LomiriShape {
             id: background
             anchors.fill: parent
             borderSource: "radius_idle.sci"  // Deprecated, use a dedicated shape.
-            visible: mainButton.stroke ? false : ((backgroundColor.a != 0.0) || mainButton.backgroundSource)
+            visible: mainButton.stroke ? false : ((backgroundColor.a !== 0.0) || mainButton.backgroundSource)
             source: mainButton.backgroundSource
 
             backgroundColor: defaultColor
@@ -92,8 +92,8 @@ Style.ComboButtonStyle {
             property string iconPosition: styledItem.iconPosition
             property real iconSize: units.gu(2)
             property real spacing: mainButton.horizontalPadding
-            property bool hasIcon: styledItem.iconSource != ""
-            property bool hasText: styledItem.text != ""
+            property bool hasIcon: styledItem.iconSource !== ""
+            property bool hasText: styledItem.text !== ""
 
             anchors {
                 centerIn: parent

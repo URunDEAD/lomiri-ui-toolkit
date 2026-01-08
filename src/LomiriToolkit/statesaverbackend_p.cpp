@@ -175,7 +175,11 @@ int StateSaverBackend::load(const QString &id, QObject *item, const QStringList 
             item, QString::fromLatin1(propertyName.toLocal8Bit().constData()), qmlContext(item));
         if (qmlProperty.isValid() && qmlProperty.isWritable()) {
             QVariant type = m_archive.data()->value(propertyName + QStringLiteral("_TYPE"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             value.convert(type.toInt());
+#else
+            value.convert(QMetaType(type.toInt()));
+#endif
             bool writeSuccess = qmlProperty.write(value);
             if (writeSuccess) {
                 result++;
@@ -215,7 +219,11 @@ int StateSaverBackend::save(const QString &id, QObject *item, const QStringList 
             item, QString::fromLatin1(propertyName.toLocal8Bit().constData()));
         if (qmlProperty.isValid()) {
             QVariant value = qmlProperty.read();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             if (static_cast<QMetaType::Type>(value.type()) != QMetaType::QObjectStar) {
+#else
+            if (value.typeId() != QMetaType::QObjectStar) {
+#endif
                 if (value.userType() == qMetaTypeId<QJSValue>()) {
                     value = value.value<QJSValue>().toVariant();
                 }
@@ -230,7 +238,11 @@ int StateSaverBackend::save(const QString &id, QObject *item, const QStringList 
                  */
                 m_archive.data()->setValue(
                     propertyName + QStringLiteral("_TYPE"),
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                     QVariant::fromValue((int)value.type()));
+#else
+                    QVariant::fromValue(value.typeId()));
+#endif
                 result++;
             }
         }

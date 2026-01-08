@@ -138,7 +138,7 @@ Item {
         anchors.fill: parent
 
         // Whether or not a color has been set.
-        visible: image.status == Image.Ready && keyColorOut != Qt.rgba(0.0, 0.0, 0.0, 0.0)
+        visible: image.status === Image.Ready && keyColorOut !== Qt.rgba(0.0, 0.0, 0.0, 0.0)
 
         property Image source: image
         property color keyColorOut: Qt.rgba(0.0, 0.0, 0.0, 0.0)

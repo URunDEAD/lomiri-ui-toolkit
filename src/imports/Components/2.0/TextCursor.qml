@@ -54,7 +54,7 @@ Lomiri.StyledItem {
         var flickable = handler.main;
         do {
             flickable = flickable.parent;
-        } while (flickable && !flickable.contentY && flickable != fakeCursor.parent);
+        } while (flickable && !flickable.contentY && flickable !== fakeCursor.parent);
         return fakeCursor.parent.mapFromItem(handler.main, cursorItem.x, cursorItem.y).y
     }
 
@@ -157,9 +157,9 @@ Lomiri.StyledItem {
     //dragged item
     property Item draggedItem: Item {
         objectName: cursorItem.positionProperty + "_draggeditem"
-        width: caret.width + units.gu(2)
+        width: (caret ? caret.width : 0) + units.gu(2)
         onWidthChanged: draggedItem.moveToCaret()
-        height: cursorItem.height + caret.height + threshold
+        height: cursorItem.height + (caret ? caret.height : 0) + threshold
         property real threshold: units.gu(4)
         parent: fakeCursor.parent
         visible: caret.visible
@@ -207,7 +207,7 @@ Lomiri.StyledItem {
                 return;
             }
             // The style may render handlers either on top or bottom
-            var flip = caret.rotation == 180;
+            var flip = caret.rotation === 180;
             draggedItem.x = fakeCursor.x + (flip ? -caret.width : -draggedItem.width + caret.width);
             draggedItem.y = fakeCursor.y + caret.y + caret.height - threshold;
         }

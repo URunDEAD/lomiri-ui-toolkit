@@ -72,10 +72,10 @@ MouseArea {
     }
 
     function getEventSpeed(currentTime, event) {
-        if (__dragEvents.length != 0) {
+        if (__dragEvents.length !== 0) {
             var lastDrag = __dragEvents[__dragEvents.length-1]
             var duration = Math.max(1, currentTime - lastDrag[0])
-            if (orientation == Qt.Vertical) {
+            if (orientation === Qt.Vertical) {
                 return (event.y - lastDrag[2]) / duration
             } else {
                 return (event.x - lastDrag[1]) / duration

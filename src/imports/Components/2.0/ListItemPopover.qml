@@ -31,7 +31,7 @@ ActionSelectionPopover {
              topMargin: units.gu(0.5)
              bottomMargin: units.gu(0.5)
         }
-        divider.visible: action != actions[actions.length - 1]
+        divider.visible: action !== actions[actions.length - 1]
 
         Label {
             anchors.verticalCenter: parent.verticalCenter

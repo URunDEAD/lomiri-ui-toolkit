@@ -102,11 +102,11 @@ ColumnLayout {
 
     clip: true
     spacing: units.gu(0.5)
-    Layout.fillWidth: (captionStyle == Lomiri.TitleCaptionStyle)
-    Layout.alignment: Qt.AlignVCenter | ((captionStyle == Lomiri.SummaryCaptionStyle) ? Qt.AlignRight : Qt.AlignLeft)
+    Layout.fillWidth: (captionStyle === Lomiri.TitleCaptionStyle)
+    Layout.alignment: Qt.AlignVCenter | ((captionStyle === Lomiri.SummaryCaptionStyle) ? Qt.AlignRight : Qt.AlignLeft)
     Layout.minimumWidth: 0
-    Layout.maximumWidth: (captionStyle == Lomiri.SummaryCaptionStyle) ? units.gu(6) : parent.width
-    Layout.preferredWidth: (captionStyle == Lomiri.SummaryCaptionStyle) ? Layout.maximumWidth : 0
+    Layout.maximumWidth: (captionStyle === Lomiri.SummaryCaptionStyle) ? units.gu(6) : parent.width
+    Layout.preferredWidth: (captionStyle === Lomiri.SummaryCaptionStyle) ? Layout.maximumWidth : 0
     Layout.minimumHeight: 0
     Layout.maximumHeight: parent ? parent.height : childrenRect.height
     Layout.preferredHeight: childrenRect.height
@@ -116,7 +116,7 @@ ColumnLayout {
     // there's no more children added
     states: State {
         name: "__q_invisible"
-        when: (title.text === "" && subtitle.text === "") && (captions.children.length == 2)
+        when: (title.text === "" && subtitle.text === "") && (captions.children.length === 2)
         PropertyChanges {
             target: captions
             visible: false
@@ -126,19 +126,19 @@ ColumnLayout {
     Label {
         Layout.fillWidth: true
         id: titleLabel
-        textSize: (captionStyle == Lomiri.SummaryCaptionStyle) ? Label.Small : Label.Medium
-        horizontalAlignment: (captionStyle == Lomiri.SummaryCaptionStyle) ? Text.AlignRight : Text.AlignLeft
+        textSize: (captionStyle === Lomiri.SummaryCaptionStyle) ? Label.Small : Label.Medium
+        horizontalAlignment: (captionStyle === Lomiri.SummaryCaptionStyle) ? Text.AlignRight : Text.AlignLeft
         visible: text !== ""
-        elide: (captionStyle == Lomiri.TitleCaptionStyle) ? Text.ElideRight : Text.ElideNone
+        elide: (captionStyle === Lomiri.TitleCaptionStyle) ? Text.ElideRight : Text.ElideNone
     }
     Label {
         Layout.fillWidth: true
         id: subtitleLabel
         textSize: Label.Small
-        horizontalAlignment: (captionStyle == Lomiri.SummaryCaptionStyle) ? Text.AlignRight : Text.AlignLeft
+        horizontalAlignment: (captionStyle === Lomiri.SummaryCaptionStyle) ? Text.AlignRight : Text.AlignLeft
         visible: text !== ""
-        maximumLineCount: (captionStyle == Lomiri.TitleCaptionStyle) ? 2 : 1
-        wrapMode: (captionStyle == Lomiri.TitleCaptionStyle) ? Text.Wrap : Text.NoWrap
-        elide: (captionStyle == Lomiri.TitleCaptionStyle) ? Text.ElideRight : Text.ElideNone
+        maximumLineCount: (captionStyle === Lomiri.TitleCaptionStyle) ? 2 : 1
+        wrapMode: (captionStyle === Lomiri.TitleCaptionStyle) ? Text.Wrap : Text.NoWrap
+        elide: (captionStyle === Lomiri.TitleCaptionStyle) ? Text.ElideRight : Text.ElideNone
     }
 }

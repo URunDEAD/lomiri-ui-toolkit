@@ -532,6 +532,7 @@ void LomiriToolkitModule::defineModule(const char *uri)
     qmlRegisterType<UCAction, 1>(uri, 2, 0, "Action");
     qmlRegisterType<UCSlotsLayout>(uri, 2, 0, "SlotsLayout");
     qmlRegisterType<UCLomiriShape, 2>(uri, 2, 0, "LomiriShape");
+    qmlRegisterType<UCLomiriShapeOverlay>(uri, 2, 0, "LomiriShapeOverlay");
     qmlRegisterSimpleSingletonType<UT_PREPEND_NAMESPACE(UCNamespaceV13)>(uri, 2, 0, "Lomiri");
     qmlRegisterType<UCProportionalShape>(uri, 2, 0, "ProportionalShape");
     qmlRegisterType<LiveTimer>(uri, 2, 0, "LiveTimer");

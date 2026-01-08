@@ -110,7 +110,11 @@ QString UCStateSaverAttachedPrivate::absoluteId(const QString &id)
 
     // check whether we have an "index" context property defined
     QVariant indexValue = attacheeContext->contextProperty(QStringLiteral("index"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (indexValue.isValid() && (indexValue.type() == QVariant::Int)) {
+#else
+    if (indexValue.isValid() && (indexValue.typeId() == QMetaType::Int)) {
+#endif
         path += indexValue.toString();
     }
 

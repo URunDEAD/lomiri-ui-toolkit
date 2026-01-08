@@ -687,7 +687,11 @@ bool UCMouse::mouseDblClick(QMouseEvent *event)
 
 bool UCMouse::hoverEntered(QHoverEvent *event)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_lastPos = event->posF();
+#else
+    m_lastPos = event->position();
+#endif
     m_lastModifiers = event->modifiers();
     m_lastButton = Qt::NoButton;
     m_lastButtons = Qt::NoButton;
@@ -697,7 +701,11 @@ bool UCMouse::hoverEntered(QHoverEvent *event)
 
 bool UCMouse::hoverMoved(QHoverEvent *event)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_lastPos = event->posF();
+#else
+    m_lastPos = event->position();
+#endif
     m_lastModifiers = event->modifiers();
     QQuickMouseEvent mev;
     mev.reset(m_lastPos.x(), m_lastPos.y(), Qt::NoButton, Qt::NoButton, m_lastModifiers,
@@ -710,7 +718,11 @@ bool UCMouse::hoverMoved(QHoverEvent *event)
 
 bool UCMouse::hoverExited(QHoverEvent *event)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_lastPos = event->posF();
+#else
+    m_lastPos = event->position();
+#endif
     m_lastModifiers = event->modifiers();
     m_lastButton = Qt::NoButton;
     m_lastButtons = Qt::NoButton;
@@ -720,8 +732,13 @@ bool UCMouse::hoverExited(QHoverEvent *event)
 
 void UCMouse::saveEvent(QMouseEvent *event)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     m_lastPos = event->localPos();
     m_lastScenePos = event->windowPos();
+#else
+    m_lastPos = event->position();
+    m_lastScenePos = event->scenePosition();
+#endif
     if (event->type() != QEvent::MouseMove) {
         m_lastButton = event->button();
         m_lastButtons = event->buttons();
@@ -781,12 +798,22 @@ bool UCMouse::forwardEvent(ForwardedEvent::EventType type, QEvent *event, QQuick
             if (isMouseEvent(event->type())) {
                 QMouseEvent *mouse = static_cast<QMouseEvent*>(event);
                 QPointF itemPos = item->mapFromScene(m_owner->mapToScene(mouse->pos()));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                 mappedEvent = new QMouseEvent(event->type(), itemPos, mouse->button(), mouse->buttons(), mouse->modifiers());
+#else
+                mappedEvent = new QMouseEvent(event->type(), itemPos, itemPos, mouse->button(), mouse->buttons(), mouse->modifiers());
+#endif
             } else if (isHoverEvent(event->type())){
                 QHoverEvent *hover = static_cast<QHoverEvent*>(event);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                 QPointF itemPos = item->mapFromScene(m_owner->mapToScene(hover->pos()));
                 QPointF itemOldPos = item->mapFromScene(m_owner->mapToScene(hover->oldPos()));
                 mappedEvent = new QHoverEvent(event->type(), itemPos, itemOldPos, hover->modifiers());
+#else
+                QPointF itemPos = item->mapFromScene(m_owner->mapToScene(hover->position().toPoint()));
+                QPointF itemOldPos = item->mapFromScene(m_owner->mapToScene(hover->oldPos()));
+                mappedEvent = new QHoverEvent(event->type(), hover->scenePosition(), hover->globalPosition(), itemOldPos, hover->modifiers(), hover->pointingDevice());
+#endif
             }
         }
 
@@ -1055,18 +1082,31 @@ UCInverseMouse *UCInverseMouse::qmlAttachedProperties(QObject *owner)
 QMouseEvent UCInverseMouse::mapMouseToOwner(QObject *target, QMouseEvent* event)
 {
     QQuickItem *item = qobject_cast<QQuickItem*>(target);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QPointF localPos = (target != m_owner) ? m_owner->mapFromItem(item, event->localPos()) : event->localPos();
     QPointF windowPos = (target != m_owner) ? m_owner->mapFromItem(item, event->windowPos()) : event->windowPos();
     return QMouseEvent(event->type(), localPos, windowPos, event->screenPos(),
                        event->button(), event->buttons(), event->modifiers());
+#else
+    QPointF localPos = (target != m_owner) ? m_owner->mapFromItem(item, event->position()) : event->position();
+    QPointF windowPos = (target != m_owner) ? m_owner->mapFromItem(item, event->scenePosition()) : event->scenePosition();
+    return QMouseEvent(event->type(), localPos, windowPos, event->globalPosition(),
+                       event->button(), event->buttons(), event->modifiers());
+#endif
 }
 
 QHoverEvent UCInverseMouse::mapHoverToOwner(QObject *target, QHoverEvent *event)
 {
     QQuickItem *item = qobject_cast<QQuickItem*>(target);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QPointF pos = (target != m_owner) ? m_owner->mapFromItem(item, event->posF()) : event->posF();
     QPointF oldPos = (target != m_owner) ? m_owner->mapFromItem(item, event->oldPosF()) : event->oldPosF();
     return QHoverEvent(event->type(), pos, oldPos, event->modifiers());
+#else
+    QPointF pos = (target != m_owner) ? m_owner->mapFromItem(item, event->position()) : event->position();
+    QPointF oldPosVal = (target != m_owner) ? m_owner->mapFromItem(item, event->oldPos()) : event->oldPos();
+    return QHoverEvent(event->type(), event->scenePosition(), event->globalPosition(), oldPosVal, event->modifiers(), event->pointingDevice());
+#endif
 }
 
 bool UCInverseMouse::eventFilter(QObject *target, QEvent *event)
@@ -1110,7 +1150,11 @@ bool UCInverseMouse::pointInOSK(const QPointF &point)
 // returns true if the point is in the inverse area
 bool UCInverseMouse::contains(QMouseEvent *mouse)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QPointF localPos = mouse->localPos();
+#else
+    QPointF localPos = mouse->position();
+#endif
     return !m_owner->contains(localPos) && !pointInOSK(localPos);
 }
 

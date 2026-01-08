@@ -1201,7 +1201,11 @@ void UCListItemPrivate::handleLeftButtonPress(QMouseEvent *event)
     // create style instance
     loadStyleItem();
     setHighlighted(true);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     lastPos = pressedPos = event->localPos();
+#else
+    lastPos = pressedPos = event->position();
+#endif
     // connect the Flickable to know when to rebound
     listenToRebind(true);
     if (swiped) {
@@ -1210,7 +1214,11 @@ void UCListItemPrivate::handleLeftButtonPress(QMouseEvent *event)
         q->grabMouse();
     }
     // stop any ongoing animation!
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     swipeEvent(event->localPos(), UCSwipeEvent::Started);
+#else
+    swipeEvent(event->position(), UCSwipeEvent::Started);
+#endif
     // accept the event so we get the rest of the events as well
     event->accept();
 }
@@ -1303,7 +1311,11 @@ void UCListItemPrivate::handleLeftButtonRelease(QMouseEvent *event)
             snapOut();
         } else {
             // inform style about mouse/touch release
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             swipeEvent(event->localPos(), UCSwipeEvent::Finished);
+#else
+            swipeEvent(event->position(), UCSwipeEvent::Finished);
+#endif
             suppressClick = false;
             setHighlighted(false);
         }
@@ -1320,7 +1332,11 @@ void UCListItem::mouseReleaseEvent(QMouseEvent *event)
     }
 
     UCStyledItemBase::mouseReleaseEvent(event);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (!contains(mapFromScene(event->windowPos())))
+#else
+    if (!contains(mapFromScene(event->scenePosition())))
+#endif
         d->suppressClick = true;
     d->handleLeftButtonRelease(event);
 }
@@ -1354,11 +1370,19 @@ void UCListItem::mouseMoveEvent(QMouseEvent *event)
     if (d->button == Qt::LeftButton && d->highlighted && !d->swiped) {
         // check if we can initiate the drag at all
         // only X direction matters, if Y-direction leaves the threshold, but X not, the tug is not valid
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         if (d->swipedOverThreshold(event->localPos(), d->pressedPos)) {
             // the press went out of the threshold area, enable move, if the direction allows it
             d->lastPos = event->localPos();
             setKeepMouseGrab(true);
             qreal mouseX = event->localPos().x();
+#else
+        if (d->swipedOverThreshold(event->position(), d->pressedPos)) {
+            // the press went out of the threshold area, enable move, if the direction allows it
+            d->lastPos = event->position();
+            setKeepMouseGrab(true);
+            qreal mouseX = event->position().x();
+#endif
             qreal pressedX = d->pressedPos.x();
             bool doSwipe = (d->leadingActions && (mouseX > pressedX)) ||
                            (d->trailingActions && (mouseX < pressedX));
@@ -1374,7 +1398,11 @@ void UCListItem::mouseMoveEvent(QMouseEvent *event)
         d->pressAndHoldTimer.stop();
 
         // send swipe event to style and update contentItem position
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         d->swipeEvent(event->localPos(), UCSwipeEvent::Updated);
+#else
+        d->swipeEvent(event->position(), UCSwipeEvent::Updated);
+#endif
     }
 }
 
@@ -1389,8 +1417,15 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
     }
 
     bool consumed = false;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (contentItem->contains(contentItem->mapFromScene(event->windowPos()))) {
         QPointF localPos = q->mapFromScene(event->windowPos());
+#else
+    if (contentItem->contains(contentItem->mapFromScene(event->scenePosition()))) {
+        QPointF localPos = q->mapFromScene(event->scenePosition());
+        std::optional<QPointF> localPosOpt = std::optional<QPointF>(localPos);
+#endif
+
         switch (event->type()) {
         case QEvent::MouseButtonPress: {
             // remember pressed point over active areas
@@ -1425,8 +1460,13 @@ bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
         case QEvent::MouseMove: {
             if ((button == Qt::LeftButton) && swipedOverThreshold(localPos, pressedPos) && !highlighted) {
                 // grab the event from the child, so the click doesn't happen anymore, and initiate swiping
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
                 QMouseEvent pressed(QEvent::MouseButtonPress, localPos, event->windowPos(), event->screenPos(),
                                         Qt::LeftButton, event->buttons(), event->modifiers());
+#else
+                QMouseEvent pressed(QEvent::MouseButtonPress, localPos, event->scenePosition(), event->globalPosition(),
+                                        Qt::LeftButton, event->buttons(), event->modifiers());
+#endif
                 handleLeftButtonPress(&pressed);
                 // grab any further events so all land in the list item
                 q->setKeepMouseGrab(true);
@@ -1471,13 +1511,21 @@ bool UCListItem::eventFilter(QObject *target, QEvent *event)
         QMouseEvent *mouse = static_cast<QMouseEvent*>(event);
         QQuickWindow *window = qobject_cast<QQuickWindow*>(target);
         if (window) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             myPos = window->contentItem()->mapToItem(this, mouse->localPos());
+#else
+            myPos = window->contentItem()->mapToItem(this, mouse->position());
+#endif
         }
     } else if (event->type() == QEvent::TouchBegin) {
         QTouchEvent *touch = static_cast<QTouchEvent*>(event);
         QQuickWindow *window = qobject_cast<QQuickWindow*>(target);
         if (window) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             myPos = window->contentItem()->mapToItem(this, touch->touchPoints()[0].pos());
+#else
+            myPos = window->contentItem()->mapToItem(this, touch->points()[0].position());
+#endif
         }
     }
     if (!myPos.isNull() && !contains(myPos)) {

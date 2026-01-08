@@ -28,20 +28,21 @@ Item {
     property string iconPosition
     property real iconSize
     property real spacing
-    property bool hasIcon: iconSource != ""
-    property bool hasText: text != ""
+    property bool hasIcon: iconSource !== ""
+    property bool hasText: text !== ""
     property alias font: label.font
 
     implicitHeight: Math.max(icon.height, label.height)
     state: hasIcon && hasText ? iconPosition : "center"
 
-    Image {
+    Icon {
         id: icon
+        visible: hasIcon
         anchors.verticalCenter: parent.verticalCenter
-        fillMode: Image.PreserveAspectFit
         width: iconSize
         height: iconSize
-        opacity: enabled ? 1.0 : 0.5
+        color: label.color
+        source: iconSource
     }
 
     Label {

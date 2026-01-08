@@ -228,7 +228,11 @@ void UCBottomEdgeHint::keyPressEvent(QKeyEvent *event)
 void UCBottomEdgeHint::mousePressEvent(QMouseEvent *event)
 {
     Q_D(UCBottomEdgeHint);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (contains(event->localPos()) && (d->status >= Active)) {
+#else
+    if (contains(event->position()) && (d->status >= Active)) {
+#endif
         d->pressed = true;
         event->accept();
         // also call requestFocus
@@ -240,7 +244,11 @@ void UCBottomEdgeHint::mousePressEvent(QMouseEvent *event)
 void UCBottomEdgeHint::mouseReleaseEvent(QMouseEvent *event)
 {
     Q_D(UCBottomEdgeHint);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (d->pressed && (d->status >= Active) && contains(event->localPos())) {
+#else
+    if (d->pressed && (d->status >= Active) && contains(event->position())) {
+#endif
         Q_EMIT clicked();
         event->accept();
     } else {

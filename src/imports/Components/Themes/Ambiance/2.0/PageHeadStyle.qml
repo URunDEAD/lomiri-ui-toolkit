@@ -109,7 +109,7 @@ Style.PageHeadStyle {
     implicitHeight: headerStyle.contentHeight + divider.height + sectionsItem.height
 
     // Used by unit tests and autopilot tests to wait for animations to finish
-    readonly property bool animating: headerStyle.state == "OUT"
+    readonly property bool animating: headerStyle.state === "OUT"
                                       || leftAnchor.anchors.leftMargin < 0
 
     // for Lomiri
@@ -377,7 +377,7 @@ Style.PageHeadStyle {
 
             Label {
                 objectName: "header_title_label"
-                LayoutMirroring.enabled: Qt.application.layoutDirection == Qt.RightToLeft
+                LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
                 visible: !contentsContainer.visible && headerStyle.config.preset === ""
                 anchors {
                     left: parent.left

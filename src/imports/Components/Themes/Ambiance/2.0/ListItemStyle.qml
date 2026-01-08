@@ -242,7 +242,7 @@ Styles.ListItemStyle {
                              panelComponent : null
         // context properties used in delegates
         readonly property bool leading: true
-        readonly property bool loaded: status == Loader.Ready
+        readonly property bool loaded: status === Loader.Ready
 
         // panel states
         states: [
@@ -381,14 +381,14 @@ Styles.ListItemStyle {
         velocity: units.gu(60)
         onStopped: {
             // trigger action
-            if (to == styledItem.contentItem.anchors.leftMargin && internals.selectedAction) {
+            if (to === styledItem.contentItem.anchors.leftMargin && internals.selectedAction) {
                 internals.selectedAction.trigger(listItemIndex);
                 internals.selectedAction = null;
             }
         }
         // animated snapping
         function snapTo(pos) {
-            if (pos == to && styledItem.contentItem.x == to) {
+            if (pos === to && styledItem.contentItem.x === to) {
                 return;
             }
 
@@ -410,12 +410,12 @@ Styles.ListItemStyle {
     onXChanged: internals.updateSnapDirection()
     // overriding default functions
     function swipeEvent(event) {
-        if (event.status == SwipeEvent.Started) {
+        if (event.status === SwipeEvent.Started) {
             internals.prevX = x;
             snapAnimation.stop();
-        } else if (event.status == SwipeEvent.Finished) {
+        } else if (event.status === SwipeEvent.Finished) {
             internals.snap();
-        } else if (event.status == SwipeEvent.Updated) {
+        } else if (event.status === SwipeEvent.Updated) {
             // handle elasticity when overshooting
             internals.overshoot(event)
         }

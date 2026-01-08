@@ -35,7 +35,7 @@ Item {
         scale: units.gridUnit / 27
 
         opacity: enabled ? 1.0 : 0.5
-        mirror: Qt.application.layoutDirection == Qt.RightToLeft
+        mirror: Qt.application.layoutDirection === Qt.RightToLeft
     }
 
     Image {

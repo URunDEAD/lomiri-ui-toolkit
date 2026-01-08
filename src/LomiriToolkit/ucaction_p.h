@@ -192,7 +192,11 @@ private:
     friend class UCListItemAttached;
     friend class UCListItemActionsPrivate;
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     bool isValidType(QVariant::Type valueType);
+#else
+    bool isValidType(QMetaType::Type valueType);
+#endif
     void generateName();
     void setMnemonicFromText(const QString &text);
     bool event(QEvent *event) override;

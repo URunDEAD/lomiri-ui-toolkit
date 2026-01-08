@@ -119,8 +119,8 @@ StyledItem {
             verticalScrollbar.__styleInstance.scrollBy(-flickableItem.height*internal.shortScrollingRatio, true)
         }
     }
-    Keys.onPressed:  {
-        if (event.key == Qt.Key_Escape) {
+    Keys.onPressed: function(event) {
+        if (event.key === Qt.Key_Escape) {
             var scrollbarWithActiveDrag = (horizontalScrollbar.__styleInstance && horizontalScrollbar.__styleInstance.draggingThumb && horizontalScrollbar)
                     || (verticalScrollbar.__styleInstance && verticalScrollbar.__styleInstance.draggingThumb && verticalScrollbar)
                     || null
@@ -129,16 +129,16 @@ StyledItem {
                 event.accepted = true
             }
         } else if (verticalScrollbar.__styleInstance !== null) {
-            if (event.key == Qt.Key_PageDown) {
+            if (event.key === Qt.Key_PageDown) {
                 verticalScrollbar.__styleInstance.scrollBy(flickableItem.height*internal.longScrollingRatio, true)
                 event.accepted = true
-            } else if (event.key == Qt.Key_PageUp) {
+            } else if (event.key === Qt.Key_PageUp) {
                 verticalScrollbar.__styleInstance.scrollBy(-flickableItem.height*internal.longScrollingRatio, true)
                 event.accepted = true
-            } else if (event.key == Qt.Key_Home) {
+            } else if (event.key === Qt.Key_Home) {
                 verticalScrollbar.__styleInstance.scrollToBeginning(true)
                 event.accepted = true
-            } else if (event.key == Qt.Key_End) {
+            } else if (event.key === Qt.Key_End) {
                 verticalScrollbar.__styleInstance.scrollToEnd(true)
                 event.accepted = true
             }
@@ -326,7 +326,7 @@ StyledItem {
             //recently
             MouseArea {
                 anchors.fill: parent
-                onPressed: {
+                onPressed: function(mouse) {
                     //FIXME: we can't force focus on the viewport, this breaks text selection inside scrollview!
                     //+ it still doesn't work in Sliders page, for yet unknown reasons
                     //Without this we can't shift focus from a child ScrollView to a parent ScrollView

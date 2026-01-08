@@ -69,7 +69,7 @@ Item {
         fadeIntensity: 0.0
 
         onStateChanged: {
-            if (state == HapticsEffect.Stopped) {
+            if (state === HapticsEffect.Stopped) {
                 effectData.restore();
             }
         }

@@ -302,7 +302,7 @@ Style.SectionsStyle {
             id: rightIcon
             objectName: "right_scroll_icon"
             // return whether the pressed event was done inside the area of the icon
-            function contains(mouse) {
+            function contains(mouse) : bool {
                 return (mouse.x > (hoveringArea.width - listViewContainer.listViewMargins) &&
                         !sectionsListView.atXEnd);
             }

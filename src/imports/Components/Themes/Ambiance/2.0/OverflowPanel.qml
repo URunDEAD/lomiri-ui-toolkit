@@ -83,7 +83,7 @@ ActionSelectionPopover {
 
         Icon {
             id: actionIcon
-            visible: "" != action.iconSource
+            visible: "" !== action.iconSource
             source: action.iconSource
             color: enabled ? overflow.foregroundColor
                            : overflow.disabledForegroundColor

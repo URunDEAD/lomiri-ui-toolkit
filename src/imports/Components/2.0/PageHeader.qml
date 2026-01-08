@@ -95,7 +95,7 @@ Header {
             leftMargin: leading.visible ? 0 : units.gu(1)
             rightMargin: trailing.visible ? 0 : units.gu(1)
         }
-        height: __styleInstance.contentHeight
+        height: header.__styleInstance ? header.__styleInstance.contentHeight : 0
         Loader {
             id: titleLoader
             anchors.fill: parent
@@ -175,7 +175,7 @@ Header {
             top: parent.top
             leftMargin: units.gu(1)
         }
-        height: header.__styleInstance.contentHeight
+        height: header.__styleInstance ? header.__styleInstance.contentHeight : 0
         numberOfSlots: 1
         delegate: header.__styleInstance.defaultActionDelegate
         actions: header.navigationActions
@@ -225,7 +225,7 @@ Header {
             top: parent.top
             rightMargin: units.gu(1)
         }
-        height: header.__styleInstance.contentHeight
+        height: header.__styleInstance ? header.__styleInstance.contentHeight : 0
         numberOfSlots: MathUtils.clamp(0.3*header.width/units.gu(4), 3, 6)
         delegate: header.__styleInstance.defaultActionDelegate
         visible: trailing.width > 0 // at least 1 visible action

@@ -629,12 +629,21 @@ void PlatformItemWrapper::updateIcon()
 
 inline QKeySequence sequenceFromVariant(const QVariant& variant)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (variant.type() == QVariant::Int) {
         return static_cast<QKeySequence::StandardKey>(variant.toInt());
     }
     if (variant.type() == QVariant::String) {
         return QKeySequence::fromString(variant.toString());
     }
+#else
+    if (variant.typeId() == QMetaType::Int) {
+        return static_cast<QKeySequence::StandardKey>(variant.toInt());
+    }
+    if (variant.typeId() == QMetaType::QString) {
+        return QKeySequence::fromString(variant.toString());
+    }
+#endif
     return QKeySequence();
 }
 

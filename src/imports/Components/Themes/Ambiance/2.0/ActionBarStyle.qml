@@ -16,7 +16,7 @@
 import QtQuick 2.4
 import Lomiri.Components
 import Lomiri.Components.Popups
-import Lomiri.Components.Styles 1.3 as Style
+import Lomiri.Components.Styles as Style
 
 Style.ActionBarStyle {
     id: actionBarStyle
@@ -97,7 +97,7 @@ Style.ActionBarStyle {
         id: actionsContainer
 
         property var visibleActions: getVisibleActions(styledItem.actions)
-        function getVisibleActions(actions) {
+        function getVisibleActions(actions): list{
             var visibleActionList = [];
             for (var i in actions) {
                 var action = actions[i];
@@ -107,7 +107,7 @@ Style.ActionBarStyle {
             }
             return visibleActionList;
         }
-        function getReversedActions(actions) {
+        function getReversedActions(actions): list {
             var newlist = [];
             for (var i=actions.length-1; i >= 0; i--) {
                 newlist.push(actions[i]);
@@ -154,9 +154,9 @@ Style.ActionBarStyle {
                 fadeObject.target = item;
                 fadeObject.start();
             }
-            onItemAdded: {
+            onItemAdded: function(index, item) {
                 if (count <= previousCount) return; // no items added
-                if (index == 0) fadeIn(item);
+                if (index === 0) fadeIn(item);
             }
         }
 

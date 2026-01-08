@@ -51,8 +51,8 @@ Item {
         anchors.fill: parent
         // Hide the gradient if the style was loaded and afterwards the header
         //  and footer color are set to the same value as backgroundColor.
-        visible: mainViewStyle.backgroundColor != mainViewStyle.headerColor ||
-                 mainViewStyle.backgroundColor != mainViewStyle.footerColor
+        visible: mainViewStyle.backgroundColor !== mainViewStyle.headerColor ||
+                 mainViewStyle.backgroundColor !== mainViewStyle.footerColor
         gradient: Gradient {
             GradientStop { position: 0.0; color: mainViewStyle.headerColor }
             GradientStop { position: 0.83; color: mainViewStyle.backgroundColor }

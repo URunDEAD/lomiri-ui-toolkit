@@ -81,7 +81,7 @@ MultiPointTouchArea {
     // or one of the input's parent Flickable
     readonly property bool scrollingDisabled: main && main.hasOwnProperty("autoSize") ?
                                                   (main.autoSize && (main.maximumLineCount <= 0)) : false
-    onScrollingDisabledChanged: if (state == "") flickable.interactive = !scrollingDisabled
+    onScrollingDisabledChanged: if (state === "") flickable.interactive = !scrollingDisabled
     readonly property Flickable grandScroller: firstFlickableParent(main)
     readonly property Flickable scroller: (scrollingDisabled && grandScroller) ? grandScroller : flickable
 
@@ -104,29 +104,29 @@ MultiPointTouchArea {
         return singleLine ? input.positionAt(x, TextInput.CursorOnCharacter) : input.positionAt(x, y, TextInput.CursorOnCharacter);
     }
     // returns the cursor position taking frame into account
-    function cursorPosition(x, y) {
+    function cursorPosition(x, y): point {
         var frameSpacing = main.__styleInstance.frameSpacing;
         var cursorPosition = unadulteratedCursorPosition(x, y);
-        if (cursorPosition == 0)
+        if (cursorPosition === 0)
             cursorPosition = unadulteratedCursorPosition(x + frameSpacing, y + frameSpacing);
-        if (cursorPosition == text.length)
+        if (cursorPosition === text.length)
             cursorPosition = unadulteratedCursorPosition(x - frameSpacing, y - frameSpacing);
         return cursorPosition
     }
 
     // returns the mouse position
-    function mousePosition(mouse) {
+    function mousePosition(mouse): point {
         return cursorPosition(mouse.x, mouse.y);
     }
     // checks whether the position is in the selected text
-    function positionInSelection(pos) {
+    function positionInSelection(pos): bool {
         return (input.selectionStart !== input.selectionEnd)
                 && (pos >= Math.min(input.selectionStart, input.selectionEnd))
                 && (pos <= Math.max(input.selectionStart, input.selectionEnd));
     }
 
     // check whether the mouse is inside a selected text area
-    function mouseInSelection(mouse) {
+    function mouseInSelection(mouse): bool {
         var pos = mousePosition(mouse);
         return positionInSelection(pos);
     }
@@ -318,7 +318,7 @@ MultiPointTouchArea {
         function onCursorRectangleChanged() { ensureVisible(input.cursorRectangle) }
         function onTextChanged() {
             inputHandler.textChanged = true;
-            if (inputHandler.oldText != input.text) {
+            if (inputHandler.oldText !== input.text) {
                 inputHandler.textModified()
                 inputHandler.oldText = input.text
             }
@@ -357,7 +357,7 @@ MultiPointTouchArea {
         }
     }
 
-    // touch and mous handling
+    // touch and mouse handling
     function handlePressed(event) {
         if (event.touch) {
             // we do not have longTap or double tap, therefore we need to generate those
@@ -410,10 +410,10 @@ MultiPointTouchArea {
 
     // Mouse handling
     Mouse.forwardTo: [main]
-    Mouse.onPressed: handlePressed(mouse)
-    Mouse.onReleased: handleReleased(mouse)
-    Mouse.onPositionChanged: handleMove(mouse)
-    Mouse.onDoubleClicked: handleDblClick(mouse)
+    Mouse.onPressed: function(mouse) { handlePressed(mouse); }
+    Mouse.onReleased: function(mouse) { handleReleased(mouse); }
+    Mouse.onPositionChanged: function(mouse) { handleMove(mouse); }
+    Mouse.onDoubleClicked: function(mouse) { handleDblClick(mouse); }
 
     // right button handling
     MouseArea {
@@ -473,8 +473,8 @@ MultiPointTouchArea {
             tapCount = running;
         }
     }
-    onPressed: handlePressed(touchPoints[0])
-    onReleased: handleReleased(touchPoints[0])
+    onPressed: { handlePressed(touchPoints[0]); }
+    onReleased: { handleReleased(touchPoints[0]); }
 
     property Item cursorPositionCursor: null
     property Item selectionStartCursor: null

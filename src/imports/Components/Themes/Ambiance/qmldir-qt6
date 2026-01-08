@@ -26,7 +26,6 @@ SwitchStyle 2.0 ./2.0/SwitchStyle.qml
 CheckBoxStyle 2.0 ./2.0/CheckBoxStyle.qml
 
 ListItemStyle 2.0 ./2.0/ListItemStyle.qml
-internal SliderUtils 2.0/sliderUtils.js
 PageHeaderStyle 2.0 ./2.0/PageHeaderStyle.qml
 BottomEdgeHintStyle 2.0 ./2.0/BottomEdgeHintStyle.qml
 BottomEdgeStyle 2.0 ./2.0/BottomEdgeStyle.qml
