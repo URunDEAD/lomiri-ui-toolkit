@@ -65,8 +65,10 @@ void UCBottomEdgeHintPrivate::init()
      */
     styleDocument = QStringLiteral("BottomEdgeHintStyle");
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // connect old stateChanged
     QObject::connect(q, &QQuickItem::stateChanged, q, &UCBottomEdgeHint::stateChanged);
+#endif
 
     // FIXME: use QInputDeviceInfo once available
     // https://bugs.launchpad.net/lomiri/+source/lomiri-ui-toolkit/+bug/1276808
