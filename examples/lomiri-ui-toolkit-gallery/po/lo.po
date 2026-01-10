@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2023-01-04 19:46+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-01-10 05:23+0000\n"
+"Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/lo/>\n"
 "Language: lo\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 
 #: About.qml:34
 msgid "About..."
@@ -38,7 +38,7 @@ msgstr ""
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "ປິດການໃຊ້ງານ"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "ເປີດ"
 
 #: Icons.qml:29
 msgid "Scaling"
@@ -141,7 +141,7 @@ msgstr ""
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "ຮູບແບບ"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -255,7 +255,7 @@ msgstr ""
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "ຣີເຊັດ"
 
 #: ListItems.qml:226
 msgid "Grouped list"
@@ -452,7 +452,7 @@ msgstr ""
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "ລະຫັດຜ່ານ"
 
 #: TextInputs.qml:67
 msgid "Numbers"
@@ -472,7 +472,7 @@ msgstr ""
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "ຄ່າເລີ່ມຕົ້ນ"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
