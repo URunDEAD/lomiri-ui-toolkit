@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2026-01-10 05:23+0000\n"
+"PO-Revision-Date: 2026-01-10 11:03+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/lo/>\n"
@@ -53,17 +53,17 @@ msgstr "ລຶບ"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:51
 msgid "No service/path specified"
-msgstr ""
+msgstr "ບໍ່ໄດ້ລະບຸການບໍລິການ/ເສັ້ນທາງ"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:69
 #, qt-format
 msgid "Invalid bus type: %1."
-msgstr ""
+msgstr "ປະເພດ bus ບໍ່ຖືກຕ້ອງ: %1."
 
 #. TRANSLATORS: Time based "this is happening/happened now"
 #: Lomiri/Components/plugin/i18n.cpp:268
 msgid "Now"
-msgstr ""
+msgstr "ດຽວນີ້"
 
 #: Lomiri/Components/plugin/i18n.cpp:275
 #, qt-format
@@ -81,67 +81,68 @@ msgstr[0] "%1 ນາທີ"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:284
 msgid "h:mm ap"
-msgstr ""
+msgstr "HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:287
 msgid "HH:mm"
-msgstr ""
+msgstr "HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:293
 msgid "'Yesterday 'h:mm ap"
-msgstr ""
+msgstr "'ວານນີ້ 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:296
 msgid "'Yesterday 'HH:mm"
-msgstr ""
+msgstr "'ວານນີ້ 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:302
 msgid "'Tomorrow 'h:mm ap"
-msgstr ""
+msgstr "'ມື້ອື່ນ 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:305
 msgid "'Tomorrow 'HH:mm"
-msgstr ""
+msgstr "'ມື້ອື່ນ 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:312
 msgid "ddd' 'h:mm ap"
-msgstr ""
+msgstr "ddd' 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:315
 msgid "ddd' 'HH:mm"
-msgstr ""
+msgstr "ddd' 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:322
 msgid "ddd d MMM' 'h:mm ap"
-msgstr ""
+msgstr "ddd d MMM' 'HH:mm"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:325
 msgid "ddd d MMM' 'HH:mm"
-msgstr ""
+msgstr "ddd d MMM' 'HH:mm"
 
 #: Lomiri/Components/plugin/privates/listitemdragarea.cpp:122
 msgid ""
 "ListView has no ViewItems.dragUpdated() signal handler implemented. No "
 "dragging will be possible."
 msgstr ""
+"ListView ບໍ່ມີຕົວຈັດການສັນຍານ ViewItems.dragUpdated() ທີ່ຖືກນຳໃຊ້. ຈະບໍ່ສາມາດລາກໄດ້."
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:176
 #, qt-format
@@ -149,76 +150,77 @@ msgid ""
 "property \"%1\" of object %2 has type %3 and cannot be set to value \"%4\" "
 "of type %5"
 msgstr ""
+"ຄຸນສົມບັດ \"%1\" ຂອງວັດຖຸ %2 ມີປະເພດ %3 ແລະ ບໍ່ສາມາດຕັ້ງຄ່າເປັນ \"%4\" ຂອງປະເພດ %5 ໄດ້"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:185
 #, qt-format
 msgid "property \"%1\" does not exist or is not writable for object %2"
-msgstr ""
+msgstr "ຄຸນສົມບັດ \"%1\" ບໍ່ມີຢູ່ ຫຼື ບໍ່ສາມາດຂຽນໃສ່ໄດ້ສຳລັບວັດຖຸ %2"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:41
 #: Lomiri/Components/plugin/ucalarm.cpp:643
 msgid "Alarm"
-msgstr ""
+msgstr "ໂມງປຸກ"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:635
 #: Lomiri/Components/plugin/ucalarm.cpp:667
 msgid "Alarm has a pending operation."
-msgstr ""
+msgstr "ໂມງປຸກມີການດຳເນີນການທີ່ຍັງຄຄ້າງຢູ່."
 
 #: Lomiri/Components/plugin/ucarguments.cpp:188
 msgid "Usage: "
-msgstr ""
+msgstr "ການນຳໃຊ້: "
 
 #: Lomiri/Components/plugin/ucarguments.cpp:209
 msgid "Options:"
-msgstr ""
+msgstr "ທາງເລືອກ:"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:498
 #, qt-format
 msgid "%1 is expecting an additional argument: %2"
-msgstr ""
+msgstr "%1 ຕ້ອງການ argument ເພີ່ມເຕີມ: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:503
 #, qt-format
 msgid "%1 is expecting a value for argument: %2"
-msgstr ""
+msgstr "%1 ຕ້ອງການຄ່າສຳລັບ argument: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:520
 #, qt-format
 msgid "%1 is expecting additional arguments: %2"
-msgstr ""
+msgstr "%1 ຕ້ອງການ arguments ເພີ່ມເຕີມ: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr ""
+msgstr "ຄວນພິຈາລະນາຂຽນທັບ swipeEvent() slot!"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
-msgstr ""
+msgstr "ຄວນພິຈາລະນາຂຽນທັບ rebound() slot!"
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
-msgstr ""
+msgstr "ບໍ່ສົນໃຈບຸລິມະສິດ AfterItem ສຳລັບ InverseMouse filters."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
-msgstr ""
+msgstr "ການປ່ຽນແປງພາຣາມິເຕີການເຊື່ອມຕໍ່ຖືກຫ້າມ."
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:160
 #, qt-format
 msgid ""
 "Binding detected on property '%1' will be removed by the service updates."
-msgstr ""
+msgstr "Binding ທີ່ກວດພົບໃນຄຸນສົມບັດ '%1' ຈະຖືກລຶບອອກໂດຍການອັບເດດການບໍລິການ."
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:46
 msgid "Warning: attachee must have an ID. State will not be saved."
-msgstr ""
+msgstr "ຄຳເຕືອນ: attachee ຕ້ອງມີ ID. ສະຖານະຈະບໍ່ຖືກບັນທຶກ."
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:56
 #, qt-format
 msgid ""
 "Warning: attachee's UUID is already registered, state won't be saved: %1"
-msgstr ""
+msgstr "ຄຳເຕືອນ: UUID ຂອງ attachee ໄດ້ລົງທະບຽນແລ້ວ, ສະຖານະຈະບໍ່ຖືກບັນທຶກ: %1"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:107
 #, qt-format
@@ -226,25 +228,28 @@ msgid ""
 "All the parents must have an id.\n"
 "State saving disabled for %1, class %2"
 msgstr ""
+"Parent ທັງໝົດຕ້ອງມີ id.\n"
+"ການບັນທຶກສະຖານະຖືກປິດໃຊ້ງານສຳລັບ %1, class %2"
 
 #: Lomiri/Components/plugin/uctheme.cpp:208
 #, qt-format
 msgid "Theme not found: \"%1\""
-msgstr ""
+msgstr "ບໍ່ພົບຕີມ: \"%1\""
 
 #: Lomiri/Components/plugin/uctheme.cpp:539
 msgid "Not a Palette component."
-msgstr ""
+msgstr "ບໍ່ແມ່ນອົງປະກອບ Palette."
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:462
 msgid "Dragging mode requires ListView"
-msgstr ""
+msgstr "ໂໝດການລາກ ຕ້ອງການ ListView"
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:468
 msgid ""
 "Dragging is only supported when using a QAbstractItemModel, ListModel or "
 "list."
 msgstr ""
+"ການລາກ ຮອງຮັບສະເພາະເມື່ອໃຊ້ QAbstractItemModel, ListModel ຫຼື list ເທົ່ານັ້ນ."
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
@@ -254,7 +259,7 @@ msgstr "ຍົກເລີກ"
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:88
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:88
 msgid "Confirm"
-msgstr ""
+msgstr "ຢືນຢັນ"
 
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:85
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:85
@@ -269,14 +274,14 @@ msgstr "ສຳເລັດ"
 #: Lomiri/Components/Themes/Ambiance/1.2/ProgressBarStyle.qml:51
 #: Lomiri/Components/Themes/Ambiance/1.3/ProgressBarStyle.qml:50
 msgid "In Progress"
-msgstr ""
+msgstr "ກຳລັງດຳເນີນການ"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/PullToRefreshStyle.qml:28
 #: Lomiri/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml:28
 msgid "Release to refresh..."
-msgstr ""
+msgstr "ປ່ອຍເພື່ອໂຫຼດຄືນ..."
 
 #: Lomiri/Components/Themes/Ambiance/1.2/PullToRefreshStyle.qml:28
 #: Lomiri/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml:28
 msgid "Pull to refresh..."
-msgstr ""
+msgstr "ດຶງເພື່ອໂຫຼດຄືນ..."
