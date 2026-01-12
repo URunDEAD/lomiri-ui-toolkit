@@ -114,7 +114,8 @@ void UCQQuickImageExtension::reloadSource()
     if (!qmlEngine(m_image)) {
         return;
     }
-    if (m_source.isEmpty()) {
+    // QQuickAnimatedImage doesn't support image providers
+    if (m_source.isEmpty() || m_image->inherits("QQuickAnimatedImage")) {
         m_image->setSource(m_source);
         return;
     }
