@@ -12,5 +12,8 @@ QML_FILES += \
     LomiriTestCase.qml \
     LomiriTestCase13.qml \
 
+DYNAMIC_QMLDIR = $$cat(qmldir-qt5, lines)
+OTHER_FILES+= qmldir-qt5
+
 load(lomiri_qml_plugin)
 
