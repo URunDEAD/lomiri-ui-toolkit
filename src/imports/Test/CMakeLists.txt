@@ -5,8 +5,7 @@ add_library(LomiriTest MODULE
 )
 
 set(QML_FILES
-    LomiriTestCase.qml
-    LomiriTestCase13.qml
+    LomiriTestCase20.qml
 )
 
 target_compile_definitions(LomiriTest PRIVATE
@@ -26,10 +25,11 @@ target_link_libraries(LomiriTest PRIVATE
     Qt::Test
 )
 
+set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Test")
+
 install(TARGETS LomiriTest
     DESTINATION "${QML_PLUGIN_BASE_DIR}/Test"
 )
 
-install(FILES ${QML_FILES} qmldir
-    DESTINATION "${QML_PLUGIN_BASE_DIR}/Test"
-)
+install(FILES ${QML_FILES} DESTINATION ${QML_PLUGIN_DIR}/)
+install(FILES "qmldir-qt6" DESTINATION ${QML_PLUGIN_DIR}/ RENAME "qmldir")
