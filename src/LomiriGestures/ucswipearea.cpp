@@ -22,7 +22,6 @@
 #include <QtQuick/QQuickWindow>
 #include <QtQuick/private/qquickwindow_p.h>
 
-#include "debughelpers_p.h"
 #include "touchownershipevent_p.h"
 #include "touchregistry_p.h"
 #include "unownedtouchevent_p.h"
@@ -386,7 +385,7 @@ void UCSwipeAreaPrivate::unownedTouchEvent(UnownedTouchEvent *unownedTouchEvent)
     Q_ASSERT(!event->touchPointStates().testFlag(Qt::TouchPointPressed));
 #endif
 
-    SA_TRACE("Unowned " << timeSource->msecsSinceReference() << " " << qPrintable(touchEventToString(event)));
+    SA_TRACE("Unowned " << timeSource->msecsSinceReference() << " " << event);
 
     switch (status) {
         case WaitingForTouch:
@@ -474,7 +473,7 @@ void UCSwipeArea::touchEvent(QTouchEvent *event)
     //       with Mir's android-input). Have to track them all. Consider it a plus/bonus.
 
     Q_D(UCSwipeArea);
-    SA_TRACE(d->timeSource->msecsSinceReference() << " " << qPrintable(touchEventToString(event)));
+    SA_TRACE(d->timeSource->msecsSinceReference() << " " << event);
 
     if (!isEnabled() || !isVisible()) {
         QQuickItem::touchEvent(event);
