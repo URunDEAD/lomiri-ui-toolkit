@@ -206,7 +206,7 @@ QStringList themeSearchPath()
 #elif QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     pathList << QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath).split(':', Qt::SkipEmptyParts);
 #else
-    pathList << QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath).split(':', Qt::SkipEmptyParts);
+    pathList << QLibraryInfo::paths(QLibraryInfo::Qml2ImportsPath);
 #endif
     // fix folders
     QStringList result;
