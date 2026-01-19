@@ -1,7 +1,6 @@
 add_library(LomiriGestures SHARED
     candidateinactivitytimer.cpp candidateinactivitytimer_p.h
     damper.cpp damper_p.h
-    debughelpers.cpp debughelpers_p.h
     lomirigesturesmodule.cpp lomirigesturesmodule.h
     lomirigesturesglobal.h
     pool_p.h

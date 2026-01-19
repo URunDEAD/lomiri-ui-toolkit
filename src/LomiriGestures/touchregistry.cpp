@@ -24,7 +24,6 @@
 #endif
 
 #include "candidateinactivitytimer_p.h"
-#include "debughelpers_p.h"
 #include "timer_p.h"
 #include "touchownershipevent_p.h"
 #include "unownedtouchevent_p.h"
@@ -71,7 +70,7 @@ void TouchRegistry::update(QTouchEvent *event)
 void TouchRegistry::update(const QTouchEvent *event)
 #endif
 {
-    UG_DEBUG << "got" << qPrintable(touchEventToString(event));
+    UG_DEBUG << "got" << event;
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     m_eventsInDelivery.append(event);
@@ -256,7 +255,7 @@ void TouchRegistry::dispatchPointsToItem(const QTouchEvent *event, const QList<i
 
     UnownedTouchEvent unownedTouchEvent(eventForItem);
 
-    UG_DEBUG << "Sending unowned" << qPrintable(touchEventToString(eventForItem))
+    UG_DEBUG << "Sending unowned" << eventForItem
         << "to" << item;
 
     QCoreApplication::sendEvent(item, &unownedTouchEvent);

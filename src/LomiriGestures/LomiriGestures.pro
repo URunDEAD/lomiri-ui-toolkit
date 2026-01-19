@@ -10,7 +10,6 @@ warnings_are_errors:!contains(QMAKE_CXXFLAGS_WARN_ON, -Werror){
 HEADERS += \
     $$PWD/candidateinactivitytimer_p.h \
     $$PWD/damper_p.h \
-    $$PWD/debughelpers_p.h \
     $$PWD/pool_p.h \
     $$PWD/timer_p.h \
     $$PWD/timesource_p.h \
@@ -25,7 +24,6 @@ HEADERS += \
 SOURCES += \
     $$PWD/candidateinactivitytimer.cpp \
     $$PWD/damper.cpp \
-    $$PWD/debughelpers.cpp \
     $$PWD/timer.cpp \
     $$PWD/timesource.cpp \
     $$PWD/touchownershipevent.cpp \
