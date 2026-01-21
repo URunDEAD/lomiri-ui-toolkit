@@ -11,15 +11,29 @@ function(lomiri_target_prepare_headers target)
     )
     set(lomiriPublicHeaders)
     set(lomiriPrivateHeaders)
+    set(copiedHeaders)
     foreach(file ${sourceFiles})
+        get_filename_component(fileName "${file}" NAME)
         if(${file} MATCHES "_p\.h$")
-            file(COPY "${file}" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/${LTPH_SUBDIRECTORY}/private")
             list(APPEND lomiriPrivateHeaders "${file}")
+            set(destFile "${CMAKE_CURRENT_BINARY_DIR}/${LTPH_SUBDIRECTORY}/private/${fileName}")
         elseif(${file} MATCHES "\.h$")
-            file(COPY "${file}" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/${LTPH_SUBDIRECTORY}")
             list(APPEND lomiriPublicHeaders "${file}")
+            set(destFile "${CMAKE_CURRENT_BINARY_DIR}/${LTPH_SUBDIRECTORY}/${fileName}")
+        else()
+            continue()
         endif()
+        add_custom_command(
+            OUTPUT "${destFile}"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                "${CMAKE_CURRENT_SOURCE_DIR}/${file}" "${destFile}"
+            DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${file}"
+            COMMENT "Copying ${file} to build directory"
+        )
+        list(APPEND copiedHeaders "${destFile}")
     endforeach()
+    add_custom_target(${target}_headers DEPENDS ${copiedHeaders})
+    add_dependencies(${target} ${target}_headers)
     set_property(TARGET ${target} PROPERTY
         LOMIRI_PUBLIC_HEADERS ${lomiriPublicHeaders}
     )
