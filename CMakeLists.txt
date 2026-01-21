@@ -4,6 +4,9 @@ cmake_policy(SET CMP0048 NEW) # for ecm_setup_version
 
 option(WITH_LOMIRI_MIR "Enable mir support in LomiriSystemInfo" ON)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 set(LOMIRI_UI_TOOLKIT_VERSION "1.0.0")
 set(LOMIRI_UI_TOOLKIT_SOVERSION "1")
 set(QT_VERSION_MAJOR 6)

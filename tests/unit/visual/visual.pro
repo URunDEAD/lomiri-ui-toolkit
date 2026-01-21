@@ -6,7 +6,7 @@ TESTS += $$system(ls tst_*.qml)
 
 include(../qmltest-include-x11.pri)
 
-CONFIG += c++11
+CONFIG += c++17
 
 SOURCES += tst_visual.cpp tabsmodel.cpp
 HEADERS += tabsmodel.h
