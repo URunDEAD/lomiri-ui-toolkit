@@ -287,7 +287,7 @@ PageTreeNode {
         /*!
           The instance of the stack from javascript
          */
-        property var stack: new Stack.Stack()
+        property var stack: Stack.createStack()
 
         function createWrapper(page, properties) {
             var wrapperObject = pageWrapperComponent.createObject(pageStack);
