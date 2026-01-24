@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-01-10 05:23+0000\n"
+"PO-Revision-Date: 2026-01-25 06:44+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/lo/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: About.qml:34
 msgid "About..."
@@ -294,9 +294,8 @@ msgid "Custom action delegates"
 msgstr ""
 
 #: NewListItems.qml:111
-#, fuzzy
 msgid "Edit"
-msgstr "Edit"
+msgstr "ແກ້ໄຂ"
 
 #: NewListItems.qml:114
 msgid "Move"
