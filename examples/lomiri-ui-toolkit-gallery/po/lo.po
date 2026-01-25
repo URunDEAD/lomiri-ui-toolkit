@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-01-25 06:44+0000\n"
+"PO-Revision-Date: 2026-01-25 15:46+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/lo/>\n"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "ໂທ"
 
 #: Buttons.qml:37
 msgid "Stroke"
@@ -414,7 +414,7 @@ msgstr ""
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "ຕຳແໜ່ງ"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
@@ -455,7 +455,7 @@ msgstr "ລະຫັດຜ່ານ"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "ເບີໂທ"
 
 #: TextInputs.qml:78
 msgid "Read-only"
