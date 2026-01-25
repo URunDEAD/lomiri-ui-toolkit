@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-01-25 17:30+0000\n"
+"PO-Revision-Date: 2026-01-25 17:49+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/lo/>\n"
@@ -21,54 +21,54 @@ msgstr ""
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "ກ່ຽວກັບ..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "ລາຍການແບບສັ້ນ"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "ຈຳນວນຊ່ອງ"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "ລາຍການແບບຍາວ"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr "ປິດການໃຊ້ງານ"
+msgstr "ປິດໃຊ້ງານ"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "ແອນີເມຊັນຕົວເລກ"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "ມາດຕະຖານ"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr ""
+msgstr "ໄລຍະເວລາຜ່ານມາດຕະຖານ"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "ຈັດໃຫ້ພໍດີ"
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "ໄວ"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "ຊ້າ"
 
 #: Animations.qml:159
 msgid "Sleepy"
-msgstr ""
+msgstr "ເນີບໆ"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
@@ -76,7 +76,7 @@ msgstr "ໂທ"
 
 #: Buttons.qml:37
 msgid "Stroke"
-msgstr ""
+msgstr "ເສັ້ນຂອບ"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
@@ -85,35 +85,35 @@ msgstr "ສີ"
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "ໂທ %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "ໄອຄອນ"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "ໄອຄອນ+ຂໍ້ຄວາມ"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "ພັບໄວ້"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "ຂະຫຍາຍອອກ"
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "ສີສົ້ມ"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "ສີເທົາອ່ອນ"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "ສີເທົາເຂັ້ມ"
 
 #: Colors.qml:48
 msgid "Red"
@@ -129,7 +129,7 @@ msgstr "ສີຟ້າ"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "ສີມ່ວງ"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
@@ -137,7 +137,7 @@ msgstr "ເປີດ"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "ການປັບຂະໜາດ"
 
 #: Icons.qml:79
 msgid "Theme"
@@ -145,7 +145,7 @@ msgstr "ທີມ"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "ການດຳເນີນການກ່ອນໜ້າ ແລະ ຕໍ່ທ້າຍ"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
@@ -155,103 +155,103 @@ msgstr "ປ້າຍຊື່"
 
 #: ListItems.qml:33
 msgid "Subtitled"
-msgstr ""
+msgstr "ມີຄຳບັນຍາຍ"
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "ປ້າຍຊື່ສຳຮອງ"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "ເສັ້ນແບ່ງບາງ"
 
 #: ListItems.qml:73
 msgid "Progression"
-msgstr ""
+msgstr "ຄວາມຄືບໜ້າ"
 
 #: ListItems.qml:82
 msgid "Single value"
-msgstr ""
+msgstr "ຄ່າດຽວ"
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "ຄ່າ"
 
 #: ListItems.qml:91
 msgid "Multi value"
-msgstr ""
+msgstr "ຫຼາຍຄ່າ"
 
 #: ListItems.qml:95 ListItems.qml:113 ListItems.qml:122 ListItems.qml:132
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "ຄ່າ 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "ຄ່າ 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "ຄ່າ 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "ຄ່າ 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "ຕົວເລືອກລາຍການ"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "ກຳລັງຂະຫຍາຍ"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr ""
+msgstr "ເລືອກໄດ້ຫຼາຍອັນ"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "ຮູບແບບກຳນົດເອງ"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "ຄ່າ 5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "ຄ່າ 6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
 msgid "Value 7"
-msgstr ""
+msgstr "ຄ່າ 7"
 
 #: ListItems.qml:168 ListItems.qml:183 OptionSelectors.qml:91
 #: OptionSelectors.qml:106
 msgid "Value 8"
-msgstr ""
+msgstr "ຄ່າ 8"
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "ການຄວບຄຸມ"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr ""
+msgstr "ລຶບອອກໄດ້"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr ""
+msgstr "ເລື່ອນເພື່ອລຶບອອກ"
 
 #: ListItems.qml:215
 msgid "Reset"
@@ -259,39 +259,39 @@ msgstr "ຣີເຊັດ"
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr ""
+msgstr "ລາຍການແບບຈັດກຸ່ມ"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "LomiriListView"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "ExpandablesColumn"
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "ຂະຫຍາຍໄດ້"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "ມີສີ"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "ສີໄຮໄລ້"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "ການດຳເນີນການດ້ານໜ້າ"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "ການດຳເນີນການດ້ານຫຼັງ"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "ຕົວແທນການດຳເນີນການກຳນົດເອງ"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -299,62 +299,64 @@ msgstr "ແກ້ໄຂ"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "ຍ້າຍ"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "ພື້ນຖານ"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "ເສັ້ນແບ່ງມີສີ"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "ປ່ຽນແປງບໍ່ໄດ້"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "ບໍ່ມີເສັ້ນແບ່ງ"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "ຕົວເລືອກອັອບຊັນ"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "ນີ້ແມ່ນຄ່າທີສອງ"
 
 #: OptionSelectors.qml:35
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
+"ຂໍ້ຄວາມຕົວຢ່າງສຳລັບການທົດສອບຮູບແບບການສະແດງຜົນຂອງຂໍ້ຄວາມໃນລະບົບ ເພື່ອເບິ່ງຄວາມສວຍງາມ ແລະ ການຈັ"
+"ດວາງທີ່ເໝາະສົມ."
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "ກາລະຄັ້ງໜຶ່ງ ມີເລື່ອງລາວທີ່ບໍ່ມີໃຜເຄີຍເລົ່າ."
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "ຄວາມສູງຂອງບ່ອນບັນຈຸກຳນົດເອງ"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "ບໍ່ມີການເລືອກເລີ່ມຕົ້ນ, ເລື່ອນໄດ້."
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "ເສັ້ນຊື່"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "ວົງມົນ"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "ບໍ່ມີສິ້ນສຸດ"
 
 #: Pickers.qml:137
 msgid "Clock"
@@ -362,47 +364,47 @@ msgstr "ໂມງ"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "ຊ້ອນທັບ"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "ປັດໄດ້"
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "ການດຳເນີນການ #1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "ການດຳເນີນການ #2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "ການດຳເນີນການ #3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "ການດຳເນີນການ #4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "ການດຳເນີນການ #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "ແຖບຄວາມຄືບໜ້າ"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "ບໍ່ມີປ້າຍຊື່"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "ຕົວບົ່ງຊີ້ການເຄື່ອນໄຫວ"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "ຂະໜາດ"
 
 #: Sections.qml:34
 msgid "Enabled"
@@ -411,43 +413,44 @@ msgstr "ເປີດໃຊ້ງານ"
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
 msgstr ""
+"ຮູບແບບການສະແດງຜົນຂອງ Sheet ນີ້ແມ່ນຢູ່ໃນຊ່ວງເລີ່ມຕົ້ນ ແລະ ອາດຈະເບິ່ງບໍ່ທັນຮຽບຮ້ອຍ."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr "ຕຳແໜ່ງ"
+msgstr "ຫົວຂໍ້"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "ຄ່າຕົວຈິງ: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "ອັບເດດສົດ"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "ຊ່ວງ"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "ປ້າຍຊື່"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "ນ້ອຍ"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "ກາງ"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "ໃຫຍ່"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "ພິມບ່ອນນີ້..."
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -455,19 +458,19 @@ msgstr "ລະຫັດຜ່ານ"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr "ເບີໂທ"
+msgstr "ຕົວເລກ"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "ອ່ານຢ່າງດຽວ"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "ບໍ່ໃຫ້ໃຜພິມໃສ່ນີ້"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "ບໍ່ອະນຸຍາດໃຫ້ມີການຕອບໂຕ້"
 
 #: TextInputs.qml:107
 msgid "Default"
@@ -475,23 +478,23 @@ msgstr "ຄ່າເລີ່ມຕົ້ນ"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "ຂໍ້ຄວາມແບບປັບແຕ່ງໄດ້"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "ບໍ່ໄດ້ໝາຍເລືອກ"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "ໝາຍເລືອກແລ້ວ"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "ອັດຕາສ່ວນ"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "ລັດສະໝີ"
 
 #: LomiriShape.qml:115
 msgid "Image"
@@ -499,4 +502,4 @@ msgstr "ຮູບພາບ"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "ການໄລ່ສີ"
