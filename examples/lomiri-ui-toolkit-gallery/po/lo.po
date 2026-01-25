@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-01-25 15:46+0000\n"
+"PO-Revision-Date: 2026-01-25 16:48+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/lo/>\n"
@@ -80,7 +80,7 @@ msgstr ""
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "ສີ"
 
 #: Buttons.qml:53
 #, qt-format
@@ -141,7 +141,7 @@ msgstr ""
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr "ຮູບແບບ"
+msgstr "ຫົວຂໍ້"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -151,7 +151,7 @@ msgstr ""
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "ປ້າຍຊື່"
 
 #: ListItems.qml:33
 msgid "Subtitled"
@@ -358,7 +358,7 @@ msgstr ""
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "ໂມງ"
 
 #: Pickers.qml:174
 msgid "Overlay"
@@ -406,7 +406,7 @@ msgstr ""
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "ເປີດໃຊ້ງານ"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
