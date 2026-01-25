@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2026-01-25 15:46+0000\n"
+"PO-Revision-Date: 2026-01-25 16:48+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/lo/>\n"
@@ -33,7 +33,7 @@ msgstr "ຕັດ"
 #: Lomiri/Components/1.2/TextInputPopover.qml:48
 #: Lomiri/Components/1.3/TextInputPopover.qml:48
 msgid "Copy"
-msgstr "ສຳເນົາ"
+msgstr "ຄັດລອກ"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:57
 #: Lomiri/Components/1.3/TextInputPopover.qml:57
