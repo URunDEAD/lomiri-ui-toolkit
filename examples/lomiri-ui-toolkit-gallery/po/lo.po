@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-01-25 16:48+0000\n"
+"PO-Revision-Date: 2026-01-25 17:18+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/lo/>\n"
@@ -117,15 +117,15 @@ msgstr ""
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "ສີແດງ"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "ສີຂຽວ"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "ສີຟ້າ"
 
 #: Colors.qml:66
 msgid "Purple"
