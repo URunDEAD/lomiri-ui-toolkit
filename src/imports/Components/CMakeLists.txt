@@ -21,7 +21,6 @@ qt_add_qml_module(LomiriComponents
     SOURCES
         plugin/plugin.cpp
     QML_FILES
-        2.0/AbstractButton.qml
         2.0/ActionBar.qml
         2.0/ActionList.qml
         2.0/ActivityIndicator.qml
@@ -37,13 +36,11 @@ qt_add_qml_module(LomiriComponents
         2.0/Haptics.qml
         2.0/Icon.qml
         2.0/InputHandler.qml
-        2.0/Label.qml
         2.0/ListItemPopover.qml
         2.0/LomiriColors.qml
         2.0/LomiriListView.qml
         2.0/LomiriNumberAnimation.qml
         2.0/MainView.qml
-        2.0/MainViewBase.qml
         2.0/OptionSelector.qml
         2.0/OptionSelectorDelegate.qml
         2.0/OrientationHelper.qml
@@ -55,8 +52,6 @@ qt_add_qml_module(LomiriComponents
         2.0/PageHeadSections.qml
         2.0/PageHeadState.qml
         2.0/PageStack.qml
-        2.0/PageTreeNode.qml
-        2.0/PageWrapper.qml
         2.0/Panel.qml
         2.0/ProgressBar.qml
         2.0/ProgressionSlot.qml
