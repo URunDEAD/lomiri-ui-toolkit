@@ -297,7 +297,7 @@ void UCPageWrapperPrivate::loadComponentState()
     Q_Q(UCPageWrapper);
     m_state = LoadingComponent;
 
-    if (m_reference.canConvert<QQmlComponent *>()) {
+    if (m_reference.value<QQmlComponent *>()) {
 
         //m_reference points to a Component already, make sure we do not
         //delete it later on
@@ -314,7 +314,7 @@ void UCPageWrapperPrivate::loadComponentState()
         m_ownsComponent = true;
         m_component = new QQmlComponent(qmlEngine(q), componentUrl, cMode);
 
-    } else if (m_reference.canConvert<QQuickItem *>()) {
+    } else if (m_reference.value<QQuickItem *>()) {
         //the object is owned by JS
         setCanDestroy(false);
 
@@ -654,7 +654,7 @@ void UCPageWrapper::itemChange(QQuickItem::ItemChange change, const QQuickItem::
             anchors->resetFill();
         }
     }
-    UCStyledItemBase::itemChange(change, data);
+    UCPageTreeNode::itemChange(change, data);
 }
 
 /*!
