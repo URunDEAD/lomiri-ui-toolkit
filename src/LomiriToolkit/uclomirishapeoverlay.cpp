@@ -58,7 +58,11 @@ QSGMaterialType* ShapeOverlayMaterial::type() const
     return &type;
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+QSGMaterialShader* ShapeOverlayMaterial::createShader(QSGRendererInterface::RenderMode) const
+#else
 QSGMaterialShader* ShapeOverlayMaterial::createShader() const
+#endif
 {
     return new ShapeOverlayShader;
 }
