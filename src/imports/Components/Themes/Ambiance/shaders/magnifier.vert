@@ -3,7 +3,7 @@
 layout(location = 0) in vec4 position;
 layout(location = 1) in vec2 texcoord;
 
-layout(location = 0) out vec2 coord;
+layout(location = 0) out vec2 qt_TexCoord0;
 
 layout(std140, binding = 0) uniform buf { 
     mat4 qt_Matrix;
@@ -16,6 +16,6 @@ layout(std140, binding = 0) uniform buf {
 
 void main() {
     vec2 texCoord = vec2(0.5 - 1.0 / (2.0 * ubuf.scaleFactor)) + texcoord / vec2(ubuf.scaleFactor);
-    coord = ubuf.texCoordRange.xy + texCoord*ubuf.texCoordRange.zw;
+    qt_TexCoord0 = ubuf.texCoordRange.xy + texCoord*ubuf.texCoordRange.zw;
     gl_Position = ubuf.qt_Matrix * position;
 }
