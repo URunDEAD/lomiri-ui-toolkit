@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2024-06-01 13:22+0000\n"
-"Last-Translator: Ali Beyaz <alipolatbeyaz@gmail.com>\n"
+"PO-Revision-Date: 2026-01-30 10:33+0000\n"
+"Last-Translator: mahmucan nahmudo <erenbalik76@protonmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/tr/>\n"
 "Language: tr\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
 #: Lomiri/Components/1.3/TextInputPopover.qml:29
 msgid "Select All"
-msgstr "Tümünü Seç"
+msgstr "Hepsini Seç"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:36
 #: Lomiri/Components/1.3/TextInputPopover.qml:36
@@ -274,7 +274,7 @@ msgstr "Kapat"
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:95
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:95
 msgid "Done"
-msgstr "Bitti"
+msgstr "Tamamlandı"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/ProgressBarStyle.qml:51
 #: Lomiri/Components/Themes/Ambiance/1.3/ProgressBarStyle.qml:50
