@@ -42,7 +42,6 @@ Item {
         width: iconSize
         height: iconSize
         color: label.color
-        source: iconSource
     }
 
     Label {
