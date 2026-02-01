@@ -1,6 +1,147 @@
+2026-02-01 Mike Gabriel
+
+        * Release 1.3.5903 (HEAD -> main, tag: 1.3.5903)
+
+2026-01-31 Daniel Wiik
+
+        * Translated using Weblate (Swedish) (fbac0b1c9)
+
+2026-01-29 mahmucan nahmudo
+
+        * Translated using Weblate (Turkish) (e2176e215)
+        * Translated using Weblate (Turkish) (aa78a1230)
+
+2026-01-25 BoneNI
+
+        * Translated using Weblate (Lao) (4bf0f5597)
+        * Translated using Weblate (Lao) (392eddd42)
+        * Translated using Weblate (Lao) (275e4a235)
+        * Translated using Weblate (Lao) (b47b6a818)
+        * Translated using Weblate (Lao) (f40a9a3c6)
+        * Translated using Weblate (Lao) (bb75d0bfc)
+        * Translated using Weblate (Lao) (14cb2a460)
+        * Translated using Weblate (Lao) (6c0c8f626)
+        * Translated using Weblate (Lao) (b93612e35)
+        * Translated using Weblate (Lao) (fe833921b)
+
+2026-01-24 BoneNI
+
+        * Translated using Weblate (Lao) (9e81693b1)
+        * Translated using Weblate (Lao) (c5d7dd67a)
+
+2026-01-19 Guido Berhörster
+
+        * Merge branch 'personal/peat-psuwit/lomirigestures-log-qtouchevent'
+          into 'main' (23b63419d)
+
+2026-01-16 Ratchanan Srirattanamet
+
+        * LomiriGestures: remove debughelpers and use Qt's built-in facility
+          (d36c005fd)
+
+2026-01-19 Guido Berhörster
+
+        * Merge branch 'personal/peat-psuwit/qt6-uctheme-qml-paths' into
+          'main' (5c4dca59e)
+
+2026-01-16 Ratchanan Srirattanamet
+
+        * LomiriToolkit/UCTheme: fix getting more than 1 QML import paths
+          (5067e5748)
+
+2026-01-14 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/fix-morph-style' into 'main'
+          (3da70299b)
+
+2026-01-14 Alfred Neumayer
+
+        * src/imports/Components/Themes: Add 2.0 reference to qmldir
+          (637dd1b90)
+
+2026-01-14 Mike Gabriel
+
+        * Merge branch 'personal/gberh/lomiritest20' into 'main' (0167074b2)
+
+2026-01-14 Guido Berhoerster
+
+        * Add LomiriTest 2.0 module for Qt 6 (d285cd8c0)
+
+2026-01-13 Ratchanan Srirattanamet
+
+        * Merge branch 'pr' into 'main' (1f4ba51a0)
+
+2026-01-12 d2weber
+
+        * Excempt AnimatedImage from scaling with image provider (9a3e1ac80)
+
+2026-01-10 BoneNI
+
+        * Translated using Weblate (Lao) (d8c8cec59)
+        * Translated using Weblate (Lao) (ed431cbdd)
+        * Translated using Weblate (Lao) (991288796)
+
+2026-01-08 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-cyril-changes' into 'main'
+          (28ddef60f)
+
+2026-01-02 Cyril Jacquet
+
+        * Add missing magnifier.vert to qt6_add_shaders (f8d130092)
+        * Change Image to Icon in ButtonForeground.qml (8997181e3)
+        * Add missing `break` statements in OptionSelector.qml (e1d78b483)
+
+2026-01-08 Cyril Jacquet
+
+        * Fix typo in comment (8e0afc6a1)
+
+2026-01-02 Cyril Jacquet
+
+        * Stylistic changes to qml functions (9edec89be)
+        * Use strict equality checks across QML files (27cf2021a)
+        * Add missing qml type registrations (0a1e73311)
+        * Add null checks for qml attributes (4d9d165b3)
+        * Update references in QML files to remove version restrictions
+          (be5421579)
+        * Move `Components/Themes` to version 2.0 (176b329fe)
+        * Remove `sliderUtils.js` and migrate dependent logic (aaa72c79d)
+        * Add initial assets for Lomiri UI Toolkit Gallery with Qt6 support
+          (4d15bf1d0)
+
+2025-10-31 Cyril Jacquet
+
+        * Ensure compatibility with Qt6 (8be875507)
+        * Add compatibility for Qt6 type handling in LomiriToolkit
+          (b3aee308e)
+
+2025-12-31 Purushotham N
+
+        * Translated using Weblate (Tamil) (8392b7539)
+
+2025-12-27 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (8b38c3a4f)
+
+2025-12-22 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (c302095b2)
+
+2025-12-19 Joana R
+
+        * Translated using Weblate (Basque) (c5e840d8d)
+
+2025-12-19 Temuri Doghonadze
+
+        * Translated using Weblate (Georgian) (e5db51a26)
+
+2025-12-21 Vini Moraes
+
+        * Translated using Weblate (Portuguese (Brazil)) (407c03df7)
+
 2025-12-23 Mike Gabriel
 
-        * Release 1.3.5902 (HEAD -> main, tag: 1.3.5902)
+        * Release 1.3.5902 (401b1c0ff) (tag: 1.3.5902)
 
 2025-12-22 Guido Berhörster
 
