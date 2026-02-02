@@ -151,11 +151,9 @@ QSGNode *UCListItemDivider::updatePaintNode(QSGNode *node, UpdatePaintNodeData *
         }
         dividerNode->update();
         return dividerNode;
-    } else if (node) {
-        // delete the node
-        delete node;
     }
-    return 0;
+    delete dividerNode;
+    return nullptr;
 }
 
 QColor UCListItemDivider::colorFrom() const
