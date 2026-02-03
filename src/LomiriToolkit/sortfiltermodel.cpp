@@ -189,7 +189,7 @@ QSortFilterProxyModelQML::filterChangedInternal()
 {
     setFilterRole(roleByName(m_filterBehavior.property()));
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    setFilterRegularExpression(m_filterBehavior.pattern().pattern());
+    setFilterRegularExpression(m_filterBehavior.pattern());
 #else
     setFilterRegExp(m_filterBehavior.pattern());
 #endif
@@ -250,7 +250,7 @@ QSortFilterProxyModelQML::filterAcceptsRow(int sourceRow,
                                            const QModelIndex &sourceParent) const
 {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    if (filterRegularExpression().isValid()) {
+    if (filterRegularExpression().pattern().isEmpty()) {
 #else
     if (filterRegExp().isEmpty()) {
 #endif
