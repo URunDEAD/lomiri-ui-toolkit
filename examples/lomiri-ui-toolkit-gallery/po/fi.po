@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-02-04 07:51+0000\n"
-"Last-Translator: Ricky Tigg <ricky.tigg@gmail.com>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/lomiri/"
-"lomiri-ui-toolkit-gallery-example/fi/>\n"
+"PO-Revision-Date: 2026-02-10 04:09+0000\n"
+"Last-Translator: Midrielen <jimitoivo.jaakkola@outlook.com>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
+"toolkit-gallery-example/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: About.qml:34
@@ -39,7 +39,7 @@ msgstr "Pitkä luettelo"
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr "Ei käytössä"
+msgstr "Poistettu käytöstä"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
@@ -98,11 +98,11 @@ msgstr "Kuvake+teksti"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "Tiivistetty"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "Laajennettu"
 
 #: Colors.qml:30
 msgid "Orange"
@@ -138,7 +138,7 @@ msgstr "Avaa"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "Skaalaus"
 
 #: Icons.qml:79
 msgid "Theme"
@@ -152,7 +152,7 @@ msgstr ""
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "Otsikko"
 
 #: ListItems.qml:33
 msgid "Subtitled"
@@ -160,11 +160,11 @@ msgstr ""
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "Alaotsikko"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "Ohut jakaja"
 
 #: ListItems.qml:73
 msgid "Progression"
@@ -208,7 +208,7 @@ msgstr "Arvo 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "Alkion valitsin"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
@@ -220,7 +220,7 @@ msgstr "Monivalinta"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "Mukautettu malli"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
@@ -256,7 +256,7 @@ msgstr ""
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "Nollaus"
 
 #: ListItems.qml:226
 msgid "Grouped list"
@@ -272,11 +272,11 @@ msgstr ""
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "Laajennettava"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "Väritetty"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
@@ -292,7 +292,7 @@ msgstr ""
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "Mukautetty toiminto valtuuttaa"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -304,7 +304,7 @@ msgstr "Siirrä"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "Perus"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
@@ -321,7 +321,7 @@ msgstr "Ei erotinta"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "Vaihtoehdon valitsin"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
@@ -349,27 +349,27 @@ msgstr ""
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Suoraviivainen"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Pyöreä"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Loputon"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Kello"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "Peittävä"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "Pyyhkäistävä"
 
 #: Popover.qml:74
 msgid "Action #1"
@@ -397,7 +397,7 @@ msgstr "Edistymispalkki"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "Ei nimiötä"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
@@ -413,11 +413,11 @@ msgstr "Käytössä"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
-msgstr ""
+msgstr "Sivun visuaalinen tyyli on varhaista työtä ja siksi kömpelön näköinen."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "Otsikko"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
@@ -438,15 +438,15 @@ msgstr ""
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Pieni"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "Keskikokoinen"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "Suuri"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
