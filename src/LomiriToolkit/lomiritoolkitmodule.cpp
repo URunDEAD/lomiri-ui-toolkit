@@ -512,6 +512,14 @@ void LomiriToolkitModule::defineModule(const char *uri)
     qmlRegisterType<ExclusiveGroup>(uri, 1, 3, "ExclusiveGroup");
 
 #else
+    // Foreign base classes need to be registered in order to expose
+    // all of their revisioned properties, regardless of the module version.
+    // See: https://github.com/qt/qtdeclarative/commit/c3999f96536ac359ba94d80755230e85238d578a
+    qmlRegisterAnonymousType<QQuickItem, 254>(uri, 2);      // inh. by UCStyledItemBase
+    qmlRegisterAnonymousType<QQuickWindow, 254>(uri, 2);    // inh. by LomiriTestCase
+    qmlRegisterAnonymousType<QQuickMouseArea, 254>(uri, 2); // inh. by InverseMouseAreaType
+    qmlRegisterAnonymousType<QQuickText, 254>(uri, 2);      // inh. by UCLabel
+
     qmlRegisterUncreatableType<UCSwipeEvent>(
         uri, 2, 0, "SwipeEvent", QStringLiteral("This is an event object."));
     qmlRegisterUncreatableType<UCDragEvent>(
