@@ -27,6 +27,7 @@
 #endif
 
 #include <QtCore/QPointer>
+#include <QtCore/QTimer>
 #include <QtQml/QQmlContext>
 #include <QtQml/QQmlEngine>
 #include <QtQml/QQmlExtensionPlugin>
@@ -428,6 +429,16 @@ void LomiriToolkitModule::initializeModule(QQmlEngine *engine, const QUrl &plugi
     // register performance monitor
     engine->rootContext()->setContextProperty(
         QStringLiteral("performanceMonitor"), new UCPerformanceMonitor(engine));
+
+    // Check if the default theme exists.
+    // A timer is used to defer this check because verifyDefaultThemeExists()
+    // might load another QML module, which cannot happen within initializeEngine().
+    QPointer<QQmlEngine> weakEngine(engine);
+    QTimer::singleShot(0, [weakEngine]() {
+        if (weakEngine) {
+            UCDefaultTheme::verifyDefaultThemeExists(weakEngine);
+        }
+    });
 }
 
 void LomiriToolkitModule::defineModule(const char *uri)

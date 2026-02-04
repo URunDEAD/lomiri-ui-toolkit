@@ -24,6 +24,8 @@
 #include <QtCore/QFile>
 #include <QtCore/QStandardPaths>
 
+#include "uctheme_p.h"
+
 UT_NAMESPACE_BEGIN
 
 // User theme settings are stored in
@@ -73,6 +75,13 @@ void UCDefaultTheme::setThemeName(const QString &themeName)
         m_themeName = themeName;
         m_settings.setValue(themeKey, themeName);
         Q_EMIT themeNameChanged();
+    }
+}
+
+void UCDefaultTheme::verifyDefaultThemeExists(QQmlEngine *engine)
+{
+    if (!UCTheme::pathFromThemeName(engine, defaultTheme)) {
+        qWarning() << "Mandatory default theme" << defaultTheme << "missing!";
     }
 }
 

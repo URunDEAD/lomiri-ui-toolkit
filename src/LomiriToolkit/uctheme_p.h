@@ -77,6 +77,7 @@ public:
 
     explicit UCTheme(QObject *parent = 0);
     static UCTheme *defaultTheme(QQmlEngine *engine);
+    static std::optional<UCTheme::ThemeRecord> pathFromThemeName(QQmlEngine *engine, const QString &themeName);
 
     // getter/setters
     UCTheme *parentTheme();
@@ -110,7 +111,6 @@ private:
     void updateEnginePaths();
     void updateThemePaths();
     QList<ThemeRecord>& themePaths();
-    std::optional<UCTheme::ThemeRecord> pathFromThemeName(const QString &themeName);
     QUrl styleUrl(const QString& styleName, quint16 version, bool *isFallback = NULL);
     void loadPalette(QQmlEngine *engine, bool notify = true);
     void updateThemedItems();

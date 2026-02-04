@@ -476,9 +476,9 @@ void UCTheme::_q_defaultThemeChanged()
     updateThemedItems();
 }
 
-std::optional<UCTheme::ThemeRecord> UCTheme::pathFromThemeName(const QString &themeName)
+std::optional<UCTheme::ThemeRecord> UCTheme::pathFromThemeName(QQmlEngine *engine, const QString &themeName)
 {
-    if (themeName.isEmpty() || !qmlEngine(this)) {
+    if (themeName.isEmpty() || !engine) {
         return std::nullopt;
     }
     QString themePathPart = themeName;
@@ -488,7 +488,7 @@ std::optional<UCTheme::ThemeRecord> UCTheme::pathFromThemeName(const QString &th
     // Attempt to load the qml module that contains the theme.
     // We need this to be able to access its qrc paths later.
     // The module is loaded even if it doesn't contain a Palette.qml.
-    QQmlComponent component(qmlEngine(this));
+    QQmlComponent component(engine);
     component.loadFromModule(themeName, "Palette");
 #endif
 
@@ -498,7 +498,7 @@ std::optional<UCTheme::ThemeRecord> UCTheme::pathFromThemeName(const QString &th
     // Otherwise, the files exist on the file system.
     std::optional<QDir> qrcModulePath;
     std::optional<QDir> fsModulePath;
-    for (const QString &path : qmlEngine(this)->importPathList()) {
+    for (const QString &path : engine->importPathList()) {
         bool isQrc = path.startsWith("qrc:/");
         QDir importPath((isQrc ? ":" : "") + QUrl(path).path());
         QDir modulePath = importPath.filePath(themePathPart);
@@ -526,10 +526,11 @@ std::optional<UCTheme::ThemeRecord> UCTheme::pathFromThemeName(const QString &th
 void UCTheme::updateThemePaths()
 {
     m_themePaths.emplace();
-    std::optional<UCTheme::ThemeRecord> themePath = pathFromThemeName(name());;
+    QQmlEngine *engine = qmlEngine(this);
+    std::optional<UCTheme::ThemeRecord> themePath = pathFromThemeName(engine, name());;
     while (themePath) {
         m_themePaths->append(*themePath);
-        themePath = pathFromThemeName(parentThemeName(*themePath));
+        themePath = pathFromThemeName(engine, parentThemeName(*themePath));
     }
 }
 
