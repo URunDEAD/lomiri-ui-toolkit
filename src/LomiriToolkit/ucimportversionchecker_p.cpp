@@ -39,40 +39,28 @@ UT_NAMESPACE_BEGIN
  */
 quint16 UCImportVersionChecker::importVersion(QObject *object)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    return BUILD_VERSION(2, 0);
+#else
     QQmlData *data = QQmlData::get(object);
     Q_ASSERT(data);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-    QQmlRefPointer<QQmlContextData> cdata = QQmlContextData::get(qmlContext(object));
-#else
     QQmlContextData *cdata = QQmlContextData::get(qmlContext(object));
-#endif
     Q_ASSERT(cdata);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QQmlEngine *engine = qmlEngine(object);
     Q_ASSERT(engine);
-#endif
-
-    // start from the highest available version till we reach 1.2
     for (quint16 minor = MINOR_VERSION(LATEST_UITK_VERSION); minor > 2; minor--) {
         quint16 version = BUILD_VERSION(1, minor);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        const QStringView property(propertyForVersion(version));
-#else
         const QString property(propertyForVersion(version));
-#endif
         Q_ASSERT(!property.isEmpty());
         QQmlPropertyData l;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-        const QQmlPropertyData *p = QQmlPropertyCache::property(object, property, cdata, &l);
-#else
         QQmlPropertyData *p = QQmlPropertyCache::property(engine, object, property, cdata, l);
-#endif
         if (data->propertyCache->isAllowedInRevision(p)) {
             return version;
         }
     }
     // if none found, simply fall back to 1.2
     return BUILD_VERSION(1, 2);
+#endif
 }
 
 UT_NAMESPACE_END
