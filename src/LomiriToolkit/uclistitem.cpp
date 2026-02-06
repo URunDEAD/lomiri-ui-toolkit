@@ -1301,6 +1301,11 @@ bool UCListItemPrivate::shouldShowContextMenu(QMouseEvent *event)
 
 void UCListItemPrivate::_q_popoverClosed()
 {
+    Q_Q(UCListItem);
+    QQuickItem *popover = qobject_cast<QQuickItem*>(q->sender());
+    if (popover) {
+        popover->deleteLater();
+    }
     setHighlighted(false);
 }
 
