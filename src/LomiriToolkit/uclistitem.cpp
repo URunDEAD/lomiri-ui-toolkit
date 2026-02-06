@@ -1323,13 +1323,18 @@ void UCListItemPrivate::showContextMenu()
     // Reset the timer which otherwise is started with highlighting
     pressAndHoldTimer.stop();
 
+    // Open Popover
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QString versionString(QStringLiteral("%1.%2").arg(MAJOR_VERSION(version)).arg(MINOR_VERSION(version)));
     const QString relativeUrl = versionString + QStringLiteral("/ListItemPopover.qml");
     QUrl url(LomiriToolkitModule::baseUrl(qmlEngine(q)).resolved(relativeUrl));
-
-    // Open Popover
     QQmlEngine* engine = qmlEngine(q);
     QQmlComponent* component = new QQmlComponent(engine, url, QQmlComponent::PreferSynchronous, q);
+#else
+    QQmlComponent* component = new QQmlComponent(qmlEngine(q));
+    component->loadFromModule("Lomiri.Components", "Internal__ListItemPopover", QQmlComponent::PreferSynchronous);
+#endif
+
     if (component->isError()) {
         qmlWarning(q) << component->errorString();
     } else {
