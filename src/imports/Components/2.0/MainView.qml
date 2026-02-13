@@ -148,9 +148,9 @@ Toolkit.MainViewBase {
             objectName: "MainView_Header"
             id: headerItem
             property real bottomY: headerItem.y + headerItem.height
-            dividerColor: Qt.darker(mainView.headerColor, 1.1)
-            panelColor: Qt.lighter(mainView.headerColor, 1.1)
-            backgroundColor: mainView.headerColor
+            dividerColor: Qt.darker(mainView.backgroundColor, 1.1)
+            panelColor: Qt.lighter(mainView.backgroundColor, 1.1)
+            backgroundColor: mainView.backgroundColor
 
             title: internal.activePage ? internal.activePage.title : ""
             pageStack: internal.activePage ? internal.activePage.pageStack : null
