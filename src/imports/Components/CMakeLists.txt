@@ -94,6 +94,7 @@ set(QML_FILES
     "2.0/MainViewBase.qml"
     "2.0/PageTreeNode.qml"
     "2.0/PageWrapper.qml"
+    "2.0/stack.js"
 )
 
 install(FILES ${ARTWORK_FILES} DESTINATION ${QML_PLUGIN_DIR}/artwork)
