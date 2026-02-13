@@ -18,8 +18,12 @@
 
 #include "privates/frame_p.h"
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QtQuick/QQuickWindow>
+#else
 #include <QtGui/QOpenGLContext>
 #include <QtGui/QOpenGLFunctions>
+#endif
 
 #include "privates/textures_p.h"
 
@@ -35,6 +39,10 @@ class FrameShader : public QSGMaterialShader
 {
 public:
     FrameShader();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    bool updateUniformData(RenderState& state, QSGMaterial* newMaterial, QSGMaterial* oldMaterial) override;
+    void updateSampledImage(RenderState& state, int binding, QSGTexture **texture, QSGMaterial *newMaterial, QSGMaterial *oldMaterial) override;
+#else
     char const* const* attributeNames() const;
     void initialize();
     void updateState(const RenderState& state, QSGMaterial* newEffect, QSGMaterial* oldEffect);
@@ -42,6 +50,7 @@ public:
 private:
     int m_matrixId;
     int m_opacityId;
+#endif
 };
 
 FrameShader::FrameShader()
@@ -57,6 +66,8 @@ FrameShader::FrameShader()
 #endif
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+
 char const* const* FrameShader::attributeNames() const
 {
     static char const* const attributes[] = {
@@ -67,13 +78,11 @@ char const* const* FrameShader::attributeNames() const
 
 void FrameShader::initialize()
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QSGMaterialShader::initialize();
     program()->bind();
     program()->setUniformValue("texture", 0);
     m_matrixId = program()->uniformLocation("matrix");
     m_opacityId = program()->uniformLocation("opacity");
-#endif
 }
 
 void FrameShader::updateState(
@@ -85,18 +94,58 @@ void FrameShader::updateState(
     funcs->glBindTexture(
         GL_TEXTURE_2D, static_cast<UCFrameMaterial*>(newEffect)->textureId());
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (state.isMatrixDirty()) {
         program()->setUniformValue(m_matrixId, state.combinedMatrix());
     }
     if (state.isOpacityDirty()) {
         program()->setUniformValue(m_opacityId, state.opacity());
     }
-#endif
 }
+
+#else
+
+bool FrameShader::updateUniformData(RenderState& state, QSGMaterial* newMaterial, QSGMaterial* oldMaterial)
+{
+    Q_UNUSED(newMaterial)
+    Q_UNUSED(oldMaterial)
+
+    bool changed = false;
+    QByteArray *buf = state.uniformData();
+
+    if (state.isMatrixDirty()) {
+        const QMatrix4x4 m = state.combinedMatrix();
+        memcpy(buf->data(), m.constData(), 64);
+        changed = true;
+    }
+
+    if (state.isOpacityDirty()) {
+        const float opacity = state.opacity();
+        memcpy(buf->data() + 64, &opacity, 4);
+        changed = true;
+    }
+
+    return changed;
+}
+
+void FrameShader::updateSampledImage(RenderState& state, int binding, QSGTexture **texture, QSGMaterial *newMaterial, QSGMaterial *oldMaterial)
+{
+    Q_UNUSED(oldMaterial)
+
+    if (binding == 1) {
+        UCFrameMaterial* material = static_cast<UCFrameMaterial*>(newMaterial);
+        QSGTexture* tex = material->texture();
+        if (tex) {
+            tex->commitTextureOperations(state.rhi(), state.resourceUpdateBatch());
+            *texture = tex;
+        }
+    }
+}
+
+#endif
 
 // --- Material ---
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 const int maxTextures = 16;
 static struct { QOpenGLContext* openglContext; quint32 textureId; } textures[maxTextures];
 
@@ -127,11 +176,13 @@ static int getEmptyTexturesIndex()
     }
     return index;
 }
+#endif
 
 UCFrameMaterial::UCFrameMaterial()
 {
     setFlag(Blending, true);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // Get the texture stored per context and shared by all materials of the same type.
     QOpenGLContext* openglContext = QOpenGLContext::currentContext();
     int index = getTexturesIndex(openglContext);
@@ -163,7 +214,23 @@ UCFrameMaterial::UCFrameMaterial()
             });
     }
     m_textureId = textures[index].textureId;
+#endif
 }
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+UCFrameMaterial::~UCFrameMaterial()
+{
+    delete m_texture;
+}
+
+void UCFrameMaterial::setTexture(QSGTexture* texture)
+{
+    if (m_texture != texture) {
+        delete m_texture;
+        m_texture = texture;
+    }
+}
+#endif
 
 QSGMaterialType* UCFrameMaterial::type() const
 {
@@ -190,15 +257,17 @@ int UCFrameMaterial::compare(const QSGMaterial* other) const
 
 UCFrameNode::UCFrameNode()
     : QSGGeometryNode()
-    , m_material()
-    , m_geometry(attributeSet(), 20, 34, GL_UNSIGNED_SHORT)
 {
-    memcpy(m_geometry.indexData(), indices(), 34 * sizeof(unsigned short));
-    m_geometry.setDrawingMode(GL_TRIANGLE_STRIP);
-    m_geometry.setIndexDataPattern(QSGGeometry::StaticPattern);
-    m_geometry.setVertexDataPattern(QSGGeometry::AlwaysUploadPattern);
-    setMaterial(&m_material);
-    setGeometry(&m_geometry);
+    QSGGeometry *geometry = new QSGGeometry(attributeSet(), 20, 34, GL_UNSIGNED_SHORT);
+    memcpy(geometry->indexData(), indices(), 34 * sizeof(unsigned short));
+    geometry->setDrawingMode(GL_TRIANGLE_STRIP);
+    geometry->setIndexDataPattern(QSGGeometry::StaticPattern);
+    geometry->setVertexDataPattern(QSGGeometry::AlwaysUploadPattern);
+    setGeometry(geometry);
+    setFlag(QSGNode::OwnsGeometry);
+    UCFrameMaterial *material = new UCFrameMaterial;
+    setMaterial(material);
+    setFlag(QSGNode::OwnsMaterial);
     qsgnode_set_description(this, QLatin1String("frame"));
 }
 
@@ -255,7 +324,7 @@ static quint32 packColor(QRgb color)
 void UCFrameNode::updateGeometry(
     const QSizeF& itemSize, float thickness, float radius, QRgb color)
 {
-    UCFrameNode::Vertex* v = reinterpret_cast<UCFrameNode::Vertex*>(m_geometry.vertexData());
+    UCFrameNode::Vertex* v = reinterpret_cast<UCFrameNode::Vertex*>(geometry()->vertexData());
     const float w = static_cast<float>(itemSize.width());
     const float h = static_cast<float>(itemSize.height());
     const float maxSize = qMin(w, h) * 0.5f;
@@ -479,6 +548,25 @@ QSGNode* UCFrame::updatePaintNode(QSGNode* oldNode, UpdatePaintNodeData* data)
     }
 
     UCFrameNode* node = oldNode ? static_cast<UCFrameNode*>(oldNode) : new UCFrameNode();
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    // Create texture if not yet created
+    UCFrameMaterial *material = static_cast<UCFrameMaterial*>(node->material());
+    if (!material->texture()) {
+        QImage image(shapeMipmapData, shapeMipmapBaseSize, shapeMipmapBaseSize,
+                     shapeMipmapBaseSize,  // bytes per line
+                     QImage::Format_Grayscale8);
+        // TODO: Figure out if we can use the custom mipmaps somehow.
+        // Autogenerated ones seem to cause transparency issues for small radius values.
+        QSGTexture* texture = window()->createTextureFromImage(image);
+        texture->setFiltering(QSGTexture::Linear);
+        texture->setMipmapFiltering(QSGTexture::None);
+        texture->setHorizontalWrapMode(QSGTexture::ClampToEdge);
+        texture->setVerticalWrapMode(QSGTexture::ClampToEdge);
+        material->setTexture(texture);
+    }
+#endif
+
     node->updateGeometry(itemSize, m_thickness, m_radius, m_color);
 
     return node;

@@ -22,6 +22,7 @@
 #include <QtQuick/QQuickItem>
 #include <QtQuick/QSGMaterial>
 #include <QtQuick/QSGNode>
+#include <QtQuick/QSGTexture>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
@@ -35,18 +36,24 @@ class UCFrameMaterial : public QSGMaterial
 {
 public:
     UCFrameMaterial();
-    QSGMaterialType* type() const override;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    ~UCFrameMaterial();
     QSGMaterialShader* createShader(QSGRendererInterface::RenderMode) const override;
+    QSGTexture* texture() const { return m_texture; }
+    void setTexture(QSGTexture* texture);
 #else
     QSGMaterialShader* createShader() const override;
+    quint32 textureId() const { return m_textureId; }
 #endif
+    QSGMaterialType* type() const override;
     int compare(const QSGMaterial* other) const override;
 
-    quint32 textureId() const { return m_textureId; }
-
 private:
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QSGTexture* m_texture = nullptr;
+#else
     quint32 m_textureId;
+#endif
 };
 
 class UCFrameNode : public QSGGeometryNode
@@ -59,10 +66,6 @@ public:
 
     UCFrameNode();
     void updateGeometry(const QSizeF& itemSize, float thickness, float radius, QRgb color);
-
-private:
-    UCFrameMaterial m_material;
-    QSGGeometry m_geometry;
 };
 
 // Renders the frame (border) of a shape.

@@ -47,12 +47,14 @@ class LOMIRITOOLKIT_EXPORT UCStyledItemBase : public QQuickItem, public UCThemin
     Q_PROPERTY(bool activeFocusOnPress
                READ activefocusOnPress WRITE setActiveFocusOnPress
                NOTIFY activeFocusOnPressChanged REVISION 1)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // FIXME Re-expose property that would be inaccessible due to a QML bug
     // https://bugs.launchpad.net/lomiri/+source/qtdeclarative-opensource-src/+bug/1389721
     Q_PROPERTY(bool activeFocusOnTab
             READ activeFocusOnTab2
             WRITE setActiveFocusOnTab2
             NOTIFY activeFocusOnTabChanged2)
+#endif
     Q_PRIVATE_PROPERTY(UCStyledItemBase::d_func(), QQmlComponent *style READ style WRITE setStyle RESET resetStyle NOTIFY styleChanged FINAL DESIGNABLE false)
     Q_PRIVATE_PROPERTY(UCStyledItemBase::d_func(), QQuickItem *__styleInstance READ styleInstance NOTIFY styleInstanceChanged FINAL DESIGNABLE false)
     Q_PRIVATE_PROPERTY(UCStyledItemBase::d_func(), QString styleName READ styleName WRITE setStyleName NOTIFY styleNameChanged FINAL REVISION 2)
@@ -63,8 +65,10 @@ public:
     virtual bool keyNavigationFocus() const;
     bool activefocusOnPress() const;
     void setActiveFocusOnPress(bool value);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     bool activeFocusOnTab2() const;
     void setActiveFocusOnTab2(bool value);
+#endif
 
 public Q_SLOTS:
     Q_REVISION(1) bool requestFocus(Qt::FocusReason reason = Qt::OtherFocusReason);
@@ -74,7 +78,9 @@ Q_SIGNALS:
     void styleInstanceChanged();
     Q_REVISION(2) void keyNavigationFocusChanged();
     Q_REVISION(1) void activeFocusOnPressChanged();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Q_REVISION(1) void activeFocusOnTabChanged2();
+#endif
     Q_REVISION(2) void themeChanged();
     Q_REVISION(2) void styleNameChanged();
 
