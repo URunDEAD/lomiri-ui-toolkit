@@ -38,7 +38,11 @@ class ShapeOverlayMaterial : public ShapeMaterial
 {
 public:
     QSGMaterialType* type() const override;
-    QSGMaterialShader* createShader() const;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QSGMaterialShader* createShader(QSGRendererInterface::RenderMode) const override;
+#else
+    QSGMaterialShader* createShader() const override;
+#endif
 };
 
 // --- Scene graph node ---
