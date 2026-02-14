@@ -38,6 +38,7 @@ class LOMIRITOOLKIT_EXPORT UCAppHeaderBase : public UCHeader
     Q_OBJECT
     Q_PROPERTY(bool animate MEMBER m_animate WRITE setAnimate NOTIFY animateChanged FINAL)
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // FIXME Re-expose properties that would be inaccessible due to a QML bug
     // https://bugs.launchpad.net/lomiri/+source/qtdeclarative-opensource-src/+bug/1389721
 #ifdef Q_QDOC
@@ -51,17 +52,22 @@ class LOMIRITOOLKIT_EXPORT UCAppHeaderBase : public UCHeader
             WRITE setTheme2
             NOTIFY themeChanged2 FINAL)
 #endif
+#endif
 
 public:
     explicit UCAppHeaderBase(QQuickItem *parent = 0);
     void setAnimate(bool animate);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     UCTheme* theme2();
     void setTheme2(UCTheme* value);
+#endif
 
 Q_SIGNALS:
     void animateChanged();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void themeChanged2();
+#endif
 
 protected:
     void show(bool animate) override;
