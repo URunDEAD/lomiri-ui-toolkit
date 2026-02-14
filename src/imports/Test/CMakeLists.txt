@@ -29,10 +29,6 @@ qt_add_qml_module(LomiriTest
         LomiriTestCase20.qml
 )
 
-target_compile_definitions(LomiriTest PRIVATE
-    LOMIRI_QML_IMPORT_PATH="/qml"
-)
-
 target_include_directories(LomiriTest PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/plugin"
 )
