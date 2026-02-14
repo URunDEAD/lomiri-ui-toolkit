@@ -194,11 +194,8 @@ Styles.ListItemStyle {
                 scale: 0.5
                 color: theme.palette.normal.base
             }
-            Binding {
-                target: listItemStyle
-                property: "dragPanel"
-                value: dragPanel
-            }
+            Component.onCompleted: listItemStyle.dragPanel = dragPanel
+            Component.onDestruction: listItemStyle.dragPanel = null
 
             states: State {
                 name: "enabled"
