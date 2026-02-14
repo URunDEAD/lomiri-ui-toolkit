@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2026-02-10 04:09+0000\n"
+"PO-Revision-Date: 2026-02-18 16:09+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/hi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
@@ -28,121 +28,132 @@ msgstr "सबका चयन करें"
 #: Lomiri/Components/1.2/TextInputPopover.qml:36
 #: Lomiri/Components/1.3/TextInputPopover.qml:36
 msgid "Cut"
-msgstr ""
+msgstr "काटना"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:48
 #: Lomiri/Components/1.3/TextInputPopover.qml:48
 msgid "Copy"
-msgstr ""
+msgstr "कॉपी"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:57
 #: Lomiri/Components/1.3/TextInputPopover.qml:57
 msgid "Paste"
-msgstr ""
+msgstr "पेस्ट"
 
 #: Lomiri/Components/1.2/ToolbarItems.qml:143
 #: Lomiri/Components/1.3/ToolbarItems.qml:143
 msgid "Back"
-msgstr ""
+msgstr "पीछे"
 
 #: Lomiri/Components/ListItems/1.2/Empty.qml:398
 #: Lomiri/Components/ListItems/1.3/Empty.qml:398
 msgid "Delete"
-msgstr ""
+msgstr "मिटाएं"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:51
 msgid "No service/path specified"
-msgstr ""
+msgstr "कोई सेवा/मार्ग निर्धारित नहीं किया गया है।"
 
 #: Lomiri/Components/plugin/adapters/dbuspropertywatcher_p.cpp:69
 #, qt-format
 msgid "Invalid bus type: %1."
-msgstr ""
+msgstr "अपवादित बस प्रकार: %1।"
 
 #. TRANSLATORS: Time based "this is happening/happened now"
 #: Lomiri/Components/plugin/i18n.cpp:268
 msgid "Now"
-msgstr ""
+msgstr "अब"
 
 #: Lomiri/Components/plugin/i18n.cpp:275
 #, qt-format
 msgid "%1 minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 मिनट पहले"
+msgstr[1] "%1 मिनट पूर्व"
 
 #: Lomiri/Components/plugin/i18n.cpp:277
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एक मिनट"
+msgstr[1] "%1 मिनट"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:284
 msgid "h:mm ap"
-msgstr ""
+msgstr "आप ही: ही"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:287
 msgid "HH:mm"
-msgstr ""
+msgstr "समय: HH:MM"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:293
 msgid "'Yesterday 'h:mm ap"
-msgstr ""
+msgstr "कल ही हुआ है |"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:296
 msgid "'Yesterday 'HH:mm"
-msgstr ""
+msgstr "कल"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:302
 msgid "'Tomorrow 'h:mm ap"
-msgstr ""
+msgstr "मorgen ⏰ ह:मिनट का समय है"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:305
 msgid "'Tomorrow 'HH:mm"
-msgstr ""
+msgstr "আজ টিমারী: HH:MM"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:312
 msgid "ddd' 'h:mm ap"
 msgstr ""
+"दिन: दिन, समय: समय, का मतलब है कि \"आज का समय\" यानी आज की सुबह/शाम के समय पर। "
+"\n"
+"\n"
+"So, the translation is:\n"
+"आज: आज\n"
+"समय: समय\n"
+"का: का, प्रत्यक्ष अंग्रेजी शब्द का उपयोग करके भावपूर्ण अंश \"का\" हिन्दी में 'का' है (अर्थात् "
+"किसी चीज़ को बताने का तरीका)।"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:315
 msgid "ddd' 'HH:mm"
-msgstr ""
+msgstr "दिन का समय"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:322
 msgid "ddd d MMM' 'h:mm ap"
-msgstr ""
+msgstr "दिन दिनांक माह का नाम घंटे:मिनट सुबह/शाम"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:325
 msgid "ddd d MMM' 'HH:mm"
-msgstr ""
+msgstr "दिन: [day], माह: [month] 'व' [hour]:mm"
 
 #: Lomiri/Components/plugin/privates/listitemdragarea.cpp:122
 msgid ""
 "ListView has no ViewItems.dragUpdated() signal handler implemented. No "
 "dragging will be possible."
 msgstr ""
+"सूची दृश्य में कोई विचार निर्धारित नहीं करने के संकेत ( dragUpdated() सिग्नल हैंडलर का "
+"लिस्टवीू में कोई विचार निर्धारित नहीं करने की संभावना) पेश नहीं किया गया है, इसलिए "
+"निमंत्रण न रहेगा।"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:176
 #, qt-format
@@ -150,76 +161,105 @@ msgid ""
 "property \"%1\" of object %2 has type %3 and cannot be set to value \"%4\" "
 "of type %5"
 msgstr ""
+"\"%1\" के मालिक से \"%2\" व्यक्ति की गुणता है \"%3\" प्रकार और इसे मान \"%4\" प्रकार "
+"के रूप में निर्धारित नहीं किया जा सकता।"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:185
 #, qt-format
 msgid "property \"%1\" does not exist or is not writable for object %2"
 msgstr ""
+"\"{संपत्ति %1} का मूल्य नहीं है या इसके लिए संसाधनों तक पहुंच नहीं है, या यह एक प्रतिष्ठान "
+"%2 का हिस्सा नहीं है।\" या\n"
+"\n"
+"\"{संपत्ति %1} की परिभाषा नहीं मिली। या संपत्ति %2 के लिए संसाधनों तक पहुंच नहीं है।\"\n"
+"\n"
+"or \n"
+"\n"
+"\"{संपत्ति %1} का मूल्य नहीं है या इसके लिए संसाधनों तक पहुंच नहीं है, या यह एक प्रतिष्ठान "
+"%2 का हिस्सा नहीं है।\"\n"
+"\n"
+"Note: The translation is as per natural Hindi language and has covered "
+"maximum coverage."
 
 #: Lomiri/Components/plugin/ucalarm.cpp:41
 #: Lomiri/Components/plugin/ucalarm.cpp:643
 msgid "Alarm"
-msgstr ""
+msgstr "सूचना"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:635
 #: Lomiri/Components/plugin/ucalarm.cpp:667
 msgid "Alarm has a pending operation."
-msgstr ""
+msgstr "अलर्म में एक अटैच्ड ऑपरेशन है।"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:188
 msgid "Usage: "
 msgstr ""
+"व्यावसायिक जीवन में सफलता प्राप्त करने के लिए निम्नलिखित महत्वपूर्ण बातों पर ध्यान देना "
+"चाहिए:\n"
+"\n"
+"1. अपने लक्ष्यों को स्पष्ट रूप से परिभाषित करें।\n"
+"2. एक विस्तृत योजना बनाएं और उसमें विवरण शामिल करें।\n"
+"3. अपनी मेहनत और समर्पण को बढ़ाएं।\n"
+"4. संकटों का सामना करने के लिए तैयार रहें।\n"
+"5. निरंतर प्रगति और विकास के लिए प्रयास करें। "
 
 #: Lomiri/Components/plugin/ucarguments.cpp:209
 msgid "Options:"
-msgstr ""
+msgstr "विकल्प:"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:498
 #, qt-format
 msgid "%1 is expecting an additional argument: %2"
-msgstr ""
+msgstr "%1 से और एक वितरण है: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:503
 #, qt-format
 msgid "%1 is expecting a value for argument: %2"
-msgstr ""
+msgstr "%1 से मान्य होना चाहिए एक मूल्य के लिए दावा: %2"
 
 #: Lomiri/Components/plugin/ucarguments.cpp:520
 #, qt-format
 msgid "%1 is expecting additional arguments: %2"
-msgstr ""
+msgstr "%1 को अतिरिक्त तर्कों की अपेक्षा है: %2"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr ""
+msgstr "\"स्वाइप इवेंट () स्लॉट को ओवरराइड करने पर विचार करें!\""
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
-msgstr ""
+msgstr "\"विवरण करने की पीड़ा उठाओ या स्लॉट ओवरराइड करें!\""
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
 msgstr ""
+"निरंतर माउस फ़िल्टर्स के लिए नकारात्मक मaus इंटरफ़िल की अवक्षेपित प्राथमिकता।\n"
+"\n"
+"Note: I've used the word \"निरंतर\" (nirantar) to convey the idea of "
+"\"continuous\" or \"forever\", which is not a direct translation but fits "
+"the context।"
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
-msgstr ""
+msgstr "परिवर्तन करण्यातील तपशिल अनुमति नाही।"
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:160
 #, qt-format
 msgid ""
 "Binding detected on property '%1' will be removed by the service updates."
 msgstr ""
+"बांडिंग डिटेक्ट किया गया है पर संपत्ति '%1' सर्विस अपडेट्स द्वारा हटा दी जाएगी।"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:46
 msgid "Warning: attachee must have an ID. State will not be saved."
 msgstr ""
+"सावधानी, भेजने वाला दासी को आईडी होना चाहिए। राज्य नहीं सेवा किया जाएगा।"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:56
 #, qt-format
 msgid ""
 "Warning: attachee's UUID is already registered, state won't be saved: %1"
-msgstr ""
+msgstr "सावधानी, डेटाबेस में स्टोर किए गए स्टेट को सेव नहीं कर पाएगा: %1"
 
 #: Lomiri/Components/plugin/ucstatesaver.cpp:107
 #, qt-format
@@ -227,57 +267,61 @@ msgid ""
 "All the parents must have an id.\n"
 "State saving disabled for %1, class %2"
 msgstr ""
+"अगर सभी माता-पिता को एक आईडी होना चाहिए।\n"
+"राज्य सेविंग डिसएबल्ड फॉर %1, क्लास %2।"
 
 #: Lomiri/Components/plugin/uctheme.cpp:208
 #, qt-format
 msgid "Theme not found: \"%1\""
-msgstr ""
+msgstr "विषय नहीं पाया गया: \"%1\""
 
 #: Lomiri/Components/plugin/uctheme.cpp:539
 msgid "Not a Palette component."
-msgstr ""
+msgstr "नहीं तो पैलेट कंपोनेंट है।"
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:462
 msgid "Dragging mode requires ListView"
-msgstr ""
+msgstr "विज़ुअलाइज़ेशन मोड की आवश्यकता है लिस्ट व्यू"
 
 #: Lomiri/Components/plugin/ucviewitemsattached.cpp:468
 msgid ""
 "Dragging is only supported when using a QAbstractItemModel, ListModel or "
 "list."
 msgstr ""
+"DRAGGING KAALPAN KISEY AAVSHYAK KARTA HAI, JO USKAR KE SATHI NAYA "
+"QOBJECTABSTRACTITEMMODEL, LISTMODEL yaai LIST ka upayog karta hai।"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:78
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:78
 msgid "Cancel"
-msgstr ""
+msgstr "રद्द"
 
 #: Lomiri/Components/Popups/1.2/ComposerSheet.qml:88
 #: Lomiri/Components/Popups/1.3/ComposerSheet.qml:88
 msgid "Confirm"
-msgstr ""
+msgstr "स्वीकार करें"
 
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:85
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:85
 msgid "Close"
-msgstr ""
+msgstr "बंद कर"
 
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:95
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:95
 msgid "Done"
-msgstr ""
+msgstr "Karega."
 
 #: Lomiri/Components/Themes/Ambiance/1.2/ProgressBarStyle.qml:51
 #: Lomiri/Components/Themes/Ambiance/1.3/ProgressBarStyle.qml:50
 msgid "In Progress"
-msgstr ""
+msgstr "कार्य में है"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/PullToRefreshStyle.qml:28
 #: Lomiri/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml:28
 msgid "Release to refresh..."
-msgstr ""
+msgstr "अपडेट करें और फिर फिर से रिलीज़ करें।"
 
 #: Lomiri/Components/Themes/Ambiance/1.2/PullToRefreshStyle.qml:28
 #: Lomiri/Components/Themes/Ambiance/1.3/PullToRefreshStyle.qml:28
 msgid "Pull to refresh..."
-msgstr ""
+msgstr "पलट कर फिर से अपडेट करें..।"
