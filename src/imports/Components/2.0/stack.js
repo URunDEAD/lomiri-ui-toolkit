@@ -42,3 +42,7 @@ function Stack() {
         return elements[elements.length-1];
     }
 }
+
+function createStack() {
+    return new Stack();
+}
