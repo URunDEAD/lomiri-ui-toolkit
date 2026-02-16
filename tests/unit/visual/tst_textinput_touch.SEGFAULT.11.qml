@@ -112,6 +112,7 @@ Item {
             // provide few milliseconds to cleanup
             waitForRendering(textField, 500);
             waitForRendering(textArea, 500);
+            wait(200);
         }
 
         function test_has_caret_when_touchscreen_data() {
@@ -259,8 +260,9 @@ Item {
         function test_drag_cursor_handler(data) {
             data.input.focus = true;
             data.input.cursorPosition = 0;
+            waitForRendering(data.input);
             var caret = findChild(data.input, "input_handler").cursorPositionCursor;
-            verify(caret, "Caret \"" + data.cursorName + "\" cannot be found!");
+            verify(caret, "cursorPositionCursor cannot be found!");
             var cursorPosition = data.input.cursorPosition;
 
             TestExtras.touchDrag(0, caret, centerOf(caret), data.delta);
@@ -304,6 +306,7 @@ Item {
         function test_z_scroll_when_tap_dragged(data) {
             data.input.focus = true;
             data.input.cursorPosition = data.input.text.length;
+            waitForRendering(data.input);
             flickerSpy.target = findChild(data.input, "input_scroller");
             var selectedText = "";
             if (data.withSelectedText) {

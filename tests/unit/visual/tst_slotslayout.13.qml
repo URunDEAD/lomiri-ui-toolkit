@@ -972,9 +972,10 @@ Item {
         function test_defaultLabelsQmlContext() {
             ignoreWarning(warningMsg("QML Label: Cannot open: file:///test.png"))
             var obj = layoutTestQmlContextComponent.createObject(main)
-            //wait for rendering otherwise we will not get the "cannot find file" warning
+            //wait, otherwise we will not get the "cannot find file" warning
             //because the img is loaded async
             waitForRendering(obj)
+            wait(200)
             compare(obj !== null, true, "QML ListItemLayout: testing labels' QML context.")
 
             //Tentative fix for lp:1571426, CI once (in months) managed to fail this test because

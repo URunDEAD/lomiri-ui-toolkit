@@ -1151,11 +1151,11 @@ private Q_SLOTS:
         // produce long press, but move mouse while in delay
         // FIXME move this under LomiriTestCase
         QTest::mousePress(test.data(), Qt::LeftButton, Qt::NoModifier, guPoint(20, 30));
-        QTest::qWait(UCMouse::DefaultPressAndHoldDelay / 2);
+        QTest::qWait(UCMouse::DefaultPressAndHoldDelay / 4);
         for (int i = 1; i <= 4; i++) {
             QTest::mouseMove(test.data(), guPoint(20 + i, 30 + i));
         }
-        QTest::qWait(UCMouse::DefaultPressAndHoldDelay / 2 + 200);
+        QTest::qWait(UCMouse::DefaultPressAndHoldDelay);
         QCoreApplication::processEvents();
         QCOMPARE(hostHoldSpy.count(), 0);
         QCOMPARE(proxyHoldSpy.count(), 0);
