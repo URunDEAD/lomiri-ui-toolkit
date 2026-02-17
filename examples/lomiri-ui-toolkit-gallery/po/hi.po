@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-02-10 04:09+0000\n"
+"PO-Revision-Date: 2026-02-18 16:09+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/hi/>\n"
@@ -17,344 +17,346 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr ""
+msgstr "के बारे में..।"
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr ""
+msgstr "संक्षिप्त सूची"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr ""
+msgstr "स्लॉट की संख्या"
 
 #: ActionBars.qml:92
 msgid "Long list"
-msgstr ""
+msgstr "लंबी सूची"
 
 #: ActionBars.qml:102 Buttons.qml:91 Sections.qml:45 TextInputs.qml:90
 #: Toggles.qml:45 Toggles.qml:83
 msgid "Disabled"
-msgstr ""
+msgstr "अक्षम"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "संख्या एनिमेशन"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr ""
+msgstr "मानक"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr ""
+msgstr "मानक अवधि"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr ""
+msgstr "स्नैप"
 
 #: Animations.qml:98
 msgid "Fast"
-msgstr ""
+msgstr "फास्ट"
 
 #: Animations.qml:134
 msgid "Slow"
-msgstr ""
+msgstr "धीमी"
 
 #: Animations.qml:159
 msgid "Sleepy"
-msgstr ""
+msgstr "नींद लेना"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr ""
+msgstr "फोन करना"
 
 #: Buttons.qml:37
 msgid "Stroke"
-msgstr ""
+msgstr "स्ट्रोक"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr ""
+msgstr "रंग"
 
 #: Buttons.qml:53
 #, qt-format
 msgid "Call %1"
-msgstr ""
+msgstr "कॉल %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr ""
+msgstr "आइकन"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr ""
+msgstr "आइकन + टेक्स्ट"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
-msgstr ""
+msgstr "पतन"
 
 #: Buttons.qml:148 ListItems.qml:120 OptionSelectors.qml:47
 msgid "Expanded"
-msgstr ""
+msgstr "विस्तारित"
 
 #: Colors.qml:30
 msgid "Orange"
-msgstr ""
+msgstr "नारंगी"
 
 #: Colors.qml:36
 msgid "Light grey"
-msgstr ""
+msgstr "हल्का भूरा"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr ""
+msgstr "गहरा भूरा"
 
 #: Colors.qml:48
 msgid "Red"
-msgstr ""
+msgstr "लाल"
 
 #: Colors.qml:54
 msgid "Green"
-msgstr ""
+msgstr "हरा"
 
 #: Colors.qml:60
 msgid "Blue"
-msgstr ""
+msgstr "नीला"
 
 #: Colors.qml:66
 msgid "Purple"
-msgstr ""
+msgstr "बैंगनी"
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "ओपन"
 
 #: Icons.qml:29
 msgid "Scaling"
-msgstr ""
+msgstr "स्केलिंग"
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "विषय"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr ""
+msgstr "अग्रणी और पीछे की कार्रवाई"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr ""
+msgstr "पेटल"
 
 #: ListItems.qml:33
 msgid "Subtitled"
-msgstr ""
+msgstr "उपशीर्षक"
 
 #: ListItems.qml:37
 msgid "Secondary label"
-msgstr ""
+msgstr "माध्यमिक लेबल"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr ""
+msgstr "पतला भाजक"
 
 #: ListItems.qml:73
 msgid "Progression"
-msgstr ""
+msgstr "प्रगति"
 
 #: ListItems.qml:82
 msgid "Single value"
-msgstr ""
+msgstr "एकल मूल्य"
 
 #: ListItems.qml:86
 msgid "Value"
-msgstr ""
+msgstr "मूल्य"
 
 #: ListItems.qml:91
 msgid "Multi value"
-msgstr ""
+msgstr "बहु मूल्य"
 
 #: ListItems.qml:95 ListItems.qml:113 ListItems.qml:122 ListItems.qml:132
 #: ListItems.qml:161 ListItems.qml:176 OptionSelectors.qml:33
 #: OptionSelectors.qml:84 OptionSelectors.qml:99
 msgid "Value 1"
-msgstr ""
+msgstr "मान 1"
 
 #: ListItems.qml:96 ListItems.qml:114 ListItems.qml:123 ListItems.qml:133
 #: ListItems.qml:162 ListItems.qml:177 OptionSelectors.qml:85
 #: OptionSelectors.qml:100
 msgid "Value 2"
-msgstr ""
+msgstr "मान 2"
 
 #: ListItems.qml:97 ListItems.qml:115 ListItems.qml:124 ListItems.qml:134
 #: ListItems.qml:163 ListItems.qml:178 OptionSelectors.qml:86
 #: OptionSelectors.qml:101
 msgid "Value 3"
-msgstr ""
+msgstr "मूल्य 3"
 
 #: ListItems.qml:98 ListItems.qml:116 ListItems.qml:125 ListItems.qml:135
 #: ListItems.qml:164 ListItems.qml:179 OptionSelectors.qml:87
 #: OptionSelectors.qml:102
 msgid "Value 4"
-msgstr ""
+msgstr "मूल्य 4"
 
 #: ListItems.qml:103
 msgid "Item selector"
-msgstr ""
+msgstr "मद चयनकर्ता"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "विस्तार"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr ""
+msgstr "एकाधिक चयन"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "कस्टम मॉडल"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
 msgid "Value 5"
-msgstr ""
+msgstr "मूल्य 5"
 
 #: ListItems.qml:166 ListItems.qml:181 OptionSelectors.qml:89
 #: OptionSelectors.qml:104
 msgid "Value 6"
-msgstr ""
+msgstr "मूल्य 6"
 
 #: ListItems.qml:167 ListItems.qml:182 OptionSelectors.qml:90
 #: OptionSelectors.qml:105
 msgid "Value 7"
-msgstr ""
+msgstr "मूल्य 7"
 
 #: ListItems.qml:168 ListItems.qml:183 OptionSelectors.qml:91
 #: OptionSelectors.qml:106
 msgid "Value 8"
-msgstr ""
+msgstr "मूल्य 8"
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "नियंत्रण"
 
 #: ListItems.qml:202
 msgid "Removable"
-msgstr ""
+msgstr "हटाने योग्य"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr ""
+msgstr "हटाने के लिए स्लाइड"
 
 #: ListItems.qml:215
 msgid "Reset"
-msgstr ""
+msgstr "रीसेट करें"
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr ""
+msgstr "समूहीकृत सूची"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr ""
+msgstr "लोमिरीलिस्टव्यू"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
-msgstr ""
+msgstr "विस्तारणीय स्तंभ"
 
 #: ListItems.qml:364
 msgid "Expandable"
-msgstr ""
+msgstr "विस्तारणीय"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr ""
+msgstr "रंग"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
-msgstr ""
+msgstr "हाइलाइट रंग"
 
 #: NewListItems.qml:71
 msgid "Leading actions"
-msgstr ""
+msgstr "अग्रणी कार्रवाई"
 
 #: NewListItems.qml:75
 msgid "Trailing actions"
-msgstr ""
+msgstr "अनुभूति"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "कस्टम कार्रवाई प्रतिनिधि"
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr ""
+msgstr "संपादित"
 
 #: NewListItems.qml:114
 msgid "Move"
-msgstr ""
+msgstr "कदम"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "मूल"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr ""
+msgstr "रंगीन विभक्त"
 
 #: NewListItems.qml:163
 msgid "Immutable"
-msgstr ""
+msgstr "अनुकूलन"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr ""
+msgstr "कोई विभक्त नहीं"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "विकल्प चयनकर्ता"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "यह दूसरा मान है"
 
 #: OptionSelectors.qml:35
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
 "nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
 msgstr ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy "
+"nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat।"
 
 #: OptionSelectors.qml:36
 msgid "Once upon a time there was a story nobody told."
-msgstr ""
+msgstr "एक समय की बात है, एक कहानी थी जो किसी ने नहीं बताई।"
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "कस्टम कंटेनर ऊंचाई"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "कोई प्रारंभिक चयन नहीं, स्क्रॉल करने योग्य।।"
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "रैखिक"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "परिपत्र"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "अनंत"
 
 #: Pickers.qml:137
 msgid "Clock"
@@ -362,141 +364,141 @@ msgstr "घड़ी"
 
 #: Pickers.qml:174
 msgid "Overlay"
-msgstr ""
+msgstr "ओवरले"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "फ़्लिकेबल"
 
 #: Popover.qml:74
 msgid "Action #1"
-msgstr ""
+msgstr "कार्रवाई #1"
 
 #: Popover.qml:78
 msgid "Action #2"
-msgstr ""
+msgstr "एक्शन #2"
 
 #: Popover.qml:82
 msgid "Action #3"
-msgstr ""
+msgstr "कार्रवाई #3"
 
 #: Popover.qml:86
 msgid "Action #4"
-msgstr ""
+msgstr "एक्शन #4"
 
 #: Popover.qml:90
 msgid "Action #5"
-msgstr ""
+msgstr "एक्शन #5"
 
 #: ProgressBars.qml:24
 msgid "Progress Bar"
-msgstr ""
+msgstr "प्रगति बार"
 
 #: ProgressBars.qml:59
 msgid "No label"
-msgstr ""
+msgstr "लेबल नहीं"
 
 #: ProgressBars.qml:81
 msgid "Activity Indicator"
-msgstr ""
+msgstr "गतिविधि सूचक"
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "आकार"
 
 #: Sections.qml:34
 msgid "Enabled"
-msgstr ""
+msgstr "सक्रिय"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
-msgstr ""
+msgstr "शीट का विज़ुअल स्टाइल शुरुआती काम जैसा है और इसलिए यह अजीब लगता है।"
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
-msgstr ""
+msgstr "टाइटल"
 
 #: Sliders.qml:36 Sliders.qml:51 Sliders.qml:68 Sliders.qml:93
 #, qt-format
 msgid "Actual value: %1"
-msgstr ""
+msgstr "वास्तविक मूल्य: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "लाइव अपडेट"
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "सीमा"
 
 #: Sliders.qml:74
 msgid "Labels"
-msgstr ""
+msgstr "लेबल"
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "छोटा"
 
 #: Sliders.qml:87
 msgid "Medium"
-msgstr ""
+msgstr "मध्यम"
 
 #: Sliders.qml:89
 msgid "Large"
-msgstr ""
+msgstr "बड़ा"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "मुझे टाइप करें ..।"
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "पासवर्ड"
 
 #: TextInputs.qml:67
 msgid "Numbers"
-msgstr ""
+msgstr "संख्याएँ"
 
 #: TextInputs.qml:78
 msgid "Read-only"
-msgstr ""
+msgstr "केवल पढ़ने के लिए"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr ""
+msgstr "यहां कोई टाइप नहीं करता"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr ""
+msgstr "कोई बातचीत की अनुमति नहीं है"
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "स्टैंडर्ड"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "रिच टेक्स्ट"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "अनियंत्रित"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "चेक किए गए"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "पहलू"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Radius"
 
 #: LomiriShape.qml:115
 msgid "Image"
-msgstr ""
+msgstr "चित्र"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "ढाल"
