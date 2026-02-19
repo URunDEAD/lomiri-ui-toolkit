@@ -173,10 +173,11 @@ Style.PullToRefreshStyle {
     Connections {
         target: control.target
         function onMovementStarted() {
-            style.wasAtYBeginning = control.target.atYBeginning;
-            style.initialContentY = control.target.contentY;
-            style.refreshing = false;
-            style.releaseToRefresh = false;
+            if (!style.refreshing) {
+                style.wasAtYBeginning = control.target.atYBeginning;
+                style.initialContentY = control.target.contentY;
+                style.releaseToRefresh = false;
+            }
         }
         function onMovementEnded() {
             style.wasAtYBeginning = control.target.atYBeginning;
