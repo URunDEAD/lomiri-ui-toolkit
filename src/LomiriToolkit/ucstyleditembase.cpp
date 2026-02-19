@@ -611,6 +611,14 @@ void UCStyledItemBase::mousePressEvent(QMouseEvent *event)
     requestFocus(Qt::MouseFocusReason);
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCStyledItemBase::touchEvent(QTouchEvent *event)
+{
+    QQuickItem::touchEvent(event);
+    requestFocus(Qt::MouseFocusReason);
+}
+#endif
+
 // filter children events as well, so we can catch mouse presses done over child
 // MouseAreas or other mouse grabbers
 bool UCStyledItemBase::childMouseEventFilter(QQuickItem *child, QEvent *event)

@@ -240,6 +240,10 @@ void UCListItemPrivate::init()
     // turn activeFocusOnPress on
     q->setActiveFocusOnPress(true);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    q->setAcceptTouchEvents(true);
+#endif
+
     // update swiped state
     QObject::connect(contentItem, SIGNAL(xChanged()),
                      q, SLOT(_q_updateSwiping()), Qt::DirectConnection);
@@ -1223,6 +1227,30 @@ void UCListItemPrivate::handleLeftButtonPress(QMouseEvent *event)
     event->accept();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCListItemPrivate::handleTouchPress(QTouchEvent *event)
+{
+    Q_Q(UCListItem);
+
+    // create style instance
+    loadStyleItem();
+    setHighlighted(true);
+    lastPos = pressedPos = event->point(0).position();
+    // connect the Flickable to know when to rebound
+    listenToRebind(true);
+    if (swiped) {
+        // grab now, and ungrab in snapOut
+        q->setKeepMouseGrab(true);
+        q->grabMouse();
+    }
+    // stop any ongoing animation!
+    swipeEvent(event->point(0).position(), UCSwipeEvent::Started);
+
+    // accept the event so we get the rest of the events as well
+    event->accept();
+}
+#endif
+
 void UCListItem::mousePressEvent(QMouseEvent *event)
 {
     UCStyledItemBase::mousePressEvent(event);
@@ -1239,6 +1267,32 @@ void UCListItem::mousePressEvent(QMouseEvent *event)
         d->showContextMenu();
     }
 }
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCListItem::touchEvent(QTouchEvent *event)
+{
+    UCStyledItemBase::touchEvent(event);
+    Q_D(UCListItem);
+
+    if (event->isBeginEvent() || event->isUpdateEvent()) {
+        d->button = Qt::LeftButton;
+    } else {
+        d->button = Qt::NoButton;
+    }
+
+    if (d->parentAttached && d->parentAttached->isMoving()) {
+        // while moving, we cannot select any items
+        return;
+    }
+    if (d->canHighlight() && !d->highlighted && event->isBeginEvent()) {
+        d->handleTouchPress(event);
+    } else if (event->isUpdateEvent()) {
+        d->handleTouchMove(event);
+    } else if (event->isEndEvent()) {
+        d->handleTouchRelease(event);
+    }
+}
+#endif
 
 bool UCListItemPrivate::shouldShowContextMenu(QMouseEvent *event)
 {
@@ -1324,6 +1378,40 @@ void UCListItemPrivate::handleLeftButtonRelease(QMouseEvent *event)
     event->accept();
 }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCListItemPrivate::handleTouchRelease(QTouchEvent *event)
+{
+    Q_Q(UCListItem);
+    // set released
+    if (highlighted) {
+        // unblock ascending Flickables
+        listenToRebind(false);
+        q->setKeepMouseGrab(false);
+        if (window && window->mouseGrabberItem() == q) {
+            q->ungrabMouse();
+        }
+
+        if (!suppressClick) {
+            // emit clicked only if not swiped
+            if (!swiped) {
+                Q_EMIT q->clicked();
+                if (mainAction) {
+                    invokeTrigger<UCAction>(mainAction, index());
+                }
+            }
+            snapOut();
+        } else {
+            // inform style about mouse/touch release
+            swipeEvent(event->point(0).position(), UCSwipeEvent::Finished);
+            suppressClick = false;
+            setHighlighted(false);
+        }
+    }
+    button = Qt::NoButton;
+    event->accept();
+}
+#endif
+
 void UCListItem::mouseReleaseEvent(QMouseEvent *event)
 {
     Q_D(UCListItem);
@@ -1405,6 +1493,46 @@ void UCListItem::mouseMoveEvent(QMouseEvent *event)
 #endif
     }
 }
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+void UCListItemPrivate::handleTouchMove(QTouchEvent *event)
+{
+    Q_Q(UCListItem);
+
+    if (selectMode() || dragMode() || (expansion && expansion->expandedLocked())) {
+        // no move is allowed while selectable mode is on
+        return;
+    }
+
+    // accept the tugging only if the move is within the threshold
+    // use saved button because MouseMove has no button() and buttons() isn't reliable
+    if (button == Qt::LeftButton && highlighted && !swiped) {
+        // check if we can initiate the drag at all
+        // only X direction matters, if Y-direction leaves the threshold, but X not, the tug is not valid
+        if (swipedOverThreshold(event->point(0).position(), pressedPos)) {
+            // the press went out of the threshold area, enable move, if the direction allows it
+            lastPos = event->point(0).position();
+            q->setKeepMouseGrab(true);
+            qreal mouseX = event->point(0).position().x();
+            qreal pressedX = pressedPos.x();
+            bool doSwipe = (leadingActions && (mouseX > pressedX)) ||
+                           (trailingActions && (mouseX < pressedX));
+            setSwiped(doSwipe);
+            // unlock contentItem's left/right edges
+            lockContentItem(!doSwipe);
+            loadStyleItem();
+            pressAndHoldTimer.stop();
+        }
+    }
+
+    if (swiped) {
+        pressAndHoldTimer.stop();
+
+        // send swipe event to style and update contentItem position
+        swipeEvent(event->point(0).position(), UCSwipeEvent::Updated);
+    }
+}
+#endif
 
 bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
 {

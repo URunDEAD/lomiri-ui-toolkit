@@ -97,6 +97,9 @@ protected:
     void focusInEvent(QFocusEvent *key) override;
     void setKeyNavigationFocus(bool value);
     void mousePressEvent(QMouseEvent *event) override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void touchEvent(QTouchEvent *event) override;
+#endif
     bool childMouseEventFilter(QQuickItem *child, QEvent *event) override;
 
 private:
