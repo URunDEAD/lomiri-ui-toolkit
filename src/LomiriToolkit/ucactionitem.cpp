@@ -18,6 +18,7 @@
 
 #define foreach Q_FOREACH
 #include <QtQml/private/qqmlbinding_p.h>
+#include <QtQuick/private/qquickitem_p.h>
 #undef foreach
 
 #include "ucaction_p.h"
@@ -29,13 +30,6 @@ UCActionItemPrivate::UCActionItemPrivate()
     : action(Q_NULLPTR)
     , flags(0)
 {
-}
-
-void UCActionItemPrivate::init()
-{
-    Q_Q(UCActionItem);
-    QObject::connect(q, &UCActionItem::enabledChanged, q, &UCActionItem::enabledChanged2);
-    QObject::connect(q, &UCActionItem::visibleChanged, q, &UCActionItem::visibleChanged2);
 }
 
 /*!
@@ -59,13 +53,30 @@ void UCActionItemPrivate::init()
 UCActionItem::UCActionItem(QQuickItem *parent)
     : UCStyledItemBase(*(new UCActionItemPrivate), parent)
 {
-    d_func()->init();
 }
 
 UCActionItem::UCActionItem(UCActionItemPrivate &dd, QQuickItem *parent)
     : UCStyledItemBase(dd, parent)
 {
-    d_func()->init();
+}
+
+// When "visible" or "enabled" are explicitly set to false, we set a flag.
+// - If the property was changed by a user, this will stop
+//   syncing the value from the associated action.
+// - If this is called while syncing properties internally in
+//   _q_visibleBinding()/_q_enabledBinding(), the flag is reset afterwards.
+void UCActionItem::itemChange(ItemChange change, const ItemChangeData &data)
+{
+    Q_D(UCActionItem);
+    UCStyledItemBase::itemChange(change, data);
+
+    if (change == ItemVisibleHasChanged &&
+            !QQuickItemPrivate::get(this)->explicitVisible) {
+        d->flags |= UCActionItemPrivate::CustomVisible;
+    } else if (change == ItemEnabledHasChanged &&
+            !QQuickItemPrivate::get(this)->explicitEnable) {
+        d->flags |= UCActionItemPrivate::CustomEnabled;
+    }
 }
 
 bool UCActionItemPrivate::hasBindingOnProperty(const QString &name)
@@ -78,50 +89,43 @@ bool UCActionItemPrivate::hasBindingOnProperty(const QString &name)
 // update visible property
 void UCActionItemPrivate::_q_visibleBinding()
 {
+    // If a custom value was set, don't sync the property
     if (flags & CustomVisible) {
         return;
     }
+    // If a custom binding was set, don't sync the property
     if (hasBindingOnProperty(QStringLiteral("visible"))) {
-        flags |= CustomEnabled;
+        flags |= CustomVisible;
         return;
     }
+    // Sync it, and reset the flag. See `itemChange()`.
     bool visible = action ? action->m_visible : true;
     q_func()->setVisible(visible);
+    flags &= ~CustomVisible;
 }
 
 // update enabled property
 void UCActionItemPrivate::_q_enabledBinding()
 {
+    // If a custom value was set, don't sync the property
     if (flags & CustomEnabled) {
         return;
     }
+    // If a custom binding was set, don't sync the property
     if (hasBindingOnProperty(QStringLiteral("enabled"))) {
         flags |= CustomEnabled;
         return;
     }
+    // Sync it, and reset the flag. See `itemChange()`.
     bool enabled = action ? action->m_enabled : true;
     q_func()->setEnabled(enabled);
+    flags &= ~CustomEnabled;
 }
 
 // invoke actions' overridden triger() function
 void UCActionItemPrivate::_q_invokeActionTrigger(const QVariant &value)
 {
     invokeTrigger<UCAction>(action, value);
-}
-
-// setter called when bindings from QML set the value. Internal functions will
-// all use the setVisible setter, so initialization and (re)parenting related
-// visible alteration won't set the custom flag
-void UCActionItem::setVisible2(bool visible)
-{
-    // set the custom flag and forward the value to the original proepry setter
-    d_func()->flags |= UCActionItemPrivate::CustomVisible;
-    setVisible(visible);
-}
-void UCActionItem::setEnabled2(bool enabled)
-{
-    d_func()->flags |= UCActionItemPrivate::CustomEnabled;
-    setEnabled(enabled);
 }
 
 void UCActionItemPrivate::updateProperties()

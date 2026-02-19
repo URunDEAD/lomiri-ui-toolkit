@@ -41,9 +41,6 @@ class LOMIRITOOLKIT_EXPORT UCActionItem : public UCStyledItemBase
     Q_PROPERTY(QUrl iconSource READ iconSource WRITE setIconSource RESET resetIconSource NOTIFY iconSourceChanged)
     Q_PROPERTY(QString iconName READ iconName WRITE setIconName RESET resetIconName NOTIFY iconNameChanged)
 
-    // overrides
-    Q_PROPERTY(bool enabled READ isEnabled WRITE setEnabled2 NOTIFY enabledChanged2)
-    Q_PROPERTY(bool visible READ isVisible WRITE setVisible2 NOTIFY visibleChanged2 FINAL)
 public:
     explicit UCActionItem(QQuickItem *parent = 0);
 
@@ -59,9 +56,6 @@ public:
     void setIconName(const QString &iconName);
     void resetIconName();
 
-    void setVisible2(bool visible);
-    void setEnabled2(bool enabled);
-
 Q_SIGNALS:
     void actionChanged();
     void textChanged();
@@ -69,14 +63,12 @@ Q_SIGNALS:
     void iconNameChanged();
     void triggered(const QVariant &value);
 
-    void enabledChanged2();
-    void visibleChanged2();
-
 public Q_SLOTS:
     void trigger(const QVariant &value = QVariant());
 
 protected:
     UCActionItem(UCActionItemPrivate &, QQuickItem *parent);
+    void itemChange(ItemChange change, const ItemChangeData &data) override;
 
     Q_DECLARE_PRIVATE(UCActionItem)
     Q_PRIVATE_SLOT(d_func(), void _q_visibleBinding())

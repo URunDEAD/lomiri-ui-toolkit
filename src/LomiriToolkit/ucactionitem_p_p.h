@@ -45,7 +45,6 @@ public:
     }
 
     UCActionItemPrivate();
-    void init();
 
     bool hasBindingOnProperty(const QString &name);
     void updateProperties();
