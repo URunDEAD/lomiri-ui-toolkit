@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2026-02-20 16:28+0000\n"
+"PO-Revision-Date: 2026-02-28 07:12+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/hi/>\n"
@@ -94,7 +94,7 @@ msgstr "समय: HH:MM"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:293
 msgid "'Yesterday 'h:mm ap"
-msgstr "कल ही हुआ है |"
+msgstr "'कल   'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
@@ -118,15 +118,7 @@ msgstr "আজ টিমারী: HH:MM"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:312
 msgid "ddd' 'h:mm ap"
-msgstr ""
-"दिन: दिन, समय: समय, का मतलब है कि \"आज का समय\" यानी आज की सुबह/शाम के समय पर। "
-"\n"
-"\n"
-"So, the translation is:\n"
-"आज: आज\n"
-"समय: समय\n"
-"का: का, प्रत्यक्ष अंग्रेजी शब्द का उपयोग करके भावपूर्ण अंश \"का\" हिन्दी में 'का' है (अर्थात् "
-"किसी चीज़ को बताने का तरीका)।"
+msgstr "ddd' 'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
@@ -161,25 +153,14 @@ msgid ""
 "property \"%1\" of object %2 has type %3 and cannot be set to value \"%4\" "
 "of type %5"
 msgstr ""
-"\"%1\" के मालिक से \"%2\" व्यक्ति की गुणता है \"%3\" प्रकार और इसे मान \"%4\" प्रकार "
-"के रूप में निर्धारित नहीं किया जा सकता।"
+"ऑब्जेक्ट %2 की प्रॉपर्टी \"%1\" का प्रकार %3 है और इसे %5 प्रकार के मान \"%4\" पर सेट "
+"नहीं किया जा सकता है"
 
 #: Lomiri/Components/plugin/statesaverbackend_p.cpp:185
 #, qt-format
 msgid "property \"%1\" does not exist or is not writable for object %2"
 msgstr ""
-"\"{संपत्ति %1} का मूल्य नहीं है या इसके लिए संसाधनों तक पहुंच नहीं है, या यह एक प्रतिष्ठान "
-"%2 का हिस्सा नहीं है।\" या\n"
-"\n"
-"\"{संपत्ति %1} की परिभाषा नहीं मिली। या संपत्ति %2 के लिए संसाधनों तक पहुंच नहीं है।\"\n"
-"\n"
-"or \n"
-"\n"
-"\"{संपत्ति %1} का मूल्य नहीं है या इसके लिए संसाधनों तक पहुंच नहीं है, या यह एक प्रतिष्ठान "
-"%2 का हिस्सा नहीं है।\"\n"
-"\n"
-"Note: The translation is as per natural Hindi language and has covered "
-"maximum coverage."
+"ऑब्जेक्ट %2 के लिए प्रॉपर्टी \"%1\" मौजूद नहीं है या लिखने योग्य नहीं है"
 
 #: Lomiri/Components/plugin/ucalarm.cpp:41
 #: Lomiri/Components/plugin/ucalarm.cpp:643
