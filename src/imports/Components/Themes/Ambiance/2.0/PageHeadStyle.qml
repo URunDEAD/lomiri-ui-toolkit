@@ -400,18 +400,21 @@ Style.PageHeadStyle {
                 visible: styledItem.contents || headerStyle.config.contents
             }
             Binding {
+                restoreMode: Binding.RestoreNone
                 target: styledItem.contents
                 property: "anchors.fill"
                 value: contentsContainer
                 when: styledItem.contents
             }
             Binding {
+                restoreMode: Binding.RestoreNone
                 target: styledItem.contents
                 property: "parent"
                 value: contentsContainer
                 when: styledItem.contents
             }
             Binding {
+                restoreMode: Binding.RestoreNone
                 target: headerStyle.config.contents
                 property: "parent"
                 value: contentsContainer
