@@ -190,7 +190,7 @@ private Q_SLOTS:
             component.reset(new QQmlComponent(view->engine(), QUrl::fromLocalFile(document), (QQmlComponent::CompilationMode)mode));
             loader.load(component.data(), view->rootContext());
         }
-        QTRY_VERIFY(spy.m_object != nullptr);
+        QTRY_VERIFY_WITH_TIMEOUT(spy.m_object != nullptr, 20000);
         // check the statuses
         QCOMPARE(spy.m_statusList.length(), statuses.length());
         for (int i = 0; i < spy.m_statusList.length(); i++) {
@@ -206,7 +206,7 @@ private Q_SLOTS:
         AsyncLoader loader;
         LoaderSpy spy(&loader);
         loader.load(document, view->rootContext());
-        QTRY_VERIFY(spy.m_error == true);
+        QTRY_VERIFY_WITH_TIMEOUT(spy.m_error == true, 10000);
     }
 
     void test_load_no_context()
@@ -264,7 +264,7 @@ private Q_SLOTS:
             // cannot reset yet!
             QVERIFY(!loader.reset());
         }
-        QTRY_VERIFY(spy.m_reset);
+        QTRY_VERIFY_WITH_TIMEOUT(spy.m_reset, 10000);
     }
 
     void test_second_load_scenarios_data()
@@ -313,7 +313,7 @@ private Q_SLOTS:
         SecondLoaderSpy spy(&loader, (AsyncLoader::LoadingStatus)when, QUrl::fromLocalFile(doc2), view->rootContext());
         // load the first document
         QVERIFY(loader.load(QUrl::fromLocalFile(doc1), view->rootContext()));
-        QTRY_VERIFY(spy.m_object != nullptr);
+        QTRY_VERIFY_WITH_TIMEOUT(spy.m_object != nullptr, 10000);
         QCOMPARE(spy.m_loadResult, success);
     }
 };

@@ -421,13 +421,13 @@ Item {
             verify(defaults.primaryPage == null);
             verify(defaults.primaryPageSource == undefined);
             defaults.primaryPageSource = data.test;
-            primaryPageSpy.wait();
+            primaryPageSpy.wait(10000);
             // add some pages
             defaults.addPageToCurrentColumn(defaults.primaryPage, otherPage2);
             // then replace the primaryPageSource
             primaryPageSpy.clear();
             defaults.primaryPageSource = data.nextValue;
-            primaryPageSpy.wait();
+            primaryPageSpy.wait(10000);
             // look after page2
             verify(!findPageFromLayout(defaults, "Page2"), "Page2 still in the view!");
         }

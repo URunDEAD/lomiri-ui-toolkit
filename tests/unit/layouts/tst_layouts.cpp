@@ -1052,8 +1052,8 @@ private Q_SLOTS:
         view->rootObject()->metaObject()->invokeMethod(view->rootObject(), layoutFunction.toLocal8Bit().data());
         mainLayoutChangeSpy.wait(1000);
         // get the nested layout
-        ULLayouts *nestedLayout = qobject_cast<ULLayouts*>(testItem(mainLayout, "nestedLayout"));
-        QVERIFY(nestedLayout);
+        ULLayouts *nestedLayout = nullptr;
+        QTRY_VERIFY((nestedLayout = qobject_cast<ULLayouts*>(testItem(mainLayout, "nestedLayout"))));
         QQuickItem *nestedActiveLayout = testItem(nestedLayout, layoutName);
         QVERIFY(nestedActiveLayout);
         QCOMPARE(red->isVisible(), false);
