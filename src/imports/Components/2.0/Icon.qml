@@ -107,6 +107,22 @@ Item {
     */
     property alias asynchronous: image.asynchronous
 
+    /*!
+      \qmlproperty enumeration Icon::status
+      \readonly
+
+      Holds the loading status of the icon.
+
+      The value is one of:
+      \list
+        \li Image.Null
+        \li Image.Ready
+        \li Image.Loading
+        \li Image.Error
+      \endlist
+    */
+    property alias status: image.status
+
     implicitWidth: image.implicitWidth
     implicitHeight: image.implicitHeight
 
