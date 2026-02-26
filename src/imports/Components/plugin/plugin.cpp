@@ -45,10 +45,20 @@ void LomiriComponentsPlugin::registerTypes(const char *uri)
 
 void LomiriComponentsPlugin::initializeEngine(QQmlEngine *engine, const char *uri)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    /*
+     * QQmlExtensionPlugin::baseUrl() is deprecated in Qt 6.3, but we still use
+     * it to locate private .qml files.
+     * FIXME: find a way to not use baseUrl(). Preferably when we stop
+     * supporting Qt 5?
+     * 
+     * See: https://github.com/qt/qtdeclarative/commit/a5404b2cb624a4d42f29da0a1c093384474d022e
+     */
+    QT_WARNING_PUSH
+    QT_WARNING_DISABLE_DEPRECATED
+
     UT_PREPEND_NAMESPACE(LomiriToolkitModule)::initializeModule(engine, baseUrl());
-#else
-    UT_PREPEND_NAMESPACE(LomiriToolkitModule)::initializeModule(engine, QUrl());
-#endif
+
+    QT_WARNING_POP
+
     QQmlExtensionPlugin::initializeEngine(engine, uri);
 }
