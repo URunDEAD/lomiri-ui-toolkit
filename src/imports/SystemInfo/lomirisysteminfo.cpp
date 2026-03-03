@@ -59,7 +59,7 @@ class LomiriSystemInfoModule : public QQmlExtensionPlugin
 public:
     virtual void registerTypes(const char *uri) override
     {
-        Q_ASSERT(QLatin1String(uri) == QLatin1String("LomiriSystemInfo"));
+        Q_ASSERT(QLatin1String(uri) == QLatin1String("Lomiri.SystemInfo"));
 
         int major = 0;
         int minor = 1;
