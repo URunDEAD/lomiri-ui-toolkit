@@ -90,6 +90,11 @@ public:
     bool swipedOverThreshold(const QPointF &mousePos, const QPointF relativePos);
     void handleLeftButtonPress(QMouseEvent *event);
     void handleLeftButtonRelease(QMouseEvent *event);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void handleTouchPress(QTouchEvent *event);
+    void handleTouchMove(QTouchEvent *event);
+    void handleTouchRelease(QTouchEvent *event);
+#endif
     bool sendMouseEvent(QQuickItem *item, QMouseEvent *event);
     bool shouldShowContextMenu(QMouseEvent *event);
     void _q_popoverClosed();

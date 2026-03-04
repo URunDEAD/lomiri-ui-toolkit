@@ -104,6 +104,9 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    void touchEvent(QTouchEvent *event) override;
+#endif
     bool childMouseEventFilter(QQuickItem *child, QEvent *event) override;
     bool eventFilter(QObject *, QEvent *) override;
     void timerEvent(QTimerEvent *event) override;
