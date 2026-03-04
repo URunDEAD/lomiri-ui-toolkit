@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-11-28 10:00+0000\n"
+"PO-Revision-Date: 2026-03-07 10:10+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/"
-"lomiri-ui-toolkit-gallery-example/et/>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri-"
+"ui-toolkit-gallery-example/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: About.qml:34
 msgid "About..."
@@ -42,7 +42,7 @@ msgstr "Pole kasutusel"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr ""
+msgstr "Numbrianimatsioon"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
@@ -76,7 +76,7 @@ msgstr "Kõne"
 
 #: Buttons.qml:37
 msgid "Stroke"
-msgstr ""
+msgstr "Läbikriipsutus"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
@@ -211,15 +211,15 @@ msgstr "Objektivalija"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr ""
+msgstr "Laienev"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr ""
+msgstr "Mitmikvalik"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
-msgstr ""
+msgstr "Kohandatav mudel"
 
 #: ListItems.qml:165 ListItems.qml:180 OptionSelectors.qml:88
 #: OptionSelectors.qml:103
@@ -243,7 +243,7 @@ msgstr "Väärtus 8"
 
 #: ListItems.qml:190
 msgid "Control"
-msgstr ""
+msgstr "Kontroll"
 
 #: ListItems.qml:202
 msgid "Removable"
@@ -291,7 +291,7 @@ msgstr "Järgnevad tegevused"
 
 #: NewListItems.qml:84
 msgid "Custom action delegates"
-msgstr ""
+msgstr "Kohandatud tegevuste järelmid"
 
 #: NewListItems.qml:111
 msgid "Edit"
@@ -303,7 +303,7 @@ msgstr "Teisalda"
 
 #: NewListItems.qml:163
 msgid "Basic"
-msgstr ""
+msgstr "Lihtne"
 
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
@@ -320,11 +320,11 @@ msgstr "Eraldajat pole"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
-msgstr ""
+msgstr "Valija"
 
 #: OptionSelectors.qml:34
 msgid "This is the second value"
-msgstr ""
+msgstr "See on teine väärtus"
 
 #: OptionSelectors.qml:35
 msgid ""
@@ -340,11 +340,11 @@ msgstr "Kunagi oli üks, lugu, mida mitte keegi pole rääkinud."
 
 #: OptionSelectors.qml:83
 msgid "Custom container height"
-msgstr ""
+msgstr "Konteineri valitav kõrgus"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr ""
+msgstr "Algset valikut pole, keritav."
 
 #: Pickers.qml:31
 msgid "Linear"
@@ -368,7 +368,7 @@ msgstr "Ülekate"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr ""
+msgstr "Sirvutav/viibatav"
 
 #: Popover.qml:74
 msgid "Action #1"
@@ -412,7 +412,7 @@ msgstr "Kasutusel"
 
 #: Sheet.qml:28
 msgid "The visual style of the Sheet is early work and thus clunky looking."
-msgstr ""
+msgstr "Lehe visuaal on algusjärgus ja tundub kindlasti kohmakas."
 
 #: Sheet.qml:53 Sheet.qml:86
 msgid "Title"
@@ -425,7 +425,7 @@ msgstr "Tegelik väärtus: %1"
 
 #: Sliders.qml:42
 msgid "Live Update"
-msgstr ""
+msgstr "Uuendus reaalajas"
 
 #: Sliders.qml:57
 msgid "Range"
@@ -449,7 +449,7 @@ msgstr "Suur"
 
 #: TextInputs.qml:50
 msgid "Type me in..."
-msgstr ""
+msgstr "Kirjuta midagi..."
 
 #: TextInputs.qml:56
 msgid "Password"
@@ -477,23 +477,23 @@ msgstr "Vaikimisi"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr ""
+msgstr "Vormindatud tekst"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
-msgstr ""
+msgstr "Märkimata"
 
 #: Toggles.qml:36 Toggles.qml:74
 msgid "Checked"
-msgstr ""
+msgstr "Märgitud"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr ""
+msgstr "Kuvasuhe"
 
 #: LomiriShape.qml:73
 msgid "Radius"
-msgstr ""
+msgstr "Raadius"
 
 #: LomiriShape.qml:115
 msgid "Image"
@@ -501,4 +501,4 @@ msgstr "Pilt"
 
 #: LomiriShape.qml:134
 msgid "Gradient"
-msgstr ""
+msgstr "Gradient"
