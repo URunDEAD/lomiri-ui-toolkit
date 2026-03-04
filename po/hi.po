@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2026-02-28 07:12+0000\n"
+"PO-Revision-Date: 2026-03-07 10:10+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/hi/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:13+0000\n"
 
 #: Lomiri/Components/1.2/TextInputPopover.qml:29
@@ -174,15 +174,7 @@ msgstr "अलर्म में एक अटैच्ड ऑपरेशन �
 
 #: Lomiri/Components/plugin/ucarguments.cpp:188
 msgid "Usage: "
-msgstr ""
-"व्यावसायिक जीवन में सफलता प्राप्त करने के लिए निम्नलिखित महत्वपूर्ण बातों पर ध्यान देना "
-"चाहिए:\n"
-"\n"
-"1. अपने लक्ष्यों को स्पष्ट रूप से परिभाषित करें।\n"
-"2. एक विस्तृत योजना बनाएं और उसमें विवरण शामिल करें।\n"
-"3. अपनी मेहनत और समर्पण को बढ़ाएं।\n"
-"4. संकटों का सामना करने के लिए तैयार रहें।\n"
-"5. निरंतर प्रगति और विकास के लिए प्रयास करें। "
+msgstr "प्रयोग "
 
 #: Lomiri/Components/plugin/ucarguments.cpp:209
 msgid "Options:"
@@ -205,20 +197,15 @@ msgstr "%1 को अतिरिक्त तर्कों की अपे�
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr "\"स्वाइप इवेंट () स्लॉट को ओवरराइड करने पर विचार करें!\""
+msgstr "swipeEvent() स्लॉट को ओवरराइड करने पर विचार करें"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
-msgstr "\"विवरण करने की पीड़ा उठाओ या स्लॉट ओवरराइड करें!\""
+msgstr "रिबाउंड() स्लॉट को ओवरराइड करने पर विचार करें !"
 
 #: Lomiri/Components/plugin/ucmousefilters.cpp:1065
 msgid "Ignoring AfterItem priority for InverseMouse filters."
-msgstr ""
-"निरंतर माउस फ़िल्टर्स के लिए नकारात्मक मaus इंटरफ़िल की अवक्षेपित प्राथमिकता।\n"
-"\n"
-"Note: I've used the word \"निरंतर\" (nirantar) to convey the idea of "
-"\"continuous\" or \"forever\", which is not a direct translation but fits "
-"the context।"
+msgstr "इनवर्समाउस फ़िल्टर के लिए आफ्टरआइटम प्राथमिकता को अनदेखा करना ।"
 
 #: Lomiri/Components/plugin/ucserviceproperties.cpp:77
 msgid "Changing connection parameters forbidden."
@@ -249,7 +236,7 @@ msgid ""
 "State saving disabled for %1, class %2"
 msgstr ""
 "अगर सभी माता-पिता को एक आईडी होना चाहिए।\n"
-"राज्य सेविंग डिसएबल्ड फॉर %1, क्लास %2।"
+"राज्य सेविंग डिसएबल्ड फॉर %1, क्लास %2"
 
 #: Lomiri/Components/plugin/uctheme.cpp:208
 #, qt-format
