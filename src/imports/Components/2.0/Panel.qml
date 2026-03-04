@@ -486,14 +486,12 @@ Item {
         id: draggingArea
         orientation: internal.orientation === Qt.Horizontal ? Qt.Vertical : Qt.Horizontal
         zeroVelocityCounts: true
-        anchors {
-            top: panel.align === Qt.AlignBottom ? undefined : parent.top
-            bottom: panel.align === Qt.AlignTop ? undefined : parent.bottom
-            left: panel.align === Qt.AlignRight || panel.align === Qt.AlignTrailing ? undefined : parent.left
-            right: panel.align === Qt.AlignLeft || panel.align === Qt.AlignLeading ? undefined : parent.right
-        }
-        height: internal.orientation === Qt.Horizontal ? panel.opened ? bar.size + units.gu(1) : panel.triggerSize : undefined
-        width: internal.orientation === Qt.Vertical ? panel.opened ? bar.size + units.gu(1) : panel.triggerSize : undefined
+        // For top/left aligned panels, the DraggingArea is always at (0, 0).
+        // For bottom/right aligned panels, the DraggingArea is on the opposite side (parent size - own size).
+        x: internal.align === Qt.AlignRight ? parent.width - width : 0
+        y: internal.align === Qt.AlignBottom ? parent.height - height : 0
+        height: internal.orientation === Qt.Horizontal ? panel.opened ? bar.size + units.gu(1) : panel.triggerSize : parent.height
+        width: internal.orientation === Qt.Vertical ? panel.opened ? bar.size + units.gu(1) : panel.triggerSize : parent.width
         visible: !panel.locked || panel.opened
         hoverEnabled: panel.__openOnHover
 
@@ -628,12 +626,6 @@ Item {
         objectName: "bar_item"
         height: parent.height
         width: parent.width
-        anchors {
-            left: internal.orientation === Qt.Horizontal ? parent.left : undefined
-            right: internal.orientation === Qt.Horizontal ? parent.right : undefined
-            top: internal.orientation === Qt.Vertical ? parent.top : undefined
-            bottom: internal.orientation === Qt.Vertical ? parent.bottom : undefined
-        }
 
         property real size: internal.orientation === Qt.Horizontal ? height : width
         //position will always be in the range 0..size, where position==0 means spread, position==size means hidden.
