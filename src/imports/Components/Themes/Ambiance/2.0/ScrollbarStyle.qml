@@ -180,6 +180,7 @@ Item {
     //px-per-GU display (i.e. 8px/GU). Please consider updating the asset if
     //you change this size to avoid blurry steppers on low px-per-GU displays.
     property real __stepperAssetWidth: units.dp(8)
+    readonly property url __stepperSvg: Qt.resolvedUrl("../artwork/toolkit_scrollbar-stepper.svg")
 
     //UX requested to disable this feature for the moment
     property bool __disableDragResetFeature: true
@@ -974,9 +975,7 @@ Item {
                         anchors.centerIn: parent
                         width: __stepperAssetWidth
                         rotation: isVertical ? 180 : 90
-                        //NOTE: Qt.resolvedUrl was removed because it does not seem to be needed and
-                        //the QML profiler showed it's relatively expensive
-                        source: visible ? "../artwork/toolkit_scrollbar-stepper.svg" : ""
+                        source: visible ? __stepperSvg : ""
                         asynchronous: true
                         color: Qt.rgba(sliderColor.r, sliderColor.g, sliderColor.b,
                                        sliderColor.a * ((flickableItem && flickableItem[scrollbarUtils.propAtBeginning])
@@ -1020,9 +1019,7 @@ Item {
                         anchors.centerIn: parent
                         width: __stepperAssetWidth
                         rotation: isVertical ? 0 : -90
-                        //NOTE: Qt.resolvedUrl was removed because it does not seem to be needed and
-                        //the QML profiler showed it's relatively expensive
-                        source: visible ? "../artwork/toolkit_scrollbar-stepper.svg" : ""
+                        source: visible ? __stepperSvg : ""
                         asynchronous: true
                         color: Qt.rgba(sliderColor.r, sliderColor.g, sliderColor.b,
                                        sliderColor.a * ((flickableItem && flickableItem[scrollbarUtils.propAtEnd])
