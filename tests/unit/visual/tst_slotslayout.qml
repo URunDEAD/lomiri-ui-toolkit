@@ -38,7 +38,7 @@ Item {
         }
     }
 
-    VisualItemModel {
+    ObjectModel {
         id: layoutsModel
         SlotsLayout {
             id: layout
