@@ -87,7 +87,7 @@ Item {
         }
     }
 
-    VisualItemModel {
+    ObjectModel {
         id: layoutsModel
         Item {
             width: childrenRect.width
@@ -706,11 +706,11 @@ Item {
             //as the whole trough along the scrolling axis (e.g. whole trough width for the vert. scrollbar)
             //and exactly the thumb along the non-scrolling axis (e.g. thumb's height for vert. scrollbar
             if (style.isVertical) {
-                var insideTopLeft     = [-mappedCoords.x                   , 0               ]
-                var insideBottomRight = [-mappedCoords.x + floorTroughWidth, floorThumbHeight]
+                var insideTopLeft     = [-mappedCoords.x                       , 0               ]
+                var insideBottomRight = [-mappedCoords.x + floorTroughWidth - 1, floorThumbHeight]
             } else {
-                var insideTopLeft     = [0              , -mappedCoords.y                    ]
-                var insideBottomRight = [floorThumbWidth, -mappedCoords.y + floorTroughHeight]
+                var insideTopLeft     = [0              , -mappedCoords.y                        ]
+                var insideBottomRight = [floorThumbWidth, -mappedCoords.y + floorTroughHeight - 1]
             }
             mouseMove(thumb, insideTopLeft[0], insideTopLeft[1])
             compare(Qt.colorEqual(thumb.color, thumbHoveredColor), true,
