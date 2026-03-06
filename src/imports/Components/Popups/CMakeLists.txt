@@ -23,3 +23,10 @@ qt_add_qml_module(LomiriComponentsPopups
 )
 
 install_qml_module(LomiriComponentsPopups)
+
+# Woraround for https://qt-project.atlassian.net/browse/QTBUG-144829
+# The qmldir "prefer" directive is ignored for scripts when using a
+# qualified import, so for now we install the JavaScript file.
+install(FILES "2.0/PopupUtils.js"
+    DESTINATION "${QML_INSTALL_DIR}/Lomiri/Components/Popups/2.0"
+)

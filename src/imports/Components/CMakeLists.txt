@@ -103,6 +103,13 @@ qt6_add_shaders(LomiriComponents "LomiriComponents_shaders"
 
 install_qml_module(LomiriComponents)
 
+# Woraround for https://qt-project.atlassian.net/browse/QTBUG-144829
+# The qmldir "prefer" directive is ignored for scripts in some cases,
+# so for now we install the JavaScript file.
+install(FILES "2.0/dateUtils.js"
+    DESTINATION "${QML_INSTALL_DIR}/Lomiri/Components/2.0"
+)
+
 add_subdirectory(Labs)
 add_subdirectory(ListItems)
 add_subdirectory(Pickers)

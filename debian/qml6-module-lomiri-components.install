@@ -4,12 +4,14 @@ usr/lib/*/qt6/qml/Lomiri/Components/ListItems/qmldir
 usr/lib/*/qt6/qml/Lomiri/Components/Pickers/LomiriComponentsPickers.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Pickers/libLomiriComponentsPickers.so
 usr/lib/*/qt6/qml/Lomiri/Components/Pickers/qmldir
+usr/lib/*/qt6/qml/Lomiri/Components/Popups/2.0/PopupUtils.js
 usr/lib/*/qt6/qml/Lomiri/Components/Popups/LomiriComponentsPopups.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Popups/libLomiriComponentsPopups.so
 usr/lib/*/qt6/qml/Lomiri/Components/Popups/qmldir
 usr/lib/*/qt6/qml/Lomiri/Components/Styles/libLomiriComponentsStyles.so
 #usr/lib/*/qt6/qml/Lomiri/Components/Styles/plugins.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Styles/qmldir
+usr/lib/*/qt6/qml/Lomiri/Components/2.0/dateUtils.js
 usr/lib/*/qt6/qml/Lomiri/Components/libLomiriComponents.so
 #usr/lib/*/qt6/qml/Lomiri/Components/plugins.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/qmldir
