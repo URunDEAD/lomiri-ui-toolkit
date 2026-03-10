@@ -249,7 +249,7 @@ Template {
                         id: lab
                         anchors.right: label2.right
                         text: "19:17"
-                        fontSize: "small"
+                        textSize: Label.Small
                         y: dialerHistoryLayout.mainSlot.y + dialerHistoryLayout.title.y
                            + dialerHistoryLayout.title.baselineOffset - baselineOffset
                     }
@@ -257,7 +257,7 @@ Template {
                     Label {
                         id: label2
                         text: "Outgoing"
-                        fontSize: "small"
+                        textSize: Label.Small
                         y: dialerHistoryLayout.mainSlot.y + dialerHistoryLayout.subtitle.y
                            + dialerHistoryLayout.subtitle.baselineOffset - baselineOffset
                     }
