@@ -52,7 +52,7 @@ Item {
             Label {
                 anchors.centerIn: parent
                 text: title
-                fontSize: "x-large"
+                textSize: Label.XLarge
             }
             color: Qt.rgba(Math.random(0.5), Math.random(1), Math.random(0.5), 1)
         }
@@ -162,7 +162,7 @@ Item {
 
         function test_2_tabSelection_data() {
             // sync textSizer with style settings
-            textSizer.fontSize = bar.__styleInstance.headerFontSize;
+            textSizer.textSize = bar.__styleInstance.headerAdaptiveLabelSize;
             textSizer.font.weight = bar.__styleInstance.headerFontWeight;
             var tabWidth = units.gu(2) + textSizer.paintedWidth + bar.__styleInstance.headerTextLeftMargin + bar.__styleInstance.headerTextRightMargin;
 
