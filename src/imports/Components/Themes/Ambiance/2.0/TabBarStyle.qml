@@ -40,7 +40,7 @@ Item {
     property int headerTextFadeDuration: animate ? 350 : 0
     property url indicatorImageSource: Qt.resolvedUrl("../artwork/chevron@27.png")
 
-    property string headerAdaptiveLabelSize: Label.XLarge
+    property int headerAdaptiveLabelSize: Label.XLarge
     property int headerTextStyle: Text.Normal
     property color headerTextStyleColor: theme.palette.normal.backgroundText
     property int headerFontWeight: Font.Light
