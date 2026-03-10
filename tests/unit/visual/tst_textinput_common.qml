@@ -473,9 +473,8 @@ Item {
             data.input.focus = true;
             waitForRendering(data.input, 500);
 
-            mouseDoubleClick(data.input, units.gu(1), units.gu(1));
+            mouseDoubleClickSequence(data.input, units.gu(1), units.gu(1));
             waitForRendering(data.input, 500);
-            expectFail(data.tag, "mouseDoubleClick() fails to trigger")
             verify(data.input.selectedText != "", "No text selected.");
         }
 
