@@ -140,7 +140,7 @@ Item {
         nextImageFadeIn.stop();
 
         // Don't fade in initial picture, only fade changes
-        if (internals.currentImage.source === "") {
+        if (internals.currentImage.source.toString() === "") {
             internals.currentImage.source = source;
             internals.loadingImage = internals.currentImage;
         } else {
@@ -150,7 +150,7 @@ Item {
             internals.loadingImage = internals.nextImage;
 
             // If case the image is still in QML's cache, status will be "Ready" immediately
-            if (internals.nextImage.status === Image.Ready || internals.nextImage.source === "") {
+            if (internals.nextImage.status === Image.Ready || internals.nextImage.source.toString() === "") {
                 internals.swapImages();
             }
         }
