@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2026-03-11 04:17+0000\n"
+"PO-Revision-Date: 2026-03-11 21:28+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/hi/>\n"
@@ -272,7 +272,7 @@ msgstr "स्वीकार करें"
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:85
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:85
 msgid "Close"
-msgstr "बंद कर"
+msgstr "बंद"
 
 #: Lomiri/Components/Popups/1.2/DefaultSheet.qml:95
 #: Lomiri/Components/Popups/1.3/DefaultSheet.qml:95
