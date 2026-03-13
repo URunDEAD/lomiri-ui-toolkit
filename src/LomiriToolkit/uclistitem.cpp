@@ -151,11 +151,9 @@ QSGNode *UCListItemDivider::updatePaintNode(QSGNode *node, UpdatePaintNodeData *
         }
         dividerNode->update();
         return dividerNode;
-    } else if (node) {
-        // delete the node
-        delete node;
     }
-    return 0;
+    delete dividerNode;
+    return nullptr;
 }
 
 QColor UCListItemDivider::colorFrom() const
@@ -1303,6 +1301,11 @@ bool UCListItemPrivate::shouldShowContextMenu(QMouseEvent *event)
 
 void UCListItemPrivate::_q_popoverClosed()
 {
+    Q_Q(UCListItem);
+    QQuickItem *popover = qobject_cast<QQuickItem*>(q->sender());
+    if (popover) {
+        popover->deleteLater();
+    }
     setHighlighted(false);
 }
 
