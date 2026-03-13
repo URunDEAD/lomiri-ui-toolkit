@@ -92,7 +92,7 @@ Style.ComboButtonStyle {
             property string iconPosition: styledItem.iconPosition
             property real iconSize: units.gu(2)
             property real spacing: mainButton.horizontalPadding
-            property bool hasIcon: styledItem.iconSource !== ""
+            property bool hasIcon: styledItem.iconSource.toString() !== ""
             property bool hasText: styledItem.text !== ""
 
             anchors {
