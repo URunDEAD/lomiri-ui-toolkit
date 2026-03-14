@@ -201,7 +201,7 @@ Item {
             // cleanup
             TestExtras.touchRelease(0, data.input, guPoint(1, 1));
             // dismiss popover
-            TestExtras.touchClick(0, testMain, 0, 0);
+            TestExtras.touchClick(0, testMain, guPoint(0, 0));
         }
 
         function test_longtap_when_empty_data() {
@@ -223,7 +223,7 @@ Item {
             // cleanup
             TestExtras.touchRelease(0, data.input, guPoint(1, 1));
             // dismiss popover
-            TestExtras.touchClick(0, testMain, 0, 0);
+            TestExtras.touchClick(0, testMain, guPoint(0, 0));
             waitForRendering(data.input, 500);
         }
 
@@ -267,6 +267,7 @@ Item {
 
             TestExtras.touchDrag(0, caret, centerOf(caret), data.delta);
             waitForRendering(data.input, 500);
+            wait(500);
             verify(cursorPosition !== data.input.cursorPosition, "Cursor not moved!");
         }
 
