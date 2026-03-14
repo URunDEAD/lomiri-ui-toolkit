@@ -80,12 +80,12 @@ Item {
             id: button
             text: "Press me"
             property bool override: false
-            Keys.onReleased: event.accepted = override
+            Keys.onReleased: function(event) { event.accepted = override }
         }
         ListItem {
             id: listItem
             property bool override: false
-            Keys.onReleased: event.accepted = override
+            Keys.onReleased: function(event) { event.accepted = override }
             Label {
                 text: "Cuddle me"
             }
@@ -151,14 +151,14 @@ Item {
                 color: "blue"
             }
             property bool override: false
-            Keys.onReleased: event.accepted = override
+            Keys.onReleased: function(event) { event.accepted = override }
         }
         OptionSelector {
             id: optionSelector
             text: 'Pick your poison'
             model: ['Gin and Tonic', 'White Russian', 'Sex on the Beach', 'Strawberry Mojito']
             property bool override: false
-            Keys.onReleased: event.accepted = override
+            Keys.onReleased: function(event) { event.accepted = override }
         }
         Button {
             id: popoverTest

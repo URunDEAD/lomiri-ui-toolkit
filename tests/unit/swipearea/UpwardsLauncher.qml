@@ -54,7 +54,7 @@ Item {
 
         direction: SwipeArea.Upwards
 
-        onDraggingChanged: {
+        onDraggingChanged: function(dragging) {
             if (dragging) {
                 launcher.y = Qt.binding(launcher.followDragArea)
             }

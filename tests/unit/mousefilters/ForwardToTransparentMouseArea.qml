@@ -27,8 +27,8 @@ Item {
         width: units.gu(40)
         height: units.gu(10)
 
-        onPressed: mouse.accepted = false
-        onReleased: mouse.accepted = false
+        onPressed: function(mouse) { mouse.accepted = false }
+        onReleased: function(mouse) { mouse.accepted = false }
 
         TextInput {
             objectName: "FilterOwner"

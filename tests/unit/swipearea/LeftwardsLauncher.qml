@@ -54,7 +54,7 @@ Item {
 
         direction: SwipeArea.Leftwards
 
-        onDraggingChanged: {
+        onDraggingChanged: function(dragging) {
             if (dragging) {
                 launcher.x = Qt.binding(launcher.followDragArea)
             }

@@ -77,7 +77,7 @@ Item {
             MouseArea {
                 id: overlayArea
                 anchors.fill: parent
-                onPressed: mouse.accepted = overlaidMouseArea.acceptEvent
+                onPressed: function(mouse) { mouse.accepted = overlaidMouseArea.acceptEvent }
             }
         }
         ListView {

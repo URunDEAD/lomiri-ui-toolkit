@@ -36,8 +36,8 @@ Item {
 
             property int keyPressData
             property int keyReleaseData
-            Keys.onPressed: keyPressData = event.key
-            Keys.onReleased: keyReleaseData = event.key
+            Keys.onPressed: function(event) { keyPressData = event.key }
+            Keys.onReleased: function(event) { keyReleaseData = event.key }
         }
 
         TextArea {

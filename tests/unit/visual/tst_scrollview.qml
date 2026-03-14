@@ -60,7 +60,7 @@ Item {
                     activeFocusOnPress: true
 
                     Keys.enabled: true
-                    Keys.onPressed: {
+                    Keys.onPressed: function(event) {
                         if (event.key === Qt.Key_PageDown && root.innerItemConsumesKeyEvents) {
                             event.accepted = true
                         }

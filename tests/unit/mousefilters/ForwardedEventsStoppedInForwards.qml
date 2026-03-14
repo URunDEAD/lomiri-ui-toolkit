@@ -24,7 +24,7 @@ Item {
     objectName: "target"
 
     Mouse.enabled: true
-    Mouse.onPressed: mouse.accepted = true
+    Mouse.onPressed: function(mouse) { mouse.accepted = true }
 
     TextInput {
         objectName: "FilterOwner"

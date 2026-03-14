@@ -23,5 +23,5 @@ TextInput {
     height: units.gu(5)
     activeFocusOnPress: true
 
-    Mouse.onPressAndHold: {mouse.accepted = true}
+    Mouse.onPressAndHold: function(mouse) { mouse.accepted = true }
 }
