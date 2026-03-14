@@ -452,7 +452,7 @@ Item {
     property bool __closeOnContentsClicks: false
     Toolkit.InverseMouseArea {
         anchors.fill: draggingArea
-        onPressed: {
+        onPressed: function(mouse) {
             mouse.accepted = false;
             // the mouse click may cause an update
             //  of locked by the clicked Item behind
@@ -527,7 +527,7 @@ Item {
         // forward trigger() events to any child Item with trigger() function.
         // This must also happen when the panel is locked, so the DraggingArea is
         // never disabled, and other signal handlers will return when panel.locked is true.
-        onClicked: {
+        onClicked: function(mouse) {
             if (pressedItem && pressedItem === getTriggerableItem(mouse)) {
                 // Click event positioned at the Item where the user first pressed
                 pressedItem.trigger();
@@ -535,7 +535,7 @@ Item {
         }
 
         property int initialPosition
-        onPressed: {
+        onPressed: function(mouse) {
             hideTimer.stop();
             pressedItem = getTriggerableItem(mouse);
             if (panel.locked) return;

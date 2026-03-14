@@ -372,7 +372,7 @@ Item {
 
         // This MouseArea is always enabled, even when the tab bar is in selection mode,
         //  so that press events are detected and tabBarStyle.pressed is updated.
-        onPressed: {
+        onPressed: function(mouse) {
             mouseArea.interacting = true;
             if (!styledItem.selectionMode) {
                 mouseArea.enteringSelectionMode = true;

@@ -201,7 +201,7 @@ Template {
                     }
                 ]
 
-                onHandUpdated: handText.text = Math.round(hand.value);
+                onHandUpdated: function(hand) { handText.text = Math.round(hand.value) };
             }
         }
     }

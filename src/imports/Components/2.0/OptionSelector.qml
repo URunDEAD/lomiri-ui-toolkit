@@ -202,7 +202,7 @@ ListItem.Empty {
     activeFocusOnTab: true
 
     // Prevent scrolling on pressed when released changes the index
-    Keys.onPressed: {
+    Keys.onPressed: function(event) {
         // Only change index while expanded
         if (!listContainer.currentlyExpanded)
             return;
@@ -222,7 +222,7 @@ ListItem.Empty {
             event.accepted = true;
         }
     }
-    Keys.onReleased: {
+    Keys.onReleased: function(event) {
         var increment;
         switch (event.key) {
         case Qt.Key_Up:
