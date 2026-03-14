@@ -101,7 +101,7 @@ MultiPointTouchArea {
     }
     // returns the cursor position from x,y pair
     function unadulteratedCursorPosition(x, y) {
-        return singleLine ? input.positionAt(x, TextInput.CursorOnCharacter) : input.positionAt(x, y, TextInput.CursorOnCharacter);
+        return singleLine ? input.positionAt(x, y, TextInput.CursorOnCharacter) : input.positionAt(x, y);
     }
     // returns the cursor position taking frame into account
     function cursorPosition(x, y): point {
