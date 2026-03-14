@@ -183,7 +183,8 @@ Style.ComboButtonStyle {
                     }
                     PropertyChanges {
                         target: foregroundLabel
-                        width: Math.min(foregroundLabel.implicitWidth, foreground.width)
+                        width: foreground.width
+                        horizontalAlignment: Text.AlignHCenter
                     }
                     PropertyChanges {
                         target: foreground
