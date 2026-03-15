@@ -92,7 +92,7 @@ MouseArea {
         updateSpeed()
     }
 
-    onPositionChanged: {
+    onPositionChanged: function(mouse) {
         if (dragging) {
             pushDragEvent(mouse)
         }
@@ -100,14 +100,14 @@ MouseArea {
             clickValidated = false
     }
 
-    onPressed: {
+    onPressed: function(mouse) {
         __pressedPosition = Qt.point(mouse.x, mouse.y)
         __dragEvents = []
         pushDragEvent(mouse)
         clickValidated = true
     }
 
-    onReleased: {
+    onReleased: function(mouse) {
         dragging = false
         __pressedPosition = Qt.point(mouse.x, mouse.y)
     }

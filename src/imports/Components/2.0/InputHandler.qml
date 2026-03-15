@@ -349,7 +349,7 @@ MultiPointTouchArea {
     }
 
     // PageUp and PageDown handling
-    Keys.onPressed: {
+    Keys.onPressed: function(event) {
         if (event.key === Qt.Key_PageUp && event.modifiers === Qt.NoModifier) {
             movePage(false);
         } else if (event.key === Qt.Key_PageDown && event.modifiers === Qt.NoModifier) {
@@ -420,7 +420,7 @@ MultiPointTouchArea {
         anchors.fill: parent
         acceptedButtons: Qt.RightButton
         // trigger pressAndHold
-        onReleased: openContextMenu(mouse, true)
+        onReleased: function(mouse) { openContextMenu(mouse, true); }
         cursorShape: Qt.IBeamCursor
     }
     Keys.onMenuPressed: inputHandler.pressAndHold(input.cursorPosition, false);
@@ -473,8 +473,8 @@ MultiPointTouchArea {
             tapCount = running;
         }
     }
-    onPressed: { handlePressed(touchPoints[0]); }
-    onReleased: { handleReleased(touchPoints[0]); }
+    onPressed: function(touchPoints) { handlePressed(touchPoints[0]); }
+    onReleased: function(touchPoints) { handleReleased(touchPoints[0]); }
 
     property Item cursorPositionCursor: null
     property Item selectionStartCursor: null

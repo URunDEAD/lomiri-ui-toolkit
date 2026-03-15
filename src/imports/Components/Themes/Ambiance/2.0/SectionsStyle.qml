@@ -241,12 +241,12 @@ Style.SectionsStyle {
 
         property bool pressedLeft: false
         property bool pressedRight: false
-        onPressed: {
+        onPressed: function(mouse) {
             pressedLeft = leftIcon.contains(mouse);
             pressedRight = rightIcon.contains(mouse);
             mouse.accepted = pressedLeft || pressedRight;
         }
-        onClicked: {
+        onClicked: function(mouse) {
             // positionViewAtIndex() does not provide animation
             var scrollDirection = 0;
             if (pressedLeft && leftIcon.contains(mouse)) {

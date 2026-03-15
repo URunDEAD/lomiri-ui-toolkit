@@ -475,7 +475,7 @@ Item {
             overshootTimer.restart();
             proximityArea.containsMouseDevice = false
         }
-        onPressed: { mouse.accepted = false }
+        onPressed: function(mouse) { mouse.accepted = false }
 
         Timer {
             id: overshootTimer
@@ -906,19 +906,19 @@ Item {
                 hoverEnabled: true
                 Mouse.enabled: true
                 Mouse.ignoreSynthesizedEvents: true
-                Mouse.onEntered: {
+                Mouse.onEntered: function(event) {
                     hoveringFirstStepper = false
                     hoveringSecondStepper = false
                     handleHover(event)
                 }
-                Mouse.onPositionChanged: {
+                Mouse.onPositionChanged: function(mouse) {
                     handleHover(mouse)
                 }
                 Mouse.onExited: {
                     hoveringFirstStepper = false
                     hoveringSecondStepper = false
                 }
-                Mouse.onPressed: {
+                Mouse.onPressed: function(mouse) {
                     //This additional trigger of the hovering logic is useful especially in testing
                     //environments, where simulating a click on the first stepper will generate onEntered,
                     //but then clicking on the second one (without a mouseMove) won't, because they're
@@ -927,7 +927,7 @@ Item {
                     //clicks on different steppers (like it happens in tst_actionSteppers test).
                     handleHover(mouse)
                 }
-                Mouse.onReleased: {
+                Mouse.onReleased: function(mouse) {
                     handleHover(mouse)
                 }
 
