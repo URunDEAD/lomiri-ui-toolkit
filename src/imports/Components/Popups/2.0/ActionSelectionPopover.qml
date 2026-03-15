@@ -144,7 +144,6 @@ Popover {
             model: body.isActionsObject ? popover.actions.children : popover.actions
             Loader {
                 width: body.width
-                height: modelData.visible ? item.height : 0
                 sourceComponent: delegate
                 onStatusChanged: {
                     if (item && status == Loader.Ready) {

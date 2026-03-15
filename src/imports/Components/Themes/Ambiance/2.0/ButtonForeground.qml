@@ -106,7 +106,8 @@ Item {
             }
             PropertyChanges {
                 target: label
-                width: Math.min(label.implicitWidth, buttonForeground.width)
+                width: buttonForeground.width
+                horizontalAlignment: Text.AlignHCenter
             }
             PropertyChanges {
                 target: buttonForeground

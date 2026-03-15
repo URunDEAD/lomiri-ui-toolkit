@@ -123,6 +123,7 @@ class SplitView : public QQuickBasePositioner
     Q_PROPERTY(qreal spacing READ spacing WRITE setSpacing2 NOTIFY spacingChanged2)
 public:
     explicit SplitView(QQuickItem *parent = 0);
+    ~SplitView();
 
     static UT_PREPEND_NAMESPACE(SplitViewAttached) *qmlAttachedProperties(QObject*);
 
@@ -134,7 +135,6 @@ Q_SIGNALS:
 
 protected:
     SplitView(SplitViewPrivate &, QQuickItem *);
-    ~SplitView();
 
     // property setters
     void setSpacing2(qreal spacing, bool reset = true);

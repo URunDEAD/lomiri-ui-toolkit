@@ -316,7 +316,7 @@ Toolkit.PageTreeNode {
                     !(internal.header.config &&
                       internal.header.config.hasOwnProperty("locked") &&
                       internal.header.config.locked)) {
-                internal.header.show();
+                internal.header.exposed = true;
             }
             // deprecated, however use it till we remove it completely
             tabs.modelChanged();
