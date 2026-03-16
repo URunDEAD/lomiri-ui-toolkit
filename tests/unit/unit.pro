@@ -10,42 +10,42 @@ SUBDIRS += testparser
 # https://bugs.launchpad.net/qemu-linaro/+bug/1084148
 #######################################
 #!contains(QMAKE_HOST.arch,armv7l) {
-    SUBDIRS += components \
+    SUBDIRS += components13 \
         components_benchmark
 #}
 
 SUBDIRS += \
-    visual \
-    lomiri_shape \
-    page \
-    test \
-    iconprovider \
-    inversemousearea \
-    recreateview \
-    statesaver \
-    deprecated_theme_engine \
-    orientation \
-    layouts \
-    mousefilters \
-    animator \
-    serviceproperties \
-    subtheming \
-    swipearea \
-    touchregistry \
-    bottomedge \
-    asyncloader \
+    alarms \
+    animator13 \
+    argument \
+    arguments \
+    asyncloader13 \
+    bottomedge13 \
     custom_qpa \
-    units \
-    scaling_image_provider \
-    qquick_image_extension \
-    performance \
+    deprecated_theme_engine13 \
+#   i18n13 \ FIXME: breaks xenial
+    iconprovider \
+    inversemousearea13 \
+    layouts13 \
+    lomiri_shape11 \
     mainview11 \
     mainview13 \
-#   i18n \ FIXME: breaks xenial
-    mainwindow \
-    arguments \
-    argument \
-    alarms \
-    theme \
+    mainwindow13 \
+    mousefilters13 \
+    orientation11 \
+    page11 \
+    performance13 \
+    qquick_image_extension13 \
     quickutils \
-    tree
+    recreateview11 \
+    scaling_image_provider13 \
+    serviceproperties11 \
+    statesaver11 \
+    subtheming13 \
+    swipearea13 \
+    test10 \
+    theme11 \
+    touchregistry \
+    tree \
+    units \
+    visual13

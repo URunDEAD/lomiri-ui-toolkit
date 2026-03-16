@@ -1,0 +1,1 @@
+../../../i18n/LocalizedApp/src/tst_i18n_LocalizedApp.cpp

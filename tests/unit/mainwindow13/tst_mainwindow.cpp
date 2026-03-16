@@ -1,0 +1,1 @@
+../mainwindow/tst_mainwindow.cpp

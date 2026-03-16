@@ -1,0 +1,1 @@
+../serviceproperties/tst_serviceproperties.cpp

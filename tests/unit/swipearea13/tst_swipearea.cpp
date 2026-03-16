@@ -1,0 +1,1 @@
+../swipearea/tst_swipearea.cpp
