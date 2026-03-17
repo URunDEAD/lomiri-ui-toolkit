@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:05+0100\n"
-"PO-Revision-Date: 2026-03-11 21:28+0000\n"
+"PO-Revision-Date: 2026-03-23 08:05+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit/hi/>\n"
@@ -94,7 +94,7 @@ msgstr "समय: HH:MM"
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
 #: Lomiri/Components/plugin/i18n.cpp:293
 msgid "'Yesterday 'h:mm ap"
-msgstr "'कल   'h:mm ap"
+msgstr "'कल 'h:mm ap"
 
 #. TRANSLATORS: Please translated these to your locale datetime format using the format specified by
 #. https://qt-project.org/doc/qt-5-snapshot/qdatetime.html#fromString-2
@@ -197,7 +197,7 @@ msgstr "%1 को अतिरिक्त तर्कों की अपे�
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:145
 msgid "consider overriding swipeEvent() slot!"
-msgstr "swipeEvent() स्लॉट को ओवरराइड करने पर विचार करें"
+msgstr "swipeEvent() स्लॉट को ओवरराइड करने पर विचार करें!"
 
 #: Lomiri/Components/plugin/uclistitemstyle.cpp:165
 msgid "consider overriding rebound() slot!"
