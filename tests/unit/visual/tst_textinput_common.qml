@@ -158,7 +158,7 @@ Item {
         }
     }
 
-    MockKeyboard13 {
+    MockKeyboard {
         Component.onCompleted: LomiriApplication.inputMethod = this
     }
 

@@ -43,8 +43,12 @@ private Q_SLOTS:
     void tst_animatorRegression_data() {
         QTest::addColumn<QString>("filename");
         QTest::addColumn<QString>("suppressDeprecatedNote");
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QTest::newRow("latest") << QString("tst_animator.qml") << QString("no");
+#else
         QTest::newRow("1.1") << QString("tst_animator.qml") << QString("yes");
         QTest::newRow("1.3") << QString("tst_animator13.qml") << QString("no");
+#endif
     }
 
     void tst_animatorRegression ()

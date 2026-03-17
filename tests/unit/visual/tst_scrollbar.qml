@@ -155,7 +155,7 @@ Item {
         }
     }
 
-    ScrollbarTestCase13 {
+    ScrollbarTestCase {
         name: "Scrollbar"
 
         function getFreshFlickable(alignment) {

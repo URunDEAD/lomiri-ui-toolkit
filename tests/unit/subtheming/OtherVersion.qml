@@ -21,5 +21,5 @@ StyledItem {
     height: units.gu(40)
     theme.name: "Lomiri.Components.Themes.Ambiance"
     styleName: "OptionSelectorStyle"
-    StyledItemV12 { objectName: "otherStyled" }
+    StyledItemThemed { objectName: "otherStyled" }
 }

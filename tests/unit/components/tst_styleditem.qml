@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Canonical Ltd.
+ * Copyright 2015 Canonical Ltd.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -15,18 +15,21 @@
  */
 
 import QtTest 1.0
-import Lomiri.Components 1.1
-import QtQuick 2.0
+import Lomiri.Components 1.3
+import QtQuick 2.4
 
 TestCase {
      name: "StyledItemAPI"
 
      StyledItem {
          id: scope
+         StyledItem {
+             id: inner
+         }
      }
 
      function test_api() {
-         verify(scope.hasOwnProperty("activeFocusOnPress"), "missing activeFocusOnPressed!");
-         verify(scope.hasOwnProperty("requestFocus"), "missing requestFocus()!");
+         verify(scope.theme, "Null default theme");
+         compare(inner.theme, scope.theme, "default themes should be inherited!");
      }
 }

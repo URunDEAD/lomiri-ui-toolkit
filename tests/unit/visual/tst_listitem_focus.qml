@@ -197,7 +197,7 @@ Item {
         }
     }
 
-    ListItemTestCase13 {
+    ListItemTestCase {
         id: testCase
         name: "ListItemFocus"
         when: windowShown

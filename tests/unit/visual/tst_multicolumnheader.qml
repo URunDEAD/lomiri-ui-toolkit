@@ -51,44 +51,44 @@ MainView {
                     }
                     height: childrenRect.height
 
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page left"
                         onClicked: layout.addPageToCurrentColumn(rootPage, leftPage)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page right"
                         onClicked: layout.addPageToNextColumn(rootPage, rightPage)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add sections page right"
                         onClicked: layout.addPageToNextColumn(rootPage, sectionsPage)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add external page right"
                         onClicked: layout.addPageToNextColumn(
                                        rootPage, Qt.resolvedUrl("MyExternalPage.DEPRECATED_APPHEADER.qml"))
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page with head contents left"
                         onClicked: layout.addPageToCurrentColumn(rootPage, headContentsPage)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page with head contents right"
                         onClicked: layout.addPageToNextColumn(rootPage, headContentsPage)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page with header left"
                         onClicked: layout.addPageToCurrentColumn(rootPage, pageWithHeader)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page with header right"
                         onClicked: layout.addPageToNextColumn(rootPage, pageWithHeader)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page with no automatic header height left"
                         onClicked: layout.addPageToCurrentColumn(rootPage, pageNoAutomaticHeaderHeight)
                     }
-                    ListItemWithLabel13 {
+                    ListItemWithLabel {
                         text: "Add page with no automatic header height right"
                         onClicked: layout.addPageToNextColumn(rootPage, pageNoAutomaticHeaderHeight)
                     }

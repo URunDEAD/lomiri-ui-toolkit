@@ -120,7 +120,7 @@ Item {
         }
     }
 
-    ListItemTestCase13 {
+    ListItemTestCase {
         name: "ListItemExtras"
         SignalSpy {
             id: clickSpy

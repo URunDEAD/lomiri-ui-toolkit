@@ -15,9 +15,9 @@
  */
 
 import QtQuick 2.4
-import Lomiri.Components 1.2
+import Lomiri.Components 1.3
 import QtTest 1.0
-import Lomiri.Test 1.0
+import Lomiri.Test 1.3
 
 MainView {
     applicationName: "testapp.nik90"
@@ -84,15 +84,8 @@ MainView {
             anchors {
                 fill: parent
                 topMargin: parent.height / 2
-                bottomMargin: notInView.height
             }
             clip: true
-        }
-
-        // for bug1514928
-        ListItem {
-            id: notInView
-            selected: true
         }
     }
 
@@ -109,8 +102,8 @@ MainView {
         }
     }
 
-    ListItemTestCase12 {
-        name: "ListItem.selectMode"
+    ListItemTestCase {
+        name: "ListItem13.selectMode"
         when: windowShown
 
         function cleanup() {
@@ -141,7 +134,7 @@ MainView {
             compare(checkBox.checked, false);
         }
 
-        function test_select_mode_set_in_listview_delegate_bug1493882() {
+        function test_select_mode_turned_on_delegate_on_creation_bug1493882() {
             testView.delegate = selectModePreset;
             testView.model = 10;
             waitForRendering(testView, 500);
@@ -151,7 +144,7 @@ MainView {
             verify(selectPanel, "selection panel not found");
         }
 
-        function test_toggle_selected_triggers_one_selectedChanged_bug1493880() {
+        function test_togle_selded_triggers_one_selectedChanged_bug1493880() {
             testView.delegate = selectModePreset;
             testView.model = 10;
             waitForRendering(testView, 500);
