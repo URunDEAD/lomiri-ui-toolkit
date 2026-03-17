@@ -14,9 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import Lomiri.Components 1.1
-import QtQuick.Window 2.0
+import QtQuick
+import Lomiri.Components
+import QtQuick.Window
 
 Item {
     width: 100

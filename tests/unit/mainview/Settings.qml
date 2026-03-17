@@ -14,9 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
-import Lomiri.Components 1.3
-import Qt.labs.settings 1.0
+import QtQuick
+import Lomiri.Components
+import Qt.labs.settings
 
 MainView {
     objectName: "settings"

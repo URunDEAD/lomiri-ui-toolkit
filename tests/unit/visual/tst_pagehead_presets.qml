@@ -14,9 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.2
-import Lomiri.Test 1.0
-import Lomiri.Components 1.1
+import QtQuick
+import Lomiri.Test
+import Lomiri.Components
 
 Item {
     width: units.gu(50)

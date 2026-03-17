@@ -16,9 +16,9 @@
  * Author: Andrea Bernabei <andrea.bernabei@canonical.com>
  */
 
-import QtQuick 2.4
-import Lomiri.Components 1.3
-import Lomiri.Test 1.0
+import QtQuick
+import Lomiri.Components
+import Lomiri.Test
 
 LomiriTestCase {
     when: windowShown

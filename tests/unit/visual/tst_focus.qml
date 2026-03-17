@@ -14,12 +14,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.2
-import QtTest 1.0
-import Lomiri.Test 1.0
-import Lomiri.Components 1.3
-import Lomiri.Components.Pickers 1.3
-import Lomiri.Components.Popups 1.3
+import QtQuick
+import QtTest
+import Lomiri.Test
+import Lomiri.Components
+import Lomiri.Components.Pickers
+import Lomiri.Components.Popups
 
 Item {
     id: main

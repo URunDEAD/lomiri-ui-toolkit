@@ -14,9 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.2
-import Lomiri.Components 1.3
-import Lomiri.Test 1.0
+import QtQuick
+import Lomiri.Components
+import Lomiri.Test
 
 // pagestack tests for deprecated toolbar are in
 // unit/tst_components/tst_pagestack_deprecated_toolbar.qml
