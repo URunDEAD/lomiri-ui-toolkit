@@ -18,7 +18,7 @@ import QtQuick
 import QtTest
 import Lomiri.Components
 import Lomiri.Test
-import QtFeedback
+import org.kde.tactilefeedback
 
 LomiriTestCase {
     name: "HapticsAPI"
