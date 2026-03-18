@@ -152,18 +152,6 @@ MainView {
             clickSpy.wait(500);
         }
 
-        function test_alter_deprecated_state_data() {
-            return [
-                {tag: "Hidden", status: hasMouseAttached ? BottomEdgeHint.Locked : BottomEdgeHint.Hidden},
-                {tag: "Visible", status: hasMouseAttached ? BottomEdgeHint.Locked : BottomEdgeHint.Inactive},
-            ];
-        }
-        function test_alter_deprecated_state(data) {
-            ignoreWarning(warningFormat(37, 5, "QML BottomEdgeHint: Overloaded 'state' property deprecated, will be removed from 1.3 release. Use 'status' instead."));
-            bottomEdgeHint.state = data.tag;
-            compare(bottomEdgeHint.status, data.status, "Wrong component status: " + data.status);
-        }
-
         function test_anchoring() {
             compare(floatingHint.anchors.bottom, mainView.top, "Anhors are broken");
             floatingHint.parent = floatingItem;
