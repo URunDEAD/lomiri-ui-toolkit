@@ -18,48 +18,64 @@ import QtQuick
 import QtTest
 import Lomiri.Components
 
-TestCase {
-     name: "AbstractButtonAPI"
+Item {
+    width: units.gu(40)
+    height: units.gu(40)
 
-     function test_action() {
-         compare(absButton.action, null,"Action is null by default")
-         absButton.action = action1
-         compare(absButton.action, action1, "Action can be set")
-         var numTriggers = action1.triggerCount
-         absButton.clicked()
-         compare(action1.triggerCount, numTriggers+1, "Button clicked triggers action")
-         absButton.action = null
-     }
+    AbstractButton {
+        id: absButton
+        width: 100
+        height: 100
+        Rectangle {
+            anchors.fill: parent
+            color: "lightblue"
+        }
+        SignalSpy {
+            id: signalSpy
+            target: parent
+        }
+    }
 
-     function test_hovered() {
-        compare(absButton.hovered,false,"Hovered is boolean and false by default")
-     }
+    Action {
+        id: action1
+        property int triggerCount: 0
+        onTriggered: triggerCount++
+    }
 
-     function test_pressed() {
-        compare(absButton.pressed,false,"Pressed is boolean and false by default")
-     }
+    TestCase {
+        name: "AbstractButtonAPI"
 
-     function test_signal_clicked() {
-         signalSpy.signalName = "clicked";
-         compare(signalSpy.valid,true,"clicked signal exists")
-     }
+        function test_action() {
+            compare(absButton.action, null, "Action is null by default");
+            absButton.action = action1;
+            compare(absButton.action, action1, "Action can be set");
+            var numTriggers = action1.triggerCount;
+            // The mouseClick() simulation makes the mousearea believe that the
+            // cursor is hovering over it, which is problematic for test_hovered(),
+            // so we disable hover detection here.
+            absButton.__mouseArea.hoverEnabled = false;
+            mouseClick(absButton);
+            absButton.__mouseArea.hoverEnabled = true;
+            compare(action1.triggerCount, numTriggers + 1, "Button clicked triggers action");
+            absButton.action = null;
+        }
 
-     function test_signal_pressAndHold() {
-         signalSpy.signalName = "pressAndHold";
-         compare(signalSpy.valid,true,"pressAndHold signal exists")
-     }
+        function test_hovered() {
+            compare(absButton.hovered, false, "Hovered is boolean and false by default");
+        }
 
-     AbstractButton {
-         id: absButton
-         SignalSpy {
-             id: signalSpy
-             target: parent
-         }
-     }
+        function test_pressed() {
+            compare(absButton.pressed, false, "Pressed is boolean and false by default");
+        }
 
-     Action {
-         id: action1
-         property int triggerCount: 0
-         onTriggered: triggerCount++
-     }
+        function test_signal_clicked() {
+            signalSpy.signalName = "clicked";
+            compare(signalSpy.valid, true, "clicked signal exists");
+        }
+
+        function test_signal_pressAndHold() {
+            signalSpy.signalName = "pressAndHold";
+            compare(signalSpy.valid, true, "pressAndHold signal exists");
+        }
+    }
 }
