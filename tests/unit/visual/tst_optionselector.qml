@@ -23,6 +23,8 @@ Page {
     width: units.gu(80)
     height: units.gu(60)
 
+    readonly property url testImageUrl: Qt.resolvedUrl("../../../resources/optionselector/test.png")
+
     header: PageHeader {
         id: pageHeader
         title: "OptionSelector"
@@ -98,17 +100,17 @@ Page {
         OptionSelectorDelegate {
             text: name
             subText: description
-            iconSource: image
+            iconSource: testImageUrl
             constrainImage: true
         }
     }
 
     ListModel {
         id: customModel
-        ListElement { name: "Virgin Mary"; description: "With plenty hot sauce"; image: "../../resources/optionselector/test.png" }
-        ListElement { name: "Shirley Temple"; description: "Grenadine for the color"; image: "../../resources/optionselector/test.png" }
-        ListElement { name: "Ipanema"; description: "Non-alcoholic version of Caipirinha"; image: "../../resources/optionselector/test.png" }
-        ListElement { name: "Millionaire Sour"; description: "Swaps ginger ale for Irish whiskey"; image: "../../resources/optionselector/test.png" }
+        ListElement { name: "Virgin Mary"; description: "With plenty hot sauce" }
+        ListElement { name: "Shirley Temple"; description: "Grenadine for the color" }
+        ListElement { name: "Ipanema"; description: "Non-alcoholic version of Caipirinha" }
+        ListElement { name: "Millionaire Sour"; description: "Swaps ginger ale for Irish whiskey" }
     }
 
     LomiriTestCase {

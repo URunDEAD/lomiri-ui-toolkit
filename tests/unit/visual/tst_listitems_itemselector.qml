@@ -24,6 +24,8 @@ Item {
     width: 400
     height: 400
 
+    readonly property url testImageUrl: Qt.resolvedUrl("../../../resources/optionselector/test.png")
+
     Column {
         anchors {
             left: parent.left
@@ -42,7 +44,7 @@ Item {
 
             text: "TEST"
             subText: "test"
-            iconSource: "../../resources/optionselector/test.png"
+            iconSource: testImageUrl
             constrainImage: true
         }
     }
@@ -65,17 +67,17 @@ Item {
         OptionSelectorDelegate {
             text: name
             subText: description
-            iconSource: image
+            iconSource: testImageUrl
             constrainImage: true
         }
     }
 
     ListModel {
         id: customModel
-        ListElement { name: "Name 1"; description: "Description 1"; image: "../../resources/optionselector/test.png" }
-        ListElement { name: "Name 2"; description: "Description 2"; image: "../../resources/optionselector/test.png" }
-        ListElement { name: "Name 3"; description: "Description 3"; image: "../../resources/optionselector/test.png" }
-        ListElement { name: "Name 4"; description: "Description 4"; image: "../../resources/optionselector/test.png" }
+        ListElement { name: "Name 1"; description: "Description 1" }
+        ListElement { name: "Name 2"; description: "Description 2" }
+        ListElement { name: "Name 3"; description: "Description 3" }
+        ListElement { name: "Name 4"; description: "Description 4" }
     }
 
     LomiriTestCase {
