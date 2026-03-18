@@ -91,8 +91,8 @@ TestCase {
 
     function test_fade(data) {
         crossFadeImage.fadeStyle = data.style;
-        loadImage("demo_image.jpg");
-        loadImage("map_icon.png");
+        loadImage(Qt.resolvedUrl("demo_image.jpg"));
+        loadImage(Qt.resolvedUrl("map_icon.png"));
         waitForAnimation();
         cleanupTest();
     }
@@ -107,8 +107,8 @@ TestCase {
     function test_fadeDuration(data) {
         crossFadeImage.fadeStyle = data.style;
         fadeDuration = LomiriAnimation.SleepyDuration;
-        loadImage("demo_image.jpg");
-        loadImage("map_icon.png");
+        loadImage(Qt.resolvedUrl("demo_image.jpg"));
+        loadImage(Qt.resolvedUrl("map_icon.png"));
         sleep(LomiriAnimation.SleepyDuration / 2); // < fadeDuration
         compare(running, true, "Animation stopped before 1000 ms");
         waitForAnimation();
@@ -116,7 +116,7 @@ TestCase {
     }
 
     function test_sourceSize() {
-        loadImage("demo_image.jpg");
+        loadImage(Qt.resolvedUrl("demo_image.jpg"));
         compare(crossFadeImage.sourceSize.width, 640, "Source width incorrectly initialized.");
         compare(crossFadeImage.sourceSize.height, 427, "Source height incorrectly initialized.");
         crossFadeImage.sourceSize.width = 100;
