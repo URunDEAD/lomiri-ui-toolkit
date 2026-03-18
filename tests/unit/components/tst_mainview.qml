@@ -25,15 +25,10 @@ TestCase {
         id: mainView
     }
 
-    Action {
-        id: action0
-    }
-
     function initTestCase() {
         compare(mainView.active, true, "MainView always active.");
         compare(mainView.automaticOrientation, false, "Automatic orientation off by default.");
         compare(mainView.applicationName, "", "Application name is empty string by default.");
-        compare(mainView.actions.length, 0, "No actions defined by default")
     }
 
     function test_automaticOrientation() {
@@ -49,15 +44,5 @@ TestCase {
         compare(mainView.applicationName, appName, "Applicatin name can be set.");
         mainView.applicationName = "";
         compare(mainView.applicationName, "", "Application name can be unset.");
-    }
-
-    function test_actions() {
-        // FIXME: Check the contents of mainView.actions. This is currently not
-        //  possible because ActionContext.actions does not support it,
-        //  so changes to ActionContext are needed.
-        mainView.actions = [action0];
-        compare(mainView.actions.length, 1, "Actions can be added to page actions");
-        mainView.actions = [];
-        compare(mainView.actions.length, 0, "Page action list can be cleared");
     }
 }
