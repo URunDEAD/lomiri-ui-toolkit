@@ -4,4 +4,4 @@ include( add_makecheck_x11.pri )
 
 TEMPLATE = app
 QT += testlib qml quick systeminfo LomiriToolkit LomiriToolkit-private
-CONFIG += no_keywords c++11
+CONFIG += no_keywords c++17

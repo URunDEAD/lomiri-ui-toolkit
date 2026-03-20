@@ -9,7 +9,7 @@ QT += \
     LomiriToolkit \
     LomiriToolkit_private \
     LomiriMetrics
-CONFIG += no_keywords c++11
+CONFIG += no_keywords c++17
 SOURCES += launcher.cpp
 installPath = $$[QT_INSTALL_PREFIX]/bin
 launcher.files = $$OUT_PWD/$$TARGET

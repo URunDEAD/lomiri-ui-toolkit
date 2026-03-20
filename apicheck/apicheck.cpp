@@ -1090,8 +1090,13 @@ int main(int argc, char *argv[])
         }
 
         QMultiMap<QString, QString> scripts;
+        QString preferredPath = pluginModulePath + "/";
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (!p.preferredPath().isEmpty())
+            preferredPath = p.preferredPath();
+#endif
         Q_FOREACH(QQmlDirParser::Script s, p.scripts()) {
-            QFile sf(s.fileName[0] == 'q' ? QString(s.fileName).replace("qrc:/", ":/") : pluginModulePath + "/" + s.fileName);
+            QFile sf(s.fileName[0] == 'q' ? QString(s.fileName).replace("qrc:/", ":/") : preferredPath + s.fileName);
             if (!sf.open(QIODevice::ReadOnly)) {
                 std::cerr << "Failed to read " << qPrintable(sf.fileName()) << std::endl;
                 return EXIT_IMPORTERROR;
@@ -1158,7 +1163,9 @@ int main(int argc, char *argv[])
                 == -1)
                 version = pluginImportVersion;
             QQmlComponent e(&engine,
-                c.fileName[0] == 'q' ? QUrl(c.fileName) : pluginModulePath + "/" + c.fileName);
+                c.fileName[0] == 'q' ? QUrl(c.fileName) : preferredPath[0] == ':' ?
+                    QUrl(QString("qrc") + preferredPath + c.fileName) :
+                    QUrl::fromLocalFile(preferredPath + c.fileName));
             QObject* qtobject(e.create());
             if (!qtobject) {
                 std::cerr << "Failed to instantiate " << qPrintable(c.typeName) << " from " << qPrintable(e.url().toString()) << std::endl;

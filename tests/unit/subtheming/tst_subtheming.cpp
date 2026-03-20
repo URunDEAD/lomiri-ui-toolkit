@@ -147,14 +147,20 @@ private Q_SLOTS:
     {
         QTest::ignoreMessage(QtWarningMsg, "Theme not found: \"MyBeautifulTheme\"");
 
+        QQmlEngine engine;
+        LomiriToolkitModule::initializeContextProperties(&engine);
         UCTheme theme;
+        QQmlEngine::setContextForObject(&theme, engine.rootContext());
         theme.setName("MyBeautifulTheme");
         QCOMPARE(theme.name(), QString("MyBeautifulTheme"));
     }
 
     void test_name_reset()
     {
+        QQmlEngine engine;
+        LomiriToolkitModule::initializeContextProperties(&engine);
         UCTheme theme;
+        QQmlEngine::setContextForObject(&theme, engine.rootContext());
         theme.setName("Lomiri.Components.Themes.SuruDark");
         QCOMPARE(theme.name(), QString("Lomiri.Components.Themes.SuruDark"));
         // reset
@@ -960,12 +966,13 @@ private Q_SLOTS:
 
         QQmlEngine engine;
         LomiriToolkitModule::initializeContextProperties(&engine);
-        QScopedPointer<UCTheme> theme(new UCTheme);
-        theme->setName("DerivedTheme");
+        UCTheme theme;
+        QQmlEngine::setContextForObject(&theme, engine.rootContext());
+        theme.setName("DerivedTheme");
 
         // get the style URL
         bool fallback = false;
-        QUrl style = theme->styleUrl("TestStyle.qml", BUILD_VERSION(1, 3), &fallback);
+        QUrl style = theme.styleUrl("TestStyle.qml", BUILD_VERSION(1, 3), &fallback);
         QVERIFY(style.toString().endsWith("TestTheme/1.3/TestStyle.qml"));
     }
 };

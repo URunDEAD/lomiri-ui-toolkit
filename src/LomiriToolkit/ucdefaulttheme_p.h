@@ -23,6 +23,7 @@
 #include <QtCore/QFileSystemWatcher>
 #include <QtCore/QObject>
 #include <QtCore/QSettings>
+#include <QtQml/QQmlEngine>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <LomiriToolkit-Qt6/lomiritoolkitglobal.h>
@@ -43,6 +44,8 @@ public:
     // getter/setters
     QString themeName() const;
     void setThemeName(const QString &themeName);
+
+    static void verifyDefaultThemeExists(QQmlEngine *engine);
 
 Q_SIGNALS:
     void themeNameChanged();

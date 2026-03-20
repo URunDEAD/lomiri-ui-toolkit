@@ -1,22 +1,16 @@
-set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Components/Themes")
-
-set(QML_FILES_2_0
-     "2.0/Palette.qml"
-     "2.0/PaletteValues.qml"
+qt_add_qml_module(LomiriComponentsThemes
+    URI Lomiri.Components.Themes
+    VERSION 2.0
+    PLUGIN_TARGET LomiriComponentsThemes
+    OUTPUT_DIRECTORY "${QML_BUILD_DIR}/Lomiri/Components/Themes"
+    NO_GENERATE_EXTRA_QMLDIRS
+    NO_PLUGIN_OPTIONAL
+    QML_FILES
+        2.0/Palette.qml
+        2.0/PaletteValues.qml
 )
 
-set(OTHER_FILES
-    "qmldir"
-)
-
-# Install files
-install(FILES ${QML_FILES_2_0}
-    DESTINATION ${QML_PLUGIN_DIR}/2.0
-)
-
-install(FILES ${OTHER_FILES}
-    DESTINATION ${QML_PLUGIN_DIR}
-)
+install_qml_module(LomiriComponentsThemes)
 
 add_subdirectory(Ambiance)
 add_subdirectory(SuruDark)

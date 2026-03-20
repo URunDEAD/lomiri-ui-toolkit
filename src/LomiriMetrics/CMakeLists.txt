@@ -1,5 +1,3 @@
-set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/PerformanceMetrics")
-
 add_library(LomiriMetrics SHARED
     applicationmonitor.cpp applicationmonitor.h applicationmonitor_p.h
     bitmaptext.cpp bitmaptext_p.h

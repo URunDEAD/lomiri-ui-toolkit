@@ -40,11 +40,6 @@ UCDefaultTheme::UCDefaultTheme(QObject *parent) :
     m_settings(settingsFileFormat.arg(
         QStandardPaths::writableLocation(QStandardPaths::ConfigLocation)), QSettings::IniFormat)
 {
-    // fundamental features rely on the default theme, so bail out if it's absent
-    if (!pathFromThemeName(defaultTheme).isValid()) {
-        qWarning() << "Mandatory default theme" << defaultTheme << "missing!";
-    }
-
     // check if there is a theme settings file, if not, create one
     if (!QFile::exists(m_settings.fileName())) {
         // create the file by writing the default theme
@@ -80,6 +75,13 @@ void UCDefaultTheme::setThemeName(const QString &themeName)
         m_themeName = themeName;
         m_settings.setValue(themeKey, themeName);
         Q_EMIT themeNameChanged();
+    }
+}
+
+void UCDefaultTheme::verifyDefaultThemeExists(QQmlEngine *engine)
+{
+    if (!UCTheme::pathFromThemeName(engine, defaultTheme)) {
+        qWarning() << "Mandatory default theme" << defaultTheme << "missing!";
     }
 }
 

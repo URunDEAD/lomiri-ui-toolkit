@@ -132,6 +132,7 @@ void tst_UCDeprecatedTheme::testNameDefault()
 void tst_UCDeprecatedTheme::testNameSet()
 {
     QTest::ignoreMessage(QtWarningMsg, "Theme not found: \"MyBeautifulTheme\"");
+    QTest::ignoreMessage(QtWarningMsg, "Warning: Default theme MyBeautifulTheme doesn't provide Palette.qml");
 
     QQmlEngine engine;
     initDeprecatedTheme(engine);
@@ -145,6 +146,7 @@ void tst_UCDeprecatedTheme::testCreateStyleComponent()
     QFETCH(QString, parentName);
     QFETCH(bool, success);
 
+    QTest::ignoreMessage(QtWarningMsg, "Warning: Default theme TestModule.TestTheme doesn't provide Palette.qml");
     if (parentName == "SimpleItem.qml")
         QTest::ignoreMessage(QtWarningMsg, "QQmlComponent: Component is not ready");
     else if (styleName == "NotExistingTestStyle.qml")
@@ -170,6 +172,8 @@ void tst_UCDeprecatedTheme::testCreateStyleComponent_data() {
 
 void tst_UCDeprecatedTheme::testThemesRelativePath()
 {
+    QTest::ignoreMessage(QtWarningMsg, "Warning: Default theme TestModule.TestTheme doesn't provide Palette.qml");
+
     qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "../tst_theme_engine");
 
     QScopedPointer<ThemeTestCase> view(new ThemeTestCase("Parent.qml"));
@@ -182,6 +186,8 @@ void tst_UCDeprecatedTheme::testThemesRelativePath()
 
 void tst_UCDeprecatedTheme::testThemesRelativePathWithParent()
 {
+    QTest::ignoreMessage(QtWarningMsg, "Warning: Default theme CustomTheme doesn't provide Palette.qml");
+
     qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "./themes:./themes/TestModule");
 
     QScopedPointer<ThemeTestCase> view(new ThemeTestCase("Parent.qml"));
@@ -194,6 +200,8 @@ void tst_UCDeprecatedTheme::testThemesRelativePathWithParent()
 
 void tst_UCDeprecatedTheme::testThemesRelativePathWithParentXDGDATA()
 {
+    QTest::ignoreMessage(QtWarningMsg, "Warning: Default theme CustomTheme doesn't provide Palette.qml");
+
     qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");
     qputenv("XDG_DATA_DIRS", "./themes:./themes/TestModule");
 
@@ -219,6 +227,8 @@ void tst_UCDeprecatedTheme::testThemesRelativePathWithParentNoVariablesSet()
 
 void tst_UCDeprecatedTheme::testThemesRelativePathWithParentOneXDGPathSet()
 {
+    QTest::ignoreMessage(QtWarningMsg, "Warning: Default theme TestModule.TestTheme doesn't provide Palette.qml");
+
     qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");
     qputenv("XDG_DATA_DIRS", "../tst_theme_engine");
 

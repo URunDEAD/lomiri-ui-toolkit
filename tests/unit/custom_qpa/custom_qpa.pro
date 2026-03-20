@@ -1,7 +1,7 @@
 TARGET = qcustom
 TEMPLATE = lib
 
-CONFIG += plugin no_keywords c++11
+CONFIG += plugin no_keywords c++17
 
 QT += core-private gui-private eventdispatcher_support-private
 

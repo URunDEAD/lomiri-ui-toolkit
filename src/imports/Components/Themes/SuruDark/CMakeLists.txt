@@ -1,42 +1,38 @@
-set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/Components/Themes/SuruDark")
-
-set(QML_FILES_1_2
-    "1.2/MainViewStyle.qml"
-    "1.2/OptionSelectorStyle.qml"
-    "1.2/Palette.qml"
-    "1.2/TabBarStyle.qml"
+# The original Qt5 qmldir file declared those as version 1.1
+# Not sure why they are located in a 1.2 directory.
+set(QML_FILES_1_1
+    1.2/MainViewStyle.qml
+)
+set_source_files_properties(${QML_FILES_1_1}
+    PROPERTIES
+        QT_QML_SOURCE_VERSIONS "1.1"
 )
 
 set(QML_FILES_1_3
-    "1.3/OptionSelectorStyle.qml"
-    "1.3/SuruDarkNormal.qml"
-    "1.3/SuruDarkSelected.qml"
-    "1.3/Palette.qml"
-    "1.3/TabBarStyle.qml"
+    1.3/OptionSelectorStyle.qml
+    1.3/Palette.qml
+    1.3/SuruDarkNormal.qml
+    1.3/SuruDarkSelected.qml
+    1.3/TabBarStyle.qml
+)
+set_source_files_properties(${QML_FILES_1_3}
+    PROPERTIES
+        QT_QML_SOURCE_VERSIONS "1.3"
 )
 
-set(ARTWORK_FILES
-    "artwork/chevron@27.png"
+qt_add_qml_module(LomiriComponentsThemesSuruDark
+    URI Lomiri.Components.Themes.SuruDark
+    VERSION 1.3
+    PLUGIN_TARGET LomiriComponentsThemesSuruDark
+    OUTPUT_DIRECTORY "${QML_BUILD_DIR}/Lomiri/Components/Themes/SuruDark"
+    NO_GENERATE_EXTRA_QMLDIRS
+    NO_PLUGIN_OPTIONAL
+    QML_FILES
+        ${QML_FILES_1_1}
+        ${QML_FILES_1_3}
+    RESOURCES
+        artwork/chevron@27.png
+        parent_theme
 )
 
-set(OTHER_FILES
-    "parent_theme"
-    "qmldir"
-)
-
-# Install files
-install(FILES ${QML_FILES_1_2}
-    DESTINATION ${QML_PLUGIN_DIR}/1.2
-)
-
-install(FILES ${QML_FILES_1_3}
-    DESTINATION ${QML_PLUGIN_DIR}/1.3
-)
-
-install(FILES ${OTHER_FILES}
-    DESTINATION ${QML_PLUGIN_DIR}
-)
-
-install(FILES ${ARTWORK_FILES}
-    DESTINATION ${QML_PLUGIN_DIR}/artwork
-)
+install_qml_module(LomiriComponentsThemesSuruDark)

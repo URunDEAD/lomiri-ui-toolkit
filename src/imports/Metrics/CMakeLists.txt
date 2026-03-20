@@ -1,5 +1,15 @@
-add_library(LomiriMetricsPlugin MODULE
-    plugin.cpp
+qt_add_qml_module(LomiriMetricsPlugin
+    URI Lomiri.Metrics
+    VERSION 1.0
+    PLUGIN_TARGET LomiriMetricsPlugin
+    CLASS_NAME LomiriMetricsPlugin
+    OUTPUT_DIRECTORY "${QML_BUILD_DIR}/Lomiri/Metrics"
+    NO_GENERATE_EXTRA_QMLDIRS
+    NO_GENERATE_QMLTYPES
+    NO_GENERATE_PLUGIN_SOURCE
+    NO_PLUGIN_OPTIONAL
+    SOURCES
+        plugin.cpp
 )
 
 target_link_libraries(LomiriMetricsPlugin PRIVATE
@@ -9,16 +19,4 @@ target_link_libraries(LomiriMetricsPlugin PRIVATE
     Qt::Qml
 )
 
-set_target_properties(LomiriMetricsPlugin PROPERTIES
-    OUTPUT_NAME "LomiriMetrics"
-)
-
-# Install the plugin
-install(TARGETS LomiriMetricsPlugin
-    DESTINATION "${QML_PLUGIN_BASE_DIR}/Metrics"
-)
-
-# install qmldir file
-install(FILES qmldir
-    DESTINATION "${QML_PLUGIN_BASE_DIR}/Metrics"
-)
+install_qml_module(LomiriMetricsPlugin)

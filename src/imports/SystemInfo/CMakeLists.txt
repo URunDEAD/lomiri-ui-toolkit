@@ -1,29 +1,27 @@
-add_library(LomiriSystemInfoPlugin MODULE
-    lomirideviceinfo.cpp lomirideviceinfo_p.h
-    lomirinetworkinfo.cpp lomirinetworkinfo_p.h
-    lomiriinputdevicemodel.cpp lomiriinputdevicemodel_p.h
-    lomirisysteminfo.cpp
+qt_add_qml_module(LomiriSystemInfoPlugin
+    URI Lomiri.SystemInfo
+    VERSION 1.0
+    PLUGIN_TARGET LomiriSystemInfoPlugin
+    CLASS_NAME LomiriSystemInfoModule
+    OUTPUT_DIRECTORY "${QML_BUILD_DIR}/Lomiri/SystemInfo"
+    NO_GENERATE_EXTRA_QMLDIRS
+    NO_GENERATE_QMLTYPES
+    NO_GENERATE_PLUGIN_SOURCE
+    NO_PLUGIN_OPTIONAL
+    SOURCES
+        lomirideviceinfo.cpp
+        lomirideviceinfo_p.h
+        lomiriinputdevicemodel.cpp
+        lomiriinputdevicemodel_p.h
+        lomirinetworkinfo.cpp
+        lomirinetworkinfo_p.h
+        lomirisysteminfo.cpp
 )
 
 target_link_libraries(LomiriSystemInfoPlugin PRIVATE
+    LomiriSystemInfo
     Qt::Core
     Qt::Qml
-
-    LomiriSystemInfo
 )
 
-set_target_properties(LomiriSystemInfoPlugin PROPERTIES
-    OUTPUT_NAME "LomiriSystemInfo"
-)
-
-set(QML_PLUGIN_DIR "${QML_PLUGIN_BASE_DIR}/SystemInfo")
-
-# Install the QML files
-install(TARGETS LomiriSystemInfoPlugin
-    DESTINATION ${QML_PLUGIN_DIR}
-)
-
-install(FILES
-    qmldir
-    DESTINATION ${QML_PLUGIN_DIR}
-)
+install_qml_module(LomiriSystemInfoPlugin)

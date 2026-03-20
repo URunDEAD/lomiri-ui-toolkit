@@ -20,12 +20,13 @@
 #ifndef UCTHEME_P_H
 #define UCTHEME_P_H
 
+#include <optional>
+
+#include <QtCore/QDir>
 #include <QtCore/QObject>
 #include <QtCore/QPointer>
 #include <QtCore/QString>
-#include <QtCore/QUrl>
 #include <QtQml/QQmlComponent>
-#include <QtQml/QQmlParserStatus>
 #include <QtQml/QQmlProperty>
 #if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
 #include <QtQml/private/qqmlabstractbinding_p.h>
@@ -51,10 +52,9 @@ class QQuickItem;
 UT_NAMESPACE_BEGIN
 
 class UCStyledItemBase;
-class LOMIRITOOLKIT_EXPORT UCTheme : public QObject, public QQmlParserStatus
+class LOMIRITOOLKIT_EXPORT UCTheme : public QObject
 {
     Q_OBJECT
-    Q_INTERFACES(QQmlParserStatus)
     Q_PROPERTY(UT_PREPEND_NAMESPACE(UCTheme) *parentTheme READ parentTheme NOTIFY parentThemeChanged FINAL)
     Q_PROPERTY(QString name READ name WRITE setName RESET resetName NOTIFY nameChanged FINAL)
     Q_PROPERTY(QObject* palette READ palette WRITE setPalette RESET resetPalette NOTIFY paletteChanged FINAL)
@@ -65,22 +65,19 @@ public:
         ThemeRecord() :
             shared(false), deprecated(false)
         {}
-        ThemeRecord(const QString &name, const QUrl &path, bool shared, bool deprecated) :
+        ThemeRecord(const QString &name, const QDir &path, bool shared, bool deprecated) :
             name(name), path(path), shared(shared), deprecated(deprecated)
         {}
-        bool isValid() const
-        {
-            return path.isValid();
-        }
 
         QString name;
-        QUrl path;
+        QDir path;
         bool shared:1;
         bool deprecated:1;
     };
 
     explicit UCTheme(QObject *parent = 0);
     static UCTheme *defaultTheme(QQmlEngine *engine);
+    static std::optional<UCTheme::ThemeRecord> pathFromThemeName(QQmlEngine *engine, const QString &themeName);
 
     // getter/setters
     UCTheme *parentTheme();
@@ -105,23 +102,15 @@ Q_SIGNALS:
     void paletteChanged();
     void versionChanged();
 
-protected:
-    void classBegin() override;
-    void componentComplete() override
-    {
-        m_completed = true;
-    }
-
 private Q_SLOTS:
     void resetPalette();
     void _q_defaultThemeChanged();
 
 private:
-    static void createDefaultTheme(QQmlEngine* engine);
     void setupDefault();
-    void init();
-    void updateEnginePaths(QQmlEngine *engine);
+    void updateEnginePaths();
     void updateThemePaths();
+    QList<ThemeRecord>& themePaths();
     QUrl styleUrl(const QString& styleName, quint16 version, bool *isFallback = NULL);
     void loadPalette(QQmlEngine *engine, bool notify = true);
     void updateThemedItems();
@@ -179,15 +168,12 @@ private:
     QString m_name;
     QPointer<UCTheme> m_parentTheme;
     QPointer<QObject> m_palette; // the palette might be from the default style if the theme doesn't define palette
-    QList<ThemeRecord> m_themePaths;
+    std::optional<QList<ThemeRecord>> m_themePaths;
     UCDefaultTheme m_defaultTheme;
     QPODVector<QQuickItem*, 4> m_attachedItems;
-    bool m_completed:1;
 
     friend class UCDeprecatedTheme;
 };
-
-UCTheme::ThemeRecord pathFromThemeName(QString themeName);
 
 UT_NAMESPACE_END
 
