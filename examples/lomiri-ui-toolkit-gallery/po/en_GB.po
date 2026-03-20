@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-03-07 10:09+0000\n"
+"PO-Revision-Date: 2026-03-23 08:05+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "lomiri/lomiri-ui-toolkit-gallery-example/en_GB/>\n"
@@ -133,7 +133,7 @@ msgstr ""
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "Open"
 
 #: Icons.qml:29
 msgid "Scaling"
