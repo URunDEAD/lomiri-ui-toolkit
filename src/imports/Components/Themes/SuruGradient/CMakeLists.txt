@@ -1,23 +1,15 @@
-set(QML_FILES_1_1
-    MainViewStyle.qml
-    OptionSelectorStyle.qml
-    Palette.qml
-    TabBarStyle.qml
-)
-set_source_files_properties(${QML_FILES_1_1}
-    PROPERTIES
-        QT_QML_SOURCE_VERSIONS "1.1"
-)
-
 qt_add_qml_module(LomiriComponentsThemesSuruGradient
     URI Lomiri.Components.Themes.SuruGradient
-    VERSION 1.1
+    VERSION 2.0
     PLUGIN_TARGET LomiriComponentsThemesSuruGradient
     OUTPUT_DIRECTORY "${QML_BUILD_DIR}/Lomiri/Components/Themes/SuruGradient"
     NO_GENERATE_EXTRA_QMLDIRS
     NO_PLUGIN_OPTIONAL
     QML_FILES
-        ${QML_FILES_1_1}
+        2.0/MainViewStyle.qml
+        2.0/OptionSelectorStyle.qml
+        2.0/Palette.qml
+        2.0/TabBarStyle.qml
     RESOURCES
         artwork/chevron@27.png
         artwork/chevron_down@30.png

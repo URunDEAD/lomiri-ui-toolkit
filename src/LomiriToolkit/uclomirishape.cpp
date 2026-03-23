@@ -1230,7 +1230,16 @@ QString UCLomiriShape::propertyForVersion(quint16 version) const
 void UCLomiriShape::componentComplete()
 {
     QQuickItem::componentComplete();
-    m_version = MINOR_VERSION(importVersion(this)) == 3 ? Version13 : Version12;
+    switch (importVersion(this)) {
+        case BUILD_VERSION(2, 0):
+            m_version = Version20;
+            break;
+        case BUILD_VERSION(1, 3):
+            m_version = Version13;
+            break;
+        default:
+            m_version = Version12;
+    }
 }
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)

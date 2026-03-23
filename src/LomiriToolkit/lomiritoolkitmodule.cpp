@@ -594,12 +594,17 @@ void LomiriToolkitModule::undefineModule()
  */
 void LomiriStylesModule::defineModule(const char *uri)
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     // 1.2 styles
     qmlRegisterType<UCListItemStyle>(uri, 1, 2, "ListItemStyle");
 
     // 1.3 styles
     qmlRegisterType<UCListItemStyle, 1>(uri, 1, 3, "ListItemStyle");
     qmlRegisterType<UCBottomEdgeStyle>(uri, 1, 3, "BottomEdgeStyle");
+#else
+    qmlRegisterType<UCListItemStyle, 1>(uri, 2, 0, "ListItemStyle");
+    qmlRegisterType<UCBottomEdgeStyle>(uri, 2, 0, "BottomEdgeStyle");
+#endif
 }
 
 void LomiriStylesModule::undefineModule()

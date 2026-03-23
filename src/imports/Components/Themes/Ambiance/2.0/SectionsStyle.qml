@@ -18,7 +18,7 @@ import QtQuick.Window 2.2
 import Qt5Compat.GraphicalEffects
 import Lomiri.Components
 import Lomiri.Components.Private
-import Lomiri.Components.Styles 1.3 as Style
+import Lomiri.Components.Styles 2.0 as Style
 
 Style.SectionsStyle {
     id: sectionsStyle

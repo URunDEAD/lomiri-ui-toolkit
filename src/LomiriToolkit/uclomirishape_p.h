@@ -210,7 +210,7 @@ public:
 
     static bool useDistanceFields(const QOpenGLContext* openglContext);
 
-    enum Version { Version12 = 0 /* Or lesser */, Version13 = 1 };
+    enum Version { Version12 = 0 /* Or lesser */, Version13 = 1, Version20 = 2 };
     enum Aspect { Flat = 0, Inset = 1, DropShadow = 2 };  // Don't forget to update private enum.
     enum BackgroundMode { SolidColor = 0, VerticalGradient = 1 };
     enum HAlignment { AlignLeft = 0, AlignHCenter = 1, AlignRight = 2 };
@@ -382,8 +382,8 @@ private:
     FillMode m_sourceFillMode : 2;
     WrapMode m_sourceHorizontalWrapMode : 1;
     WrapMode m_sourceVerticalWrapMode : 1;
-    Version m_version : 1;
-    quint8 __explicit_padding : 5;
+    Version m_version : 2;
+    quint8 __explicit_padding : 4;
     quint8 m_sourceOpacity;
     quint8 m_flags;
 

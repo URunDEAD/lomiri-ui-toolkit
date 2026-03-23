@@ -15,7 +15,7 @@
  */
 import QtQuick 2.4
 import Lomiri.Components
-import Lomiri.Components.Styles 1.3
+import Lomiri.Components.Styles 2.0
 
 BottomEdgeStyle {
     id: bottomEdgeStyle
