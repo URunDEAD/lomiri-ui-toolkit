@@ -128,7 +128,7 @@ Template {
                                             model: textColors
                                             Label {
                                                 required property string modelData
-                                                width: previewed ? implicitWidth : parent.width
+                                                width: parent.width
                                                 text: previewed ? modelData : modelData.slice(0, 10)
                                                 color: themePalette ? themePalette[modelData] : "transparent"
                                                 textSize: previewed ? Label.Medium : Label.XSmall
