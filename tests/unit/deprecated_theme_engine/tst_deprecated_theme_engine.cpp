@@ -296,7 +296,11 @@ void tst_UCDeprecatedTheme::testMultipleImportPathsSet()
 
 void tst_UCDeprecatedTheme::testPaletteUsed_bug1549830()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    ThemeTestCase::ignoreWarning("ErroneousPaletteUse.qml", 29, 13, "Unable to assign [undefined] to QColor", 1);
+#else
     ThemeTestCase::ignoreWarning("ErroneousPaletteUse.qml", 29, 13, "Unable to assign [undefined] to QColor", 3);
+#endif
     QScopedPointer<ThemeTestCase> view(new ThemeTestCase("ErroneousPaletteUse.qml"));
 }
 
