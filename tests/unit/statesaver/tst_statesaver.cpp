@@ -191,9 +191,9 @@ private Q_SLOTS:
         values.insert("string", "test string");
         values.insert("url", QUrl::fromLocalFile("tst_statesaver.cpp"));
         values.insert("date", QDateTime::currentDateTime().addDays(5));
-        values.insert("point", QPoint(100, 100));
-        values.insert("rect", QRect(100, 100, 200, 200));
-        values.insert("size", QSize(345, 678));
+        values.insert("point", QPointF(100, 100));
+        values.insert("rect", QRectF(100, 100, 200, 200));
+        values.insert("size", QSizeF(345, 678));
         values.insert("color", QColor("blue"));
         values.insert("font", QFont("Ubuntu"));
         values.insert("vector2d", QVector2D(100.0, 200.0));
