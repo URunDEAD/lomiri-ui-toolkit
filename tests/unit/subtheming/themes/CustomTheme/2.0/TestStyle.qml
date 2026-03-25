@@ -15,7 +15,7 @@
  */
 
 import QtQuick
-import TestTheme 1.3 as Parent
+import TestModule.TestTheme as Parent
 
 Parent.TestStyle {
 }
