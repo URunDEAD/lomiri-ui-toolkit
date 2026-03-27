@@ -61,7 +61,7 @@ Item {
             var pickerCurrent = findChild(pickerItem, "Picker_ViewLoader");
             // note: find Label, Picker's label uses medium font size. The lookup must be changed
             // if the fontSize is changed!
-            var pickerLabel = findChildWithProperty(pickerCurrent.item.currentItem, "fontSize", "medium");
+            var pickerLabel = findChildWithProperty(pickerCurrent.item.currentItem, "textSize", Label.Medium);
             verify(pickerLabel, ("Label of %1 not accessible").arg(name));
             return pickerLabel;
         }
