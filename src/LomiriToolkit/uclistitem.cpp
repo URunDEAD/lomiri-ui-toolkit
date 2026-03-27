@@ -1541,6 +1541,45 @@ void UCListItemPrivate::handleTouchMove(QTouchEvent *event)
         swipeEvent(event->point(0).position(), UCSwipeEvent::Updated);
     }
 }
+
+bool UCListItemPrivate::sendTouchEvent(QQuickItem *item, QTouchEvent *event)
+{
+    Q_UNUSED(item);
+    Q_Q(UCListItem);
+
+    if (event->exclusiveGrabber(event->point(0)) == q) {
+        return true;
+    }
+
+    bool consumed = false;
+    QPointF scenePos = event->point(0).scenePosition();
+
+    if (contentItem->contains(contentItem->mapFromScene(scenePos))) {
+        QPointF localPos = q->mapFromScene(scenePos);
+
+        if (event->isBeginEvent()) {
+            if (swiped) {
+                handleTouchPress(event);
+                consumed = true;
+            } else {
+                pressedPos = localPos;
+                button = Qt::LeftButton;
+            }
+        } else if (event->isUpdateEvent()) {
+            if ((button == Qt::LeftButton) && swipedOverThreshold(localPos, pressedPos) && !highlighted) {
+                handleTouchPress(event);
+                q->setKeepTouchGrab(true);
+                event->setExclusiveGrabber(event->point(0), q);
+                consumed = true;
+            }
+        } else if (event->isEndEvent()) {
+            handleTouchRelease(event);
+            suppressClick = false;
+        }
+    }
+
+    return consumed;
+}
 #endif
 
 bool UCListItemPrivate::sendMouseEvent(QQuickItem *item, QMouseEvent *event)
@@ -1633,7 +1672,18 @@ bool UCListItem::childMouseEventFilter(QQuickItem *child, QEvent *event)
         if (d->sendMouseEvent(child, static_cast<QMouseEvent*>(event))) {
             return true;
         }
+        break;
     }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    case QEvent::TouchBegin:
+    case QEvent::TouchUpdate:
+    case QEvent::TouchEnd: {
+        if (d->sendTouchEvent(child, static_cast<QTouchEvent*>(event))) {
+            return true;
+        }
+        break;
+    }
+#endif
     default: break;
     }
 

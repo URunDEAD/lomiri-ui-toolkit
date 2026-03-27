@@ -94,6 +94,7 @@ public:
     void handleTouchPress(QTouchEvent *event);
     void handleTouchMove(QTouchEvent *event);
     void handleTouchRelease(QTouchEvent *event);
+    bool sendTouchEvent(QQuickItem *item, QTouchEvent *event);
 #endif
     bool sendMouseEvent(QQuickItem *item, QMouseEvent *event);
     bool shouldShowContextMenu(QMouseEvent *event);
