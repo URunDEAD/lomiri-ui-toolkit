@@ -492,6 +492,9 @@ void UCListItemPrivate::snapOut()
         Q_Q(UCListItem);
         // restore flickable's interactive and cleanup
         q->setKeepMouseGrab(false);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        q->setKeepTouchGrab(false);
+#endif
         // no need to listen flickables any longer
         listenToRebind(false);
     }
@@ -1238,8 +1241,8 @@ void UCListItemPrivate::handleTouchPress(QTouchEvent *event)
     listenToRebind(true);
     if (swiped) {
         // grab now, and ungrab in snapOut
-        q->setKeepMouseGrab(true);
-        q->grabMouse();
+        q->setKeepTouchGrab(true);
+        event->setExclusiveGrabber(event->point(0), q);
     }
     // stop any ongoing animation!
     swipeEvent(event->point(0).position(), UCSwipeEvent::Started);
@@ -1394,10 +1397,8 @@ void UCListItemPrivate::handleTouchRelease(QTouchEvent *event)
     if (highlighted) {
         // unblock ascending Flickables
         listenToRebind(false);
-        q->setKeepMouseGrab(false);
-        if (window && window->mouseGrabberItem() == q) {
-            q->ungrabMouse();
-        }
+        q->setKeepTouchGrab(false);
+        event->setExclusiveGrabber(event->point(0), nullptr);
 
         if (!suppressClick) {
             // emit clicked only if not swiped
@@ -1520,7 +1521,7 @@ void UCListItemPrivate::handleTouchMove(QTouchEvent *event)
         if (swipedOverThreshold(event->point(0).position(), pressedPos)) {
             // the press went out of the threshold area, enable move, if the direction allows it
             lastPos = event->point(0).position();
-            q->setKeepMouseGrab(true);
+            q->setKeepTouchGrab(true);
             qreal mouseX = event->point(0).position().x();
             qreal pressedX = pressedPos.x();
             bool doSwipe = (leadingActions && (mouseX > pressedX)) ||
