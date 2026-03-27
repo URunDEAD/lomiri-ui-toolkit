@@ -67,7 +67,6 @@ Row {
 
     Repeater {
         id: rowRepeater
-        onModelChanged: row.pickerMoving(true)
         Picker {
             id: unitPicker
             objectName: "PickerRow_" + pickerName
