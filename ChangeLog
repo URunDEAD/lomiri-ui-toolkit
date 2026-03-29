@@ -1,6 +1,480 @@
+2026-03-29 Mike Gabriel
+
+        * Release 1.3.5904 (HEAD -> main, tag: 1.3.5904)
+
+2026-03-24 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/henrikschnor/qt6-bump-styles-themes' into
+          'main' (e4c255b88)
+
+2026-02-05 Henrik Schnor
+
+        * Add UCImportVersionChecker support for module version 2.0
+          (f734fdc9c)
+
+2026-01-08 Henrik Schnor
+
+        * Bump Lomiri.Components.Themes.SuruGradient to version 2.0
+          (33218e92d)
+        * Bump Lomiri.Components.Themes.SuruDark to version 2.0 (fbb57a13e)
+        * Bump Lomiri.Components.Styles to version 2.0 (ef107d76c)
+
+2026-03-17 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (6717ed9d4)
+
+2026-03-20 Andi Chandler
+
+        * Translated using Weblate (English (United Kingdom)) (45ebe98b5)
+
+2026-03-21 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-dragging-pos' into
+          'main' (4476d789b)
+
+2026-03-14 Henrik Schnor
+
+        * TextCursorStyle: fix position calculations (cba0eb1b1)
+
+2026-03-20 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/henrikschnor/qt6-tests-cmake-changes' into
+          'main' (06845fd15)
+
+2026-03-06 Henrik Schnor
+
+        * Install .js file as workaround for QTBUG-144829 (47a56eb09)
+
+2026-02-06 Henrik Schnor
+
+        * ListItem: support loading ListItemPopover via qrc (6a9bfdf17)
+
+2026-01-04 Henrik Schnor
+
+        * Haptics: support loading internal implementation via qrc
+          (5b6f4686b)
+
+2026-03-03 Henrik Schnor
+
+        * Lomiri.SystemInfo: fix uri assertion (d7936343e)
+
+2026-01-08 Henrik Schnor
+
+        * Update README with Qt6+CMake build instructions (8574faa16)
+
+2025-12-18 Henrik Schnor
+
+        * Update the api reference files (06e933619)
+
+2026-03-03 Henrik Schnor
+
+        * apicheck: respect prefer directive in qmldir files (5947b36f9)
+
+2025-12-18 Henrik Schnor
+
+        * QML components: don't include multiple 1.x versions in the Qt6
+          build (19e510dca)
+
+2025-12-11 Henrik Schnor
+
+        * Lomiri.PerformanceMetrics: update BarGraph.qml for Qt6 (814f359e3)
+        * Lomiri.Metrics: register module (63d8c3f88)
+
+2026-01-28 Henrik Schnor
+
+        * Remove old QML implementations of C++ components in 2.0 (f6b7846bd)
+
+2025-12-08 Henrik Schnor
+
+        * Add spirv-tools build dependency (3be560ab4)
+
+2026-01-23 Henrik Schnor
+
+        * Qt6: Don't install files that are available via qrc (247d5f945)
+
+2025-12-08 Henrik Schnor
+
+        * Build QML modules with qt_add_qml_module (bbbe002da)
+
+2026-02-04 Henrik Schnor
+
+        * Add check for default theme existence (d44756f6e)
+
+2026-01-23 Henrik Schnor
+
+        * UCTheme: Add support for qrc paths (1e568b5c4)
+
+2026-01-21 Henrik Schnor
+
+        * Switch to C++17 (fcfdfb3ac)
+
+2026-03-15 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-signal-handlers' into
+          'main' (8c0a4a0a7)
+
+2026-03-14 Henrik Schnor
+
+        * QML: Make signal handlers with parameters JS functions (b68127050)
+
+2026-03-15 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-minor-things' into
+          'main' (934c183b4)
+
+2026-03-14 Henrik Schnor
+
+        * InputHandler: fix calls to positionAt() (10be3d67b)
+        * ButtonForeground/ComboButtonStyle: avoid binding loop (2e462ddb5)
+
+2026-01-05 Henrik Schnor
+
+        * ActionSelectionPopover: avoid null property access (dc4dd608d)
+
+2026-01-09 Henrik Schnor
+
+        * Adjust image urls with "@30" suffix in OptionSelectorStyle.qml
+          (545b6e551)
+
+2026-03-10 Henrik Schnor
+
+        * Tabs: replace call to deprecated function show() (f4781a689)
+        * Gallery: fix fontSize->textSize (9b84e4dbb)
+        * TabBarStyle: fix headerAdaptiveLabelSize type (f64676c58)
+        * SplitView: make default-constructible (a990528bb)
+
+2026-03-15 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-conversion-checks' into
+          'main' (aea6bb511)
+
+2026-01-28 Henrik Schnor
+
+        * Fix conversion checks in ucpagewrapper.cpp (9776932d0)
+
+2026-03-13 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-strict-equality' into
+          'main' (3bad01f88)
+
+2026-03-11 Henrik Schnor
+
+        * Fix strict equality checks between url and string types (928039dcf)
+
+2026-03-13 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-listitemstyle-crash'
+          into 'main' (55ea6d7b1)
+
+2026-02-14 Henrik Schnor
+
+        * ListItemStyle: fix crash caused by dragPanel binding (ead5092a2)
+
+2026-03-13 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-listitem-leaks' into
+          'main' (3cb070f12)
+
+2026-02-06 Henrik Schnor
+
+        * ListItem: don't leak context menus (d7a364399)
+
+2026-02-02 Henrik Schnor
+
+        * ListItem: fix memory leak (41035f8ef)
+
+2026-03-13 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-panel' into 'main'
+          (fa31b1970)
+
+2026-03-04 Henrik Schnor
+
+        * Panel: remove anchor bindings (fe0b4d16b)
+
+2026-03-12 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-scrollbar' into 'main'
+          (cda083bf9)
+
+2026-03-05 Henrik Schnor
+
+        * Scrollbar: set restoreMode on bindings (25910ef1c)
+        * Scrollbar: fix resolving the stepper icon (1e23ff1d1)
+
+2026-03-11 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (fab9336e3)
+
+2026-03-07 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (f640c0741)
+
+2026-03-04 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (81ed92ffb)
+
+2026-03-06 Łukasz Pawłowski
+
+        * Translated using Weblate (Kashubian) (b99a4341b)
+
+2026-03-04 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (85c96cba4)
+
+2026-03-05 Łukasz Pawłowski
+
+        * Translated using Weblate (Polish) (62e1b6089)
+
+2026-03-02 Andi Chandler
+
+        * Translated using Weblate (English (United Kingdom)) (4a2f7ce62)
+        * Translated using Weblate (English (United Kingdom)) (f9c48c4f6)
+
+2026-03-04 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/qt6-listitem-touch' into 'main'
+          (a668a5474)
+
+2026-02-19 Alfred Neumayer
+
+        * src/LomiriToolkit: Fix ListItem's touch event handling (0fb43c21a)
+
+2026-02-26 Steve
+
+        * Translated using Weblate (French (Switzerland)) (6137208f2)
+
+2026-02-23 தமிழ்நேரம்
+
+        * Translated using Weblate (Tamil) (94b2cafca)
+
+2026-02-26 Carlos Rocha
+
+        * Translated using Weblate (Portuguese) (ea3422100)
+
+2026-02-22 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (43704a93b)
+
+2026-02-26 Steve
+
+        * Translated using Weblate (French (Switzerland)) (afd016611)
+
+2026-02-26 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/fix-baseUrl-fix-haptics' into
+          'main' (368dbdfb0)
+
+2026-02-26 Ratchanan Srirattanamet
+
+        * imports/Components: fix passing `baseUrl()` to LomiriToolkitModule
+          (4df9dacba)
+
+2026-02-26 Mike Gabriel
+
+        * Merge branch 'IconStatus' into 'main' (41307d991)
+
+2026-02-25 Jozef Mlich
+
+        * Icon: expose Image.status as readonly status property (77043051b)
+
+2026-02-24 Mike Gabriel
+
+        * Merge branch 'personal/sunweaver/textarea-fix-autosize-qml2.0' into
+          'main' (52b6856d8)
+
+2024-08-12 Matthias Dahlmanns
+
+        * update frame size on completion to apply autoSize also with initial
+          multiline text (for QML 2.0 API) (a6cc207be)
+
+2026-02-24 Mike Gabriel
+
+        * Merge branch 'textarea-fix-autosize' into 'main' (93c8502b5)
+
+2024-08-12 Matthias Dahlmanns
+
+        * update frame size on completion to apply autoSize also with initial
+          multiline text. (ba29c6937)
+
+2026-02-23 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-styles' into 'main'
+          (132fadc66)
+
+2026-02-19 Henrik Schnor
+
+        * PageHeadStyle: don't restore head bindings (6225f2308)
+        * PullToRefreshStyle: avoid aborting the refreshing state (ab45d58c8)
+
+2026-02-23 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/fix-flaky-tests' into 'main'
+          (2cd5a3e9d)
+
+2026-02-21 Henrik Schnor
+
+        * UCTestExtras::touchDrag: avoid touchMove to start position
+          (049d29516)
+
+2026-02-16 Henrik Schnor
+
+        * Increase timeout values to fix flaky tests (36c84dfa2)
+
+2026-02-23 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-actionitem' into 'main'
+          (e9588c88e)
+
+2026-02-19 Henrik Schnor
+
+        * Fix property syncing in ucactionitem.cpp (81900e24d)
+
+2026-02-20 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (fcf115ff7)
+
+2026-02-14 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (bbfe6ba5b)
+
+2026-02-17 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (fde35772d)
+
+2026-02-16 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-func-ambiguity' into
+          'main' (2fb322fca)
+
+2026-01-09 Henrik Schnor
+
+        * Remove ambiguity when calling mapFromItem in ExpandablesColumn.qml
+          (10f7c08a0)
+
+2026-02-15 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-absbutton-destructor'
+          into 'main' (54df49a79)
+
+2026-01-29 Henrik Schnor
+
+        * AbstractButton: disconnect mouseArea in destructor (68a4e8429)
+
+2026-02-15 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-pagestack' into 'main'
+          (4b42b3875)
+
+2026-01-23 Henrik Schnor
+
+        * PageStack.qml: Don't call the JS constructor in the qml file
+          (00c2d7ca6)
+
+2026-02-15 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-header-build' into
+          'main' (3ca29e111)
+
+2026-01-21 Henrik Schnor
+
+        * CMake: copy headers during build time (1edfbc37b)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-theme-workaround' into
+          'main' (fc7cd2f3f)
+
+2026-01-08 Henrik Schnor
+
+        * Remove theme property workarounds for Qt6 (dd140d1a8)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-shaders' into 'main'
+          (c5c9c7f7d)
+
+2026-01-29 Henrik Schnor
+
+        * Update ShapeOverlayMaterial::createShader signature for Qt6
+          (e127ab430)
+        * magnifier shader: rename output variable (83df26bf6)
+
+2026-02-13 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-appheader-bg' into
+          'main' (d406244d4)
+
+2026-01-08 Henrik Schnor
+
+        * Base AppHeader.backgroundColor on MainViewBase.backgroundColor
+          (a2081be51)
+
+2026-02-13 Mike Gabriel
+
+        * Merge branch 'personal/cyrilj31/fix-qt6-little-qt6-fixes' into
+          'main' (65e8353c1)
+
+2026-01-23 Cyril Jacquet
+
+        * Build: Add stack.js to QML_FILES (01481a76f)
+
+2026-02-13 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-tab' into 'main'
+          (9b91458b8)
+
+2026-02-02 Henrik Schnor
+
+        * Frame shader: Port to Qt6 shader abstraction (be206d141)
+
+2026-01-07 Henrik Schnor
+
+        * Remove activeFocusOnTab workaround for Qt6 (05c5d05b0)
+
+2026-02-04 Henrik Schnor
+
+        * Register Qt base classes in Lomiri.Components (c5fcae1e2)
+
+2026-02-12 Mike Gabriel
+
+        * Merge branch 'personal/klhio/fix-ButtonForeground-circular-binding'
+          into 'main' (471cfdec6)
+
+2026-01-30 Maciej Sopyło
+
+        * Remove circular binding in ButtonForeground (e3ea9fcb8)
+
+2026-02-03 Midrielen
+
+        * Translated using Weblate (Finnish) (a340bbe2b)
+
+2026-02-09 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (6bd362f1d)
+        * Translated using Weblate (Hindi) (7257f2612)
+
+2026-02-04 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-sortfiltermodel' into
+          'main' (5dc2b4a9a)
+
+2026-01-03 Henrik Schnor
+
+        * Fix bugs in the SortFilterModel for Qt6 (6af5c74fd)
+
+2026-02-03 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-recursion' into 'main'
+          (10e42fe91)
+
+2026-01-09 Henrik Schnor
+
+        * Remove endless recursion in ucbottomedgehint.cpp (41bf6828f)
+
 2026-02-01 Mike Gabriel
 
-        * Release 1.3.5903 (HEAD -> main, tag: 1.3.5903)
+        * Release 1.3.5903 (77935cd89) (tag: 1.3.5903)
 
 2026-01-31 Daniel Wiik
 
