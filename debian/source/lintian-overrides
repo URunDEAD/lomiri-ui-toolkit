@@ -1,0 +1,6 @@
+# Debian UBports Team intentionally uses get-orig-source
+source: debian-rules-contains-unnecessary-get-orig-source-target [debian/rules]
+
+# these are filenames containing the word "FIXME", therefore false-positives
+source: file-contains-fixme-placeholder FIXME [debian/copyright:1454]
+source: file-contains-fixme-placeholder FIXME [debian/copyright:1455]

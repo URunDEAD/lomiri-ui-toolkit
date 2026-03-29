@@ -1,1 +1,2 @@
-liblomirimetrics5t64: package-name-doesnt-match-sonames libLomiriMetrics5
+# no .symbols files for C++ projects
+liblomirimetrics5t64: no-symbols-control-file usr/lib/x86_64-linux-gnu/libLomiriMetrics.so.5.5.0

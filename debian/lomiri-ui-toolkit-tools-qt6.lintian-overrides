@@ -1,0 +1,2 @@
+# Known issue, see https://gitlab.com/ubports/development/core/lomiri-ui-toolkit/-/work_items/69
+lomiri-ui-toolkit-tools-qt6: no-manual-page [usr/bin/lomiri-ui-toolkit-launcher-qt6]

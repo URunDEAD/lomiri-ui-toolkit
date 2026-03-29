@@ -1,0 +1,5 @@
+# Known issue, see https://gitlab.com/ubports/development/core/lomiri-ui-toolkit/-/work_items/69
+lomiri-app-launch-profiler-qt6: no-manual-page [usr/bin/lomiri-app-launch-profiler-lttng-qt6]
+lomiri-app-launch-profiler-qt6: no-manual-page [usr/bin/lomiri-app-launch-tracepoints-qt6]
+lomiri-app-launch-profiler-qt6: no-manual-page [usr/bin/lomiri-appstart-profile-qt6]
+lomiri-app-launch-profiler-qt6: no-manual-page [usr/bin/lomiri-appstart-test-qt6]

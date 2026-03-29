@@ -1,0 +1,2 @@
+# no .symbols files for C++ projects
+liblomirigestures-qt6-1: no-symbols-control-file usr/lib/x86_64-linux-gnu/libLomiriGestures-Qt6.so.1.0.0
