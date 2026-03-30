@@ -75,14 +75,14 @@ UT_NAMESPACE_BEGIN
     import QtQuick 2.4
     import Lomiri.Component 1.3
     ListItem {
-        //CORRECT, ListItem will be tall enough to accomodate all the content
+        //CORRECT, ListItem will be tall enough to accommodate all the content
         height: layout.height + (divider.visible ? divider.height : 0)
 
         ListItemLayout {
             id: layout
             title.text: "Hello developers!"
             subtitle.text: "I am a ListItemLayout"
-            summary.text: "I resize automatically to accomodate all the elements I hold. My parents should track my height property!"
+            summary.text: "I resize automatically to accommodate all the elements I hold. My parents should track my height property!"
         }
     }
     \endqml
@@ -192,11 +192,11 @@ UT_NAMESPACE_BEGIN
     The \l summary has its top tightly anchored to \l {subtitle}'s bottom.
 
     The height of the default \l SlotsLayout::mainSlot provided with ListItemLayout
-    is the minimum height required to accomodate the \b visible and \b {non-empty}
+    is the minimum height required to accommodate the \b visible and \b {non-empty}
     labels it holds. If only \l {title} is visible and has a non-empty text set, for instance,
     the height of the main slot will be \c {title.height}.
 
-    If you wish to have the layout process accomodate a label which doesn't have a
+    If you wish to have the layout process accommodate a label which doesn't have a
     defined text yet, you should set its text property to " ", as shown in the
     following example:
     \qml
@@ -207,7 +207,7 @@ UT_NAMESPACE_BEGIN
     }
     \endqml
 
-    That will make sure \l SlotsLayout::mainSlot is resized to accomodate the (currently empty)
+    That will make sure \l SlotsLayout::mainSlot is resized to accommodate the (currently empty)
     subtitle.
 
     This is useful, for instance, if you want all list items in a list view

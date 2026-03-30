@@ -30,7 +30,7 @@ import Lomiri.Components
     add a progression symbol to the list item created using \l ListItemLayout
     or \l SlotsLayout.
 
-    \l ListItemLayout will automatically accomodate the progression symbol
+    \l ListItemLayout will automatically accommodate the progression symbol
     as the last trailing slot inside the layout. For more
     details, see \l ListItemLayout documentation.
 

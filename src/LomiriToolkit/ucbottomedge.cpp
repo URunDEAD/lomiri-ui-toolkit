@@ -1018,9 +1018,9 @@ QQuickItem *UCBottomEdge::contentItem() const
 void UCBottomEdge::commit()
 {
     Q_D(UCBottomEdge);
-    // make sure that teh default region's content is loaded!
+    // make sure that the default region's content is loaded!
     if (!d->activeRegion || d->activeRegion == d->defaultRegion) {
-        // make sure teh default is the active region
+        // make sure the default is the active region
         d->setActiveRegion(d->defaultRegion);
     }
     d->commit(1.0);
@@ -1136,7 +1136,7 @@ void UCBottomEdge::setPreloadContent(bool value)
     d->preloadContent = value;
 
     if (d->preloadContent) {
-        // we load all region's content, but we skip teh default one,
+        // we load all region's content, but we skip the default one,
         // as default one is always preloaded
         for (int i = 0; i < d->regions.size(); i++) {
             UCBottomEdgeRegion *region = d->regions[i];

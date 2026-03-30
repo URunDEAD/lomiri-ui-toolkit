@@ -185,7 +185,7 @@ void UCTestExtras::touchLongPress(int touchId, QQuickItem *item, const QPoint &p
 {
     CHECK_TOUCH_DEVICE(touchId, item);
     touchPress(touchId, item, point);
-    // 800 miliseconds + 200 to let events processed
+    // 800 milliseconds + 200 to let events processed
     QTest::qWait(1000);
 }
 /*!

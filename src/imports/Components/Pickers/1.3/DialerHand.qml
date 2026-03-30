@@ -29,7 +29,7 @@ import Lomiri.Components 1.3
     minimum and maximum values.
 
     By default all hands are placed on the dialer's hand space, on the outer dialer
-    disk. By default all hands have teh same size, 0.5GU width and height same as
+    disk. By default all hands have the same size, 0.5GU width and height same as
     the handSpace specified in \l Dialer, however themes can specify preset values
     for each hand.
 
