@@ -34,6 +34,7 @@ Item {
 
     ListView {
         id: roleTest
+        anchors.fill: parent
         model: testModel
         delegate: Item {
             height: units.gu(7)
