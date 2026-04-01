@@ -135,7 +135,7 @@ StyledItem {
 
     /*!
       \qmlmethod void handUpdated(DialerHand hand)
-      The signal is emited when the hand value is updated.
+      The signal is emitted when the hand value is updated.
       */
     signal handUpdated(var hand)
 

@@ -27,7 +27,7 @@ import QtQuick 2.4
     \brief The Icon component displays an icon from the icon theme.
 
     The icon theme contains a set of standard icons referred to by their name.
-    Using icons whenever possible enhances consistency accross applications.
+    Using icons whenever possible enhances consistency across applications.
     Each icon has a name and can have different visual representations depending
     on the size requested.
 

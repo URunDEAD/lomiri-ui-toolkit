@@ -192,7 +192,7 @@ TestCase {
       */
     function mouseLongPress(item, x, y, button, modifiers, delay) {
         mousePress(item, x, y, button, modifiers, delay);
-        // the delay is taken from QQuickMouseArea, add few miliseconds to it to make sure we have
+        // the delay is taken from QQuickMouseArea, add few milliseconds to it to make sure we have
         // the long press triggered
         wait(900);
     }

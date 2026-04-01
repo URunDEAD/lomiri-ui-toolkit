@@ -82,7 +82,7 @@ QMimeData *QQuickMimeData::toMimeData()
         Q_FOREACH(const QString &format, ret->formats()) {
             m_mimeData->setData(format, ret->data(format));
         }
-        // set teh color separately
+        // set the color separately
         m_mimeData->setColorData(ret->colorData());
     }
     return ret;

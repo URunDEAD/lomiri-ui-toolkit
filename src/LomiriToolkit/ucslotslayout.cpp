@@ -619,7 +619,7 @@ void UCSlotsLayoutPrivate::handleAttachedPropertySignals(QQuickItem *item, bool 
     vertical, unless \l overrideVerticalPositioning is set) for each of them.
 
     \b {If you're building list items,} we recommend to use \l {ListItemLayout}, as
-    it is designed to accomodate up to 3 labels that follow our UI standards.
+    it is designed to accommodate up to 3 labels that follow our UI standards.
 
     \sa ListItemLayout
 
@@ -698,7 +698,7 @@ void UCSlotsLayoutPrivate::handleAttachedPropertySignals(QQuickItem *item, bool 
     and form factors.
 
     The \b {implicit height} is not fixed either. In order not to clip any of the slots, the
-    SlotsLayout adapts to accomodate its highest slot with padding and the padding around the layout.
+    SlotsLayout adapts to accommodate its highest slot with padding and the padding around the layout.
 
     Because of the above, it is recommended to have items wrapping the layout
     bind to SlotsLayout's \b {height} (adding ListItem \b divider's height if needed),

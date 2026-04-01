@@ -191,7 +191,7 @@ UCLabel *UCThreeLabelsSlot::title()
 QColor UCThreeLabelsSlot::getSubtitleColor(QQuickItem *item, UCTheme *theme)
 {
     // FIXME: replace the code below with automatic color
-    // change detection based on teh item's state
+    // change detection based on the item's state
     const char *valueSet = item->isEnabled() ? "normal" : "disabled";
     return theme ? theme->getPaletteColor(valueSet, "backgroundSecondaryText") : QColor();
 }
@@ -221,7 +221,7 @@ UCLabel *UCThreeLabelsSlot::subtitle()
 QColor UCThreeLabelsSlot::getSummaryColor(QQuickItem *item, UCTheme *theme)
 {
     // FIXME: replace the code below with automatic color
-    // change detection based on teh item's state
+    // change detection based on the item's state
     const char *valueSet = item->isEnabled() ? "normal" : "disabled";
     return theme ? theme->getPaletteColor(valueSet, "backgroundTertiaryText") : QColor();
 }

@@ -35,7 +35,7 @@ import Lomiri.Components 1.2
     * animations - where duration and easing properties are used only
         - scrollbarFadeInAnimation: PropertyAnimation - animation used when fade in
         - scrollbarFadeOutAnimation: PropertyAnimation - animation used when fade out
-        - scrollbarFadeOutPause: int - miliseconds to pause before fade out
+        - scrollbarFadeOutPause: int - milliseconds to pause before fade out
     * behaviors - animations are used as declared
         - sliderAnimation: PropertyAnimation - animation for the slider size
         - thumbConnectorFading: PropertyAnimation - animation for the thumb connector

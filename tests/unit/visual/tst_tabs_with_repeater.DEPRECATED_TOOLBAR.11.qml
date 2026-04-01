@@ -137,7 +137,7 @@ MainView {
             inputModel.move(1, 2, 1);
             inputModel.move(3, 0, 1);
             inputModel.move(1, 3, 1);
-            // wait few miliseconds
+            // wait few milliseconds
             wait(50);
             for (i=0; i < tabsModel.count; i++) {
                 compare(tabsModel.get(i).title, inputModel.get(i).name, "Tab titles after shuffling don't match for index "+i);
@@ -219,7 +219,7 @@ MainView {
             twinModel.move(1, 2, 1);
             twinModel.move(3, 0, 1);
             twinModel.move(1, 3, 1);
-            // wait few miliseconds till Tabs update is realized
+            // wait few milliseconds till Tabs update is realized
             wait(50);
 
             /* FIXME
