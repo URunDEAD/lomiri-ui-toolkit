@@ -148,9 +148,7 @@ void UCTestExtras::registerTouchDevice()
 void UCTestExtras::touchPress(int touchId, QQuickItem *item, const QPoint &point)
 {
     CHECK_TOUCH_DEVICE(touchId, item);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QTest::touchEvent(item->window(), MouseTouchAdaptor::touchDevice()).press(touchId, item->mapToScene(point).toPoint(), item->window());
-#endif
 }
 /*!
  * \qmlmethod TestExtras::touchRelease(touchId, item, point)
@@ -160,9 +158,7 @@ void UCTestExtras::touchPress(int touchId, QQuickItem *item, const QPoint &point
 void UCTestExtras::touchRelease(int touchId, QQuickItem *item, const QPoint &point)
 {
     CHECK_TOUCH_DEVICE(touchId, item);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QTest::touchEvent(item->window(), MouseTouchAdaptor::touchDevice()).release(touchId, item->mapToScene(point).toPoint(), item->window());
-#endif
 }
 /*!
  * \qmlmethod TestExtras::touchClick(touchId, item, point)
@@ -211,9 +207,7 @@ void UCTestExtras::touchDoubleClick(int touchId, QQuickItem *item, const QPoint 
 void UCTestExtras::touchMove(int touchId, QQuickItem *item, const QPoint &point)
 {
     CHECK_TOUCH_DEVICE(touchId, item);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QTest::touchEvent(item->window(), MouseTouchAdaptor::touchDevice()).move(touchId, item->mapToScene(point).toPoint(), item->window());
-#endif
 }
 /*!
  * \qmlmethod TestExtras::touchDrag(touchId, item, from, delta, steps = 5)
