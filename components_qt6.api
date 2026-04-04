@@ -1,10 +1,10 @@
-Lomiri.Components.AbstractButton 2.0 UCAbstractButton: ActionItem
+Lomiri.Components.AbstractButton 2.0 LomiriToolkit::UCAbstractButton: ActionItem
     readonly property bool hovered
     signal clicked()
     signal pressAndHold()
     readonly property bool pressed
     readonly property UCMargins sensingMargins
-Lomiri.Components.Action 2.0 2.0 UCAction: QTestRootObject
+Lomiri.Components.Action 2.0 2.0 LomiriToolkit::UCAction: QTestRootObject
     property bool checkable 2.0
     property bool checked 2.0
     property string description
@@ -18,10 +18,17 @@ Lomiri.Components.Action 2.0 2.0 UCAction: QTestRootObject
     function trigger(var value)
     function trigger()
     property string name
-    property Type parameterType
+    property Action.Type parameterType
     property var shortcut 2.0
     property string text
     property bool visible
+Lomiri.Components.Action.Type: Enum
+    Bool
+    Integer
+    None
+    Object
+    Real
+    String
 Lomiri.Components.ActionBar 2.0: StyledItem
     property list<Action> actions
     property Component delegate
@@ -34,10 +41,10 @@ Lomiri.Components.Styles.ActionBarStyle 2.0: Item
     property string overflowIconName
     property url overflowIconSource
     property string overflowText
-Lomiri.Components.ActionContext 2.0 UCActionContext: QTestRootObject
+Lomiri.Components.ActionContext 2.0 LomiriToolkit::UCActionContext: QTestRootObject
     default property list<Action> actions
     property bool active
-Lomiri.Components.ActionItem 2.0 UCActionItem: StyledItem
+Lomiri.Components.ActionItem 2.0 LomiriToolkit::UCActionItem: StyledItem
     property Action action
     property string iconName
     property url iconSource
@@ -55,14 +62,14 @@ Lomiri.Components.Styles.ActionItemProperties 2.0: QTestRootObject
 Lomiri.Components.ActionList 2.0: QTestRootObject
     property list<Action> actions
     default property list<Action> children
-Lomiri.Components.ActionList 2.0 ActionList: QTestRootObject
+Lomiri.Components.ActionList 2.0 LomiriToolkit::ActionList: QTestRootObject
     property list<Action> actions
     default property list<Action> children
     signal added(Action action)
     signal removed(Action action)
     function addAction(Action action)
     function removeAction(Action action)
-Lomiri.Components.ActionManager 2.0 UCActionManager: QTestRootObject
+Lomiri.Components.ActionManager 2.0 LomiriToolkit::UCActionManager: QTestRootObject
     default property list<Action> actions
     readonly property ActionContext globalContext
     property list<ActionContext> localContexts
@@ -100,13 +107,13 @@ Lomiri.Metrics.ApplicationMonitor 1.0: QTestRootObject singleton
     function bool logEvent(Event event)
     property bool overlay
     property int processUpdateInterval
-Lomiri.Components.Argument 2.0 UCArgument: QTestRootObject
+Lomiri.Components.Argument 2.0 LomiriToolkit::UCArgument: QTestRootObject
     property string help
     function var at(int i)
     property string name
     property bool required
     property QStringList valueNames
-Lomiri.Components.Arguments 2.0 UCArguments: QTestRootObject
+Lomiri.Components.Arguments 2.0 LomiriToolkit::UCArguments: QTestRootObject
     default property list<Argument> arguments
     property Argument defaultArgument
     readonly property bool error
@@ -115,13 +122,6 @@ Lomiri.Components.Arguments 2.0 UCArguments: QTestRootObject
     function quitWithError(string errorMessage)
     function quitWithError()
     readonly property QQmlPropertyMap values
-Lomiri.Components.Aspect: Enum
-    DropShadow
-    Flat
-    Inset
-Lomiri.Components.BackgroundMode: Enum
-    SolidColor
-    VerticalGradient
 Lomiri.PerformanceMetrics.BarGraph 1.0: Item
     property color aboveThresholdColor
     property color backgroundColor
@@ -137,17 +137,17 @@ Lomiri.Components.ListItems.Base 2.0: Empty
     property var icon
     property bool iconFrame
     property bool progression
-Lomiri.Components.BottomEdge 2.0 UCBottomEdge: StyledItem
+Lomiri.Components.BottomEdge 2.0 LomiriToolkit::UCBottomEdge: StyledItem
     readonly property BottomEdgeRegion activeRegion
     property Component contentComponent
     readonly property Item contentItem
     property url contentUrl
-    readonly property DragDirection dragDirection
+    readonly property BottomEdge.DragDirection dragDirection
     readonly property double dragProgress
     readonly property BottomEdgeHint hint
     signal dragProgressChanged(double dragProgress)
-    signal dragDirectionChanged(DragDirection direction)
-    signal statusChanged(Status status)
+    signal dragDirectionChanged(BottomEdge.DragDirection direction)
+    signal statusChanged(BottomEdge.Status status)
     signal contentChanged(url url)
     signal contentComponentChanged(Component component)
     signal activeRegionChanged(BottomEdgeRegion activeRegion)
@@ -159,14 +159,27 @@ Lomiri.Components.BottomEdge 2.0 UCBottomEdge: StyledItem
     function collapse()
     property bool preloadContent
     property list<BottomEdgeRegion> regions
-    readonly property Status status
-Lomiri.Components.BottomEdgeHint 2.0 UCBottomEdgeHint: ActionItem
+    readonly property BottomEdge.Status status
+Lomiri.Components.BottomEdge.DragDirection: Enum
+    Downwards
+    Undefined
+    Upwards
+Lomiri.Components.BottomEdge.Status: Enum
+    Committed
+    Hidden
+    Revealed
+Lomiri.Components.BottomEdgeHint 2.0 LomiriToolkit::UCBottomEdgeHint: ActionItem
     property int deactivateTimeout
     property Flickable flickable
     signal clicked()
-    property Status status
+    property BottomEdgeHint.Status status
     readonly property SwipeArea swipeArea
-Lomiri.Components.BottomEdgeRegion 2.0 UCBottomEdgeRegion: QTestRootObject
+Lomiri.Components.BottomEdgeHint.Status: Enum
+    Active
+    Hidden
+    Inactive
+    Locked
+Lomiri.Components.BottomEdgeRegion 2.0 LomiriToolkit::UCBottomEdgeRegion: QTestRootObject
     property Component contentComponent
     property url contentUrl
     property bool enabled
@@ -177,7 +190,7 @@ Lomiri.Components.BottomEdgeRegion 2.0 UCBottomEdgeRegion: QTestRootObject
     signal exited()
     signal dragEnded()
     property double to
-Lomiri.Components.Styles.BottomEdgeStyle 2.0 UCBottomEdgeStyle: Item
+Lomiri.Components.Styles.BottomEdgeStyle 2.0 LomiriToolkit::UCBottomEdgeStyle: Item
     property Item contentItem
     property Item panel
     property Animation panelAnimation
@@ -194,9 +207,6 @@ Lomiri.Components.Captions 2.0: ColumnLayout
     property int captionStyle
     readonly property Label subtitle
     readonly property Label title
-Lomiri.Test.CaptionsStyle: Enum
-    SummaryCaptionStyle
-    TitleCaptionStyle
 Lomiri.Components.CheckBox 2.0: AbstractButton
     property bool checked
 Lomiri.Components.Clipboard 2.0: QTestRootObject singleton
@@ -309,10 +319,6 @@ Lomiri.Components.Popups.Dialog 2.0: PopupBase
     property ThemeSettings theme
     property string title
 Lomiri.Components.ListItems.Divider 2.0: Rectangle
-Lomiri.Components.DragDirection: Enum
-    Downwards
-    Undefined
-    Upwards
 Lomiri.Components.DraggingArea 2.0: MouseArea
     property bool clickValidated
     property double dragValue
@@ -341,7 +347,7 @@ Lomiri.Components.ListItems.Empty 2.0: AbstractButton
     readonly property bool waitingConfirmationForRemoval
 Lomiri.Metrics.Event: Enum
     UserInterfaceReady
-Lomiri.Components.ExclusiveGroup 2.0 ExclusiveGroup: ActionList
+Lomiri.Components.ExclusiveGroup 2.0 LomiriToolkit::ExclusiveGroup: ActionList
     readonly property QTestRootObject current
     function bindCheckable(QTestRootObject object)
     function unbindCheckable(QTestRootObject object)
@@ -354,28 +360,9 @@ Lomiri.Components.ListItems.ExpandablesColumn 2.0: Flickable
     readonly property var expandedItem
     function var expandItem(var item)
     function var collapse()
-Lomiri.Components.ExpansionFlag: Enum
-    CollapseOnOutsidePress
-    Exclusive
-    UnlockExpanded
-Lomiri.Components.FillMode: Enum
-    Pad
-    PreserveAspectCrop
-    PreserveAspectFit
-    Stretch
 Lomiri.Components.FilterBehavior 2.0: QTestRootObject
     property QRegularExpression pattern
     property string property
-Lomiri.Components.Frequency: Enum
-    Disabled
-    Hour
-    Minute
-    Relative
-    Second
-Lomiri.Components.HAlignment: Enum
-    AlignHCenter
-    AlignLeft
-    AlignRight
 Lomiri.Components.Haptics 2.0: QTestRootObject singleton
     readonly property QTestRootObject effect
     readonly property bool enabled
@@ -383,7 +370,7 @@ Lomiri.Components.Haptics 2.0: QTestRootObject singleton
     function play()
 Lomiri.Components.ListItems.Header 2.0 ListItemHeader: Item
     property string text
-Lomiri.Components.Header 2.0 UCHeader: StyledItem
+Lomiri.Components.Header 2.0 LomiriToolkit::UCHeader: StyledItem
     property bool automaticHeight
     property bool exposed
     property Flickable flickable
@@ -476,8 +463,8 @@ Lomiri.Components.Internal__Haptics 2.0: Item
     function var play(var customEffect)
 Lomiri.Components.Internal__ListItemPopover 2.0: ActionSelectionPopover
     function var mergeActions(var to, var from)
-Lomiri.Components.InverseMouse 2.0 UCInverseMouse: Mouse
-Lomiri.Components.InverseMouseArea 2.0 InverseMouseAreaType: MouseArea
+Lomiri.Components.InverseMouse 2.0 LomiriToolkit::UCInverseMouse: Mouse
+Lomiri.Components.InverseMouseArea 2.0 LomiriToolkit::InverseMouseAreaType: MouseArea
     function bool contains(QPointF point)
     property Item sensingArea
     property bool topmostItem
@@ -495,8 +482,15 @@ Lomiri.Components.ListItems.ItemSelector 2.0: Empty
     property var model
     property bool multiSelection
     property int selectedIndex
-Lomiri.Components.Label 2.0 UCLabel: Text
-    property TextSize textSize
+Lomiri.Components.Label 2.0 LomiriToolkit::UCLabel: Text
+    property Label.TextSize textSize
+Lomiri.Components.Label.TextSize: Enum
+    Large
+    Medium
+    Small
+    XLarge
+    XSmall
+    XxSmall
 Lomiri.Components.ListItems.LabelVisual 2.0: Label
     function var isInsideOverlay(var item)
     property bool overlay
@@ -505,7 +499,7 @@ Lomiri.Components.ListItems.LabelVisual 2.0: Label
 Lomiri.Layouts.Layouts 1.0 0.1 ULLayouts: Item
     readonly property string currentLayout
     property list<ConditionalLayout> layouts
-Lomiri.Components.ListItem 2.0 UCListItem: StyledItem
+Lomiri.Components.ListItem 2.0 LomiriToolkit::UCListItem: StyledItem
     property Action action
     property color color
     readonly property Item contentItem
@@ -528,7 +522,7 @@ Lomiri.Components.ListItem 2.0 UCListItem: StyledItem
     property bool swipeEnabled 2.0
     readonly property bool swiped 2.0
     property ListItemActions trailingActions
-Lomiri.Components.ListItemActions 2.0 UCListItemActions: QTestRootObject
+Lomiri.Components.ListItemActions 2.0 LomiriToolkit::UCListItemActions: QTestRootObject
     property list<Action> actions
     default property list<QTestRootObject> data
     property Component delegate
@@ -537,13 +531,17 @@ Lomiri.Components.ListItemDrag 2.0: QTestRootObject
     readonly property int from
     property int maximumIndex
     property int minimumIndex
-    readonly property Status status
+    readonly property ListItemDrag.Status status
     readonly property int to
-Lomiri.Components.ListItemLayout 2.0 UCListItemLayout: SlotsLayout
+Lomiri.Components.ListItemDrag.Status: Enum
+    Dropped
+    Moving
+    Started
+Lomiri.Components.ListItemLayout 2.0 LomiriToolkit::UCListItemLayout: SlotsLayout
     readonly property Label subtitle
     readonly property Label summary
     readonly property Label title
-Lomiri.Components.Styles.ListItemStyle 2.0 UCListItemStyle: Item
+Lomiri.Components.Styles.ListItemStyle 2.0 LomiriToolkit::UCListItemStyle: Item
     readonly property bool animatePanels
     property Item dragPanel
     property PropertyAnimation dropAnimation
@@ -552,10 +550,16 @@ Lomiri.Components.Styles.ListItemStyle 2.0 UCListItemStyle: Item
     function swipeEvent(SwipeEvent event)
     function rebound()
     property Animation snapAnimation
-Lomiri.Components.LiveTimer 2.0 LiveTimer: QTestRootObject
-    property Frequency frequency
+Lomiri.Components.LiveTimer 2.0 LomiriToolkit::LiveTimer: QTestRootObject
+    property LiveTimer.Frequency frequency
     signal trigger()
     property QDateTime relativeTime
+Lomiri.Components.LiveTimer.Frequency: Enum
+    Disabled
+    Hour
+    Minute
+    Relative
+    Second
 Lomiri.Metrics.LoggingFilters: Flag
     AllEvents
     FrameEvent
@@ -604,7 +608,7 @@ Lomiri.Components.LomiriListView 2.0: ListView
     property int expandedIndex
     readonly property PullToRefresh pullToRefresh
 Lomiri.Components.LomiriNumberAnimation 2.0: NumberAnimation
-Lomiri.Components.LomiriShapeOverlay 2.0 UCLomiriShapeOverlay: Shape
+Lomiri.Components.LomiriShapeOverlay 2.0 LomiriToolkit::UCLomiriShapeOverlay: Shape
     property color overlayColor
     property QRectF overlayRect
 Lomiri.Test.LomiriTestCase 2.0 LomiriTestCase20: TestCase
@@ -623,7 +627,7 @@ Lomiri.Test.LomiriTestCase 2.0 LomiriTestCase20: TestCase
 Lomiri.Components.MainView 2.0: MainViewBase
     property bool automaticOrientation
     default property list<QTestRootObject> contentsItem
-Lomiri.Components.MainViewBase 2.0 UCMainViewBase: PageTreeNode
+Lomiri.Components.MainViewBase 2.0 LomiriToolkit::UCMainViewBase: PageTreeNode
     readonly property PopupContext actionContext
     property bool anchorToKeyboard
     property string applicationName
@@ -638,7 +642,7 @@ Lomiri.Components.MathUtils 2.0: QTestRootObject singleton
     function double lerp(double delta, double from, double to)
     function double projectValue(double x, double xmin, double xmax, double ymin, double ymax)
     function double clampAndProject(double x, double xmin, double xmax, double ymin, double ymax)
-Lomiri.Components.MimeData 2.0 QQuickMimeData: QTestRootObject
+Lomiri.Components.MimeData 2.0 LomiriToolkit::QQuickMimeData: QTestRootObject
     property color color
     property var data
     readonly property QStringList formats
@@ -659,7 +663,7 @@ Lomiri.Components.Pickers.MonthModel 2.0: PickerModelBase
     function var indexOf()
     function var dateFromIndex(var index)
     function var text(var value)
-Lomiri.Components.Mouse 2.0 UCMouse: QTestRootObject
+Lomiri.Components.Mouse 2.0 LomiriToolkit::UCMouse: QTestRootObject
     readonly property MouseButton> acceptedButtons
     property int clickAndHoldThreshold
     property bool enabled
@@ -674,7 +678,10 @@ Lomiri.Components.Mouse 2.0 UCMouse: QTestRootObject
     signal positionChanged(MouseEvent mouse, Item host)
     signal entered(MouseEvent event, Item host)
     signal exited(MouseEvent event, Item host)
-    property Priority priority
+    property Mouse.Priority priority
+Lomiri.Components.Mouse.Priority: Enum
+    AfterItem
+    BeforeItem
 Lomiri.Test.MouseTouchAdaptor 2.0: QTestRootObject singleton
     property bool enabled
     signal enabledChanged(bool value)
@@ -777,7 +784,7 @@ Lomiri.Components.PageStack 2.0: PageTreeNode
     function var push(var page, var properties)
     function var pop()
     function var clear()
-Lomiri.Components.PageTreeNode 2.0 UCPageTreeNode: StyledItem
+Lomiri.Components.PageTreeNode 2.0 LomiriToolkit::UCPageTreeNode: StyledItem
     property bool active
     readonly property Item activeLeafNode
     property bool isLeaf
@@ -907,11 +914,8 @@ Lomiri.Components.Popups.PopupBase 2.0: OrientationHelper
     property bool grabDismissAreaEvents
     function var show()
     function var hide()
-Lomiri.Components.PopupContext 2.0 UCPopupContext: ActionContext
+Lomiri.Components.PopupContext 2.0 LomiriToolkit::UCPopupContext: ActionContext
 Lomiri.Components.Popups.PopupUtils 2.0
-Lomiri.Components.Priority: Enum
-    AfterItem
-    BeforeItem
 Lomiri.Components.ProgressBar 2.0: AnimatedItem
     property bool indeterminate
     property double maximumValue
@@ -922,7 +926,7 @@ Lomiri.Components.ProgressionSlot 2.0: Icon
 Lomiri.Components.ListItems.ProgressionVisual 2.0: StyledItem
     property bool showSplit
     property double splitMargin
-Lomiri.Components.ProportionalShape 2.0 UCProportionalShape: Shape
+Lomiri.Components.ProportionalShape 2.0 LomiriToolkit::UCProportionalShape: Shape
 Lomiri.Components.PullToRefresh 2.0: StyledItem
     property Component content
     signal refresh()
@@ -966,41 +970,69 @@ Lomiri.Components.Styles.SectionsStyle 2.0: Item
     property color selectedSectionColor
     property int textSize
     property color underlineColor
-Lomiri.Components.ServiceProperties 2.0 UCServiceProperties: QTestRootObject
+Lomiri.Components.ServiceProperties 2.0 LomiriToolkit::UCServiceProperties: QTestRootObject
     property string adaptorInterface 2.0
     readonly property string error 2.0
     property string path 2.0
     property string service 2.0
     property string serviceInterface 2.0
-    readonly property Status status 2.0
-    property ServiceType type 2.0
-Lomiri.Components.ServiceType: Enum
+    readonly property ServiceProperties.Status status 2.0
+    property ServiceProperties.ServiceType type 2.0
+Lomiri.Components.ServiceProperties.ServiceType: Enum
     Session
     System
     Undefined
-Lomiri.Components.Shape 2.0 LomiriShape 2.0 2.0 UCLomiriShape: Item
-    property Aspect aspect 2.0
+Lomiri.Components.ServiceProperties.Status: Enum
+    Active
+    ConnectionError
+    Inactive
+    Synchronizing
+Lomiri.Components.Shape 2.0 LomiriShape 2.0 2.0 LomiriToolkit::UCLomiriShape: Item
+    property Shape.Aspect aspect 2.0
     property color backgroundColor 2.0
-    property BackgroundMode backgroundMode 2.0
+    property Shape.BackgroundMode backgroundMode 2.0
     property string borderSource
     property color color
     property color gradientColor
-    property HAlignment horizontalAlignment
+    property Shape.HAlignment horizontalAlignment
     property var image
     property string radius
     property double relativeRadius 2.0
     property color secondaryBackgroundColor 2.0
     property var source 2.0
-    property FillMode sourceFillMode 2.0
-    property HAlignment sourceHorizontalAlignment 2.0
-    property WrapMode sourceHorizontalWrapMode 2.0
+    property Shape.FillMode sourceFillMode 2.0
+    property Shape.HAlignment sourceHorizontalAlignment 2.0
+    property Shape.WrapMode sourceHorizontalWrapMode 2.0
     property double sourceOpacity 2.0
     property vector2d sourceScale 2.0
     property vector2d sourceTranslation 2.0
-    property VAlignment sourceVerticalAlignment 2.0
-    property WrapMode sourceVerticalWrapMode 2.0
+    property Shape.VAlignment sourceVerticalAlignment 2.0
+    property Shape.WrapMode sourceVerticalWrapMode 2.0
     property bool stretched
-    property VAlignment verticalAlignment
+    property Shape.VAlignment verticalAlignment
+Lomiri.Components.Shape.Aspect: Enum
+    DropShadow
+    Flat
+    Inset
+Lomiri.Components.Shape.BackgroundMode: Enum
+    SolidColor
+    VerticalGradient
+Lomiri.Components.Shape.FillMode: Enum
+    Pad
+    PreserveAspectCrop
+    PreserveAspectFit
+    Stretch
+Lomiri.Components.Shape.HAlignment: Enum
+    AlignHCenter
+    AlignLeft
+    AlignRight
+Lomiri.Components.Shape.VAlignment: Enum
+    AlignBottom
+    AlignTop
+    AlignVCenter
+Lomiri.Components.Shape.WrapMode: Enum
+    Repeat
+    Transparent
 Lomiri.Components.Popups.SheetBase 2.0: PopupBase
     default property list<QTestRootObject> container
     property double contentsHeight
@@ -1023,10 +1055,15 @@ Lomiri.Components.Slider 2.0: StyledItem
 Lomiri.Components.SlotsAttached 2.0: QTestRootObject
     property bool overrideVerticalPositioning
     readonly property SlotsLayoutPadding padding
-    property UCSlotPosition position
-Lomiri.Components.SlotsLayout 2.0 UCSlotsLayout: Item
+    property SlotsLayout.UCSlotPosition position
+Lomiri.Components.SlotsLayout 2.0 LomiriToolkit::UCSlotsLayout: Item
     property Item mainSlot
     readonly property SlotsLayoutPadding padding
+Lomiri.Components.SlotsLayout.UCSlotPosition: Enum
+    First
+    Last
+    Leading
+    Trailing
 Lomiri.Components.SlotsLayoutPadding 2.0: QTestRootObject
     property double bottom
     property double leading
@@ -1035,7 +1072,7 @@ Lomiri.Components.SlotsLayoutPadding 2.0: QTestRootObject
 Lomiri.Components.SortBehavior 2.0: QTestRootObject
     property Qt.SortOrder order
     property string property
-Lomiri.Components.SortFilterModel 2.0 QSortFilterProxyModelQML: QSortFilterProxyModel
+Lomiri.Components.SortFilterModel 2.0 LomiriToolkit::QSortFilterProxyModelQML: QSortFilterProxyModel
     readonly property int count
     readonly property FilterBehavior filter
     function QVariantMap get(int row)
@@ -1049,32 +1086,10 @@ Lomiri.Components.ListItems.Standard 2.0: Empty
     property var icon
     property bool iconFrame
     property bool progression
-Lomiri.Components.StateSaver 2.0 UCStateSaver: QTestRootObject
-Lomiri.Components.Status: Enum
-    Finished
-    Started
-    Updated
-Lomiri.Components.Status: Enum
-    Active
-    ConnectionError
-    Inactive
-    Synchronizing
-Lomiri.Components.Status: Enum
-    Dropped
-    Moving
-    Started
-Lomiri.Components.Status: Enum
-    Active
-    Hidden
-    Inactive
-    Locked
-Lomiri.Components.Status: Enum
-    Committed
-    Hidden
-    Revealed
-Lomiri.Components.StyleHints 2.0 UCStyleHints: QTestRootObject
+Lomiri.Components.StateSaver 2.0 LomiriToolkit::UCStateSaver: QTestRootObject
+Lomiri.Components.StyleHints 2.0 LomiriToolkit::UCStyleHints: QTestRootObject
     property bool ignoreUnknownProperties
-Lomiri.Components.StyledItem 2.0 2.0 2.0 UCStyledItemBase: Item
+Lomiri.Components.StyledItem 2.0 2.0 2.0 LomiriToolkit::UCStyledItemBase: Item
     property bool activeFocusOnPress 2.0
     readonly property bool keyNavigationFocus 2.0
     function bool requestFocus(Qt.FocusReason reason) 2.0
@@ -1109,8 +1124,12 @@ Lomiri.Components.SwipeArea.Direction: Enum
 Lomiri.Components.SwipeEvent 2.0: QTestRootObject
     property QPointF content
     readonly property QPointF from
-    readonly property Status status
+    readonly property SwipeEvent.Status status
     readonly property QPointF to
+Lomiri.Components.SwipeEvent.Status: Enum
+    Finished
+    Started
+    Updated
 Lomiri.Components.Switch 2.0: CheckBox
 Lomiri.Components.Tab 2.0: PageTreeNode
     property url iconSource
@@ -1296,16 +1315,9 @@ Lomiri.Components.TextInputPopover 2.0: Popover
     property int padding
     property bool password
     property Item target
-Lomiri.Components.TextSize: Enum
-    Large
-    Medium
-    Small
-    XLarge
-    XSmall
-    XxSmall
 Lomiri.PerformanceMetrics.TextureFromImage 1.0 0.1 UPMTextureFromImage: Item
     property QImage image
-Lomiri.Components.ThemeSettings 2.0 UCTheme: QTestRootObject
+Lomiri.Components.ThemeSettings 2.0 LomiriToolkit::UCTheme: QTestRootObject
     property string name
     property QTestRootObject palette
     readonly property ThemeSettings parentTheme
@@ -1324,13 +1336,6 @@ Lomiri.Components.Styles.ToolbarStyle 2.0: Item
     property color backgroundColor
     readonly property ActionItemProperties buttons
     property Component defaultDelegate
-Lomiri.Components.Type: Enum
-    Bool
-    Integer
-    None
-    Object
-    Real
-    String
 UCActionContextAttached: QTestRootObject
 Lomiri.Components.UCApplication 2.0: QTestRootObject
     property string applicationName
@@ -1349,11 +1354,9 @@ UCMargins: QTestRootObject
     property double right
     property double top
 UCNamespace: QTestRootObject
-Lomiri.Components.UCSlotPosition: Enum
-    First
-    Last
-    Leading
-    Trailing
+Lomiri.Test.UCNamespace.CaptionsStyle: Enum
+    SummaryCaptionStyle
+    TitleCaptionStyle
 UCStateSaverAttached: QTestRootObject
     property bool enabled
     property string properties
@@ -1370,10 +1373,6 @@ UPMGraphModel: QTestRootObject
     readonly property int shift
 Lomiri.Components.UriHandler 2.0: QTestRootObject singleton
     signal opened(QStringList uris)
-Lomiri.Components.VAlignment: Enum
-    AlignBottom
-    AlignTop
-    AlignVCenter
 Lomiri.Components.ListItems.ValueSelector 2.0: Empty
     property bool expanded
     property string fallbackIconName
@@ -1391,9 +1390,10 @@ Lomiri.Components.ViewItems 2.0: QTestRootObject
     signal expandedIndicesChanged(list<int> indices)
     property bool selectMode
     property list<int> selectedIndices
-Lomiri.Components.WrapMode: Enum
-    Repeat
-    Transparent
+Lomiri.Components.ViewItems.ExpansionFlag: Enum
+    CollapseOnOutsidePress
+    Exclusive
+    UnlockExpanded
 Lomiri.Components.Pickers.YearModel 2.0: PickerModelBase
     property int from
     function var reset()

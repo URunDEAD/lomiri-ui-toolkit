@@ -294,7 +294,7 @@ private Q_SLOTS:
         QScopedPointer<BottomEdgeTestCase> test(new BottomEdgeTestCase("BottomEdgeInItem.qml"));
         UCBottomEdge *bottomEdge = test->testItem();
         UCBottomEdgeStyle *style = UCBottomEdgePrivate::get(bottomEdge)->bottomPanel;
-        QSignalSpy spy(bottomEdge, SIGNAL(statusChanged(UCBottomEdge::Status)));
+        QSignalSpy spy(bottomEdge, &UCBottomEdge::statusChanged);
 
         // swipe till we reveal it
         QPoint from(bottomEdge->width() / 2.0f, bottomEdge->height() - 1);
@@ -620,7 +620,7 @@ private Q_SLOTS:
 
         QPoint from(bottomEdge->width() / 2.0f, bottomEdge->height() - 5);
         QPoint to = from + QPoint(0, -(bottomEdge->parentItem()->height() - 1));
-        QSignalSpy spy(bottomEdge, SIGNAL(activeRegionChanged(UCBottomEdgeRegion*)));
+        QSignalSpy spy(bottomEdge, &UCBottomEdge::activeRegionChanged);
 
         UCTestExtras::touchPress(0, bottomEdge, from);
         QPoint movePos(from);
@@ -883,7 +883,7 @@ private Q_SLOTS:
         UCBottomEdgeRegionPrivate::get(region)->to = 0.2;
         QPoint from(bottomEdge->width() / 2.0f, bottomEdge->height() - 5);
         QPoint delta(0, -(bottomEdge->height() / 2.0f));
-        QSignalSpy activeRegion(bottomEdge, SIGNAL(activeRegionChanged(UCBottomEdgeRegion*)));
+        QSignalSpy activeRegion(bottomEdge, &UCBottomEdge::activeRegionChanged);
         if (withMouse) {
             bottomEdge->hint()->setStatus(UCBottomEdgeHint::Locked);
             UCTestExtras::mouseDrag(bottomEdge, from, delta, Qt::LeftButton, Qt::NoModifier, 10);
@@ -962,7 +962,7 @@ private Q_SLOTS:
 
         QPoint from(bottomEdge->width() / 2.0f, bottomEdge->height() - 5);
         QPoint to = from + QPoint(0, -(bottomEdge->parentItem()->height() - 1));
-        QSignalSpy spy(bottomEdge, SIGNAL(activeRegionChanged(UCBottomEdgeRegion*)));
+        QSignalSpy spy(bottomEdge, &UCBottomEdge::activeRegionChanged);
 
         connect(bottomEdge, &UCBottomEdge::contentItemChanged, [=]() {
             regionObjects.append(bottomEdge->contentItem()
