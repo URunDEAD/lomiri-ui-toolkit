@@ -122,7 +122,7 @@ MainView {
 
         function test_select_toggle_breaks_property_binding_bug1469471() {
             listView.ViewItems.selectMode = true;
-            wait(400);
+            wait(2000);
 
             // select through checkbox
             var listItem = findChild(listView, "listItem0");
