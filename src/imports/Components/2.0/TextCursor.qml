@@ -189,7 +189,10 @@ Lomiri.StyledItem {
                 handler.main.selectWord();
                 handler.pressAndHold(-1, false);
             }
-            Lomiri.Mouse.onDoubleClicked: handler.main.selectWord()
+            Lomiri.Mouse.onDoubleClicked: function(event) {
+                handler.main.selectWord()
+                event.accepted = true;
+            }
             Lomiri.Mouse.enabled: enabled
 
             // Visible touch target area for debugging purposes

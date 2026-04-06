@@ -515,7 +515,7 @@ TouchRegistry::findMostRelavantEventForId(int id, QQuickItem *item)
     QPointerEvent *event = nullptr;
     const QEventPoint *point = nullptr;
 
-    for (int i = m_eventsInDelivery.size() - 1; i > 0; i--) {
+    for (int i = m_eventsInDelivery.size() - 1; i >= 0; i--) {
         point = findPointInEvent(m_eventsInDelivery[i], id);
         if (point) {
             event = m_eventsInDelivery[i];
@@ -526,7 +526,8 @@ TouchRegistry::findMostRelavantEventForId(int id, QQuickItem *item)
     if (!event && item) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 1, 0)
         QQuickItemPrivate *itemPriv = QQuickItemPrivate::get(item);
-        auto quickEventInDelivery = itemPriv->deliveryAgentPrivate()->eventInDelivery();
+        auto *dap = itemPriv->deliveryAgentPrivate();
+        auto quickEventInDelivery = dap ? dap->eventInDelivery() : nullptr;
 #else
         QQuickWindowPrivate *windowPriv = QQuickWindowPrivate::get(window());
         auto quickEventInDelivery = windowPriv->eventInDelivery();

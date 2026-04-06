@@ -420,9 +420,13 @@ void UCSwipeAreaPrivate::unownedTouchEvent_undecided(UnownedTouchEvent *unownedT
         return;
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QPointF &touchScenePosition = touchPoint->scenePosition();
+    if (touchPoint->state() == QEventPoint::Released) {
+#else
     const QPointF &touchScenePosition = touchPoint->scenePos();
-
     if (touchPoint->state() == Qt::TouchPointReleased) {
+#endif
         // touch has ended before recognition concluded
         SA_TRACE("Touch has ended before recognition concluded");
         TouchRegistry::instance()->removeCandidateOwnerForTouch(touchId, q);
@@ -518,12 +522,20 @@ void UCSwipeAreaPrivate::touchEvent_absent(QTouchEvent *event)
         allGood = false;
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QList<QTouchEvent::TouchPoint> &touchPoints = event->points();
+#else
     const QList<QTouchEvent::TouchPoint> &touchPoints = event->touchPoints();
+#endif
 
     const QTouchEvent::TouchPoint *newTouchPoint = nullptr;
     for (int i = 0; i < touchPoints.count() && allGood; ++i) {
         const QTouchEvent::TouchPoint &touchPoint = touchPoints.at(i);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (touchPoint.state() == QEventPoint::Pressed) {
+#else
         if (touchPoint.state() == Qt::TouchPointPressed) {
+#endif
             if (newTouchPoint) {
                 // more than one touch starting in this QTouchEvent. Can't be a single-touch gesture
                 allGood = false;
@@ -546,7 +558,11 @@ void UCSwipeAreaPrivate::touchEvent_absent(QTouchEvent *event)
         Q_ASSERT(newTouchPoint);
         Q_Q(UCSwipeArea);
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        startScenePos = newTouchPoint->scenePosition();
+#else
         startScenePos = newTouchPoint->scenePos();
+#endif
         touchId = newTouchPoint->id();
         dampedScenePos.reset(startScenePos);
         updatePosition(startScenePos);
@@ -591,7 +607,11 @@ void UCSwipeAreaPrivate::touchEvent_undecided(QTouchEvent *event)
     // But we do want to know when those new touches end for keeping the composition time
     // window up-to-date
     event->ignore();
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    watchPressedTouchPoints(event->points());
+#else
     watchPressedTouchPoints(event->touchPoints());
+#endif
 
     if (
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -623,9 +643,13 @@ void UCSwipeAreaPrivate::touchEvent_recognized(QTouchEvent *event)
                "Considering it as released.";
         setStatus(WaitingForTouch);
     } else {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        updatePosition(touchPoint->scenePosition());
+        if (touchPoint->state() == QEventPoint::Released) {
+#else
         updatePosition(touchPoint->scenePos());
-
         if (touchPoint->state() == Qt::TouchPointReleased) {
+#endif
             setStatus(WaitingForTouch);
         }
     }
@@ -636,7 +660,11 @@ void UCSwipeAreaPrivate::watchPressedTouchPoints(const QList<QTouchEvent::TouchP
     Q_Q(UCSwipeArea);
     for (int i = 0; i < touchPoints.count(); ++i) {
         const QTouchEvent::TouchPoint &touchPoint = touchPoints.at(i);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (touchPoint.state() == QEventPoint::Pressed) {
+#else
         if (touchPoint.state() == Qt::TouchPointPressed) {
+#endif
             TouchRegistry::instance()->addTouchWatcher(touchPoint.id(), q);
         }
     }
@@ -655,7 +683,11 @@ bool UCSwipeAreaPrivate::sanityCheckRecognitionProperties()
 
 const QTouchEvent::TouchPoint *UCSwipeAreaPrivate::fetchTargetTouchPoint(QTouchEvent *event)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QList<QTouchEvent::TouchPoint> &touchPoints = event->points();
+#else
     const QList<QTouchEvent::TouchPoint> &touchPoints = event->touchPoints();
+#endif
     const QTouchEvent::TouchPoint *touchPoint = 0;
     for (int i = 0; i < touchPoints.size(); ++i) {
         if (touchPoints.at(i).id() == touchId) {
@@ -869,12 +901,22 @@ void ActiveTouchesInfo::update(QTouchEvent *event)
         return;
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    const QList<QTouchEvent::TouchPoint> &touchPoints = event->points();
+#else
     const QList<QTouchEvent::TouchPoint> &touchPoints = event->touchPoints();
+#endif
     for (int i = 0; i < touchPoints.count(); ++i) {
         const QTouchEvent::TouchPoint &touchPoint = touchPoints.at(i);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (touchPoint.state() == QEventPoint::Pressed) {
+            addTouchPoint(touchPoint.id());
+        } else if (touchPoint.state() == QEventPoint::Released) {
+#else
         if (touchPoint.state() == Qt::TouchPointPressed) {
             addTouchPoint(touchPoint.id());
         } else if (touchPoint.state() == Qt::TouchPointReleased) {
+#endif
             removeTouchPoint(touchPoint.id());
         }
     }

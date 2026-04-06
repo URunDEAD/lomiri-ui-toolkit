@@ -318,6 +318,8 @@ void ULLayoutsPrivate::updateLayout()
     }
     // check if we need to switch back to default layout
     if (currentLayoutIndex >= 0) {
+        // cancel any pending layout incubation
+        QQmlIncubator::clear();
         // revert and clear changes
         changes.revert();
         changes.clear();

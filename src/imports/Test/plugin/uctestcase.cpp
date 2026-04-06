@@ -37,10 +37,12 @@ LomiriTestCase::LomiriTestCase(const QString& file, ResizeMode resize, bool asse
     // Create a dummy touch device for tests.
     QTest::createTouchDevice();
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QString modules(LOMIRI_QML_IMPORT_PATH);
     Q_ASSERT(QDir(modules).exists());
     QString modulePath(QDir(modules).absolutePath());
     engine()->addImportPath(modulePath);
+#endif
 
     qRegisterMetaType<QList <QQmlError> >();
     m_spy = new QSignalSpy(engine(), SIGNAL(warnings(QList<QQmlError>)));
