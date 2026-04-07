@@ -14,10 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import Lomiri.Components 1.1
-import Lomiri.Components.Pickers 1.0
-import Lomiri.Layouts 1.0
+import QtQuick
+import Lomiri.Components
+import Lomiri.Components.Pickers
+import Lomiri.Layouts
 
 MainView {
     width: units.gu(40)

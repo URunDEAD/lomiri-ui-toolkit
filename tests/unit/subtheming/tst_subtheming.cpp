@@ -743,8 +743,12 @@ private Q_SLOTS:
         QTest::addColumn<QString>("document");
         QTest::addColumn<QString>("testValue");
 
-        QTest::newRow("Theming version 1.3")
+        QTest::newRow("Theming")
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+                << "StyledItemThemed.qml"
+#else
                 << "StyledItemV13.qml"
+#endif
                 << "version1.3";
         QTest::newRow("App theme versioned")
                 << "StyledItemAppThemeVersioned.qml"
@@ -765,7 +769,7 @@ private Q_SLOTS:
         // NOTE TestTheme resets the theme therefore the theming will look for the tested style under Ambiance theme
         // which will cause a warning; therefore we mark the warning to be ignored
         QRegularExpression warningRe(QStringLiteral(
-            ": QML (StyledItem|StyledItemV13|StyledItemAppThemeVersioned): Warning: "
+            ": QML (StyledItem|StyledItemV13|StyledItemThemed|StyledItemAppThemeVersioned): Warning: "
             "Style TestStyle\\.qml not found in theme Lomiri\\.Components\\.Themes\\.Ambiance$"
         ));
         QTest::ignoreMessage(QtWarningMsg, warningRe);

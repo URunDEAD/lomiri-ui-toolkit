@@ -36,17 +36,17 @@ for _XML in $*; do
                 tst_datepicker.bug1567840.SEGFAULT.12.qml \
                 tst_datepicker.bug1567840.SEGFAULT.13.qml \
                 tst_textinput_touch.SEGFAULT.11.qml \
-                qquick_image_extension \
+                qquick_image_extension13 \
                 tst_label13.qml \
-                performance \
+                performance13 \
                 tst_pickerpanel.11.qml \
                 tst_scrollbar.13.qml \
-                recreateview \
+                recreateview11 \
                 touchregistry \
-                mainview \
+                mainview13 \
                 tst_tabs_with_repeater.11.qml \
                 tst_tabs_with_repeater.DEPRECATED_TOOLBAR.11.qml \
-                inversemousearea \
+                inversemousearea13 \
                 tst_listitem_focus_bug.13.qml \
                 tst_shortcuts.13.qml \
                 '

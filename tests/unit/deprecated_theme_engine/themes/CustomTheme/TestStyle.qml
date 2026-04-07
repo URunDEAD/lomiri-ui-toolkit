@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick
 import TestTheme 1.0 as Parent
 
 Parent.TestStyle {

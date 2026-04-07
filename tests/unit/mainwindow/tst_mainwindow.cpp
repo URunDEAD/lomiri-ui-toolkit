@@ -138,7 +138,7 @@ private Q_SLOTS:
     void testCase_AppName()
     {
         // Sanity check: no name set yet
-        QCOMPARE(QStringLiteral("mainwindow"), QCoreApplication::applicationName());
+        QCOMPARE(QStringLiteral("mainwindow13"), QCoreApplication::applicationName());
 
         QString applicationName("org.gnu.wildebeest");
         QQuickWindow *mainWindow(loadTest("AppName.qml"));

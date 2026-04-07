@@ -1,0 +1,58 @@
+/*
+ * Copyright 2015 Canonical Ltd.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; version 3.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+import QtQuick
+import QtTest
+import Lomiri.Components
+import Lomiri.Test
+
+MainView {
+    id: mainView
+    width: units.gu(50)
+    height: units.gu(10)
+
+    LomiriTestCase {
+        when: windowShown
+
+        SignalSpy {
+            id: themeSpy
+            signalName: "paletteChanged"
+            target: Theme
+        }
+
+        function cleanup() {
+            themeSpy.clear();
+        }
+
+        function test_backgroundcolor_change_data() {
+            return [
+                {tag: "Light color", oldTheme: "Lomiri.Components.Themes.SuruDark", newTheme: "Lomiri.Components.Themes.Ambiance", color: "white"},
+                {tag: "Dark color", oldTheme: "Lomiri.Components.Themes.Ambiance", newTheme: "Lomiri.Components.Themes.SuruDark", color: "blue"},
+            ];
+        }
+        function test_backgroundcolor_change(data) {
+            if (data.oldTheme !== mainView.theme.name) {
+                mainView.theme.name = data.oldTheme;
+                themeSpy.wait();
+            }
+            // change color;
+            themeSpy.clear();
+            mainView.backgroundColor = data.color;
+            themeSpy.wait();
+            compare(mainView.theme.name, data.newTheme, "Theme not chnaged");
+        }
+    }
+}

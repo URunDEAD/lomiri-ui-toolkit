@@ -14,9 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import Lomiri.Components 1.3
-import Lomiri.Components.Themes.SuruDark 1.3 as Suru
+import QtQuick
+import Lomiri.Components
+import Lomiri.Components.Themes.SuruDark as Suru
 
 Suru.Palette {
     normal.background: "#A21E1C"

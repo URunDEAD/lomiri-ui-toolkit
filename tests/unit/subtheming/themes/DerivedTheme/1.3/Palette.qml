@@ -14,9 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
-import Lomiri.Components 1.3
-import Lomiri.Components.Themes.Ambiance 1.3 as Suru
+import QtQuick
+import Lomiri.Components
+import Lomiri.Components.Themes.Ambiance as Suru
 
 Suru.Palette {
     normal.selection: LomiriColors.orange
