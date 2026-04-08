@@ -42,16 +42,16 @@ TestCase {
         Find a child from the item based on the objectName.
     */
     function findChild(obj,objectName) {
-        var childs = new Array(0);
-        childs.push(obj)
-        while (childs.length > 0) {
-            if (childs[0].objectName == objectName) {
-                return childs[0]
+        var childrenQueue = new Array(0);
+        childrenQueue.push(obj)
+        while (childrenQueue.length > 0) {
+            if (childrenQueue[0].objectName == objectName) {
+                return childrenQueue[0]
             }
-            for (var i in childs[0].children) {
-                childs.push(childs[0].children[i])
+            for (var i in childrenQueue[0].children) {
+                childrenQueue.push(childrenQueue[0].children[i])
             }
-            childs.splice(0, 1);
+            childrenQueue.splice(0, 1);
         }
         return null;
     }
@@ -60,16 +60,16 @@ TestCase {
       Find a non-visual child such as QtObject based on objectName.
       */
     function findInvisibleChild(obj,objectName) {
-        var childs = new Array(0);
-        childs.push(obj)
-        while (childs.length > 0) {
-            if (childs[0].objectName == objectName) {
-                return childs[0]
+        var childrenQueue = new Array(0);
+        childrenQueue.push(obj)
+        while (childrenQueue.length > 0) {
+            if (childrenQueue[0].objectName == objectName) {
+                return childrenQueue[0]
             }
-            for (var i in childs[0].data) {
-                childs.push(childs[0].data[i])
+            for (var i in childrenQueue[0].data) {
+                childrenQueue.push(childrenQueue[0].data[i])
             }
-            childs.splice(0, 1);
+            childrenQueue.splice(0, 1);
         }
         return null;
     }
@@ -79,17 +79,17 @@ TestCase {
       \a value.
       */
     function findChildWithProperty(item, property, value) {
-        var childs = new Array(0);
-        childs.push(item)
-        while (childs.length > 0) {
-            var child = childs[0];
+        var childrenQueue = new Array(0);
+        childrenQueue.push(item)
+        while (childrenQueue.length > 0) {
+            var child = childrenQueue[0];
             if (child.hasOwnProperty(property) && (child[property] === value)) {
                 return child;
             }
-            for (var i in childs[0].children) {
-                childs.push(childs[0].children[i])
+            for (var i in childrenQueue[0].children) {
+                childrenQueue.push(childrenQueue[0].children[i])
             }
-            childs.splice(0, 1);
+            childrenQueue.splice(0, 1);
         }
         return null;
     }
