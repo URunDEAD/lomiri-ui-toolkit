@@ -1,1 +1,2 @@
-liblomiritoolkit5t64: package-name-doesnt-match-sonames libLomiriToolkit5
+# no .symbols files for C++ projects
+liblomiritoolkit5t64: no-symbols-control-file usr/lib/x86_64-linux-gnu/libLomiriToolkit.so.5.5.0

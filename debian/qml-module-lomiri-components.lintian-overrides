@@ -1,1 +1,2 @@
+# known issue: https://gitlab.com/ubports/development/core/lomiri-ui-toolkit/-/issues/11
 qml-module-lomiri-components: image-file-in-usr-lib

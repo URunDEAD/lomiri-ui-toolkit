@@ -1,0 +1,9 @@
+Document: liblomiri-ui-toolkit-doc
+Title: Lomiri UI Toolkit
+Author: UBports.com
+Abstract: This document describes the Lomiri UI Toolkit API
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/lomiri-ui-toolkit/html/overview-lomiri-sdk.html
+Files: /usr/share/doc/lomiri-ui-toolkit/html/*
