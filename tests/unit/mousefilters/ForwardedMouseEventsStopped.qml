@@ -30,6 +30,6 @@ Item {
         height: units.gu(5)
 
         Mouse.forwardTo: [root]
-        Mouse.onPressed: mouse.accepted = true
+        Mouse.onPressed: function(mouse) { mouse.accepted = true }
     }
 }

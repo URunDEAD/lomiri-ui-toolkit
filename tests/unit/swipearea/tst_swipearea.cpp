@@ -184,6 +184,7 @@ void tst_UCSwipeArea::sendTouch(qint64 timestamp, int id, QPointF pos,
 {
     m_fakeTimerFactory->updateTime(timestamp);
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QTouchEvent::TouchPoint point;
 
     point.setState(pointState);
@@ -195,6 +196,14 @@ void tst_UCSwipeArea::sendTouch(qint64 timestamp, int id, QPointF pos,
     points << point;
 
     QTouchEvent touchEvent(eventType, m_device, Qt::NoModifier, Qt::TouchPointPressed, points);
+#else
+    QEventPoint point(id, QEventPoint::State(pointState), pos, pos);
+
+    QList<QEventPoint> points;
+    points << point;
+
+    QTouchEvent touchEvent(eventType, m_device, Qt::NoModifier, points);
+#endif
     QCoreApplication::sendEvent(m_view, &touchEvent);
     QCoreApplication::processEvents();
 }
@@ -1027,14 +1036,22 @@ void tst_UCSwipeArea::gettingTouchOwnershipMakesMouseAreaBehindGetCanceled()
     int totalMovementSteps = qCeil(desiredDragDistance / movementStepDistance);
     int movementTimeStepMs = (d->compositionTime * 1.5f) / totalMovementSteps;
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QCOMPARE(mouseArea->isPressed(), false);
+#else
     QCOMPARE(mouseArea->pressed(), false);
+#endif
 
     QTest::touchEvent(m_view, m_device).press(0, touchPoint.toPoint(), (QWindow*)nullptr);
 
     // The TouchBegin passes through the UCSwipeArea and reaches the MouseArea behind it,
     // where it's converted to a MouseEvent by QQuickWindow and sent to the MouseArea which then
     // accepts it. Making it get pressed.
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QCOMPARE(mouseArea->isPressed(), true);
+#else
     QCOMPARE(mouseArea->pressed(), true);
+#endif
     QCOMPARE(mouseAreaSpy.canceledCount, 0);
 
     for (int i = 0; i < totalMovementSteps; ++i) {
@@ -1047,7 +1064,11 @@ void tst_UCSwipeArea::gettingTouchOwnershipMakesMouseAreaBehindGetCanceled()
     // which should make the MouseArea get a cancelation event, which will then cause it to
     // reset its state (going back to "unpressed"/"released").
     QCOMPARE((int)d->status, (int)UCSwipeAreaPrivate::Recognized);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QCOMPARE(mouseArea->isPressed(), false);
+#else
     QCOMPARE(mouseArea->pressed(), false);
+#endif
     QCOMPARE(mouseAreaSpy.canceledCount, 1);
 
     QTest::touchEvent(m_view, m_device).release(0, touchPoint.toPoint(), (QWindow*)nullptr);

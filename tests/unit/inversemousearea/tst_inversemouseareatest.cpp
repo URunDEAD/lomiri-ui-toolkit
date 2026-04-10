@@ -92,7 +92,11 @@ private Q_SLOTS:
         QScopedPointer<InverseMouseAreaTest> quickView(new InverseMouseAreaTest("Defaults.qml"));
         InverseMouseAreaType *area = quickView->findItem<InverseMouseAreaType*>("testItem");
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(area->isPressed(), false);
+#else
         QCOMPARE(area->pressed(), false);
+#endif
         QCOMPARE(area->acceptedButtons(), Qt::LeftButton);
         QCOMPARE(area->pressedButtons(), Qt::NoButton);
         QCOMPARE(area->propagateComposedEvents(), false);

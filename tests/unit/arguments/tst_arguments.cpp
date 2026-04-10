@@ -186,7 +186,11 @@ private Q_SLOTS:
         arguments.appendArguments(&unicodeArgument);
         arguments.componentComplete();
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(arguments.values()->property("unicodeArgument").typeId(), QMetaType::QString);
+#else
         QCOMPARE(arguments.values()->property("unicodeArgument").type(), QVariant::String);
+#endif
         QCOMPARE(arguments.values()->property("unicodeArgument").toString(), expectedValue);
 
         QTextCodec::setCodecForLocale(previousCodec);
@@ -219,7 +223,11 @@ private Q_SLOTS:
             QTest::ignoreMessage(QtWarningMsg, arguments.usage().toUtf8());
         arguments.componentComplete();
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(arguments.values()->property("boolArgument").typeId(), QMetaType::Bool);
+#else
         QCOMPARE(arguments.values()->property("boolArgument").type(), QVariant::Bool);
+#endif
         QCOMPARE(arguments.values()->property("boolArgument"), QVariant(!error));
         QCOMPARE(arguments.error(), error);
     }
@@ -263,10 +271,18 @@ private Q_SLOTS:
 
         QCOMPARE(arguments.error(), error);
         if (!error) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QCOMPARE(arguments.values()->property("argument1").typeId(), QMetaType::QString);
+#else
             QCOMPARE(arguments.values()->property("argument1").type(), QVariant::String);
+#endif
             QCOMPARE(arguments.values()->property("argument1").toString(), QString("value1"));
         } else {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QCOMPARE(arguments.values()->property("argument1").typeId(), QMetaType::UnknownType);
+#else
             QCOMPARE(arguments.values()->property("argument1").type(), QVariant::Invalid);
+#endif
         }
     }
 
@@ -315,9 +331,16 @@ private Q_SLOTS:
 
         QCOMPARE(arguments.error(), error);
         if (!error) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QCOMPARE(arguments.values()->property("argument1").typeId(), QMetaType::QStringList);
+            QCOMPARE(arguments.values()->property("argument2").typeId(), QMetaType::QStringList);
+#else
             QCOMPARE(arguments.values()->property("argument1").type(), QVariant::StringList);
-            QCOMPARE(arguments.values()->property("argument1").toStringList().size(), 2);
             QCOMPARE(arguments.values()->property("argument2").type(), QVariant::StringList);
+#endif
+
+            QCOMPARE(arguments.values()->property("argument1").toStringList().size(), 2);
+
             QCOMPARE(arguments.values()->property("argument2").toStringList().size(), 2);
         }
     }
@@ -359,13 +382,19 @@ private Q_SLOTS:
         QCOMPARE(arguments.error(), error);
         if (!error) {
             QCOMPARE(arguments.defaultArgument(), &defaultArgument);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+            QCOMPARE(arguments.defaultArgument()->at(0).typeId(), QMetaType::QString);
+            QCOMPARE(arguments.defaultArgument()->at(1).typeId(), QMetaType::QString);
+            QCOMPARE(arguments.defaultArgument()->at(2).typeId(), QMetaType::UnknownType);
+#else
             QCOMPARE(arguments.defaultArgument()->at(0).type(), QVariant::String);
+            QCOMPARE(arguments.defaultArgument()->at(1).type(), QVariant::String);
+            QCOMPARE(arguments.defaultArgument()->at(2).type(), QVariant::Invalid);
+#endif
             QCOMPARE(arguments.defaultArgument()->at(0).toString().isEmpty(), false);
             QCOMPARE(arguments.defaultArgument()->at(0).toString(), QString("defaultValue1"));
-            QCOMPARE(arguments.defaultArgument()->at(1).type(), QVariant::String);
             QCOMPARE(arguments.defaultArgument()->at(1).toString().isEmpty(), false);
             QCOMPARE(arguments.defaultArgument()->at(1).toString(), QString("defaultValue2"));
-            QCOMPARE(arguments.defaultArgument()->at(2).type(), QVariant::Invalid);
         }
     }
 
@@ -392,7 +421,11 @@ private Q_SLOTS:
         QCOMPARE(defaultArgument->help(), QString());
         QCOMPARE(defaultArgument->required(), true);
         QCOMPARE(defaultArgument->valueNames().size(), 0);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(defaultArgument->at(0).typeId(), QMetaType::UnknownType);
+#else
         QCOMPARE(defaultArgument->at(0).type(), QVariant::Invalid);
+#endif
 
         // setter: custom UCArgument
         UCArgument customDefaultArgument;

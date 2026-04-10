@@ -37,7 +37,11 @@
 #include <QtGui/qpa/qplatformnativeinterface.h>
 #include <QtGui/qpa/qplatformwindow.h>
 #include <QtGui/private/qguiapplication_p.h>
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#include <QtGui/private/qgenericunixeventdispatcher_p.h>
+#else
 #include <QtEventDispatcherSupport/private/qgenericunixeventdispatcher_p.h>
+#endif
 
 #include "qcustombackingstore.h"
 

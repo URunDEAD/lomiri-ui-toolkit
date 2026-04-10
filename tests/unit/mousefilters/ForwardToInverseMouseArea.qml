@@ -38,8 +38,8 @@ Item {
                 id: other
                 objectName: "target"
                 anchors.fill: parent
-                onPressed: mouse.accepted = false
-                onReleased: mouse.accepted = false
+                onPressed: function(mouse) { mouse.accepted = false }
+                onReleased: function(mouse) { mouse.accepted = false }
             }
         }
     }

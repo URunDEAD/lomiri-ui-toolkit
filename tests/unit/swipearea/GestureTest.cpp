@@ -17,6 +17,11 @@
 #include "GestureTest.h"
 
 #include <QtGui/qpa/qwindowsysteminterface.h>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#include <QtGui/QTouchDevice>
+#else
+#include <QtGui/QPointingDevice>
+#endif
 #include <QtQml/QQmlEngine>
 #include <QtQuick/QQuickView>
 #include <QtTest/QtTest>
@@ -44,9 +49,22 @@ GestureTest::GestureTest(const QString &qmlFilename)
 void GestureTest::initTestCase()
 {
     if (!m_device) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         m_device = new QTouchDevice;
         m_device->setType(QTouchDevice::TouchScreen);
         QWindowSystemInterface::registerTouchDevice(m_device);
+#else
+        m_device = new QPointingDevice(
+            "TestTouchDevice",
+            1,
+            QInputDevice::DeviceType::TouchScreen,
+            QPointingDevice::PointerType::Finger,
+            QInputDevice::Capability::Position,
+            1,
+            0
+        );
+        QWindowSystemInterface::registerInputDevice(m_device);
+#endif
     }
 }
 
@@ -82,11 +100,17 @@ void GestureTest::cleanup()
 
 ////////////////////////// TouchMemento /////////////////////////////
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 TouchMemento::TouchMemento(const QTouchEvent *touchEvent)
     : touchPointStates(touchEvent->touchPointStates()), touchPoints(touchEvent->touchPoints())
 {
-
 }
+#else
+TouchMemento::TouchMemento(const QTouchEvent *touchEvent)
+    : touchPointStates(touchEvent->touchPointStates()), touchPoints(touchEvent->points())
+{
+}
+#endif
 
 bool TouchMemento::containsTouchWithId(int touchId) const
 {

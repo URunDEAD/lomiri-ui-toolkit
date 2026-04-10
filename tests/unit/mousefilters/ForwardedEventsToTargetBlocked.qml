@@ -31,6 +31,6 @@ Item {
 
         Mouse.forwardTo: [root]
         Mouse.priority: Mouse.AfterItem
-        Mouse.onPressed: mouse.accepted = true
+        Mouse.onPressed: function(mouse) { mouse.accepted = true }
     }
 }

@@ -28,7 +28,11 @@
 #endif
 
 class LomiriTestCase;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 class QTouchDevice;
+#else
+class QPointingDevice;
+#endif
 
 UG_FORWARD_DECLARE_CLASS(FakeTimerFactory)
 UG_FORWARD_DECLARE_CLASS(TouchRegistry)
@@ -40,8 +44,13 @@ UG_FORWARD_DECLARE_CLASS(TouchRegistry)
 class TouchMemento {
 public:
     TouchMemento(const QTouchEvent *touchEvent);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Qt::TouchPointStates touchPointStates;
     QList<QTouchEvent::TouchPoint> touchPoints;
+#else
+    QEventPoint::States touchPointStates;
+    QList<QEventPoint> touchPoints;
+#endif
 
     bool containsTouchWithId(int touchId) const;
 };
@@ -83,7 +92,11 @@ protected Q_SLOTS:
     virtual void cleanup(); // called right after each and every test function is executed
 
 protected:
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QTouchDevice *m_device;
+#else
+    QPointingDevice *m_device;
+#endif
     LomiriTestCase *m_view;
     TouchRegistry *m_touchRegistry;
     UG_PREPEND_NAMESPACE(FakeTimerFactory)  *m_fakeTimerFactory;

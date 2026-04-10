@@ -28,9 +28,9 @@ Item {
         height: units.gu(10)
         preventStealing: false
 
-        onPressed: mouse.accepted = false
-        onReleased: mouse.accepted = false
-        onDoubleClicked: mouse.accepted = false
+        onPressed: function(mouse) { mouse.accepted = false }
+        onReleased: function(mouse) { mouse.accepted = false }
+        onDoubleClicked: function(mouse) { mouse.accepted = false }
 
         TextInput {
             objectName: "FilterOwner"

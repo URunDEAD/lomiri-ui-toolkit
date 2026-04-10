@@ -305,7 +305,11 @@ private Q_SLOTS:
 
     void test_import_path()
     {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (!QFile(QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#else
         if (!QFile(QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#endif
             QSKIP("This can only be tested if the UITK is installed");
 
         qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");
@@ -318,7 +322,11 @@ private Q_SLOTS:
 
     void test_bogus_import_path_set()
     {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (!QFile(QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#else
         if (!QFile(QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#endif
             QSKIP("This can only be tested if the UITK is installed");
 
         qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");
@@ -331,7 +339,11 @@ private Q_SLOTS:
 
     void test_multiple_import_paths_set()
     {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        if (!QFile(QLibraryInfo::path(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#else
         if (!QFile(QLibraryInfo::location(QLibraryInfo::Qml2ImportsPath) + "/Lomiri/Components").exists())
+#endif
             QSKIP("This can only be tested if the UITK is installed");
 
         qputenv("LOMIRI_UI_TOOLKIT_THEMES_PATH", "");
