@@ -238,8 +238,20 @@ void LomiriToolkitModule::registerTypesToVersion(const char *uri, int major, int
     qmlRegisterUncreatableType<LomiriI18n>(
        uri, major, minor, "I18n", QStringLiteral("Singleton object"));
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    /*
+     * Registering the UCQQuickImageExtension can silently fail if QtQuick is not yet
+     * loaded when this is running. Not sure how to fix this properly. Adding a `depends`
+     * to the qmldir doesn't work, using the qml engine to load QtQuick here is not
+     * allowed and if we defer the registration it might be too late. The workaround
+     * on the user side is to import QtQuick before Lomiri.Components, so we can at
+     * least print a warning here if we detect that QtQuick is missing.
+     */
     qmlRegisterExtendedType<
         QQuickImageBase, UCQQuickImageExtension>(uri, major, minor, "QQuickImageBase");
+    if (qmlTypeId("QtQuick", 2, 0, "Image") == -1) {
+        qWarning() << "Lomiri.Components: Resolving images with @gu suffix may not work. "
+                      "As a workaround, make sure to import QtQuick before Lomiri.Components.";
+    }
 #endif
     qmlRegisterUncreatableType<UCUnits>(uri, major, minor, "UCUnits", notInstantiatable);
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
