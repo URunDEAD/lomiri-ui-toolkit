@@ -492,6 +492,9 @@ void UCListItemPrivate::snapOut()
         Q_Q(UCListItem);
         // restore flickable's interactive and cleanup
         q->setKeepMouseGrab(false);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        q->setKeepTouchGrab(false);
+#endif
         // no need to listen flickables any longer
         listenToRebind(false);
     }
@@ -1238,8 +1241,8 @@ void UCListItemPrivate::handleTouchPress(QTouchEvent *event)
     listenToRebind(true);
     if (swiped) {
         // grab now, and ungrab in snapOut
-        q->setKeepMouseGrab(true);
-        q->grabMouse();
+        q->setKeepTouchGrab(true);
+        event->setExclusiveGrabber(event->point(0), q);
     }
     // stop any ongoing animation!
     swipeEvent(event->point(0).position(), UCSwipeEvent::Started);
@@ -1394,10 +1397,8 @@ void UCListItemPrivate::handleTouchRelease(QTouchEvent *event)
     if (highlighted) {
         // unblock ascending Flickables
         listenToRebind(false);
-        q->setKeepMouseGrab(false);
-        if (window && window->mouseGrabberItem() == q) {
-            q->ungrabMouse();
-        }
+        q->setKeepTouchGrab(false);
+        event->setExclusiveGrabber(event->point(0), nullptr);
 
         if (!suppressClick) {
             // emit clicked only if not swiped
@@ -1520,7 +1521,7 @@ void UCListItemPrivate::handleTouchMove(QTouchEvent *event)
         if (swipedOverThreshold(event->point(0).position(), pressedPos)) {
             // the press went out of the threshold area, enable move, if the direction allows it
             lastPos = event->point(0).position();
-            q->setKeepMouseGrab(true);
+            q->setKeepTouchGrab(true);
             qreal mouseX = event->point(0).position().x();
             qreal pressedX = pressedPos.x();
             bool doSwipe = (leadingActions && (mouseX > pressedX)) ||
@@ -1539,6 +1540,45 @@ void UCListItemPrivate::handleTouchMove(QTouchEvent *event)
         // send swipe event to style and update contentItem position
         swipeEvent(event->point(0).position(), UCSwipeEvent::Updated);
     }
+}
+
+bool UCListItemPrivate::sendTouchEvent(QQuickItem *item, QTouchEvent *event)
+{
+    Q_UNUSED(item);
+    Q_Q(UCListItem);
+
+    if (event->exclusiveGrabber(event->point(0)) == q) {
+        return true;
+    }
+
+    bool consumed = false;
+    QPointF scenePos = event->point(0).scenePosition();
+
+    if (contentItem->contains(contentItem->mapFromScene(scenePos))) {
+        QPointF localPos = q->mapFromScene(scenePos);
+
+        if (event->isBeginEvent()) {
+            if (swiped) {
+                handleTouchPress(event);
+                consumed = true;
+            } else {
+                pressedPos = localPos;
+                button = Qt::LeftButton;
+            }
+        } else if (event->isUpdateEvent()) {
+            if ((button == Qt::LeftButton) && swipedOverThreshold(localPos, pressedPos) && !highlighted) {
+                handleTouchPress(event);
+                q->setKeepTouchGrab(true);
+                event->setExclusiveGrabber(event->point(0), q);
+                consumed = true;
+            }
+        } else if (event->isEndEvent()) {
+            handleTouchRelease(event);
+            suppressClick = false;
+        }
+    }
+
+    return consumed;
 }
 #endif
 
@@ -1632,7 +1672,18 @@ bool UCListItem::childMouseEventFilter(QQuickItem *child, QEvent *event)
         if (d->sendMouseEvent(child, static_cast<QMouseEvent*>(event))) {
             return true;
         }
+        break;
     }
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    case QEvent::TouchBegin:
+    case QEvent::TouchUpdate:
+    case QEvent::TouchEnd: {
+        if (d->sendTouchEvent(child, static_cast<QTouchEvent*>(event))) {
+            return true;
+        }
+        break;
+    }
+#endif
     default: break;
     }
 
