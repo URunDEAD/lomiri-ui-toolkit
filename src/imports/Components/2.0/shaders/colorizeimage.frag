@@ -16,5 +16,5 @@ layout(binding = 1) uniform sampler2D source;
 
 void main() {
     vec4 sourceColor = texture(source, qt_TexCoord0);
-    fragColor = mix(vec4(ubuf.keyColorOut.rgb, 1.0) * sourceColor.a, sourceColor, step(ubuf.threshold, distance(sourceColor.rgb / sourceColor.a, ubuf.keyColorIn.rgb))) * ubuf.qt_Opacity;
+    fragColor = mix(ubuf.keyColorOut * sourceColor.a, sourceColor, step(ubuf.threshold, distance(sourceColor.rgb / sourceColor.a, ubuf.keyColorIn.rgb))) * ubuf.qt_Opacity;
 }
