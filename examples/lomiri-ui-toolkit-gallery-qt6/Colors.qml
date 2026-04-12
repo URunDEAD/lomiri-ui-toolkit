@@ -59,7 +59,7 @@ Template {
                     spacing: units.gu(1)
                     width: paletteColorGrid.width
                     required property string modelData
-                    property var palette: theme.palette[modelData]
+                    property var themePalette: theme.palette[modelData]
 
                     Label {
                         text: "theme.palette." + modelData
@@ -110,7 +110,7 @@ Template {
 
                                     Rectangle {
                                         anchors.fill: parent
-                                        color: palette ? palette[mainColor] : "transparent"
+                                        color: themePalette ? themePalette[mainColor] : "transparent"
                                         border.width: color === theme.palette.normal.background ? units.dp(1) : 0
                                         border.color: theme.palette.normal.backgroundText
                                     }
@@ -128,9 +128,9 @@ Template {
                                             model: textColors
                                             Label {
                                                 required property string modelData
-                                                width: previewed ? implicitWidth : parent.width
+                                                width: parent.width
                                                 text: previewed ? modelData : modelData.slice(0, 10)
-                                                color: palette ? palette[modelData] : "transparent"
+                                                color: themePalette ? themePalette[modelData] : "transparent"
                                                 textSize: previewed ? Label.Medium : Label.XSmall
                                                 elide: Text.ElideRight
                                             }
