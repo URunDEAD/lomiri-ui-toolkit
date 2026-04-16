@@ -60,7 +60,7 @@ void UCProportionalShape::_q_updateHeight()
 
 void UCProportionalShape::componentComplete()
 {
-    QQuickItem::componentComplete();
+    UCLomiriShape::componentComplete();
     _q_updateHeight();
 }
 

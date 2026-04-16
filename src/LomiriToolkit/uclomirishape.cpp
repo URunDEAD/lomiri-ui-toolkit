@@ -244,19 +244,21 @@ void ShapeShader::updateSampledImage(RenderState& state, int binding, QSGTexture
             if (data->flags & ShapeMaterial::Data::Textured) {
                 QSGTextureProvider* provider = data->sourceTextureProvider;
                 QSGTexture* sourceTexture = provider ? provider->texture() : nullptr;
-                if (sourceTexture && data->flags & ShapeMaterial::Data::Repeated) {
-                    if (sourceTexture->isAtlasTexture()) {
-                        // A texture in an atlas can't be repeated with builtin GPU facility (exposed by
-                        // GL_REPEAT with OpenGL), so we extract it and create a new dedicated one.
-                        sourceTexture = sourceTexture->removedFromAtlas();
+                if (sourceTexture) {
+                    if (data->flags & ShapeMaterial::Data::Repeated) {
+                        if (sourceTexture->isAtlasTexture()) {
+                            // A texture in an atlas can't be repeated with builtin GPU facility (exposed by
+                            // GL_REPEAT with OpenGL), so we extract it and create a new dedicated one.
+                            sourceTexture = sourceTexture->removedFromAtlas();
+                        }
+                        sourceTexture->setHorizontalWrapMode(
+                            data->flags & ShapeMaterial::Data::HorizontallyRepeated ?
+                            QSGTexture::Repeat : QSGTexture::ClampToEdge);
+                        sourceTexture->setVerticalWrapMode(
+                            data->flags & ShapeMaterial::Data::VerticallyRepeated ?
+                            QSGTexture::Repeat : QSGTexture::ClampToEdge);
+                        sourceTexture->setFiltering(QSGTexture::Filtering::Linear);
                     }
-                    sourceTexture->setHorizontalWrapMode(
-                        data->flags & ShapeMaterial::Data::HorizontallyRepeated ?
-                        QSGTexture::Repeat : QSGTexture::ClampToEdge);
-                    sourceTexture->setVerticalWrapMode(
-                        data->flags & ShapeMaterial::Data::VerticallyRepeated ?
-                        QSGTexture::Repeat : QSGTexture::ClampToEdge);
-                    sourceTexture->setFiltering(QSGTexture::Filtering::Linear);
                     sourceTexture->commitTextureOperations(state.rhi(), state.resourceUpdateBatch());
                 }
                 *texture = sourceTexture;
