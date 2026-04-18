@@ -22,7 +22,7 @@ from setuptools import setup
 
 setup(
     name='lomiriuitoolkit',
-    version='1.3.5904',
+    version='1.3.5905',
     description='lomiri-ui-toolkit autopilot tests.',
     url='https://gitlab.com/ubports/development/core/lomiri-ui-tookit',
     license='LGPLv3',

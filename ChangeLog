@@ -1,6 +1,203 @@
+2026-04-18 Mike Gabriel
+
+        * Release 1.3.5905 (HEAD -> main, tag: 1.3.5905)
+        * Merge branch 'qt5.15.10' into 'main' (7f2035a3f)
+
+2026-01-04 Luca Weiss
+
+        * Fix build with Qt5 5.15.10 (c1b7be711)
+
+2026-04-18 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-enable-namespaces' into
+          'main' (2c2a7f7b1)
+
+2026-04-04 Henrik Schnor
+
+        * Enable namespaces for the Qt6 build (84e536514)
+
+2026-04-15 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (48a967083)
+
+2026-04-15 Andi Chandler
+
+        * Translated using Weblate (English (United Kingdom)) (ceef93b0b)
+
+2026-04-16 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (1fee13fe4)
+
+2026-04-17 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-icon-color-alpha' into
+          'main' (c939b82d0)
+
+2026-04-12 Henrik Schnor
+
+        * Icon: respect output color transparency in the colorize shader
+          (dca3d3f39)
+
+2026-04-16 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-lomirishape-texture'
+          into 'main' (8cdbdac8a)
+
+2026-04-15 Henrik Schnor
+
+        * LomiriShape: fix non-repeated textures (42cda8fd9)
+        * ProportionalShape: call parent componentComplete() (2e87a8a4c)
+
+2026-04-12 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-gallery-fixes' into 'main'
+          (53e98642f)
+
+2026-03-24 Henrik Schnor
+
+        * gallery: avoid binding loop when hovering over colors (9eb043941)
+        * gallery: avoid conflict with QQuickItem::palette property
+          (5f89faf57)
+
+2026-04-11 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-listitem-touch-handling'
+          into 'main' (3a742022f)
+
+2026-03-27 Henrik Schnor
+
+        * ListItem: extend childMouseEventFilter() for touch events
+          (e35bbdf66)
+        * ListItem: fix in the touch event handling (f326675f7)
+
+2026-04-10 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/test-fixes-generic' into 'main'
+          (8c878c0f6)
+
+2026-03-14 Henrik Schnor
+
+        * tests: make signal handlers with parameters JS functions
+          (490d0e623)
+
+2025-12-19 Henrik Schnor
+
+        * tests: adjustments for building with qt6 (72740d370)
+
+2026-04-10 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/increase-listitem-test-timeout'
+          into 'main' (a9854b7d0)
+
+2026-03-30 Mike Gabriel
+
+        * typo fixes: Various typo fixes in comments, one in a printable
+          string (requires i18n update after merging). (a3b69dd55)
+
+2026-04-04 Jeremy Bícha
+
+        * tests: Increase timeout (b0381602b)
+
+2026-04-10 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt5-image-extension-warning'
+          into 'main' (bf6dc5d0c)
+
+2026-04-01 Henrik Schnor
+
+        * Print a warning if registering the image extension without QtQuick
+          (97fafc55d)
+
+2026-04-09 Mike Gabriel
+
+        * Merge branch 'personal/sunweaver/sync-with-debian' into 'main'
+          (f8aac67d4)
+
+2026-03-30 Mike Gabriel
+
+        * debian/: Sync with Debian. (5446c7f2c)
+
+2026-04-08 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/grammar-fix-in-variable-name' into
+          'main' (edfc99656)
+
+2026-04-06 Mike Gabriel
+
+        * src/imports/Test/LomiriTestCase*.qml: Fix grammar in variable.
+          (6e3c8e853)
+
+2026-04-07 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-duplicate-tests' into
+          'main' (77cf886e4)
+
+2026-03-17 Henrik Schnor
+
+        * Make imports version-less (f631c3c38)
+        * Rename tests and delete old ones (676b4c3d9)
+
+2026-03-16 Henrik Schnor
+
+        * Duplicate 1.x tests (c31ad44a8)
+
+2026-03-30 Mike Gabriel
+
+        * debian/rules: Set DPKG_EXPORT_BUILDFLAGS to 1. (a2e593a6b)
+
+2026-04-06 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-more-fixes' into 'main'
+          (d4e94f5a2)
+
+2026-03-21 Henrik Schnor
+
+        * UCSwipeArea: fix compilation warnings (d192c4036)
+
+2026-02-14 Henrik Schnor
+
+        * LomiriTestCase: don't depend on compiled qml import path
+          (7b493799a)
+
+2026-04-03 Henrik Schnor
+
+        * TouchRegistry: fixes for findMostRelavantEventForId() (01542b3ba)
+
+2026-03-30 Henrik Schnor
+
+        * TextField/TextArea: fix double-tap to select (7dbfe665d)
+
+2026-03-25 Henrik Schnor
+
+        * ULLayouts: prevent race condition when switching to default layout
+          (2e78d0249)
+
+2026-04-04 Henrik Schnor
+
+        * UCTestExtras: build test functions in qt6 (57a0796e3)
+
+2026-04-06 Mike Gabriel
+
+        * Merge branch 'personal/jbicha/increase-timeout-1469471' into 'main'
+          (1287839ee)
+
+2026-04-04 Jeremy Bícha
+
+        * tests: Increase timeout (cf41ab19e)
+
+2026-04-01 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/typo-fixes-1.3.5904' into 'main'
+          (29027a779)
+
+2026-03-30 Mike Gabriel
+
+        * typo fixes: Various typo fixes in comments, one in a printable
+          string (requires i18n update after merging). (4fa92be6e)
+
 2026-03-29 Mike Gabriel
 
-        * Release 1.3.5904 (HEAD -> main, tag: 1.3.5904)
+        * Release 1.3.5904 (1b9919232) (tag: 1.3.5904)
 
 2026-03-24 Ratchanan Srirattanamet
 
