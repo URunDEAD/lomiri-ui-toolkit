@@ -45,7 +45,7 @@ class LOMIRITOOLKIT_EXPORT UCMainWindow : public QQuickWindow
     Q_PROPERTY(UT_PREPEND_NAMESPACE(UCUnits)* units READ units NOTIFY unitsChanged)
     Q_PROPERTY(UT_PREPEND_NAMESPACE(LomiriI18n)* i18n READ i18n NOTIFY i18nChanged)
     Q_PROPERTY(UT_PREPEND_NAMESPACE(UCPopupContext)* actionContext READ actionContext NOTIFY actionContextChanged)
-    Q_PROPERTY(UT_PREPEND_NAMESPACE(QQuickItem)* visualRoot READ visualRoot WRITE setVisualRoot NOTIFY visualRootChanged)
+    Q_PROPERTY(QQuickItem* visualRoot READ visualRoot WRITE setVisualRoot NOTIFY visualRootChanged)
 #else
     Q_PROPERTY(UCUnits* units READ units NOTIFY unitsChanged)
     Q_PROPERTY(LomiriI18n* i18n READ i18n NOTIFY i18nChanged)
@@ -77,7 +77,7 @@ Q_SIGNALS:
     void unitsChanged();
 #ifndef Q_QDOC
     void actionContextChanged(UT_PREPEND_NAMESPACE(UCPopupContext)* actionContext);
-    void visualRootChanged(UT_PREPEND_NAMESPACE(QQuickItem)* visualRoot);
+    void visualRootChanged(QQuickItem* visualRoot);
 #else
     void actionContextChanged(UCPopupContext* actionContext);
     void visualRootChanged(QQuickItem* visualRoot);

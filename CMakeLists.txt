@@ -50,11 +50,6 @@ set(QT_INSTALL_PLUGINS "${CMAKE_INSTALL_LIBDIR}/qt${QT_VERSION_MAJOR}/plugins")
 set(LOMIRI_INSTALL_INCLUDEDIR "${CMAKE_INSTALL_INCLUDEDIR}/${CMAKE_LIBRARY_ARCHITECTURE}")
 set(LOMIRI_INSTALL_CMAKEPACKAGEDIR "${CMAKE_INSTALL_LIBDIR}/cmake")
 
-# Carried over from qmake
-# FIXME: Fix bug 1606247 and enable the LomiriToolkit namespace.
-# build LomiriToolkit without namespace
-add_definitions(-DLOMIRITOOLKIT_NO_NAMESPACE)
-
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(LomiriHeaders)
 
