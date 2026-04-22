@@ -104,8 +104,21 @@ void collectReachableMetaObjects(const QQmlType ty, QSet<const QMetaObject *> *m
 {
     collectReachableMetaObjects(ty.metaObject(), metas, ty.isExtendedType());
 
-    if (ty.attachedPropertiesType(QQmlEnginePrivate::get(currentEngine)))
-        collectReachableMetaObjects(ty.attachedPropertiesType(QQmlEnginePrivate::get(currentEngine)), metas);
+    if (ty.attachedPropertiesType(
+#if QT_VERSION >= QT_VERSION_CHECK(6, 11, 0)
+        QQmlTypeLoader::get(currentEngine)
+#else
+        QQmlEnginePrivate::get(currentEngine)
+#endif
+    )) {
+        collectReachableMetaObjects(ty.attachedPropertiesType(
+#if QT_VERSION >= QT_VERSION_CHECK(6, 11, 0)
+            QQmlTypeLoader::get(currentEngine)
+#else
+            QQmlEnginePrivate::get(currentEngine)
+#endif
+        ), metas);
+    }
 }
 
 /* We want to add the MetaObject for 'Qt' to the list, this is a
@@ -580,7 +593,13 @@ public:
             if (isSingleton)
                 object.insert("isSingleton", true);
 
-            if (const QMetaObject *attachedType = (*qmlTypes.begin()).attachedPropertiesType(QQmlEnginePrivate::get(currentEngine))) {
+            if (const QMetaObject *attachedType = (*qmlTypes.begin()).attachedPropertiesType(
+#if QT_VERSION >= QT_VERSION_CHECK(6, 11, 0)
+                QQmlTypeLoader::get(currentEngine)
+#else
+                QQmlEnginePrivate::get(currentEngine)
+#endif
+            )) {
                 // Can happen when a type is registered that returns itself as attachedPropertiesType()
                 // because there is no creatable type to attach to.
                 if (attachedType != meta) {
