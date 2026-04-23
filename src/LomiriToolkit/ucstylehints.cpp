@@ -301,7 +301,13 @@ void UCStyleHints::_q_applyStyleHints()
 #endif
         QQmlBinding *newBinding = 0;
         if (e.id != QQmlBinding::Invalid) {
-            QV4::Scope scope(QQmlEnginePrivate::getV4Engine(qmlEngine(this)));
+            QV4::Scope scope(
+#if QT_VERSION >= QT_VERSION_CHECK(6, 11, 0)
+                qmlEngine(this)->handle()
+#else
+                QQmlEnginePrivate::getV4Engine(qmlEngine(this))
+#endif
+            );
 
             QV4::Scoped<QV4::QmlContext> qmlContext(scope, QV4::QmlContext::create(scope.engine->rootContext(), cdata, new QObject()));
             QQmlPropertyData const *prop = new QQmlPropertyData();
