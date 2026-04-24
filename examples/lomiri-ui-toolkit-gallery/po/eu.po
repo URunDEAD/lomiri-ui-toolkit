@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2025-12-25 03:39+0000\n"
-"Last-Translator: Joana R <git@joana.click>\n"
+"PO-Revision-Date: 2026-05-01 16:09+0000\n"
+"Last-Translator: \"Хмеляускас Александр (JasonWalt Bab@)\" "
+"<mardimusa8@gmail.com>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/eu/>\n"
 "Language: eu\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.17.1\n"
 
 #: About.qml:34
 msgid "About..."
@@ -88,12 +89,14 @@ msgid "Call %1"
 msgstr "Deitu %1"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
+#, fuzzy
 msgid "Icon"
-msgstr ""
+msgstr "Ikonoa"
 
 #: Buttons.qml:72 Buttons.qml:134
+#, fuzzy
 msgid "Icon+Text"
-msgstr ""
+msgstr "Ikonoa-eta-testua"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
