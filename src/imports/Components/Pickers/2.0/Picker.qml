@@ -334,7 +334,7 @@ StyledItem {
                         positionViewAtIndex(1, PathView.SnapPosition);
                         positionViewAtIndex(0, PathView.SnapPosition);
                     }
-                } else if (model && Object.prototype.toString.call(model) === "[object Number]") {
+                } else if (typeof model === "number") {
                     if (model >= 2) {
                         positionViewAtIndex(1, PathView.SnapPosition);
                         positionViewAtIndex(0, PathView.SnapPosition);
@@ -392,16 +392,17 @@ StyledItem {
         property bool cropping: false
 
         function isObjectModel() {
-            return (prevModel && Object.prototype.toString.call(prevModel) === "[object Object]");
+            // Check if QAbstractItemModel properties exists (the duck typing approach)
+            return (prevModel && prevModel.rowsAboutToBeRemoved && prevModel.rowsInserted);
         }
 
         function modelSize() {
             if (prevModel) {
-                if (Object.prototype.toString.call(model) === "[object Object]") {
+                if (prevModel.count !== undefined) {
                     return prevModel.count;
-                } else if (Object.prototype.toString.call(model) === "[object Array]") {
+                } else if (prevModel.length !== undefined) {
                     return prevModel.length;
-                } else if (Object.prototype.toString.call(model) === "[object Number]") {
+                } else if (typeof prevModel === "number") {
                     return prevModel;
                 }
             }
@@ -412,7 +413,7 @@ StyledItem {
             disconnectModel();
             prevModel = model;
             // check if the model is derived from QAbstractListModel
-            if (model && Object.prototype.toString.call(model) === "[object Object]") {
+            if (isObjectModel()) {
                 model.rowsAboutToBeRemoved.connect(itemsAboutToRemove);
                 model.rowsInserted.connect(updateView);
             }
