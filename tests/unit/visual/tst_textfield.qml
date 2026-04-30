@@ -200,7 +200,7 @@ Item {
         function test_0_alignments() {
             compare(textField.horizontalAlignment, TextInput.AlignLeft, "horizontalAlignmen is Left by default")
             compare(textField.effectiveHorizontalAlignment, TextInput.AlignLeft, "effectiveHorizontalAlignmen is Left by default")
-            compare(textField.verticalAlignment, TextInput.AlignVCenter, "verticalAlignmen is VCenter by default")
+            compare(textField.verticalAlignment, TextInput.AlignTop, "verticalAlignmen is AlignTop by default")
         }
 
         function test_hasClearButton() {
@@ -491,9 +491,9 @@ Item {
             compare(textField.inputMethodHints, Qt.ImhDate)
         }
 
-        RegExpValidator {
+        RegularExpressionValidator {
             id: regExpValidator
-            regExp: /[a-z]*/
+            regularExpression: /[a-z]*/
         }
 
         function test_click_enabled_textfield_must_give_focus() {

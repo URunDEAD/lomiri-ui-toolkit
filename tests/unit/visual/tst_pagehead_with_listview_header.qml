@@ -38,7 +38,7 @@ Item {
                 id: listView
 
                 header: Rectangle {
-                    color: "red"
+                    color: "blue"
                     width: parent.width
                     height: root.listViewHeaderHeight
                 }
@@ -57,7 +57,7 @@ Item {
 
             Page {
                 id: wrappedPage
-                title: "listview"
+                title: "wrapped listview"
 
                 ListView {
                     anchors.fill: parent
@@ -81,12 +81,27 @@ Item {
         name: "HeaderAlignment"
         when: windowShown
 
+        function init() {
+            // Make sure that not both pages are visible simultaneously.
+            // Only the active page will have the header spacing applied.
+            page.active = false;
+            page.visible = false;
+            wrappedPage.active = false;
+            wrappingItem.visible = false;
+        }
+
         function test_ListViewHeaderAlignment_bug1202277() {
+            page.visible = true;
+            page.active = true;
+            waitForRendering(mainViewHeader);
             compare(listView.contentY, -root.listViewHeaderHeight - mainViewHeader.__propagated.header.height,
                     "ListView header is aligned with the MainView header");
         }
 
         function test_WrappedListViewHeaderAlignment_bug1261907() {
+            wrappingItem.visible = true;
+            wrappedPage.active = true;
+            waitForRendering(mainViewHeader);
             compare(wrappedListView.contentY, -root.listViewHeaderHeight - mainViewHeader.__propagated.header.height,
                     "ListView header inside wrapped Page is aligned with the MainView header");
         }

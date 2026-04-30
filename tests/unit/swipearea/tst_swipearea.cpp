@@ -196,16 +196,24 @@ void tst_UCSwipeArea::sendTouch(qint64 timestamp, int id, QPointF pos,
     points << point;
 
     QTouchEvent touchEvent(eventType, m_device, Qt::NoModifier, Qt::TouchPointPressed, points);
-#else
-    QEventPoint point(id, QEventPoint::State(pointState), pos, pos);
-
-    QList<QEventPoint> points;
-    points << point;
-
-    QTouchEvent touchEvent(eventType, m_device, Qt::NoModifier, points);
-#endif
     QCoreApplication::sendEvent(m_view, &touchEvent);
     QCoreApplication::processEvents();
+#else
+    switch (pointState) {
+    case Qt::TouchPointPressed:
+        QTest::touchEvent(m_view, m_device).press(id, pos.toPoint(), (QWindow*)nullptr);
+        break;
+    case Qt::TouchPointMoved:
+        QTest::touchEvent(m_view, m_device).move(id, pos.toPoint(), (QWindow*)nullptr);
+        break;
+    case Qt::TouchPointReleased:
+        QTest::touchEvent(m_view, m_device).release(id, pos.toPoint(), (QWindow*)nullptr);
+        break;
+    default:
+        break;
+    }
+    QTest::qWait(50);
+#endif
 }
 
 void tst_UCSwipeArea::passTime(qint64 timeSpanMs)
@@ -641,7 +649,12 @@ void tst_UCSwipeArea::distance()
         sendTouchUpdate(timestamp, 0, touchPoint);
     }
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    QPointF displacement(touchPoint.toPoint() - initialtouchPosition.toPoint());
+    qreal actualDragDistance = QPointF::dotProduct(displacement, dragDirectionVector);
+#else
     qreal actualDragDistance = ((qreal)totalMovementSteps) * movementStepDistance;
+#endif
 
     // UCSwipeArea::distance() must match the actual drag distance as the
     // drag was aligned with the gesture direction

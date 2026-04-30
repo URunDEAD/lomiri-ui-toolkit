@@ -138,7 +138,11 @@ private Q_SLOTS:
     void testCase_AppName()
     {
         // Sanity check: no name set yet
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(QStringLiteral("tst_mainwindow"), QCoreApplication::applicationName());
+#else
         QCOMPARE(QStringLiteral("mainwindow13"), QCoreApplication::applicationName());
+#endif
 
         QString applicationName("org.gnu.wildebeest");
         QQuickWindow *mainWindow(loadTest("AppName.qml"));

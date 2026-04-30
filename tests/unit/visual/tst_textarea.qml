@@ -186,7 +186,7 @@ Item {
         }
 
         function test_0_persistentSelection() {
-            compare(textArea.persistentSelection,textEdit.persistentSelection,"TextArea.persistentSelection is same as TextEdit.persistentSelection")
+            compare(textArea.persistentSelection,true,"TextArea.persistentSelection is true by default")
         }
 
         function test_0_readOnly() {

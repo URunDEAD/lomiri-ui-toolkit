@@ -23,8 +23,6 @@ MainView {
     width: units.gu(50)
     height: units.gu(100)
 
-    useDeprecatedToolbar: false
-
     ListModel {
         id: inputModel
         Component.onCompleted: {

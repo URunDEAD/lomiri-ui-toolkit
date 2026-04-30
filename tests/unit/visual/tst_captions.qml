@@ -59,19 +59,19 @@ Item {
 
         function test_captions_data() {
             return [
-                {tag: "caption, title.fontSize", captionStyle: Lomiri.TitleCaptionStyle, label: "title", property: "fontSize", value: "medium"},
+                {tag: "caption, title.textSize", captionStyle: Lomiri.TitleCaptionStyle, label: "title", property: "textSize", value: Label.Medium},
                 {tag: "caption, title.horizontalAlignment", captionStyle: Lomiri.TitleCaptionStyle, label: "title", property: "horizontalAlignment", value: Text.AlignLeft},
                 {tag: "caption, title.elide", captionStyle: Lomiri.TitleCaptionStyle, label: "title", property: "elide", value: Text.ElideRight},
-                {tag: "caption, subtitle.fontSize", captionStyle: Lomiri.TitleCaptionStyle, label: "subtitle", property: "fontSize", value: "small"},
+                {tag: "caption, subtitle.textSize", captionStyle: Lomiri.TitleCaptionStyle, label: "subtitle", property: "textSize", value: Label.Small},
                 {tag: "caption, subtitle.horizontalAlignment", captionStyle: Lomiri.TitleCaptionStyle, label: "subtitle", property: "horizontalAlignment", value: Text.AlignLeft},
                 {tag: "caption, subtitle.maximumLineCount", captionStyle: Lomiri.TitleCaptionStyle, label: "subtitle", property: "maximumLineCount", value: 2},
                 {tag: "caption, subtitle.wrapMode", captionStyle: Lomiri.TitleCaptionStyle, label: "subtitle", property: "wrapMode", value: Text.Wrap},
                 {tag: "caption, subtitle.elide", captionStyle: Lomiri.TitleCaptionStyle, label: "subtitle", property: "elide", value: Text.ElideRight},
 
-                {tag: "summary, title.fontSize", captionStyle: Lomiri.SummaryCaptionStyle, label: "title", property: "fontSize", value: "small"},
+                {tag: "summary, title.textSize", captionStyle: Lomiri.SummaryCaptionStyle, label: "title", property: "textSize", value: Label.Small},
                 {tag: "summary, title.horizontalAlignment", captionStyle: Lomiri.SummaryCaptionStyle, label: "title", property: "horizontalAlignment", value: Text.AlignRight},
                 {tag: "summary, title.elide", captionStyle: Lomiri.SummaryCaptionStyle, label: "title", property: "elide", value: Text.ElideNone},
-                {tag: "summary, subtitle.fontSize", captionStyle: Lomiri.SummaryCaptionStyle, label: "subtitle", property: "fontSize", value: "small"},
+                {tag: "summary, subtitle.textSize", captionStyle: Lomiri.SummaryCaptionStyle, label: "subtitle", property: "textSize", value: Label.Small},
                 {tag: "summary, subtitle.horizontalAlignment", captionStyle: Lomiri.SummaryCaptionStyle, label: "subtitle", property: "horizontalAlignment", value: Text.AlignRight},
                 {tag: "summary, subtitle.maximumLineCount", captionStyle: Lomiri.SummaryCaptionStyle, label: "subtitle", property: "maximumLineCount", value: 1},
                 {tag: "summary, subtitle.wrapMode", captionStyle: Lomiri.SummaryCaptionStyle, label: "subtitle", property: "wrapMode", value: Text.NoWrap},

@@ -26,25 +26,25 @@ Item {
     TestCase {
 
         function test_API() {
-            verify(Lomiri.hasOwnProperty("toolkitVersion"), "toolkitVersion is part of 1.3 API!");
-            verify(Lomiri.hasOwnProperty("toolkitVersionMajor"), "toolkitVersionMajor is part of 1.3 API!");
-            verify(Lomiri.hasOwnProperty("toolkitVersionMinor"), "toolkitVersionMajor is part of 1.3 API!");
-            verify(Lomiri.hasOwnProperty("version"), "version() is part of 1.3 API!");
+            verify(Lomiri.hasOwnProperty("toolkitVersion"), "toolkitVersion is part of the API!");
+            verify(Lomiri.hasOwnProperty("toolkitVersionMajor"), "toolkitVersionMajor is part of the API!");
+            verify(Lomiri.hasOwnProperty("toolkitVersionMinor"), "toolkitVersionMajor is part of the API!");
+            verify(Lomiri.hasOwnProperty("version"), "version() is part of the API!");
         }
 
         function test_toolkitversionMajor()
         {
-            compare(Lomiri.toolkitVersionMajor, 1, "Wrong major version!");
+            compare(Lomiri.toolkitVersionMajor, 2, "Wrong major version!");
         }
 
         function test_toolkitversionMinor()
         {
-            compare(Lomiri.toolkitVersionMinor, 3, "Wrong minor version!");
+            compare(Lomiri.toolkitVersionMinor, 0, "Wrong minor version!");
         }
 
         function test_toolkitversion()
         {
-            compare(Lomiri.toolkitVersion, 1 * 256 + 3, "Wrong composed version!");
+            compare(Lomiri.toolkitVersion, 2 * 256 + 0, "Wrong composed version!");
         }
 
         function test_version()

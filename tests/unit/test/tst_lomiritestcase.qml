@@ -102,10 +102,10 @@ Rectangle {
     }
 
     function test_mouseMoveSlowly() {
-       mouseMoveSlowly(mouseArea,0,0,800,200,10,100);
-       compare(mouseArea.testX,800);
-       compare(mouseArea.testY,200);
-       compare(mouseArea.steps,10);
+       mouseMoveSlowly(mouseArea,0,0,mouseArea.width - 1,mouseArea.height - 1,10,100);
+       compare(mouseArea.testX,mouseArea.width - 1);
+       compare(mouseArea.testY,mouseArea.height - 1);
+       compare(mouseArea.steps,11); // move to initial pos + 10 steps
     }
 
     function test_findChild() {
@@ -170,11 +170,11 @@ Rectangle {
         movementSpy.wait();
     }
     function test_flick_pressTimeout_short() {
-        flick(flicker, flicker.width, flicker.height, -flicker.width, -flicker.height, 400, 1);
+        flick(flicker, flicker.width - 1, flicker.height - 1, -(flicker.width - 1), -(flicker.height - 1), 400, 1);
         movementSpy.wait();
     }
     function test_flick_pressTimeout_long() {
-        flick(flicker, flicker.width, flicker.height, -flicker.width, -flicker.height, 400, 100);
+        flick(flicker, flicker.width - 1, flicker.height - 1, -(flicker.width - 1), -(flicker.height - 1), 400, 100);
         movementSpy.wait();
     }
     function test_typeString() {

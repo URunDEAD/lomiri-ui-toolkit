@@ -15,7 +15,7 @@
  */
 
 import QtQuick
+import TestModule.TestTheme as Parent
 
-Item {
-    objectName: "TestStyle"
+Parent.TestStyle {
 }

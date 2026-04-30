@@ -26,7 +26,7 @@ MainView {
         Label {
             anchors.centerIn: parent
             text: "bla"
-            color: Theme.palette.normal.negative // this color does not exist in 1.2 palette
+            color: Theme.palette.normal.undefinedcolor // this color does not exist in the palette
         }
     }
 }

@@ -81,7 +81,7 @@ Item {
         }
     }
 
-    VisualItemModel {
+    ObjectModel {
         id: layoutsModel
         Item {
             width: childrenRect.width

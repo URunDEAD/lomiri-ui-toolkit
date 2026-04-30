@@ -689,7 +689,11 @@ private Q_SLOTS:
 
     void test_invalid_palette_value()
     {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QString url(QUrl::fromLocalFile(QFileInfo("themes/BuggyTheme/2.0/Palette.qml").absoluteFilePath()).toEncoded());
+#else
         QString url(QUrl::fromLocalFile(QFileInfo("themes/BuggyTheme/Palette.qml").absoluteFilePath()).toEncoded());
+#endif
         QString warning(QString("<Unknown File>: QML QQmlEngine: %1:24 Cannot assign to non-existent property \"imaginary\"\n").arg(url));
         QTest::ignoreMessage(QtWarningMsg, warning.toUtf8());
 
@@ -758,13 +762,18 @@ private Q_SLOTS:
         QTest::newRow("Theming")
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
                 << "StyledItemThemed.qml"
+                << "version2.0";
 #else
                 << "StyledItemV13.qml"
-#endif
                 << "version1.3";
+#endif
         QTest::newRow("App theme versioned")
                 << "StyledItemAppThemeVersioned.qml"
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+                << "version2.0";
+#else
                 << "version1.3";
+#endif
     }
     void test_theme_versions()
     {
@@ -788,6 +797,9 @@ private Q_SLOTS:
     }
 
     void test_mixed_versions() {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QSKIP("Only version 2.0 is available with qt6");
+#endif
         QRegularExpression warningRe(QStringLiteral(
             ": QML (StyledItem|OtherVersion): Mixing of Lomiri\\.Components module "
             "versions 1\\.3 and 1\\.2 detected!$"
@@ -988,8 +1000,13 @@ private Q_SLOTS:
 
         // get the style URL
         bool fallback = false;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QUrl style = theme.styleUrl("TestStyle.qml", BUILD_VERSION(2, 0), &fallback);
+        QVERIFY(style.toString().endsWith("TestTheme/2.0/TestStyle.qml"));
+#else
         QUrl style = theme.styleUrl("TestStyle.qml", BUILD_VERSION(1, 3), &fallback);
         QVERIFY(style.toString().endsWith("TestTheme/1.3/TestStyle.qml"));
+#endif
     }
 };
 

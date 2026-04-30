@@ -162,7 +162,14 @@ private Q_SLOTS:
         root->setWidth(UCUnits::instance()->gu(55));
         QCOMPARE(root->width(), UCUnits::instance()->gu(55));
         layoutChangeSpy.wait(100);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        // When the width is changed, the condition for the active conditional
+        // layout becomes false and we briefly return to the default layout
+        // before the other conditional layout becomes active (hence 2 changes)
+        QCOMPARE(layoutChangeSpy.count(), 2);
+#else
         QCOMPARE(layoutChangeSpy.count(), 1);
+#endif
 
         QCOMPARE(layouts->currentLayout(), QString("medium"));
 
@@ -194,7 +201,14 @@ private Q_SLOTS:
         root->setWidth(UCUnits::instance()->gu(65));
         QCOMPARE(root->width(), UCUnits::instance()->gu(65));
         layoutChangeSpy.wait(100);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        // When the width is changed, the condition for the active conditional
+        // layout becomes false and we briefly return to the default layout
+        // before the other conditional layout becomes active (hence 2 changes)
+        QCOMPARE(layoutChangeSpy.count(), 2);
+#else
         QCOMPARE(layoutChangeSpy.count(), 1);
+#endif
 
         QCOMPARE(layouts->currentLayout(), QString("large"));
 
@@ -257,7 +271,14 @@ private Q_SLOTS:
 
         root->setWidth(UCUnits::instance()->gu(55));
         layoutChangeSpy.wait(100);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        // When the width is changed, the condition for the active conditional
+        // layout becomes false and we briefly return to the default layout
+        // before the other conditional layout becomes active (hence 2 changes)
+        QCOMPARE(layoutChangeSpy.count(), 2);
+#else
         QCOMPARE(layoutChangeSpy.count(), 1);
+#endif
 
         QCOMPARE(layouts->currentLayout(), QString("medium"));
     }
@@ -276,7 +297,14 @@ private Q_SLOTS:
 
         root->setWidth(UCUnits::instance()->gu(65));
         layoutChangeSpy.wait(100);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        // When the width is changed, the condition for the active conditional
+        // layout becomes false and we briefly return to the default layout
+        // before the other conditional layout becomes active (hence 2 changes)
+        QCOMPARE(layoutChangeSpy.count(), 2);
+#else
         QCOMPARE(layoutChangeSpy.count(), 1);
+#endif
 
         QCOMPARE(layouts->currentLayout(), QString("large"));
     }
@@ -395,8 +423,13 @@ private Q_SLOTS:
 
     void testCase_PositioningOnLayoutChange()
     {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        LomiriTestCase::ignoreWarning("PositioningOnLayoutChange.qml", 42, 13,
+            "QML ConditionalLayout: WARNING: Cannot activate layout \"landscape\" with no container specified. Falling back to default layout.", 3);
+#else
         LomiriTestCase::ignoreWarning("PositioningOnLayoutChange.qml", 42, 13,
             "QML ConditionalLayout: WARNING: Cannot activate layout \"landscape\" with no container specified. Falling back to default layout.", 4);
+#endif
         LomiriTestCase::ignoreWarning("PositioningOnLayoutChange.qml", 42, 13,
             "QML ConditionalLayout: ERROR: no container specified for layout \"landscape\". ConditionalLayout cannot be activated without a container.");
         QScopedPointer<QQuickView> view(loadTest("PositioningOnLayoutChange.qml"));

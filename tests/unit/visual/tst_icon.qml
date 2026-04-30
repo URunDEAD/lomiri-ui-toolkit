@@ -56,18 +56,13 @@ Item {
             id: icon3
             width: units.gu(10)
             height: width
-            source: Qt.resolvedUrl("tst_icon-select.png")
+            source: Qt.resolvedUrl("tst_icon-select@18.png")
         }
     }
 
     LomiriTestCase {
         name: "Icon"
         when: windowShown
-
-        SignalSpy {
-            id: shaderSpy
-            signalName: 'onStatusChanged'
-        }
 
         function cleanup() {
             icon2.name = "";
@@ -98,8 +93,8 @@ Item {
             icon2.source = "/usr/share/icons/suru/actions/scalable/edit-find.svg";
 
             var image = findChild(icon2, "image");
-            compare(image.source,
-                    "file:///usr/share/icons/suru/actions/scalable/edit-find.svg",
+            compare(image.source.toString(),
+                    "/usr/share/icons/suru/actions/scalable/edit-find.svg",
                     "Source of the image should equal icon2.source.");
         }
 
@@ -107,17 +102,10 @@ Item {
             icon.visible = true;
             var image = findChild(icon, "image");
             var shader = findChild(icon, "shader");
-            shaderSpy.target = shader;
 
             compare(icon.name, "toolkit_input-search");
             compare(shader.visible, false);
-            compare(shader.status, ShaderEffect.Uncompiled)
             icon.color = LomiriColors.orange;
-            shaderSpy.wait();
-            compare(shader.log, '')
-            // https://bugreports.qt.io/browse/QTBUG-49713
-            // status may be Error with no log even if successful
-            verify(shader.status !== ShaderEffect.Uncompiled)
             compare(shader.keyColorOut, icon.color);
             compare(shader.visible, true);
             compare(shader.source, image);

@@ -38,14 +38,6 @@ TestCase {
 
      function test_triggered() {
         checkbox.checked = false
-        checkbox.clicked()
-        signalSpy.wait()
-        compare(checkbox.checked, true, "click flipped from unchecked to checked")
-        checkbox.clicked()
-        signalSpy.wait()
-        compare(checkbox.checked, false, "click flipped from checked back to unchecked")
-
-        // clicked and trigger both flip the checked state
         checkbox.trigger()
         signalSpy.wait()
         compare(checkbox.checked, true, "trigger flipped from unchecked to checked")

@@ -22,29 +22,29 @@ TestCase {
     name: "LabelAPI"
 
     function cleanup() {
-        textCustom.fontSize = "medium";
+        textCustom.textSize = Label.Medium;
         textCustom.font.weight = Font.Light;
     }
 
     function test_0_defaults() {
         compare(textCustom.font.family, "Ubuntu", "Default font family");
         compare(textCustom.font.weight, Font.Light, "Default font weight");
-        compare(textCustom.fontSize,"medium","fontSize is 'medium' by default")
+        compare(textCustom.textSize, Label.Medium, "textSize is 'medium' by default");
     }
 
-    function test_fontSize_data() {
+    function test_textSize_data() {
         return [
-            {tag: "xx-small"},
-            {tag: "x-small"},
-            {tag: "small"},
-            {tag: "medium"},
-            {tag: "large"},
-            {tag: "x-large"},
+            {tag: "XxSmall", size: Label.XxSmall},
+            {tag: "XSmall", size: Label.XSmall},
+            {tag: "Small", size: Label.Small},
+            {tag: "Medium", size: Label.Medium},
+            {tag: "Large", size: Label.Large},
+            {tag: "XLarge", size: Label.XLarge},
         ];
     }
-    function test_fontSize(data) {
-        textCustom.fontSize = data.tag;
-        compare(textCustom.fontSize, data.tag, "Can set/get " + data.tag)
+    function test_textSize(data) {
+        textCustom.textSize = data.size;
+        compare(textCustom.textSize, data.size, "Can set/get " + data.size);
     }
 
     function test_fontWeight_data() {

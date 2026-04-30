@@ -18,5 +18,5 @@ import QtQuick
 
 Item {
     objectName: "TestStyle"
-    property string newProperty: "version1.3"
+    property string newProperty: "version2.0"
 }

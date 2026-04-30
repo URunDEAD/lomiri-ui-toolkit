@@ -837,7 +837,11 @@ private Q_SLOTS:
         QCOMPARE(doubleClicked.count(), 0);
         QCOMPARE(pressAndHold.count(), 0);
         QCOMPARE(entered.count(), 1);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+        QCOMPARE(exited.count(), 1);
+#else
         QCOMPARE(exited.count(), 0);
+#endif
     }
 
     void testCase_filterFlickable()

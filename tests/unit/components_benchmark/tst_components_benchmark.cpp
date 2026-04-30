@@ -50,7 +50,7 @@ private Q_SLOTS:
 
         for (int i = 0; i < list.size(); ++i) {
             QFileInfo fileInfo = list.at(i);
-            QTest::newRow(fileInfo.fileName().toLatin1()) << fileInfo.fileName();
+            QTest::newRow(fileInfo.fileName().toLatin1()) << fileInfo.absoluteFilePath();
         }
     }
 
@@ -83,7 +83,7 @@ private Q_SLOTS:
 
         for (int i = 0; i < list.size(); ++i) {
             QFileInfo fileInfo = list.at(i);
-            QTest::newRow(fileInfo.fileName().toLatin1()) << fileInfo.fileName();
+            QTest::newRow(fileInfo.fileName().toLatin1()) << fileInfo.absoluteFilePath();
         }
     }
 

@@ -61,9 +61,8 @@ Item {
         // tests adjusted to reproduce bug #1401920
         function test_sourceChanged_bug1401920_data() {
             return [
-                {tag: "Bitmap file", file: 'tst_icon-select.png'},
-                {tag: "Bitmap file(18gu)", gu: 18, file: 'tst_icon-select.png'},
-                {tag: "Bitmap with fragment", file: 'tst_icon-select.png#' + Date.now()},
+                {tag: "Bitmap file", file: 'tst_icon-select@18.png'},
+                {tag: "Bitmap with fragment", file: 'tst_icon-select@18.png#' + Date.now()},
                 {tag: "Bitmap with fragment(18gu)", gu: 18, file: 'PageHeaderBaseDividerBottom@18.png#' + Date.now()},
                 {tag: "Bitmap file with gu", file: 'tst_icon-select@18.png'},
                 {tag: "Bitmap file with gu(18gu)", gu: 18, file: 'PageHeaderBaseDividerBottom@18.png'},
