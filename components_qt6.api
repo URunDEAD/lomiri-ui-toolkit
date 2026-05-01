@@ -890,7 +890,6 @@ Lomiri.Components.Pickers.PickerRow 2.0: Row
     property Item mainComponent
     property double margins
     function var pickerMoving(var isMoving)
-    function var disconnectPicker(var index)
     property var model
     property bool moving
 Lomiri.Components.Popups.Popover 2.0: PopupBase

@@ -63,23 +63,10 @@ Row {
         }
     }
 
-    function disconnectPicker(index) {
-        var pickerItem = model.get(index).pickerModel.pickerItem;
-        if (pickerItem) {
-            pickerItem.onMovingChanged.disconnect(pickerMoving);
-        }
-    }
-
-    Connections {
-        target: row.model
-        function onPickerRemoved(index) { disconnectPicker(index) }
-    }
-
     objectName: "PickerRow_Positioner";
 
     Repeater {
         id: rowRepeater
-        onModelChanged: row.pickerMoving(true)
         Picker {
             id: unitPicker
             objectName: "PickerRow_" + pickerName
