@@ -226,16 +226,24 @@ void UCBottomEdgeRegionPrivate::loadContent(LoadingType type)
         contentItem->deleteLater();;
         contentItem = nullptr;
     }
-    // no need to create new context as we do not set any context properties
-    // for which we would need one
-    switch (type) {
-    case LoadingUrl:
-        loader.load(url, qmlContext(bottomEdge));
-        return;
-    case LoadingComponent:
-        loader.load(component, qmlContext(bottomEdge));
-        return;
-    }
+    // Deferring the load as a workaround for QTBUG-146210.
+    // What used to happen is that the theming logic added an engine import path
+    // in BottomEdge's componentComplete() while the async loader was loading
+    // content. Due to the bug, the status stayed forever at "Loading".
+    // This can be reverted when the bug is fixed upstream. Verify by making
+    // sure the test tst_BottomEdge::test_preload_content_url() is passing.
+    QMetaObject::invokeMethod(q_func(), [this, type]() {
+        // no need to create new context as we do not set any context properties
+        // for which we would need one
+        switch (type) {
+        case LoadingUrl:
+            loader.load(url, qmlContext(bottomEdge));
+            return;
+        case LoadingComponent:
+            loader.load(component, qmlContext(bottomEdge));
+            return;
+        }
+    }, Qt::QueuedConnection);
 }
 
 void UCBottomEdgeRegionPrivate::discardRegionContent()
