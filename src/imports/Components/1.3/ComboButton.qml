@@ -396,6 +396,7 @@ AbstractButton {
         }
     }
     Scrollbar {
+        parent: combo.__styleInstance ? combo.__styleInstance.comboListHolder : combo
         flickableItem: comboHolder
     }
 
