@@ -141,21 +141,20 @@ UCUnits *UCUnits::m_units = nullptr;
 
 QScreen* referenceScreen()
 {
-    // The OSK sits on the internal screen and needs to oblige that one's scaling
+    // The OSK sits on the internal screen and needs to oblige to that one's scaling.
+    // Maliit sets a custom Qt::WindowType (0x00000080) which we need to check for.
     static const Qt::WindowType InputMethodWindowType = (Qt::WindowType)(0x00000080 | Qt::WindowType::Window);
     for (QWindow* window : QGuiApplication::allWindows()) {
-        if (window->type() & InputMethodWindowType) {
+        if ((window->type() & InputMethodWindowType) == InputMethodWindowType) {
             return window->screen();
         }
     }
 
     // For everything else there's only two options:
-    // - Select the primary screen
+    // - Single monitor: Only one screen to care about
     // - Multi-monitor: go by last screen as virtual/external
     //   monitors spawn after the primary one
-    if (qGuiApp->screens().count() > 1)
-        return qGuiApp->screens().last();
-    return qGuiApp->primaryScreen();
+    return qGuiApp->screens().last();
 }
 
 UCUnits::UCUnits(QObject *parent) :
@@ -163,33 +162,50 @@ UCUnits::UCUnits(QObject *parent) :
     m_devicePixelRatio(qGuiApp->devicePixelRatio()),
     m_screen(nullptr)
 {
+    const auto appropriateScale = [this](){
+        // TODO: Get rid of this once all QPAs return the proper devicePixelRatio
+        //       for single-screen usecases. Then we can get rid of GRID_UNIT_PX.
+        if (qGuiApp->screens().count() == 1)
+            return getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX) / DEFAULT_GRID_UNIT_PX;
+        return getScreenScaling(referenceScreen());
+    };
+
     if (QHighDpiScaling::isActive())
-      m_gridUnit = qCeil(DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
+        m_gridUnit = qCeil(DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
     else
-      m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
+        m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
 
-    QObject::connect(qGuiApp, &QGuiApplication::screenAdded,
-                     this, [=](QScreen*) {
-        float scale = getScreenScaling(referenceScreen());
-        setGridUnit(DEFAULT_GRID_UNIT_PX * scale);
-    });
-    QObject::connect(qGuiApp, &QGuiApplication::screenRemoved,
-                     this, [=](QScreen*) {
-        float scale = getScreenScaling(referenceScreen());
-        setGridUnit(DEFAULT_GRID_UNIT_PX * scale);
-    });
-
+    // Only used by QtUbuntu & QtMir
     auto nativeInterface = qGuiApp->platformNativeInterface();
     if (nativeInterface) {
         QObject::connect(nativeInterface, &QPlatformNativeInterface::windowPropertyChanged,
                          this, &UCUnits::windowPropertyChanged);
         QScreen* screen = referenceScreen();
         if (screen && nativeInterface->nativeResourceForScreen("scale", screen)) {
-            float scale = getScreenScaling(screen);
-            if (scale > 0.0f)
+            const auto scale = getScreenScaling(screen);
+            if (scale > 0.0f) {
                 m_gridUnit = DEFAULT_GRID_UNIT_PX * scale;
+            }
         }
     }
+
+    // We wanna switch *to* Wayland, not from it
+    if (qGuiApp->platformName() == QStringLiteral("wayland") ||
+            qGuiApp->platformName() == QStringLiteral("wayland-egl")) {
+        // QtWayland already scales content on a per-screen devicePixelRatio basis.
+        m_devicePixelRatio = 1.0f;
+        m_gridUnit = DEFAULT_GRID_UNIT_PX * appropriateScale();
+    }
+
+    QObject::connect(qGuiApp, &QGuiApplication::screenAdded,
+                     this, [this](QScreen* screen) {
+        const auto scale = getScreenScaling(screen);
+        setGridUnit(DEFAULT_GRID_UNIT_PX * scale);
+    });
+    QObject::connect(qGuiApp, &QGuiApplication::screenRemoved,
+                     this, [this, appropriateScale](QScreen*) {
+        setGridUnit(DEFAULT_GRID_UNIT_PX * appropriateScale());
+    });
 }
 
 UCUnits::~UCUnits()
@@ -335,20 +351,17 @@ float UCUnits::gridUnitSuffixFromFileName(const QString& fileName)
 
 float UCUnits::getScreenScaling(QScreen* screen)
 {
-    if (!screen)
-        return m_devicePixelRatio;
-
-    if (!qGuiApp)
-        return m_devicePixelRatio;
+    if (!screen || !qGuiApp)
+        return 1.0f;
 
     auto nativeInterface = qGuiApp->platformNativeInterface();
     if (!nativeInterface)
-        return m_devicePixelRatio;
+        return screen->devicePixelRatio();
 
     float* scale =
           reinterpret_cast<float*>(nativeInterface->nativeResourceForScreen("scale", screen));
     if (!scale)
-        return m_devicePixelRatio;
+        return screen->devicePixelRatio();
 
     return *scale;
 }
