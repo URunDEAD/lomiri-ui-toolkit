@@ -51,7 +51,7 @@ UCActionContextAttached::UCActionContextAttached(QObject *owner)
  * in an active context nor assigned to an ActionItem.
  * \qml
  * import QtQuick 2.4
- * import lomiri.Componenst 1.3
+ * import lomiri.Components 1.3
  *
  * Rectangle {
  *     id: root
