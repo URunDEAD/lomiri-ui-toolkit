@@ -159,7 +159,12 @@ StyledItem {
         if (!loader.item || !internals.completed) {
             return;
         }
-        loader.item.positionViewAtIndex(index, loader.isListView ? ListView.SnapPosition : PathView.SnapPosition);
+        // Skip unnecessary calls to positionViewAtIndex() as a workaround for QTBUG-146219.
+        // When this is fixed upstream, verify if test_1_changeMaximumAfterDate() and
+        // test_1_changeMinimumBeforeDate() fail on the 2nd day of the month :-).
+        if (loader.item.currentIndex !== index) {
+            loader.item.positionViewAtIndex(index, loader.isListView ? ListView.SnapPosition : PathView.SnapPosition);
+        }
         // update selectedIndex
         selectedIndex = loader.item.currentIndex;
     }
