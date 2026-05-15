@@ -1,6 +1,188 @@
+2026-05-15 Mike Gabriel
+
+        * Release 1.3.5906 (HEAD -> main, tag: 1.3.5906)
+        * Merge branch 'personal/henrikschnor/fix-picker-positionviewatindex'
+          into 'main' (b74e3963a)
+
+2026-05-04 Henrik Schnor
+
+        * Picker: fix positionViewAtIndex() if called on the 2nd day of the
+          month (938fd9e88)
+
+2026-05-15 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/scale-all-qpas-right' into 'main'
+          (b738a80d2)
+
+2026-05-08 Alfred Neumayer
+
+        * src/LomiriToolkit: Correctness fixes for UCUnits (ab79c20ce)
+
+2026-05-14 Mike Gabriel
+
+        * Merge branch
+          'personal/henrikschnor/qt6-regression-bottomedge-workaround'
+          into 'main' (e1876501d)
+
+2026-05-02 Henrik Schnor
+
+        * BottomEdge: add workaround for Qt 6.10 regression (QTBUG-146210)
+          (5faf797f1)
+
+2026-05-14 Mike Gabriel
+
+        * Merge branch 'personal/jbicha/typo-20260513' into 'main'
+          (7c8d02ac3)
+
+2026-05-13 Jeremy Bícha
+
+        * ucationcontext: typo fix (9d6a0313a)
+
+2026-05-12 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/fix_combo_scrollbar_warning' into
+          'main' (b00cf0be5)
+
+2026-05-06 Lionel Duboeuf
+
+        * ensure Scrollbar follow the same parent as Flickable (1f1cbf95f)
+
+2026-05-11 Walter Garcia-Fontes
+
+        * Translated using Weblate (Catalan) (f015a4416)
+
+2026-05-05 Alyaksandr Koshal
+
+        * Translated using Weblate (Belarusian) (74b8e3cd7)
+
+2026-05-04 Alyaksandr Koshal
+
+        * Translated using Weblate (Belarusian) (1e8fecabd)
+
+2026-05-01 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-pickerrow' into 'main'
+          (958ad066a)
+
+2026-04-29 Henrik Schnor
+
+        * Picker: more robust model type checks (1a291e3b5)
+
+2026-03-27 Henrik Schnor
+
+        * PickerRow: don't mark as moving in onModelChanged (4347d0d1f)
+        * PickerRow: remove pickerMoving disconnect logic (3bf28df9a)
+
+2026-04-24 Хмеляускас Александр (JasonWalt Bab@)
+
+        * Translated using Weblate (Basque) (e395949a4)
+
+2026-04-30 Mike Gabriel
+
+        * Merge branch 'test-fixes-individual' into 'main' (b7e5ebc07)
+
+2026-04-03 Henrik Schnor
+
+        * tst_swipearea: use QTest::touchEvent and fix distance calculation
+          (02d6159d6)
+
+2026-03-31 Henrik Schnor
+
+        * tst_alarms: make sure the listview has a non-zero size (826ce0187)
+
+2026-03-30 Henrik Schnor
+
+        * tst_pagehead_with_listview_header: make sure the tested page is
+          active (e67f96cea)
+
+2026-03-28 Henrik Schnor
+
+        * tst_pagehead_presets: update for PageHeadStyle 2.0 (aa884f7c1)
+
+2026-03-27 Henrik Schnor
+
+        * tst_datepicker_bug1567840_SEGFAULT: fix fontSize->textSize
+          (e0843f003)
+        * tst_imageprovider: find image files with their full name
+          (36343f261)
+
+2026-03-25 Henrik Schnor
+
+        * tst_lomiritestcase: adjust mouse positions in tests (ed4b21137)
+        * tst_subtheming: convert test themes to version 2.0 (244cdf6e9)
+        * tst_statesaver: fix type mapping (062be4d3e)
+        * tst_mousefilterstest: expect exited signal when rejecting click
+          (0f192e2ac)
+        * tst_mainwindow: adjust expected executable name (cb64043ae)
+        * tst_layouts: tweak numbers for changes in qt6 (f5287328c)
+
+2026-03-24 Henrik Schnor
+
+        * tst_deprecated_theme_engine: adjustments for qt6 (37aec459a)
+        * tst_components_benchmark: use absolute paths (3d3371cb1)
+
+2026-03-14 Henrik Schnor
+
+        * tst_textinput_touch_SEGFAULT: adjust parameter and add delay
+          (4cd53bf4a)
+
+2026-03-10 Henrik Schnor
+
+        * tst_textinput_common: use mouseDoubleClickSequence() (9085385e8)
+        * tst_textfield: adjust alignment and fix RegExp type name
+          (d011a8544)
+        * tst_textarea: update persistentSelection check (f68e658b5)
+        * tst_tabs_*: remove reference to useDeprecatedToolbar (afbd6574c)
+        * tst_tabbar: fix for renamed property fontSize->textSize (c8c0e17f3)
+
+2026-03-06 Henrik Schnor
+
+        * tst_slotslayout: update type VisualItemModel->ObjectModel
+          (e2cd9b244)
+
+2026-03-05 Henrik Schnor
+
+        * tst_scrollbar: update VisualItemModel->ObjectModel and adjust check
+          (1bac96cb6)
+
+2026-03-18 Henrik Schnor
+
+        * tst_listitems_itemselector/tst_optionselector: resolve file paths
+          (5fba63903)
+        * tst_icon: remove ShaderEffect.status check (71ea4eb11)
+        * tst_captions: fix for renamed property fontSize->textSize
+          (8142258dc)
+        * tst_bottomedgehint: remove test for deprecated state property
+          (bf11b9958)
+        * tst_app_theming: move test theme to version 2.0 (a31cd3115)
+        * tst_abstractbutton: remove invalid tests and add delay (b48c382f4)
+        * tst_slider: adjustments after removing SliderUtils (777b65ff6)
+        * tst_mainview: remove test for deprecated actions (b6ec09234)
+        * tst_lomiri_namespace: adjust version check for 2.0 (14666b467)
+        * tst_label: fix for renamed property fontSize->textSize (2c6c59e56)
+        * tst_header_colors: adjustments for qt6 (b76083fe3)
+        * tst_CrossFadeImage: resolve paths to resources (c1ae4efc6)
+        * tst_activityindicator: update default values in test (1e355dc43)
+        * tst_abstractbutton: adjustments for qt6 (a92ff7362)
+
+2026-03-17 Henrik Schnor
+
+        * tst_checkbox: remove test for clicked() (58f27479c)
+        * tst_haptics: change import (9482ee9fc)
+
+2026-04-23 Mike Gabriel
+
+        * Merge branch 'personal/OPNA2608/fix-qt6.11-compat' into 'main'
+          (57303d2b0)
+
+2026-04-22 OPNA2608
+
+        * apicheck,src/LomiriToolkit: Fix compatibility with Qt 6.11
+          (c34e9b788)
+
 2026-04-18 Mike Gabriel
 
-        * Release 1.3.5905 (HEAD -> main, tag: 1.3.5905)
+        * Release 1.3.5905 (d4afffeb1) (tag: 1.3.5905)
         * Merge branch 'qt5.15.10' into 'main' (7f2035a3f)
 
 2026-01-04 Luca Weiss
