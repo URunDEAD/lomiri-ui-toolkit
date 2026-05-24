@@ -1,4 +1,4 @@
 usr/bin/lomiri-app-launch-profiler-lttng
 usr/bin/lomiri-app-launch-tracepoints
-usr/bin/lomiri-appstart-test
 usr/bin/lomiri-appstart-profile
+usr/bin/lomiri-appstart-test
