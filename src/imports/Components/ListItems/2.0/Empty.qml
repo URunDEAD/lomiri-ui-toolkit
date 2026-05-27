@@ -461,12 +461,12 @@ AbstractButton {
     Connections {
         target: (emptyListItem.removable) ? __mouseArea : null
 
-        function onPressed() {
+        function onPressed(mouse) {
             priv.pressedPosition = mouse.x
         }
 
         function onMouseXChanged() {
-            var mouseOffset = priv.pressedPosition - mouse.x
+            var mouseOffset = priv.pressedPosition - __mouseArea.mouseX
             if ((priv.pressedPosition != -1) && !priv.held && ( Math.abs(mouseOffset) >= priv.mouseMoveOffset)) {
                 priv.startDrag();
             }

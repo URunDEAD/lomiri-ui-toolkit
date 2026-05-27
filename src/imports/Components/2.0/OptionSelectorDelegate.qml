@@ -118,8 +118,8 @@ ListItem.Empty {
     Binding {
         target: listView
         property: "itemHeight"
-        value: childrenRect.height
-        when: childrenRect.height !== 0
+        value: option.implicitHeight
+        when: option.implicitHeight !== 0
     }
 
     //Since we don't want to add states to our divider, we use the exposed alias provided in Empty to access it and alter it's opacity from here.
