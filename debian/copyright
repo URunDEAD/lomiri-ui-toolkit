@@ -14,6 +14,7 @@ Comment:
 Files: app-launch-profiler/app-launch-tracepoints.c
  app-launch-profiler/app-launch-tracepoints.h
  documentation/all-modules.qdoc
+ documentation/autopilot-helpers/conf.py
  documentation/css/breadcrumbs.js
  documentation/css/qtquick.css
  documentation/css/scratch.css
@@ -367,6 +368,8 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  src/LomiriToolkit/ucmathutils_p.h
  src/LomiriToolkit/ucmouse_p.h
  src/LomiriToolkit/ucmousefilters.cpp
+ src/LomiriToolkit/ucnamespace.cpp
+ src/LomiriToolkit/ucnamespace_p.h
  src/LomiriToolkit/ucpagetreenode.cpp
  src/LomiriToolkit/ucpagetreenode_p.h
  src/LomiriToolkit/ucpagetreenode_p_p.h
@@ -403,8 +406,11 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  src/LomiriToolkit/ucviewitemsattached.cpp
  src/LomiriToolkit/unixsignalhandler_p.cpp
  src/LomiriToolkit/unixsignalhandler_p.h
- src/LomiriToolkit/ucnamespace.cpp
- src/LomiriToolkit/ucnamespace_p.h
+ src/imports-compat/Components/Labs/plugin/plugin.cpp
+ src/imports-compat/Components/Styles/plugin/plugin.cpp
+ src/imports-compat/Components/plugin/plugin.cpp
+ src/imports-compat/Components/plugin/plugin.h
+ src/imports-compat/Metrics/plugin.cpp
  src/imports/Components/1.0/Button.qml
  src/imports/Components/1.0/LomiriColors.qml
  src/imports/Components/1.0/ProgressBar.qml
@@ -420,6 +426,7 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  src/imports/Components/1.2/Captions.qml
  src/imports/Components/1.2/CheckBox.qml
  src/imports/Components/1.2/ComboButton.qml
+ src/imports/Components/1.2/DraggingArea.qml
  src/imports/Components/1.2/Header.qml
  src/imports/Components/1.2/InputHandler.qml
  src/imports/Components/1.2/Label.qml
@@ -468,13 +475,14 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  src/imports/Components/1.3/Captions.qml
  src/imports/Components/1.3/CheckBox.qml
  src/imports/Components/1.3/ComboButton.qml
+ src/imports/Components/1.3/DraggingArea.qml
  src/imports/Components/1.3/InputHandler.qml
  src/imports/Components/1.3/ListItemPopover.qml
  src/imports/Components/1.3/LomiriColors.qml
  src/imports/Components/1.3/LomiriListView.qml
  src/imports/Components/1.3/LomiriNumberAnimation.qml
- src/imports/Components/1.3/MainView.qml
  src/imports/Components/1.3/MainView.qdoc
+ src/imports/Components/1.3/MainView.qml
  src/imports/Components/1.3/OptionSelector.qml
  src/imports/Components/1.3/OptionSelectorDelegate.qml
  src/imports/Components/1.3/OrientationHelper.qml
@@ -518,6 +526,7 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  src/imports/Components/2.0/Captions.qml
  src/imports/Components/2.0/CheckBox.qml
  src/imports/Components/2.0/ComboButton.qml
+ src/imports/Components/2.0/DraggingArea.qml
  src/imports/Components/2.0/InputHandler.qml
  src/imports/Components/2.0/Internal__Haptics.qml
  src/imports/Components/2.0/Internal__ListItemPopover.qml
@@ -910,14 +919,35 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  src/imports/Test/plugin/uctestcase.h
  src/imports/Test/plugin/uctestextras.cpp
  src/imports/Test/plugin/uctestextras.h
- src/imports-compat/Components/Labs/plugin/plugin.cpp
- src/imports-compat/Components/Styles/plugin/plugin.cpp
- src/imports-compat/Components/plugin/plugin.cpp
- src/imports-compat/Components/plugin/plugin.h
- src/imports-compat/Metrics/plugin.cpp
- src/imports-compat/Test/Test.pro
- src/imports-compat/Test/qmldir
+ tests/api/Extinct/Animals/digger.js
+ tests/api/Extinct/Animals/plugin/europe.cpp
+ tests/api/Extinct/Animals/plugin/europe.h
+ tests/api/Extinct/Animals/plugin/pangaea.cpp
+ tests/api/Extinct/Animals/plugin/pangaea.h
+ tests/api/Extinct/Animals/plugin/plugin.cpp
+ tests/api/Extinct/Animals/plugin/plugin.h
+ tests/api/Extinct/Animals/plugin/rune.cpp
+ tests/api/Extinct/Animals/plugin/rune.h
+ tests/api/Extinct/Animals/plugin/smilodon.cpp
+ tests/api/Extinct/Animals/plugin/smilodon.h
+ tests/api/Extinct/Animals/plugin/tarpan.cpp
+ tests/api/Extinct/Animals/plugin/tarpan.h
  tests/api/test.sh
+ tests/autopilot/lomiri-ui-toolkit/tests/activityindicator/ActivityIndicatorTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/button/ButtonColorTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/button/ButtonIconTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/button/DisabledButtonTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/button/EnabledButtonTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/checkbox/DisabledCheckBoxTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/checkbox/EnabledCheckBoxTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/listitems/ListItemsTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/pagestack/PageStackTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/progressbar/ProgressBarTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/slider/SliderTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/switch/DisabledSwitchTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/switch/EnabledSwitchTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/tabs/TabsTests.qml
+ tests/autopilot/lomiri-ui-toolkit/tests/textfield/TextFieldTests.qml
  tests/autopilot/lomiriuitoolkit/__init__.py
  tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/__init__.py
  tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_actionbar.py
@@ -1095,7 +1125,8 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/alarms/tst_alarms.cpp
  tests/unit/animator/tst_animator.cpp
  tests/unit/animator/tst_animator.qml
- tests/unit/animator/tst_animator13.qml
+ tests/unit/animator13/tst_animator.qml
+ tests/unit/animator13/tst_animator13.qml
  tests/unit/argument/tst_argument.cpp
  tests/unit/arguments/tst_arguments.cpp
  tests/unit/asyncloader/Document.qml
@@ -1103,6 +1134,10 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/asyncloader/HeavyDocument.qml
  tests/unit/asyncloader/TestApp.qml
  tests/unit/asyncloader/tst_asyncloader.cpp
+ tests/unit/asyncloader13/Document.qml
+ tests/unit/asyncloader13/FaultyDocument.qml
+ tests/unit/asyncloader13/HeavyDocument.qml
+ tests/unit/asyncloader13/TestApp.qml
  tests/unit/bottomedge/AddCustomRegionOnCompleted.qml
  tests/unit/bottomedge/AddCustomRegionOwnedByOtherBottomEdge.qml
  tests/unit/bottomedge/AddCustomRegionUsingDataProperty.qml
@@ -1126,6 +1161,28 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/bottomedge/ShorterBottomEdge.qml
  tests/unit/bottomedge/UncoveredByRegion.qml
  tests/unit/bottomedge/tst_bottomedge.cpp
+ tests/unit/bottomedge13/AddCustomRegionOnCompleted.qml
+ tests/unit/bottomedge13/AddCustomRegionOwnedByOtherBottomEdge.qml
+ tests/unit/bottomedge13/AddCustomRegionUsingDataProperty.qml
+ tests/unit/bottomedge13/AddCustomRegionUsingRegionsProperty.qml
+ tests/unit/bottomedge13/AlternateDefaultRegionContent.qml
+ tests/unit/bottomedge13/AlternateRegionContent.qml
+ tests/unit/bottomedge13/AutoCollapseInPageHeader.qml
+ tests/unit/bottomedge13/AutoCollapseInPageWithPageHeader.qml
+ tests/unit/bottomedge13/BottomEdgeInItem.qml
+ tests/unit/bottomedge13/BottomEdgeWithAction.qml
+ tests/unit/bottomedge13/ClearCustomRegions.qml
+ tests/unit/bottomedge13/Defaults.qml
+ tests/unit/bottomedge13/DifferentSizes.qml
+ tests/unit/bottomedge13/ExternalContent.qml
+ tests/unit/bottomedge13/LastItem.qml
+ tests/unit/bottomedge13/LeanActiveRegionChange.qml
+ tests/unit/bottomedge13/OverlappingRegions.qml
+ tests/unit/bottomedge13/OverriddenHintTrigger.qml
+ tests/unit/bottomedge13/PreloadContentUrl.qml
+ tests/unit/bottomedge13/PreloadedContent.qml
+ tests/unit/bottomedge13/ShorterBottomEdge.qml
+ tests/unit/bottomedge13/UncoveredByRegion.qml
  tests/unit/components/tst_abstractbutton.qml
  tests/unit/components/tst_action.qml
  tests/unit/components/tst_activityindicator.qml
@@ -1137,10 +1194,8 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/components/tst_fontutils.qml
  tests/unit/components/tst_haptics.qml
  tests/unit/components/tst_header_colors.qml
- tests/unit/components/tst_inputhandler_v12.qml
- tests/unit/components/tst_inputhandler_v13.qml
+ tests/unit/components/tst_inputhandler.qml
  tests/unit/components/tst_label.qml
- tests/unit/components/tst_label13.qml
  tests/unit/components/tst_listitems_base.qml
  tests/unit/components/tst_listitems_caption.qml
  tests/unit/components/tst_listitems_divider.qml
@@ -1153,13 +1208,11 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/components/tst_listitems_thindivider.qml
  tests/unit/components/tst_listitems_valueselector.qml
  tests/unit/components/tst_livetimer.qml
- tests/unit/components/tst_lomiri_namespace_v12.qml
- tests/unit/components/tst_lomiri_namespace_v13.qml
+ tests/unit/components/tst_lomiri_namespace.qml
  tests/unit/components/tst_lomirishape.qml
  tests/unit/components/tst_mainview.qml
  tests/unit/components/tst_math_utils.qml
  tests/unit/components/tst_menu.qml
- tests/unit/components/tst_pagestack.DEPRECATED_TOOLBAR.11.qml
  tests/unit/components/tst_plugin_ucunits.qml
  tests/unit/components/tst_popups_actionselectionpopover.qml
  tests/unit/components/tst_popups_composersheet.qml
@@ -1167,16 +1220,62 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/components/tst_popups_dialog.qml
  tests/unit/components/tst_popups_popover.qml
  tests/unit/components/tst_progressbar.qml
- tests/unit/components/tst_progressbar11.qml
  tests/unit/components/tst_scrollbar.qml
  tests/unit/components/tst_slider.qml
  tests/unit/components/tst_sortfiltermodel.qml
  tests/unit/components/tst_styleditem.qml
- tests/unit/components/tst_styleditem13.qml
  tests/unit/components/tst_switch.qml
  tests/unit/components/tst_tab.qml
+ tests/unit/components13/tst_abstractbutton.qml
+ tests/unit/components13/tst_action.qml
+ tests/unit/components13/tst_activityindicator.qml
+ tests/unit/components13/tst_button.qml
+ tests/unit/components13/tst_checkbox.qml
+ tests/unit/components13/tst_clipboard.qml
+ tests/unit/components13/tst_components.cpp
+ tests/unit/components13/tst_dateutils.qml
+ tests/unit/components13/tst_fontutils.qml
+ tests/unit/components13/tst_haptics.qml
+ tests/unit/components13/tst_header_colors.qml
+ tests/unit/components13/tst_inputhandler_v12.qml
+ tests/unit/components13/tst_inputhandler_v13.qml
+ tests/unit/components13/tst_label.qml
+ tests/unit/components13/tst_label13.qml
+ tests/unit/components13/tst_listitems_base.qml
+ tests/unit/components13/tst_listitems_caption.qml
+ tests/unit/components13/tst_listitems_divider.qml
+ tests/unit/components13/tst_listitems_empty.qml
+ tests/unit/components13/tst_listitems_header.qml
+ tests/unit/components13/tst_listitems_multivalue.qml
+ tests/unit/components13/tst_listitems_singlecontrol.qml
+ tests/unit/components13/tst_listitems_singlevalue.qml
+ tests/unit/components13/tst_listitems_subtitled.qml
+ tests/unit/components13/tst_listitems_thindivider.qml
+ tests/unit/components13/tst_listitems_valueselector.qml
+ tests/unit/components13/tst_livetimer.qml
+ tests/unit/components13/tst_lomiri_namespace_v12.qml
+ tests/unit/components13/tst_lomiri_namespace_v13.qml
+ tests/unit/components13/tst_lomirishape.qml
+ tests/unit/components13/tst_mainview.qml
+ tests/unit/components13/tst_math_utils.qml
+ tests/unit/components13/tst_menu.qml
+ tests/unit/components13/tst_pagestack.DEPRECATED_TOOLBAR.11.qml
+ tests/unit/components13/tst_plugin_ucunits.qml
+ tests/unit/components13/tst_popups_actionselectionpopover.qml
+ tests/unit/components13/tst_popups_composersheet.qml
+ tests/unit/components13/tst_popups_defaultsheet.qml
+ tests/unit/components13/tst_popups_dialog.qml
+ tests/unit/components13/tst_popups_popover.qml
+ tests/unit/components13/tst_progressbar.qml
+ tests/unit/components13/tst_progressbar11.qml
+ tests/unit/components13/tst_scrollbar.qml
+ tests/unit/components13/tst_slider.qml
+ tests/unit/components13/tst_sortfiltermodel.qml
+ tests/unit/components13/tst_styleditem.qml
+ tests/unit/components13/tst_styleditem13.qml
+ tests/unit/components13/tst_switch.qml
+ tests/unit/components13/tst_tab.qml
  tests/unit/components_benchmark/tst_components_benchmark.cpp
- tests/unit/components/demo_image.jpg
  tests/unit/deprecated_theme_engine/ErroneousPaletteUse.qml
  tests/unit/deprecated_theme_engine/Parent.qml
  tests/unit/deprecated_theme_engine/SimpleItem.qml
@@ -1184,10 +1283,18 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/deprecated_theme_engine/themes/CustomTheme/TestStyle.qml
  tests/unit/deprecated_theme_engine/themes/TestModule/TestTheme/1.2/TestStyle.qml
  tests/unit/deprecated_theme_engine/tst_deprecated_theme_engine.cpp
+ tests/unit/deprecated_theme_engine13/ErroneousPaletteUse.qml
+ tests/unit/deprecated_theme_engine13/Parent.qml
+ tests/unit/deprecated_theme_engine13/SimpleItem.qml
+ tests/unit/deprecated_theme_engine13/TestModule/TestTheme/TestStyle.qml
+ tests/unit/deprecated_theme_engine13/themes/CustomTheme/TestStyle.qml
+ tests/unit/deprecated_theme_engine13/themes/TestModule/TestTheme/1.2/TestStyle.qml
  tests/unit/i18n/LocalizedApp/src/LocalizedApp.qml
  tests/unit/i18n/LocalizedApp/src/tst_i18n_LocalizedApp.cpp
  tests/unit/i18n/RelativeTime/src/RelativeTime.qml
  tests/unit/i18n/RelativeTime/src/tst_i18n_RelativeTime.cpp
+ tests/unit/i18n13/LocalizedApp/src/LocalizedApp.qml
+ tests/unit/i18n13/RelativeTime/src/RelativeTime.qml
  tests/unit/iconprovider/tst_iconprovider.cpp
  tests/unit/inversemousearea/Defaults.qml
  tests/unit/inversemousearea/InverseMouseAreaClip.qml
@@ -1207,6 +1314,23 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/inversemousearea/OverlappedMouseArea.qml
  tests/unit/inversemousearea/SensingAreaError.qml
  tests/unit/inversemousearea/tst_inversemouseareatest.cpp
+ tests/unit/inversemousearea13/Defaults.qml
+ tests/unit/inversemousearea13/InverseMouseAreaClip.qml
+ tests/unit/inversemousearea13/InverseMouseAreaDoNotPropagateEvents.qml
+ tests/unit/inversemousearea13/InverseMouseAreaInFlickable.qml
+ tests/unit/inversemousearea13/InverseMouseAreaInListView.qml
+ tests/unit/inversemousearea13/InverseMouseAreaInPage.qml
+ tests/unit/inversemousearea13/InverseMouseAreaInWindow.qml
+ tests/unit/inversemousearea13/InverseMouseAreaNormalEventStack.qml
+ tests/unit/inversemousearea13/InverseMouseAreaOnTop.qml
+ tests/unit/inversemousearea13/InverseMouseAreaOnTopNoAccept.qml
+ tests/unit/inversemousearea13/InverseMouseAreaParentClipped.qml
+ tests/unit/inversemousearea13/InverseMouseAreaPropagateEvents.qml
+ tests/unit/inversemousearea13/InverseMouseAreaSensingArea.qml
+ tests/unit/inversemousearea13/InverseMouseAreaSignals.qml
+ tests/unit/inversemousearea13/InverseMouseAreaTopmostItem.qml
+ tests/unit/inversemousearea13/OverlappedMouseArea.qml
+ tests/unit/inversemousearea13/SensingAreaError.qml
  tests/unit/layouts/AnchorAll.qml
  tests/unit/layouts/AnchorBottom.qml
  tests/unit/layouts/AnchorCenterWithOffset.qml
@@ -1242,8 +1366,49 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/layouts/SmallLayout.qml
  tests/unit/layouts/Visibility.qml
  tests/unit/layouts/tst_layouts.cpp
+ tests/unit/layouts13/AnchorAll.qml
+ tests/unit/layouts13/AnchorBottom.qml
+ tests/unit/layouts13/AnchorCenterWithOffset.qml
+ tests/unit/layouts13/AnchorCenteredInDefault.qml
+ tests/unit/layouts13/AnchorFilledMargins.qml
+ tests/unit/layouts13/AnchorFilledReparenting.qml
+ tests/unit/layouts13/AnchorFilledSeparateMargins.qml
+ tests/unit/layouts13/AnchorHorizontalCenter.qml
+ tests/unit/layouts13/AnchorHorizontalCenterOffset.qml
+ tests/unit/layouts13/AnchorLeft.qml
+ tests/unit/layouts13/AnchorRight.qml
+ tests/unit/layouts13/AnchorTop.qml
+ tests/unit/layouts13/AnchorVerticalCenter.qml
+ tests/unit/layouts13/AnchorVerticalCenterOffset.qml
+ tests/unit/layouts13/CurrentLayoutChange.qml
+ tests/unit/layouts13/DefaultLayout.qml
+ tests/unit/layouts13/DialerCrash.qml
+ tests/unit/layouts13/ExcludedItemDeleted.qml
+ tests/unit/layouts13/ExternalLayouts.qml
+ tests/unit/layouts13/ItemInstanceAsProperty.qml
+ tests/unit/layouts13/LaidOutItemsOutsideOfLayout.qml
+ tests/unit/layouts13/LargeLayout.qml
+ tests/unit/layouts13/MediumLayout.qml
+ tests/unit/layouts13/NestedLayouts.qml
+ tests/unit/layouts13/NestedVisibility.qml
+ tests/unit/layouts13/NoLayouts.qml
+ tests/unit/layouts13/OverlaidInItemLayout.qml
+ tests/unit/layouts13/OverlappingCondition.qml
+ tests/unit/layouts13/PositioningOnLayoutChange.qml
+ tests/unit/layouts13/ResizingContainers.qml
+ tests/unit/layouts13/SimpleLayouts.qml
+ tests/unit/layouts13/SizedDefaultLayout.qml
+ tests/unit/layouts13/SmallLayout.qml
+ tests/unit/layouts13/Visibility.qml
  tests/unit/lomiri_shape/no_distortion.qml
  tests/unit/lomiri_shape/tst_lomiri_shape.cpp
+ tests/unit/lomiri_shape11/no_distortion.qml
+ tests/unit/mainview/AppName.qml
+ tests/unit/mainview/LocalStorage.qml
+ tests/unit/mainview/PageStack.qml
+ tests/unit/mainview/PageTitle.qml
+ tests/unit/mainview/Settings.qml
+ tests/unit/mainview/tst_mainview.cpp
  tests/unit/mainview11/AppName.qml
  tests/unit/mainview11/LocalStorage.qml
  tests/unit/mainview11/PageStack.qml
@@ -1260,6 +1425,9 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/mainwindow/OrganizationName.qml
  tests/unit/mainwindow/VisualRoot.qml
  tests/unit/mainwindow/tst_mainwindow.cpp
+ tests/unit/mainwindow13/AppName.qml
+ tests/unit/mainwindow13/OrganizationName.qml
+ tests/unit/mainwindow13/VisualRoot.qml
  tests/unit/mousefilters/AttachedToItem.qml
  tests/unit/mousefilters/DoubleClicked.qml
  tests/unit/mousefilters/EnteredExitedOnMouseMove.qml
@@ -1292,12 +1460,45 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/mousefilters/PressAndHoldAcceptedEatsClick.qml
  tests/unit/mousefilters/PressAndHoldAndClicked.qml
  tests/unit/mousefilters/tst_mousefilterstest.cpp
+ tests/unit/mousefilters13/AttachedToItem.qml
+ tests/unit/mousefilters13/DoubleClicked.qml
+ tests/unit/mousefilters13/EnteredExitedOnMouseMove.qml
+ tests/unit/mousefilters13/FilterFlickable.qml
+ tests/unit/mousefilters13/FilterFlickableAfter.qml
+ tests/unit/mousefilters13/FilterInverseTextInput.qml
+ tests/unit/mousefilters13/FilterInverseTextInputAfter.qml
+ tests/unit/mousefilters13/FilterInverseTextInputOSKExcluded.qml
+ tests/unit/mousefilters13/FilterInverseTextInputTolerance.qml
+ tests/unit/mousefilters13/FilterSynthesizedEvents.qml
+ tests/unit/mousefilters13/FilterTextInput.qml
+ tests/unit/mousefilters13/FilterTextInputAfter.qml
+ tests/unit/mousefilters13/FilterTextInputTolerance.qml
+ tests/unit/mousefilters13/ForwardComposedEvents.qml
+ tests/unit/mousefilters13/ForwardDblClickToTransparentMouseArea.qml
+ tests/unit/mousefilters13/ForwardEventChained.qml
+ tests/unit/mousefilters13/ForwardToInverseMouseArea.qml
+ tests/unit/mousefilters13/ForwardToMouseArea.qml
+ tests/unit/mousefilters13/ForwardToTransparentMouseArea.qml
+ tests/unit/mousefilters13/ForwardedEventsStoppedInForwards.qml
+ tests/unit/mousefilters13/ForwardedEventsToTargetBlocked.qml
+ tests/unit/mousefilters13/ForwardedMouseEvents.qml
+ tests/unit/mousefilters13/ForwardedMouseEventsStopped.qml
+ tests/unit/mousefilters13/Hover.qml
+ tests/unit/mousefilters13/HoverEvent.qml
+ tests/unit/mousefilters13/InverseAttachedToItem.qml
+ tests/unit/mousefilters13/InverseHover.qml
+ tests/unit/mousefilters13/InverseMouseFilterAttachedToNonItem.qml
+ tests/unit/mousefilters13/MouseFilterAttachedToNonItem.qml
+ tests/unit/mousefilters13/PressAndHoldAcceptedEatsClick.qml
+ tests/unit/mousefilters13/PressAndHoldAndClicked.qml
  tests/unit/orientation/Defaults.qml
  tests/unit/orientation/ManualAngle.qml
  tests/unit/orientation/tst_orientation.cpp
+ tests/unit/orientation11/Defaults.qml
+ tests/unit/orientation11/ManualAngle.qml
  tests/unit/page/AnchorToPage.qml
  tests/unit/page/tst_page.cpp
- tests/unit/performance/AbstractButton13Grid.qml
+ tests/unit/page11/AnchorToPage.qml
  tests/unit/performance/AbstractButtonGrid.qml
  tests/unit/performance/ButtonGrid.qml
  tests/unit/performance/ButtonStyleGrid.qml
@@ -1305,9 +1506,7 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/performance/CheckBoxStyleGrid.qml
  tests/unit/performance/ItemList.qml
  tests/unit/performance/LabelGrid.qml
- tests/unit/performance/LabelGrid13.qml
  tests/unit/performance/ListItemList.qml
- tests/unit/performance/ListItemList13.qml
  tests/unit/performance/ListItemWithActionsList.qml
  tests/unit/performance/ListItemWithInlineActionsAndFourContainersList.qml
  tests/unit/performance/ListItemWithInlineActionsAndFourMouseAreas.qml
@@ -1315,7 +1514,6 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/performance/ListItemsBaseList.qml
  tests/unit/performance/ListItemsEmptyList.qml
  tests/unit/performance/ListOfCaptions.qml
- tests/unit/performance/ListOfCaptions13.qml
  tests/unit/performance/ListOfCustomListItemLayouts.qml
  tests/unit/performance/ListOfEmptyListItemLayout.qml
  tests/unit/performance/ListOfEmptyListItemLayout_withProgression.qml
@@ -1324,8 +1522,8 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/performance/ListOfListItemLayout_complex1.qml
  tests/unit/performance/ListOfListItemLayout_complex2.qml
  tests/unit/performance/ListOfListItemLayout_labelsOnly.qml
- tests/unit/performance/ListOfScrollView_bothScrollbars_1_3.qml
- tests/unit/performance/ListOfScrollbars_1_3.qml
+ tests/unit/performance/ListOfScrollView_bothScrollbars.qml
+ tests/unit/performance/ListOfScrollbars.qml
  tests/unit/performance/LomiriShapeGrid.qml
  tests/unit/performance/MainView.qml
  tests/unit/performance/PairOfLomiriShapeGrid.qml
@@ -1339,30 +1537,84 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/performance/Styling.qml
  tests/unit/performance/SwitchGrid.qml
  tests/unit/performance/SwitchStyleGrid.qml
- tests/unit/performance/TextArea13Grid.qml
+ tests/unit/performance/TextAreaGrid.qml
  tests/unit/performance/TextGrid.qml
  tests/unit/performance/TextWithImport.qml
  tests/unit/performance/TextWithImportGrid.qml
  tests/unit/performance/TextWithImportPopups.qml
  tests/unit/performance/TextWithImportPopupsGrid.qml
  tests/unit/performance/tst_performance.cpp
- tests/unit/qmltemplate/tst_example_benchmark.qml
- tests/unit/qmltemplate/tst_example_checks.qml
- tests/unit/qmltemplate/tst_example_keyboard.qml
- tests/unit/qmltemplate/tst_example_mouse.qml
- tests/unit/qmltemplate/tst_example_property.qml
- tests/unit/qmltemplate/tst_example_signals.qml
- tests/unit/qmltemplate/tst_qmltemplate.cpp
- tests/unit/qquick_image_extension/tst_qquick_image_extension.cpp
+ tests/unit/performance13/AbstractButton13Grid.qml
+ tests/unit/performance13/AbstractButtonGrid.qml
+ tests/unit/performance13/ButtonGrid.qml
+ tests/unit/performance13/ButtonStyleGrid.qml
+ tests/unit/performance13/CheckBoxGrid.qml
+ tests/unit/performance13/CheckBoxStyleGrid.qml
+ tests/unit/performance13/ItemList.qml
+ tests/unit/performance13/LabelGrid.qml
+ tests/unit/performance13/LabelGrid13.qml
+ tests/unit/performance13/ListItemList.qml
+ tests/unit/performance13/ListItemList13.qml
+ tests/unit/performance13/ListItemWithActionsList.qml
+ tests/unit/performance13/ListItemWithInlineActionsAndFourContainersList.qml
+ tests/unit/performance13/ListItemWithInlineActionsAndFourMouseAreas.qml
+ tests/unit/performance13/ListItemWithInlineActionsList.qml
+ tests/unit/performance13/ListItemsBaseList.qml
+ tests/unit/performance13/ListItemsEmptyList.qml
+ tests/unit/performance13/ListOfCaptions.qml
+ tests/unit/performance13/ListOfCaptions13.qml
+ tests/unit/performance13/ListOfCustomListItemLayouts.qml
+ tests/unit/performance13/ListOfEmptyListItemLayout.qml
+ tests/unit/performance13/ListOfEmptyListItemLayout_withProgression.qml
+ tests/unit/performance13/ListOfHardcodedFourContainersLayout.qml
+ tests/unit/performance13/ListOfHardcodedFourContainersLayout_withItems.qml
+ tests/unit/performance13/ListOfListItemLayout_complex1.qml
+ tests/unit/performance13/ListOfListItemLayout_complex2.qml
+ tests/unit/performance13/ListOfListItemLayout_labelsOnly.qml
+ tests/unit/performance13/ListOfScrollView_bothScrollbars_1_3.qml
+ tests/unit/performance13/ListOfScrollbars_1_3.qml
+ tests/unit/performance13/LomiriShapeGrid.qml
+ tests/unit/performance13/MainView.qml
+ tests/unit/performance13/PairOfLomiriShapeGrid.qml
+ tests/unit/performance13/PaletteConfigurationAllColors.qml
+ tests/unit/performance13/PaletteConfigurationOneColor.qml
+ tests/unit/performance13/RectangleGrid.qml
+ tests/unit/performance13/SliderGrid.qml
+ tests/unit/performance13/SliderStyleGrid.qml
+ tests/unit/performance13/StyledItemNewTheming.qml
+ tests/unit/performance13/StyledItemOldTheming.qml
+ tests/unit/performance13/Styling.qml
+ tests/unit/performance13/SwitchGrid.qml
+ tests/unit/performance13/SwitchStyleGrid.qml
+ tests/unit/performance13/TextArea13Grid.qml
+ tests/unit/performance13/TextGrid.qml
+ tests/unit/performance13/TextWithImport.qml
+ tests/unit/performance13/TextWithImportGrid.qml
+ tests/unit/performance13/TextWithImportPopups.qml
+ tests/unit/performance13/TextWithImportPopupsGrid.qml
+ tests/unit/qmltemplate11/tst_example_benchmark.qml
+ tests/unit/qmltemplate11/tst_example_checks.qml
+ tests/unit/qmltemplate11/tst_example_keyboard.qml
+ tests/unit/qmltemplate11/tst_example_mouse.qml
+ tests/unit/qmltemplate11/tst_example_property.qml
+ tests/unit/qmltemplate11/tst_example_signals.qml
+ tests/unit/qmltemplate11/tst_qmltemplate.cpp
+ tests/unit/qquick_image_extension13/data/hundred_faces.qml
+ tests/unit/qquick_image_extension13/data/single_cache_file.qml
+ tests/unit/qquick_image_extension13/tst_qquick_image_extension.cpp
  tests/unit/quickutils/tst_quickutils.cpp
  tests/unit/recreateview/SimpleApp.qml
  tests/unit/recreateview/tst_recreateview.cpp
+ tests/unit/recreateview11/SimpleApp.qml
  tests/unit/runtest.sh
- tests/unit/scaling_image_provider/tst_scaling_image_provider.cpp
+ tests/unit/scaling_image_provider13/tst_scaling_image_provider.cpp
  tests/unit/serviceproperties/IncomingCallVibrateWatcher.qml
  tests/unit/serviceproperties/InvalidPropertyWatcher.qml
  tests/unit/serviceproperties/InvalidPropertyWatcher2.qml
  tests/unit/serviceproperties/tst_serviceproperties.cpp
+ tests/unit/serviceproperties11/IncomingCallVibrateWatcher.qml
+ tests/unit/serviceproperties11/InvalidPropertyWatcher.qml
+ tests/unit/serviceproperties11/InvalidPropertyWatcher2.qml
  tests/unit/statesaver/ComponentsWithStateSavers.qml
  tests/unit/statesaver/ComponentsWithStateSaversNoId.qml
  tests/unit/statesaver/CustomControl.qml
@@ -1388,6 +1640,30 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/statesaver/ValidGroupProperty.qml
  tests/unit/statesaver/ValidUID.qml
  tests/unit/statesaver/tst_statesaver.cpp
+ tests/unit/statesaver11/ComponentsWithStateSavers.qml
+ tests/unit/statesaver11/ComponentsWithStateSaversNoId.qml
+ tests/unit/statesaver11/CustomControl.qml
+ tests/unit/statesaver11/DisabledStateSaver.qml
+ tests/unit/statesaver11/Dynamic.qml
+ tests/unit/statesaver11/FirstComponent.qml
+ tests/unit/statesaver11/GridViewItems.qml
+ tests/unit/statesaver11/InvalidGroupProperty.qml
+ tests/unit/statesaver11/InvalidUID.qml
+ tests/unit/statesaver11/ListViewItems.qml
+ tests/unit/statesaver11/NestedDynamics.qml
+ tests/unit/statesaver11/NormalAppClose.qml
+ tests/unit/statesaver11/RepeaterStates.qml
+ tests/unit/statesaver11/SameIdsInDifferentComponents.qml
+ tests/unit/statesaver11/SaveArrays.qml
+ tests/unit/statesaver11/SaveEnum.qml
+ tests/unit/statesaver11/SaveObject.qml
+ tests/unit/statesaver11/SavePropertyGroups.qml
+ tests/unit/statesaver11/SaveSupportedTypes.qml
+ tests/unit/statesaver11/SecondComponent.qml
+ tests/unit/statesaver11/SimpleApp.qml
+ tests/unit/statesaver11/TwoDynamics.qml
+ tests/unit/statesaver11/ValidGroupProperty.qml
+ tests/unit/statesaver11/ValidUID.qml
  tests/unit/subtheming/ChangeDefaultPaletteInChildren.qml
  tests/unit/subtheming/ChangePaletteValueWhenParentChanges.qml
  tests/unit/subtheming/CustomModule/TestTheme/TestStyle.qml
@@ -1418,8 +1694,7 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/subtheming/StyleKept.qml
  tests/unit/subtheming/StyleOverride.qml
  tests/unit/subtheming/StyledItemAppThemeVersioned.qml
- tests/unit/subtheming/StyledItemV12.qml
- tests/unit/subtheming/StyledItemV13.qml
+ tests/unit/subtheming/StyledItemThemed.qml
  tests/unit/subtheming/TestMain.qml
  tests/unit/subtheming/TestStyleChange.qml
  tests/unit/subtheming/themes/BuggyTheme/Palette.qml
@@ -1431,6 +1706,48 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/subtheming/themes/TestModule/TestTheme/1.2/TestStyle.qml
  tests/unit/subtheming/themes/TestModule/TestTheme/1.3/TestStyle.qml
  tests/unit/subtheming/tst_subtheming.cpp
+ tests/unit/subtheming13/ChangeDefaultPaletteInChildren.qml
+ tests/unit/subtheming13/ChangePaletteValueWhenParentChanges.qml
+ tests/unit/subtheming13/CustomModule/TestTheme/TestStyle.qml
+ tests/unit/subtheming13/DefaultTheme.qml
+ tests/unit/subtheming13/DeprecatedTheme.qml
+ tests/unit/subtheming13/DifferentThemes.qml
+ tests/unit/subtheming13/DynamicAssignment.qml
+ tests/unit/subtheming13/DynamicPalette.qml
+ tests/unit/subtheming13/GroupPropertyBindingHints.qml
+ tests/unit/subtheming13/GroupPropertyValueHints.qml
+ tests/unit/subtheming13/HintedButton.qml
+ tests/unit/subtheming13/InvalidPalette.qml
+ tests/unit/subtheming13/MoreStyleHints.qml
+ tests/unit/subtheming13/MultiplePaletteInstances.qml
+ tests/unit/subtheming13/OtherVersion.qml
+ tests/unit/subtheming13/OverrideStyleHints.qml
+ tests/unit/subtheming13/ParentChanges.qml
+ tests/unit/subtheming13/PropertyBindingHints.qml
+ tests/unit/subtheming13/ReparentStyledItemFollowsNewPathOnly.qml
+ tests/unit/subtheming13/SameNamedPaletteSettings.qml
+ tests/unit/subtheming13/SimpleItem.qml
+ tests/unit/subtheming13/SimplePropertyHints.qml
+ tests/unit/subtheming13/StyleHintsElsewhere.qml
+ tests/unit/subtheming13/StyleHintsInvalidGroupedProperty.qml
+ tests/unit/subtheming13/StyleHintsInvalidProperty.qml
+ tests/unit/subtheming13/StyleHintsWithObject.qml
+ tests/unit/subtheming13/StyleHintsWithSignal.qml
+ tests/unit/subtheming13/StyleKept.qml
+ tests/unit/subtheming13/StyleOverride.qml
+ tests/unit/subtheming13/StyledItemAppThemeVersioned.qml
+ tests/unit/subtheming13/StyledItemV12.qml
+ tests/unit/subtheming13/StyledItemV13.qml
+ tests/unit/subtheming13/TestMain.qml
+ tests/unit/subtheming13/TestStyleChange.qml
+ tests/unit/subtheming13/themes/BuggyTheme/Palette.qml
+ tests/unit/subtheming13/themes/CustomTheme/1.3/TestStyle.qml
+ tests/unit/subtheming13/themes/CustomTheme/Palette.qml
+ tests/unit/subtheming13/themes/CustomTheme/TestStyle.qml
+ tests/unit/subtheming13/themes/DerivedTheme/1.2/TestStyle.qml
+ tests/unit/subtheming13/themes/DerivedTheme/1.3/Palette.qml
+ tests/unit/subtheming13/themes/TestModule/TestTheme/1.2/TestStyle.qml
+ tests/unit/subtheming13/themes/TestModule/TestTheme/1.3/TestStyle.qml
  tests/unit/swipearea/DownwardsLauncher.qml
  tests/unit/swipearea/GestureTest.cpp
  tests/unit/swipearea/GestureTest.h
@@ -1439,135 +1756,232 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/swipearea/UpwardsLauncher.qml
  tests/unit/swipearea/tst_swipearea.cpp
  tests/unit/swipearea/tst_swipearea.qml
+ tests/unit/swipearea13/DownwardsLauncher.qml
+ tests/unit/swipearea13/LeftwardsLauncher.qml
+ tests/unit/swipearea13/RightwardsLauncher.qml
+ tests/unit/swipearea13/UpwardsLauncher.qml
+ tests/unit/swipearea13/tst_swipearea.qml
  tests/unit/template/tst_template.cpp
  tests/unit/test/tst_lomiritestcase.qml
  tests/unit/test/tst_test.cpp
+ tests/unit/test10/tst_lomiritestcase.qml
  tests/unit/testparser/main.cpp
  tests/unit/theme/tst_popoverforegroundstyle.qml
  tests/unit/theme/tst_theme.cpp
+ tests/unit/theme11/tst_popoverforegroundstyle.qml
  tests/unit/tree/tst_tree.cpp
  tests/unit/units/dpr1/tst_units.cpp
  tests/unit/units/dpr2/tst_units_dpr2.cpp
  tests/unit/units/dpr3/tst_units_dpr3.cpp
  tests/unit/units/scale/tst_units_scale.cpp
  tests/unit/visual/AppTheme/Palette.qml
- tests/unit/visual/FIXME-QT56_datepicker.bug1567840.SEGFAULT.12.qml
- tests/unit/visual/FIXME-QT56_datepicker.bug1567840.SEGFAULT.13.qml
- tests/unit/visual/ListItemTestCase12.qml
- tests/unit/visual/ListItemTestCase13.qml
- tests/unit/visual/ListItemWithLabel13.qml
- tests/unit/visual/MockKeyboard12.qml
- tests/unit/visual/MockKeyboard13.qml
+ tests/unit/visual/ListItemTestCase.qml
+ tests/unit/visual/ListItemWithLabel.qml
+ tests/unit/visual/MockKeyboard.qml
  tests/unit/visual/MyExternalPage.DEPRECATED_APPHEADER.qml
  tests/unit/visual/MyExternalPageWithNewHeader.qml
- tests/unit/visual/ScrollbarTestCase13.qml
- tests/unit/visual/gallery.qml
- tests/unit/visual/naming.sh
+ tests/unit/visual/ScrollbarTestCase.qml
  tests/unit/visual/tabsmodel.cpp
  tests/unit/visual/tabsmodel.h
- tests/unit/visual/tst_abstractbutton.13.qml
- tests/unit/visual/tst_actionbar.13.qml
- tests/unit/visual/tst_actionitem.11.qml
- tests/unit/visual/tst_actionlist.13.qml
- tests/unit/visual/tst_adaptivepagelayout.13.qml
- tests/unit/visual/tst_adaptivepagelayout_configuration.13.qml
- tests/unit/visual/tst_adaptivepagelayout_param.13.qml
- tests/unit/visual/tst_alarms.11.qml
- tests/unit/visual/tst_app_theming.13.qml
- tests/unit/visual/tst_bottomedgehint.13.qml
- tests/unit/visual/tst_captions.12.qml
- tests/unit/visual/tst_combobutton.11.qml
- tests/unit/visual/tst_combobutton.13.qml
- tests/unit/visual/tst_contextual_actions.13.qml
- tests/unit/visual/tst_deprecatedtoolbar.11.qml
- tests/unit/visual/tst_dialer.11.qml
- tests/unit/visual/tst_expandables.11.qml
- tests/unit/visual/tst_expandablescolumn.11.qml
- tests/unit/visual/tst_focus.13.qml
- tests/unit/visual/tst_header.13.qml
- tests/unit/visual/tst_hide_chrome.11.qml
- tests/unit/visual/tst_icon.11.qml
- tests/unit/visual/tst_icon.13.qml
- tests/unit/visual/tst_imageprovider.11.qml
- tests/unit/visual/tst_label_extras.13.qml
- tests/unit/visual/tst_listitem.12.qml
- tests/unit/visual/tst_listitem.13.qml
- tests/unit/visual/tst_listitem_actions_breaks_selectmode.12.qml
- tests/unit/visual/tst_listitem_expansion.13.qml
- tests/unit/visual/tst_listitem_extras.13.qml
- tests/unit/visual/tst_listitem_focus.13.qml
- tests/unit/visual/tst_listitem_focus_bug.13.qml
- tests/unit/visual/tst_listitem_horizontal_navigation.13.qml
- tests/unit/visual/tst_listitem_selectmode.12.qml
- tests/unit/visual/tst_listitem_selectmode.13.qml
- tests/unit/visual/tst_listitems_itemselector.11.qml
- tests/unit/visual/tst_listitems_standard.11.qml
- tests/unit/visual/tst_listitems_standard.13.qml
- tests/unit/visual/tst_lomirilistview.10.qml
- tests/unit/visual/tst_lomirilistview.11.qml
- tests/unit/visual/tst_lomirilistview.13.qml
- tests/unit/visual/tst_multicolumnheader.13.qml
- tests/unit/visual/tst_optionselector.11.qml
- tests/unit/visual/tst_optionselector.13.qml
- tests/unit/visual/tst_page.11.qml
- tests/unit/visual/tst_page.13.qml
- tests/unit/visual/tst_page_size.12.qml
- tests/unit/visual/tst_page_with_header.13.qml
- tests/unit/visual/tst_pagehead_back_action.13.qml
- tests/unit/visual/tst_pagehead_contents_width.13.qml
- tests/unit/visual/tst_pagehead_hidden.13.qml
- tests/unit/visual/tst_pagehead_presets.11.qml
- tests/unit/visual/tst_pagehead_sections.13.qml
- tests/unit/visual/tst_pagehead_sections_bug1511839.13.qml
- tests/unit/visual/tst_pagehead_visible.13.qml
- tests/unit/visual/tst_pagehead_with_listview_header.11.qml
- tests/unit/visual/tst_pageheader.13.qml
- tests/unit/visual/tst_pagestack.13.qml
- tests/unit/visual/tst_pagestack.DEPRECATED_APPHEADER_TABS.13.qml
- tests/unit/visual/tst_panel.11.qml
- tests/unit/visual/tst_picker.11.qml
- tests/unit/visual/tst_picker.13.qml
- tests/unit/visual/tst_popover.12.qml
- tests/unit/visual/tst_popover.13.qml
- tests/unit/visual/tst_popups_dialog.13.qml
- tests/unit/visual/tst_popups_pagestack.13.qml
- tests/unit/visual/tst_pulltorefresh_listview.11.qml
- tests/unit/visual/tst_pulltorefresh_pagestack_topmargin.13.qml
- tests/unit/visual/tst_pulltorefresh_topmargin.13.qml
- tests/unit/visual/tst_quickutils.13.qml
- tests/unit/visual/tst_scrollbar.13.qml
- tests/unit/visual/tst_scrollbar_header.13.qml
- tests/unit/visual/tst_scrollview.13.qml
- tests/unit/visual/tst_sections.13.qml
- tests/unit/visual/tst_shortcuts.13.qml
- tests/unit/visual/tst_slider.11.qml
- tests/unit/visual/tst_slider.13.qml
- tests/unit/visual/tst_slotslayout.13.qml
- tests/unit/visual/tst_splitview.13.qml
- tests/unit/visual/tst_splitview_page.13.qml
- tests/unit/visual/tst_splitview_repeater.13.qml
- tests/unit/visual/tst_stress_alarmmodel.12.qml
- tests/unit/visual/tst_styleditem.11.qml
- tests/unit/visual/tst_switch_bug1510919.13.qml
- tests/unit/visual/tst_tabbar.11.qml
- tests/unit/visual/tst_tabs.11.qml
- tests/unit/visual/tst_tabs.13.qml
- tests/unit/visual/tst_tabs.DEPRECATED_TOOLBAR.11.qml
- tests/unit/visual/tst_tabs_empty.11.qml
- tests/unit/visual/tst_tabs_empty.DEPRECATED_TOOLBAR.11.qml
- tests/unit/visual/tst_tabs_with_repeater.11.qml
- tests/unit/visual/tst_tabs_with_repeater.DEPRECATED_TOOLBAR.11.qml
- tests/unit/visual/tst_textarea.11.qml
- tests/unit/visual/tst_textarea_in_flickable.11.qml
- tests/unit/visual/tst_textfield.11.qml
- tests/unit/visual/tst_textinput_common.12.qml
- tests/unit/visual/tst_textinput_common.13.qml
- tests/unit/visual/tst_textinput_touch.SEGFAULT.11.qml
- tests/unit/visual/tst_theming.13.qml
- tests/unit/visual/tst_toggles.13.qml
- tests/unit/visual/tst_toolbaritems.11.qml
+ tests/unit/visual/tst_abstractbutton.qml
+ tests/unit/visual/tst_actionbar.qml
+ tests/unit/visual/tst_actionitem.qml
+ tests/unit/visual/tst_actionlist.qml
+ tests/unit/visual/tst_adaptivepagelayout.qml
+ tests/unit/visual/tst_adaptivepagelayout_configuration.qml
+ tests/unit/visual/tst_adaptivepagelayout_param.qml
+ tests/unit/visual/tst_alarms.qml
+ tests/unit/visual/tst_app_theming.qml
+ tests/unit/visual/tst_bottomedgehint.qml
+ tests/unit/visual/tst_captions.qml
+ tests/unit/visual/tst_combobutton.qml
+ tests/unit/visual/tst_contextual_actions.qml
+ tests/unit/visual/tst_datepicker_bug1567840_SEGFAULT.qml
+ tests/unit/visual/tst_dialer.qml
+ tests/unit/visual/tst_expandables.qml
+ tests/unit/visual/tst_expandablescolumn.qml
+ tests/unit/visual/tst_focus.qml
+ tests/unit/visual/tst_header.qml
+ tests/unit/visual/tst_icon.qml
+ tests/unit/visual/tst_imageprovider.qml
+ tests/unit/visual/tst_label_extras.qml
+ tests/unit/visual/tst_listitem.qml
+ tests/unit/visual/tst_listitem_actions_breaks_selectmode.qml
+ tests/unit/visual/tst_listitem_expansion.qml
+ tests/unit/visual/tst_listitem_extras.qml
+ tests/unit/visual/tst_listitem_focus.qml
+ tests/unit/visual/tst_listitem_focus_bug.qml
+ tests/unit/visual/tst_listitem_horizontal_navigation.qml
+ tests/unit/visual/tst_listitem_selectmode.qml
+ tests/unit/visual/tst_listitems_itemselector.qml
+ tests/unit/visual/tst_listitems_standard.qml
+ tests/unit/visual/tst_lomirilistview.qml
+ tests/unit/visual/tst_multicolumnheader.qml
+ tests/unit/visual/tst_optionselector.qml
+ tests/unit/visual/tst_page.qml
+ tests/unit/visual/tst_page_size.qml
+ tests/unit/visual/tst_page_with_header.qml
+ tests/unit/visual/tst_pagehead_back_action.qml
+ tests/unit/visual/tst_pagehead_contents_width.qml
+ tests/unit/visual/tst_pagehead_hidden.qml
+ tests/unit/visual/tst_pagehead_presets.qml
+ tests/unit/visual/tst_pagehead_sections.qml
+ tests/unit/visual/tst_pagehead_sections_bug1511839.qml
+ tests/unit/visual/tst_pagehead_visible.qml
+ tests/unit/visual/tst_pagehead_with_listview_header.qml
+ tests/unit/visual/tst_pageheader.qml
+ tests/unit/visual/tst_pagestack.qml
+ tests/unit/visual/tst_pagestack_DEPRECATED_APPHEADER_TABS.qml
+ tests/unit/visual/tst_panel.qml
+ tests/unit/visual/tst_picker.qml
+ tests/unit/visual/tst_popover.qml
+ tests/unit/visual/tst_popups_dialog.qml
+ tests/unit/visual/tst_popups_pagestack.qml
+ tests/unit/visual/tst_pulltorefresh_listview.qml
+ tests/unit/visual/tst_pulltorefresh_pagestack_topmargin.qml
+ tests/unit/visual/tst_pulltorefresh_topmargin.qml
+ tests/unit/visual/tst_quickutils.qml
+ tests/unit/visual/tst_scrollbar.qml
+ tests/unit/visual/tst_scrollbar_header.qml
+ tests/unit/visual/tst_scrollview.qml
+ tests/unit/visual/tst_sections.qml
+ tests/unit/visual/tst_shortcuts.qml
+ tests/unit/visual/tst_slider.qml
+ tests/unit/visual/tst_slotslayout.qml
+ tests/unit/visual/tst_splitview.qml
+ tests/unit/visual/tst_splitview_page.qml
+ tests/unit/visual/tst_splitview_repeater.qml
+ tests/unit/visual/tst_stress_alarmmodel.qml
+ tests/unit/visual/tst_styleditem.qml
+ tests/unit/visual/tst_switch_bug1510919.qml
+ tests/unit/visual/tst_tabbar.qml
+ tests/unit/visual/tst_tabs.qml
+ tests/unit/visual/tst_tabs_empty.qml
+ tests/unit/visual/tst_tabs_with_repeater.qml
+ tests/unit/visual/tst_textarea.qml
+ tests/unit/visual/tst_textarea_in_flickable.qml
+ tests/unit/visual/tst_textfield.qml
+ tests/unit/visual/tst_textinput_common.qml
+ tests/unit/visual/tst_textinput_touch_SEGFAULT.qml
+ tests/unit/visual/tst_theming.qml
+ tests/unit/visual/tst_toggles.qml
  tests/unit/visual/tst_visual.cpp
- tests/unit/visual/tst_window_context_property_init_bug1621509.13.qml
+ tests/unit/visual/tst_window_context_property_init_bug1621509.qml
+ tests/unit/visual13/AppTheme/Palette.qml
+ tests/unit/visual13/FIXME-QT56_datepicker.bug1567840.SEGFAULT.12.qml
+ tests/unit/visual13/FIXME-QT56_datepicker.bug1567840.SEGFAULT.13.qml
+ tests/unit/visual13/ListItemTestCase12.qml
+ tests/unit/visual13/ListItemTestCase13.qml
+ tests/unit/visual13/ListItemWithLabel13.qml
+ tests/unit/visual13/MockKeyboard12.qml
+ tests/unit/visual13/MockKeyboard13.qml
+ tests/unit/visual13/MyExternalPage.DEPRECATED_APPHEADER.qml
+ tests/unit/visual13/MyExternalPageWithNewHeader.qml
+ tests/unit/visual13/ScrollbarTestCase13.qml
+ tests/unit/visual13/gallery.qml
+ tests/unit/visual13/naming.sh
+ tests/unit/visual13/tst_abstractbutton.13.qml
+ tests/unit/visual13/tst_actionbar.13.qml
+ tests/unit/visual13/tst_actionitem.11.qml
+ tests/unit/visual13/tst_actionlist.13.qml
+ tests/unit/visual13/tst_adaptivepagelayout.13.qml
+ tests/unit/visual13/tst_adaptivepagelayout_configuration.13.qml
+ tests/unit/visual13/tst_adaptivepagelayout_param.13.qml
+ tests/unit/visual13/tst_alarms.11.qml
+ tests/unit/visual13/tst_app_theming.13.qml
+ tests/unit/visual13/tst_bottomedgehint.13.qml
+ tests/unit/visual13/tst_captions.12.qml
+ tests/unit/visual13/tst_combobutton.11.qml
+ tests/unit/visual13/tst_combobutton.13.qml
+ tests/unit/visual13/tst_contextual_actions.13.qml
+ tests/unit/visual13/tst_deprecatedtoolbar.11.qml
+ tests/unit/visual13/tst_dialer.11.qml
+ tests/unit/visual13/tst_expandables.11.qml
+ tests/unit/visual13/tst_expandablescolumn.11.qml
+ tests/unit/visual13/tst_focus.13.qml
+ tests/unit/visual13/tst_header.13.qml
+ tests/unit/visual13/tst_hide_chrome.11.qml
+ tests/unit/visual13/tst_icon.11.qml
+ tests/unit/visual13/tst_icon.13.qml
+ tests/unit/visual13/tst_imageprovider.11.qml
+ tests/unit/visual13/tst_label_extras.13.qml
+ tests/unit/visual13/tst_listitem.12.qml
+ tests/unit/visual13/tst_listitem.13.qml
+ tests/unit/visual13/tst_listitem_actions_breaks_selectmode.12.qml
+ tests/unit/visual13/tst_listitem_expansion.13.qml
+ tests/unit/visual13/tst_listitem_extras.13.qml
+ tests/unit/visual13/tst_listitem_focus.13.qml
+ tests/unit/visual13/tst_listitem_focus_bug.13.qml
+ tests/unit/visual13/tst_listitem_horizontal_navigation.13.qml
+ tests/unit/visual13/tst_listitem_selectmode.12.qml
+ tests/unit/visual13/tst_listitem_selectmode.13.qml
+ tests/unit/visual13/tst_listitems_itemselector.11.qml
+ tests/unit/visual13/tst_listitems_standard.11.qml
+ tests/unit/visual13/tst_listitems_standard.13.qml
+ tests/unit/visual13/tst_lomirilistview.10.qml
+ tests/unit/visual13/tst_lomirilistview.11.qml
+ tests/unit/visual13/tst_lomirilistview.13.qml
+ tests/unit/visual13/tst_multicolumnheader.13.qml
+ tests/unit/visual13/tst_optionselector.11.qml
+ tests/unit/visual13/tst_optionselector.13.qml
+ tests/unit/visual13/tst_page.11.qml
+ tests/unit/visual13/tst_page.13.qml
+ tests/unit/visual13/tst_page_size.12.qml
+ tests/unit/visual13/tst_page_with_header.13.qml
+ tests/unit/visual13/tst_pagehead_back_action.13.qml
+ tests/unit/visual13/tst_pagehead_contents_width.13.qml
+ tests/unit/visual13/tst_pagehead_hidden.13.qml
+ tests/unit/visual13/tst_pagehead_presets.11.qml
+ tests/unit/visual13/tst_pagehead_sections.13.qml
+ tests/unit/visual13/tst_pagehead_sections_bug1511839.13.qml
+ tests/unit/visual13/tst_pagehead_visible.13.qml
+ tests/unit/visual13/tst_pagehead_with_listview_header.11.qml
+ tests/unit/visual13/tst_pageheader.13.qml
+ tests/unit/visual13/tst_pagestack.13.qml
+ tests/unit/visual13/tst_pagestack.DEPRECATED_APPHEADER_TABS.13.qml
+ tests/unit/visual13/tst_panel.11.qml
+ tests/unit/visual13/tst_picker.11.qml
+ tests/unit/visual13/tst_picker.13.qml
+ tests/unit/visual13/tst_popover.12.qml
+ tests/unit/visual13/tst_popover.13.qml
+ tests/unit/visual13/tst_popups_dialog.13.qml
+ tests/unit/visual13/tst_popups_pagestack.13.qml
+ tests/unit/visual13/tst_pulltorefresh_listview.11.qml
+ tests/unit/visual13/tst_pulltorefresh_pagestack_topmargin.13.qml
+ tests/unit/visual13/tst_pulltorefresh_topmargin.13.qml
+ tests/unit/visual13/tst_quickutils.13.qml
+ tests/unit/visual13/tst_scrollbar.13.qml
+ tests/unit/visual13/tst_scrollbar_header.13.qml
+ tests/unit/visual13/tst_scrollview.13.qml
+ tests/unit/visual13/tst_sections.13.qml
+ tests/unit/visual13/tst_shortcuts.13.qml
+ tests/unit/visual13/tst_slider.11.qml
+ tests/unit/visual13/tst_slider.13.qml
+ tests/unit/visual13/tst_slotslayout.13.qml
+ tests/unit/visual13/tst_splitview.13.qml
+ tests/unit/visual13/tst_splitview_page.13.qml
+ tests/unit/visual13/tst_splitview_repeater.13.qml
+ tests/unit/visual13/tst_stress_alarmmodel.12.qml
+ tests/unit/visual13/tst_styleditem.11.qml
+ tests/unit/visual13/tst_switch_bug1510919.13.qml
+ tests/unit/visual13/tst_tabbar.11.qml
+ tests/unit/visual13/tst_tabs.11.qml
+ tests/unit/visual13/tst_tabs.13.qml
+ tests/unit/visual13/tst_tabs.DEPRECATED_TOOLBAR.11.qml
+ tests/unit/visual13/tst_tabs_empty.11.qml
+ tests/unit/visual13/tst_tabs_empty.DEPRECATED_TOOLBAR.11.qml
+ tests/unit/visual13/tst_tabs_with_repeater.11.qml
+ tests/unit/visual13/tst_tabs_with_repeater.DEPRECATED_TOOLBAR.11.qml
+ tests/unit/visual13/tst_textarea.11.qml
+ tests/unit/visual13/tst_textarea_in_flickable.11.qml
+ tests/unit/visual13/tst_textfield.11.qml
+ tests/unit/visual13/tst_textinput_common.12.qml
+ tests/unit/visual13/tst_textinput_common.13.qml
+ tests/unit/visual13/tst_textinput_touch.SEGFAULT.11.qml
+ tests/unit/visual13/tst_theming.13.qml
+ tests/unit/visual13/tst_toggles.13.qml
+ tests/unit/visual13/tst_toolbaritems.11.qml
+ tests/unit/visual13/tst_window_context_property_init_bug1621509.13.qml
  tests/unit_x11/tst_deprecated_theme_engine/TestApp.qml
  tests/xvfb.sh
 Copyright: 2012, 2014, Canonical Ltd.
@@ -1604,7 +2018,6 @@ Files: .gitignore
  cmake/LomiriHeaders.cmake
  components.api
  components_qt6.api
- documentation/autopilot-helpers/conf.py
  documentation/autopilot-helpers/images/favicon.ico
  documentation/autopilot-helpers/index.rst
  documentation/autopilot-helpers/lomiriuitoolkit.rst
@@ -1720,8 +2133,8 @@ Files: .gitignore
  lomiri-ui-toolkit-launcher/CMakeLists.txt
  lomiri-ui-toolkit-launcher/lomiri-ui-toolkit-launcher.pro
  manual-tests/README.txt
- manual-tests/testcaseexecutor/testcaseexecutiondialog.ui
  manual-tests/TEST_TEMPLATE.txt
+ manual-tests/testcaseexecutor/testcaseexecutiondialog.ui
  manual-tests/tst_button_iconPosition.txt
  manual-tests/tst_button_lmb-on-enabled-disabled.txt
  manual-tests/tst_button_lmb-press-out-in-release.txt
@@ -1731,11 +2144,11 @@ Files: .gitignore
  snapcraft.yaml
  src/CMakeLists.txt
  src/LomiriGestures/CMakeLists.txt
- src/LomiriGestures/LomiriGestures.pro
  src/LomiriGestures/LomiriGestures-Qt6Config.cmake.in
+ src/LomiriGestures/LomiriGestures.pro
  src/LomiriMetrics/CMakeLists.txt
- src/LomiriMetrics/LomiriMetrics.pro
  src/LomiriMetrics/LomiriMetrics-Qt6Config.cmake.in
+ src/LomiriMetrics/LomiriMetrics.pro
  src/LomiriMetrics/lttng/CMakeLists.txt
  src/LomiriMetrics/lttng/lttng.pro
  src/LomiriMetrics/tools/bitmaptextbuilder/CMakeLists.txt
@@ -1743,8 +2156,8 @@ Files: .gitignore
  src/LomiriSystemInfo/CMakeLists.txt
  src/LomiriSystemInfo/LomiriSystemInfo-Qt6Config.cmake.in
  src/LomiriToolkit/CMakeLists.txt
- src/LomiriToolkit/LomiriToolkit.pro
  src/LomiriToolkit/LomiriToolkit-Qt6Config.cmake.in
+ src/LomiriToolkit/LomiriToolkit.pro
  src/LomiriToolkit/resources.qrc
  src/LomiriToolkit/tools/CMakeLists.txt
  src/LomiriToolkit/tools/privates/CMakeLists.txt
@@ -1769,15 +2182,13 @@ Files: .gitignore
  src/imports/Components/Pickers/CMakeLists.txt
  src/imports/Components/Pickers/Pickers.pro
  src/imports/Components/Pickers/qmldir-qt5
- src/imports/Components/plugin/plugin.pri
+ src/imports/Components/Popups/CMakeLists.txt
  src/imports/Components/Popups/Popups.pro
  src/imports/Components/Popups/qmldir-qt5
- src/imports/Components/Popups/CMakeLists.txt
- src/imports/Components/Styles/plugin/plugin.pri
- src/imports/Components/Styles/qmldir
  src/imports/Components/Styles/CMakeLists.txt
  src/imports/Components/Styles/Styles.pro
- src/imports/Components/Themes/qmldir
+ src/imports/Components/Styles/plugin/plugin.pri
+ src/imports/Components/Styles/qmldir
  src/imports/Components/Themes/Ambiance/Ambiance.pro
  src/imports/Components/Themes/Ambiance/CMakeLists.txt
  src/imports/Components/Themes/Ambiance/qmldir-qt5
@@ -1786,16 +2197,18 @@ Files: .gitignore
  src/imports/Components/Themes/Ambiance/shaders/partialcolorize.frag
  src/imports/Components/Themes/CMakeLists.txt
  src/imports/Components/Themes/SuruDark/CMakeLists.txt
+ src/imports/Components/Themes/SuruDark/SuruDark.pro
  src/imports/Components/Themes/SuruDark/parent_theme
  src/imports/Components/Themes/SuruDark/qmldir
- src/imports/Components/Themes/SuruDark/SuruDark.pro
+ src/imports/Components/Themes/SuruGradient/CMakeLists.txt
+ src/imports/Components/Themes/SuruGradient/SuruGradient.pro
  src/imports/Components/Themes/SuruGradient/deprecated
  src/imports/Components/Themes/SuruGradient/parent_theme
  src/imports/Components/Themes/SuruGradient/qmldir
- src/imports/Components/Themes/SuruGradient/CMakeLists.txt
- src/imports/Components/Themes/SuruGradient/SuruGradient.pro
- src/imports/Components/Themes/ThemesModule.pro
  src/imports/Components/Themes/Themes.pro
+ src/imports/Components/Themes/ThemesModule.pro
+ src/imports/Components/Themes/qmldir
+ src/imports/Components/plugin/plugin.pri
  src/imports/Components/qmldir-qt5
  src/imports/Layouts/CMakeLists.txt
  src/imports/Layouts/Layouts.pro
@@ -1814,9 +2227,9 @@ Files: .gitignore
  src/imports/SystemInfo/qmldir
  src/imports/SystemInfo/systeminfo.json
  src/imports/Test/CMakeLists.txt
+ src/imports/Test/Test.pro
  src/imports/Test/plugin/plugin.pri
  src/imports/Test/qmldir-qt5
- src/imports/Test/Test.pro
  src/imports-compat/Components/ComponentModule.pro
  src/imports-compat/Components/Components.pro
  src/imports-compat/Components/Labs/Labs.pro
@@ -1852,6 +2265,8 @@ Files: .gitignore
  src/imports-compat/Metrics/qmldir
  src/imports-compat/PerformanceMetrics/qmldir
  src/imports-compat/PerformanceMetrics/PerformanceMetrics.pro
+ src/imports-compat/Test/Test.pro
+ src/imports-compat/Test/qmldir
  src/src.pro
  sync.profile
  tests/api/api.pro
@@ -1864,43 +2279,28 @@ Files: .gitignore
  tests/api/Extinct/Animals/qmldir
  tests/api/Extinct/Extinct.pro
  tests/autopilot/autopilot.pro
- tests/autopilot/lomiri-ui-toolkit/tests/activityindicator/ActivityIndicatorTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/activityindicator/__init__.py
  tests/autopilot/lomiri-ui-toolkit/tests/activityindicator/test_activityindicator.py
- tests/autopilot/lomiri-ui-toolkit/tests/button/ButtonColorTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/button/ButtonIconTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/button/call_icon.png
- tests/autopilot/lomiri-ui-toolkit/tests/button/DisabledButtonTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/button/EnabledButtonTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/button/__init__.py
  tests/autopilot/lomiri-ui-toolkit/tests/button/test_button.py
- tests/autopilot/lomiri-ui-toolkit/tests/checkbox/DisabledCheckBoxTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/checkbox/EnabledCheckBoxTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/checkbox/__init__.py
  tests/autopilot/lomiri-ui-toolkit/tests/checkbox/test_checkbox.py
  tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/__init__.py
  tests/autopilot/lomiri-ui-toolkit/tests/listitems/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/listitems/ListItemsTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/listitems/test_listitems.py
  tests/autopilot/lomiri-ui-toolkit/tests/pagestack/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/pagestack/PageStackTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/pagestack/test_pagestack.py
  tests/autopilot/lomiri-ui-toolkit/tests/progressbar/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/progressbar/ProgressBarTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/progressbar/test_progressbar.py
  tests/autopilot/lomiri-ui-toolkit/tests/slider/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/slider/SliderTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/slider/test_slider.py
- tests/autopilot/lomiri-ui-toolkit/tests/switch/DisabledSwitchTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/switch/EnabledSwitchTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/switch/__init__.py
  tests/autopilot/lomiri-ui-toolkit/tests/switch/test_switch.py
  tests/autopilot/lomiri-ui-toolkit/tests/tabs/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/tabs/TabsTests.qml
  tests/autopilot/lomiri-ui-toolkit/tests/tabs/test_tabs.py
  tests/autopilot/lomiri-ui-toolkit/tests/textfield/__init__.py
  tests/autopilot/lomiri-ui-toolkit/tests/textfield/test_textfield.py
- tests/autopilot/lomiri-ui-toolkit/tests/textfield/TextFieldTests.qml
  tests/Gallery/gallery
  tests/Gallery/gallery-logging.config
  tests/resources/lomirishape/img1.png
@@ -1916,26 +2316,35 @@ Files: .gitignore
  tests/unit/add_qmlmakecheck.pri
  tests/unit/add_qmlmakecheck_x11.pri
  tests/unit/alarms/alarms.pro
- tests/unit/animator/animator.pro
+ tests/unit/animator13/animator13.pro
  tests/unit/argument/argument.pro
  tests/unit/arguments/arguments.pro
- tests/unit/asyncloader/asyncloader.pro
- tests/unit/bottomedge/bottomedge.pro
+ tests/unit/asyncloader13/asyncloader13.pro
+ tests/unit/bottomedge13/bottomedge13.pro
+ tests/unit/components13/components13.pro
+ tests/unit/components13/demo_image.jpg
+ tests/unit/components13/map_icon.png
+ tests/unit/components13/tst_CrossFadeImage.qml
  tests/unit/components_benchmark/components_benchmark.pro
- tests/unit/components/components.pro
+ tests/unit/components/demo_image.jpg
  tests/unit/components/map_icon.png
  tests/unit/custom_qpa/custom.json
  tests/unit/custom_qpa/custom_qpa.pro
  tests/unit/custom_qpa/README
- tests/unit/deprecated_theme_engine/deprecated_theme_engine.pro
+ tests/unit/deprecated_theme_engine13/deprecated_theme_engine13.pro
+ tests/unit/deprecated_theme_engine13/themes/CustomTheme/parent_theme
+ tests/unit/deprecated_theme_engine13/themes/TestModule/TestTheme/qmldir
  tests/unit/deprecated_theme_engine/themes/CustomTheme/parent_theme
  tests/unit/deprecated_theme_engine/themes/TestModule/TestTheme/qmldir
- tests/unit/i18n/i18n.pro
+ tests/unit/i18n13/i18n13.pro
+ tests/unit/i18n13/LocalizedApp/localizedApp/.click/status
+ tests/unit/i18n13/LocalizedApp/LocalizedApp.pro
+ tests/unit/i18n13/LocalizedApp/po/en_US.po
+ tests/unit/i18n13/RelativeTime/po/en_US.po
+ tests/unit/i18n13/RelativeTime/RelativeTime.pro
  tests/unit/i18n/LocalizedApp/localizedApp/.click/status
- tests/unit/i18n/LocalizedApp/LocalizedApp.pro
  tests/unit/i18n/LocalizedApp/po/en_US.po
  tests/unit/i18n/RelativeTime/po/en_US.po
- tests/unit/i18n/RelativeTime/RelativeTime.pro
  tests/unit/iconprovider/iconprovider.pro
  tests/unit/iconprovider/icons/hicolor/apps/512/myapp2.png
  tests/unit/iconprovider/icons/hicolor/apps/512/myapp.png
@@ -1946,50 +2355,53 @@ Files: .gitignore
  tests/unit/iconprovider/icons/mockTheme/actions/scalable/battery-100-charging.svg
  tests/unit/iconprovider/icons/mockTheme/apps/512/gallery-app.png
  tests/unit/iconprovider/icons/mockTheme/index.theme
- tests/unit/inversemousearea/inversemousearea.pro
+ tests/unit/inversemousearea13/inversemousearea13.pro
  tests/unit/layout_dependency.pri
- tests/unit/layouts/layouts.pro
- tests/unit/lomiri_shape/lomiri_shape.pro
+ tests/unit/layouts13/layouts13.pro
+ tests/unit/lomiri_shape11/lomiri_shape11.pro
+ tests/unit/lomiri_shape11/no_distortion_expected.png
+ tests/unit/lomiri_shape11/no_distortion_source.png
  tests/unit/lomiri_shape/no_distortion_expected.png
  tests/unit/lomiri_shape/no_distortion_source.png
  tests/unit/mainview11/mainview11.pro
  tests/unit/mainview13/mainview13.pro
- tests/unit/mainwindow/mainwindow.pro
- tests/unit/mousefilters/mousefilters.pro
- tests/unit/orientation/orientation.pro
- tests/unit/page/page.pro
- tests/unit/performance/performance.pro
+ tests/unit/mainwindow13/mainwindow13.pro
+ tests/unit/mousefilters13/mousefilters13.pro
+ tests/unit/orientation11/orientation11.pro
+ tests/unit/page11/page11.pro
+ tests/unit/performance13/performance13.pro
  tests/unit/plugin_dependency.pri
- tests/unit/qmltemplate/qmltemplate.pro
+ tests/unit/qmltemplate11/qmltemplate11.pro
  tests/unit/qmltest-include.pri
  tests/unit/qmltest-include-x11.pri
- tests/unit/qquick_image_extension/data/borderInName.sci
- tests/unit/qquick_image_extension/data/face.png
- tests/unit/qquick_image_extension/data/single_cache_file.qml
- tests/unit/qquick_image_extension/data/hundred_faces.qml
- tests/unit/qquick_image_extension/data/test@18.sci
- tests/unit/qquick_image_extension/qquick_image_extension.pro
+ tests/unit/qquick_image_extension13/data/borderInName.sci
+ tests/unit/qquick_image_extension13/data/face.png
+ tests/unit/qquick_image_extension13/data/test@18.sci
+ tests/unit/qquick_image_extension13/qquick_image_extension13.pro
  tests/unit/qtprivate_dependency.pri
  tests/unit/quickutils/quickutils.pro
- tests/unit/recreateview/recreateview.pro
- tests/unit/scaling_image_provider/input128x256.png
- tests/unit/scaling_image_provider/input.png
- tests/unit/scaling_image_provider/scaled_half.png
- tests/unit/scaling_image_provider/scaling_image_provider.pro
- tests/unit/scaling_image_provider/tst_scaling_image_provider.qrc
- tests/unit/serviceproperties/serviceproperties.pro
- tests/unit/statesaver/statesaver.pro
- tests/unit/subtheming/subtheming.pro
+ tests/unit/recreateview11/recreateview11.pro
+ tests/unit/scaling_image_provider13/input128x256.png
+ tests/unit/scaling_image_provider13/input.png
+ tests/unit/scaling_image_provider13/scaled_half.png
+ tests/unit/scaling_image_provider13/scaling_image_provider13.pro
+ tests/unit/scaling_image_provider13/tst_scaling_image_provider.qrc
+ tests/unit/serviceproperties11/serviceproperties11.pro
+ tests/unit/statesaver11/statesaver11.pro
+ tests/unit/subtheming13/subtheming13.pro
+ tests/unit/subtheming13/themes/CustomTheme/parent_theme
+ tests/unit/subtheming13/themes/DerivedTheme/parent_theme
+ tests/unit/subtheming13/themes/TestModule/TestTheme/qmldir
  tests/unit/subtheming/themes/CustomTheme/parent_theme
  tests/unit/subtheming/themes/DerivedTheme/parent_theme
  tests/unit/subtheming/themes/TestModule/TestTheme/qmldir
- tests/unit/swipearea/swipearea.pro
+ tests/unit/swipearea13/swipearea13.pro
  tests/unit/template/template.pro
+ tests/unit/test10/test10.pro
  tests/unit/test-include.pri
  tests/unit/test-include-x11.pri
  tests/unit/testparser/testparser.pro
- tests/unit/test/test.pro
- tests/unit/theme/theme.pro
+ tests/unit/theme11/theme11.pro
  tests/unit/touchregistry/touchregistry.pro
  tests/unit/tree/tree.pro
  tests/unit/unit.pro
@@ -2012,14 +2424,19 @@ Files: .gitignore
  tests/unit/units/dpr3/dpr3.pro
  tests/unit/units/scale/scale.pro
  tests/unit/units/units.pro
+ tests/unit/visual13/AppTheme/parent_theme
+ tests/unit/visual13/battery-100-charging.svg
+ tests/unit/visual13/gallery.sh
+ tests/unit/visual13/logo.png
+ tests/unit/visual13/PageHeaderBaseDividerBottom@18.png
+ tests/unit/visual13/shape.svg
+ tests/unit/visual13/tst_icon-select@18.png
+ tests/unit/visual13/visual13.pro
  tests/unit/visual/AppTheme/parent_theme
  tests/unit/visual/battery-100-charging.svg
- tests/unit/visual/gallery.sh
- tests/unit/visual/logo.png
  tests/unit/visual/PageHeaderBaseDividerBottom@18.png
  tests/unit/visual/shape.svg
  tests/unit/visual/tst_icon-select@18.png
- tests/unit/visual/visual.pro
 Copyright: 2012-2017, Canonical Ltd.
   2018-2021, UBPorts Foundation
 License: LGPL-3
@@ -2128,6 +2545,84 @@ Comment:
  Actually, or any later GPL version if approved by the KDE Free
  Qt Foundation.
 
+
+Files: src/LomiriGestures/damper.cpp
+ src/LomiriGestures/damper_p.h
+ src/LomiriGestures/ucswipearea.cpp
+ src/LomiriGestures/ucswipearea_p.h
+ src/LomiriGestures/ucswipearea_p_p.h
+ src/LomiriToolkit/livetimer.cpp
+ src/LomiriToolkit/livetimer_p.cpp
+ src/LomiriToolkit/livetimer_p.h
+ src/LomiriToolkit/livetimer_p_p.h
+ src/LomiriToolkit/mousetouchadaptor.cpp
+ src/LomiriToolkit/mousetouchadaptor_p.h
+ src/LomiriToolkit/mousetouchadaptor_p_p.h
+ src/LomiriToolkit/timeutils_p.h
+ src/imports/Components/1.0/Icon.qml
+ src/imports/Components/1.1/Icon.qml
+ src/imports/Components/1.2/CrossFadeImage10.qml
+ src/imports/Components/1.2/CrossFadeImage11.qml
+ src/imports/Components/1.3/CrossFadeImage.qml
+ src/imports/Components/2.0/CrossFadeImage.qml
+ src/imports/Components/1.3/Icon.qml
+ src/imports/Components/2.0/Icon.qml
+ src/imports/Components/Themes/Ambiance/1.3/BottomEdgeStyle.qml
+ src/imports/Components/Themes/Ambiance/2.0/BottomEdgeStyle.qml
+ tests/api/Extinct/Animals/Andrewsarchus.qml
+ tests/api/Extinct/Animals/Gigantophis.qml
+ tests/api/Extinct/Animals/Paratriisodon.qml
+ tests/api/Extinct/Animals/test.qml
+ tests/autopilot/setup.py
+ tests/unit/touchregistry/tst_TouchRegistry.cpp
+ tests/unit/components/tst_CrossFadeImage.qml
+Copyright: 2013, 2016, Canonical Ltd.
+  2012, 2013, 2015 Canonical Ltd.
+  2013, Canonical Ltd.
+  2014, Canonical Ltd.
+  2014-2015, Canonical Ltd.
+  2015, Canonical Ltd.
+  2016, Canonical Ltd.
+License: GPL-3
+
+Files: src/LomiriMetrics/bitmaptextfont_p.h
+ src/LomiriToolkit/privates/textures_p.h
+ src/LomiriToolkit/uclomirishapetextures.cpp
+ src/LomiriToolkit/uclomirishapetextures_p.h
+Copyright: 2011, Canonical Ltd.
+  2015, Canonical Ltd.
+  2016, Canonical Ltd.
+License: LGPL-3
+Comment:
+ Generated files.
+ .
+ Assuming license as found in COPYING file.
+
+Files: documentation/autopilot-helpers/_templates/layout.html
+Copyright: 2007-2011, the Sphinx team
+  2015, Canonical Ltd.
+License: BSD-3-clause
+
+Files: documentation/css/reset.css
+Copyright: 2010, Yahoo! Inc.
+License: BSD-3-clause
+
+Files: tests/unit/custom_qpa/main.cpp
+ tests/unit/custom_qpa/qcustombackingstore.cpp
+ tests/unit/custom_qpa/qcustombackingstore.h
+ tests/unit/custom_qpa/qcustomintegration.cpp
+ tests/unit/custom_qpa/qcustomintegration.h
+Copyright: 2014, Digia Plc and/or its subsidiary(-ies).
+License: LGPL-2.1 or LGPL-3
+
+Files: app-launch-profiler/lomiri-app-launch-profiler-lttng
+ app-launch-profiler/lomiri-appstart-profile
+ app-launch-profiler/lomiri-appstart-test
+ tests/uitk_test_plan.sh
+Copyright: 2014, Canonical Ltd.
+  2015, Canonical Ltd.
+License: LGPL-2.1
+
 Files: src/LomiriSystemInfo/linux/lomiribatteryinfo_linux.cpp
  src/LomiriSystemInfo/linux/lomiribatteryinfo_linux_p.h
  src/LomiriSystemInfo/linux/lomiribatteryinfo_upower.cpp
@@ -2183,101 +2678,10 @@ Comment:
  Actually, or any later GPL version if approved by the KDE Free
  Qt Foundation.
 
-Files: src/LomiriGestures/damper.cpp
- src/LomiriGestures/damper_p.h
- src/LomiriGestures/ucswipearea.cpp
- src/LomiriGestures/ucswipearea_p.h
- src/LomiriGestures/ucswipearea_p_p.h
- src/LomiriToolkit/livetimer.cpp
- src/LomiriToolkit/livetimer_p.cpp
- src/LomiriToolkit/livetimer_p.h
- src/LomiriToolkit/livetimer_p_p.h
- src/LomiriToolkit/mousetouchadaptor.cpp
- src/LomiriToolkit/mousetouchadaptor_p.h
- src/LomiriToolkit/mousetouchadaptor_p_p.h
- src/LomiriToolkit/timeutils_p.h
- src/imports/Components/1.0/Icon.qml
- src/imports/Components/1.1/Icon.qml
- src/imports/Components/1.2/CrossFadeImage10.qml
- src/imports/Components/1.2/CrossFadeImage11.qml
- src/imports/Components/1.3/CrossFadeImage.qml
- src/imports/Components/2.0/CrossFadeImage.qml
- src/imports/Components/1.3/Icon.qml
- src/imports/Components/2.0/Icon.qml
- src/imports/Components/Themes/Ambiance/1.3/BottomEdgeStyle.qml
- src/imports/Components/Themes/Ambiance/2.0/BottomEdgeStyle.qml
- tests/api/Extinct/Animals/Andrewsarchus.qml
- tests/api/Extinct/Animals/Gigantophis.qml
- tests/api/Extinct/Animals/Paratriisodon.qml
- tests/api/Extinct/Animals/digger.js
- tests/api/Extinct/Animals/plugin/europe.cpp
- tests/api/Extinct/Animals/plugin/europe.h
- tests/api/Extinct/Animals/plugin/pangaea.cpp
- tests/api/Extinct/Animals/plugin/pangaea.h
- tests/api/Extinct/Animals/plugin/plugin.cpp
- tests/api/Extinct/Animals/plugin/plugin.h
- tests/api/Extinct/Animals/plugin/rune.cpp
- tests/api/Extinct/Animals/plugin/rune.h
- tests/api/Extinct/Animals/plugin/smilodon.cpp
- tests/api/Extinct/Animals/plugin/smilodon.h
- tests/api/Extinct/Animals/plugin/tarpan.cpp
- tests/api/Extinct/Animals/plugin/tarpan.h
- tests/api/Extinct/Animals/test.qml
- tests/autopilot/setup.py
- tests/unit/touchregistry/tst_TouchRegistry.cpp
- tests/unit/components/tst_CrossFadeImage.qml
-Copyright: 2013, 2016, Canonical Ltd.
-  2012, 2013, 2015 Canonical Ltd.
-  2013, Canonical Ltd.
-  2014, Canonical Ltd.
-  2014-2015, Canonical Ltd.
-  2015, Canonical Ltd.
-  2016, Canonical Ltd.
-License: GPL-3
-
-Files: src/LomiriMetrics/bitmaptextfont_p.h
- src/LomiriToolkit/privates/textures_p.h
- src/LomiriToolkit/uclomirishapetextures.cpp
- src/LomiriToolkit/uclomirishapetextures_p.h
-Copyright: 2011, Canonical Ltd.
-  2015, Canonical Ltd.
-  2016, Canonical Ltd.
-License: LGPL-3
-Comment:
- Generated files.
- .
- Assuming license as found in COPYING file.
-
-Files: src/imports/Components/1.2/DraggingArea.qml
- src/imports/Components/1.3/DraggingArea.qml
- src/imports/Components/2.0/DraggingArea.qml
-Copyright: 2013, Canonical Ltd.
-License: LGPL-3
-
-Files: documentation/autopilot-helpers/_templates/layout.html
-Copyright: 2007-2011, the Sphinx team
-  2015, Canonical Ltd.
-License: BSD-3-clause
-
-Files: documentation/css/reset.css
-Copyright: 2010, Yahoo! Inc.
-License: BSD-3-clause
-
-Files: tests/unit/custom_qpa/main.cpp
- tests/unit/custom_qpa/qcustombackingstore.cpp
- tests/unit/custom_qpa/qcustombackingstore.h
- tests/unit/custom_qpa/qcustomintegration.cpp
- tests/unit/custom_qpa/qcustomintegration.h
-Copyright: 2014, Digia Plc and/or its subsidiary(-ies).
-License: LGPL-2.1 or LGPL-3
-
-Files: app-launch-profiler/lomiri-app-launch-profiler-lttng
- app-launch-profiler/lomiri-appstart-test
- app-launch-profiler/lomiri-appstart-profile
- tests/uitk_test_plan.sh
-Copyright: 2014, Canonical Ltd.
-  2015, Canonical Ltd.
-License: LGPL-2.1
+Files: src/LomiriToolkit/mousetouchadaptor_x11.cpp
+Copyright: 2016, Canonical, Ltd.
+  2015, The Qt Company Ltd.
+License: GPL-3 and (LGPL-2.1 or LGPL-3)
 
 Files: src/LomiriToolkit/tools/3rd_party/edtaa3func.c
 Copyright: 2009-2012, Stefan Gustavson <stefan.gustavson@gmail.com>
@@ -2287,11 +2691,6 @@ Files: src/imports-compat/Test/MouseTouchAdaptor.qml
 Copyright: 2013, 2016, Canonical Ltd.
   2022, UBports Foundation.
 License: GPL-3
-
-Files: src/LomiriToolkit/mousetouchadaptor_x11.cpp
-Copyright: 2016, Canonical, Ltd.
-  2015, The Qt Company Ltd.
-License: GPL-3 and (LGPL-2.1 or LGPL-3)
 
 Files: apicheck/apicheck.cpp
 Copyright: 2014, Digia Plc and/or its subsidiary(-ies).

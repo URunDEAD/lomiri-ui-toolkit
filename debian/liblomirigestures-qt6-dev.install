@@ -3,6 +3,6 @@ usr/include/*/LomiriGestures-Qt6/LomiriGesturesModule
 usr/include/*/LomiriGestures-Qt6/lomirigesturesglobal.h
 usr/include/*/LomiriGestures-Qt6/lomirigesturesmodule.h
 usr/include/*/LomiriGestures-Qt6/lomirigesturesversion.h
+usr/lib/*/cmake/LomiriGestures-Qt6/*.cmake
 usr/lib/*/libLomiriGestures-Qt6.so
 usr/lib/*/pkgconfig/LomiriGestures-Qt6.pc
-usr/lib/*/cmake/LomiriGestures-Qt6/*.cmake

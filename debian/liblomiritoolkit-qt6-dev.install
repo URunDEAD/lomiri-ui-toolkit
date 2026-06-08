@@ -3,6 +3,6 @@ usr/include/*/LomiriToolkit-Qt6/LomiriToolkitModule
 usr/include/*/LomiriToolkit-Qt6/lomiritoolkitglobal.h
 usr/include/*/LomiriToolkit-Qt6/lomiritoolkitmodule.h
 usr/include/*/LomiriToolkit-Qt6/lomiritoolkitversion.h
+usr/lib/*/cmake/LomiriToolkit-Qt6/*.cmake
 usr/lib/*/libLomiriToolkit-Qt6.so
 usr/lib/*/pkgconfig/LomiriToolkit-Qt6.pc
-usr/lib/*/cmake/LomiriToolkit-Qt6/*.cmake

@@ -3,6 +3,6 @@ usr/include/*/LomiriMetrics-Qt6/events.h
 usr/include/*/LomiriMetrics-Qt6/logger.h
 usr/include/*/LomiriMetrics-Qt6/lomirimetricsglobal.h
 usr/include/*/LomiriMetrics-Qt6/lomirimetricsversion.h
+usr/lib/*/cmake/LomiriMetrics-Qt6/*.cmake
 usr/lib/*/libLomiriMetrics-Qt6.so
 usr/lib/*/pkgconfig/LomiriMetrics-Qt6.pc
-usr/lib/*/cmake/LomiriMetrics-Qt6/*.cmake

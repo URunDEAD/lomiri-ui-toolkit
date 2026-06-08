@@ -1,12 +1,12 @@
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/Ambiance/LomiriComponentsThemesAmbiance.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/Ambiance/libLomiriComponentsThemesAmbiance.so
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/Ambiance/qmldir
+usr/lib/*/qt6/qml/Lomiri/Components/Themes/LomiriComponentsThemes.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/SuruDark/LomiriComponentsThemesSuruDark.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/SuruDark/libLomiriComponentsThemesSuruDark.so
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/SuruDark/qmldir
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/SuruGradient/LomiriComponentsThemesSuruGradient.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/SuruGradient/libLomiriComponentsThemesSuruGradient.so
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/SuruGradient/qmldir
-usr/lib/*/qt6/qml/Lomiri/Components/Themes/LomiriComponentsThemes.qmltypes
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/libLomiriComponentsThemes.so
 usr/lib/*/qt6/qml/Lomiri/Components/Themes/qmldir
