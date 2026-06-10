@@ -145,7 +145,7 @@ QScreen* referenceScreen()
     // Maliit sets a custom Qt::WindowType (0x00000080) which we need to check for.
     static const Qt::WindowType InputMethodWindowType = (Qt::WindowType)(0x00000080 | Qt::WindowType::Window);
     for (QWindow* window : QGuiApplication::allWindows()) {
-        if ((window->type() & InputMethodWindowType) == InputMethodWindowType) {
+        if (window && (window->type() & InputMethodWindowType) == InputMethodWindowType) {
             return window->screen();
         }
     }
@@ -154,6 +154,8 @@ QScreen* referenceScreen()
     // - Single monitor: Only one screen to care about
     // - Multi-monitor: go by last screen as virtual/external
     //   monitors spawn after the primary one
+    if (qGuiApp->screens().count() == 0)
+        return nullptr;
     return qGuiApp->screens().last();
 }
 
@@ -164,10 +166,17 @@ UCUnits::UCUnits(QObject *parent) :
 {
     const auto appropriateScale = [this](){
         // TODO: Get rid of this once all QPAs return the proper devicePixelRatio
-        //       for single-screen usecases. Then we can get rid of GRID_UNIT_PX.
-        if (qGuiApp->screens().count() == 1)
+        //       for all usecases. Then we can get rid of GRID_UNIT_PX entirely.
+        //       Additionally, once we're ready ensure that in Desktop Mode Mir
+        //       only sends the external monitor as a valid output over Wayland.
+        if (qGuiApp->screens().count() <= 1)
             return getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX) / DEFAULT_GRID_UNIT_PX;
-        return getScreenScaling(referenceScreen());
+
+        auto screen = referenceScreen();
+        if (!screen)
+            return 1.0f;
+
+        return getScreenScaling(screen);
     };
 
     if (QHighDpiScaling::isActive())
@@ -175,7 +184,7 @@ UCUnits::UCUnits(QObject *parent) :
     else
         m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX * m_devicePixelRatio);
 
-    // Only used by QtUbuntu & QtMir
+    // Only used by QtUbuntu & QtMir, and only for non-LVDS monitors
     auto nativeInterface = qGuiApp->platformNativeInterface();
     if (nativeInterface) {
         QObject::connect(nativeInterface, &QPlatformNativeInterface::windowPropertyChanged,
@@ -205,7 +214,7 @@ UCUnits::UCUnits(QObject *parent) :
     QObject::connect(qGuiApp, &QGuiApplication::screenRemoved,
                      this, [this, appropriateScale](QScreen*) {
         setGridUnit(DEFAULT_GRID_UNIT_PX * appropriateScale());
-    });
+    }, Qt::QueuedConnection);
 }
 
 UCUnits::~UCUnits()
