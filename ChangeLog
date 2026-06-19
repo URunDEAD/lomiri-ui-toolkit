@@ -1,6 +1,39 @@
+2026-06-19 Mike Gabriel
+
+        * Release 1.3.5907 (HEAD -> main, tag: 1.3.5907)
+
+2026-06-11 Marius Gripsgard
+
+        * Merge branch 'personal/fredldotme/screen-hotplug-crash' into 'main'
+          (4c77b9153)
+
+2026-06-11 Alfred Neumayer
+
+        * src/LomiriToolkit: Fix grid unit recalculations causing a crash
+          (2854f93be)
+
+2026-06-08 Mike Gabriel
+
+        * Merge branch 'personal/jbicha/debian-sync-20260523' into 'main'
+          (939e181aa)
+
+2026-05-23 Jeremy Bícha
+
+        * debian: Sync with Debian (8f4d2c67d)
+
+2026-05-27 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/qt6-fix-itemselector' into
+          'main' (c28b3baf5)
+
+2026-05-26 Henrik Schnor
+
+        * QML: fix for signal handler parameters (1f92c45a1)
+        * OptionSelectorDelegate: fix binding loop in Qt6 build (1e7ebb420)
+
 2026-05-15 Mike Gabriel
 
-        * Release 1.3.5906 (HEAD -> main, tag: 1.3.5906)
+        * Release 1.3.5906 (32d39be4d) (tag: 1.3.5906)
         * Merge branch 'personal/henrikschnor/fix-picker-positionviewatindex'
           into 'main' (b74e3963a)
 
