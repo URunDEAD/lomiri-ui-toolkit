@@ -17,6 +17,7 @@
 #ifndef UCFONTUTILS_P_H
 #define UCFONTUTILS_P_H
 
+#include <cstdint>
 #include <QtCore/QObject>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -64,12 +65,22 @@ private:
 
 UT_NAMESPACE_END
 
-#define SCALE_CODE(size)    reinterpret_cast<int*>(size.toLatin1().data())[0]
+#define SCALE_CODE(size)    reinterpret_cast<uint32_t*>(size.toLatin1().data())[0]
+
+#if defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
+#define SCALE_MEDIUM        0x6d656469 // "medi"
+#define SCALE_LARGE         0x6c617267 // "larg"
+#define SCALE_SMALL         0x736d616c // "smal"
+#define SCALE_XLARGE        0x782d6c61 // "x-la"
+#define SCALE_XSMALL        0x782d736d // "x-sm"
+#define SCALE_XXSMALL       0x78782d73 // "xx-s"
+#else
 #define SCALE_MEDIUM        0x6964656d // "medi"
 #define SCALE_LARGE         0x6772616c // "larg"
 #define SCALE_SMALL         0x6c616d73 // "smal"
 #define SCALE_XLARGE        0x616c2d78 // "x-la"
 #define SCALE_XSMALL        0x6d732d78 // "x-sm"
 #define SCALE_XXSMALL       0x732d7878 // "xx-s"
+#endif
 
 #endif // UCFONTUTILS_P_H
