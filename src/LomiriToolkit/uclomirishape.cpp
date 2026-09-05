@@ -1390,8 +1390,7 @@ QSGNode* UCLomiriShape::updatePaintNode(QSGNode* oldNode, UpdatePaintNodeData* d
             radius = scaledDownRadius;
         }
     } else {
-        radius = qMin(itemSize.width(), itemSize.height()) * 0.5f * (m_relativeRadius * 0.01f)
-                     / qGuiApp->devicePixelRatio();
+        radius = qMin(itemSize.width(), itemSize.height()) * 0.5f * (m_relativeRadius * 0.01f);
     }
 
     updateMaterial(node, radius, m_aspect != DropShadow ? 0 : 1, sourceTexture && m_sourceOpacity);
