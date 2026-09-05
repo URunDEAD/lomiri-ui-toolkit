@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-08-14 12:52+0000\n"
+"PO-Revision-Date: 2026-09-06 12:17+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/ta/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 
 #: About.qml:34
 msgid "About..."
@@ -80,7 +80,7 @@ msgstr "பக்கவாதம்"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr "நிறம்"
+msgstr "வண்ணம்"
 
 #: Buttons.qml:53
 #, qt-format
@@ -295,7 +295,7 @@ msgstr "தனிப்பயன் நடவடிக்கை பிரதி�
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr "திருத்துக"
+msgstr "திருத்து"
 
 #: NewListItems.qml:114
 msgid "Move"
