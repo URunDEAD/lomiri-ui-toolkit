@@ -1,3 +1,10 @@
+lomiri-ui-toolkit (1.3.5908) unstable; urgency=medium
+
+  * Upstream-provided Debian package for lomiri-ui-toolkit. See upstream
+    ChangeLog for recent changes.
+
+ -- UBports developers <developers@ubports.com>  Tue, 08 Sep 2026 16:32:43 +0200
+
 lomiri-ui-toolkit (1.3.5907) unstable; urgency=medium
 
   * Upstream-provided Debian package for lomiri-ui-toolkit. See upstream

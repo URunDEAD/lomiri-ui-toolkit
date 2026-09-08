@@ -1,6 +1,55 @@
+2026-09-08 Mike Gabriel
+
+        * Release 1.3.5908 (HEAD -> main, tag: 1.3.5908)
+
+2026-09-08 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/muhammad/lomirishape-scaling' into 'main'
+          (2840c0b0a)
+
+2026-09-05 Muhammad Asif
+
+        * uclomirishape: do not scale itemSize by devicePixelRatio
+          (25d7941c7)
+
+2026-09-07 Bean Bag
+
+        * Translated using Weblate (English (Australia)) (fee8a2298)
+
+2026-09-05 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (56196e543)
+        * Translated using Weblate (Tamil) (5106024c0)
+
+2026-08-10 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (d6c291234)
+
+2026-08-14 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (33fc05e32)
+
+2026-07-30 Diego Siqueira
+
+        * Translated using Weblate (Portuguese (Brazil)) (fe9f6e835)
+
+2026-07-08 Mike Gabriel
+
+        * Merge branch 'personal/OPNA2608/ppc64-test-failures' into 'main'
+          (4b06ab618)
+
+2026-07-06 OPNA2608
+
+        * src/LomiriToolkit/ucfontutils_p.h: Fix SCALE_CODE defines on non-LE
+          & with different int size (c5c45bde7)
+
+2026-06-21 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (bd5c25f7f)
+
 2026-06-19 Mike Gabriel
 
-        * Release 1.3.5907 (HEAD -> main, tag: 1.3.5907)
+        * Release 1.3.5907 (74d94596a) (tag: 1.3.5907)
 
 2026-06-11 Marius Gripsgard
 
