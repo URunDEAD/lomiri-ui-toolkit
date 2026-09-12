@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-09-06 12:17+0000\n"
+"PO-Revision-Date: 2026-09-15 09:58+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/ta/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: About.qml:34
 msgid "About..."
@@ -151,7 +151,7 @@ msgstr "முன்னணி மற்றும் பின்தங்கி�
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
 #: ListItems.qml:160 ListItems.qml:173 ListItems.qml:193
 msgid "Label"
-msgstr "சிட்டை"
+msgstr "முத்திரைச் சீட்டு"
 
 #: ListItems.qml:33
 msgid "Subtitled"
