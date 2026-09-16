@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-09-15 09:58+0000\n"
+"PO-Revision-Date: 2026-09-18 00:50+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/ta/>\n"
@@ -72,7 +72,7 @@ msgstr "தூக்கம்"
 
 #: Buttons.qml:32 Buttons.qml:41 Buttons.qml:77 Buttons.qml:85 Buttons.qml:95
 msgid "Call"
-msgstr "அழை"
+msgstr "அழைப்பு"
 
 #: Buttons.qml:37
 msgid "Stroke"
