@@ -402,35 +402,6 @@ Description: Qt 5 Components for Lomiri - demos and examples
  .
  This package contains the component demos and example applications.
 
-Package: lomiri-ui-toolkit-autopilot
-Architecture: any
-Depends: dpkg-dev,
-         autopilot-qt5,
-         libqt5test5,
-         libqt5widgets5,
-         lomiri-app-launch-profiler (>= ${source:Version}),
-         lomiri-keyboard-autopilot [amd64 armhf i386],
-         lomiri-ui-toolkit-examples (>= ${source:Version}),
-         python3-autopilot (>= 1.4) [amd64 armhf arm64 i386 ppc64 ppc64el],
-         python3-autopilot-trace [amd64 armhf arm64 i386 ppc64 ppc64el],
-         python3-fixtures,
-         python3-gi,
-         python3-testscenarios,
-         python3-testtools,
-         qml-module-lomiri-components (>= ${source:Version}) | qml-module-lomiri-components-gles,
-         qml-module-qttest,
-         qttestability-autopilot [amd64 armhf arm64 i386 ppc64 ppc64el],
-         upstart [amd64 armhf arm64 i386 ppc64 ppc64el],
-         url-dispatcher-tools [amd64 armhf arm64 i386 ppc64 ppc64el],
-         ${misc:Depends},
-         ${python3:Depends},
-         ${shlibs:Depends},
-Description: Test package for Lomiri UI Toolkit
- Qt Components for Lomiri offers a set of reusable user interface
- components for Qt Quick 2 / QML.
- .
- Autopilot tests for the lomiri-ui-toolkit package
-
 Package: lomiri-app-launch-profiler
 Architecture: any
 Section: devel
