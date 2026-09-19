@@ -83,7 +83,6 @@ for i in 10 11 ListItems Pickers Popups Styles Themes artwork; do
 done
 
 # Autopilot tests should always match the Toolkit
-adb push tests/autopilot/lomiriuitoolkit/ $STONE/ap || exit 1
 echo cp -R ap/* /usr/lib/python3/dist-packages/lomiriuitoolkit >> $RUN/copy.sh || exit 1
 adb push examples/lomiri-ui-toolkit-gallery/ $STONE/ex >> $RUN/copy.sh || exit 1
 echo cp -R ex/* /usr/lib/lomiri-ui-toolkit/examples/lomiri-ui-toolkit-gallery
