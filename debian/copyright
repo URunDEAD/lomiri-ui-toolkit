@@ -2,19 +2,10 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: lomiri-ui-toolkit
 Upstream-Contact: Marius Gripsgard <marius@ubports.com>
 Source: https://gitlab.com/ubports/development/core/lomiri-ui-toolkit/
-Files-Excluded:
- documentation/autopilot-helpers/_build
- debian
-Comment:
- Removed _build folder contains pre-built files. At the same time
- we don't use/have autopilot in Debian. So, don't bother.
- .
- While at it, drop upstream's debian/ folder, as well.
 
 Files: app-launch-profiler/app-launch-tracepoints.c
  app-launch-profiler/app-launch-tracepoints.h
  documentation/all-modules.qdoc
- documentation/autopilot-helpers/conf.py
  documentation/css/breadcrumbs.js
  documentation/css/qtquick.css
  documentation/css/scratch.css
@@ -933,151 +924,6 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/api/Extinct/Animals/plugin/tarpan.cpp
  tests/api/Extinct/Animals/plugin/tarpan.h
  tests/api/test.sh
- tests/autopilot/lomiri-ui-toolkit/tests/activityindicator/ActivityIndicatorTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/button/ButtonColorTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/button/ButtonIconTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/button/DisabledButtonTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/button/EnabledButtonTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/checkbox/DisabledCheckBoxTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/checkbox/EnabledCheckBoxTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/listitems/ListItemsTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/pagestack/PageStackTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/progressbar/ProgressBarTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/slider/SliderTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/switch/DisabledSwitchTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/switch/EnabledSwitchTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/tabs/TabsTests.qml
- tests/autopilot/lomiri-ui-toolkit/tests/textfield/TextFieldTests.qml
- tests/autopilot/lomiriuitoolkit/__init__.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/__init__.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_actionbar.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_checkbox.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_common.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_flickable.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_header.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_lomirilistview.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_mainview.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_optionselector.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_qquickgridview.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_qquicklistview.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_sections.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_tabbar.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_tabs.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_textarea.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_textfield.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_toolbar.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/_uclistitem.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/listitems.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/pickers.py
- tests/autopilot/lomiriuitoolkit/_custom_proxy_objects/popups.py
- tests/autopilot/lomiriuitoolkit/base.py
- tests/autopilot/lomiriuitoolkit/emulators.py
- tests/autopilot/lomiriuitoolkit/fixture_setup.py
- tests/autopilot/lomiriuitoolkit/lomiri_scenarios.py
- tests/autopilot/lomiriuitoolkit/tests/__init__.py
- tests/autopilot/lomiriuitoolkit/tests/components/__init__.py
- tests/autopilot/lomiriuitoolkit/tests/components/test_header.HeaderActionsOverflowTestCase.actions.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_header.HeaderActionsOverflowTestCase.tools.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_header.HeaderContentsTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_header.py
- tests/autopilot/lomiriuitoolkit/tests/components/test_popover.py
- tests/autopilot/lomiriuitoolkit/tests/components/test_popover.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_textinput.header.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_textinput.py
- tests/autopilot/lomiriuitoolkit/tests/components/test_textinput.textarea.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_textinput.textfield.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_textinput.textfield_custom.qml
- tests/autopilot/lomiriuitoolkit/tests/components/test_units.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/CustomMainView.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/MyDialog.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_actionbar.ActionBarTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_actionbar.ScrollingActionBarTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_actionbar.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_checkbox.ToggleTestCase.test_with_checkbox.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_checkbox.ToggleTestCase.test_with_switch.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_checkbox.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_common.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_date_picker.DatePickerBaseTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_date_picker.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_dialog.DialogTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_dialog.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable.IsFlickableTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable.LomiriFlickableTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable.SwipeFlickableTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable_uitk10.IsFlickableTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable_uitk10.LomiriFlickableTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable_uitk10.SwipeFlickableTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_flickable_uitk10.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.ActionsTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.DeprecatedHeaderSectionsTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.DeprecatedHeaderTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.HeaderInCustomMainViewTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.HideShowTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.SectionsTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.ToolsTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_header.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listitem.ListItemTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listitem.ListViewWithLiveDraggingTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listitem.ListViewWithoutLiveDraggingTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listitem.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listitems.ExpandableTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listitems.SwipeToDeleteTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listitems.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listview.QQuickListViewTestCase.Uitk10.vertical.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listview.QQuickListViewTestCase.Uitk13.horizontal.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_listview.QQuickListViewTestCase.Uitk13.vertical.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_main_view.GoBackTestCase.back_in_header.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_main_view.GoBackTestCase.back_in_toolbar.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_main_view.MainView10TestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_main_view.MainView12TestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_main_view.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_optionselector.OptionSelectorCustomDelegateTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_optionselector.OptionSelectorTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_optionselector.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_popups.ActionSelectionPopoverTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_popups.ComposerSheetTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_popups.WindowTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_popups.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_pull_to_refresh.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_pull_to_refresh.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_qquickgridview.QQuickGridViewTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_qquickgridview.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_qquicklistview.QQuickListViewOutOfViewTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_qquicklistview.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_sections.SectionsTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_sections.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_tabs.TabsTestCase.deprecated_TabBar.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_tabs.TabsTestCase.new_header.1.3.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_tabs.TabsTestCase.new_header.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_tabs.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_textarea.TextAreaTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_textarea.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_textfield.1.0.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_textfield.1.3.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_textfield.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_toolbar.ToolbarTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/test_toolbar.py
- tests/autopilot/lomiriuitoolkit/tests/gallery/__init__.py
- tests/autopilot/lomiriuitoolkit/tests/gallery/test_gallery.py
- tests/autopilot/lomiriuitoolkit/tests/gallery/test_lomirilistview.py
- tests/autopilot/lomiriuitoolkit/tests/gallery/test_optionselector.py
- tests/autopilot/lomiriuitoolkit/tests/gallery/test_scrollbar.py
- tests/autopilot/lomiriuitoolkit/tests/gallery/test_textinput.py
- tests/autopilot/lomiriuitoolkit/tests/gallery/test_toggles.py
- tests/autopilot/lomiriuitoolkit/tests/test_base.py
- tests/autopilot/lomiriuitoolkit/tests/test_emulators.py
- tests/autopilot/lomiriuitoolkit/tests/test_fixture_setup.LaunchFakeApplicationTestCase.qml
- tests/autopilot/lomiriuitoolkit/tests/test_fixture_setup.py
- tests/autopilot/lomiriuitoolkit/tests/test_launcher.mainwindow.qml
- tests/autopilot/lomiriuitoolkit/tests/test_launcher.py
- tests/autopilot/lomiriuitoolkit/tests/test_launcher.testcase.qml
- tests/autopilot/lomiriuitoolkit/tests/test_launcher.touch.qml
- tests/autopilot/lomiriuitoolkit/tests/test_launcher.window.qml
- tests/autopilot/lomiriuitoolkit/tests/test_lomiri_scenarios.py
- tests/autopilot/lomiriuitoolkit/tests/test_touchadaptor.py
- tests/autopilot/lomiriuitoolkit/tests/test_touchadaptor.qml
- tests/autopilot/lomiriuitoolkit/units.py
  tests/checkresults.sh
  tests/license/checklicense.sh
  tests/qmlapicheck.sh
@@ -2018,12 +1864,6 @@ Files: .gitignore
  cmake/LomiriHeaders.cmake
  components.api
  components_qt6.api
- documentation/autopilot-helpers/images/favicon.ico
- documentation/autopilot-helpers/index.rst
- documentation/autopilot-helpers/lomiriuitoolkit.rst
- documentation/autopilot-helpers/Makefile
- documentation/autopilot-helpers/_static/favicon.ico
- documentation/autopilot-helpers/_static/nature.css
  documentation/css/base.css
  documentation/documentation.pro
  documentation/lomiri-components-labs.qdoc
@@ -2278,29 +2118,6 @@ Files: .gitignore
  tests/api/Extinct/Animals/plugin/plugin.qrc
  tests/api/Extinct/Animals/qmldir
  tests/api/Extinct/Extinct.pro
- tests/autopilot/autopilot.pro
- tests/autopilot/lomiri-ui-toolkit/tests/activityindicator/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/activityindicator/test_activityindicator.py
- tests/autopilot/lomiri-ui-toolkit/tests/button/call_icon.png
- tests/autopilot/lomiri-ui-toolkit/tests/button/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/button/test_button.py
- tests/autopilot/lomiri-ui-toolkit/tests/checkbox/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/checkbox/test_checkbox.py
- tests/autopilot/lomiriuitoolkit/tests/custom_proxy_objects/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/listitems/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/listitems/test_listitems.py
- tests/autopilot/lomiri-ui-toolkit/tests/pagestack/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/pagestack/test_pagestack.py
- tests/autopilot/lomiri-ui-toolkit/tests/progressbar/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/progressbar/test_progressbar.py
- tests/autopilot/lomiri-ui-toolkit/tests/slider/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/slider/test_slider.py
- tests/autopilot/lomiri-ui-toolkit/tests/switch/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/switch/test_switch.py
- tests/autopilot/lomiri-ui-toolkit/tests/tabs/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/tabs/test_tabs.py
- tests/autopilot/lomiri-ui-toolkit/tests/textfield/__init__.py
- tests/autopilot/lomiri-ui-toolkit/tests/textfield/test_textfield.py
  tests/Gallery/gallery
  tests/Gallery/gallery-logging.config
  tests/resources/lomirishape/img1.png
@@ -2573,7 +2390,6 @@ Files: src/LomiriGestures/damper.cpp
  tests/api/Extinct/Animals/Gigantophis.qml
  tests/api/Extinct/Animals/Paratriisodon.qml
  tests/api/Extinct/Animals/test.qml
- tests/autopilot/setup.py
  tests/unit/touchregistry/tst_TouchRegistry.cpp
  tests/unit/components/tst_CrossFadeImage.qml
 Copyright: 2013, 2016, Canonical Ltd.
@@ -2597,11 +2413,6 @@ Comment:
  Generated files.
  .
  Assuming license as found in COPYING file.
-
-Files: documentation/autopilot-helpers/_templates/layout.html
-Copyright: 2007-2011, the Sphinx team
-  2015, Canonical Ltd.
-License: BSD-3-clause
 
 Files: documentation/css/reset.css
 Copyright: 2010, Yahoo! Inc.
