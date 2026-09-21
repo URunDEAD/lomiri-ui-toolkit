@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-09-18 10:15+0000\n"
+"PO-Revision-Date: 2026-09-21 16:27+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/ta/>\n"
@@ -113,7 +113,7 @@ msgstr "வெளிர் சாம்பல்"
 
 #: Colors.qml:42
 msgid "Dark grey"
-msgstr "இருண்ட சாம்பல்"
+msgstr "அடர் சாம்பல்"
 
 #: Colors.qml:48
 msgid "Red"
@@ -473,7 +473,7 @@ msgstr "எந்த தொடர்பும் அனுமதிக்கப�
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr "இயல்பு"
+msgstr "இயல்புநிலை"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
