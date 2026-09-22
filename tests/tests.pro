@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
-SUBDIRS += unit autopilot
+SUBDIRS += unit
 SUBDIRS += api
 
 OTHER_FILES += qmlapicheck.sh

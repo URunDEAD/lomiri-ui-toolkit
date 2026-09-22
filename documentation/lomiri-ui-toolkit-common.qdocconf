@@ -27,7 +27,6 @@ excludedirs += ../src/imports/Components/Pickers/1.2
 excludedirs += ../src/imports/Components/Popups/1.2
 excludedirs += ../src/imports/Components/Themes/Ambiance
 excludedirs += ../src/imports/Components/Themes/SuruDark
-excludedirs += ../documentation/autopilot-helpers/_build/html/_static
 imagedirs = images
 sources.fileextensions = "*.qml *.qdoc *.cpp *.js"
 headers.fileextensions = "*.h"

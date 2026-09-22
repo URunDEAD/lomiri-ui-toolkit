@@ -88,21 +88,6 @@ export UITK_BUILD_ROOT=build
 source export_qml_dir.sh
 ```
 
-#### Run autopilot unit tests
-
-```sh
-./run_tests.sh list
-./run_tests.sh run [TESTCASE]
-```
-
-Alternatively, run `make check[_BASENAME_WITH_UNDERSCORES]` in the respective subfolder. E.g. `tst_label_extras.13.qml` becomes `make check_tst_label_extras_13`. This is driven by `runtest.sh` and `checkresults.sh`.
-
-Alternatively, run tests manually, e.g.:
-
-```sh
-LD_LIBRARY_PATH=build/lib QML2_IMPORT_PATH=build/qml build/tests/unit/visual/visual -input tests/unit/visual/tst_abstractbutton.13.qml
-```
-
 #### Check the API
 
 Test the `apicheck` tool:
@@ -161,18 +146,3 @@ shell.
 Once built, you may view the documentation by opening documentation/html/overview-lomiri-sdk.html in your favorite web browser.
 
 See also the [online documentation](https://ubports.gitlab.io/docs/api-docs/index.html?p=lomiriuserinterfacetoolkit%2Flomiri-components-qmlmodule.html).
-
-### Autopilot SDK Helpers Documentation (Sphinx docs):
-
-To build the Autopilot SDK Helpers documentation, you need to install sphinx.
-After installation, change directory to documentation/autopilot-helpers
-and executing make.
-
-```sh
-sudo apt-get install python3-sphinx
-cd documentation/autopilot-helpers
-make singlehtml
-```
-
- * Once built, you may view the documentation by opening
- `_build/singlehtml/index.html` in your favorite web browser.

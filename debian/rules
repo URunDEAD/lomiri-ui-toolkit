@@ -42,18 +42,12 @@ override_dh_auto_configure:
 		QMAKE_CXXFLAGS="$(CXXFLAGS)" \
 		QMAKE_LFLAGS="${LDFLAGS}" \
 		..
-ifneq ($(filter %-autopilot,$(shell dh_listpackages)),)
-	dh_auto_configure --sourcedirectory=tests/autopilot --buildsystem=pybuild
-endif
 
 override_dh_auto_build:
 	dh_auto_build --builddirectory=build-qt6 --buildsystem=cmake
 	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake
 ifneq ($(filter %-doc,$(shell dh_listpackages)),)
 	dh_auto_build --builddirectory=build-qt5 --buildsystem=qmake -- docs
-endif
-ifneq ($(filter %-autopilot,$(shell dh_listpackages)),)
-	dh_auto_build --sourcedirectory=tests/autopilot --buildsystem=pybuild
 endif
 
 override_dh_auto_test:
@@ -73,12 +67,8 @@ endif
 override_dh_auto_install:
 	dh_auto_install --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
 	dh_auto_install --no-parallel --builddirectory=build-qt5 --buildsystem=qmake
-ifneq ($(filter %-autopilot,$(shell dh_listpackages)),)
-	dh_auto_install --no-parallel --sourcedirectory=tests/autopilot --buildsystem=pybuild
-else
 	rm -f  debian/tmp/usr/lib/*/lomiri-ui-toolkit/apicheck
 	rm -Rf debian/tmp/usr/lib/python3
-endif
 
 override_dh_install:
 ifneq ($(filter %-doc,$(shell dh_listpackages)),)
@@ -97,10 +87,6 @@ endif
 		touch debian/tmp/usr/lib/${DEB_HOST_MULTIARCH}/qt5/qml/Lomiri/$$module/plugins.qmltypes; \
 	done
 	rm -f debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/*.la
-
-	# FIXME: Due to autopilot not being in the archive we ship docs for now
-	# sphinx-build -b singlehtml documentation/autopilot-helpers documentation/autopilot-helpers/_build/html
-	# sphinx-build -b json documentation/autopilot-helpers documentation/autopilot-helpers/_build/json
 
 	# Drop QML types used to test apicheck only
 	rm -f debian/tmp/usr/lib/*/qt*/qml/Extinct/Animals/*
@@ -128,7 +114,6 @@ override_dh_gencontrol:
 override_dh_auto_clean:
 	-dh_auto_clean --builddirectory=build-qt6 --buildsystem=cmake
 	-dh_auto_clean --builddirectory=build-qt5 --buildsystem=qmake
-	-dh_auto_clean --sourcedirectory=tests/autopilot --buildsystem=pybuild
 
 	# Qt / qmake creates <FolderName>.version files which don't
 	# get clean-up properly by 'make distclean'
