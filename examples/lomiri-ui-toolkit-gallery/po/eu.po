@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-05-01 16:09+0000\n"
-"Last-Translator: \"Хмеляускас Александр (JasonWalt Bab@)\" "
-"<mardimusa8@gmail.com>\n"
+"PO-Revision-Date: 2026-09-30 16:51+0000\n"
+"Last-Translator: aimar orbe <aimar.orbe@ehu.eus>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/eu/>\n"
 "Language: eu\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: About.qml:34
 msgid "About..."
@@ -81,7 +80,7 @@ msgstr "Marra"
 
 #: Buttons.qml:47 Icons.qml:54
 msgid "Color"
-msgstr "Kolore"
+msgstr "Kolorea"
 
 #: Buttons.qml:53
 #, qt-format
@@ -144,7 +143,7 @@ msgstr ""
 
 #: Icons.qml:79
 msgid "Theme"
-msgstr ""
+msgstr "Gaia"
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
@@ -298,7 +297,7 @@ msgstr ""
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr ""
+msgstr "Editatu"
 
 #: NewListItems.qml:114
 msgid "Move"
@@ -349,19 +348,19 @@ msgstr ""
 
 #: Pickers.qml:31
 msgid "Linear"
-msgstr ""
+msgstr "Lineala"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr ""
+msgstr "Zirkularra"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr ""
+msgstr "Infinitua"
 
 #: Pickers.qml:137
 msgid "Clock"
-msgstr ""
+msgstr "Erlojua"
 
 #: Pickers.qml:174
 msgid "Overlay"
@@ -405,7 +404,7 @@ msgstr ""
 
 #: ProportionalShape.qml:28
 msgid "Sizes"
-msgstr ""
+msgstr "Neurriak"
 
 #: Sections.qml:34
 msgid "Enabled"
@@ -430,7 +429,7 @@ msgstr ""
 
 #: Sliders.qml:57
 msgid "Range"
-msgstr ""
+msgstr "Barrutia"
 
 #: Sliders.qml:74
 msgid "Labels"
@@ -438,7 +437,7 @@ msgstr ""
 
 #: Sliders.qml:85
 msgid "Small"
-msgstr ""
+msgstr "Txikia"
 
 #: Sliders.qml:87
 msgid "Medium"
