@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-09-21 16:27+0000\n"
+"PO-Revision-Date: 2026-09-30 16:51+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/ta/>\n"
@@ -42,13 +42,13 @@ msgstr "முடக்கப்பட்டது"
 
 #: Animations.qml:24
 msgid "NumberAnimation"
-msgstr "எண் பகுப்பாய்வு"
+msgstr "நகரும் எண்கள்"
 
 #: Animations.qml:28 Buttons.qml:28 Dialog.qml:29 ListItems.qml:25
 #: ProgressBars.qml:29 ProgressBars.qml:85 Sheet.qml:40 Sheet.qml:73
 #: Sliders.qml:28 TextInputs.qml:46
 msgid "Standard"
-msgstr "தரநிலை"
+msgstr "செந்தரம்"
 
 #: Animations.qml:58
 msgid "Standard Durations"
@@ -56,7 +56,7 @@ msgstr "நிலையான காலம்"
 
 #: Animations.qml:62
 msgid "Snap"
-msgstr "ச்னாப்"
+msgstr "ஒளிப்படம்"
 
 #: Animations.qml:98
 msgid "Fast"
@@ -89,11 +89,11 @@ msgstr "%1 ஐ அழைக்கவும்"
 
 #: Buttons.qml:63 Buttons.qml:120 ListItems.qml:43
 msgid "Icon"
-msgstr "படவுரு"
+msgstr "சின்னம்"
 
 #: Buttons.qml:72 Buttons.qml:134
 msgid "Icon+Text"
-msgstr "ஐகான்+உரை"
+msgstr "சின்னம்+உரை"
 
 #: Buttons.qml:105 OptionSelectors.qml:41
 msgid "Collapsed"
@@ -163,7 +163,7 @@ msgstr "இரண்டாம் நிலை சிட்டை"
 
 #: ListItems.qml:52
 msgid "ThinDivider"
-msgstr "தைண்டிவைடர்"
+msgstr "மெல்லிய பிரிக்கும் கோடு"
 
 #: ListItems.qml:73
 msgid "Progression"
@@ -251,7 +251,7 @@ msgstr "நீக்கக்கூடியது"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr "அகற்ற ச்லைடு"
+msgstr "அகற்ற வழுகச்செய்"
 
 #: ListItems.qml:215
 msgid "Reset"
@@ -263,7 +263,7 @@ msgstr "குழு பட்டியல்"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
-msgstr "லோமிரிலிச்ட்வியூ"
+msgstr "லோமிரி பட்டியல் பார்வை"
 
 #: ListItems.qml:321
 msgid "ExpandablesColumn"
@@ -308,7 +308,7 @@ msgstr "அடிப்படை"
 #: NewListItems.qml:163 NewListItems.qml:168 NewListItems.qml:169
 #: NewListItems.qml:213 NewListItems.qml:214
 msgid "Colored divider"
-msgstr "வண்ண வகுப்பி"
+msgstr "வண்ண பிரிப்பான்"
 
 #: NewListItems.qml:163
 msgid "Immutable"
@@ -316,7 +316,7 @@ msgstr "மாறாத"
 
 #: NewListItems.qml:163 NewListItems.qml:170 NewListItems.qml:215
 msgid "No divider"
-msgstr "டிவைடர் இல்லை"
+msgstr "பிரிப்பான் இல்லை"
 
 #: OptionSelectors.qml:24
 msgid "Option Selector"
@@ -344,7 +344,7 @@ msgstr "தனிப்பயன் கொள்கலன் உயரம்"
 
 #: OptionSelectors.qml:96
 msgid "No initial selection, scrollable."
-msgstr "ஆரம்ப தேர்வு இல்லை, உருட்டக்கூடியது."
+msgstr "ஆரம்ப தேர்வு , உருட்டக்கூடியதுஇல்லை."
 
 #: Pickers.qml:31
 msgid "Linear"
@@ -352,11 +352,11 @@ msgstr "நேரியல்"
 
 #: Pickers.qml:63
 msgid "Circular"
-msgstr "வட்ட"
+msgstr "வட்டமான"
 
 #: Pickers.qml:100 ProgressBars.qml:49
 msgid "Infinite"
-msgstr "கந்தழி, முடிவிலி"
+msgstr "முடிவற்ற"
 
 #: Pickers.qml:137
 msgid "Clock"
@@ -368,7 +368,7 @@ msgstr "மேலடுக்கு"
 
 #: Popover.qml:38
 msgid "Flickable"
-msgstr "பெண்"
+msgstr "சுண்டக்கூடியது"
 
 #: Popover.qml:74
 msgid "Action #1"
@@ -465,19 +465,19 @@ msgstr "படிக்க மட்டும்"
 
 #: TextInputs.qml:82
 msgid "Nobody type here"
-msgstr "யாரும் இங்கே தட்டச்சு செய்கிறார்கள்"
+msgstr "யாரும் இங்கே தட்டச்சு செய்வதில்லை"
 
 #: TextInputs.qml:94
 msgid "No interaction allowed"
-msgstr "எந்த தொடர்பும் அனுமதிக்கப்படவில்லை"
+msgstr "எந்த கருத்து பரிமாற்றத்திற்கும் அனுமதிஇல்லை"
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr "இயல்புநிலை"
+msgstr "இயல்பு"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
-msgstr "பணக்கார உரை"
+msgstr "செறிவான உரை"
 
 #: Toggles.qml:28 Toggles.qml:66
 msgid "Unchecked"
@@ -489,7 +489,7 @@ msgstr "சரிபார்க்கப்பட்டது"
 
 #: LomiriShape.qml:28
 msgid "Aspect"
-msgstr "நற்பொருத்தம்"
+msgstr "அம்சம்"
 
 #: LomiriShape.qml:73
 msgid "Radius"
