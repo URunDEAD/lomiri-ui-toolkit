@@ -74,9 +74,9 @@ qt_add_qml_module(LomiriComponentsThemesAmbiance
         artwork/header_overflow_dropshadow@27.png
         artwork/header_overflow_dropshadow@27.sci
         artwork/progression_divider@18.png
-        artwork/spinner@16.png
-        artwork/spinner@32.png
-        artwork/spinner@8.png
+        artwork/spinner@4x.png
+        artwork/spinner@2x.png
+        artwork/spinner.png
         artwork/stroke_button@27.png
         artwork/tick@30.png
         artwork/toolkit_scrollbar-stepper.svg
