@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-09-30 16:51+0000\n"
+"PO-Revision-Date: 2026-10-02 22:01+0000\n"
 "Last-Translator: aimar orbe <aimar.orbe@ehu.eus>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/eu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.10\n"
 
 #: About.qml:34
 msgid "About..."
@@ -135,7 +135,7 @@ msgstr ""
 
 #: Dialog.qml:32 Popover.qml:42 Sheet.qml:43 Sheet.qml:76
 msgid "Open"
-msgstr ""
+msgstr "Ireki"
 
 #: Icons.qml:29
 msgid "Scaling"
@@ -453,7 +453,7 @@ msgstr ""
 
 #: TextInputs.qml:56
 msgid "Password"
-msgstr ""
+msgstr "Pasahitza"
 
 #: TextInputs.qml:67
 msgid "Numbers"
@@ -473,7 +473,7 @@ msgstr ""
 
 #: TextInputs.qml:107
 msgid "Default"
-msgstr ""
+msgstr "Lehenetsia"
 
 #: TextInputs.qml:129
 msgid "Rich Text"
