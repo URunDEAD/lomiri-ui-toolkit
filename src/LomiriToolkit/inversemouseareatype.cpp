@@ -247,6 +247,18 @@ InverseMouseAreaType::InverseMouseAreaType(QQuickItem *parent) :
      */
     QObject::connect(this, &QQuickMouseArea::windowChanged,
                      this, &InverseMouseAreaType::resetFilterOnWindowUpdate);
+
+    // WORKAROUND:
+    // Qt 6.11 added an optimization in commit 81157314 that looks at the
+    // bounds of an element and skips it for pointer events if the pointer is
+    // outside those bounds. There's an exception, though, if the item has
+    // children outside its own bounds. We make use of that here to fall back
+    // to the `contains()` check that the InverseMouseArea relies on.
+#if QT_VERSION >= QT_VERSION_CHECK(6, 11, 0)
+    QQuickItem *dummy = new QQuickItem(this);
+    dummy->setPosition(QPointF(-1, -1));
+    dummy->setAcceptedMouseButtons(Qt::AllButtons);
+#endif
 }
 
 InverseMouseAreaType::~InverseMouseAreaType()
