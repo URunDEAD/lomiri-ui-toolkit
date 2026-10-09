@@ -1,6 +1,89 @@
+2026-10-09 Mike Gabriel
+
+        * Release 1.3.5909 (HEAD -> main, tag: 1.3.5909)
+
+2026-10-09 Maciej Sopyło
+
+        * Merge branch 'personal/henrikschnor/fix-inversemousearea-ptr' into
+          'main' (a3cd646b7)
+
+2026-10-07 Henrik Schnor
+
+        * InverseMouseArea: add workaround to trigger pointer containment
+          check (d5cfb73e5)
+
+2026-10-01 aimar orbe
+
+        * Translated using Weblate (Basque) (84833b4d7)
+
+2026-09-28 aimar orbe
+
+        * Translated using Weblate (Basque) (c41976284)
+
+2026-09-28 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (0a48d4501)
+
+2026-09-27 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (5f6d85a8c)
+
+2026-09-29 aimar orbe
+
+        * Translated using Weblate (Basque) (d2cc195b7)
+
+2026-09-22 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (96ac0ab1e)
+
+2026-09-22 Mike Gabriel
+
+        * Merge branch 'personal/jbicha/bye-autopilot' into 'main'
+          (9b1470550)
+
+2026-09-19 Jeremy Bícha
+
+        * debian: Stop building lomiri-ui-toolkit (bfb1b5162)
+        * debian: Don't mention autopilot in copyright (868990d09)
+        * tests: Remove autopilot tests (f02219f1d)
+
+2026-09-19 Temuri Doghonadze
+
+        * Translated using Weblate (Georgian) (ff8af1c42)
+
+2026-09-21 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (a80a97000)
+        * Translated using Weblate (Tamil) (37ade821b)
+
+2026-09-18 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (31084de6c)
+        * Translated using Weblate (Tamil) (577bbe9d9)
+
+2026-09-16 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (1aa3cb1f9)
+
+2026-09-17 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (01d6e39d2)
+
+2026-09-12 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (a7da737ae)
+
+2026-09-15 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (35f5cd932)
+
+2026-09-12 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (126cc4dee)
+
 2026-09-08 Mike Gabriel
 
-        * Release 1.3.5908 (HEAD -> main, tag: 1.3.5908)
+        * Release 1.3.5908 (d6b44820a) (tag: 1.3.5908)
 
 2026-09-08 Ratchanan Srirattanamet
 
