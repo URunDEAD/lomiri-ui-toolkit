@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-09-30 16:51+0000\n"
-"Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
+"PO-Revision-Date: 2026-10-12 20:07+0000\n"
+"Last-Translator: Alagirisamy Rengaraj "
+"<ahalyachinnasamy1967@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
 "toolkit-gallery-example/ta/>\n"
 "Language: ta\n"
@@ -17,19 +18,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: About.qml:34
 msgid "About..."
-msgstr "இதுபற்றி ..."
+msgstr "விவரணை ..."
 
 #: ActionBars.qml:68
 msgid "Short list"
-msgstr "குறுகிய பட்டியல்"
+msgstr "சுருக்கமான பட்டியல்"
 
 #: ActionBars.qml:79
 msgid "Number of slots"
-msgstr "இடங்களின் எண்ணிக்கை"
+msgstr "ஒதுக்கப்பட்ட இட எண்ணிக்கை"
 
 #: ActionBars.qml:92
 msgid "Long list"
@@ -52,7 +53,7 @@ msgstr "செந்தரம்"
 
 #: Animations.qml:58
 msgid "Standard Durations"
-msgstr "நிலையான காலம்"
+msgstr "செந்தர காலஅளவுகள்"
 
 #: Animations.qml:62
 msgid "Snap"
@@ -145,7 +146,7 @@ msgstr ""
 
 #: ListItemLayouts.qml:208 NewListItems.qml:79
 msgid "Leading and trailing actions"
-msgstr "முன்னணி மற்றும் பின்தங்கிய செயல்கள்"
+msgstr "முன்னேறுதல் மற்றும் பின்தங்கும் செயல்கள்"
 
 #: ListItems.qml:28 ListItems.qml:36 ListItems.qml:46 ListItems.qml:60
 #: ListItems.qml:66 ListItems.qml:76 ListItems.qml:85 ListItems.qml:94
@@ -211,11 +212,11 @@ msgstr "உருப்படி தேர்வாளர்"
 
 #: ListItems.qml:112 TextInputs.qml:117
 msgid "Expanding"
-msgstr "விரிவாக்குதல்"
+msgstr "விரிவாகுதல்"
 
 #: ListItems.qml:129 OptionSelectors.qml:54
 msgid "Multiple Selection"
-msgstr "பல தேர்வு"
+msgstr "பலமுறை தேர்வு"
 
 #: ListItems.qml:139 OptionSelectors.qml:62
 msgid "Custom Model"
@@ -251,7 +252,7 @@ msgstr "நீக்கக்கூடியது"
 
 #: ListItems.qml:205
 msgid "Slide to remove"
-msgstr "அகற்ற வழுகச்செய்"
+msgstr "அகற்ற வழுக்கு"
 
 #: ListItems.qml:215
 msgid "Reset"
@@ -259,7 +260,7 @@ msgstr "மீட்டமை"
 
 #: ListItems.qml:226
 msgid "Grouped list"
-msgstr "குழு பட்டியல்"
+msgstr "குழுவாக்கிய பட்டியல்"
 
 #: ListItems.qml:261
 msgid "LomiriListView"
@@ -275,7 +276,7 @@ msgstr "விரிவாக்கக்கூடியது"
 
 #: NewListItems.qml:39
 msgid "Colored"
-msgstr "வண்ணம்"
+msgstr "வண்ணமாக்கியது"
 
 #: NewListItems.qml:42
 msgid "Highlight color"
