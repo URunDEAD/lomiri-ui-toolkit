@@ -3,8 +3,6 @@
 # see FEATURE AREAS in dpkg-buildflags(1)
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-export HOME := $(shell realpath .)
-
 # Enforce -Werror for an upstream build.
 CONFIGURE_OPTS_QT5 := # CONFIG+=warnings_are_errors
 CONFIGURE_OPTS_QT6 :=
@@ -24,9 +22,6 @@ ifeq ($(filter %-doc,$(shell dh_listpackages)),)
 	CONFIGURE_OPTS_QT5 += "CONFIG+=no_docs"
 	CONFIGURE_OPTS_QT5 += "CONFIG+=no_docs"
 endif
-
-# Skip tests on the archs they are known to be flaky  with current configuration
-testskip_architectures := armhf powerpc ppc64el s390x
 
 %:
 	dh $@
@@ -51,18 +46,8 @@ ifneq ($(filter %-doc,$(shell dh_listpackages)),)
 endif
 
 override_dh_auto_test:
-	mkdir -p debian/tmp/home/run
-	chmod +x tests/xvfb.sh
-ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
-	-UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
-else
-	-UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
-endif
-ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
-	-UITK_BUILD_ROOT=$(CURDIR)/build-qt5 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt5 --buildsystem=qmake
-else
+	UITK_BUILD_ROOT=$(CURDIR)/build-qt6 tests/xvfb.sh dh_auto_test --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
 	UITK_BUILD_ROOT=$(CURDIR)/build-qt5 tests/xvfb.sh dh_auto_test  --no-parallel --builddirectory=build-qt5 --buildsystem=qmake
-endif
 
 override_dh_auto_install:
 	dh_auto_install --no-parallel --builddirectory=build-qt6 --buildsystem=cmake
