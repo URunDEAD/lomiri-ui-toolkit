@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri-ui-toolkit-gallery\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-05 10:04+0100\n"
-"PO-Revision-Date: 2026-10-19 11:04+0000\n"
+"PO-Revision-Date: 2026-10-22 21:47+0000\n"
 "Last-Translator: Alagirisamy Rengaraj "
 "<ahalyachinnasamy1967@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri-ui-"
@@ -296,7 +296,7 @@ msgstr "தனிப்பயன் செய்கைப் பேராளர�
 
 #: NewListItems.qml:111
 msgid "Edit"
-msgstr "திருத்து"
+msgstr "திருத்தவும்"
 
 #: NewListItems.qml:114
 msgid "Move"
