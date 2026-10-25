@@ -2,5 +2,5 @@
 source: debian-rules-contains-unnecessary-get-orig-source-target [debian/rules]
 
 # these are filenames containing the word "FIXME", therefore false-positives
-source: file-contains-fixme-placeholder FIXME [debian/copyright:1871]
-source: file-contains-fixme-placeholder FIXME [debian/copyright:1872]
+source: file-contains-fixme-placeholder FIXME [debian/copyright:1713]
+source: file-contains-fixme-placeholder FIXME [debian/copyright:1714]

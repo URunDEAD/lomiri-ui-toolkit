@@ -139,7 +139,6 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  manual-tests/testcaseexecutor/tst_manualtestcase.h
  po/update-pot.sh
  push_to_phone.sh
- run_tests.sh
  scripts/pre-execution.sh
  src/LomiriGestures/candidateinactivitytimer.cpp
  src/LomiriGestures/candidateinactivitytimer_p.h
@@ -1125,9 +1124,9 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/deprecated_theme_engine/ErroneousPaletteUse.qml
  tests/unit/deprecated_theme_engine/Parent.qml
  tests/unit/deprecated_theme_engine/SimpleItem.qml
- tests/unit/deprecated_theme_engine/TestModule/TestTheme/TestStyle.qml
- tests/unit/deprecated_theme_engine/themes/CustomTheme/TestStyle.qml
- tests/unit/deprecated_theme_engine/themes/TestModule/TestTheme/1.2/TestStyle.qml
+ tests/unit/deprecated_theme_engine/TestModule/TestTheme/2.0/TestStyle.qml
+ tests/unit/deprecated_theme_engine/themes/CustomTheme/2.0/TestStyle.qml
+ tests/unit/deprecated_theme_engine/themes/TestModule/TestTheme/2.0/TestStyle.qml
  tests/unit/deprecated_theme_engine/tst_deprecated_theme_engine.cpp
  tests/unit/deprecated_theme_engine13/ErroneousPaletteUse.qml
  tests/unit/deprecated_theme_engine13/Parent.qml
@@ -1266,7 +1265,6 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/mainview13/PageStack.qml
  tests/unit/mainview13/PageTitle.qml
  tests/unit/mainview13/Settings.qml
- tests/unit/mainview13/tst_mainview.cpp
  tests/unit/mainwindow/AppName.qml
  tests/unit/mainwindow/OrganizationName.qml
  tests/unit/mainwindow/VisualRoot.qml
@@ -1512,7 +1510,7 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/statesaver11/ValidUID.qml
  tests/unit/subtheming/ChangeDefaultPaletteInChildren.qml
  tests/unit/subtheming/ChangePaletteValueWhenParentChanges.qml
- tests/unit/subtheming/CustomModule/TestTheme/TestStyle.qml
+ tests/unit/subtheming/CustomModule/TestTheme/2.0/TestStyle.qml
  tests/unit/subtheming/DefaultTheme.qml
  tests/unit/subtheming/DeprecatedTheme.qml
  tests/unit/subtheming/DifferentThemes.qml
@@ -1543,14 +1541,12 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/subtheming/StyledItemThemed.qml
  tests/unit/subtheming/TestMain.qml
  tests/unit/subtheming/TestStyleChange.qml
- tests/unit/subtheming/themes/BuggyTheme/Palette.qml
- tests/unit/subtheming/themes/CustomTheme/1.3/TestStyle.qml
- tests/unit/subtheming/themes/CustomTheme/Palette.qml
+ tests/unit/subtheming/themes/BuggyTheme/2.0/Palette.qml
+ tests/unit/subtheming/themes/CustomTheme/2.0/Palette.qml
+ tests/unit/subtheming/themes/CustomTheme/2.0/TestStyle.qml
  tests/unit/subtheming/themes/CustomTheme/TestStyle.qml
- tests/unit/subtheming/themes/DerivedTheme/1.2/TestStyle.qml
- tests/unit/subtheming/themes/DerivedTheme/1.3/Palette.qml
- tests/unit/subtheming/themes/TestModule/TestTheme/1.2/TestStyle.qml
- tests/unit/subtheming/themes/TestModule/TestTheme/1.3/TestStyle.qml
+ tests/unit/subtheming/themes/DerivedTheme/2.0/Palette.qml
+ tests/unit/subtheming/themes/TestModule/TestTheme/2.0/TestStyle.qml
  tests/unit/subtheming/tst_subtheming.cpp
  tests/unit/subtheming13/ChangeDefaultPaletteInChildren.qml
  tests/unit/subtheming13/ChangePaletteValueWhenParentChanges.qml
@@ -1620,7 +1616,7 @@ Files: app-launch-profiler/app-launch-tracepoints.c
  tests/unit/units/dpr2/tst_units_dpr2.cpp
  tests/unit/units/dpr3/tst_units_dpr3.cpp
  tests/unit/units/scale/tst_units_scale.cpp
- tests/unit/visual/AppTheme/Palette.qml
+ tests/unit/visual/AppTheme/2.0/Palette.qml
  tests/unit/visual/ListItemTestCase.qml
  tests/unit/visual/ListItemWithLabel.qml
  tests/unit/visual/MockKeyboard.qml
@@ -2429,7 +2425,6 @@ License: LGPL-2.1 or LGPL-3
 Files: app-launch-profiler/lomiri-app-launch-profiler-lttng
  app-launch-profiler/lomiri-appstart-profile
  app-launch-profiler/lomiri-appstart-test
- tests/uitk_test_plan.sh
 Copyright: 2014, Canonical Ltd.
   2015, Canonical Ltd.
 License: LGPL-2.1
@@ -2515,9 +2510,13 @@ License: LGPL-3
 
 Files: debian/*
 Copyright: 2012-2017, Canonical Ltd.
-  2018-2021, UBPorts Foundation
+  2018-2026, UBports Foundation
   2021-2026, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 License: LGPL-3 or LGPL-2.1 or GPL-3 or BSD-3-clause or Expat
+
+Files: debian/tests/tst_unit-converter.qml
+Copyright: 2025 UBports Foundation
+License: LGPL-3
 
 Files: debian/session-migrations/luitk-config-migration.sh
 Copyright: 2023, UBports Foundation
