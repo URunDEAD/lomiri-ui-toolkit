@@ -53,6 +53,9 @@ AsyncLoader::AsyncLoader(QObject *parent)
 AsyncLoader::~AsyncLoader()
 {
     reset();
+    Q_D(AsyncLoader);
+    // Compiling cannot be reset, but destruction must release its connection.
+    d->detachComponent();
 }
 
 // incubator methods
@@ -190,7 +193,7 @@ bool AsyncLoader::load(QQmlComponent *component, QQmlContext *context)
         };
 
         d->componentHandler.reset(new QMetaObject::Connection);
-        *(d->componentHandler) = QObject::connect(d->component, &QQmlComponent::statusChanged, callback);
+        *(d->componentHandler) = QObject::connect(d->component, &QQmlComponent::statusChanged, this, callback);
     } else {
         d->onComponentStatusChanged(d->component->status());
     }
